@@ -1,0 +1,5 @@
+{
+  "error": "patent_not_found",
+  "message": "patent not found: US99999999999A1",
+  "suggestion": "verify exid format (e.g., US12345678A1)"
+}

@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`patent.priors.search.sh given: [case1] --help when: [t0] help is requested then: usage is shown 1`] = `
+"usage: patent.priors.search.sh --query "search terms"
+
+options:
+  --query   search terms (required)
+  --limit   max results (default: 20)
+  --since   filter by date (YYYY-MM-DD)
+  --until   filter by date (YYYY-MM-DD)
+"
+`;
+
+exports[`patent.priors.search.sh given: [case2] query too short when: [t0] search is called with 2 char query then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ query too short
+
+query must be at least 3 characters
+"
+`;
+
+exports[`patent.priors.search.sh given: [case3] no query provided when: [t0] search is called without --query then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ query required
+
+usage: patent.priors.search.sh --query "search terms"
+"
+`;
+
+exports[`patent.priors.search.sh given: [case4] valid search query when: [t0] search is called with specific terms then: search executes and returns results or empty set 1`] = `""`;
+
+exports[`patent.priors.search.sh given: [case5] query too long when: [t0] search is called with >1000 char query then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ query too long
+
+query must be under 1000 characters
+"
+`;
+
+exports[`patent.priors.search.sh given: [case6] vague query with few keywords when: [t0] search is called with only 2 keywords then: search executes with vague query alert 1`] = `""`;
+
+exports[`patent.priors.search.sh given: [case7] unknown argument when: [t0] search is called with invalid flag then: error is returned 1`] = `
+"unknown argument: --invalid-flag
+"
+`;

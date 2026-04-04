@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`patent.priors.fetch.sh given: [case1] --help when: [t0] help is requested then: usage is shown 1`] = `
+"usage: patent.priors.fetch.sh --exid US20210234567A1
+"
+`;
+
+exports[`patent.priors.fetch.sh given: [case2] no exid provided when: [t0] fetch is called without --exid then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ exid required
+
+usage: patent.priors.fetch.sh --exid US20210234567A1
+"
+`;
+
+exports[`patent.priors.fetch.sh given: [case3] invalid exid format when: [t0] fetch is called with malformed exid then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ invalid patent format
+
+expected format: US12345678A1 or US20210234567A1
+received: INVALID123
+"
+`;
+
+exports[`patent.priors.fetch.sh given: [case4] valid exid when: [t0] fetch is called with valid USPTO exid then: fetch executes 1`] = `""`;
+
+exports[`patent.priors.fetch.sh given: [case5] valid exid but patent not found when: [t0] fetch is called with nonexistent patent then: not found error is returned 1`] = `""`;
+
+exports[`patent.priors.fetch.sh given: [case6] unknown argument when: [t0] fetch is called with invalid flag then: error is returned 1`] = `
+"unknown argument: --invalid-flag
+"
+`;

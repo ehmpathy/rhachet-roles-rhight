@@ -1,132 +1,144 @@
-# 🐢 rhachet-roles-ehmpathy
+# 🦅 rhachet-roles-rhight
 
-![test](https://github.com/ehmpathy/rhachet-roles-ehmpathy/workflows/test/badge.svg)
-![publish](https://github.com/ehmpathy/rhachet-roles-ehmpathy/workflows/publish/badge.svg)
+legal rights roles and skills, via [rhachet](https://github.com/ehmpathy/rhachet)
 
-empathetic software construction roles and skills, via [rhachet](https://github.com/ehmpathy/rhachet)
+## purpose
 
-# purpose
+rhight = rights + right
 
-# install
+this repo provides roles for legal research, analysis, and preparation:
+- legal rights — what you're entitled to
+- what's right — the correct interpretation (legally, intentionally, morally)
+- who's right — dispute resolution
 
-```sh
-npm install rhachet-roles-ehmpathy
-```
+law is code. rules that govern behavior, enforced by systems. these roles help navigate that code.
 
-# use
-
-## `readme --registry`
-```sh
-npx rhachet readme --registry ehmpathy
-```
-
-produces
-
-```md
-# 🐢 ehmpathy role registry
-
-this registry defines four core roles used to craft empathetic, evolvable, and maintainable software.
-
-each role is a lens — a way to think about the system — grounded in empathy for both the **people who use the product** and the **engineers who maintain the system**.
-
-all roles maximize:
-
-- clarity over cleverness
-- maintainability over magic
-- empathy over ego
-
----
-
-## 🥥 ecologist
-
-- **scale**: domain fundamentals, real-world systems
-- **focus**: what changes, what flows, what matters — independent of software
-- **maximizes**: fidelity to the real world
-
-used to understand the physics, incentives, and causal flows beneath the system.
-
----
-
-## 🪸 architect
-
-- **scale**: cross-repo, organizational boundaries
-- **focus**: bounded contexts, trust layers, language design
-- **maximizes**: ubiqlang, evolvability, decomposition
-
-used to shape contracts and composites which evolve gracefully through change.
-
----
-
-## 🪷 ergonomist
-
-- **scale**: experience-level, human perspective
-- **focus**: nudges, guardrails, pit-of-success defaults
-- **maximizes**: usability, ergonomics, reliability
-
-used to sculpt workflows and interfaces that feel obvious and safe.
-
----
-
-## 🐚 mechanic
-
-- **scale**: repo-level, implementation detail
-- **focus**: maintainability, observability, readability
-- **maximizes**: empathy for the 3am on-call engineer
-
-used to write and revise the mechanisms which deliver the system.
-```
-
-## `ask -r mechanic`
-
-the mechanic writes code within a repo
-
-### `ask -r mechanic -s upsert`
-
-you can ask the mechanic to upsert the code in a target file or dir
-- if it exists, it'll update
-- if it doesn't, it'll create
-
+## install
 
 ```sh
-npx rhachet ask -r mechanic -s upsert -t ./path/to/file.ts "your ask"
+npm install rhachet-roles-rhight
 ```
+
+## roles
+
+### 🏔️ patenter
+
+- **scale**: invention-level, intellectual property
+- **focus**: prior art research, claim structure, prosecution strategy
+- **maximizes**: defensible patent positions with clear novelty
+
+used to research prior art, distill patent proposals, and prepare materials for patent applications.
+
+### 🪶 copyrighter
+
+- **scale**: creative work-level, intellectual property
+- **focus**: originality analysis, fair use, license terms
+- **maximizes**: protection of creative expression
+
+used to analyze copyright protection, fair use boundaries, and license terms.
+
+### 🪖 trademarker
+
+- **scale**: brand-level, intellectual property
+- **focus**: distinctiveness, likelihood of confusion, registration
+- **maximizes**: brand identity protection
+
+used to research trademark conflicts, assess distinctiveness, and prepare registration materials.
+
+### 🔗 regulator
+
+- **scale**: jurisdiction-level, compliance
+- **focus**: local, state, federal, global regulations
+- **maximizes**: compliance with bounded social contracts
+
+used to evaluate regulatory requirements and ensure compliance across jurisdictions.
+
+### 🔒 obligator
+
+- **scale**: contract-level, terms
+- **focus**: duties, deliverables, performance terms
+- **maximizes**: clear and enforceable obligations
+
+used to review and draft contract terms that secure duties and commitments.
+
+### 🦺 indemnifier
+
+- **scale**: contract-level, risk
+- **focus**: liability, indemnification, hold-harmless
+- **maximizes**: protection against claims
+
+used to review and draft protective clauses that shield against liability.
+
+### ⚖️ counselor
+
+- **scale**: exposure-level, coordination
+- **focus**: holistic contract review, risk assessment
+- **maximizes**: balanced legal protection
+
+used to coordinate obligator and indemnifier for comprehensive exposure review.
+
+## skills
+
+### `patent.priors.search`
+
+search for relevant patents by keyword query.
 
 ```sh
-npx rhachet ask \
-  --role mechanic \
-  --skill upsert \
-  --target ./path/to/file.ts \
-  "your ask"
+rhx patent.priors.search --query "neural network model compression"
+rhx patent.priors.search --query "ML model optimization" --since 2020-01-01 --limit 5
 ```
 
-once it's self reviewed, it'll ask you for feedback
+### `patent.priors.fetch`
+
+fetch full patent contents by external identifier.
 
 ```sh
-? have notes? (Use arrow keys)
-❯ no notes
-  yes notes
+rhx patent.priors.fetch --exid US20210234567A1
 ```
 
-it'll loop until you tell it you have `no notes`
+### `patent.propose`
 
-# mascots
+instantiate a patent proposal route with structured stones.
 
-this repo houses roles for sea turtles 🐢 — gentle builders of empathetic software, who carefully improve the ecosystems they serve.
+```sh
+rhx patent.propose
+rhx patent.propose --open nvim
+rhx patent.propose --open code
+```
 
-they wield:
-- 🥥 coconut — for ecologists — to uncover what happens beneath the surface, fundamentally
-- 🪸 coral — for architects — to compose many parts into one structure, evolvably
-- 🪷 lotus — for ergonomists — to guide users to the surface, intuitively
-- 🐚 shell — for mechanics — to craft code easy to read and hard to break, maintainably
+creates a route with:
+- `0.idea.md` — invention description template
+- `1.vision.stone` — patent goals
+- `3.1.research.prior-art.favorable.stone` — favorable prior art
+- `3.1.research.prior-art.adverse.stone` — adverse prior art
+- `3.2.distill.claims.prior-art.stone` — prior art analysis
+- `3.2.distill.claims.patentable.stone` — novel claim identification
+- `3.2.distill.strategy.officeactions.stone` — prosecution preparation
+- `3.3.blueprint.patent.stone` — application structure
+- `5.1.deliver.patent.latex.stone` — formal output
 
-why seaturtles? because they embody the principles of good software:
+## mascot
 
-1. 🐢 slow and steady — built for the long haul
-2. 🌊 keep it **wet** — wait for patterns to surface
-3. 🐡 safe-by-design — pit of success
-4. 🐚 live in shell — master the terminal
-5. 🤙 go with the flow — work with your tools
-6. 🌙 follow the moonlight — let conventions guide
-7. 🐢🐢🐢 turtles all the way down — recursion and composition
+this repo houses the eagle 🦅 — who soars above the landscape to survey the terrain and spot what matters from above.
 
-[read the full brief →](./src/domain.roles/mechanic/briefs/practices/lang.tones/define.why-seaturtles-love-software.md)
+why eagles? because they embody the principles of good legal work:
+
+1. 🦅 soar high — see the full landscape
+2. 👁️ sharp vision — spot the details that matter
+3. 🪶 precise — strike with accuracy
+4. 🏔️ claim peaks — identify what's defensible
+
+the eagle wields:
+- 🏔️ mountain — for patenter — to claim the peaks of novelty
+- 🪶 feather — for copyrighter — to protect the written word
+- 🪖 helm — for trademarker — to guard the brand in battle
+- 🔗 chainlink — for regulator — to compose the bounds of social contracts
+- 🔒 lock — for obligator — to secure the duties and terms
+- 🦺 vest — for indemnifier — to protect against claims and liability
+- ⚖️ scales — for counselor — to weigh exposure and guide review
+
+## note
+
+this package is private. used internally via local link.
+
+one day, we hope to opensource these roles to help others navigate legal systems more effectively. for now, this repo remains private to avoid exposure while we refine the approach.

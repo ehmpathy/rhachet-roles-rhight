@@ -1,24 +1,16 @@
 import { RoleRegistry } from 'rhachet';
 
-import { ROLE_ARCHITECT } from './architect/getArchitectRole';
-// import { ROLE_ECOLOGIST } from './ecologist/getEcologistRole';
-import { ROLE_ERGONOMIST } from './ergonomist/getErgonomistRole';
-import { ROLE_MECHANIC } from './mechanic/getMechanicRole';
+import { ROLE_PATENTER } from './patenter/getPatenterRole';
 
 /**
- * .what = returns the core registry of predefined roles and skills
+ * .what = returns the rhight registry of predefined roles
  * .why =
  *   - enables CLI or thread logic to load available roles
- *   - avoids dynamic loading or global mutation
+ *   - avoids dynamic mutation
  */
 export const getRoleRegistry = (): RoleRegistry =>
   new RoleRegistry({
-    slug: 'ehmpathy',
+    slug: 'rhight',
     readme: { uri: `${__dirname}/readme.md` },
-    roles: [
-      // ROLE_ECOLOGIST,
-      ROLE_ARCHITECT,
-      ROLE_ERGONOMIST,
-      ROLE_MECHANIC,
-    ],
+    roles: [ROLE_PATENTER],
   });

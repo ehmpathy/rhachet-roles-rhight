@@ -1,0 +1,82 @@
+# 3.2.distill.claims.prior-art
+
+analyze prior art coverage of your claimed elements.
+
+---
+
+## element analysis
+
+map each claim element to prior art coverage.
+
+### claim 1 elements
+
+| element | prior art coverage | gap? |
+|---------|-------------------|------|
+| preamble: | | |
+| element a: | | |
+| element b: | | |
+| element c: | | |
+
+**assessment**: fully anticipated / partially covered / novel
+
+---
+
+### claim 2 elements
+
+| element | prior art coverage | gap? |
+|---------|-------------------|------|
+| preamble: | | |
+| element a: | | |
+| element b: | | |
+| element c: | | |
+
+**assessment**: fully anticipated / partially covered / novel
+
+---
+
+## novelty analysis
+
+### what prior art teaches
+
+1.
+2.
+3.
+
+### what prior art does NOT teach
+
+1.
+2.
+3.
+
+---
+
+## obviousness analysis
+
+### motivation to combine?
+
+would a person skilled in the art have reason to combine references?
+
+| combination | motivation exists? | evidence |
+|-------------|-------------------|----------|
+| ref A + ref B | yes / no | |
+| ref A + ref C | yes / no | |
+
+### unexpected results?
+
+does your invention achieve unexpected or superior results?
+
+| result | expected by art? | evidence |
+|--------|-----------------|----------|
+| | | |
+| | | |
+
+---
+
+## conclusion
+
+| claim | anticipation risk | obviousness risk | recommendation |
+|-------|------------------|------------------|----------------|
+| 1 | low / medium / high | low / medium / high | keep / narrow / drop |
+| 2 | low / medium / high | low / medium / high | keep / narrow / drop |
+| 3 | low / medium / high | low / medium / high | keep / narrow / drop |
+

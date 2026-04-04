@@ -1,6 +1,0 @@
-@ehmpathy/as-command handles output dirs
-
-use context.out.write()
-
-writes to dedicated safe dir
----

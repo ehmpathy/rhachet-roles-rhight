@@ -1,28 +1,13 @@
-slug: ehmpathy
+slug: rhight
 readme: dist/domain.roles/readme.md
 roles:
-  - slug: architect
-    readme: dist/domain.roles/architect/readme.md
+  - slug: patenter
+    readme: dist/domain.roles/patenter/readme.md
     briefs:
-      dirs: dist/domain.roles/architect/briefs
+      dirs: dist/domain.roles/patenter/briefs
     skills:
-      dirs: []
-    boot: dist/domain.roles/architect/boot.yml
-  - slug: ergonomist
-    readme: dist/domain.roles/ergonomist/readme.md
-    briefs:
-      dirs: dist/domain.roles/ergonomist/briefs
-    skills:
-      dirs: []
-  - slug: mechanic
-    readme: dist/domain.roles/mechanic/readme.md
-    briefs:
-      dirs: dist/domain.roles/mechanic/briefs
-    skills:
-      dirs: dist/domain.roles/mechanic/skills
+      dirs: dist/domain.roles/patenter/skills
     inits:
-      dirs: dist/domain.roles/mechanic/inits
-      exec:
-        - dist/domain.roles/mechanic/inits/init.claude.sh
-    boot: dist/domain.roles/mechanic/boot.yml
-    keyrack: dist/domain.roles/mechanic/keyrack.yml
+      dirs: dist/domain.roles/patenter/inits
+    boot: dist/domain.roles/patenter/boot.yml
+    keyrack: dist/domain.roles/patenter/keyrack.yml

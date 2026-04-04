@@ -1,4 +1,0 @@
-given command modifies infrastructure
-  when not leverage terraform
-    then flag as BLOCKER
-      sothat manage infrastructure via terraform
