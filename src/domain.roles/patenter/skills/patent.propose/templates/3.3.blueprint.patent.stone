@@ -1,0 +1,125 @@
+# 3.3.blueprint.patent
+
+structure the patent application.
+
+---
+
+## document structure
+
+```
+1. title
+2. cross-reference to related applications (if any)
+3. field of invention
+4. background
+   - prior art
+   - problems in the art
+5. summary
+6. brief description of figures
+7. detailed description
+   - overview
+   - embodiment 1
+   - embodiment 2
+   - variations
+8. claims
+9. abstract
+10. figures
+```
+
+---
+
+## title
+
+<!-- 500 chars max, descriptive but not limiting -->
+
+
+
+---
+
+## field of invention
+
+<!-- one paragraph, technical area -->
+
+
+
+---
+
+## background
+
+### prior art summary
+
+<!-- what was known before your invention -->
+
+
+
+### problems in the art
+
+<!-- what problems remained unsolved -->
+
+
+
+---
+
+## summary of invention
+
+<!-- concise description of the invention and its advantages -->
+
+
+
+---
+
+## figures
+
+| fig | description | shows |
+|-----|-------------|-------|
+| 1 | | |
+| 2 | | |
+| 3 | | |
+
+---
+
+## detailed description outline
+
+### overview
+
+<!-- high-level architecture -->
+
+### embodiment 1 (preferred)
+
+<!-- most important implementation -->
+
+### embodiment 2 (alternative)
+
+<!-- backup implementation -->
+
+### variations
+
+<!-- optional features, alternatives -->
+
+---
+
+## claims checklist
+
+- [ ] claims match detailed description
+- [ ] all claim elements supported by specification
+- [ ] dependent claims provide fallback
+- [ ] claim scope aligned with business goals
+
+---
+
+## abstract
+
+<!-- 150 words max, standalone summary -->
+
+
+
+---
+
+## review checklist
+
+- [ ] title is descriptive
+- [ ] background establishes problem
+- [ ] claims are supported
+- [ ] figures are referenced
+- [ ] no new matter in claims
+- [ ] consistent terminology throughout
+

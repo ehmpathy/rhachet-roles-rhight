@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`transcribe.pdf given: [case1] --help flag when: [t0] help is requested then: usage info is displayed 1`] = `
+"usage: transcribe.pdf.sh <pdf-path> [--into markdown]
+
+extract text from image-based PDFs via Google Cloud Vision OCR.
+
+args:
+  <pdf-path>       path to the PDF file
+  --into FORMAT    output format (default: markdown)
+  --cache skip     bypass cache and force fresh OCR
+  --help           show this help
+
+examples:
+  transcribe.pdf.sh document.pdf
+  transcribe.pdf.sh document.pdf --into markdown
+  transcribe.pdf.sh scanned.pdf --cache skip
+"
+`;
+
+exports[`transcribe.pdf given: [case2] no PDF path provided when: [t0] skill is called without arguments then: error is returned 1`] = `
+"
+🦅 that wont work...
+
+🔎 transcribe.pdf
+   └─ blocked: no PDF path provided
+"
+`;
+
+exports[`transcribe.pdf given: [case3] PDF file does not exist when: [t0] nonexistent file is specified then: error is returned 1`] = `
+"
+🦅 that wont work...
+
+🔎 transcribe.pdf
+   └─ blocked: file not found: /nonexistent/file.pdf
+"
+`;
+
+exports[`transcribe.pdf given: [case4] unsupported output format when: [t0] invalid format is specified then: error is returned 1`] = `
+"
+🦅 that wont work...
+
+🔎 transcribe.pdf
+   └─ blocked: unsupported format: docx (only markdown supported)
+"
+`;
+
+exports[`transcribe.pdf given: [case5] valid scanned PDF (LIVE API) when: [t0] OCR is performed on a real document then: text is extracted and cached 1`] = `
+"
+🦅 let me read that,
+
+🔎 transcribe.pdf
+   ├─ source: /home/vlad/git/ehmpathy/rhachet-roles-rhight/.cache/patents/19394030/1.event.2015-01-05.claims.pdf
+   ├─ pages: 3
+   └─ format: markdown
+
+## Page 1
+"
+`;
+
+exports[`transcribe.pdf given: [case5] valid scanned PDF (LIVE API) when: [t1] cached result extant then: cache is used instead of OCR 1`] = `
+"
+🦅 found in cache,
+
+🔎 transcribe.pdf
+   ├─ source: /home/vlad/git/ehmpathy/rhachet-roles-rhight/.cache/patents/19394030/1.event.2015-01-05.claims.pdf
+   ├─ cached: /home/vlad/git/ehmpathy/rhachet-roles-rhight/.cache/patents/19394030/1.event.2015-01-05.claims.md
+   └─ format: markdown
+
+## Page 1
+
+
+
+## Page 2
+
+
+
+## Page 3
+
+
+
+
+"
+`;

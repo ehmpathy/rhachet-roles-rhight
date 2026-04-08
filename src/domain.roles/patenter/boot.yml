@@ -1,0 +1,15 @@
+always:
+  briefs:
+    say:
+      # patent practices
+      - briefs/practices/howto.patent-techniques.[lesson].md
+      - briefs/practices/define.patent-fundamentals.md
+
+  skills:
+    say:
+      # prior art research
+      - skills/patent.priors/patent.priors.search.sh
+      - skills/patent.priors/patent.priors.fetch.sh
+
+      # patent proposal route
+      - skills/patent.propose/patent.propose.sh

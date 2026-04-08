@@ -1,0 +1,100 @@
+# 3.1.research.prior-art.adverse
+
+prior art that may challenge your claims.
+
+---
+
+## summary
+
+adverse prior art threatens claim validity. identify these early to:
+- narrow claims proactively
+- prepare responses for office actions
+- design around potential blocks
+
+---
+
+## adverse patents
+
+### patent 1 (highest threat)
+
+| field | value |
+|-------|-------|
+| exid | |
+| title | |
+| date | |
+| threat level | high / medium / low |
+
+**overlap with your invention**:
+
+-
+-
+
+**potential rejection type**: 102 (anticipation) / 103 (obviousness)
+
+**mitigation strategy**:
+
+-
+
+---
+
+### patent 2
+
+| field | value |
+|-------|-------|
+| exid | |
+| title | |
+| date | |
+| threat level | high / medium / low |
+
+**overlap with your invention**:
+
+-
+-
+
+**potential rejection type**: 102 / 103
+
+**mitigation strategy**:
+
+-
+
+---
+
+### patent 3
+
+| field | value |
+|-------|-------|
+| exid | |
+| title | |
+| date | |
+| threat level | high / medium / low |
+
+**overlap with your invention**:
+
+-
+-
+
+**potential rejection type**: 102 / 103
+
+**mitigation strategy**:
+
+-
+
+---
+
+## combination risk
+
+examiner may combine references for 103 rejection.
+
+| reference A | reference B | combined teaching | your defense |
+|-------------|-------------|-------------------|--------------|
+| | | | |
+| | | | |
+
+---
+
+## action items
+
+- [ ] narrow claim 1 to avoid patent X
+- [ ] add element Y to distinguish from patent Z
+- [ ] prepare declaration of unexpected results
+

@@ -1,0 +1,23 @@
+slug: rhight
+readme: dist/domain.roles/readme.md
+roles:
+  - slug: patenter
+    readme: dist/domain.roles/patenter/readme.md
+    briefs:
+      dirs: dist/domain.roles/patenter/briefs
+    skills:
+      dirs: dist/domain.roles/patenter/skills
+    inits:
+      dirs: dist/domain.roles/patenter/inits
+    boot: dist/domain.roles/patenter/boot.yml
+    keyrack: dist/domain.roles/patenter/keyrack.yml
+  - slug: transcriber
+    readme: dist/domain.roles/transcriber/readme.md
+    briefs:
+      dirs: dist/domain.roles/transcriber/briefs
+    skills:
+      dirs: dist/domain.roles/transcriber/skills
+    inits:
+      dirs: dist/domain.roles/transcriber/inits
+    boot: dist/domain.roles/transcriber/boot.yml
+    keyrack: dist/domain.roles/transcriber/keyrack.yml

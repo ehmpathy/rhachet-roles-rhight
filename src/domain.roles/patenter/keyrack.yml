@@ -1,0 +1,13 @@
+org: ehmpathy
+
+env.all:
+  # - keys available in all environments
+
+env.prod:
+  - USPTO_ODP_API_KEY
+
+env.prep:
+  # - keys for pre-production
+
+env.test:
+  # - keys for test (declared in repo's .agent/keyrack.yml)
