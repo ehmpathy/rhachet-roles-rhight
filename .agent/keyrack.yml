@@ -1,0 +1,12 @@
+org: ehmpathy
+extends:
+  - .agent/repo=ehmpathy/role=mechanic/keyrack.yml
+  - .agent/repo=rhight/role=patenter/keyrack.yml
+env.all: null
+env.prod:
+  - USPTO_ODP_API_KEY
+env.prep:
+  - EHMPATHY_SEATURTLE_PROD_GITHUB_TOKEN
+env.test:
+  - USPTO_ODP_API_KEY
+  - GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS

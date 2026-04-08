@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`patent.propose.sh given: [case1] new route creation when: [t0] patent.propose is called in a git repo then: branch is bound to route via symlink 1`] = `
+"🦅 take to the sky,
+
+🌎 patent.propose
+   ├─ route: .route/v2026_04_07.patent.propose/
+   ├─ branch: test-patent-branch
+   └─ stones
+      ├─ ✓ 0.idea.md
+      ├─ ✓ 1.vision.stone
+      ├─ ✓ 3.1.research.prior-art.adverse.stone
+      ├─ ✓ 3.1.research.prior-art.favorable.stone
+      ├─ ✓ 3.2.distill.claims.patentable.stone
+      ├─ ✓ 3.2.distill.claims.prior-art.stone
+      ├─ ✓ 3.2.distill.strategy.officeactions.stone
+      ├─ ✓ 3.3.blueprint.patent.stone
+      └─ ✓ 5.1.deliver.patent.latex.stone
+
+🏔️ what peaks can we claim?
+   ├─ /tmp/test-fns/rhachet-roles-rhight/.temp/2026-04-07T13-02-23.718Z.patent-propose-bind.483b73bd/.route/v2026_04_07.patent.propose/0.idea.md
+   └─ ready for you to fill out
+
+🌎 we'll track it down,
+   ├─ branch test-patent-branch <-> route v2026_04_07.patent.propose
+   └─ branch bound to route, to drive via hooks
+"
+`;
+
+exports[`patent.propose.sh given: [case1] new route creation when: [t0] patent.propose is called in a git repo then: route directory is created with all template files 1`] = `
+"🦅 take to the sky,
+
+🌎 patent.propose
+   ├─ route: .route/v2026_04_07.patent.propose/
+   ├─ branch: main
+   └─ stones
+      ├─ ✓ 0.idea.md
+      ├─ ✓ 1.vision.stone
+      ├─ ✓ 3.1.research.prior-art.adverse.stone
+      ├─ ✓ 3.1.research.prior-art.favorable.stone
+      ├─ ✓ 3.2.distill.claims.patentable.stone
+      ├─ ✓ 3.2.distill.claims.prior-art.stone
+      ├─ ✓ 3.2.distill.strategy.officeactions.stone
+      ├─ ✓ 3.3.blueprint.patent.stone
+      └─ ✓ 5.1.deliver.patent.latex.stone
+
+🏔️ what peaks can we claim?
+   ├─ /tmp/test-fns/rhachet-roles-rhight/.temp/2026-04-07T13-02-23.536Z.patent-propose-new.197a59f3/.route/v2026_04_07.patent.propose/0.idea.md
+   └─ ready for you to fill out
+
+🌎 we'll track it down,
+   ├─ branch main <-> route v2026_04_07.patent.propose
+   └─ branch bound to route, to drive via hooks
+"
+`;
+
+exports[`patent.propose.sh given: [case2] route already exists when: [t0] patent.propose is called when route extant then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ patent route already exists
+"
+`;
+
+exports[`patent.propose.sh given: [case3] --open with invalid editor when: [t0] nonexistent editor is specified then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ editor not found: nonexistent-editor-xyz
+"
+`;
+
+exports[`patent.propose.sh given: [case4] --help when: [t0] help is requested then: usage is shown 1`] = `
+"usage: patent.propose.sh [--open EDITOR]
+
+options:
+  --open   editor to open 0.idea.md (e.g., nvim, code)
+"
+`;
+
+exports[`patent.propose.sh given: [case5] not in git repo when: [t0] patent.propose is called outside git repo then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ must run from git repository
+"
+`;

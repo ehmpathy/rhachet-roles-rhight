@@ -1,0 +1,30 @@
+{
+  "query": "neural network compression",
+  "results": [
+    {
+      "applicationNumber": "US20210234567A1",
+      "title": "Neural Network Model Compression via Knowledge Distillation",
+      "abstract": "A method for compressing neural network models using knowledge distillation techniques. The method involves training a smaller student network to mimic the behavior of a larger teacher network, resulting in reduced model size while maintaining accuracy.",
+      "publicationDate": "2021-07-29",
+      "inventors": ["John Smith", "Jane Doe"],
+      "assignee": "TechCorp Inc."
+    },
+    {
+      "applicationNumber": "US20200345678A1",
+      "title": "Pruning Methods for Deep Neural Networks",
+      "abstract": "Systems and methods for reducing the size of deep neural networks through structured and unstructured pruning. The invention identifies and removes redundant weights and neurons while preserving model performance.",
+      "publicationDate": "2020-11-05",
+      "inventors": ["Alice Johnson"],
+      "assignee": "AI Systems LLC"
+    },
+    {
+      "applicationNumber": "US20190123456A1",
+      "title": "Quantization Techniques for Neural Network Inference",
+      "abstract": "A system for quantizing neural network weights from floating point to fixed point representation. The approach enables efficient deployment on resource-constrained devices.",
+      "publicationDate": "2019-04-25",
+      "inventors": ["Bob Williams", "Carol Davis"],
+      "assignee": "Mobile AI Corp."
+    }
+  ],
+  "totalResults": 3
+}

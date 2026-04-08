@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`patent.priors.fetch.sh given: [case1] --help when: [t0] help is requested then: usage is shown 1`] = `
+"usage: patent.priors.fetch.sh --exid 19399196 [--cache skip]
+
+options:
+  --exid        8-digit USPTO application number (required)
+  --cache skip  bypass cache and force fresh API call
+"
+`;
+
+exports[`patent.priors.fetch.sh given: [case2] no exid provided when: [t0] fetch is called without --exid then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ exid required
+
+usage: patent.priors.fetch.sh --exid 19399196
+"
+`;
+
+exports[`patent.priors.fetch.sh given: [case3] invalid exid format when: [t0] fetch is called with malformed exid then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ invalid application number format
+
+expected format: 8-digit application number (e.g., 19399196)
+received: US7654321B2
+
+note: use application numbers, not publication numbers (US7654321B2)
+"
+`;
+
+exports[`patent.priors.fetch.sh given: [case4] valid exid (LIVE API) when: [t0] fetch is called with valid USPTO exid then: patent is fetched from live API 1`] = `
+"🦅 got one,
+
+🌎 patent.priors.fetch --exid 19399196
+   ├─ title: Cutter and Drill Bit Design by Virtual Testing with Digitized Rocks
+   ├─ inventor: Xiaoge Gan
+   ├─ status
+   │  ├─ 🌱 Docketed New Case - Ready for Examination
+   │  ├─ filed on = 2025-11-24
+   │  ├─ published on = 2026-03-19
+   │  └─ granted on = not yet granted
+   ├─ documents
+   │  ├─ application: 6 documents
+   │  │  ├─ 0.application.drawings-supplemental.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 0.application.application.xml
+   │  │  │  └─ retrieval: unavailable
+   │  │  ├─ 0.application.specification.xml
+   │  │  │  └─ retrieval: cached
+   │  │  ├─ 0.application.claims.xml
+   │  │  │  └─ retrieval: cached
+   │  │  ├─ 0.application.abstract.xml
+   │  │  │  └─ retrieval: cached
+   │  │  └─ 0.application.drawings.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  ├─ prosecution: 11 documents
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.office-action.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.notice.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.notice.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-12-11.fee.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-12-11.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-12-11.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2026-03-19.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  └─ grant: unavailable (not yet granted)
+   ├─ cache: .cache/patents/19399196/
+   └─ hint: tree -f .cache/patents/19399196
+"
+`;
+
+exports[`patent.priors.fetch.sh given: [case5] valid exid but patent not found (LIVE API) when: [t0] fetch is called with nonexistent patent then: not found error is returned 1`] = `
+"🦅 that wont do...
+   └─ patent not found
+"
+`;
+
+exports[`patent.priors.fetch.sh given: [case6] unknown argument when: [t0] fetch is called with invalid flag then: error is returned 1`] = `
+"unknown argument: --invalid-flag
+"
+`;
+
+exports[`patent.priors.fetch.sh given: [case8] deterministic cached flow (uses fixture) when: [t0] fetch is called in temp dir with pre-populated cache then: all documents report cached status (no API calls) 1`] = `
+"🦅 got one,
+
+🌎 patent.priors.fetch --exid 19399196
+   ├─ title: Cutter and Drill Bit Design by Virtual Testing with Digitized Rocks
+   ├─ inventor: Xiaoge Gan
+   ├─ status
+   │  ├─ 🌱 Docketed New Case - Ready for Examination
+   │  ├─ filed on = 2025-11-24
+   │  ├─ published on = 2026-03-19
+   │  └─ granted on = not yet granted
+   ├─ documents
+   │  ├─ application: 6 documents
+   │  │  ├─ 0.application.drawings-supplemental.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 0.application.application.xml
+   │  │  │  └─ retrieval: unavailable
+   │  │  ├─ 0.application.specification.xml
+   │  │  │  └─ retrieval: cached
+   │  │  ├─ 0.application.claims.xml
+   │  │  │  └─ retrieval: cached
+   │  │  ├─ 0.application.abstract.xml
+   │  │  │  └─ retrieval: cached
+   │  │  └─ 0.application.drawings.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  ├─ prosecution: 11 documents
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.office-action.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.notice.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-11-24.notice.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-12-11.fee.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-12-11.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2025-12-11.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  │  ├─ 1.event.2026-03-19.document.pdf
+   │  │  │  ├─ retrieval: cached
+   │  │  │  └─ transcription: cached
+   │  └─ grant: unavailable (not yet granted)
+   ├─ cache: .cache/patents/19399196/
+   └─ hint: tree -f .cache/patents/19399196
+"
+`;
+
+exports[`patent.priors.fetch.sh given: [case9] deterministic uncached flow (empty temp dir, LIVE API) when: [t0] fetch is called in temp dir with empty cache then: all documents report fetched status (live API calls) 1`] = `
+"
+   fetch metadata...    
+[K
+   fetch document list...    
+[K🦅 got one,
+
+🌎 patent.priors.fetch --exid 19399196
+   ├─ title: Cutter and Drill Bit Design by Virtual Testing with Digitized Rocks
+   ├─ inventor: Xiaoge Gan
+   ├─ status
+   │  ├─ 🌱 Docketed New Case - Ready for Examination
+   │  ├─ filed on = 2025-11-24
+   │  ├─ published on = 2026-03-19
+   │  └─ granted on = not yet granted
+   ├─ documents
+   │  ├─ application: 6 documents
+   │  │  ├─ 0.application.drawings-supplemental.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
+   │  │  ├─ 0.application.application.xml
+   │  │  │  └─ retrieval: unavailable
+   │  │  ├─ 0.application.specification.xml
+   │  │  │  └─ retrieval: fetched
+   │  │  ├─ 0.application.claims.xml
+   │  │  │  └─ retrieval: fetched
+   │  │  ├─ 0.application.abstract.xml
+   │  │  │  └─ retrieval: fetched
+   │  │  └─ 0.application.drawings.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
+   │  ├─ prosecution: 11 documents
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
+   │  │  ├─ 1.event.2025-11-24.office-action.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
+   │  │  ├─ 1.event.2025-11-24.document.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
+   │  │  ├─ 1.event.2025-11-24.notice.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
+   │  │  ├─ 1.event.2025-11-24.notice.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
+   │  │  ├─ 1.event.2025-12-11.fee.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
+   │  │  ├─ 1.event.2025-12-11.document.pdf
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: failed
+"
+`;
