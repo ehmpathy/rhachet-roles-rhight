@@ -762,7 +762,8 @@ fetch_prosecution_documents() {
       else
         # OCR the PDF (use absolute path to transcribe.pdf for cwd independence)
         local transcribe_err
-        transcribe_err=$(bash "$TRANSCRIBE_CMD" "$pdf_path" --into markdown 2>&1 >/dev/null) || {
+        # capture both stdout and stderr to see error messages
+        transcribe_err=$(bash "$TRANSCRIBE_CMD" "$pdf_path" --into markdown 2>&1) || {
           echo "retrieval:${retrieval_status}|transcription:failed|error:transcribe failed: $transcribe_err" > "$status_file"
           exit 1
         }
