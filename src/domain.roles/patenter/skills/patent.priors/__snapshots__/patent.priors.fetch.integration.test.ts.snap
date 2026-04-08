@@ -29,7 +29,11 @@ note: use application numbers, not publication numbers (US7654321B2)
 `;
 
 exports[`patent.priors.fetch.sh given: [case4] valid exid (LIVE API) when: [t0] fetch is called with valid USPTO exid then: patent is fetched from live API 1`] = `
-"🦅 got one,
+"
+   fetch metadata...    
+[K
+   fetch document list...    
+[K🦅 got one,
 
 🌎 patent.priors.fetch --exid 19399196
    ├─ title: Cutter and Drill Bit Design by Virtual Testing with Digitized Rocks
@@ -42,53 +46,53 @@ exports[`patent.priors.fetch.sh given: [case4] valid exid (LIVE API) when: [t0] 
    ├─ documents
    │  ├─ application: 6 documents
    │  │  ├─ 0.application.drawings-supplemental.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 0.application.application.xml
    │  │  │  └─ retrieval: unavailable
    │  │  ├─ 0.application.specification.xml
-   │  │  │  └─ retrieval: cached
+   │  │  │  └─ retrieval: fetched
    │  │  ├─ 0.application.claims.xml
-   │  │  │  └─ retrieval: cached
+   │  │  │  └─ retrieval: fetched
    │  │  ├─ 0.application.abstract.xml
-   │  │  │  └─ retrieval: cached
+   │  │  │  └─ retrieval: fetched
    │  │  └─ 0.application.drawings.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  ├─ prosecution: 11 documents
    │  │  ├─ 1.event.2025-11-24.document.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 1.event.2025-11-24.document.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 1.event.2025-11-24.document.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 1.event.2025-11-24.office-action.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 1.event.2025-11-24.document.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 1.event.2025-11-24.notice.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 1.event.2025-11-24.notice.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 1.event.2025-12-11.fee.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 1.event.2025-12-11.document.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 1.event.2025-12-11.document.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  │  ├─ 1.event.2026-03-19.document.pdf
-   │  │  │  ├─ retrieval: cached
-   │  │  │  └─ transcription: cached
+   │  │  │  ├─ retrieval: fetched
+   │  │  │  └─ transcription: fetched
    │  └─ grant: unavailable (not yet granted)
    ├─ cache: .cache/patents/19399196/
    └─ hint: tree -f .cache/patents/19399196

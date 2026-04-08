@@ -91,26 +91,23 @@ describe('patent.priors.fetch.sh', () => {
     // if this test passes with a mock, the test suite is broken
     // note: USPTO API requires APPLICATION numbers (8 digits), not publication numbers
     const knownExid = '19399196';
-    const gitRoot = spawnSync('git', ['rev-parse', '--show-toplevel'], {
-      encoding: 'utf-8',
-    }).stdout.trim();
-    const cacheDir = path.join(gitRoot, '.cache', 'patents', knownExid);
-    const metaPath = path.join(cacheDir, '0.overview.meta.json');
-    const docPath = path.join(cacheDir, '0.overview.doc.xml');
 
-    // NOTE: we do NOT delete the cache here because:
-    // 1. fresh fetch with OCR takes > 5 minutes (9 PDFs * 30s OCR each)
-    // 2. case7 (--cache skip) already verifies fresh fetch works
-    // 3. if cache has valid data, it proves the API worked at some point
-    //
-    // if you need to test fresh fetch, run: rm -rf .cache/patents/19399196
+    // use isolated temp directory to ensure fresh fetch (no stale cache)
+    const tempDir = genTempDir({
+      slug: 'fetch-live-api',
+      git: true,
+    });
+
+    const cacheDir = path.join(tempDir, '.cache', 'patents', knownExid);
+    const metaPath = path.join(cacheDir, '0.overview.meta.json');
 
     when('[t0] fetch is called with valid USPTO exid', () => {
       then('patent is fetched from live API', () => {
-        // fresh fetch requires metadata + doc + prosecution docs, takes > 60s
+        // fresh fetch requires metadata + doc + prosecution docs + OCR
         const result = runFetch({
+          cwd: tempDir,
           fetchArgs: ['--exid', knownExid],
-          timeout: 180000, // 3 minutes
+          timeout: 600000, // 10 minutes for full fetch + OCR
         });
 
         // DEBUG: always show stderr to diagnose document fetch issues
