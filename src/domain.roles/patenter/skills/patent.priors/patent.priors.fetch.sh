@@ -160,12 +160,21 @@ check_vision_api_key() {
   fi
   VISION_API_KEY_CHECKED="true"
 
-  # check if Google Cloud credentials already set in environment
+  # check if Google Cloud credentials already set in environment (file path)
   if [[ -n "${GOOGLE_APPLICATION_CREDENTIALS:-}" && -f "$GOOGLE_APPLICATION_CREDENTIALS" ]]; then
     return 0
   fi
 
-  # fetch from keyrack and provision credentials file
+  # check if credentials available as env var (CI injects secret via env)
+  if [[ -n "${GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS:-}" ]]; then
+    # write credentials to temp file and export for child processes
+    VISION_CREDS_TEMP_FILE=$(mktemp --suffix=.json)
+    echo "$GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS" > "$VISION_CREDS_TEMP_FILE"
+    export GOOGLE_APPLICATION_CREDENTIALS="$VISION_CREDS_TEMP_FILE"
+    return 0
+  fi
+
+  # fall back to keyrack (local dev)
   # use full slug format (org.env.KEY) to work from any directory
   local keyrack_json
   keyrack_json=$(rhx keyrack get --key ehmpathy.test.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS --json 2>&1) || {
@@ -753,7 +762,8 @@ fetch_prosecution_documents() {
       else
         # OCR the PDF (use absolute path to transcribe.pdf for cwd independence)
         local transcribe_err
-        transcribe_err=$(bash "$TRANSCRIBE_CMD" "$pdf_path" --into markdown 2>&1 >/dev/null) || {
+        # capture both stdout and stderr to see error messages
+        transcribe_err=$(bash "$TRANSCRIBE_CMD" "$pdf_path" --into markdown 2>&1) || {
           echo "retrieval:${retrieval_status}|transcription:failed|error:transcribe failed: $transcribe_err" > "$status_file"
           exit 1
         }

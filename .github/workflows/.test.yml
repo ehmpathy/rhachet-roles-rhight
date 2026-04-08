@@ -221,6 +221,9 @@ jobs:
       - name: start:livedb:dev
         run: npm run start:livedb:dev --if-present
 
+      - name: install poppler-utils (for pdf ocr)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
+
       - name: build
         run: npm run build
 
@@ -295,6 +298,9 @@ jobs:
 
       - name: start:livedb:dev
         run: npm run start:livedb:dev --if-present
+
+      - name: install poppler-utils (for pdf ocr)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils
 
       - name: build
         run: npm run build

@@ -82,113 +82,111 @@ describe('transcribe.pdf', () => {
     });
   });
 
-  given('[case5] valid scanned PDF (LIVE API)', () => {
-    // use a real prosecution document from the patent cache
-    const cacheDir = path.join(process.cwd(), '.cache/patents');
+  // skip live OCR tests in CI — requires Google Cloud credentials and local cache
+  const cacheDir = path.join(process.cwd(), '.cache/patents');
+  const hasCacheDir = fs.existsSync(cacheDir);
+  const hasGoogleCredentials =
+    !!process.env.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS;
 
-    when('[t0] OCR is performed on a real document', () => {
-      then('text is extracted and cached', () => {
-        // find a prosecution PDF in the cache
-        if (!fs.existsSync(cacheDir)) {
-          throw new Error(
-            'no patent cache found: run patent.priors.fetch first to populate cache',
-          );
-        }
+  given.runIf(hasCacheDir && hasGoogleCredentials)(
+    '[case5] valid scanned PDF (LIVE API)',
+    () => {
+      when('[t0] OCR is performed on a real document', () => {
+        then('text is extracted and cached', () => {
+          // look for exid directories with PDFs (e.g., .cache/patents/19399196/*.pdf)
+          const exidDirs = fs.readdirSync(cacheDir).filter((f) => {
+            const exidPath = path.join(cacheDir, f);
+            if (!fs.statSync(exidPath).isDirectory()) return false;
+            const pdfs = fs
+              .readdirSync(exidPath)
+              .filter((p) => p.endsWith('.pdf'));
+            return pdfs.length > 0;
+          });
 
-        // look for exid directories with PDFs (e.g., .cache/patents/19399196/*.pdf)
-        const exidDirs = fs.readdirSync(cacheDir).filter((f) => {
-          const exidPath = path.join(cacheDir, f);
-          if (!fs.statSync(exidPath).isDirectory()) return false;
+          if (exidDirs.length === 0) {
+            throw new Error(
+              'no prosecution documents found: run patent.priors.fetch first',
+            );
+          }
+
+          // find first PDF in first exid directory
+          const exidPath = path.join(cacheDir, exidDirs[0]!);
           const pdfs = fs
             .readdirSync(exidPath)
-            .filter((p) => p.endsWith('.pdf'));
-          return pdfs.length > 0;
+            .filter((f) => f.endsWith('.pdf'));
+
+          if (pdfs.length === 0) {
+            throw new Error(`no PDFs found in ${exidPath}`);
+          }
+
+          const testPdf = path.join(exidPath, pdfs[0]!);
+          const expectedCache = testPdf.replace('.pdf', '.md');
+
+          // remove cached result if extant (to force fresh OCR)
+          if (fs.existsSync(expectedCache)) {
+            fs.unlinkSync(expectedCache);
+          }
+
+          const result = runSkill([testPdf, '--into', 'markdown']);
+
+          // should succeed
+          expect(result.exitCode).toBe(0);
+          expect(result.stdout).toContain('🦅');
+          expect(result.stdout).toContain('transcribe.pdf');
+
+          // should have extracted text
+          expect(result.stdout).toContain('## Page');
+
+          // should have cached result
+          expect(fs.existsSync(expectedCache)).toBe(true);
+
+          // snapshot the output structure (not full text, too variable)
+          expect(
+            result.stdout.split('\n').slice(0, 10).join('\n'),
+          ).toMatchSnapshot();
         });
-
-        if (exidDirs.length === 0) {
-          throw new Error(
-            'no prosecution documents found: run patent.priors.fetch first',
-          );
-        }
-
-        // find first PDF in first exid directory
-        const exidPath = path.join(cacheDir, exidDirs[0]!);
-        const pdfs = fs.readdirSync(exidPath).filter((f) => f.endsWith('.pdf'));
-
-        if (pdfs.length === 0) {
-          throw new Error(`no PDFs found in ${exidPath}`);
-        }
-
-        const testPdf = path.join(exidPath, pdfs[0]!);
-        const expectedCache = testPdf.replace('.pdf', '.md');
-
-        // remove cached result if extant (to force fresh OCR)
-        if (fs.existsSync(expectedCache)) {
-          fs.unlinkSync(expectedCache);
-        }
-
-        const result = runSkill([testPdf, '--into', 'markdown']);
-
-        // should succeed
-        expect(result.exitCode).toBe(0);
-        expect(result.stdout).toContain('🦅');
-        expect(result.stdout).toContain('transcribe.pdf');
-
-        // should have extracted text
-        expect(result.stdout).toContain('## Page');
-
-        // should have cached result
-        expect(fs.existsSync(expectedCache)).toBe(true);
-
-        // snapshot the output structure (not full text, too variable)
-        expect(
-          result.stdout.split('\n').slice(0, 10).join('\n'),
-        ).toMatchSnapshot();
       });
-    });
 
-    when('[t1] cached result extant', () => {
-      then('cache is used instead of OCR', () => {
-        // find same PDF as above
-        if (!fs.existsSync(cacheDir)) {
-          throw new Error('no patent cache found');
-        }
+      when('[t1] cached result extant', () => {
+        then('cache is used instead of OCR', () => {
+          const exidDirs = fs.readdirSync(cacheDir).filter((f) => {
+            const exidPath = path.join(cacheDir, f);
+            if (!fs.statSync(exidPath).isDirectory()) return false;
+            const pdfs = fs
+              .readdirSync(exidPath)
+              .filter((p) => p.endsWith('.pdf'));
+            return pdfs.length > 0;
+          });
 
-        const exidDirs = fs.readdirSync(cacheDir).filter((f) => {
-          const exidPath = path.join(cacheDir, f);
-          if (!fs.statSync(exidPath).isDirectory()) return false;
+          if (exidDirs.length === 0) {
+            throw new Error('no prosecution documents found');
+          }
+
+          const exidPath = path.join(cacheDir, exidDirs[0]!);
           const pdfs = fs
             .readdirSync(exidPath)
-            .filter((p) => p.endsWith('.pdf'));
-          return pdfs.length > 0;
+            .filter((f) => f.endsWith('.pdf'));
+
+          if (pdfs.length === 0) {
+            throw new Error(`no PDFs found in ${exidPath}`);
+          }
+
+          const testPdf = path.join(exidPath, pdfs[0]!);
+          const expectedCache = testPdf.replace('.pdf', '.md');
+
+          // ensure cache extant from previous test
+          if (!fs.existsSync(expectedCache)) {
+            throw new Error('cache should exist from previous test');
+          }
+
+          const result = runSkill([testPdf, '--into', 'markdown']);
+
+          // should succeed and indicate cache hit
+          expect(result.exitCode).toBe(0);
+          expect(result.stdout).toContain('found in cache');
+          expect(result.stdout).toMatchSnapshot();
         });
-
-        if (exidDirs.length === 0) {
-          throw new Error('no prosecution documents found');
-        }
-
-        const exidPath = path.join(cacheDir, exidDirs[0]!);
-        const pdfs = fs.readdirSync(exidPath).filter((f) => f.endsWith('.pdf'));
-
-        if (pdfs.length === 0) {
-          throw new Error(`no PDFs found in ${exidPath}`);
-        }
-
-        const testPdf = path.join(exidPath, pdfs[0]!);
-        const expectedCache = testPdf.replace('.pdf', '.md');
-
-        // ensure cache extant from previous test
-        if (!fs.existsSync(expectedCache)) {
-          throw new Error('cache should exist from previous test');
-        }
-
-        const result = runSkill([testPdf, '--into', 'markdown']);
-
-        // should succeed and indicate cache hit
-        expect(result.exitCode).toBe(0);
-        expect(result.stdout).toContain('found in cache');
-        expect(result.stdout).toMatchSnapshot();
       });
-    });
-  });
+    },
+  );
 });
