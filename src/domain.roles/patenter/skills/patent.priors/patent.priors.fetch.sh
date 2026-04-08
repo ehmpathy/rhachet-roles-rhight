@@ -160,12 +160,21 @@ check_vision_api_key() {
   fi
   VISION_API_KEY_CHECKED="true"
 
-  # check if Google Cloud credentials already set in environment
+  # check if Google Cloud credentials already set in environment (file path)
   if [[ -n "${GOOGLE_APPLICATION_CREDENTIALS:-}" && -f "$GOOGLE_APPLICATION_CREDENTIALS" ]]; then
     return 0
   fi
 
-  # fetch from keyrack and provision credentials file
+  # check if credentials available as env var (CI injects secret via env)
+  if [[ -n "${GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS:-}" ]]; then
+    # write credentials to temp file and export for child processes
+    VISION_CREDS_TEMP_FILE=$(mktemp --suffix=.json)
+    echo "$GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS" > "$VISION_CREDS_TEMP_FILE"
+    export GOOGLE_APPLICATION_CREDENTIALS="$VISION_CREDS_TEMP_FILE"
+    return 0
+  fi
+
+  # fall back to keyrack (local dev)
   # use full slug format (org.env.KEY) to work from any directory
   local keyrack_json
   keyrack_json=$(rhx keyrack get --key ehmpathy.test.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS --json 2>&1) || {

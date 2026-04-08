@@ -117,17 +117,22 @@ validate_format() {
 # credentials
 ######################################################################
 check_credentials() {
-  # use full slug format (org.env.KEY) to work from any directory
-  local keyrack_json
-  keyrack_json=$(rhx keyrack get --key ehmpathy.test.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS --json 2>&1) || {
-    print_blocked "keyrack failed: run 'rhx keyrack unlock --owner ehmpath --env test'"
-    exit 2
-  }
+  # check env var first (CI injects secret via env)
+  if [[ -n "${GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS:-}" ]]; then
+    SA_JSON="$GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS"
+  else
+    # fall back to keyrack (local dev)
+    local keyrack_json
+    keyrack_json=$(rhx keyrack get --key ehmpathy.test.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS --json 2>&1) || {
+      print_blocked "keyrack failed: run 'rhx keyrack unlock --owner ehmpath --env test'"
+      exit 2
+    }
 
-  SA_JSON=$(echo "$keyrack_json" | jq -r '.grant.key.secret')
-  if [[ -z "$SA_JSON" || "$SA_JSON" == "null" ]]; then
-    print_blocked "keyrack returned no secret"
-    exit 2
+    SA_JSON=$(echo "$keyrack_json" | jq -r '.grant.key.secret')
+    if [[ -z "$SA_JSON" || "$SA_JSON" == "null" ]]; then
+      print_blocked "keyrack returned no secret"
+      exit 2
+    fi
   fi
 
   # write temp credentials file
