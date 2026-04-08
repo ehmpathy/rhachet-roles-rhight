@@ -1,0 +1,15 @@
+{
+  "query": "AI",
+  "results": [
+    {
+      "applicationNumber": "US20220111111A1",
+      "title": "Artificial Intelligence System for Data Analysis",
+      "abstract": "A system that uses artificial intelligence to analyze data patterns and provide insights for business decision support.",
+      "publicationDate": "2022-01-15",
+      "inventors": ["Eva Martinez"],
+      "assignee": "DataAI Inc."
+    }
+  ],
+  "totalResults": 1,
+  "alert": "query may be too vague - consider more specific terms"
+}

@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`asStatusEmoji.sh given: [case8] snapshot coverage when: [t0] all known statuses are mapped then: mapping table matches snapshot 1`] = `
+[
+  {
+    "emoji": "🌱",
+    "status": "Docketed New Case - Ready for Examination",
+  },
+  {
+    "emoji": "🌱",
+    "status": "Ready for Examination",
+  },
+  {
+    "emoji": "⏳",
+    "status": "Application Dispatched from Preexam, Not Yet Docketed",
+  },
+  {
+    "emoji": "⏳",
+    "status": "Application Undergoing Preexam Processing",
+  },
+  {
+    "emoji": "⏳",
+    "status": "Non Final Action Mailed",
+  },
+  {
+    "emoji": "⏳",
+    "status": "Non-Final Action Mailed",
+  },
+  {
+    "emoji": "🚫",
+    "status": "Final Rejection Mailed",
+  },
+  {
+    "emoji": "🚫",
+    "status": "Final Action Mailed",
+  },
+  {
+    "emoji": "✨",
+    "status": "Notice of Allowance Mailed",
+  },
+  {
+    "emoji": "🏆",
+    "status": "Patented",
+  },
+  {
+    "emoji": "🏆",
+    "status": "Patent Issued",
+  },
+  {
+    "emoji": "💀",
+    "status": "Abandoned",
+  },
+  {
+    "emoji": "💀",
+    "status": "Abandoned - Failure to Respond",
+  },
+  {
+    "emoji": "📋",
+    "status": "(empty)",
+  },
+  {
+    "emoji": "📋",
+    "status": "Some Unknown Status",
+  },
+]
+`;

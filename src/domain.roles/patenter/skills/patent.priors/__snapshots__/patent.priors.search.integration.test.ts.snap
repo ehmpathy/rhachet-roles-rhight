@@ -1,0 +1,580 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`patent.priors.search.sh given: [case1] --help when: [t0] help is requested then: usage is shown 1`] = `
+"usage: patent.priors.search.sh --query "search terms"
+
+options:
+  --query   search terms (required)
+  --limit   max results (default: 20)
+  --since   filter by date (YYYY-MM-DD)
+  --until   filter by date (YYYY-MM-DD)
+"
+`;
+
+exports[`patent.priors.search.sh given: [case2] query too short when: [t0] search is called with 2 char query then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ query too short
+"
+`;
+
+exports[`patent.priors.search.sh given: [case3] no query provided when: [t0] search is called without --query then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ query required
+"
+`;
+
+exports[`patent.priors.search.sh given: [case4] valid search query (LIVE API) when: [t0] search is called with specific terms then: real patents are returned from live API 1`] = `
+"🦅 lets soar and see,
+
+🌎 patent.priors.search --query "wireless" --limit 20
+   ├─ results: 20 patents
+   └─ patents
+      │
+      ├─ application 18724967
+      │  ├─ title = APPARATUS AND METHOD FOR CONTORLLING TERMINAL PROCESSING TIME DURING RANDOM ACCESS PROCEDURE IN WIRELESS COMMUNICATION SYSTEM
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 📋 Sent to Classification contractor
+      │  ├─ inventor = Seungjin AHN, applicant = LG Electronics Inc.
+      │  └─ created on = 2026-03-31, updated on = 2026-04-06
+      │
+      ├─ application 90016094
+      │  ├─ title = PROTECTION METHODS FOR WIRELESS TRANSMISSIONS
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 10020919
+      │  └─ created on = 2026-03-27, updated on = 2026-04-06
+      │
+      ├─ application 90016083
+      │  ├─ title = METHOD AND SYSTEM FOR OPERATING A WIRELESS ACCESS POINT FOR PROVIDING ACCESS TO A NETWORK
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 9258309
+      │  └─ created on = 2026-03-24, updated on = 2026-04-06
+      │
+      ├─ application 19125213
+      │  ├─ title = WIRELESS AUDIO TRANSMITTING APPARATUS, WIRELESS AUDIO RECEIVING APPARATUS, AND WIRELESS AUDIO OUTPUT SYSTEM INCLUDING SAME
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Dawoon LEE, applicant = LG ELECTRONICS INC.
+      │  └─ created on = 2026-03-20, updated on = 2026-03-25
+      │
+      ├─ application 90016055
+      │  ├─ title = HIGH PERFORMANCE WIRELESS NETWORKS USING DISTRIBUTED CONTROL
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 7885243
+      │  └─ created on = 2026-03-17, updated on = 2026-03-24
+      │
+      ├─ application 18724588
+      │  ├─ title = METHOD AND DEVICE FOR PERFORMING COMMUNICATION BASED ON BEAM IN WIRELESS COMMUNICATION SYSTEM
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Giwon PARK, applicant = LG ELECTRONICS INC.
+      │  └─ created on = 2026-03-11, updated on = 2026-03-19
+      │
+      ├─ application 90016008
+      │  ├─ title = HEADER REPETITION IN PACKET-BASED OFDM SYSTEMS
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 11777776
+      │  └─ created on = 2026-02-26, updated on = 2026-03-17
+      │
+      ├─ application 90016009
+      │  ├─ title = NON-TRANSITORY COMPUTER-READABLE INFORMATION STORAGE MEDIA FOR VARIABLE HEADER REPETITION IN A WIRELESS OFDM NETWORK
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 10917272
+      │  └─ created on = 2026-02-26, updated on = 2026-03-17
+      │
+      ├─ application 90015996
+      │  ├─ title = MOBILITY EXTENSIONS FOR WIRELESS MULTIPLE RADIO MESH
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 7894385
+      │  └─ created on = 2026-02-25, updated on = 2026-03-17
+      │
+      ├─ application 90015998
+      │  ├─ title = HIGH PERFORMANCE WIRELESS NETWORKS USING DISTRIBUTED CONTROL
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 7420952
+      │  └─ created on = 2026-02-25, updated on = 2026-03-17
+      │
+      ├─ application 19547158
+      │  ├─ title = WIRELESS COMMUNICATION DEVICE AND WIRELESS COMMUNICATION METHOD
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = ⏳ Application Undergoing Preexam Processing
+      │  ├─ inventor = Toshihisa NABETANI, applicant = INTERNATIONAL SEMICONDUCTOR GROUP
+      │  └─ created on = 2026-02-23, updated on = 2026-02-23
+      │
+      ├─ application 19109987
+      │  ├─ title = METHOD AND APPARATUS FOR RESOURCE ELEMENT DETERRMINATION IN WIRELESS COMMUNICATIONS
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Lu WU, applicant = Shanghai Langbo Communication Technology Company Limited
+      │  └─ created on = 2026-02-12, updated on = 2026-03-16
+      │
+      ├─ application 19109991
+      │  ├─ title = METHOD AND APPARATUS FOR DETERMINING AN EXECUTION TIME OF RAMDOM ACCESS RESOURCE SELECTION IN WIRELESS COMMUNICATIONS
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Qiaoling YU, applicant = Shanghai Langbo Communication Technology Company Limited
+      │  └─ created on = 2026-02-10, updated on = 2026-03-16
+      │
+      ├─ application 90015943
+      │  ├─ title = WIRELESS COMMUNICATION METHOD USING BSS IDENTIFIER AND WIRELESS COMMUNICATION TERMINAL USING SAME
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Determination - Reexamination Ordered
+      │  ├─ inventor = 11284475
+      │  └─ created on = 2026-02-03, updated on = 2026-03-10
+      │
+      ├─ application 90015932
+      │  ├─ title = METHOD AND SYSTEM FOR OPERATING A WIRELESS ACCESS POINT FOR PROVIDING ACCESS TO A NETWORK
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 9258309
+      │  └─ created on = 2026-02-02, updated on = 2026-02-09
+      │
+      ├─ application 90015925
+      │  ├─ title = WIRELESS COMMUNICATION TERMINAL AND WIRELESS COMMUNICATION METHOD FOR MULTI-USER CONCURRENT TRANSMISSION
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Determination - Reexamination Ordered
+      │  ├─ inventor = 12166587
+      │  └─ created on = 2026-01-30, updated on = 2026-02-26
+      │
+      ├─ application 19507294
+      │  ├─ title = WIRELESS COMMUNICATION METHOD, USER EQUIPMENT, AND STORAGE MEDIUM
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Marcus WONG, applicant = INNOPEAK TECHNOLOGY, INC.
+      │  └─ created on = 2026-01-30, updated on = 2026-03-30
+      │
+      ├─ application 19456150
+      │  ├─ title = Wireless Power Transfer Arrangement
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Jonas Enderlin, applicant = Delta Electronics (Thailand) Public Co., Ltd.
+      │  └─ created on = 2026-01-22, updated on = 2026-02-04
+      │
+      ├─ application 19456145
+      │  ├─ title = Base Station, Wireless Communications Network And Methods For Operating The Same
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Martin KURRAS, applicant = Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+      │  └─ created on = 2026-01-22, updated on = 2026-03-24
+      │
+      └─ application 19447545
+         ├─ title = METHOD AND APPARATUS FOR TRANSMITTING AND RECEIVING WIRELESS SIGNAL IN WIRELESS COMMUNICATION SYSTEM
+         ├─ grain = ⚙️  utility
+         ├─ status = 🌱 Docketed New Case - Ready for Examination
+         ├─ inventor = Seonwook KIM, applicant = LG ELECTRONICS INC.
+         └─ created on = 2026-01-13, updated on = 2026-01-29
+
+⚠️  query may be too vague (only 1 keywords)
+"
+`;
+
+exports[`patent.priors.search.sh given: [case5] query too long when: [t0] search is called with >1000 char query then: error is returned 1`] = `
+"🦅 that wont do...
+   └─ query too long
+"
+`;
+
+exports[`patent.priors.search.sh given: [case6] vague query with few keywords (LIVE API) when: [t0] search is called with only 2 keywords then: results returned with vague query alert 1`] = `
+"🦅 lets soar and see,
+
+🌎 patent.priors.search --query "neural network" --limit 20
+   ├─ results: 20 patents
+   └─ patents
+      │
+      ├─ application 90016106
+      │  ├─ title = CASCADED COMPUTING FOR CONVOLUTIONAL NEURAL NETWORKS
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 11775831
+      │  └─ created on = 2026-03-31, updated on = 2026-04-07
+      │
+      ├─ application 90016096
+      │  ├─ title = APPARATUS AND METHOD FOR CONFIGURING ON-DEMAND CONTENT DELIVERING OVERLAY NETWORK
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 9112934
+      │  └─ created on = 2026-03-27, updated on = 2026-04-06
+      │
+      ├─ application 90016080
+      │  ├─ title = METHOD FOR MANAGING UPDATES TO A DISTRIBUTED NETWORK WITH NO INTERRUPTION TO OPERATIONS
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 12113850
+      │  └─ created on = 2026-03-24, updated on = 2026-03-31
+      │
+      ├─ application 90016079
+      │  ├─ title = METHOD FOR MANAGING UPDATES TO A DISTRIBUTED NETWORK INDEPENDENT OF HARDWARE
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 12113851
+      │  └─ created on = 2026-03-24, updated on = 2026-03-31
+      │
+      ├─ application 90016083
+      │  ├─ title = METHOD AND SYSTEM FOR OPERATING A WIRELESS ACCESS POINT FOR PROVIDING ACCESS TO A NETWORK
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 9258309
+      │  └─ created on = 2026-03-24, updated on = 2026-04-06
+      │
+      ├─ application 90016081
+      │  ├─ title = METHOD FOR MANAGING UPDATES TO A DISTRIBUTED NETWORK THROUGH AN APPLICATION MANAGEMENT PORTAL
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 12126674
+      │  └─ created on = 2026-03-24, updated on = 2026-03-31
+      │
+      ├─ application 19126748
+      │  ├─ title = METHOD FOR DIFFERENTIATING NEURAL CREST STEM CELLS COMPRISING AXIAL SPECIFICATION INFORMATION
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = ⏳ Application Undergoing Preexam Processing
+      │  ├─ inventor = Yong Jun KIM, applicant = BLESS BIOTHERAPEUTICS INC.
+      │  └─ created on = 2026-03-18, updated on = 2025-05-02
+      │
+      ├─ application 90016032
+      │  ├─ title = SYSTEMS INCLUDING DEVICE AND NETWORK SIMULATION FOR MOBILE APPLICATION DEVELOPMENT
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 10691579
+      │  └─ created on = 2026-03-06, updated on = 2026-03-19
+      │
+      ├─ application 90016033
+      │  ├─ title = SYSTEMS INCLUDING DEVICE AND NETWORK SIMULATION FOR MOBILE APPLICATION DEVELOPMENT
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 9971678
+      │  └─ created on = 2026-03-06, updated on = 2026-03-19
+      │
+      ├─ application 90016031
+      │  ├─ title = SYSTEMS INCLUDING NETWORK SIMULATION FOR MOBILE APPLICATION DEVELOPMENT AND ONLINE MARKETPLACES FOR MOBILE APPLICATION DISTRIBUTION, REVENUE SHARING, CONTENT DISTRIBUTION, OR COMBINATIONS THEREOF
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 8924192
+      │  └─ created on = 2026-03-06, updated on = 2026-03-11
+      │
+      ├─ application 90016034
+      │  ├─ title = System Including Network Simulation for Mobile Application Development
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 9298864
+      │  └─ created on = 2026-03-06, updated on = 2026-03-19
+      │
+      ├─ application 90016009
+      │  ├─ title = NON-TRANSITORY COMPUTER-READABLE INFORMATION STORAGE MEDIA FOR VARIABLE HEADER REPETITION IN A WIRELESS OFDM NETWORK
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 10917272
+      │  └─ created on = 2026-02-26, updated on = 2026-03-17
+      │
+      ├─ application 90015994
+      │  ├─ title = GLOBAL IP-BASED SERVICE-ORIENTED NETWORK ARCHITECTURE
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 9485176
+      │  └─ created on = 2026-02-25, updated on = 2026-03-09
+      │
+      ├─ application 19111800
+      │  ├─ title = VISUAL FIELD ESTIMATION APPARATUS, NEURAL NETWORK MANUFACTURING METHOD, AND PROGRAM
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Makoto KOYAMA
+      │  └─ created on = 2026-02-20, updated on = 2026-03-26
+      │
+      ├─ application 19113599
+      │  ├─ title = NETWORK SATELLITE COVERAGE DATA AUTHORIZATION METHOD, DEVICE, AND STORAGE MEDIUM
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Wei LU, applicant = BEIJING XIAOMI MOBILE SOFTWARE CO., LTD.
+      │  └─ created on = 2026-02-16, updated on = 2026-02-24
+      │
+      ├─ application 19112685
+      │  ├─ title = Network Delay or Jitter Processing Method and Apparatus, and Communication Device
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Yan Han, applicant = CHINA MOBILE COMMUNICATIONS GROUP CO., LTD.
+      │  └─ created on = 2026-02-13, updated on = 2026-03-05
+      │
+      ├─ application 35528816
+      │  ├─ title = Network video recorder
+      │  ├─ grain = 🎨 design
+      │  ├─ status = ⏳ Application Dispatched from Preexam, Not Yet Docketed
+      │  ├─ inventor = Evgeniya Medvedeva, applicant = AJAX SYSTEMS CYPRUS HOLDINGS LTD
+      │  └─ created on = 2026-02-12, updated on = 2026-04-01
+      │
+      ├─ application 19120216
+      │  ├─ title = DYNAMIC CONTENT DELIVERY NETWORK SWITCHING METHOD
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = CHENG HUNG YAO, applicant = Wise Point Solutions Technology Ltd.
+      │  └─ created on = 2026-02-10, updated on = 2026-03-04
+      │
+      ├─ application 90015947
+      │  ├─ title = SYSTEM AND METHOD FOR CONTENT RETRIEVAL FROM REMOTE NETWORK REGIONS
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 11503105
+      │  └─ created on = 2026-02-04, updated on = 2026-03-02
+      │
+      └─ application 90015932
+         ├─ title = METHOD AND SYSTEM FOR OPERATING A WIRELESS ACCESS POINT FOR PROVIDING ACCESS TO A NETWORK
+         ├─ grain = 🔬 reexam
+         ├─ status = 📋 Reexam Assigned to Examiner for Determination
+         ├─ inventor = 9258309
+         └─ created on = 2026-02-02, updated on = 2026-02-09
+
+⚠️  query may be too vague (only 2 keywords)
+"
+`;
+
+exports[`patent.priors.search.sh given: [case7] unknown argument when: [t0] search is called with invalid flag then: error is returned 1`] = `
+"unknown argument: --invalid-flag
+"
+`;
+
+exports[`patent.priors.search.sh given: [case8] fastener driver search (LIVE API) when: [t0] search is called with technical term then: real fastener/driver patents are returned 1`] = `
+"🦅 lets soar and see,
+
+🌎 patent.priors.search --query "fastener driver" --limit 10
+   ├─ results: 10 patents
+   └─ patents
+      │
+      ├─ application 19488777
+      │  ├─ title = Fastener, Male-Screw-Side Member, and Female-Screw-Side Member
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Yonefusa UCHIDA, applicant = pate.to Co., Ltd
+      │  └─ created on = 2026-03-20, updated on = 2026-04-02
+      │
+      ├─ application 19110979
+      │  ├─ title = DETACHABLE MOVING SNAP-FIT FASTENER
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Bing LIU, applicant = SHENZHEN GREPOW BATTERY CO., LTD
+      │  └─ created on = 2025-12-30, updated on = 2026-01-22
+      │
+      ├─ application 19418897
+      │  ├─ title = SCAN DRIVER
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = ⏳ Application Undergoing Preexam Processing
+      │  ├─ inventor = Hai Jung IN, applicant = Samsung Display Co., Ltd.
+      │  └─ created on = 2025-12-12, updated on = 2025-12-12
+      │
+      ├─ application 19413839
+      │  ├─ title = INTEGRATED INVERTING/NON-INVERTING RECUPERATING HIGH-VOLTAGE-CONVERSION-RATIO CAPACITIVE LOAD DRIVER
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Björn Oliver Eversmann, applicant = Infineon Technologies AG
+      │  └─ created on = 2025-12-09, updated on = 2025-12-29, published on = 2026-04-02
+      │
+      ├─ application 19413004
+      │  ├─ title = MACHINE LEARNING SYSTEM FOR MODIFYING ADVANCED DRIVER ASSISTANCE SYSTEMS (ADAS) BEHAVIOR TO PROVIDE OPTIMUM VEHICLE TRAJECTORY IN A REGION
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Akihito Nakamura, applicant = Toyota Jidosha Kabushiki Kaisha
+      │  └─ created on = 2025-12-09, updated on = 2025-12-28, published on = 2026-04-02
+      │
+      ├─ application 19413591
+      │  ├─ title = GATE DRIVER AND DISPLAY DEVICE INCLUDING THE SAME
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = KYUNGHOON CHUNG, applicant = Samsung Display Co., LTD.
+      │  └─ created on = 2025-12-09, updated on = 2025-12-29, published on = 2026-04-02
+      │
+      ├─ application 19412330
+      │  ├─ title = Display Assembly and Interlocking Fastener Thereof
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Ryan J. Millman, applicant = Gallery Blocks LLC d/b/a Artsy Couture
+      │  └─ created on = 2025-12-08, updated on = 2025-12-28, published on = 2026-04-02
+      │
+      ├─ application 19405414
+      │  ├─ title = MOTOR CARRIER AND DRIVER SAFETY SCORE PREDICTION SYSTEMS AND METHODS
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = ⏳ Non Final Action Mailed
+      │  ├─ inventor = Ms. Oleksandra Dobrovolska
+      │  └─ created on = 2025-12-02, updated on = 2026-02-20, published on = 2026-03-26
+      │
+      ├─ application 19398513
+      │  ├─ title = LOW NOISE HIGH FREQUENCY COIL DRIVER
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Ryan Anthony Jones, applicant = ColdQuanta, Inc.
+      │  └─ created on = 2025-11-24, updated on = 2025-12-10, published on = 2026-03-19
+      │
+      └─ application 19396945
+         ├─ title = DRIVER PROTECTION SYSTEM AND METHODS OF OPERATING THE SAME
+         ├─ grain = ⚙️  utility
+         ├─ status = 🌱 Docketed New Case - Ready for Examination
+         ├─ inventor = Edward Martin Dougherty III
+         └─ created on = 2025-11-21, updated on = 2025-12-09, published on = 2026-03-19
+
+⚠️  query may be too vague (only 2 keywords)
+"
+`;
+
+exports[`patent.priors.search.sh given: [case9] rotary saw search (LIVE API) when: [t0] search is called with technical term then: real saw/rotary patents are returned 1`] = `
+"🦅 lets soar and see,
+
+🌎 patent.priors.search --query "rotary saw" --limit 10
+   ├─ results: 10 patents
+   └─ patents
+      │
+      ├─ application 35528347
+      │  ├─ title = Tooth for rotary disc or drum of forestry machinery
+      │  ├─ grain = 🎨 design
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Charles HENRICHON, applicant = QUADCO INC.
+      │  └─ created on = 2025-12-17, updated on = 2026-03-02
+      │
+      ├─ application 19411922
+      │  ├─ title = FILTER BAG AND FILTER MODULE FOR A ROTARY DISK FILTER AND ROTARY DISK FILTER
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Thomas Kerl, applicant = HUBER SE
+      │  └─ created on = 2025-12-08, updated on = 2025-12-28, published on = 2026-04-02
+      │
+      ├─ application 19405526
+      │  ├─ title = HOLE SAW ARBOR HAVING AN ADJUSTABLE CONNECTION MECHANISM
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Bryan C. Ward, applicant = Milwaukee Electric Tool Corporation
+      │  └─ created on = 2025-12-02, updated on = 2025-12-16, published on = 2026-03-26
+      │
+      ├─ application 19406548
+      │  ├─ title = ROTARY ELECTRIC MACHINE CONTROL DEVICE
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Tsuyoshi SHINTATE, applicant = DENSO CORPORATION
+      │  └─ created on = 2025-12-02, updated on = 2026-01-28, published on = 2026-03-26
+      │
+      ├─ application 19403426
+      │  ├─ title = ROTARY DEVICE
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Kazuko TAKEUCHI, applicant = IHI Corporation
+      │  └─ created on = 2025-11-28, updated on = 2025-12-24, published on = 2026-03-19
+      │
+      ├─ application 19401701
+      │  ├─ title = HOUSING ASSEMBLY FOR ROTARY ENGINE AND METHOD OF MANUFACTURING THEREOF
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Jeremie BARBERGER, applicant = PRATT & WHITNEY CANADA CORP.
+      │  └─ created on = 2025-11-26, updated on = 2025-12-11, published on = 2026-03-19
+      │
+      ├─ application 19398653
+      │  ├─ title = RETAINING DEVICE FOR SECURING WOOD TO A SAW MILL
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = ⏳ Non Final Action Mailed
+      │  ├─ inventor = David Earl Grant
+      │  └─ created on = 2025-11-24, updated on = 2026-03-27, published on = 2026-03-19
+      │
+      ├─ application 19398584
+      │  ├─ title = Rotary Batch Preheater
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Jeffrey C. Alexander
+      │  └─ created on = 2025-11-24, updated on = 2025-12-18, published on = 2026-03-26
+      │
+      ├─ application 35527953
+      │  ├─ title = Saw blade (part of -)
+      │  ├─ grain = 🎨 design
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Markus Weissenbrunner, applicant = WINTERSTEIGER Solutions GmbH
+      │  └─ created on = 2025-11-17, updated on = 2026-02-23
+      │
+      └─ application 19389293
+         ├─ title = CONTROL DEVICE AND CONTROL PROGRAM FOR ROTARY ELECTRIC MACHINE SYSTEM
+         ├─ grain = ⚙️  utility
+         ├─ status = 🌱 Docketed New Case - Ready for Examination
+         ├─ inventor = Sho WASHIO, applicant = DENSO CORPORATION
+         └─ created on = 2025-11-14, updated on = 2025-12-27, published on = 2026-03-12
+
+⚠️  query may be too vague (only 2 keywords)
+"
+`;
+
+exports[`patent.priors.search.sh given: [case10] wireless transceiver search (LIVE API) when: [t0] search is called with technical term then: real wireless/transceiver patents are returned 1`] = `
+"🦅 lets soar and see,
+
+🌎 patent.priors.search --query "wireless transceiver" --limit 10
+   ├─ results: 10 patents
+   └─ patents
+      │
+      ├─ application 18724967
+      │  ├─ title = APPARATUS AND METHOD FOR CONTORLLING TERMINAL PROCESSING TIME DURING RANDOM ACCESS PROCEDURE IN WIRELESS COMMUNICATION SYSTEM
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 📋 Sent to Classification contractor
+      │  ├─ inventor = Seungjin AHN, applicant = LG Electronics Inc.
+      │  └─ created on = 2026-03-31, updated on = 2026-04-06
+      │
+      ├─ application 90016094
+      │  ├─ title = PROTECTION METHODS FOR WIRELESS TRANSMISSIONS
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 10020919
+      │  └─ created on = 2026-03-27, updated on = 2026-04-06
+      │
+      ├─ application 90016083
+      │  ├─ title = METHOD AND SYSTEM FOR OPERATING A WIRELESS ACCESS POINT FOR PROVIDING ACCESS TO A NETWORK
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 9258309
+      │  └─ created on = 2026-03-24, updated on = 2026-04-06
+      │
+      ├─ application 19125213
+      │  ├─ title = WIRELESS AUDIO TRANSMITTING APPARATUS, WIRELESS AUDIO RECEIVING APPARATUS, AND WIRELESS AUDIO OUTPUT SYSTEM INCLUDING SAME
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Dawoon LEE, applicant = LG ELECTRONICS INC.
+      │  └─ created on = 2026-03-20, updated on = 2026-03-25
+      │
+      ├─ application 90016055
+      │  ├─ title = HIGH PERFORMANCE WIRELESS NETWORKS USING DISTRIBUTED CONTROL
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 7885243
+      │  └─ created on = 2026-03-17, updated on = 2026-03-24
+      │
+      ├─ application 18724588
+      │  ├─ title = METHOD AND DEVICE FOR PERFORMING COMMUNICATION BASED ON BEAM IN WIRELESS COMMUNICATION SYSTEM
+      │  ├─ grain = ⚙️  utility
+      │  ├─ status = 🌱 Docketed New Case - Ready for Examination
+      │  ├─ inventor = Giwon PARK, applicant = LG ELECTRONICS INC.
+      │  └─ created on = 2026-03-11, updated on = 2026-03-19
+      │
+      ├─ application 90016008
+      │  ├─ title = HEADER REPETITION IN PACKET-BASED OFDM SYSTEMS
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 11777776
+      │  └─ created on = 2026-02-26, updated on = 2026-03-17
+      │
+      ├─ application 90016009
+      │  ├─ title = NON-TRANSITORY COMPUTER-READABLE INFORMATION STORAGE MEDIA FOR VARIABLE HEADER REPETITION IN A WIRELESS OFDM NETWORK
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 10917272
+      │  └─ created on = 2026-02-26, updated on = 2026-03-17
+      │
+      ├─ application 90015996
+      │  ├─ title = MOBILITY EXTENSIONS FOR WIRELESS MULTIPLE RADIO MESH
+      │  ├─ grain = 🔬 reexam
+      │  ├─ status = 📋 Reexam Assigned to Examiner for Determination
+      │  ├─ inventor = 7894385
+      │  └─ created on = 2026-02-25, updated on = 2026-03-17
+      │
+      └─ application 90015998
+         ├─ title = HIGH PERFORMANCE WIRELESS NETWORKS USING DISTRIBUTED CONTROL
+         ├─ grain = 🔬 reexam
+         ├─ status = 📋 Reexam Assigned to Examiner for Determination
+         ├─ inventor = 7420952
+         └─ created on = 2026-02-25, updated on = 2026-03-17
+
+⚠️  query may be too vague (only 2 keywords)
+"
+`;

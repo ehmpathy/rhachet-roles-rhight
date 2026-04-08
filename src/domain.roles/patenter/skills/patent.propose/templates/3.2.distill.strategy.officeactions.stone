@@ -1,0 +1,115 @@
+# 3.2.distill.strategy.officeactions
+
+anticipate examiner objections and prepare responses.
+
+---
+
+## likely rejections
+
+### 101 (subject matter eligibility)
+
+**risk level**: low / medium / high
+
+**why this risk**:
+
+
+
+**prepared response**:
+
+- [ ] show practical application
+- [ ] tie to technical improvement
+- [ ] add structural elements
+
+---
+
+### 102 (anticipation)
+
+**risk level**: low / medium / high
+
+**most likely reference**: <!-- exid and why -->
+
+
+
+**prepared response**:
+
+- [ ] distinguish element X
+- [ ] argue reference teaches away
+- [ ] file declaration
+
+---
+
+### 103 (obviousness)
+
+**risk level**: low / medium / high
+
+**most likely combination**: <!-- ref A + ref B -->
+
+
+
+**prepared response**:
+
+- [ ] argue no motivation to combine
+- [ ] show unexpected results
+- [ ] present secondary considerations
+
+---
+
+### 112 (definiteness)
+
+**risk level**: low / medium / high
+
+**potentially unclear terms**:
+
+-
+-
+
+**prepared response**:
+
+- [ ] add definitions to specification
+- [ ] clarify claim language
+- [ ] provide examples
+
+---
+
+## fallback positions
+
+if independent claims rejected:
+
+| scenario | fallback |
+|----------|----------|
+| claim 1 rejected | fall back to claim 2 (narrower) |
+| claim 5 rejected | fall back to claim 6 (narrower) |
+| all method claims rejected | pivot to system claims |
+
+---
+
+## examiner interview strategy
+
+**topics to discuss**:
+
+1.
+2.
+3.
+
+**concessions to consider**:
+
+-
+-
+
+**non-negotiables**:
+
+-
+-
+
+---
+
+## prosecution timeline
+
+| event | date | notes |
+|-------|------|-------|
+| file | | |
+| first office action (expected) | | |
+| response due | | |
+| second office action (expected) | | |
+| final response / appeal | | |
+

@@ -1,0 +1,97 @@
+# 3.2.distill.claims.patentable
+
+draft claims based on prior art analysis.
+
+---
+
+## independent claim 1 (method)
+
+```
+1. A method for [technical field], comprising:
+
+   a) [first step/element];
+
+   b) [second step/element]; and
+
+   c) [third step/element],
+
+   wherein [distinguishing limitation].
+```
+
+**novelty basis**: <!-- what makes this claim novel over prior art? -->
+
+
+
+---
+
+## dependent claims (method)
+
+```
+2. The method of claim 1, wherein [narrowing limitation].
+
+3. The method of claim 1, wherein [alternative limitation].
+
+4. The method of claim 2, further comprising [additional step].
+```
+
+---
+
+## independent claim 5 (system)
+
+```
+5. A system for [technical field], comprising:
+
+   a processor configured to:
+     i) [first function];
+     ii) [second function]; and
+     iii) [third function]; and
+
+   a memory storing instructions that, when executed, cause the processor to perform the functions.
+```
+
+**novelty basis**:
+
+
+
+---
+
+## dependent claims (system)
+
+```
+6. The system of claim 5, wherein [narrowing limitation].
+
+7. The system of claim 5, further comprising [additional component].
+```
+
+---
+
+## claim tree
+
+```
+claim 1 (method - independent)
+├── claim 2 (depends on 1)
+├── claim 3 (depends on 1)
+└── claim 4 (depends on 2)
+
+claim 5 (system - independent)
+├── claim 6 (depends on 5)
+└── claim 7 (depends on 5)
+```
+
+---
+
+## claim coverage matrix
+
+| feature | claim 1 | claim 2 | claim 5 | claim 6 |
+|---------|---------|---------|---------|---------|
+| core innovation | ✓ | ✓ | ✓ | ✓ |
+| variant A | | ✓ | | ✓ |
+| variant B | | | | |
+
+---
+
+## notes
+
+<!-- any concerns about claim scope, prior art, or prosecution strategy -->
+
+

@@ -1,0 +1,112 @@
+# 5.1.deliver.patent.latex
+
+produce the patent application in latex format.
+
+---
+
+## output files
+
+```
+output/
+├── patent-application.tex    # main document
+├── claims.tex                # claims section
+├── figures/                  # figure files
+│   ├── fig1.pdf
+│   └── fig2.pdf
+└── patent-application.pdf    # compiled output
+```
+
+---
+
+## latex template
+
+```latex
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+\title{[TITLE]}
+\author{[INVENTORS]}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Field of the Invention}
+[FIELD]
+
+\section*{Background of the Invention}
+[BACKGROUND]
+
+\section*{Summary of the Invention}
+[SUMMARY]
+
+\section*{Brief Description of the Drawings}
+[FIGURE DESCRIPTIONS]
+
+\section*{Detailed Description}
+[DETAILED DESCRIPTION]
+
+\section*{Claims}
+\begin{enumerate}
+  \item [CLAIM 1]
+  \item [CLAIM 2]
+  % ...
+\end{enumerate}
+
+\section*{Abstract}
+[ABSTRACT]
+
+\end{document}
+```
+
+---
+
+## checklist
+
+### content
+
+- [ ] title filled in
+- [ ] inventors listed
+- [ ] field of invention complete
+- [ ] background written
+- [ ] summary written
+- [ ] figures referenced correctly
+- [ ] detailed description complete
+- [ ] all claims included
+- [ ] abstract under 150 words
+
+### format
+
+- [ ] 12pt font
+- [ ] 1 inch margins
+- [ ] double-spaced (if required)
+- [ ] claims numbered
+- [ ] figures labeled
+
+### compilation
+
+- [ ] latex compiles without errors
+- [ ] pdf generated
+- [ ] all figures render
+- [ ] page numbers correct
+
+---
+
+## delivery
+
+| item | status |
+|------|--------|
+| latex source | |
+| compiled pdf | |
+| figures (original) | |
+| figures (embedded) | |
+
+---
+
+## notes
+
+<!-- any issues or follow-ups -->
+
+

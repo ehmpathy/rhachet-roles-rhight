@@ -1,0 +1,164 @@
+# 🦅 rhachet-roles-rhight
+
+legal rights roles and skills, via [rhachet](https://github.com/ehmpathy/rhachet)
+
+## purpose
+
+rhight = rights + right
+
+this repo provides roles for legal research, analysis, and preparation:
+- legal rights — what you're entitled to
+- what's right — the correct interpretation (legally, intentionally, morally)
+- who's right — dispute resolution
+
+law is code. rules that govern behavior, enforced by systems. these roles help navigate that code.
+
+## disclaimer
+
+> ⚠️ **this tool is for informational purposes only and does not constitute legal advice.** search results and analyses are not exhaustive and should not be relied upon for legal decisions. consult a licensed attorney for any legal matters — patents, copyrights, trademarks, contracts, or regulatory compliance.
+
+## install
+
+```sh
+npm install rhachet-roles-rhight
+```
+
+## roles
+
+### 🌎 patenter
+
+- **scale**: invention-level, intellectual property
+- **focus**: prior art research, claim structure, prosecution strategy
+- **maximizes**: defensible patent positions with clear novelty
+
+used to research prior art, distill patent proposals, and prepare materials for patent applications.
+
+### 🪶 copyrighter
+
+- **scale**: creative work-level, intellectual property
+- **focus**: originality analysis, fair use, license terms
+- **maximizes**: protection of creative expression
+
+used to analyze copyright protection, fair use boundaries, and license terms.
+
+### 🪖 trademarker
+
+- **scale**: brand-level, intellectual property
+- **focus**: distinctiveness, likelihood of confusion, registration
+- **maximizes**: brand identity protection
+
+used to research trademark conflicts, assess distinctiveness, and prepare registration materials.
+
+### 🔗 regulator
+
+- **scale**: jurisdiction-level, compliance
+- **focus**: local, state, federal, global regulations
+- **maximizes**: compliance with bounded social contracts
+
+used to evaluate regulatory requirements and ensure compliance across jurisdictions.
+
+### 🔒 obligator
+
+- **scale**: contract-level, terms
+- **focus**: duties, deliverables, performance terms
+- **maximizes**: clear and enforceable obligations
+
+used to review and draft contract terms that secure duties and commitments.
+
+### 🦺 indemnifier
+
+- **scale**: contract-level, risk
+- **focus**: liability, indemnification, hold-harmless
+- **maximizes**: protection against claims
+
+used to review and draft protective clauses that shield against liability.
+
+### ⚖️ counselor
+
+- **scale**: exposure-level, coordination
+- **focus**: holistic contract review, risk assessment
+- **maximizes**: balanced legal protection
+
+used to coordinate obligator and indemnifier for comprehensive exposure review.
+
+## skills
+
+### `patent.priors.search`
+
+search for relevant patents by keyword query.
+
+```sh
+rhx patent.priors.search --query "neural network model compression"
+rhx patent.priors.search --query "ML model optimization" --since 2020-01-01 --limit 5
+```
+
+### `patent.priors.fetch`
+
+fetch full patent contents by external identifier.
+
+```sh
+rhx patent.priors.fetch --exid US20210234567A1
+```
+
+### `patent.propose`
+
+instantiate a patent proposal route with structured stones.
+
+```sh
+rhx patent.propose
+rhx patent.propose --open nvim
+rhx patent.propose --open code
+```
+
+creates a route with:
+- `0.idea.md` — invention description template
+- `1.vision.stone` — patent goals
+- `3.1.research.prior-art.favorable.stone` — favorable prior art
+- `3.1.research.prior-art.adverse.stone` — adverse prior art
+- `3.2.distill.claims.prior-art.stone` — prior art analysis
+- `3.2.distill.claims.patentable.stone` — novel claim identification
+- `3.2.distill.strategy.officeactions.stone` — prosecution preparation
+- `3.3.blueprint.patent.stone` — application structure
+- `5.1.deliver.patent.latex.stone` — formal output
+
+## mascot
+
+this repo houses the eagle 🦅 — who soars above the landscape to survey the terrain and spot what matters from above.
+
+why eagles? because they embody the principles of good legal work:
+
+1. 🦅 soar high — see the full landscape
+2. 👁️ sharp vision — spot the details that matter
+3. 🪶 precise — strike with accuracy
+4. 🏔️ claim peaks — identify what's defensible
+
+the eagle wields:
+- 🌎 globe — for patenter — to survey prior art from a global perspective
+- 🪶 feather — for copyrighter — to protect the written word
+- 🪖 helm — for trademarker — to guard the brand in battle
+- 🔗 chainlink — for regulator — to compose the bounds of social contracts
+- 🔒 lock — for obligator — to secure the duties and terms
+- 🦺 vest — for indemnifier — to protect against claims and liability
+- ⚖️ scales — for counselor — to weigh exposure and guide review
+
+## utilities
+
+### 🔎 transcriber
+
+- **scale**: document-level, content extraction
+- **focus**: OCR, text extraction, format conversion
+- **maximizes**: accuracy of scanned document transcription
+
+used to extract text from image-based PDFs and scanned documents for downstream use.
+
+> **note**: transcriber is a utility role that supports legal research but isn't itself a legal role. it lives here for now but may move to a different registry in the future.
+
+## why open source
+
+to help folks navigate legal systems more effectively, mutually. we all gain from transparent and open source legal exploration.
+
+**for lawyers**: contribute upstream to help communities and advertise your expertise. fork and specialize to leverage your own curated robots. (need help to deploy your own clones into your business? let us know, we consult)
+
+**for normies**: leverage open source legal exploration. although it is certainly **not legal advice** and you should always **consult a lawyer** before you make any decision, this gives you a robot clone to discuss with and explore ideas with.
+
+let's raise the floor. mutually.
