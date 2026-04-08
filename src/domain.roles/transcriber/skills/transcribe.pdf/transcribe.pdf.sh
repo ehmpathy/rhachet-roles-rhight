@@ -191,8 +191,9 @@ convert_pdf_to_images() {
     exit 2
   fi
 
-  pdftoppm -png -r 300 "$PDF_PATH" "$TEMP_DIR/page" 2>/dev/null || {
-    print_blocked "failed to convert PDF to images"
+  local pdftoppm_err
+  pdftoppm_err=$(pdftoppm -png -r 300 "$PDF_PATH" "$TEMP_DIR/page" 2>&1) || {
+    print_blocked "failed to convert PDF to images: $pdftoppm_err"
     exit 1
   }
 
