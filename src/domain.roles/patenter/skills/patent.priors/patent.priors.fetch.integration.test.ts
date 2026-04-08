@@ -4,21 +4,30 @@ import * as path from 'path';
 import { genTempDir, given, then, when } from 'test-fns';
 
 /**
- * USPTO_ODP_API_KEY required for live API tests
+ * BLOCKER: credentials required for live API tests
  *
- * get a key at: https://data.uspto.gov
- * then: rhx keyrack fill (or export USPTO_ODP_API_KEY=your_key)
+ * USPTO_ODP_API_KEY: get a key at https://data.uspto.gov
+ * GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS: for OCR transcription
  *
- * tests marked (LIVE API) are skipped if the key is not set
+ * locally: rhx keyrack unlock --owner ehmpath --env test
+ * in CI: secrets injected via GitHub secrets
  */
 describe('patent.priors.fetch.sh', () => {
   const scriptPath = path.join(__dirname, 'patent.priors.fetch.sh');
 
-  // skip live API tests in CI when credentials are absent
-  const hasApiKey = !!process.env.USPTO_ODP_API_KEY;
-  const hasOcrCredentials =
-    !!process.env.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS;
-  const hasAllCredentials = hasApiKey && hasOcrCredentials;
+// fail fast if credentials not set
+  beforeAll(() => {
+    if (!process.env.USPTO_ODP_API_KEY) {
+      throw new Error(
+        'USPTO_ODP_API_KEY required. get a key at https://data.uspto.gov',
+      );
+    }
+    if (!process.env.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS) {
+      throw new Error(
+        'GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS required for OCR. run: rhx keyrack unlock --owner ehmpath --env test',
+      );
+    }
+  });
 
   const runFetch = (input: {
     fetchArgs: string[];
@@ -86,7 +95,7 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given.runIf(hasAllCredentials)('[case4] valid exid (LIVE API)', () => {
+  given('[case4] valid exid (LIVE API)', () => {
     // CRITICAL: this test MUST hit the live USPTO API
     // if this test passes with a mock, the test suite is broken
     // note: USPTO API requires APPLICATION numbers (8 digits), not publication numbers
@@ -179,7 +188,7 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given.runIf(hasApiKey)(
+  given(
     '[case5] valid exid but patent not found (LIVE API)',
     () => {
       // CRITICAL: this test MUST hit the live USPTO API to get a real 404
@@ -214,7 +223,7 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given.runIf(hasAllCredentials)(
+  given(
     '[case7] --cache skip bypasses cache (LIVE API)',
     () => {
       // CRITICAL: this test verifies --cache skip forces a fresh API call
