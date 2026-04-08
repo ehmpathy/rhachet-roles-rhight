@@ -1,0 +1,15 @@
+{
+  "applicationNumberText": "19399196",
+  "officialDate": "2025-11-24T17:54:55.000-0500",
+  "documentIdentifier": "MIDR2RDVX82X183",
+  "documentCode": "OATH",
+  "documentCodeDescriptionText": "Oath or Declaration filed",
+  "directionCategory": "INCOMING",
+  "downloadOptionBag": [
+    {
+      "mimeTypeIdentifier": "PDF",
+      "downloadUrl": "https://api.uspto.gov/api/v1/download/applications/19399196/MIDR2RDVX82X183.pdf",
+      "pageTotalQuantity": 5
+    }
+  ]
+}

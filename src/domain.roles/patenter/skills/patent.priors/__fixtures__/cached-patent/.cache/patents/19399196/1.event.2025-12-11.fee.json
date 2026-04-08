@@ -1,0 +1,15 @@
+{
+  "applicationNumberText": "19399196",
+  "officialDate": "2025-12-11T00:00:00.000-0500",
+  "documentIdentifier": "MJ036KTNX100X21",
+  "documentCode": "WFEE",
+  "documentCodeDescriptionText": "Fee Worksheet (SB06)",
+  "directionCategory": "INTERNAL",
+  "downloadOptionBag": [
+    {
+      "mimeTypeIdentifier": "PDF",
+      "downloadUrl": "https://api.uspto.gov/api/v1/download/applications/19399196/MJ036KTNX100X21.pdf",
+      "pageTotalQuantity": 1
+    }
+  ]
+}

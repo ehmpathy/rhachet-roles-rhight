@@ -1,0 +1,23 @@
+{
+  "applicationNumberText": "19399196",
+  "officialDate": "2025-11-24T17:54:55.000-0500",
+  "documentIdentifier": "MIDR2RDPX82X183",
+  "documentCode": "CLM",
+  "documentCodeDescriptionText": "Claims",
+  "directionCategory": "INCOMING",
+  "downloadOptionBag": [
+    {
+      "mimeTypeIdentifier": "PDF",
+      "downloadUrl": "https://api.uspto.gov/api/v1/download/applications/19399196/MIDR2RDPX82X183.pdf",
+      "pageTotalQuantity": 3
+    },
+    {
+      "mimeTypeIdentifier": "MS_WORD",
+      "downloadUrl": "https://api.uspto.gov/api/v1/download/applications/19399196/MIDR2RDPX82X183/files/2025_11_24_22_53_17_0261_12db6fdd-d2d0-4610-b2e0-f41447e75ebe%20-%20Part%202%20-%20Claims.docx"
+    },
+    {
+      "mimeTypeIdentifier": "XML",
+      "downloadUrl": "https://api.uspto.gov/api/v1/download/applications/19399196/MIDR2RDPX82X183/xmlarchive"
+    }
+  ]
+}

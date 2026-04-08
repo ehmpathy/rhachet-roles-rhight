@@ -157,7 +157,7 @@ used to extract text from image-based PDFs and scanned documents for downstream 
 
 to help folks navigate legal systems more effectively, mutually. we all gain from transparent and open source legal exploration.
 
-**for lawyers**: contribute upstream to help communities and advertise your expertise. fork and specialize to leverage your own curated robots. (need help to deploy your own clones into your business? let us know, we consult)
+**for lawyers**: contribute upstream to help communities and advertise your expertise. fork and specialize to leverage your own curated robots. (want help to deploy your own specialized robot clones into your practice? let us know, we consult)
 
 **for normies**: leverage open source legal exploration. although it is certainly **not legal advice** and you should always **consult a lawyer** before you make any decision, this gives you a robot clone to discuss with and explore ideas with.
 

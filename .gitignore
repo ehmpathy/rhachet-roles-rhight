@@ -4,6 +4,7 @@
 *.tsbuildinfo
 .artifact
 .cache
+!**/__fixtures__/**/.cache
 .env
 .rhachet
 .serverless

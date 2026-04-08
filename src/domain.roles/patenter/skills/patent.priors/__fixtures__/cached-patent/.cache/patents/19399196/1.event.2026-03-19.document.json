@@ -1,0 +1,15 @@
+{
+  "applicationNumberText": "19399196",
+  "officialDate": "2026-03-19T00:00:00.000-0400",
+  "documentIdentifier": "MMWV4SHWX121X16",
+  "documentCode": "NTC.PUB",
+  "documentCodeDescriptionText": "Notice of Publication",
+  "directionCategory": "OUTGOING",
+  "downloadOptionBag": [
+    {
+      "mimeTypeIdentifier": "PDF",
+      "downloadUrl": "https://api.uspto.gov/api/v1/download/applications/19399196/MMWV4SHWX121X16.pdf",
+      "pageTotalQuantity": 1
+    }
+  ]
+}

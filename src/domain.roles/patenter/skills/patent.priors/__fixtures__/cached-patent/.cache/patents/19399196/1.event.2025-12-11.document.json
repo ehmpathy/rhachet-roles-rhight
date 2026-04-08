@@ -1,0 +1,15 @@
+{
+  "applicationNumberText": "19399196",
+  "officialDate": "2025-12-11T00:00:00.000-0500",
+  "documentIdentifier": "MJ036KTQX100X21",
+  "documentCode": "WELCOME.LET",
+  "documentCodeDescriptionText": "Welcome Letter from USPTO Director and Deputy Director",
+  "directionCategory": "OUTGOING",
+  "downloadOptionBag": [
+    {
+      "mimeTypeIdentifier": "PDF",
+      "downloadUrl": "https://api.uspto.gov/api/v1/download/applications/19399196/MJ036KTQX100X21.pdf",
+      "pageTotalQuantity": 1
+    }
+  ]
+}
