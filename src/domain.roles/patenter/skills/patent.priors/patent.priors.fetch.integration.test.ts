@@ -16,6 +16,9 @@ describe('patent.priors.fetch.sh', () => {
 
   // skip live API tests in CI when credentials are absent
   const hasApiKey = !!process.env.USPTO_ODP_API_KEY;
+  const hasOcrCredentials =
+    !!process.env.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS;
+  const hasAllCredentials = hasApiKey && hasOcrCredentials;
 
   const runFetch = (input: {
     fetchArgs: string[];
@@ -83,7 +86,7 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given.runIf(hasApiKey)('[case4] valid exid (LIVE API)', () => {
+  given.runIf(hasAllCredentials)('[case4] valid exid (LIVE API)', () => {
     // CRITICAL: this test MUST hit the live USPTO API
     // if this test passes with a mock, the test suite is broken
     // note: USPTO API requires APPLICATION numbers (8 digits), not publication numbers
@@ -214,7 +217,7 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given.runIf(hasApiKey)(
+  given.runIf(hasAllCredentials)(
     '[case7] --cache skip bypasses cache (LIVE API)',
     () => {
       // CRITICAL: this test verifies --cache skip forces a fresh API call
