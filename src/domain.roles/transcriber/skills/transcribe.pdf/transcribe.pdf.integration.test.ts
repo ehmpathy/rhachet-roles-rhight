@@ -1,10 +1,27 @@
 import { spawnSync } from 'child_process';
 import * as fs from 'fs';
 import * as path from 'path';
-import { given, then, when } from 'test-fns';
+import { genTempDir, given, then, when } from 'test-fns';
 
+/**
+ * BLOCKER: credentials required for live API tests
+ *
+ * GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS: for OCR transcription
+ *
+ * locally: rhx keyrack unlock --owner ehmpath --env test
+ * in CI: secrets injected via GitHub secrets (keyrack forwards env vars)
+ */
 describe('transcribe.pdf', () => {
   const scriptPath = path.join(__dirname, 'transcribe.pdf.sh');
+
+  // fail fast if credentials not set
+  beforeAll(() => {
+    if (!process.env.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS) {
+      throw new Error(
+        'GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS required for OCR. run: rhx keyrack unlock --owner ehmpath --env test',
+      );
+    }
+  });
 
   const runSkill = (
     args: string[],
@@ -13,6 +30,7 @@ describe('transcribe.pdf', () => {
       encoding: 'utf-8',
       stdio: ['pipe', 'pipe', 'pipe'],
       timeout: 120000, // 2 min timeout for OCR
+      env: process.env, // explicitly pass env for API credentials
     });
     return {
       stdout: result.stdout ?? '',
@@ -82,111 +100,110 @@ describe('transcribe.pdf', () => {
     });
   });
 
-  // skip live OCR tests in CI — requires Google Cloud credentials and local cache
-  const cacheDir = path.join(process.cwd(), '.cache/patents');
-  const hasCacheDir = fs.existsSync(cacheDir);
-  const hasGoogleCredentials =
-    !!process.env.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS;
+given('[case5] deterministic cached flow (uses fixture)', () => {
+    // this test uses a pre-populated fixture to prove the cached flow works
+    // without any API calls - deterministic and fast
+    const fixturePath = path.join(__dirname, '__fixtures__', 'cached-patent');
 
-  given.runIf(hasCacheDir && hasGoogleCredentials)(
-    '[case5] valid scanned PDF (LIVE API)',
-    () => {
-      when('[t0] OCR is performed on a real document', () => {
-        then('text is extracted and cached', () => {
-          // look for exid directories with PDFs (e.g., .cache/patents/19399196/*.pdf)
-          const exidDirs = fs.readdirSync(cacheDir).filter((f) => {
-            const exidPath = path.join(cacheDir, f);
-            if (!fs.statSync(exidPath).isDirectory()) return false;
-            const pdfs = fs
-              .readdirSync(exidPath)
-              .filter((p) => p.endsWith('.pdf'));
-            return pdfs.length > 0;
-          });
+    // genTempDir clones the fixture into an isolated temp directory with git init
+    const tempDir = genTempDir({
+      slug: 'transcribe-cached',
+      clone: fixturePath,
+      git: true,
+    });
 
-          if (exidDirs.length === 0) {
-            throw new Error(
-              'no prosecution documents found: run patent.priors.fetch first',
-            );
-          }
+    when('[t0] cached result extant', () => {
+      then('cache is used instead of OCR (no API calls)', () => {
+        // fixture has both PDF and .md file pre-populated
+        const testPdf = path.join(
+          tempDir,
+          '.cache/patents/19399196/1.event.2025-11-24.office-action.pdf',
+        );
+        const expectedCache = testPdf.replace('.pdf', '.md');
 
-          // find first PDF in first exid directory
-          const exidPath = path.join(cacheDir, exidDirs[0]!);
-          const pdfs = fs
-            .readdirSync(exidPath)
-            .filter((f) => f.endsWith('.pdf'));
+        // failfast: verify fixture PDF is valid (not a JSON error)
+        const pdfHeader = fs.readFileSync(testPdf, 'utf-8').slice(0, 10);
+        if (!pdfHeader.startsWith('%PDF')) {
+          throw new Error(
+            `fixture PDF is invalid (not a PDF file). header: ${pdfHeader}. path: ${testPdf}`,
+          );
+        }
 
-          if (pdfs.length === 0) {
-            throw new Error(`no PDFs found in ${exidPath}`);
-          }
+        // failfast: verify fixture has cache file
+        if (!fs.existsSync(expectedCache)) {
+          throw new Error(
+            `fixture .md cache file not found at: ${expectedCache}`,
+          );
+        }
 
-          const testPdf = path.join(exidPath, pdfs[0]!);
-          const expectedCache = testPdf.replace('.pdf', '.md');
+        const result = runSkill([testPdf, '--into', 'markdown']);
 
-          // remove cached result if extant (to force fresh OCR)
-          if (fs.existsSync(expectedCache)) {
-            fs.unlinkSync(expectedCache);
-          }
-
-          const result = runSkill([testPdf, '--into', 'markdown']);
-
-          // should succeed
-          expect(result.exitCode).toBe(0);
-          expect(result.stdout).toContain('🦅');
-          expect(result.stdout).toContain('transcribe.pdf');
-
-          // should have extracted text
-          expect(result.stdout).toContain('## Page');
-
-          // should have cached result
-          expect(fs.existsSync(expectedCache)).toBe(true);
-
-          // snapshot the output structure (not full text, too variable)
-          expect(
-            result.stdout.split('\n').slice(0, 10).join('\n'),
-          ).toMatchSnapshot();
-        });
+        // should succeed and indicate cache hit
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('found in cache');
+        expect(result.stdout).toMatchSnapshot();
       });
+    });
+  });
 
-      when('[t1] cached result extant', () => {
-        then('cache is used instead of OCR', () => {
-          const exidDirs = fs.readdirSync(cacheDir).filter((f) => {
-            const exidPath = path.join(cacheDir, f);
-            if (!fs.statSync(exidPath).isDirectory()) return false;
-            const pdfs = fs
-              .readdirSync(exidPath)
-              .filter((p) => p.endsWith('.pdf'));
-            return pdfs.length > 0;
-          });
+  given('[case6] valid scanned PDF (LIVE API)', () => {
+    // CRITICAL: this test MUST hit the live Google Cloud Vision API
+    // if this test passes without credentials, the test suite is broken
+    const fixturePath = path.join(__dirname, '__fixtures__', 'cached-patent');
 
-          if (exidDirs.length === 0) {
-            throw new Error('no prosecution documents found');
-          }
+    // genTempDir clones the fixture into an isolated temp directory
+    const tempDir = genTempDir({
+      slug: 'transcribe-live',
+      clone: fixturePath,
+      git: true,
+    });
 
-          const exidPath = path.join(cacheDir, exidDirs[0]!);
-          const pdfs = fs
-            .readdirSync(exidPath)
-            .filter((f) => f.endsWith('.pdf'));
+    when('[t0] OCR is performed on a real document', () => {
+      then('text is extracted and cached', () => {
+        const testPdf = path.join(
+          tempDir,
+          '.cache/patents/19399196/1.event.2025-11-24.office-action.pdf',
+        );
+        const expectedCache = testPdf.replace('.pdf', '.md');
 
-          if (pdfs.length === 0) {
-            throw new Error(`no PDFs found in ${exidPath}`);
-          }
+        // failfast: verify fixture PDF is valid (not a JSON error)
+        const pdfHeader = fs.readFileSync(testPdf, 'utf-8').slice(0, 10);
+        if (!pdfHeader.startsWith('%PDF')) {
+          throw new Error(
+            `fixture PDF is invalid (not a PDF file). header: ${pdfHeader}. path: ${testPdf}`,
+          );
+        }
 
-          const testPdf = path.join(exidPath, pdfs[0]!);
-          const expectedCache = testPdf.replace('.pdf', '.md');
+        // remove cached result to force fresh OCR
+        if (fs.existsSync(expectedCache)) {
+          fs.unlinkSync(expectedCache);
+        }
 
-          // ensure cache extant from previous test
-          if (!fs.existsSync(expectedCache)) {
-            throw new Error('cache should exist from previous test');
-          }
+        const result = runSkill([testPdf, '--into', 'markdown']);
 
-          const result = runSkill([testPdf, '--into', 'markdown']);
+        // failfast: log proof of failure
+        if (result.exitCode !== 0) {
+          console.log('PROOF: exitCode:', result.exitCode);
+          console.log('PROOF: stdout:', result.stdout);
+          console.log('PROOF: stderr:', result.stderr);
+        }
 
-          // should succeed and indicate cache hit
-          expect(result.exitCode).toBe(0);
-          expect(result.stdout).toContain('found in cache');
-          expect(result.stdout).toMatchSnapshot();
-        });
+        // should succeed
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('🦅');
+        expect(result.stdout).toContain('transcribe.pdf');
+
+        // should have extracted text
+        expect(result.stdout).toContain('## Page');
+
+        // should have cached result
+        expect(fs.existsSync(expectedCache)).toBe(true);
+
+        // snapshot the output structure (not full text, too variable)
+        expect(
+          result.stdout.split('\n').slice(0, 10).join('\n'),
+        ).toMatchSnapshot();
       });
-    },
-  );
+    });
+  });
 });
