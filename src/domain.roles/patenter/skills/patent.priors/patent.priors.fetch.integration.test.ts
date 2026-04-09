@@ -15,7 +15,7 @@ import { genTempDir, given, then, when } from 'test-fns';
 describe('patent.priors.fetch.sh', () => {
   const scriptPath = path.join(__dirname, 'patent.priors.fetch.sh');
 
-// fail fast if credentials not set
+  // fail fast if credentials not set
   beforeAll(() => {
     if (!process.env.USPTO_ODP_API_KEY) {
       throw new Error(
@@ -188,26 +188,23 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given(
-    '[case5] valid exid but patent not found (LIVE API)',
-    () => {
-      // CRITICAL: this test MUST hit the live USPTO API to get a real 404
-      when('[t0] fetch is called with nonexistent patent', () => {
-        then('not found error is returned', () => {
-          const result = runFetch({
-            // valid 8-digit format but doesn't exist
-            fetchArgs: ['--exid', '00000001'],
-          });
-
-          // exit 2 = constraint (patent not found)
-          // error messages go to stderr (propagate through command substitution)
-          expect(result.exitCode).toBe(2);
-          expect(result.stderr).toContain('not found');
-          expect(result.stderr).toMatchSnapshot();
+  given('[case5] valid exid but patent not found (LIVE API)', () => {
+    // CRITICAL: this test MUST hit the live USPTO API to get a real 404
+    when('[t0] fetch is called with nonexistent patent', () => {
+      then('not found error is returned', () => {
+        const result = runFetch({
+          // valid 8-digit format but doesn't exist
+          fetchArgs: ['--exid', '00000001'],
         });
+
+        // exit 2 = constraint (patent not found)
+        // error messages go to stderr (propagate through command substitution)
+        expect(result.exitCode).toBe(2);
+        expect(result.stderr).toContain('not found');
+        expect(result.stderr).toMatchSnapshot();
       });
-    },
-  );
+    });
+  });
 
   given('[case6] unknown argument', () => {
     when('[t0] fetch is called with invalid flag', () => {
@@ -223,54 +220,48 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given(
-    '[case7] --cache skip bypasses cache (LIVE API)',
-    () => {
-      // CRITICAL: this test verifies --cache skip forces a fresh API call
-      const knownExid = '19399196';
-      const gitRoot = spawnSync('git', ['rev-parse', '--show-toplevel'], {
-        encoding: 'utf-8',
-      }).stdout.trim();
-      const cacheDir = path.join(gitRoot, '.cache', 'patents', knownExid);
-      const metaPath = path.join(cacheDir, '0.overview.meta.json');
+  given('[case7] --cache skip bypasses cache (LIVE API)', () => {
+    // CRITICAL: this test verifies --cache skip forces a fresh API call
+    const knownExid = '19399196';
+    const gitRoot = spawnSync('git', ['rev-parse', '--show-toplevel'], {
+      encoding: 'utf-8',
+    }).stdout.trim();
+    const cacheDir = path.join(gitRoot, '.cache', 'patents', knownExid);
+    const metaPath = path.join(cacheDir, '0.overview.meta.json');
 
-      // pre-populate cache with marker data
-      beforeAll(() => {
-        fs.mkdirSync(cacheDir, { recursive: true });
-        fs.writeFileSync(
-          metaPath,
-          JSON.stringify({ marker: 'stale-cache-data' }),
-        );
+    // pre-populate cache with marker data
+    beforeAll(() => {
+      fs.mkdirSync(cacheDir, { recursive: true });
+      fs.writeFileSync(
+        metaPath,
+        JSON.stringify({ marker: 'stale-cache-data' }),
+      );
+    });
+
+    when('[t0] fetch is called with --cache skip', () => {
+      then('cache is overwritten with fresh data (proves cache bypass)', () => {
+        // --cache skip refetches everything: metadata + doc + prosecution docs
+        // this can take > 2 minutes; allow long timeout and just verify cache got updated
+        const result = runFetch({
+          fetchArgs: ['--exid', knownExid, '--cache', 'skip'],
+          timeout: 180000, // 3 minutes
+        });
+
+        // the key proof: marker data was replaced with real USPTO data
+        const cached = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
+        expect(cached.marker).toBeUndefined();
+        expect(cached.patentFileWrapperDataBag).toBeDefined();
+
+        // output should contain the eagle mascot
+        expect(result.stdout).toContain('🦅');
+
+        // exit code 0 = success, exit code 1 = partial failure (some docs failed)
+        // USPTO API sometimes returns empty responses for certain documents
+        // this is acceptable as long as cache was refreshed (verified above)
+        expect([0, 1]).toContain(result.exitCode);
       });
-
-      when('[t0] fetch is called with --cache skip', () => {
-        then(
-          'cache is overwritten with fresh data (proves cache bypass)',
-          () => {
-            // --cache skip refetches everything: metadata + doc + prosecution docs
-            // this can take > 2 minutes; allow long timeout and just verify cache got updated
-            const result = runFetch({
-              fetchArgs: ['--exid', knownExid, '--cache', 'skip'],
-              timeout: 180000, // 3 minutes
-            });
-
-            // the key proof: marker data was replaced with real USPTO data
-            const cached = JSON.parse(fs.readFileSync(metaPath, 'utf-8'));
-            expect(cached.marker).toBeUndefined();
-            expect(cached.patentFileWrapperDataBag).toBeDefined();
-
-            // output should contain the eagle mascot
-            expect(result.stdout).toContain('🦅');
-
-            // exit code 0 = success, exit code 1 = partial failure (some docs failed)
-            // USPTO API sometimes returns empty responses for certain documents
-            // this is acceptable as long as cache was refreshed (verified above)
-            expect([0, 1]).toContain(result.exitCode);
-          },
-        );
-      });
-    },
-  );
+    });
+  });
 
   given('[case8] deterministic cached flow (uses fixture)', () => {
     // this test uses a pre-populated fixture to prove the cached flow works
