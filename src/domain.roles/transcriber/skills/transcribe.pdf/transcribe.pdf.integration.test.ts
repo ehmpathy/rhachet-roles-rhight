@@ -100,7 +100,7 @@ describe('transcribe.pdf', () => {
     });
   });
 
-  given('[case5] deterministic cached flow (uses fixture)', () => {
+given('[case5] deterministic cached flow (uses fixture)', () => {
     // this test uses a pre-populated fixture to prove the cached flow works
     // without any API calls - deterministic and fast
     const fixturePath = path.join(__dirname, '__fixtures__', 'cached-patent');
