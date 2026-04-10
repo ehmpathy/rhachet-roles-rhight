@@ -110,7 +110,11 @@ describe('patent.priors.fetch.sh', () => {
     const cacheDir = path.join(tempDir, '.cache', 'patents', knownExid);
     const metaPath = path.join(cacheDir, '0.overview.meta.json');
 
-    when('[t0] fetch is called with valid USPTO exid', () => {
+    // USPTO sometimes serves corrupted PDFs - retry to handle transient issues
+    when.repeatably({
+      attempts: 3,
+      criteria: process.env.CI ? 'SOME' : 'EVERY',
+    })('[t0] fetch is called with valid USPTO exid', () => {
       then('patent is fetched from live API', () => {
         // fresh fetch requires metadata + doc + prosecution docs + OCR
         const result = runFetch({
