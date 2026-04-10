@@ -123,16 +123,20 @@ describe('patent.priors.fetch.sh', () => {
           timeout: 600000, // 10 minutes for full fetch + OCR
         });
 
-        // DEBUG: always show stderr to diagnose document fetch issues
-        if (result.stderr) {
-          console.log('DEBUG stderr:', result.stderr);
-        }
+        // failloud: throw with full context if skill fails
         if (result.exitCode !== 0) {
-          console.log('DEBUG stdout:', result.stdout);
+          throw new Error(
+            [
+              `patent.priors.fetch failed with exit code ${result.exitCode}`,
+              '',
+              'stderr:',
+              result.stderr || '(empty)',
+              '',
+              'stdout:',
+              result.stdout || '(empty)',
+            ].join('\n'),
+          );
         }
-
-        // MUST succeed - exit 0 required
-        expect(result.exitCode).toBe(0);
         expect(result.stdout).toContain('🦅');
         expect(result.stdout).toContain('patent.priors.fetch');
         expect(result.stdout).toContain(knownExid);
