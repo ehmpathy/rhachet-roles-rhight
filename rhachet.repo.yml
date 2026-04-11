@@ -31,6 +31,16 @@ roles:
       dirs: dist/domain.roles/patenter/inits
     boot: dist/domain.roles/patenter/boot.yml
     keyrack: dist/domain.roles/patenter/keyrack.yml
+  - slug: permiter
+    readme: dist/domain.roles/permiter/readme.md
+    briefs:
+      dirs: dist/domain.roles/permiter/briefs
+    skills:
+      dirs: dist/domain.roles/permiter/skills
+    inits:
+      dirs: dist/domain.roles/permiter/inits
+    boot: dist/domain.roles/permiter/boot.yml
+    keyrack: dist/domain.roles/permiter/keyrack.yml
   - slug: transcriber
     readme: dist/domain.roles/transcriber/readme.md
     briefs:

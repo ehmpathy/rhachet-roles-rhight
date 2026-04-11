@@ -50,8 +50,8 @@ exports[`transcribe.pdf given: [case5] deterministic cached flow (uses fixture) 
 🦅 found in cache,
 
 🔎 transcribe.pdf
-   ├─ source: /home/vlad/git/ehmpathy/rhachet-roles-rhight/.temp/genTempDir.symlink/2026-04-08T13-06-23.480Z.transcribe-cached.19c99b59/.cache/patents/19399196/1.event.2025-11-24.office-action.pdf
-   ├─ cached: /home/vlad/git/ehmpathy/rhachet-roles-rhight/.temp/genTempDir.symlink/2026-04-08T13-06-23.480Z.transcribe-cached.19c99b59/.cache/patents/19399196/1.event.2025-11-24.office-action.md
+   ├─ source: /home/vlad/git/ehmpathy/_worktrees/rhachet-roles-rhight.vlad.permit-required/.temp/genTempDir.symlink/2026-04-11T22-13-49.473Z.transcribe-cached.c59f6646/.cache/patents/19399196/1.event.2025-11-24.office-action.pdf
+   ├─ cached: /home/vlad/git/ehmpathy/_worktrees/rhachet-roles-rhight.vlad.permit-required/.temp/genTempDir.symlink/2026-04-11T22-13-49.473Z.transcribe-cached.c59f6646/.cache/patents/19399196/1.event.2025-11-24.office-action.md
    └─ format: markdown
 
 ## Page 1
@@ -316,7 +316,7 @@ exports[`transcribe.pdf given: [case6] valid scanned PDF (LIVE API) when: [t0] O
 🦅 let me read that,
 
 🔎 transcribe.pdf
-   ├─ source: /home/vlad/git/ehmpathy/rhachet-roles-rhight/.temp/genTempDir.symlink/2026-04-08T13-06-23.605Z.transcribe-live.d598a734/.cache/patents/19399196/1.event.2025-11-24.office-action.pdf
+   ├─ source: /home/vlad/git/ehmpathy/_worktrees/rhachet-roles-rhight.vlad.permit-required/.temp/genTempDir.symlink/2026-04-11T22-13-49.782Z.transcribe-live.b35d73db/.cache/patents/19399196/1.event.2025-11-24.office-action.pdf
    ├─ pages: 5
    └─ format: markdown
 

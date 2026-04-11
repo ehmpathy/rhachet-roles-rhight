@@ -69,6 +69,12 @@
             "command": "./node_modules/.bin/rhachet roles boot --repo rhachet --role enroller",
             "timeout": 60,
             "author": "repo=rhachet/role=enroller"
+          },
+          {
+            "type": "command",
+            "command": "./node_modules/.bin/rhachet roles boot --repo rhight --role permiter",
+            "timeout": 60,
+            "author": "repo=rhight/role=permiter"
           }
         ]
       },
@@ -197,6 +203,12 @@
             "command": "./node_modules/.bin/rhx route.drive --mode hook",
             "timeout": 5,
             "author": "repo=bhrain/role=driver"
+          },
+          {
+            "type": "command",
+            "command": "./node_modules/.bin/rhx git.repo.test --what lint --when hook.onStop",
+            "timeout": 60,
+            "author": "repo=ehmpathy/role=mechanic"
           }
         ]
       }

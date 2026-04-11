@@ -1,0 +1,13 @@
+always:
+  briefs:
+    say:
+      # permit research process
+      - briefs/howto.prove-permit-required.[lesson].md
+      # important domain concepts
+      - briefs/define.retroactive-permits.[lesson].md
+      - briefs/define.unpermitted-work-insurance.[lesson].md
+
+    ref:
+      # permit findings (reference, not always loaded)
+      - briefs/ref.permit-required.electrical-panel-upgrade.indianapolis-in.md
+      - briefs/ref.indianapolis-electrical-retroactive-permit.[ref].md
