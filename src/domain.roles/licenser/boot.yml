@@ -1,0 +1,17 @@
+always:
+  briefs:
+    say:
+      - briefs/define.what-is-a-license.md
+      - briefs/define.why-licenses-exist.md
+      - briefs/define.license-lifecycle.md
+      - briefs/define.what-licenses-mean.md
+      - briefs/howto.verify-licenses.md
+    ref:
+      - briefs/define.licensure-history.md
+      - briefs/define.who-controls-licenses.md
+      - briefs/define.licence-jurisdiction.electrician.indiana.md
+      - briefs/define.licence-qualifications.electrician.indiana.indianapolis.md
+      - briefs/define.licence-qualifications.electrician.indiana.richmond.md
+      - briefs/define.licence-reciprocity.electrician.indiana.indianapolis.md
+      - briefs/define.licence-reciprocity.electrician.indiana.richmond.md
+      - briefs/howto.verify.licence.electrician.indiana.indianapolis.md
