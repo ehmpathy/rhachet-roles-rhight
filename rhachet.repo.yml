@@ -1,6 +1,16 @@
 slug: rhight
 readme: dist/domain.roles/readme.md
 roles:
+  - slug: licenser
+    readme: dist/domain.roles/licenser/readme.md
+    briefs:
+      dirs: dist/domain.roles/licenser/briefs
+    skills:
+      dirs: dist/domain.roles/licenser/skills
+    inits:
+      dirs: dist/domain.roles/licenser/inits
+    boot: dist/domain.roles/licenser/boot.yml
+    keyrack: dist/domain.roles/licenser/keyrack.yml
   - slug: patenter
     readme: dist/domain.roles/patenter/readme.md
     briefs:
