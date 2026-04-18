@@ -15,3 +15,5 @@ always:
       - briefs/define.licence-reciprocity.electrician.indiana.indianapolis.md
       - briefs/define.licence-reciprocity.electrician.indiana.richmond.md
       - briefs/howto.verify.licence.electrician.indiana.indianapolis.md
+      - briefs/define.licence-qualifications.electrician.florida.bay-county.md
+      - briefs/define.why-experience-requirements-exist.md
