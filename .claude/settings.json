@@ -63,6 +63,12 @@
             "command": "./node_modules/.bin/rhachet roles boot --repo rhight --role transcriber",
             "timeout": 60,
             "author": "repo=rhight/role=transcriber"
+          },
+          {
+            "type": "command",
+            "command": "./node_modules/.bin/rhachet roles boot --repo rhachet --role enroller",
+            "timeout": 60,
+            "author": "repo=rhachet/role=enroller"
           }
         ]
       },

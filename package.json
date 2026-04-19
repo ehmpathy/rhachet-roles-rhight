@@ -62,13 +62,14 @@
     "preversion": "npm run prepush",
     "postversion": "git push origin HEAD --tags --no-verify",
     "prepare:husky": "husky install && chmod ug+x .husky/*",
-    "prepare:rhachet": "npm run build && rhachet init --hooks --roles mechanic behaver driver reviewer librarian ergonomist architect reflector dreamer dispatcher patenter transcriber",
+    "prepare:rhachet": "npm run build && rhachet init --hooks --roles mechanic behaver driver reviewer librarian ergonomist architect achiever enroller",
     "prepare": "if [ -e .git ] && [ -z $CI ]; then npm run prepare:husky && npm run prepare:rhachet; fi"
   },
   "dependencies": {
     "as-procedure": "1.1.7",
     "domain-objects": "0.31.9",
     "helpful-errors": "1.5.3",
+    "rhachet-roles-rhachet": "0.1.5",
     "type-fns": "1.21.0",
     "zod": "4.3.4"
   },

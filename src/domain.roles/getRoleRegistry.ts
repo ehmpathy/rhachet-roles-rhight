@@ -1,5 +1,6 @@
 import { RoleRegistry } from 'rhachet';
 
+import { ROLE_INSURER } from './insurer/getInsurerRole';
 import { ROLE_LICENSER } from './licenser/getLicenserRole';
 import { ROLE_PATENTER } from './patenter/getPatenterRole';
 import { ROLE_TRANSCRIBER } from './transcriber/getTranscriberRole';
@@ -14,5 +15,5 @@ export const getRoleRegistry = (): RoleRegistry =>
   new RoleRegistry({
     slug: 'rhight',
     readme: { uri: `${__dirname}/readme.md` },
-    roles: [ROLE_LICENSER, ROLE_PATENTER, ROLE_TRANSCRIBER],
+    roles: [ROLE_INSURER, ROLE_LICENSER, ROLE_PATENTER, ROLE_TRANSCRIBER],
   });
