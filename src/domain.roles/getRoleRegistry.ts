@@ -16,5 +16,11 @@ export const getRoleRegistry = (): RoleRegistry =>
   new RoleRegistry({
     slug: 'rhight',
     readme: { uri: `${__dirname}/readme.md` },
-    roles: [ROLE_INSURER, ROLE_LICENSER, ROLE_PATENTER, ROLE_PERMITER, ROLE_TRANSCRIBER],
+    roles: [
+      ROLE_INSURER,
+      ROLE_LICENSER,
+      ROLE_PATENTER,
+      ROLE_PERMITER,
+      ROLE_TRANSCRIBER,
+    ],
   });
