@@ -1,0 +1,71 @@
+always:
+  briefs:
+    say:
+      # hazards
+      - briefs/hazard.subtle-unpermitted-work.[hazard].md
+      - briefs/hazard.prepurchase-unpermitted-work.summary.tldr.md
+      - briefs/hazard.sued-from-hired-builder-negligence.[hazard].md
+      - briefs/hazard.gl-without-workers-comp.[hazard].md
+      - briefs/hazard.subcontractor-injury-gl-gap.[hazard].md
+      # permit research process
+      - briefs/howto.prove-permit-required.[lesson].md
+      # important domain concepts
+      - briefs/define.retroactive-permits.[lesson].md
+      - briefs/define.unpermitted-work-insurance.[lesson].md
+      - briefs/define.permit-liability.[lesson].md
+      - briefs/define.owner-builder-exemption.[lesson].md
+      - briefs/define.owner-builder-exemption.origins.[lesson].md
+      - briefs/howto.detect-unpermitted-work.[lesson].md
+      - briefs/howto.shore-up-inherited-unpermitted-work.[lesson].md
+      - briefs/define.causation-denial.[lesson].md
+      - briefs/define.ensuing-loss-doctrine.[lesson].md
+      - briefs/define.defect-equals-damage.[lesson].md
+      - briefs/define.coverage-timeline.[lesson].md
+      - briefs/define.property-vs-liability-coverage.[lesson].md
+      - briefs/rule.require-additional-insured.[rule].md
+      - briefs/rule.require-sole-proprietor-waiver.[rule].md
+      - briefs/define.secret-subs-liability.[lesson].md
+      - briefs/define.gl-breach-of-contract-gap.[lesson].md
+      - briefs/howto.verify-gl-action-over-exclusion.[lesson].md
+      - briefs/define.insured-contract-exception.[lesson].md
+      - briefs/define.wrap-up-ocip-policy.[lesson].md
+      - briefs/flowchart.sub-employee-injury-coverage.[summary].md
+      # retroactive permit flows
+      - briefs/howto.retroactive-permit.own-work.[lesson].md
+      - briefs/howto.retroactive-permit.inherited-work.[lesson].md
+      - briefs/tradeoff.claim-inherited-work-as-own.[analysis].md
+
+    ref:
+      # insurance discovery and case law
+      - briefs/ref.insurance-unpermitted-work-discovery.[ref].md
+      # state-specific insurance causation doctrines
+      - briefs/ref.insurance-causation-doctrine.florida.[ref].md
+      - briefs/ref.insurance-causation-doctrine.oregon.[ref].md
+      - briefs/ref.insurance-causation-doctrine.indiana.[ref].md
+      # permit findings (reference, not always loaded)
+      - briefs/ref.permit-required.electrical-panel-upgrade.indianapolis-in.md
+      - briefs/ref.indianapolis-electrical-retroactive-permit.[ref].md
+      # nationwide permit facts
+      - briefs/ref.permit-requires-local-license.[ref].md
+      # owner-builder insurance
+      - briefs/ref.owner-builder-insurance-products.[ref].md
+      - briefs/ref.owner-builder-insurance-products.subcontractor-gap.[ref].md
+      - briefs/ref.owner-builder-insurance-products.denial-conditions.[ref].md
+      - briefs/ref.owner-builder-insurance-products.scenario-analysis.[ref].md
+      # indianapolis permit process
+      - briefs/ref.homeowner-permit-exemption.indianapolis-in.[ref].md
+      - briefs/ref.electrical-license-structure.indiana.[ref].md
+      - briefs/ref.permit-application-requirements.indianapolis-in.[ref].md
+      - briefs/ref.permit-insurance-coverage-evidence.[ref].md
+      # inspection vs forensics
+      - briefs/ref.inspection-vs-forensics-gap.[ref].md
+      - briefs/ref.inspection-vs-forensics-gap.owner-builder.[ref].md
+      - briefs/ref.inspection-vs-forensics-gap.hired-builder.[ref].md
+      # builders insurance
+      - briefs/ref.builders-insurance.defect-gap.[ref].md
+      - briefs/ref.builders-insurance.premium-impact-unrecovered-claims.[ref].md
+      - briefs/ref.builders-insurance.total-loss-rcv.[ref].md
+      - briefs/ref.builders-insurance.total-loss-rcv.owner-builder.[ref].md
+      - briefs/ref.builders-insurance.total-loss-rcv.hired-builder.[ref].md
+      - briefs/ref.builders-insurance.premium.owner-builder.[ref].md
+      - briefs/ref.builders-insurance.providers.owner-builder.[ref].md

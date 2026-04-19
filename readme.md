@@ -49,6 +49,14 @@ used to analyze copyright protection, fair use boundaries, and license terms.
 
 used to research trademark conflicts, assess distinctiveness, and prepare registration materials.
 
+### 🏛️ permiter
+
+- **scale**: jurisdiction-level, regulatory compliance
+- **focus**: permit requirements, code research, exemption analysis
+- **maximizes**: defensible permit determinations with exact code citations
+
+used to research whether permits are required for specific work types in specific jurisdictions, with verbatim code quotes as proof.
+
 ### 🔗 regulator
 
 - **scale**: jurisdiction-level, compliance
@@ -136,6 +144,7 @@ the eagle wields:
 - 🌎 globe — for patenter — to survey prior art from a global perspective
 - 🪶 feather — for copyrighter — to protect the written word
 - 🪖 helm — for trademarker — to guard the brand in battle
+- 🏛️ column — for permiter — to cite the code that governs construction
 - 🔗 chainlink — for regulator — to compose the bounds of social contracts
 - 🔒 lock — for obligator — to secure the duties and terms
 - 🦺 vest — for indemnifier — to protect against claims and liability
