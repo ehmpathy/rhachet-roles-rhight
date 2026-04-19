@@ -1,0 +1,53 @@
+always:
+  briefs:
+    say:
+      # coverage.asset=home.holder=contractor — CGL policy verification
+      - briefs/practices/coverage.asset=home.holder=contractor/howto.verify-contractor-insurance.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=contractor/howto.verify-coi-is-valid.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=contractor/howto.read-coi.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=contractor/howto.check-cg-22-94.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=contractor/define.certificate-holder-vs-additional-insured.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=contractor/define.contract-vs-quote.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=contractor/define.three-layer-defense.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=contractor/risk.subcontractor-gap.[lesson].md
+
+      # coverage.asset=home.holder=homeowner — HO policy gaps and landlord transition
+      - briefs/practices/coverage.asset=home.holder=homeowner/hazard.rental-purchase.realtor-referral-pipeline.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=homeowner/hazard.rental-purchase.systemic-silence.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=homeowner/risk.ho-policy-on-rental-property.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=homeowner/define.homeowner-vs-landlord-insurance.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=homeowner/risk.ho-on-rental-worse-than-no-insurance.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=homeowner/risk.wrong-policy-prevalence.[lesson].md
+
+      # coverage.asset=home.holder=landlord — DP policy selection and coverage
+      - briefs/practices/coverage.asset=home.holder=landlord/howto.find-landlord-insurance.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=landlord/define.loss-of-rents-coverage.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=landlord/hazard.tenant-vandalism-exclusion.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=landlord/howto.get-malicious-damage-endorsement.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=landlord/compare.tenant-damage-recovery-mechanisms.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=landlord/hazard.obsolete-electrical-systems.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=landlord/howto.survive-insurance-nonrenewal-obsolete-electrical.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=landlord/howto.relocate-tenant-during-major-repairs.[lesson].md
+
+      # coverage.asset=home.holder=any — universal coverage fundamentals
+      - briefs/practices/coverage.asset=home.holder=any/hazard.underinsurance.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=any/require.extended-replacement-cost.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=any/hazard.force-placed-insurance.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=any/risk.surplus-lines-insurance.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=any/define.surplus-lines-mortgage-requirements.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=any/define.conditional-coverage-repair-window.[lesson].md
+      - briefs/practices/coverage.asset=home.holder=any/define.mutual-vs-stock-insurers.[lesson].md
+
+    ref:
+      # coverage.asset=home.holder=contractor — legal references
+      - briefs/practices/coverage.asset=home.holder=contractor/ref.text-messages-as-evidence.[ref].md
+      - briefs/practices/coverage.asset=home.holder=contractor/ref.subcontractor-coverage-case-law.[ref].md
+
+      # coverage.asset=home.holder=homeowner — claim scenario reference
+      - briefs/practices/coverage.asset=home.holder=homeowner/ref.ho3-dp3-claim-scenarios-matrix.[ref].md
+      - briefs/practices/coverage.asset=home.holder=homeowner/evidence.anecdotal.rental-purchase-wrong-insurance.[ref].md
+
+      # coverage.asset=home.holder=landlord — carrier research
+      - briefs/practices/coverage.asset=home.holder=landlord/ref.surplus-lines-carrier-dossiers.[ref].md
+      - briefs/practices/coverage.asset=home.holder=landlord/ref.admitted-carriers-best-performers.[ref].md
+      - briefs/practices/coverage.asset=home.holder=landlord/ref.dp3-carriers-knob-tube.[ref].md
