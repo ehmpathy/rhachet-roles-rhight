@@ -47,3 +47,4 @@
 {"stone":"5.5.playtest","status":"rewound"}
 {"stone":"4.1.roadmap","status":"passed"}
 {"stone":"5.1.execution.phase0_to_phaseN","status":"blocked","blocker":"review.self","reason":"review.self required: has-pruned-yagni"}
+{"stone":"5.1.execution.phase0_to_phaseN","status":"blocked"}
