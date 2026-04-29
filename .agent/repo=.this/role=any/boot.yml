@@ -1,0 +1,26 @@
+always:
+  briefs:
+    ref:
+      # rules
+      - briefs/rule.forbid.test-skip.[rule].md
+      - briefs/rule.require.jest-tests-for-skills.[rule].md
+      - briefs/rule.require.snap-review-on-skill-change.[rule].md
+      - briefs/rule.prefer.internal-briefs-location.[rule].md
+      # howto lessons
+      - briefs/howto.block-writes-via-hooks.[lesson].md
+      - briefs/howto.check-role-costs.[lesson].md
+      - briefs/howto.debug-bash-syntax-errors.[sketch].md
+      - briefs/howto.debug-hooks.[lesson].md
+      - briefs/howto.keyrack-in-ci.[lesson].md
+      - briefs/howto.mock-cli-via-path.[lesson].md
+      - briefs/howto.register-role-boot-hook.[lesson].md
+      - briefs/howto.spinner-vibes.[lesson].md
+      - briefs/howto.test-skills.[lesson].md
+      # tactics
+      - briefs/tactic.chain-of-thought-via-schema.[lesson].md
+      - briefs/tactic.failfast-diagnostics.[lesson].md
+      # references
+      - briefs/ref.uspto-odp-api.md
+      - briefs/parsers.md
+      # motto
+      - briefs/motto.not-legal-advice.[motto].md

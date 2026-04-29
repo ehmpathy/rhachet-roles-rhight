@@ -1,6 +1,6 @@
 always:
   briefs:
-    say:
+    ref:
       # coverage.asset=home.holder=contractor — CGL policy verification
       - briefs/practices/coverage.asset=home.holder=contractor/howto.verify-contractor-insurance.[lesson].md
       - briefs/practices/coverage.asset=home.holder=contractor/howto.verify-coi-is-valid.[lesson].md
@@ -38,7 +38,6 @@ always:
       - briefs/practices/coverage.asset=home.holder=any/define.conditional-coverage-repair-window.[lesson].md
       - briefs/practices/coverage.asset=home.holder=any/define.mutual-vs-stock-insurers.[lesson].md
 
-    ref:
       # coverage.asset=home.holder=contractor — legal references
       - briefs/practices/coverage.asset=home.holder=contractor/ref.text-messages-as-evidence.[ref].md
       - briefs/practices/coverage.asset=home.holder=contractor/ref.subcontractor-coverage-case-law.[ref].md

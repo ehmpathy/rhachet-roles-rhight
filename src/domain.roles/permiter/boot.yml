@@ -1,6 +1,6 @@
 always:
   briefs:
-    say:
+    ref:
       # hazards
       - briefs/hazard.subtle-unpermitted-work.[hazard].md
       - briefs/hazard.prepurchase-unpermitted-work.summary.tldr.md
@@ -15,8 +15,10 @@ always:
       - briefs/define.permit-liability.[lesson].md
       - briefs/define.owner-builder-exemption.[lesson].md
       - briefs/define.owner-builder-exemption.origins.[lesson].md
+      - briefs/define.owner-builder-exemption.rental-exclusion.[lesson].md
       - briefs/howto.detect-unpermitted-work.[lesson].md
       - briefs/howto.shore-up-inherited-unpermitted-work.[lesson].md
+      - briefs/howto.shore-up-inherited-unpermitted-work.indianapolis-in.[lesson].md
       - briefs/define.causation-denial.[lesson].md
       - briefs/define.ensuing-loss-doctrine.[lesson].md
       - briefs/define.defect-equals-damage.[lesson].md
@@ -34,8 +36,6 @@ always:
       - briefs/howto.retroactive-permit.own-work.[lesson].md
       - briefs/howto.retroactive-permit.inherited-work.[lesson].md
       - briefs/tradeoff.claim-inherited-work-as-own.[analysis].md
-
-    ref:
       # insurance discovery and case law
       - briefs/ref.insurance-unpermitted-work-discovery.[ref].md
       # state-specific insurance causation doctrines
