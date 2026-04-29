@@ -1,12 +1,12 @@
 always:
   briefs:
-    say:
+    ref:
       # patent practices
       - briefs/practices/howto.patent-techniques.[lesson].md
       - briefs/practices/define.patent-fundamentals.md
 
   skills:
-    say:
+    ref:
       # prior art research
       - skills/patent.priors/patent.priors.search.sh
       - skills/patent.priors/patent.priors.fetch.sh
