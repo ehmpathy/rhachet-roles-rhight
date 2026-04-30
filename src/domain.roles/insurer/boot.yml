@@ -50,3 +50,20 @@ always:
       - briefs/practices/coverage.asset=home.holder=landlord/ref.surplus-lines-carrier-dossiers.[ref].md
       - briefs/practices/coverage.asset=home.holder=landlord/ref.admitted-carriers-best-performers.[ref].md
       - briefs/practices/coverage.asset=home.holder=landlord/ref.dp3-carriers-knob-tube.[ref].md
+
+      # coverage.asset=home.scope=construction — builders insurance
+      - briefs/practices/coverage.asset=home.scope=construction/howto.acquire-builders-insurance.landlord-hired-contractor.[lesson].md
+      - briefs/practices/coverage.asset=home.scope=construction/analysis.endorsement-vs-standalone-builders-insurance.[analysis].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.defect-gap.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.premium-impact-unrecovered-claims.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.total-loss-rcv.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.total-loss-rcv.owner-builder.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.total-loss-rcv.hired-builder.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.premium.owner-builder.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.providers.owner-builder.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.providers.indianapolis-in.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.providers.steadily.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.claim-denial-gotchas.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.claim-denials.residential-cases.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.carriers.rcv-on-extant.[ref].md
+      - briefs/practices/coverage.asset=home.scope=construction/checklist.builders-insurance.coverage-gaps.[checklist].md
