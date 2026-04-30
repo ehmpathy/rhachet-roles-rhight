@@ -1,8 +1,12 @@
 always:
   briefs:
+    say:
+      # critical rules — always in context
+      - briefs/rule.require.webfetch-citations.[rule].md
     ref:
       # rules
       - briefs/rule.forbid.test-skip.[rule].md
+      - briefs/rule.require.research-to-briefs.[rule].md
       - briefs/rule.require.jest-tests-for-skills.[rule].md
       - briefs/rule.require.snap-review-on-skill-change.[rule].md
       - briefs/rule.prefer.internal-briefs-location.[rule].md
