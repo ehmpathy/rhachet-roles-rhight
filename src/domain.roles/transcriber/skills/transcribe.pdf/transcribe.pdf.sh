@@ -123,7 +123,7 @@ check_credentials() {
   else
     # fall back to keyrack (local dev)
     local keyrack_json
-    keyrack_json=$(rhx keyrack get --key ehmpathy.test.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS --json 2>&1) || {
+    keyrack_json=$(rhx keyrack get --key GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS --owner ehmpath --env test --json 2>&1) || {
       print_blocked "keyrack failed: run 'rhx keyrack unlock --owner ehmpath --env test'"
       exit 2
     }
