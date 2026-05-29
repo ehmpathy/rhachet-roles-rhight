@@ -1,0 +1,23 @@
+always:
+  briefs:
+    ref:
+      # protection mechanisms — how to protect when hire contractor
+      - briefs/howto.protect-when-hire-contractor.[lesson].md
+      - briefs/howto.recourse-contractor-abandonment.[lesson].md
+
+      # liability definitions — GL gaps and coverage boundaries
+      - briefs/define.gl-breach-of-contract-gap.[lesson].md
+      - briefs/define.secret-subs-liability.[lesson].md
+
+      # subcontractor and workers comp hazards
+      - briefs/flowchart.sub-employee-injury-coverage.[summary].md
+      - briefs/hazard.gl-without-workers-comp.[hazard].md
+      - briefs/hazard.subcontractor-injury-gl-gap.[hazard].md
+      - briefs/hazard.sued-from-hired-builder-negligence.[hazard].md
+
+      # rules for contractor verification
+      - briefs/rule.require-additional-insured.[rule].md
+      - briefs/rule.require-sole-proprietor-waiver.[rule].md
+
+      # reference materials
+      - briefs/howto.verify-gl-action-over-exclusion.[lesson].md
