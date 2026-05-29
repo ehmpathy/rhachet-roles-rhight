@@ -1,0 +1,13 @@
+org: ehmpathy
+
+env.all:
+  # - keys available in all environments
+
+env.prod:
+  # - keys for production
+
+env.prep:
+  # - keys for pre-production
+
+env.test:
+  # - keys for test
