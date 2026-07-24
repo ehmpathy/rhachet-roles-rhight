@@ -1,0 +1,14 @@
+always:
+  briefs:
+    ref:
+      # rewards books & tax — the float / investable-vs-custodial question
+      - briefs/rewards/define.float-interest-on-debt-reserve.[lesson].md
+      - briefs/rewards/define.boundary.investable-general-funds-vs-restricted-custodial.[lesson].md
+
+      # rewards books & tax — how a point is booked (the three shapes) + escheat
+      - briefs/rewards/define.points-as-liability-vs-deferred-revenue-vs-cash-balance.[lesson].md
+      - briefs/rewards/hazard.escheat-unredeemed-points.[hazard].md
+
+      # rewards books & tax — the prepaid DEPOSIT (ad credits): deferred revenue + escheat
+      - briefs/rewards/define.deferred-revenue-on-prepaid-deposits-and-breakage.[lesson].md
+      - briefs/rewards/hazard.escheat-dormant-prepaid-deposits.[hazard].md

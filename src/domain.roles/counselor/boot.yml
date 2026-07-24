@@ -21,3 +21,83 @@ always:
 
       # reference materials
       - briefs/howto.verify-gl-action-over-exclusion.[lesson].md
+
+      # market-mechanics law — term index + hazard maps
+      - briefs/market/_taxonomy/_.glossary.[summary].md
+      - briefs/market/referrals/hazard._.catalogue.[summary].md
+
+      # referral-incentive law (referral-reward vs referral-selling)
+      - briefs/market/referrals/define.referral-reward-vs-referral-selling.[lesson].md
+      - briefs/market/referrals/define.boundary.link-vs-names-of-prospects.[lesson].md
+      - briefs/market/referrals/define.boundary.marketing-bonus-vs-purchase-inducement.[lesson].md
+      - briefs/market/referrals/hazard.contingent-reward-referral-selling.five-state.[hazard].md
+      - briefs/market/referrals/hazard.contingent-reward-referral-selling.fl.[hazard].md
+      - briefs/market/referrals/hazard.contingent-reward-referral-selling.in.[hazard].md
+      - briefs/market/referrals/ref.casestudy.uber.[ref].md
+
+      # game-promotion / sweepstakes registration law
+      - briefs/market/referrals/hazard.sweepstakes-registration-and-bond.[hazard].md
+
+      # referral vs affiliate case studies
+      - briefs/market/referrals/define.amazon-referral-vs-affiliate-models.[lesson].md
+      - briefs/market/referrals/ref.casestudy.amazon-associates-commissions.[ref].md
+
+      # incentivized-review case studies
+      - briefs/market/reviews/ref.casestudy.amazon-vine.[ref].md
+      - briefs/market/reviews/ref.casestudy.amazon-early-reviewer.[ref].md
+
+      # consumer-review disclosure law (FTC part 255 / 465)
+      - briefs/market/reviews/define.boundary.disclosed-vs-undisclosed-incentive.[lesson].md
+      - briefs/market/reviews/define.boundary.sentiment-blind-vs-sentiment-gated.[lesson].md
+      - briefs/market/reviews/define.boundary.verified-vs-fake-review.[lesson].md
+      - briefs/market/reviews/ref.ftc-part-465-review-rule.[ref].md
+
+      # consumer-review protection law (non-disparagement / review-gating)
+      - briefs/market/reviews/hazard.review-gating-penalty.[hazard].md
+
+      # loyalty-points characterization law (debt vs stored value)
+      - briefs/market/rewards/define.points-are-a-debt-not-stored-value.[lesson].md
+      - briefs/market/rewards/define.boundary.earned-debt-vs-deposited-value.[lesson].md
+      - briefs/market/rewards/define.points-two-redemptions-discount-or-cashout.[lesson].md
+      - briefs/market/rewards/define.boundary.redemption-path-not-rate-is-the-lever.[lesson].md
+
+      # money-transmitter boundary law
+      - briefs/market/rewards/hazard.cashout-money-transmitter-license.CONDITIONAL.[hazard].md
+      - briefs/market/rewards/hazard.stored-value-if-deposits-or-transfer.[hazard].md
+
+      # payment-conduit boundary law
+      - briefs/market/rewards/define.boundary.platform-funded-vs-conduit-held-funds.[lesson].md
+
+      # gift-card / loyalty consumer-protection law
+      - briefs/market/rewards/ref.gift-card-loyalty-consumer-rules.five-state.[ref].md
+
+      # closed-loop redemption boundary law
+      - briefs/market/rewards/define.boundary.closed-loop-vs-third-party-redemption.[lesson].md
+
+      # multi-regime boundary law (money-transmitter / stored-value / escheat)
+      - briefs/market/rewards/define.boundary.spend-only-shuts-three-regimes.[lesson].md
+
+      # prize / lottery / game-promotion law
+      - briefs/market/rewards/hazard.reward-without-purchase-is-a-prize.[hazard].md
+
+      # unclaimed-property / escheat boundary law
+      - briefs/market/rewards/hazard.cash-redeemed-reward-breaks-loyalty-escheat.[hazard].md
+      - briefs/market/rewards/ref.casestudy.manufacturer-rebate-escheat.[ref].md
+      - briefs/market/rewards/define.boundary.rebate-inside-vs-outside-the-reward-instrument.[lesson].md
+      - briefs/market/rewards/hazard.expiration-does-not-defeat-escheat-on-monetizable-balance.[hazard].md
+      - briefs/market/rewards/define.boundary.transferable-loyalty-point-flips-toward-stored-value.[lesson].md
+      - briefs/market/rewards/hazard.directed-third-party-payout-on-redemption-is-money-transmission.[hazard].md
+      - briefs/market/rewards/hazard.indirection-does-not-launder-monetizability.[hazard].md
+      - briefs/market/rewards/define.boundary.earned-debt-wallet-withdrawable-vs-stored-value.[lesson].md
+      - briefs/market/rewards/define.boundary.redeem-and-grant-vs-convert-the-reward-record.[lesson].md
+
+      # consumer-data / privacy financial-incentive law (opt-in vs safe-harbor)
+      - briefs/market/rewards/define.boundary.ccpa-financial-incentive-opt-in.[lesson].md
+
+      # unfair-and-deceptive-practices remedy law (UDAP teeth)
+      - briefs/market/rewards/ref.udap-remedy-teeth.five-state.[ref].md
+
+      # consumer-disclosure recommendation rules
+      - briefs/market/rewards/rule.prefer.clear-conspicuous-disclosures.[rule].md
+      - briefs/market/referrals/rule.prefer.link-guaranteed-not-own-purchase-trigger.[rule].md
+      - briefs/market/reviews/rule.prefer.verified-disclosed-sentiment-blind-reviews.[rule].md

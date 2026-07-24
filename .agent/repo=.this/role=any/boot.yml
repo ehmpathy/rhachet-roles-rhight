@@ -10,6 +10,11 @@ always:
       - briefs/rule.require.jest-tests-for-skills.[rule].md
       - briefs/rule.require.snap-review-on-skill-change.[rule].md
       - briefs/rule.prefer.internal-briefs-location.[rule].md
+      # rules — citations + recommendation discipline
+      - briefs/rule.require.seven-distinct-citations.[rule].md
+      - briefs/rule.require.recommendation-disclaimer.[rule].md
+      # rules — publish-safety triage
+      - briefs/rule.require.publishability-triage.[rule].md
       # howto lessons
       - briefs/howto.block-writes-via-hooks.[lesson].md
       - briefs/howto.check-role-costs.[lesson].md

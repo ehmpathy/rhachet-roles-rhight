@@ -66,3 +66,7 @@ coverage protects all sizes of homebuilders"
 - well-known facts (e.g., "AM Best rates financial strength")
 - definitions from authoritative sources already in context
 - internal repo references
+
+## .see also
+
+- `rule.require.seven-distinct-citations.[rule].md` — the count bar (≥ 7 distinct sources per doc)
