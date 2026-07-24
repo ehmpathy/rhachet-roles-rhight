@@ -111,6 +111,18 @@
             "command": "./node_modules/.bin/rhachet roles boot --repo rhight --role permiter",
             "timeout": 60,
             "author": "repo=rhight/role=permiter"
+          },
+          {
+            "type": "command",
+            "command": "./node_modules/.bin/rhachet roles boot --role achiever",
+            "timeout": 30,
+            "author": "repo=bhrain/role=achiever"
+          },
+          {
+            "type": "command",
+            "command": "./node_modules/.bin/rhx goal.triage.next --when hook.onBoot",
+            "timeout": 10,
+            "author": "repo=bhrain/role=achiever"
           }
         ]
       },
@@ -159,6 +171,12 @@
             "command": "./node_modules/.bin/rhachet run --repo ehmpathy --role mechanic --init claude.hooks/pretooluse.forbid-test-background",
             "timeout": 5,
             "author": "repo=ehmpathy/role=mechanic"
+          },
+          {
+            "type": "command",
+            "command": "./node_modules/.bin/rhx route.foreground.guard --mode hook",
+            "timeout": 5,
+            "author": "repo=bhrain/role=driver"
           }
         ]
       },
@@ -215,6 +233,12 @@
             "command": "./node_modules/.bin/rhx route.mutate.guard --mode hook",
             "timeout": 5,
             "author": "repo=bhrain/role=driver"
+          },
+          {
+            "type": "command",
+            "command": "./node_modules/.bin/rhx goal.guard",
+            "timeout": 5,
+            "author": "repo=bhrain/role=achiever"
           }
         ]
       },
@@ -239,11 +263,35 @@
             "command": "./node_modules/.bin/rhx route.drive --when hook.onStop",
             "timeout": 5,
             "author": "repo=bhrain/role=driver"
+          },
+          {
+            "type": "command",
+            "command": "./node_modules/.bin/rhx goal.triage.infer --when hook.onStop",
+            "timeout": 10,
+            "author": "repo=bhrain/role=achiever"
+          },
+          {
+            "type": "command",
+            "command": "./node_modules/.bin/rhx goal.triage.next --when hook.onStop",
+            "timeout": 10,
+            "author": "repo=bhrain/role=achiever"
           }
         ]
       }
     ],
-    "UserPromptSubmit": []
+    "UserPromptSubmit": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./node_modules/.bin/rhx goal.triage.infer --when hook.onTalk",
+            "timeout": 5,
+            "author": "repo=bhrain/role=achiever"
+          }
+        ]
+      }
+    ]
   },
   "permissions": {
     "allow": [
@@ -436,8 +484,7 @@
       "Bash(gh search prs:*)",
       "Bash(gh search commits:*)",
       "Bash(gh api -X GET:*)",
-      "Bash(gh api --method GET:*)",
-      "Bash(source .agent/repo=.this/role=any/skills/use.apikeys.sh)"
+      "Bash(gh api --method GET:*)"
     ],
     "deny": [
       "Bash(bash:*)",

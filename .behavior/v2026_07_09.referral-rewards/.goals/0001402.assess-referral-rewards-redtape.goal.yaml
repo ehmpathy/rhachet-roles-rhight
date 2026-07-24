@@ -1,0 +1,15 @@
+slug: 'assess-referral-rewards-redtape'
+source: 'peer:human'
+status:
+  choice: 'blocked'
+  reason: 'vision stone complete and arrived; blocked on human-only gate — needs ''rhx route.stone.set --stone 1.vision --as approved'' before execution can proceed'
+updatedAt: '2026-07-11'
+why:
+  ask: 'hi (opened the bound referral-rewards behavior)'
+  purpose: 'the wisher wants to know what legal redtape governs a referral-rewards program'
+  benefit: 'the wisher can decide go/no-go and pick a lawful structure before launch, with counsel-ready cited law'
+what:
+  outcome: 'a cited legal-risk map that answers the assessment questions across the program reward tiers, driven through the behavior route'
+how:
+  task: 'drive the .behavior/v2026_07_09.referral-rewards route stone by stone: vision done and arrived; await human approval, then execution + verification'
+  gate: 'the behavior route reaches its final stone with the assessment deliverable complete and verified'

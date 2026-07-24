@@ -1,6 +1,16 @@
 slug: rhight
 readme: dist/domain.roles/readme.md
 roles:
+  - slug: accountant
+    readme: dist/domain.roles/accountant/readme.md
+    briefs:
+      dirs: dist/domain.roles/accountant/briefs
+    skills:
+      dirs: dist/domain.roles/accountant/skills
+    inits:
+      dirs: dist/domain.roles/accountant/inits
+    boot: dist/domain.roles/accountant/boot.yml
+    keyrack: dist/domain.roles/accountant/keyrack.yml
   - slug: insurer
     readme: dist/domain.roles/insurer/readme.md
     briefs:
