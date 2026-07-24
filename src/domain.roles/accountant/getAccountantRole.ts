@@ -8,7 +8,8 @@ import { Role } from 'rhachet';
 export const ROLE_ACCOUNTANT: Role = Role.build({
   slug: 'accountant',
   name: 'Accountant',
-  purpose: 'advise on books and tax treatment of rewards instruments and their redemption paths',
+  purpose:
+    'advise on books and tax treatment of rewards instruments and their redemption paths',
   readme: { uri: `${__dirname}/readme.md` },
   boot: { uri: `${__dirname}/boot.yml` },
   keyrack: { uri: `${__dirname}/keyrack.yml` },
