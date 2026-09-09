@@ -38,7 +38,7 @@ collect the fact sentences into a brief of the right kind:
 | a line between two legal characters | `define.boundary.*` |
 | a plain statement of doctrine | `define.*` / `ref.*` |
 
-ground every claim in verbatim authority (per `rule.require.webfetch-citations`). the fact-brief must
+ground every claim in verbatim authority (per `rule.require.bhrowser-citations`). the fact-brief must
 stand on its own — no client, no applied design, just the law and a neutral fact pattern.
 
 ### 3. delete the business tactic
@@ -98,4 +98,4 @@ the client's repo. the original howto was removed from the public tree.
 
 - `rule.require.fullsun-facts-not-tactics.[rule].md` — the rule this howto executes
 - `rule.require.publishability-triage.[rule].md` — the triage + the blind red-team
-- `rule.require.webfetch-citations.[rule].md` — the verbatim-citation bar for the fact-brief
+- `rule.require.bhrowser-citations.[rule].md` — the verbatim-citation bar for the fact-brief

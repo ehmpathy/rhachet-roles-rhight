@@ -230,7 +230,7 @@ full matrix with verbatim cites is in `hazard.contingent-reward-referral-selling
 | question | answer |
 |----------|--------|
 | how bad is FL? | referral selling = illegal **lottery**, first-degree misdemeanor |
-| what is the ceiling? | up to 1 year jail (§ 775.082) + $1,000 fine (§ 775.083) per count |
+| what is the maximum? | up to 1 year jail (§ 775.082) + $1,000 fine (§ 775.083) per count |
 | does disclosure cure it? | no — the classification turns on the elements, not disclosure |
 | the two elements that split the sides | names vs link, and own-purchase inducement vs promo bonus |
 | plus | a guaranteed reward vs a random draw |

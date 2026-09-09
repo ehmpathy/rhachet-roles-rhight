@@ -19,9 +19,11 @@ ignores:
   - "@src/.*"
   - yalc
   - rhachet-roles-bhrain
+  - rhachet-roles-bhrowser
   - rhachet-roles-bhuild
   - rhachet-roles-ehmpathy
   - rhachet-brains-anthropic
+  - rhachet-brains-fireworksai
   - rhachet-brains-xai
   - rhachet-roles-rhachet
   - rhachet-roles-rhight

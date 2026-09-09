@@ -1,6 +1,38 @@
 always:
   briefs:
     ref:
+      # ⭐ research method — run this at the END of every research pass, any subject
+      # .note = a synthesis brief is organized by what the sources REQUIRE, so it structurally loses
+      #         where a reader's intuition DIVERGES from them. that divergence exists only as a
+      #         relation between source and reader — invisible in the source, so a faithful summary
+      #         cannot carry it. it is also the most perishable result of the pass.
+      # .note = ⭐ two kinds of landmine, and most hazard lists capture only the first: type I = the
+      #         belief is WRONG (discoverable only by contradiction); type II = the belief is ABSENT
+      #         (discoverable by an exhaustive read, and the larger + cheaper half).
+      # .note = ⭐ the redline test — "if you cross it, are you defeated whatever else you do?" —
+      #         excludes appetite BY CONSTRUCTION, which is what keeps the output publishable.
+      # .note = symlinked to .agent/repo=.this/role=any/briefs/ so every role in this repo sees it
+      # .note = ⭐ THE LADDER: facts -> lines -> todos, each rung a LOSSY projection of the one below.
+      #         (1) floor.landmines = what defeats a careful reader. (2) floor.redlines = cross it and
+      #         you are defeated whatever else you do. (3) floor.mustcants = the todo and its
+      #         done-condition. ⛔ each rung DROPS information on purpose — (1)->(2) drops every
+      #         non-fatal fact, which excludes APPETITE by construction; (2)->(3) drops the ORDER,
+      #         which keeps the artifact from turning into a plan. ⛔ you cannot skip a rung: sources
+      #         -> todos IS a plan, with judgment you never justified and no trace column to check.
+      # .note = ⭐ the trace chain must be complete UPWARD (todo -> line -> fact -> source) and is
+      #         EXPECTED to be incomplete downward. a break upward is a named defect: a line with no
+      #         fact = invented caution; a todo with no line = invented work.
+      # .note = ⭐ CAN'T means CANNOT, never MAY NOT. under the forbidden sense the mustcants matrix
+      #         degenerates — CE duplicates MX and CX is meaningless. every "you may not" lands in MX.
+      # .note = ⭐ a sweep LOWERS the measured floor while it RAISES the real one: hidden lines become
+      #         visible, so the count worsens as the position improves. ⛔ any process that rewards the
+      #         count will kill the sweep. a SHORT line list means a SHORT SWEEP, never a high floor.
+      - briefs/research/howto.distill-redlines-and-landmines.[lesson].md
+      - briefs/research/define.the-floor-ladder.[lesson].md
+      - briefs/research/define.the-mustcants-matrix.[lesson].md
+      - briefs/research/define.what-it-means-to-raise-the-floor.[lesson].md
+      - briefs/research/rule.require.floor-brief-disclaimers.[rule].md
+
       # protection mechanisms — how to protect when hire contractor
       - briefs/howto.protect-when-hire-contractor.[lesson].md
       - briefs/howto.recourse-contractor-abandonment.[lesson].md
@@ -96,6 +128,133 @@ always:
 
       # unfair-and-deceptive-practices remedy law (UDAP teeth)
       - briefs/market/rewards/ref.udap-remedy-teeth.five-state.[ref].md
+
+      # phone-contact law (TCPA) — the front door, the index, and the prior question
+      # every other brief presumes
+      # .note = `_.start-here` is registered FIRST, and deliberately. it is the reader's entry
+      #         point, and an entry point no boot sequence surfaces is an entry point to
+      #         nowhere — it was authored orphaned (untracked, zero inbound links from either
+      #         this file or its own sibling index) and a peer review caught it before it
+      #         shipped that way.
+      - briefs/market/comms/_taxonomy/_.start-here.[summary].md
+      - briefs/market/comms/_taxonomy/_.glossary.[summary].md
+      - briefs/market/comms/define.boundary.when-consent-is-required-at-all.[lesson].md
+
+      # phone-consent law (TCPA) — the standard, the record, and the exposure
+      - briefs/market/comms/ref.tcpa-consent-elements.[ref].md
+      - briefs/market/comms/hazard.unprovable-consent-record.[hazard].md
+      - briefs/market/comms/ref.tcpa-exposure-tracks.[ref].md
+
+      # phone-contact law (TCPA) — the OTHER track, which consent does not answer
+      - briefs/market/comms/ref.dnc-suppression-program.[ref].md
+
+      # phone-contact law — the STATE layer every federal-only brief above disclaims
+      # .note = the only brief in this folder that is not federal-only. its result is NOT
+      #         "federal, times five": California requires a live mid-call announcement that no
+      #         written record satisfies (Indiana offers a live-operator route as an alternative
+      #         to consent, so a written record still reaches it), and the states with the biggest
+      #         penalty figures have no private right at all.
+      - briefs/market/comms/ref.mini-tcpa-five-state.[ref].md
+
+      # phone-consent law (TCPA) — what the 2025 vacatur moved, and whether claims aggregate
+      - briefs/market/comms/define.what-the-2025-vacatur-did-and-did-not-do.[lesson].md
+      - briefs/market/comms/define.boundary.formation-not-customer-status-is-the-axis.[lesson].md
+
+      # phone-consent law (TCPA) — the operational record duty
+      # .note = ☀️ fullsun. FIRST tagged 🕶️ obscure, which was an over-tag it half-caught itself
+      #         (its old tag read "an argument for fullsun exists", then took the restrictive one
+      #         by default). each of its nine requirements carries a `traces to` column that cites
+      #         the authority it derives from, and it expressly prescribes NO schema, vendor, or
+      #         storage tech — so it discloses no choice the sources do not force.
+      - briefs/market/comms/rule.require.consent-provenance-record.[rule].md
+
+      # phone-contact law (TCPA) — ⭐ the synthesis: the discovered floor, stacked
+      # .note = it exists because the four exposure tracks are each defeated by a DIFFERENT
+      #         mechanism, so no single-slice brief could hold the stack.
+      # .note = ☀️ fullsun. also FIRST tagged 🕶️ on the ground that a stack is a tactic; also an
+      #         over-tag. it names no client, volume, vendor, schema, or product, and every
+      #         element is derivable from its eight public sources.
+      # .note = ⛔ its 🕶️ remainder — the stand-up order and the gap priority — was SPLIT OUT to
+      #         .agent/repo=.this/role=any/briefs/, outside the packaged tree. bundled, those two
+      #         sections held ~85% of a publishable floor out of daylight, because an artifact
+      #         takes the strictest tag of any part in it. the ☀️ brief does NOT name the
+      #         remainder: an index that names a withheld file publishes its abstract.
+      # .note = the test that settled all three tags is
+      #         .agent/repo=.this/role=any/briefs/howto.discover-a-fullsun-floor.[lesson].md
+      - briefs/market/comms/tactic.the-discovered-floor-against-a-tcpa-claim.[lesson].md
+
+      # phone-contact law (TCPA) — ⭐ the per-layer floors, one file per layer
+      # .note = the `floor.` prefix marks a promise: the best minimum we have FOUND for that
+      #         layer, every element traced to a named authority, and its own failures named.
+      #         a floor, never a peak.
+      # .note = these two are the layers the stack ranks FIRST and SECOND to stand up, and
+      #         they are the two the synthesis brief above could only summarize.
+      # .note = ⭐ they defeat DIFFERENT tracks. the class waiver is the only layer that
+      #         touches the multiplier (§ 227(b)(3) damages are a product, and it shrinks the
+      #         right term). the suppression program is the only layer the statute itself
+      #         names as a pleaded defense (§ 227(c)(5)) — and ⛔ consent records do not
+      #         reach it, because that defense has no consent element.
+      - briefs/market/comms/floor.howto.form-a-class-waiver-that-holds.[lesson].md
+      - briefs/market/comms/floor.howto.stand-up-a-dnc-suppression-program.[lesson].md
+
+      # phone-contact law (TCPA) — ⭐ the counter-intuitive half: what defeats a careful program
+      # .note = a ladder of three: FACTS -> LINES -> TODOS. they are SEPARATE on purpose. the
+      #         catalogue holds facts and prescribes no action; the redlines hold imperatives and
+      #         cite back by ID — so a redline with no landmine behind it reads as invented caution.
+      # .note = ⚠️ the catalogue is fed by TWO sweeps of the same instrument — for what it DEMANDS
+      #         and for what it GRANTS — and the grants half is group J. a hazard sweep returns
+      #         hazards, so a reader who skips group J OVER-RESERVES against rules that never
+      #         reached them, and no event ever corrects that: an unknown duty arrives as a demand
+      #         letter, an unknown protection arrives never.
+      # .note = ⭐ TWO WALKERS, and every entry is marked for which one steps on it. 🪨 type ⓪ =
+      #         the PLAIN rule, which defeats a NIGHTWALKER (a reader with no model of this law).
+      #         ⚡ type I/II = the SURPRISE, which defeats a LIGHTWALKER (a practitioner whose
+      #         model is wrong or has a hole). ⛔ BOTH are enumerated — the obvious is NEVER
+      #         omitted for obviousness — and only the surprises carry ⚡, so each reader finds
+      #         their half at a glance. group K + redlines H18-H23 + mustcants ME26-ME30 are the
+      #         🪨 plain set; all other rows are ⚡.
+      # .note = ⛔ the plain rules were ABSENT until 2026-08-06, and the cause generalizes:
+      #         rung ①'s admission test was "did a source CONTRADICT a competent reader's belief?"
+      #         — which is READER-RELATIVE — and rung ② traces into ①, so ②'s reader-INDEPENDENT
+      #         test was silently narrowed. a rule nobody was wrong about could not enter, however
+      #         large. ⭐ A CATALOGUE'S BLIND SPOT IS PROPORTIONAL TO ITS AUTHORS' EXPERTISE.
+      #         K7 records it. ⚠️ and type ⓪ cannot be swept for by anyone who has read the
+      #         instrument — the only true instrument is an uninitiated reader.
+      # .note = ⭐ a landmine here is not "a risk". it is a FALSE BELIEF THAT SURVIVES INSPECTION —
+      #         what a competent person concludes from a correct read of a PARTIAL source. that is
+      #         why they are catalogued apart from the law: the law is in the other briefs, and this
+      #         pair maps where the law is counter-intuitive.
+      # .note = ⭐ the redline test — "if you cross this line, are you defeated whatever else you
+      #         do?" — is what keeps the file publishable. a preference among options the law PERMITS
+      #         fails that test, so appetite is excluded by the rule of construction rather than by a
+      #         scrub afterwards.
+      # .note = ⚠️ a clean redline sheet proves you have not been DEFEATED. it never proves compliance
+      #         — that needs the affirmative build in the floor.howto.* briefs above.
+      # .note = ⭐ floor.mustcants is the TACTICAL read of the redlines — the TODOS. it buckets each
+      #         line on two axes, MUST/CANT x ESTABLISH/ELIMINATE, and each cell carries a DIFFERENT
+      #         shape of action: ME = build it and be able to PRODUCE it; MX = stop it, where a
+      #         control layered on top is not a removal; CE = the window CLOSED, so done is
+      #         unavailable; CX = a RESIDUAL that no control reaches, only bound and budget.
+      #         ⭐ the two CANT cells are the payload — they name FALSE BELIEFS ABOUT ESCAPE, which
+      #         is where the landmines cluster hardest and which no other file in the family holds.
+      #         ⚠️ a reader with traffic ALREADY OUT reads the CANT column first: it names the
+      #         repairs that no longer exist, before they spend on one.
+      #         it stays publishable by the same rule of admission — a todo enters only where a line
+      #         FORCES it, and every place the sources permit a choice is listed as an OPEN SILENCE.
+      #         ⛔ build ORDER is itself a silence: a sequence is a spend decision, and a spend
+      #         decision is appetite. CE is the only bucket with a clock, and that clock is in the
+      #         SOURCE rather than in our preference.
+      # .note = ⭐ group J of floor.landmines is the GRANTS sweep: what the sources GIVE you rather
+      #         than what defeats you — the ported-number grace, the (a)(3) numerical limits, the
+      #         (a)(2) nonprofit/HIPAA drop, the personal-relationship exception, the (c)(2)(ii)
+      #         signed written agreement. ⛔ J6 is the correction that group exists to carry: NO
+      #         PROTECTION IS FREE. an earlier cut held these in a separate file (floor.armory) and
+      #         split them into "armor" (passive, unloseable) and "shields" (pleaded and proved) —
+      #         the armor half was FALSE on its own entries, since every protection carries
+      #         conditions YOU must establish. R17-R19 and ME22-ME25 carry that correction forward.
+      - briefs/market/comms/floor.landmines.[lesson].md
+      - briefs/market/comms/floor.redlines.[lesson].md
+      - briefs/market/comms/floor.mustcants.[lesson].md
 
       # consumer-disclosure recommendation rules
       - briefs/market/rewards/rule.prefer.clear-conspicuous-disclosures.[rule].md

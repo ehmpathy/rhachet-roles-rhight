@@ -1,0 +1,15 @@
+slug: 'research-phone-consent-liability'
+source: 'peer:human'
+status:
+  choice: 'blocked'
+  reason: '1.vision complete: yield emitted, all 4/4 self-reviews promised. route guard j1 halts on ''wait for human approval'' — only the human may run ''rhx route.stone.set --stone 1.vision --as approved''. also open for the human: Q6, whether the route should carry a research stone between 1.vision and 5.1.execution.from_vision (default if silent: 5.1 carries both research + authorship). secondary blocker for 5.1: no browser tool available this session, so every quote bound for a shipped brief needs a bhrowser re-pull per the standing citation rule.'
+updatedAt: '2026-07-30'
+why:
+  ask: 'heard noise that corps can get sued if they contact customers via phone call/text without provable explicit consent — what are eligible proof mechanisms, penalty sizes, how to prove consent, and what insurers cover these suits?'
+  purpose: 'the human runs corps that contact customers by phone and needs to know the real liability exposure and how to defend against it'
+  benefit: 'corp can contact customers with a defensible consent record, know its penalty exposure, and carry the right insurance'
+what:
+  outcome: 'the .behavior/v2026_07_30.fix-legal-comms-consent route is driven to completion, delivering counselor-role briefs that answer all four questions with webfetch-verified citations'
+how:
+  task: 'drive the bound route stone by stone, beginning with 1.vision'
+  gate: 'every route stone passed; briefs satisfy rule.require.webfetch-citations and rule.require.seven-distinct-citations'

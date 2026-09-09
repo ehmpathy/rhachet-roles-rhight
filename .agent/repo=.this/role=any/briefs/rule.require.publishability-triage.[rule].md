@@ -266,15 +266,18 @@ parentheses for the action, but the posture leads.
 - a fullsun brief in **advisory voice** (fails test 4 — one actor always lands safe, set stitched into one design) = **blocker**
 - a red-team that recovers the **integrated design** from the fullsun set, published anyway = **blocker**
 - an **aggregation surface** (boot.yml / index / glossary / catalogue / manifest) that narrates the applied design instead of neutral topic law = **blocker** (see `rule.forbid.aggregation-index-build-narrative`)
+- a shipped brief whose `## .publishability` section carries the **internal audit trail** (red-team findings, "re-read owed", citation-quota math, over-tag narrative, withheld-file mentions) instead of the bare stamp = **blocker** (see `rule.forbid.audit-trail-in-shipped-briefs`)
 - a triage report that omits the posture emoji = **nitpick**
 
 ## .see also
 
+- `rule.forbid.audit-trail-in-shipped-briefs.[rule].md` — the stamp ships; the audit trail this workflow produces stays in the route
+- `rule.require.briefs-integrity-gate.[rule].md` — the `briefs.integrity` gate that mechanizes this triage on every build
 - `rule.require.fullsun-facts-not-tactics.[rule].md` — fullsun the legal facts, never the business decisions
 - `rule.forbid.aggregation-index-build-narrative.[rule].md` — indexes must name topic law, never the applied design
 - `howto.redact-obscure-to-legal-facts.[lesson].md` — the step-by-step obscure→facts redaction
 - `howto.test-obscurity-via-blind-convergence.[lesson].md` — the convergence probe: do blind readers converge on one design?
 - `howto.redact-completed-behavior-route.[lesson].md` — how to redact a completed, prune-approved .behavior route
 - `rule.require.recommendation-disclaimer.[rule].md` — the recommendation-disclaimer companion rule
-- `rule.require.webfetch-citations.[rule].md` — the citation-quality rule
+- `rule.require.bhrowser-citations.[rule].md` — the citation-quality rule
 - `motto.not-legal-advice.[motto].md` — the not-advice framework

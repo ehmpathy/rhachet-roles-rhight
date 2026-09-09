@@ -1,0 +1,108 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`briefs.integrity given: [case1] --help flag when: [t0] help is requested then: the help text is snapshotted 1`] = `
+"⚖️ briefs.integrity — check briefs against the mechanical invariants
+
+usage:
+  briefs.integrity.sh [--path <dir>] [--severity <level>] [--check <slug>] [--format <fmt>]
+
+options:
+  --path      directory to check         (default: src/domain.roles)
+  --severity  all | blocker | nitpick    (default: all)
+  --check     report only this check     (repeatable; default: all)
+  --format    tree | json                (default: tree)
+
+checks:
+  see-also-target-absent               a .see also target that does not open
+  sources-below-seven                  fewer than 7 numbered sources
+  source-anchor-unreferenced           a source no body sentence uses
+  not-advice-callout-absent            no 'not legal advice' callout
+  date-researched-absent               no '## .date researched' section
+  publishability-tag-absent            no triage tag
+  non-fullsun-in-published-path        a withheld brief that would ship
+  absence-claim-falsified-exact        claims text is absent while it holds it
+  fullsun-names-non-fullsun            a public brief names a withheld one
+  internal-scaffold-leaked-in-fullsun  a fullsun brief names a .behavior/ or .route/ path
+
+examples:
+  briefs.integrity.sh --path src/domain.roles/counselor --severity blocker
+  briefs.integrity.sh --check non-fullsun-in-published-path --severity blocker
+"
+`;
+
+exports[`briefs.integrity given: [case2] an unknown argument when: [t0] the skill is called with it then: the rejection stderr is snapshotted, so a caller sees it 1`] = `
+"⚖️ blocked — unknown argument: --nonsuch
+   fix: run with --help to see the accepted options
+"
+`;
+
+exports[`briefs.integrity given: [case3] a path that does not exist when: [t0] the skill is called with it then: the bad-path stderr is snapshotted, counts masked 1`] = `
+"⚖️ blocked — no directory at: src/does.not.exist
+   fix: pass a directory that exists, e.g.
+     briefs.integrity.sh --path src/domain.roles/counselor
+"
+`;
+
+exports[`briefs.integrity given: [case4] the live comms briefs, json format when: [t0] the skill runs over them then: the json variant shape is snapshotted, counts masked 1`] = `"{"root":"src/domain.roles/counselor/briefs/market/comms","severity":"all","briefsReached":"#","briefsWithDefects":"#","blockers":"#","nitpicks":"#","countByCheck":{"source-anchor-unreferenced":"#"},"defects":[{"path":"define.boundary.when-consent-is-required-at-all.[lesson].md","check":"source-anchor-unreferenced","severity":"nitpick","line":"#","detail":"source #'s anchor \`Insurance Marketing Coalition Ltd. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it."},{"path":"hazard.unprovable-consent-record.[hazard].md","check":"source-anchor-unreferenced","severity":"nitpick","line":"#","detail":"source #'s anchor \`Inc. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it."},{"path":"hazard.unprovable-consent-record.[hazard].md","check":"source-anchor-unreferenced","severity":"nitpick","line":"#","detail":"source #'s anchor \`Insurance Marketing Coalition Ltd. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it."},{"path":"ref.dnc-suppression-program.[ref].md","check":"source-anchor-unreferenced","severity":"nitpick","line":"#","detail":"source #'s anchor \`Inc. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it."},{"path":"ref.dnc-suppression-program.[ref].md","check":"source-anchor-unreferenced","severity":"nitpick","line":"#","detail":"source #'s anchor \`§ 1658\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it."},{"path":"ref.tcpa-consent-elements.[ref].md","check":"source-anchor-unreferenced","severity":"nitpick","line":"#","detail":"source #'s anchor \`Insurance Marketing Coalition Ltd. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it."},{"path":"ref.tcpa-consent-elements.[ref].md","check":"source-anchor-unreferenced","severity":"nitpick","line":"#","detail":"source #'s anchor \`Inc. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it."},{"path":"ref.tcpa-exposure-tracks.[ref].md","check":"source-anchor-unreferenced","severity":"nitpick","line":"#","detail":"source #'s anchor \`Voters of New Hampshire v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it."},{"path":"ref.tcpa-exposure-tracks.[ref].md","check":"source-anchor-unreferenced","severity":"nitpick","line":"#","detail":"source #'s anchor \`§ 64.1200\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it."},{"path":"rule.require.consent-provenance-record.[rule].md","check":"source-anchor-unreferenced","severity":"nitpick","line":"#","detail":"source #'s anchor \`Inc. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it."}]}"`;
+
+exports[`briefs.integrity given: [case6] the tree format when: [t0] the skill runs over one brief folder then: the tree variant furniture is snapshotted, counts masked 1`] = `
+"
+⚖️ the briefs hold
+
+📋 briefs.integrity --path src/domain.roles/counselor/briefs/market/comms --severity all
+   ├─ scope: src/domain.roles/counselor/briefs/market/comms
+   ├─ briefs reached: #
+   ├─ briefs with defects: #
+   ├─ blockers: #
+   ├─ nitpicks: #
+   ├─ by check
+   │  └─ source-anchor-unreferenced: #
+   └─ defects
+      ├─ 🟡 define.boundary.when-consent-is-required-at-all.[lesson].md:#
+      │     source-anchor-unreferenced
+      │     source #'s anchor \`Insurance Marketing Coalition Ltd. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it.
+      ├─ 🟡 hazard.unprovable-consent-record.[hazard].md:#
+      │     source-anchor-unreferenced
+      │     source #'s anchor \`Inc. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it.
+      ├─ 🟡 hazard.unprovable-consent-record.[hazard].md:#
+      │     source-anchor-unreferenced
+      │     source #'s anchor \`Insurance Marketing Coalition Ltd. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it.
+      ├─ 🟡 ref.dnc-suppression-program.[ref].md:#
+      │     source-anchor-unreferenced
+      │     source #'s anchor \`Inc. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it.
+      ├─ 🟡 ref.dnc-suppression-program.[ref].md:#
+      │     source-anchor-unreferenced
+      │     source #'s anchor \`§ 1658\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it.
+      ├─ 🟡 ref.tcpa-consent-elements.[ref].md:#
+      │     source-anchor-unreferenced
+      │     source #'s anchor \`Insurance Marketing Coalition Ltd. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it.
+      ├─ 🟡 ref.tcpa-consent-elements.[ref].md:#
+      │     source-anchor-unreferenced
+      │     source #'s anchor \`Inc. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it.
+      ├─ 🟡 ref.tcpa-exposure-tracks.[ref].md:#
+      │     source-anchor-unreferenced
+      │     source #'s anchor \`Voters of New Hampshire v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it.
+      ├─ 🟡 ref.tcpa-exposure-tracks.[ref].md:#
+      │     source-anchor-unreferenced
+      │     source #'s anchor \`§ 64.1200\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it.
+      └─ 🟡 rule.require.consent-provenance-record.[rule].md:#
+            source-anchor-unreferenced
+            source #'s anchor \`Inc. v.\` appears in no sentence above \`.sources\`. a cite that supports no sentence is a pad — use it or drop it.
+"
+`;
+
+exports[`briefs.integrity given: [case7] a hermetic corpus with a single clean brief when: [t0] the skill runs over it then: the clean tree is snapshotted, temp root normalized 1`] = `
+"
+⚖️ the briefs hold
+
+📋 briefs.integrity --path <tmp>/briefs --severity all
+   ├─ scope: <tmp>/briefs
+   ├─ briefs reached: #
+   ├─ briefs with defects: #
+   ├─ blockers: #
+   ├─ nitpicks: #
+   └─ no defect detected in scope
+"
+`;
+
+exports[`briefs.integrity given: [case8] a check filter and a nitpick severity filter when: [t0] --severity blocker filters a nitpick-only set to empty then: the blocker-filtered json variant is snapshotted, counts masked 1`] = `"{"root":"src/domain.roles/counselor/briefs/market/comms","severity":"blocker","briefsReached":"#","briefsWithDefects":"#","blockers":"#","nitpicks":"#","countByCheck":{},"defects":[]}"`;

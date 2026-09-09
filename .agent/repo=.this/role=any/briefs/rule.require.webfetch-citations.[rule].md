@@ -1,5 +1,20 @@
 # rule.require.webfetch-citations
 
+> ## ⚠️ SUPERSEDED — see `rule.require.bhrowser-citations.[rule].md`
+>
+> **WebFetch is no longer acceptable for a citation.** it returns a summarizer model's *paraphrase*
+> of a page, which silently truncates and is defeated by blocks, redirects, and javascript apps.
+> **every citation must now be captured through `bhrowser`.**
+>
+> | this rule said | now |
+> |----------------|-----|
+> | WebSearch snippets are insufficient | ✅ **still true** |
+> | WebFetch content is acceptable | ❌ **no longer true** — use `bhrowser` |
+> | PDF reads are acceptable | ✅ **still true**, narrowed — the *whole* document, read as a document |
+>
+> the title of this file names a tool that is now only a shortcut. read the successor rule, not this
+> title. the material below is kept for its case against WebSearch, and for its worked example.
+
 ## .what
 
 all factual claims must be backed by WebFetch'ed citations. WebSearch snippets are insufficient.

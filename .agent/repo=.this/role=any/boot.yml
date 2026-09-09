@@ -2,9 +2,10 @@ always:
   briefs:
     say:
       # critical rules — always in context
-      - briefs/rule.require.webfetch-citations.[rule].md
+      - briefs/rule.require.bhrowser-citations.[rule].md
     ref:
       # rules
+      - briefs/rule.require.webfetch-citations.[rule].md # superseded by bhrowser-citations
       - briefs/rule.forbid.test-skip.[rule].md
       - briefs/rule.require.research-to-briefs.[rule].md
       - briefs/rule.require.jest-tests-for-skills.[rule].md
@@ -15,6 +16,8 @@ always:
       - briefs/rule.require.recommendation-disclaimer.[rule].md
       # rules — publish-safety triage
       - briefs/rule.require.publishability-triage.[rule].md
+      - briefs/rule.forbid.audit-trail-in-shipped-briefs.[rule].md
+      - briefs/rule.require.briefs-integrity-gate.[rule].md
       # howto lessons
       - briefs/howto.block-writes-via-hooks.[lesson].md
       - briefs/howto.check-role-costs.[lesson].md

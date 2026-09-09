@@ -76,7 +76,7 @@ RIGHT: research → write brief → reference brief in response
 | source URL | YES |
 | verbatim quote | YES (for key claims) |
 | fetch date | YES |
-| verification method | YES (WebFetch, not WebSearch) |
+| verification method | YES (`bhrowser` capture — not WebSearch, not WebFetch) |
 
 ### citation format
 
@@ -84,8 +84,11 @@ RIGHT: research → write brief → reference brief in response
 From [Source Name](https://url.com/page):
 > "verbatim quote from source"
 
-— WebFetch verified 2026-04-29
+— captured via `bhrowser` 2026-04-29
 ```
+
+per `rule.require.bhrowser-citations`, a WebSearch snippet and a WebFetch paraphrase are both
+insufficient — only a capture off the real page may be quoted.
 
 ## .workflow
 

@@ -115,9 +115,9 @@ state matrix. but a brief that mixes federal + state must run the five-state swe
 
 ## .how
 
-- for each of the five, WebFetch the official statute (per `rule.require.webfetch-citations`) and quote
-  it verbatim; where a state has no such statute, say so explicitly ("no TX analogue found") rather than
-  omit the state.
+- for each of the five, capture the official statute through `bhrowser` (per
+  `rule.require.bhrowser-citations`) and quote it verbatim; where a state has no such statute, say so
+  explicitly ("no TX analogue found") rather than omit the state.
 - prefer official state sources (the legislature's own site); fall back to reliable mirrors (Cornell LII,
   Justia, FindLaw) and note the fallback.
 - satisfy `rule.require.seven-distinct-citations` across the whole brief — the five-state sweep usually
@@ -134,6 +134,7 @@ state matrix. but a brief that mixes federal + state must run the five-state swe
 
 ## .see also
 
-- `rule.require.webfetch-citations.[rule].md` — every state cell must be WebFetch'd, not a search snippet
+- `rule.require.bhrowser-citations.[rule].md` — every state cell must be captured off the real page,
+  not from a search snippet or a WebFetch paraphrase
 - `rule.require.seven-distinct-citations.[rule].md` — the ≥ 7 distinct-source bar
 - `motto.not-legal-advice.[motto].md` — the not-advice frame the matrix rides under
