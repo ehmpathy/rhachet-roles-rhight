@@ -67,3 +67,22 @@ always:
       - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.claim-denials.residential-cases.[ref].md
       - briefs/practices/coverage.asset=home.scope=construction/ref.builders-insurance.carriers.rcv-on-extant.[ref].md
       - briefs/practices/coverage.asset=home.scope=construction/checklist.builders-insurance.coverage-gaps.[checklist].md
+
+      # coverage.scope=comms — does a CGL answer a TCPA claim?
+      # .note = this brief sits at `briefs/` root, not under `practices/`, and that is deliberate.
+      #         `practices/` holds the `coverage.asset=home.holder=*` facets; the 15 crosscut
+      #         `define.*` / `ref.*` / `hazard.*` briefs at root are keyed to a doctrine rather than
+      #         to an asset+holder pair, and this one is keyed to a claim type. it is registered
+      #         last so the `practices/` blocks above stay contiguous.
+      - briefs/hazard.either-question-can-defeat-gl-coverage-of-a-tcpa-claim.[hazard].md
+
+      # coverage.scope=comms — how to attain cover, given the above
+      # .note = ☀️ fullsun, same as its pair above. it was FIRST tagged 🕶️ obscure — inherited from
+      #         the pair rather than tested against its own contents — and the brief's own
+      #         `.publishability` now records that as an over-tag. the discriminator is
+      #         applied-vs-generic, not tactic-vs-fact: this file tells a reader how to READ a
+      #         document they already hold, and reaches no answer for any particular policy.
+      #         ⛔ the tag lives in the brief, never here. this comment is a convenience copy that
+      #         no check reads, so it can drift — as it did. confirm against the file's
+      #         `## .publishability` before you trust this line.
+      - briefs/howto.verify-and-negotiate-coverage-for-a-tcpa-claim.[lesson].md

@@ -88,7 +88,7 @@ commission income statement states the calculation verbatim:
 
 **source**: [Onsite Associates Program Commission Income Statement](https://affiliate-program.amazon.com/help/node/topic/G4ARBJC7Z2NK48CA)
 
-and amazon markets the earn ceiling verbatim:
+and amazon markets the earn cap verbatim:
 
 > "Earn up to 10% in associate commissions from qualifying purchases and programs."
 

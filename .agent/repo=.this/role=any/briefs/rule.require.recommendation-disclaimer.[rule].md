@@ -85,6 +85,6 @@ scenario**.
 ## .see also
 
 - `motto.not-legal-advice.[motto].md` — the base not-advice framework this rule stacks on
-- `rule.require.webfetch-citations.[rule].md` — the citation-quality rule for the info the
+- `rule.require.bhrowser-citations.[rule].md` — the citation-quality rule for the info the
   recommendation rests on
 - `rule.require.seven-distinct-citations.[rule].md` — the citation-count bar
