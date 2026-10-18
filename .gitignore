@@ -3,8 +3,61 @@
 *.log
 *.tsbuildinfo
 .artifact
+# agent scratch caches
 .cache
-!**/__fixtures__/**/.cache
+
+# ...except the patenter's cached-patent corpus, which IS committed. it is a
+# real USPTO prosecution history — 37 files of xml/json/pdf that no generator
+# can stand in for, since the point is to replay what the API actually served.
+#
+# the transcriber's fixture is deliberately NOT re-included here: that one is
+# generated at test setup (ps2pdf -> gs rasterize), so it must stay ignored.
+!src/domain.roles/patenter/skills/patent.priors/__fixtures__/**
+# scratch playbooks and their page pulls. a source pull is the artifact of
+# record behind a citation, but pulls are large and re-pullable, so they
+# stay local — the brief carries the verbatim quote, url, date, byte count,
+# and the recipe to re-pull.
+.play
+
+# the same rationale, for the scratch workspace: session handoffs, notes in
+# flight, and raw source pulls. these routinely quote unredacted source
+# documents — a handoff that describes a PII incident necessarily holds the
+# values it is about — so they must never reach a commit.
+.scratch
+#
+# ⚠️ the second line is NOT redundant. `.scratch` matches the DIRECTORY and a
+# file named exactly `.scratch`; it does not match a neighbor such as
+# `.scratch-hz2-p7-7.png`. a tool that emits a scratch artifact NEXT TO the
+# workspace rather than inside it falls straight through the first line.
+#
+# 🚩 observed 2026-08-31 — a 558 KB `.scratch-hz2-p7-7.png` sat STAGED at the
+# repo root. it was a rendered page 7 of the real Form 1120 Schedule G, with
+# the entity name, the EIN, and the officer's full legal name all in the
+# clear. (the SSN was correctly tape-redacted, which is what made the render
+# look safe.) it survived because:
+#   - the name reads as scratch, so it looked self-evidently temporary
+#   - `.scratch` did not match it, so git offered no protection
+#   - `pii.scan` reported `files: 0` — it SKIPPED the binary rather than
+#     cleared it, and a skip and a pass print the same green
+#
+# so the deny is by prefix, which mirrors the `.demo/*` philosophy above: a
+# new scratch artifact is protected on creation, with no edit and no memory
+# of this incident required.
+.scratch-*
+
+# runtime lock files the agent tools write beside their tracked config.
+# `.claude/settings.json` IS tracked and must stay so; a lock is pure session
+# state that reappears every run.
+#
+# 🚩 observed 2026-08-31 — `.claude/scheduled_tasks.lock` sat untracked in a
+# directory that the commit plan touches by name. it was one `git add .claude/`
+# away from the history.
+#
+# the deny is by class, not by exact name, for the same reason `.scratch-*` is:
+# the NEXT lock file is protected on creation. it stays narrow enough that a
+# new tracked config under `.claude/` is not silently hidden.
+.claude/*.lock
+
 .env
 .rhachet
 .serverless
@@ -17,3 +70,38 @@
 coverage
 dist
 node_modules
+
+# source documents may carry PII (SSN, etc) — never commit raw source docs.
+# transcribe + redact them via transcriber skills; commit only the redacted text.
+*.source.pdf
+
+# .demo dirs hold real entity data (account numbers, addresses, transactions).
+# this package publishes to npm — demo inputs and derived artifacts stay local.
+# skills + their tests must stand alone, with synthetic fixtures only.
+**/.demo/**/statements/
+**/.demo/**/stripe/
+**/.demo/**/*.rows.tsv
+
+# a pseudonymization map is the RE-IDENTIFICATION KEY. commit it and every
+# pseudonymized artifact in this repo becomes reversible in one step.
+# `doc.pseudonymize` refuses to run against a map that is not ignored here.
+*.pii-map
+.pii-map
+.pii-allow.local
+
+# ⛔ EVERY DEMO IS LOCAL-ONLY BY DEFAULT. real evidence stays local; a demo
+# earns publication one allowlist line at a time, only after
+# `rhx doc.pseudonymize --verify` reports `survivors: 0`.
+# see rule.require.provable-pseudonymization and rule.require.pii-scan-before-commit.
+**/.demo/*
+#
+# ⚠️ the deny line is `.demo/*`, NOT `.demo/**`, and that is load-bearing.
+# git "cannot re-include a file if a parent directory of that file is
+# excluded" — with `.demo/**` the allowlisted directory is itself excluded,
+# and the `!` lines above do no work at all.
+#
+# ⚠️ DO NOT add an allowlist line for a demo that has not passed a verified
+# pseudonymization pass.
+
+# local working notes — never published
+.agent/.notes/

@@ -1,6 +1,36 @@
 #!/bin/sh
+
+# ⚠️ THE PII GATE RUNS FIRST, AND OUTSIDE THE HUSKY GUARD BELOW.
+#
+#    the guard is correct for the hooks that follow it — a lint or a
+#    format check genuinely cannot run without node_modules, so a
+#    fresh clone must be allowed to commit. it was flatly wrong for
+#    this one.
+#
+#    the shape of the defect: a hole that only opens on the machines
+#    least likely to notice. `_/husky.sh` is absent on a fresh clone
+#    with no `npm install` — so on the very machine where someone is
+#    least oriented, the gate printed a skip notice and waved a real
+#    identifier straight into a commit object. every test passed,
+#    because every test ran on a machine where husky was installed.
+#
+#    check.pii.sh needs sh, bash, and git. it needs no husky, no
+#    node_modules, and no build — deliberately, and that property is
+#    what lets it sit above the guard rather than below it.
+#
+#    clamped by [case2] of check.pii.guarantee.integration.test.ts,
+#    which commits into a throwaway repo whose husky has no `_/`.
+#    move this line back below the guard and exactly three assertions
+#    go red: git aborts, no object exists, and the PII gate is what
+#    said so.
+#
+# ⚠️ commit is the ONLY boundary gated here. a pre-push hook was built
+#    and removed on purpose — see the pre-push section of
+#    rule.require.pii-scan-before-commit for the trade.
+. "$(dirname -- "$0")/check.pii.sh"
+
 if [ ! -f "$(dirname -- "$0")/_/husky.sh" ]; then
-  echo "🟡 husky not available, skipping hook"
+  echo "🟡 husky not available, the rest of the chain is skipped"
   exit 0
 fi
 . "$(dirname -- "$0")/_/husky.sh"

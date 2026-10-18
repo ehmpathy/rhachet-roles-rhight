@@ -1,0 +1,425 @@
+# .pii-allow — values pii.scan is allowed to ignore
+#
+# the allowlist is by VALUE, never by file. a file-scoped mute blinds a
+# whole file forever — even against the next value someone pastes into
+# it. a value-scoped one costs exactly one deliberate, reviewable line
+# per number, which is the point: each line here is a decision a human
+# made and a reviewer can check.
+#
+# an entry matches on its digits, so one line covers both the formatted
+# and the bare form (666-12-3456 also mutes 666123456).
+#
+# every entry needs a comment that states WHY it is safe. an entry with
+# no reason reads exactly like a leak someone silenced.
+
+# SSA has never issued a 666 prefix, so this is structurally valid and
+# permanently synthetic. used as the SSN fixture in the pdf.redact and
+# pii.scan tests.
+666-12-3456
+
+# IRS example EIN, published in Pub 1635 as a documentation placeholder.
+00-0000000
+
+# all-zero and sequential runs that appear in form templates and blank
+# field examples; never a real identifier. 123-45-6789 also covers the
+# bare 123456789 used as a synthetic EIN in the pdf.redact tests.
+000-00-0000
+123-45-6789
+
+# the multi-SSN fixture in the pdf.redact tests. each is a run of
+# repeated-digit groups in ascending order — a shape no real SSN takes.
+111-22-3333
+444-55-6666
+
+# the synthetic address fixture in the pii.scan street-detector test.
+# an entry must match the span the detector reports, which ends at the
+# unit word — so the house number after "Apt" is not part of it.
+500 Fake Street Apt
+
+# ── the v2020_05_17.sandpine example packet ─────────────────────────────
+#
+# every value below was WRITTEN BY `doc.pseudonymize` from a map, and the
+# set verifies clean (`--verify`, survivors: 0). these entries mute the
+# SHAPES the detectors correctly matched on invented values.
+#
+# ⚠️ do not extend this block by hand. if a new hit appears in that
+#    directory, the correct move is a new pair in the map and a re-run —
+#    never a new line here.
+
+# synthetic EIN on the CP 575 notice.
+99-0001234
+
+# synthetic Delaware authentication number on the certified charter copy.
+# 9 digits, so both the ssn and ein detectors claim it.
+201122334
+
+# synthetic residence, in the two casings the source documents print.
+2200 North Cascade Ave Apt
+2200 N CASCADE AVE APT
+
+# synthetic third-party-designee office on the SS-4.
+4400 Meridian Way, Suite
+
+# the registered-agent office in Middletown DE. a commercial address
+# printed on every Delaware charter that agent files — public by design,
+# and NOT the entity's own address. kept because the packet is unreadable
+# without it.
+651 N Broad St, Suite
+
+# the IRS public phone lines printed on every CP 575 notice: business
+# assistance, forms, and TTY/TDD. published by the IRS; not PII.
+800-829-4933
+800-829-3676
+800-829-4059
+
+# ── published agency contact lines ──────────────────────────────────────
+#
+# ⚠️ these are here to keep the scanner CREDIBLE, not to be lenient. a
+#    report that flags a government agency's own published phone number
+#    on 20+ briefs trains its readers to skim past the report — and a
+#    gate nobody reads protects nobody. an over-eager detector is not
+#    the safe direction to err.
+#
+# ⛔ the test is PUBLISHED BY THE ORGANIZATION, not merely "a business
+#    number". a number that reaches one named individual is PII even at
+#    a government office, and does NOT belong here — see the extension
+#    numbers deliberately left out.
+
+# Delaware Division of Corporations, Franchise Tax queue. printed on
+# corp.delaware.gov/taxfaq and quoted verbatim in the statutes briefs.
+302-739-3073
+
+# Delaware Division of Corporations, the address paper filings go to.
+# printed on corp.delaware.gov and quoted in the revival/amendment
+# stones. an agency's own counter, not anyone's residence.
+401 Federal Street
+
+# Florida notary lines, printed in the Governor's own Notary Reference
+# Manual, which this repo carries VERBATIM as an embedded source (see
+# briefs/jurats/refs/…effectiveAt=2019-12-17…). the manual must not be
+# edited — a citation you altered is not a citation — so an allowlist
+# entry is the only correct move here.
+#   717-9310 = Exec Office of the Governor, Notary Section
+#   245-6975 / 245-6945 = Dept of State, Notary Commissions
+#   488-2952 = the agency line printed at p. 220
+850-717-9310
+850-245-6975
+850-245-6945
+850-488-2952
+
+# USPTO's published assistance line, printed at the foot of every office
+# action. appears in the patent.priors transcription fixtures as OCR'd
+# from the form itself.
+800-770-3199
+
+# the boilerplate service lines the USPTO prints on EVERY filing receipt
+# and Notice of Publication. they reach a division or a unit, never a
+# named individual, and they are the numbers the form itself tells the
+# applicant to call. OCR'd verbatim into the patent.priors fixtures.
+#   786-9199 = USPTO Contact Center
+#   272-3150 / 972-6382 = Public Records Division (direct + toll-free)
+#   273-3250 = Public Records Division facsimile
+#   217-9197 = Patent Electronic Business Center
+#   272-4000 / 272-4200 / 786-0101 = Office of Data Management,
+#                                    Application Assistance Unit
+800-786-9199
+571-272-3150
+800-972-6382
+571-273-3250
+866-217-9197
+571-272-4000
+571-272-4200
+888-786-0101
+
+# two US Government hotlines printed on the same filing-receipt page.
+# both are public-facing programs, not USPTO desks.
+#   866-999-4258 = 1-866-999-HALT, the interagency IP enforcement line
+#   202-482-6800 = SelectUSA, Dept of Commerce
+866-999-4258
+202-482-6800
+
+# American Express Customer Care, printed on every Amex statement. it is
+# in the statement.parse fixture because the parser has to skip past the
+# header block, and a header with the phone line removed would not
+# exercise that. the rest of that fixture is synthetic.
+800-521-6121
+
+# the NANP reserved block for fiction: 555-0100 through 555-0199 can
+# never be assigned to a live subscriber. used for the synthetic
+# attorney in the patent.priors cached-patent fixture.
+#
+# 👉 reach for this block first when a fixture needs a phone-shaped
+#    value. a made-up number is somebody's real line.
+202-555-0100
+
+# ── the v2020_05_17.sandpine matter/ lift (2026-09-27) ──────────────────
+#
+# same rule as the sandpine block above: every value here is either
+# WRITTEN BY `doc.pseudonymize` from a map (the set verifies clean,
+# survivors: 0), or a commercial line the organization itself publishes.
+# a hit on a REAL value in matter/ is a new map pair, never a line here.
+
+# synthetic paid-preparer firm EIN, office, and phone on the lifted 2022
+# 1120. the phone sits in the NANP 555-0100..0199 fiction block.
+99-0005678
+100 Harbor Light Rd. Suite
+303-555-0134
+
+# the registered agent's Newark DE office and published line, as printed
+# on the Delaware entity-detail page. a commercial agent address shared
+# by every entity that agent serves, and NOT the entity's own address.
+131 Continental Drive Suite
+131 Continental Drive, Suite
+302-894-8922
+
+# public agency and vendor contacts, flagged by shape; quoted from
+# their own published pages or cited in research briefs
+850-245-5998
+850-245-6500
+775-684-5708
+850-617-8552
+202-695-8140
+800-931-7423
+800-345-2677
+302-645-7400
+302-577-8600
+800-220-5424
+# Florida Department of Revenue taxpayer services — printed in F-1120N
+# R. 01/26 (Contact Us) and on the CIT File and Pay page
+850-488-6800
+# Florida agency contacts printed in the F-1120N R. 01/26 instructions:
+# Department of State corporate information, the DEP Bureau of Waste
+# Cleanup (credit transfers), and the low-income home credit office
+850-245-6052
+850-245-8927
+850-488-4197
+
+# the street detector captures up to the unit word, so these are the
+# captured fragments of public agency and vendor office addresses
+444 North Capitol Street, NW, Suite
+444 N. Capitol Street, Suite
+2331 Mill Road, Suite
+2415 N. Monroe Street, Suite
+
+# the doc.letterhead sample return address: synthetic, not a real office
+1 Dunes Road, Suite
+
+# Texas Comptroller and Secretary of State contacts, printed on the Comptroller
+# pages, forms, and publications promoted under franchise-tax/state=texas/refs/
+800-442-3453
+512-463-5555
+800-531-5441
+800-252-1381
+800-252-8387
+512-475-0433
+800-688-6829
+800-321-2274
+
+# Indiana Department of Revenue contacts, plus agency and credit-program
+# contacts printed in the IT-20 booklet and PEN-1, under income-tax/state=indiana/refs/
+317-232-2240
+317-232-2067
+317-232-0129
+317-615-2630
+317-615-2710
+800-829-1040
+317-232-8827
+317-232-8800
+317-232-7777
+800-872-0371
+101 W. Ohio St., Suite
+888-782-5985
+
+# New York Department of Taxation and Finance contacts, plus the approved
+# e-file software vendors the Department lists, under franchise-tax/state=new-york/refs/
+518-485-6027
+518-457-4448
+800-968-8900
+888-420-1040
+706-868-0985
+307-414-1211
+800-739-9998
+800-345-4337
+800-865-5257
+319-373-3600
+800-934-1040
+770-857-5000
+800-472-5625
+828-527-8020
+847-236-8000
+866-345-4171
+888-875-6701
+877-658-4776
+800-380-6407
+678-574-2160
+800-877-1065
+909-931-3131
+1603 Capitol Ave. Suite
+9111 E Douglas Ave., Suite
+3200 Olympus Blvd Suite
+2100 E. Lake Cook Road, Suite
+5900 Balcones Drive, Suite
+195 N. Euclid Ave., Suite
+225 W Wacker Drive, Suite
+518-485-2639
+518-457-5434
+518-457-5431
+
+# California FTB, Secretary of State, and IRS contacts printed in FTB forms and
+# pages, plus the FTB e-file software provider list, under franchise-tax/state=california/refs/
+888-635-0494
+916-845-4025
+916-657-5448
+800-852-5711
+800-400-7115
+916-845-4900
+888-792-4900
+916-845-0353
+800-338-0505
+888-831-8851
+866-345-4172
+828-524-8020
+469-691-7611
+316-250-9879
+800-933-9999
+816-232-0118
+800-200-7599
+800-434-6818
+805-256-1788
+704-839-2321
+319-731-2682
+706-868-2333
+800-375-9542
+408-444-7120
+1603 Capitol Ave Suite
+2685 Celanese Rd, Suite
+690 Saratoga Ave Ste
+800-689-4776
+916-653-6814
+916-445-6362
+888-745-3886
+916-464-3502
+916-845-6500
+800-857-5711
+800-735-2929
+
+# state revenue-department, legislature, and Secretary of State contact lines —
+# switchboards, fax lines, division desks, relay/TDD — printed on the pages
+# promoted under accountant/briefs/nexus/refs/ and registrator/.../foreign-registration/refs/.
+# each was read in context (.scratch/research/pii-review.js); none reaches a named person
+512-936-0010
+202-442-6500
+808-587-1530
+808-587-1584
+808-587-4242
+208-332-1000
+208-334-2320
+208-334-2475
+217-782-6257
+317-233-4015
+515-281-3114
+785-368-8222
+785-296-8989
+785-296-3081
+785-296-7928
+785-296-4937
+785-291-3614
+785-296-1279
+502-564-8139
+502-564-0058
+502-564-5170
+502-564-2041
+617-887-6367
+410-260-7980
+800-735-2258
+651-296-6181
+800-657-3777
+651-556-3075
+651-296-8338
+573-751-5860
+601-923-7700
+601-359-1633
+701-328-7088
+402-471-5729
+800-742-7474
+603-230-5920
+603-230-5000
+800-735-2964
+603-230-5005
+603-230-5030
+603-230-5900
+603-230-5086
+603-230-5002
+603-230-5090
+603-230-5950
+603-230-5001
+603-271-3246
+609-292-6400
+866-285-2996
+505-841-6327
+503-947-0355
+503-378-4988
+800-356-4222
+503-945-8738
+401-574-8955
+401-574-8941
+401-574-8829
+803-737-2921
+800-829-9188
+801-297-2200
+800-662-4335
+801-297-2020
+801-297-7699
+801-297-3811
+360-902-9360
+360-902-4817
+360-902-6359
+360-705-6741
+800-562-6000
+800-833-6388
+304-558-3333
+304-558-3269
+800-982-8297
+304-558-2677
+608-224-5761
+608-266-2776
+608-261-5340
+414-227-3895
+608-267-1030
+512-463-4600
+800-248-4099
+
+# Oregon administrative rule numbers (OAR 150-314-…, 150-317-…), read as phones
+# by shape; they are rule citations, never a phone line
+150-317-0020
+150-317-1010
+150-314-0505
+150-314-0310
+150-314-0435
+
+# the digits of a New Mexico daily interest rate ("0.010958904% daily") in FYI-350,
+# read as a 9-digit identifier by shape
+010958904
+
+# New Mexico Taxation and Revenue district office addresses, printed in FYI-350
+10500 Copper Avenue NE, Suite
+3501 E. Main St., Suite
+400 Pennsylvania Ave, Suite
+
+# Iowa Department of Revenue general taxpayer line, printed in the IA 1120 instructions
+800-367-3388
+
+# Comptroller of Maryland general lines (1-800-MDTAXES, central MD, e-file helpdesk),
+# printed in the 2025 corporate booklet
+800-638-2937
+410-260-7980
+410-260-7951
+410-260-7753
+
+# an Annapolis ZIP+4 (21411-0001) in the Comptroller address on Administrative
+# Release IT-43, read as an SSN or EIN by shape
+214110001
+
+# a URL-encoded space plus a date (%204-10-2026) in a Louisiana CIT-620i form URL,
+# read as an SSN by shape
+204102026
