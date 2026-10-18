@@ -103,8 +103,8 @@ completed sweep.** tracked as `G-dispute-sla`.
 
 ## .sources
 
-1. Tex. Bus. & Com. Code ch. 109 — https://statutes.capitol.texas.gov/Docs/BC/htm/BC.109.htm
-2. Cal. Civ. Code § 1798.140 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140
+1. [Tex. Bus. & Com. Code ch. 109](https://statutes.capitol.texas.gov/Docs/BC/htm/BC.109.htm)
+2. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
 
 captured via browser per `rule.require.bhrowser-citations`.
 

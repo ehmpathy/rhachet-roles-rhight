@@ -84,7 +84,7 @@ data enters the profile through three doors, and they are the normal case rather
 
 ### 1. the qualifier
 
-`[observed]` `src/domain.roles/permiter/briefs/ref.electrical-license-structure.indiana.[ref].md`:
+`[observed]` `../../../../permiter/briefs/ref.electrical-license-structure.indiana.[ref].md`:
 
 > **"Any contractor must be or employ a master electrician."**
 
@@ -154,12 +154,12 @@ a licensed professional (usable for linkage) or is person-grain background (cons
 
 ## .sources
 
-1. 15 U.S.C. § 1681a — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681a&num=0&edition=prelim
-2. 15 U.S.C. § 1681b — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681b&num=0&edition=prelim
-3. 15 U.S.C. § 1681c — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681c&num=0&edition=prelim
-4. 15 U.S.C. § 1681e — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681e&num=0&edition=prelim
-5. 47 U.S.C. § 230 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim
-6. Ind. Code § 32-36-1-6 — https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-6/
+1. [15 U.S.C. § 1681a](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681a&num=0&edition=prelim)
+2. [15 U.S.C. § 1681b](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681b&num=0&edition=prelim)
+3. [15 U.S.C. § 1681c](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681c&num=0&edition=prelim)
+4. [15 U.S.C. § 1681e](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681e&num=0&edition=prelim)
+5. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
+6. [Ind. Code § 32-36-1-6](https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-6/)
 
 all captured via browser per `rule.require.bhrowser-citations`. ⚠️ the Indiana cell cites the Justia
 section-grain mirror — fallback noted per `rule.require.five-state-baseline`.
@@ -191,5 +191,5 @@ publish the terrain, hold the synthesis.
   routes a datum to person grain**
 - `define.boundary.consent-cures-privacy-not-fcra.[lesson].md` — the person-track rules
 - `hazard.consumer-report-gate.[hazard].md` — the purpose gate, which applies only at person grain
-- `src/domain.roles/permiter/briefs/ref.electrical-license-structure.indiana.[ref].md` — the
+- `../../../../permiter/briefs/ref.electrical-license-structure.indiana.[ref].md` — the
   qualifier structure, observed

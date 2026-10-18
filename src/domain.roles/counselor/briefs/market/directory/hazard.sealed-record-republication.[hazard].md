@@ -279,16 +279,16 @@ that is why the no-fee rule is enforced below rather than left as a preference.
 
 ## .sources
 
-1. Tex. Bus. & Com. Code ch. 109 — https://statutes.capitol.texas.gov/Docs/BC/htm/BC.109.htm
-2. Ind. Code ch. 24-4-18 (chapter index) — https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/
-3. Ind. Code § 24-4-18-6 — https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/section-24-4-18-6/
-4. Ind. Code § 24-4-18-7 — https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/section-24-4-18-7/
-5. Ind. Code § 24-4-18-8 — https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/section-24-4-18-8/
-6. Fla. Stat. § 943.0585 — http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0900-0999/0943/Sections/0943.0585.html
-7. Cal. Civ. Code § 1786.18 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1786.18
-8. Cal. Civ. Code § 1798.140 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140
-9. N.Y. Civ. Rights Law § 50-g — https://www.nysenate.gov/legislation/laws/CVR/50-G
-10. 47 U.S.C. § 230 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim
+1. [Tex. Bus. & Com. Code ch. 109](https://statutes.capitol.texas.gov/Docs/BC/htm/BC.109.htm)
+2. [Ind. Code ch. 24-4-18 (chapter index)](https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/)
+3. [Ind. Code § 24-4-18-6](https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/section-24-4-18-6/)
+4. [Ind. Code § 24-4-18-7](https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/section-24-4-18-7/)
+5. [Ind. Code § 24-4-18-8](https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/section-24-4-18-8/)
+6. [Fla. Stat. § 943.0585](http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0900-0999/0943/Sections/0943.0585.html)
+7. [Cal. Civ. Code § 1786.18](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1786.18)
+8. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
+9. [N.Y. Civ. Rights Law § 50-g](https://www.nysenate.gov/legislation/laws/CVR/50-G)
+10. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
 
 > ⚠️ **§ 230 is cited on a narrower basis than the rest: it is COMPARED, not quoted.** TX
 > § 109.002(b)(4) is read against § 230's own test at § *Texas has TWO exits*, and that comparison is

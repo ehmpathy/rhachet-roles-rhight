@@ -347,11 +347,11 @@ all. the sweep it needs is **per platform**, and exactly one platform is capture
 
 ## .sources
 
-1. 17 U.S.C. § 102 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section102&num=0&edition=prelim
-2. 17 U.S.C. § 103 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section103&num=0&edition=prelim
-3. 17 U.S.C. § 107 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section107&num=0&edition=prelim
-4. 15 U.S.C. § 1681k — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681k&num=0&edition=prelim
-5. 47 U.S.C. § 230 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim
+1. [17 U.S.C. § 102](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section102&num=0&edition=prelim)
+2. [17 U.S.C. § 103](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section103&num=0&edition=prelim)
+3. [17 U.S.C. § 107](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section107&num=0&edition=prelim)
+4. [15 U.S.C. § 1681k](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681k&num=0&edition=prelim)
+5. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
 6. Feist Publications, Inc. v. Rural Tel. Serv. Co., 499 U.S. 340 (1991) — https://supreme.justia.com/cases/federal/us/499/340/ (**mirror fallback** — case law has no uscode.house.gov analogue; Justia is the reliable mirror and the fallback is declared here per `rule.require.bhrowser-citations`)
 7. Yelp Terms of Service (20260101_en_us) — https://terms.yelp.com/tos/en_us/ (**resolved** from the undated entry point; the dated path rotates and a prior capture attempt hit a 155-byte 404, caught by the marker assertion)
 8. hiQ Labs, Inc. v. LinkedIn Corp., 31 F.4th 1180 (9th Cir. 2022) — https://law.justia.com/cases/federal/appellate-courts/ca9/17-16783/17-16783-2022-04-18.html (**mirror fallback** — case law has no uscode.house.gov analogue)

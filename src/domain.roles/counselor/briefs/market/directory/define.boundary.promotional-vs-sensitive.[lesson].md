@@ -213,13 +213,13 @@ stated as a `define.boundary` because it **selects** which rules apply, in the s
 
 ## .sources
 
-1. Cal. Civ. Code § 1798.99.80 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.99.80
-2. Cal. Civ. Code § 1798.140 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140
-3. 17 U.S.C. § 102 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section102&num=0&edition=prelim
-4. 17 U.S.C. § 103 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section103&num=0&edition=prelim
-5. 17 U.S.C. § 107 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section107&num=0&edition=prelim
-6. 15 U.S.C. § 1125 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1125&num=0&edition=prelim
-7. 47 U.S.C. § 230 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim
+1. [Cal. Civ. Code § 1798.99.80](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.99.80)
+2. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
+3. [17 U.S.C. § 102](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section102&num=0&edition=prelim)
+4. [17 U.S.C. § 103](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section103&num=0&edition=prelim)
+5. [17 U.S.C. § 107](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section107&num=0&edition=prelim)
+6. [15 U.S.C. § 1125](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1125&num=0&edition=prelim)
+7. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
 8. Feist Publications, Inc. v. Rural Tel. Serv. Co., 499 U.S. 340 (1991) — https://supreme.justia.com/cases/federal/us/499/340/ (**mirror fallback** — case law has no uscode.house.gov analogue; Justia is the reliable mirror and the fallback is declared here per `rule.require.bhrowser-citations`)
 9. Yelp Terms of Service (`20260101_en_us`) — https://terms.yelp.com/tos/en_us/ (**undated entry point; Yelp redirects to the current dated revision, which is recorded in the capture header**)
 

@@ -128,14 +128,14 @@ federal + CA statutory and draws no further state-law redline of its own.
 
 ## .sources
 
-1. 47 U.S.C. § 230 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim
-2. 15 U.S.C. § 1681b — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681b&num=0&edition=prelim
-3. Cal. Civ. Code § 1798.140 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140
-4. Fla. Stat. § 540.08 — http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0540/Sections/0540.08.html
-5. Cal. Civ. Code § 3344 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=3344
-6. N.Y. Civ. Rights Law § 51 — https://www.nysenate.gov/legislation/laws/CVR/51
-7. Ind. Code § 32-36-1-8 — https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-8/
-8. Tex. Prop. Code ch. 26 — https://statutes.capitol.texas.gov/Docs/PR/htm/PR.26.htm
+1. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
+2. [15 U.S.C. § 1681b](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681b&num=0&edition=prelim)
+3. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
+4. [Fla. Stat. § 540.08](http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0540/Sections/0540.08.html)
+5. [Cal. Civ. Code § 3344](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=3344)
+6. [N.Y. Civ. Rights Law § 51](https://www.nysenate.gov/legislation/laws/CVR/51)
+7. [Ind. Code § 32-36-1-8](https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-8/)
+8. [Tex. Prop. Code ch. 26](https://statutes.capitol.texas.gov/Docs/PR/htm/PR.26.htm)
 
 all eight captured through **bhrowser** per `rule.require.bhrowser-citations`. ⚠️ the Indiana cell
 cites the Justia section-grain mirror — the official portal served an app shell to a driven
