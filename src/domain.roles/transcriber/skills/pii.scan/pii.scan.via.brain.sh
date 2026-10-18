@@ -98,6 +98,13 @@ MODE="apply"
 #    the rules it is meant to enforce.
 REFS="$SCRIPT_DIR/../../briefs/practices/rule.*.md"
 
+# fall back to the rubric when the role ships no practice rules yet.
+# `rhx review` refuses a refs glob that matches zero files, so an absent
+# briefs dir would turn every commit into a malfunction.
+if ! compgen -G "$REFS" >/dev/null; then
+  REFS="$SCRIPT_DIR/rubric/rule.*.md"
+fi
+
 # one by default.
 #
 # ⚠️ `anthropic/claude/opus` is an ALIAS THAT MOVES — upstream pins it to
