@@ -28,6 +28,21 @@ three verdicts, one per brief:
 | **scrub** | a generic pattern narrated with a client's identity, exact fund-flow, or applied design | publishable **only after** the client identity and the specific mechanic are removed |
 | **prune** | the client's secret sauce — the applied mechanic, the product architecture, the strategy, or any privileged material | **never publish**; belongs in the client's own private space |
 
+> ⛔⛔ **the trio names a PUBLICATION scale, not an AUDIENCE scale — and the words invite the wrong
+> read.** *share → scrub → prune* sounds like *tell everyone → tell some → tell no one*. it is not.
+> **every verdict answers one question: what may be published in the shared role library.**
+>
+> ⭐ **so 🔒 protect does NOT mean "withhold from the client."** the row above says the opposite in
+> terms — it *"belongs in the **client's own private space**."* the subject of protection is *the
+> **client's** secret sauce*; the party it is protected **from** is the public and a competitor,
+> **never its owner**. a pruned artifact is usually the **most** useful deliverable the client
+> receives.
+>
+> ⚠️ **this misread has been made in practice**, and its shape is worth the caution: an author prunes
+> an applied inventory correctly, then reports it to the client as *"do not share this"* — and the
+> client never receives the one artifact that says what may actually ship. **the triage governs the
+> library. it does not govern the engagement.**
+
 every brief records its verdict in a `## .publishability` section near the bottom: the tag plus a
 one-line reason. a central triage manifest (a `handoff.publishability-triage.md` per engagement) may
 roll the verdicts up, but the inline tag is the source of truth — it travels with the file.

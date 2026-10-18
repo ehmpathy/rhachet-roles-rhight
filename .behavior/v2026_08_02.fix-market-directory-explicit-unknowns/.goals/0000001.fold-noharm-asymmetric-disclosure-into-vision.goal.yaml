@@ -1,0 +1,15 @@
+slug: 'fold-noharm-asymmetric-disclosure-into-vision'
+source: 'peer:human'
+status:
+  choice: 'fulfilled'
+  reason: 'written into 1.vision.yield.md: new Q0 section carries the internal-vs-public state split and the union rule; axis B split into B (internal) and B-prime (publication); Q1 qualifier 1 retagged settled; Q2 split into may-we vs will-we; the unknown-means-what wisher question retagged answered and replaced by the coverage-ratio threshold question; awkward 1 resolved with what survives and what it costs; the one-line summary restated around the union and the two bounding axes'
+updatedAt: '2026-08-03'
+why:
+  ask: 'unknown is what we surface; if we found a NEGATIVE we must not publicise it nor distinguish it from true unknown; positives we can say verified publically; internally we keep NEGATIVE-verified and true-unknown distinct. that is the NOHARM strategy: the marketplace gets NOHARM from our presence, this is the current floor, we do not make it worse; we just make it possible for folks with true POSITIVE verifications to be verified publically.'
+  purpose: 'the vision modeled unknown as two readings (did-not-check vs checked-found-no-record) and flagged the choice as the first wisher question. the human supplied a third reading i had not modeled: unknown is a deliberate PUBLIC UNION of verified-negative and true-unknown, while internally the two stay distinct. this inverts the vision Q2 answer and resolves its awkward 1.'
+  benefit: 'the vision states the actual design rather than the legal ceiling; downstream execution briefs encode a policy above the legal floor instead of at it.'
+what:
+  outcome: '1.vision.yield.md carries the NOHARM asymmetric-disclosure design: public states are a lossy projection of internal states, the wisher question is retagged answered, awkward 1 is resolved, and the Q2 answer says the law permits surfacing the civil suit under four conditions and we decline.'
+how:
+  task: 'rewrite the unknown and state-vocabulary sections of 1.vision.yield.md to carry the internal-vs-public state split, retag the wisher question as answered, resolve awkward 1, and restate the Q2 answer as a policy choice above the legal floor.'
+  gate: '1.vision.yield.md names both the internal state set and the public state set, states the union rule explicitly, and no longer carries the unknown-means-what wisher question as open.'
