@@ -1,0 +1,15 @@
+slug: 'triage-noharm-publishability-truth-generality'
+source: 'peer:human'
+status:
+  choice: 'fulfilled'
+  reason: 'answered all three in conversation and wrote them into 1.vision.yield.md: layered publishability table replaced the two-row split (NOHARM moved to fullsun, coverage map + thresholds to obscure, own-exposure assessment to protect); the coverage-ratio decay is named as a bounded condition in Q0 and promoted awkward 3 to the load-bearing failure mode; the generic asymmetric-disclosure statement is recorded in Q0 for the execution briefs'
+updatedAt: '2026-08-03'
+why:
+  ask: 'how much of that is generic vs secretsauce though? / and true? / generalize'
+  purpose: 'before the NOHARM design is written into a role brief it must be triaged for publishability, stress-tested for truth, and abstracted to its transferable form. the human asked all three in sequence, which is the share-scrub-prune decision plus a soundness check plus a distillation.'
+  benefit: 'the execution briefs know which layers ship fullsun and which stay obscure; the NOHARM claim carries a named condition rather than a slogan; the pattern is reusable beyond this product.'
+what:
+  outcome: 'a stated triage of the NOHARM design against the four publishability tests, a named measurable condition under which the NOHARM claim holds, and a generic statement of the asymmetric-disclosure pattern.'
+how:
+  task: 'answered in-conversation: triage table (public-law grid and the NOHARM floor argument are fullsun because their value is correctness; coverage map, match thresholds and rollout order are obscure; our own exposure assessment is protect); truth condition (the union of verified-negative and true-unknown is harmless only while an outside reader cannot decode it, which degrades as coverage rises, so the invariant is the ratio of unknown profiles per trade-by-metro segment); generic form (surface only the states that are safe to assert, make the unsafe states indistinguishable from ignorance, monitor the size of the ignorance class). carry all three into 1.vision.yield.md publishability and awkwardness sections.'
+  gate: '1.vision.yield.md publishability note carries the layered triage rather than a two-row split; the awkwardness list names the coverage-ratio decay as a bounded condition on the NOHARM claim; the generic pattern statement is recorded for the execution briefs.'

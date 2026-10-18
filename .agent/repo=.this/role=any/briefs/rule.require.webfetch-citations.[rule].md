@@ -85,3 +85,10 @@ coverage protects all sizes of homebuilders"
 ## .see also
 
 - `rule.require.seven-distinct-citations.[rule].md` — the count bar (≥ 7 distinct sources per doc)
+- `rule.require.bhrowser-citations.[rule].md` — the successor for legal and regulatory research
+
+## .publishability
+
+☀️ **fullsun** (share) — a **method** rule about citation quality, with no client identity, no
+engagement, and no legal conclusion. all four tests are clear for the same reasons its successor's
+are; see the table in `rule.require.bhrowser-citations`.
