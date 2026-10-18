@@ -797,7 +797,7 @@ for a $20k project, $1,000-2,500 deductible balances premium savings with manage
 
 ### the honest answer
 
-**no carrier publishes builder's risk claim payout rates** for residential projects. this data gap means we must evaluate carriers indirectly via:
+**no carrier publishes builder's risk claim payout rates** for residential projects. this data gap means carriers must be evaluated indirectly via:
 - financial strength (can they pay?)
 - complaint ratios (do they fight claims?)
 - residential focus (do they understand small projects?)

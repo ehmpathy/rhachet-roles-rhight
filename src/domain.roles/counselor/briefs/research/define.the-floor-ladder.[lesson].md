@@ -168,7 +168,7 @@ catalogue's own header must say so, because the reader cannot see the omission f
 | the break | what it means | severity |
 |-----------|--------------|----------|
 | a fact with no source quote | an assertion from recall | ⛔ **blocker** |
-| a line with no fact behind it | ⭐ **invented caution** — our preference in a floor's clothes | ⛔ **blocker** |
+| a line with no fact behind it | ⭐ **invented caution** — an author's preference in a floor's clothes | ⛔ **blocker** |
 | a todo with no line behind it | ⭐ **invented work** — the same defect one rung up | ⛔ **blocker** |
 | a fact that produced no line, or a line that produced no todo | ✅ **fine, and expected** — the filters are lossy by design | ✅ none |
 

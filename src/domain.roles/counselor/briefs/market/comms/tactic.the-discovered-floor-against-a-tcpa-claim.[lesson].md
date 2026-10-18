@@ -189,7 +189,7 @@ the seven gaps above are listed, **not prioritized** — and the six layers are 
 
 that omission is deliberate rather than incomplete. a priority order is an **appetite statement**: it
 depends on your served states, your channel mix, and what you are prepared to accept. the sources do
-not compel one, so a published order would disclose our judgment rather than the law's.
+not compel one, so a published order would disclose the author's judgment rather than the law's.
 
 ⭐ **the omission withholds no fact.** every gap is named above and every layer is set out in full;
 what is absent is only the **sequence**, which a reader is better served to derive from their own

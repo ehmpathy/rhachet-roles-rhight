@@ -112,7 +112,7 @@ set onto a fixed axis is not a matter of taste.
 here is ranked by cost, by urgency, or by build order, and none should be read as "first".
 
 ⭐ **the one exception proves the rule.** ⏰ `CE` is the only bucket with any time pressure in it — and
-that pressure is **in the source**, not in our preference. a consent record is contemporaneous because
+that pressure is **in the source**, not in an author's preference. a consent record is contemporaneous because
 `(f)(9)` says so, not because we ranked it. **the only order this file may carry is the order the
 sources themselves impose.**
 
@@ -234,7 +234,7 @@ already out the door must read first**, because it names the repairs that do not
 
 ⚠️ **`CE6` and `CE7` are a different kind of "can't" and the file must not blur them.** `CE1`–`CE5`
 are impossible because a **moment passed**. `CE6`–`CE7` are unestablished because **the research has a
-hole** — they may be perfectly establishable by a reader who reads what we did not.
+hole** — they may be perfectly establishable by a reader who reads what this brief did not.
 
 ---
 
@@ -262,7 +262,7 @@ only moves available are to **bound** the residual and to **budget** for it.
 ## ⭐ .the silences — where the sources permit a choice, and this file stays silent
 
 ⛔ **each is a real question with no answer here, and the absence is on purpose.** the sources permit
-more than one design, so any answer would be **our** preference in a floor's clothes.
+more than one design, so any answer would be **an author's** preference in a floor's clothes.
 
 | the open question | why it stays open |
 |-------------------|-------------------|

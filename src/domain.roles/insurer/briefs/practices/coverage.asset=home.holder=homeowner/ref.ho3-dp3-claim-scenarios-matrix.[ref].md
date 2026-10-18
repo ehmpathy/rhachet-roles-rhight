@@ -39,7 +39,7 @@ comprehensive matrix of insurance claim types and their coverage outcomes under 
 
 **DP-3 coverage note:** all dwelling-fire policies cover tenant damage caused by negligence that results in a fire. even if a fire was accidentally started by your tenant, your landlord policy should provide coverage.
 
-**case example:** Long Island homeowner converted spare unit to rental, kept HO-3 policy. After tenant-caused kitchen fire, carrier denied $180,000 claim due to undisclosed rental use.
+**case example:** Long Island homeowner converted spare unit to rental, kept HO-3 policy. After tenant-caused kitchen fire, carrier denied a six-figure claim due to undisclosed rental use.
 
 ---
 
@@ -218,7 +218,7 @@ comprehensive matrix of insurance claim types and their coverage outcomes under 
 
 **coverage note:** many homeowner policies exclude mold or cap coverage at low amounts.
 
-**case example:** jury awarded two women $1 million when landlord neglected to fix reported leaks, which caused mold and health problems.
+**case example:** a jury returned a large verdict for two tenants when the landlord neglected to fix reported leaks, which caused mold and health problems.
 
 ---
 
@@ -251,9 +251,9 @@ comprehensive matrix of insurance claim types and their coverage outcomes under 
 **deductibles:** typically $250 to $2,500 per claim
 
 **case examples:**
-- **California:** improper notice = $25,000 damages + $15,000 attorney fees
-- **Texas:** retaliatory lock-out = $40,000 judgment
-- **New York:** discriminatory eviction against disabled tenant = $75,000 settlement
+- **California:** improper notice = a damages award plus attorney fees
+- **Texas:** retaliatory lock-out = a money judgment
+- **New York:** discriminatory eviction against disabled tenant = a settlement
 
 **exclusions:**
 - intentional or fraudulent acts
@@ -396,7 +396,7 @@ comprehensive matrix of insurance claim types and their coverage outcomes under 
 | DP-3 (long-term rental) | DENIED | typically excludes short-term rental |
 | short-term rental policy | COVERED | designed for vacation rental use |
 
-**case example:** California Airbnb host rented guest house occasionally. tree fell, damaged property. $120,000 claim denied even though property wasn't currently rented and damage had nothing to do with guests. carrier enforced rental exclusion.
+**case example:** California Airbnb host rented guest house occasionally. tree fell, damaged property. $120,000 claim denied even though property wasn't currently rented and damage had nothing to do with guests. carrier enforced rental exclusion. (see § 5.15, *Richer v. Travelers*.)
 
 **key point:** both HO and DP policies have "business pursuits" exclusions and misrepresentation clauses that void coverage for undisclosed short-term rental use.
 

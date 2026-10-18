@@ -60,7 +60,7 @@ into**, which is a defect of the ladder rather than of this file.
 
 ⭐ **the test is what makes this file publishable.** every line below is a consequence the sources
 **force** — so a second reader with the same authorities draws the same lines. that is a very
-different artifact from a list of things we would advise, and the difference is exactly the
+different artifact from a list of things an advisor would advise, and the difference is exactly the
 `fullsun` boundary.
 
 ⚠️ **the test cuts across the inventory's two types, and deliberately so.** a landmine is classified
@@ -178,7 +178,7 @@ conversation. each is a claim the sources contradict, so what is built on it inh
 | **R11** | a five-state read generalizes to fifty | ⛔ those five produced **three different consent architectures**. ⭐ the variance is a **measured result** — a uniform sample could be generalized; this one cannot | **G3** |
 | **R12** | one review settles whether your signup flow forms a contract | `Dahdah`: *"state law likewise governs whether the parties formed a binding contract to arbitrate."* ⭐ **one flow can form in one state and fail in another**, so a single federal review does not answer it for a national footprint | **E7** |
 | **R13** | every violative call is an actionable `§ 227(c)` claim | ⭐ **this one runs your way, and asserting it costs you money.** `§ 227(c)(5)` reaches only a person who received *"more than one telephone call within any 12-month period"* by or for the same entity. a single violative call creates no `(c)` claim — while a single autodialed message can create a `(b)` one. ⚠️ a reserve built on the symmetric assumption **over-states** | **D11** |
-| **R14** | ⚠️ **`H1` reaches every message you send** | ⛔ **it does not — and this is a line about our own line.** `(a)(10)`'s no-exclusive-means rule is scoped to messages under `(a)(1)`–`(3)` and `(c)(2)`; for two of the four classes `(a)(9)` exempts, the regulation **prescribes** `STOP` as *"the exclusive means."* ⭐ a fraud-alert or appointment-reminder program built to `H1` may be built against the paragraph that governs it. ⬜ **unreconciled — no decision was read** | **I3** |
+| **R14** | ⚠️ **`H1` reaches every message you send** | ⛔ **it does not — and this is a line about this file's own line.** `(a)(10)`'s no-exclusive-means rule is scoped to messages under `(a)(1)`–`(3)` and `(c)(2)`; for two of the four classes `(a)(9)` exempts, the regulation **prescribes** `STOP` as *"the exclusive means."* ⭐ a fraud-alert or appointment-reminder program built to `H1` may be built against the paragraph that governs it. ⬜ **unreconciled — no decision was read** | **I3** |
 | **R15** | an internal suppression request automatically silences your affiliates | `(d)(5)`: absent a specific contrary request it *"shall apply to the particular entity making the call … and **will not** apply to affiliated entities unless the consumer reasonably would expect them to be included."* ⭐ **this one runs your way** — the default is narrow, and a group-wide suppression exceeds the rule | **I8** |
 | **R16** | every marketing call is a "telephone solicitation" that the registry duty reaches | `(f)(15)` excludes a call to a person with *"prior express invitation or permission"*, to a person *"with whom the caller has an established business relationship"*, or by a tax-exempt nonprofit. ⚠️ **but do not invert it either** — the term as `(f)(15)` uses it has no definition in what was read, so its boundary is unknown in both directions | **I9** |
 | **R17** | ⭐ a protection you hold is a **fact about you** rather than a condition you must prove | ⛔ **every one carries conditions, and they are yours to establish.** to rely on `R13` you must show the call count per number per 12 months; to rely on `R2` you must show your dialer is not an autodialer — **the whole of `Duguid`**; `I2`'s exemptions are **conjunctive**, so one missed condition puts you back under `(a)(1)(iii)` with no consent on file | **J6** |
@@ -233,7 +233,7 @@ because each is a way this file could be misused:
   only *"to the extent described in"* FCC Report and Order 03-153, **which was not read**. so the
   group-`D` lines are confirmed for wireless with their **bounds unread** — a better-shaped hole than
   the one it replaces, not an absent one.
-- ⛔ **`R14` is a line against one of our own lines, and it is the sharpest caution in this file.**
+- ⛔ **`R14` is a line against one of this file's own lines, and it is the sharpest caution in this file.**
   `(a)(9)` prescribes an exclusive opt-out means for two exempted classes while `(a)(10)` forbids one.
   ⬜ **no decision reconciles them**, so `H1` is stated with a scope it did not previously carry, and
   a reader with `(a)(9)` traffic needs counsel rather than this table.
