@@ -223,15 +223,15 @@ order intact.**
 
 ## .sources
 
-1. 15 U.S.C. § 1681a — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681a&num=0&edition=prelim
-2. 15 U.S.C. § 1681b — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681b&num=0&edition=prelim
-3. 15 U.S.C. § 1681c — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681c&num=0&edition=prelim
-4. 15 U.S.C. § 1681e — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681e&num=0&edition=prelim
-5. 47 U.S.C. § 230 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim
-6. Ind. Code ch. 24-4-18 (*Criminal History Providers*) — https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/
-7. Ind. Code § 24-4-18-8 — https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/section-24-4-18-8/
-8. Tex. Bus. & Com. Code ch. 109 — https://statutes.capitol.texas.gov/Docs/BC/htm/BC.109.htm
-9. Cal. Civ. Code § 1786.18 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1786.18
+1. [15 U.S.C. § 1681a](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681a&num=0&edition=prelim)
+2. [15 U.S.C. § 1681b](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681b&num=0&edition=prelim)
+3. [15 U.S.C. § 1681c](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681c&num=0&edition=prelim)
+4. [15 U.S.C. § 1681e](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681e&num=0&edition=prelim)
+5. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
+6. [Ind. Code ch. 24-4-18 (*Criminal History Providers*)](https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/)
+7. [Ind. Code § 24-4-18-8](https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/section-24-4-18-8/)
+8. [Tex. Bus. & Com. Code ch. 109](https://statutes.capitol.texas.gov/Docs/BC/htm/BC.109.htm)
+9. [Cal. Civ. Code § 1786.18](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1786.18)
 10. license status vocabulary — `src/domain.roles/licenser/briefs/industry=.all/define.what-licenses-mean.md`
 
 captured via browser per `rule.require.bhrowser-citations`. ⚠️ the Indiana cells cite the Justia

@@ -203,13 +203,13 @@ UNDER-LAYER is open in four** — IN §§ 24-4-18-2/-3, TX Gov't Code ch. 411 su
 
 ## .sources
 
-1. 15 U.S.C. § 1681a — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681a&num=0&edition=prelim
-2. 15 U.S.C. § 1681b — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681b&num=0&edition=prelim
-3. 15 U.S.C. § 1681e — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681e&num=0&edition=prelim
-4. Cal. Civ. Code § 1798.140 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140
-5. Cal. Civ. Code § 1798.99.80 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.99.80
-6. Ind. Code ch. 24-4-18 — https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/
-7. Tex. Bus. & Com. Code ch. 109 — https://statutes.capitol.texas.gov/Docs/BC/htm/BC.109.htm
+1. [15 U.S.C. § 1681a](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681a&num=0&edition=prelim)
+2. [15 U.S.C. § 1681b](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681b&num=0&edition=prelim)
+3. [15 U.S.C. § 1681e](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681e&num=0&edition=prelim)
+4. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
+5. [Cal. Civ. Code § 1798.99.80](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.99.80)
+6. [Ind. Code ch. 24-4-18](https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/)
+7. [Tex. Bus. & Com. Code ch. 109](https://statutes.capitol.texas.gov/Docs/BC/htm/BC.109.htm)
 
 captured via browser per `rule.require.bhrowser-citations`.
 

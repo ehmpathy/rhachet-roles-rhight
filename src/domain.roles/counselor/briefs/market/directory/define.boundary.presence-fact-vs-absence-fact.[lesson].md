@@ -35,7 +35,7 @@ wrong, and the error matters.** a license lookup does not return *found* or *not
 a **status**, and some statuses are adverse.
 
 `[observed]` the licenser role already enumerates them
-(`src/domain.roles/licenser/briefs/industry=.all/define.what-licenses-mean.md`):
+(`../../../../licenser/briefs/industry=.all/define.what-licenses-mean.md`):
 
 | status | what it means | assertable? |
 |---|---|---|
@@ -152,8 +152,8 @@ sweep is run. **stated explicitly so a reviewer can tell a scope boundary from a
 
 ## .sources
 
-1. 15 U.S.C. § 1681c — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681c&num=0&edition=prelim
-2. license status vocabulary — `src/domain.roles/licenser/briefs/industry=.all/define.what-licenses-mean.md`
+1. [15 U.S.C. § 1681c](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681c&num=0&edition=prelim)
+2. license status vocabulary — `../../../../licenser/briefs/industry=.all/define.what-licenses-mean.md`
    (which cites [Virginia DPOR consumer resources](https://www.dpor.virginia.gov/Consumers))
 3. contractor registration bundle — `src/domain.roles/permiter/briefs/ref.electrical-license-structure.indiana.[ref].md`
 
@@ -181,4 +181,4 @@ artifact.
 - `define.boundary.entity-grain-vs-person-grain.[lesson].md` — the axis above this one
 - `rule.require.asymmetric-disclosure.[rule].md` — the rule that renders adverse results as `⬜`
 - `hazard.stale-public-record-status.[hazard].md` — why a favorable status decays
-- `src/domain.roles/licenser/briefs/industry=.all/define.what-licenses-mean.md` — the status vocabulary
+- `../../../../licenser/briefs/industry=.all/define.what-licenses-mean.md` — the status vocabulary

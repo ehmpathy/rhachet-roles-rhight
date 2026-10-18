@@ -156,14 +156,14 @@ brief keeps the trade; that brief keeps the one increment recovered from it.**
 
 ## .sources
 
-1. 15 U.S.C. § 1681a — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681a&num=0&edition=prelim
-2. Cal. Civ. Code § 1798.140 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140
-3. Cal. Civ. Code § 1798.99.80 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.99.80
-4. Cal. Civ. Code § 3344 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=3344
-5. Tex. Prop. Code ch. 26 — https://statutes.capitol.texas.gov/Docs/PR/htm/PR.26.htm
-6. Ind. Code § 32-36-1-6 — https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-6/
-7. Fla. Stat. § 540.08 — http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0540/Sections/0540.08.html
-8. N.Y. Civ. Rights Law § 51 — https://www.nysenate.gov/legislation/laws/CVR/51
+1. [15 U.S.C. § 1681a](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681a&num=0&edition=prelim)
+2. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
+3. [Cal. Civ. Code § 1798.99.80](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.99.80)
+4. [Cal. Civ. Code § 3344](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=3344)
+5. [Tex. Prop. Code ch. 26](https://statutes.capitol.texas.gov/Docs/PR/htm/PR.26.htm)
+6. [Ind. Code § 32-36-1-6](https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-6/)
+7. [Fla. Stat. § 540.08](http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0540/Sections/0540.08.html)
+8. [N.Y. Civ. Rights Law § 51](https://www.nysenate.gov/legislation/laws/CVR/51)
 
 captured via browser per `rule.require.bhrowser-citations`. ⚠️ the Indiana cell cites the Justia
 section-grain mirror — fallback noted per `rule.require.five-state-baseline`.

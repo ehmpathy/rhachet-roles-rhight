@@ -163,14 +163,14 @@ or care taken over what the badges *say* — the exposure attaches to the **use 
 
 ## .sources
 
-1. Tex. Prop. Code ch. 26 — https://statutes.capitol.texas.gov/Docs/PR/htm/PR.26.htm
-2. Ind. Code § 32-36-1-1 — https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-1/
-3. Ind. Code § 32-36-1-6 — https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-6/
-4. Ind. Code § 32-36-1-8 — https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-8/
-5. Fla. Stat. § 540.08 — http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0540/Sections/0540.08.html
-6. Cal. Civ. Code § 3344 — https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=3344
-7. N.Y. Civ. Rights Law § 51 — https://www.nysenate.gov/legislation/laws/CVR/51
-8. 47 U.S.C. § 230 — https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim
+1. [Tex. Prop. Code ch. 26](https://statutes.capitol.texas.gov/Docs/PR/htm/PR.26.htm)
+2. [Ind. Code § 32-36-1-1](https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-1/)
+3. [Ind. Code § 32-36-1-6](https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-6/)
+4. [Ind. Code § 32-36-1-8](https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-8/)
+5. [Fla. Stat. § 540.08](http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0540/Sections/0540.08.html)
+6. [Cal. Civ. Code § 3344](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=3344)
+7. [N.Y. Civ. Rights Law § 51](https://www.nysenate.gov/legislation/laws/CVR/51)
+8. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
 
 ⚠️ **fallback noted, per `rule.require.five-state-baseline`:** the Indiana cells are cited to the
 Justia section-grain mirror. the official `iga.in.gov` portal is a javascript application that
