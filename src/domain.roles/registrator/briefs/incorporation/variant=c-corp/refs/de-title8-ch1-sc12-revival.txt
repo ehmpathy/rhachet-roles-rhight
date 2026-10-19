@@ -1,0 +1,107 @@
+§ 311 § 312 § 313 § 314
+TITLE 8
+Corporations
+CHAPTER 1. General Corporation Law
+Subchapter XII. Renewal, Revival, Extension and Restoration of Certificate of Incorporation or Charter
+§ 311. Revocation of voluntary dissolution; restoration of expired certificate of incorporation.
+
+(a) At any time prior to the expiration of 3 years following the dissolution of a corporation pursuant to § 275 of this title or such longer period as the Court of Chancery may have directed pursuant to § 278 of this title, or at any time prior to the expiration of 3 years following the expiration of the time limited for the corporation’s existence as provided in its certificate of incorporation or such longer period as the Court of Chancery may have directed pursuant to § 278 of this title, a corporation may revoke the dissolution theretofore effected by it or restore its certificate of incorporation after it has expired by its own limitation in the following manner:
+
+(1) For purposes of this section, the term “stockholders” shall mean the stockholders of record on the date the dissolution became effective or the date of expiration by limitation.
+
+(2) The board of directors shall adopt a resolution recommending that the dissolution be revoked in the case of a dissolution or that the certificate of incorporation be restored in the case of an expiration by limitation and directing that the question of the revocation or restoration be submitted to a vote at a special meeting of stockholders.
+
+(3) Notice of the special meeting of stockholders shall be given in accordance with § 222 of this title to each of the stockholders.
+
+(4) At the meeting a vote of the stockholders shall be taken on a resolution to revoke the dissolution in the case of a dissolution or to restore the certificate of incorporation in the case of an expiration by limitation. If a majority of the stock of the corporation which was outstanding and entitled to vote upon a dissolution at the time of its dissolution, in the case of a revocation of dissolution, or which was outstanding and entitled to vote upon an amendment to the certificate of incorporation to change the period of the corporation’s duration at the time of its expiration by limitation, in the case of a restoration, shall be voted for the resolution, a certificate of revocation of dissolution or a certificate of restoration shall be executed, acknowledged and filed in accordance with § 103 of this title, which shall be specifically designated as a certificate of revocation of dissolution or a certificate of restoration in its heading and shall state:
+
+a. The name of the corporation;
+
+b. The address (which shall be stated in accordance with § 131(c) of this title) of the corporation’s registered office in this State, and the name of its registered agent at such address;
+
+c. The names and respective addresses of its officers;
+
+d. The names and respective addresses of its directors;
+
+e. The date of filing of the corporation’s original certificate of incorporation with the Secretary of State;
+
+f. The date of filing of the corporation’s certificate of dissolution with the Secretary of State;
+
+g. That a majority of the stock of the corporation which was outstanding and entitled to vote upon a dissolution at the time of its dissolution have voted in favor of a resolution to revoke the dissolution, in the case of a revocation of dissolution, or that a majority of the stock of the corporation which was outstanding and entitled to vote upon an amendment to the certificate of incorporation to change the period of the corporation’s duration at the time of its expiration by limitation, in the case of a restoration, have voted in favor of a resolution to restore the certificate of incorporation; or, if it be the fact, that, in lieu of a meeting and vote of stockholders, the stockholders have given their written consent to the revocation or restoration in accordance with § 228 of this title; and
+
+h. In the case of a restoration, the new specified date limiting the duration of the corporation’s existence or that the corporation shall have perpetual existence.
+
+(b) Upon the effective time of the filing in the office of the Secretary of State of the certificate of revocation of dissolution or the certificate of restoration, the revocation of the dissolution or the restoration of the corporation shall become effective and the corporation may again carry on its business.
+
+(c) Upon the effectiveness of the revocation of the dissolution or the restoration of the corporation as provided in subsection (b) of this section, the provisions of § 211(c) of this title shall govern, and the period of time the corporation was in dissolution or was expired by limitation shall be included within the calculation of the 30-day and 13-month periods to which § 211(c) of this title refers. An election of directors, however, may be held at the special meeting of stockholders to which subsection (a) of this section refers, and in that event, that meeting of stockholders shall be deemed an annual meeting of stockholders for purposes of § 211(c) of this title.
+
+(d) If after the dissolution became effective or after the expiration by limitation any other corporation organized under the laws of this State shall have adopted the same name as the corporation, or shall have adopted a name so nearly similar thereto as not to distinguish it from the corporation, or any foreign corporation shall have qualified to do business in this State under the same name as the corporation or under a name so nearly similar thereto as not to distinguish it from the corporation, then, in such case, the corporation shall not be reinstated under the same name which it bore when its dissolution became effective or it expired by limitation, but shall adopt and be reinstated or restored under some other name, and in such case the certificate to be filed under this section shall set forth the name borne by the corporation at the time its dissolution became effective or it expired by limitation and the new name under which the corporation is to be reinstated or restored.
+
+(e) Nothing in this section shall be construed to affect the jurisdiction or power of the Court of Chancery under § 279 or § 280 of this title.
+
+(f) At any time prior to the expiration of 3 years following the dissolution of a nonstock corporation pursuant to § 276 of this title or such longer period as the Court of Chancery may have directed pursuant to § 278 of this title, or at any time prior to the expiration of 3 years following the expiration of the time limited for a nonstock corporation’s existence as provided in its certificate of incorporation or such longer period as the Court of Chancery may have directed pursuant to § 278 of this title, a nonstock corporation may revoke the dissolution theretofore effected by it or restore its certificate of incorporation after it has expired by limitation in a manner analogous to that by which the dissolution was authorized or, in the case of a restoration, in the manner in which an amendment to the certificate of incorporation to change the period of the corporation’s duration would have been authorized at the time of its expiration by limitation including (i) if applicable, a vote of the members entitled to vote, if any, on the dissolution or the amendment and (ii) the filing of a certificate of revocation of dissolution or a certificate of restoration containing information comparable to that required by paragraph (a)(4) of this section. Notwithstanding the foregoing, only subsections (b), (d), and (e) of this section shall apply to nonstock corporations.
+
+(g) Any corporation that revokes its dissolution or restores its certificate of incorporation pursuant to this section shall file all annual franchise tax reports that the corporation would have had to file if it had not dissolved or expired and shall pay all franchise taxes that the corporation would have had to pay if it had not dissolved or expired. No payment made pursuant to this subsection shall reduce the amount of franchise tax due under Chapter 5 of this title for the year in which such revocation or restoration is effected.
+
+8 Del. C. 1953, §  311;  56 Del. Laws, c. 50;  56 Del. Laws, c. 186, §  25;  57 Del. Laws, c. 148, §  33;  70 Del. Laws, c. 587, §  28;  73 Del. Laws, c. 82, §§  33, 34;  73 Del. Laws, c. 298, §  11;  77 Del. Laws, c. 253, §  63;  78 Del. Laws, c. 273, §  5;  80 Del. Laws, c. 265, § 12;  85 Del. Laws, c. 48, § 9; 
+
+
+§ 312. Revival of certificate of incorporation.
+
+(a) As used in this section, the term “certificate of incorporation” includes the charter of a corporation organized under any special act or any law of this State.
+
+(b) Any corporation whose certificate of incorporation has become forfeited or void pursuant to this title may at any time procure a revival of its certificate of incorporation, together with all the rights, franchises, privileges and immunities and subject to all of its duties, debts and liabilities which had been secured or imposed by its original certificate of incorporation and all amendments thereto, by complying with the requirements of this section. Notwithstanding the foregoing, this section shall not be applicable to a corporation whose certificate of incorporation has been revoked or forfeited pursuant to § 284 of this title.
+
+(c) The revival of the certificate of incorporation may be procured as authorized by the board of directors or members of the governing body of the corporation in accordance with subsection (h) of this section and by executing, acknowledging and filing a certificate of revival in accordance with § 103 of this title.
+
+(d) The certificate required by subsection (c) of this section shall state:
+
+(1) The date of filing of the corporation’s original certificate of incorporation; the name under which the corporation was originally incorporated; the name of the corporation at the time its certificate of incorporation became forfeited or void pursuant to this title; and the new name under which the corporation is to be revived to the extent required by subsection (f) of this section;
+
+(2) The address (which shall be stated in accordance with § 131(c) of this title) of the corporation’s registered office in this State and the name of its registered agent at such address;
+
+(3) That the corporation desiring to be revived and so reviving its certificate of incorporation was organized under the laws of this State;
+
+(4) The date when the certificate of incorporation became forfeited or void pursuant to this title, or that the validity of any revival has been brought into question; and
+
+(5) That the certificate of revival is filed by authority of the board of directors or members of the governing body of the corporation in accordance with subsection (h) of this section.
+
+(e) Upon the filing of the certificate in accordance with § 103 of this title the corporation shall be revived with the same force and effect as if its certificate of incorporation had not been forfeited or void pursuant to this title. Such revival shall validate all contracts, acts, matters and things made, done and performed within the scope of its certificate of incorporation by the corporation, its directors or members of its governing body, officers, agents and stockholders or members during the time when its certificate of incorporation was forfeited or void pursuant to this title, with the same force and effect and to all intents and purposes as if the certificate of incorporation had at all times remained in full force and effect. All real and personal property, rights and credits, which belonged to the corporation at the time its certificate of incorporation became forfeited or void pursuant to this title and which were not disposed of prior to the time of its revival, and all real and personal property, rights and credits acquired by the corporation after its certificate of incorporation became forfeited or void pursuant to this title shall be vested in the corporation, after its revival, as if its certificate of incorporation had at all times remained in full force and effect, and the corporation after its revival shall be as exclusively liable for all contracts, acts, matters and things made, done or performed in its name and on its behalf by its directors or members of its governing body, officers, agents and stockholders or members prior to its revival, as if its certificate of incorporation had at all times remained in full force and effect.
+
+(f) If, since the certificate of incorporation became forfeited or void pursuant to this title, any other corporation organized under the laws of this State shall have adopted the same name as the corporation sought to be revived or shall have adopted a name so nearly similar thereto as not to distinguish it from the corporation to be revived or any foreign corporation qualified in accordance with § 371 of this title shall have adopted the same name as the corporation sought to be revived or shall have adopted a name so nearly similar thereto as not to distinguish it from the corporation to be revived, then in such case the corporation to be revived shall not be revived under the same name which it bore when its certificate of incorporation became forfeited or void pursuant to this title, but shall be revived under some other name as set forth in the certificate to be filed pursuant to subsection (c) of this section.
+
+(g) Any corporation that revives its certificate of incorporation under this chapter shall pay to this State a sum equal to all franchise taxes, penalties and interest thereon due at the time its certificate of incorporation became forfeited or void pursuant to this title; provided, however, that any corporation that revives its certificate of incorporation under this chapter whose certificate of incorporation has been forfeited or void for more than 5 years shall, in lieu of the payment of the franchise taxes and penalties otherwise required by this subsection, pay a sum equal to 3 times the amount of the annual franchise tax that would be due and payable by such corporation for the year in which the revival is effected, computed at the then current rate of taxation. No payment made pursuant to this subsection shall reduce the amount of franchise tax due under Chapter 5 of this title for the year in which the revival is effected. If the filing of a certificate of validation under § 204 of this title relates to a time during which the corporation’s certificate of incorporation had been forfeited or void, the annual reports and annual franchise taxes that would have been required to be filed and paid during the period in which the corporation’s certificate of incorporation had been forfeited or void, including interest thereon, are required to be filed and paid at the time of the filing of such certificate of validation.
+
+(h) For purposes of this section and § 502(a) of this title, the board of directors or governing body of the corporation shall be comprised of the persons, who, but for the certificate of incorporation having become forfeited or void pursuant to this title, would be the duly elected or appointed directors or members of the governing body of the corporation. The requirement for authorization by the board of directors under subsection (c) of this section shall be satisfied if a majority of the directors or members of the governing body then in office, even though less than a quorum, or the sole director or member of the governing body then in office, authorizes the revival of the certificate of incorporation of the corporation and the filing of the certificate required by subsection (c) of this section. In any case where there shall be no directors of the corporation available for the purposes aforesaid, the stockholders may elect a full board of directors, as provided by the bylaws of the corporation, and the board so elected may then authorize the revival of the certificate of incorporation of the corporation and the filing of the certificate required by subsection (c) of this section. A special meeting of the stockholders for the purpose of electing directors may be called by any officer or stockholder upon notice given in accordance with § 222 of this title. For purposes of this section, the bylaws shall be the bylaws of the corporation that, but for the certificate of incorporation having become forfeited or void pursuant to this title, would be the duly adopted bylaws of the corporation.
+
+(i) After a revival of the certificate of incorporation of the corporation shall have been effected, the provisions of § 211(c) of this title shall govern and the period of time during which the certificate of incorporation of the corporation was forfeited or void pursuant to this title shall be included within the calculation of the 30-day and 13-month periods to which § 211(c) of this title refers. A special meeting of stockholders held in accordance with subsection (h) of this section shall be deemed an annual meeting of stockholders for purposes of § 211(c) of this title.
+
+(j) Except as otherwise provided in § 313 of this title, whenever it shall be desired to revive the certificate of incorporation of any nonstock corporation, the governing body shall perform all the acts necessary for the revival of the certificate of incorporation of the corporation which are performed by the board of directors in the case of a corporation having capital stock, and the members of any nonstock corporation who are entitled to vote for the election of members of its governing body shall perform all the acts necessary, if any, for the revival of the certificate of incorporation of the corporation which are performed by the stockholders in the case of a corporation having capital stock. Except as otherwise provided in § 313 of this title, in all other respects, the procedure for the revival of the certificate of incorporation of a nonstock corporation shall conform, as nearly as may be applicable, to the procedure prescribed in this section for the revival of the certificate of incorporation of a corporation having capital stock; provided, however, that subsection (i) of this section shall not apply to nonstock corporations.
+
+8 Del. C. 1953, §  312;  56 Del. Laws, c. 50;  59 Del. Laws, c. 106, §  16;  64 Del. Laws, c. 112, §  56;  66 Del. Laws, c. 352, §  11;  68 Del. Laws, c. 163, §  2;  70 Del. Laws, c. 587, §§  29, 30;  73 Del. Laws, c. 82, §  35;  73 Del. Laws, c. 298, §  12;  75 Del. Laws, c. 306, §§  11-16;  77 Del. Laws, c. 253, §  64;  78 Del. Laws, c. 273, §  6;  79 Del. Laws, c. 72, §  14;  80 Del. Laws, c. 265, § 13;  83 Del. Laws, c. 377, § 14;  85 Del. Laws, c. 48, § 10;  85 Del. Laws, c. 279, § 3; 
+
+
+§ 313. Revival of certificate of incorporation or charter of exempt corporations.
+
+(a) Every exempt corporation whose certificate of incorporation or charter has become forfeited, pursuant to § 136(b) of this title for failure to obtain a registered agent, or inoperative and void, by operation of § 510 of this title for failure to file annual franchise tax reports required, and for failure to pay taxes or penalties from which it would have been exempt if the reports had been filed, shall be deemed to have filed all the reports and be relieved of all the taxes and penalties, upon satisfactory proof submitted to the Secretary of State of its right to be classified as an exempt corporation pursuant to § 501(b) of this title, and upon filing with the Secretary of State a certificate of revival in manner and form as required by § 312 of this title.
+
+(b) Upon the filing by the corporation of the proof of classification as required by subsection (a) of this section, the filing of the certificate of revival and payment of the required filing fees, the corporation shall be revived with the same force and effect as provided in § 312(e) of this title for other corporations.
+
+(c) As used in this section, the term “exempt corporation” shall have the meaning given to it in § 501(b) of this title. Nothing contained in this section relieves any exempt corporation from filing the annual report required by § 502 of this title.
+
+8 Del. C. 1953, §  313;  56 Del. Laws, c. 50;  56 Del. Laws, c. 186, §  26;  58 Del. Laws, c. 450, §  8;  70 Del. Laws, c. 587, §  31;  77 Del. Laws, c. 253, §  65;  78 Del. Laws, c. 96, §§  10-12;  80 Del. Laws, c. 265, § 14;  81 Del. Laws, c. 354, § 12;  82 Del. Laws, c. 45, § 18; 
+
+
+§ 314. Status of corporation.
+
+Any corporation desiring to renew, extend and continue its corporate existence shall, upon complying with applicable constitutional provisions of this State, continue as provided in its certificate effecting the foregoing as a corporation and shall, in addition to the rights, privileges and immunities conferred by its charter, possess and enjoy all the benefits of this chapter, which are applicable to the nature of its business, and shall be subject to the restrictions and liabilities by this chapter imposed on such corporations.
+
+8 Del. C. 1953, §  314;  56 Del. Laws, c. 50;  80 Del. Laws, c. 265, § 15; 
+
+
+Delaware General Assembly
+Judicial
+Executive
+Contact
+Twitter
+Help
