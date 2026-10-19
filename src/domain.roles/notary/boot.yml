@@ -1,0 +1,8 @@
+always:
+  briefs:
+    say: []
+
+    ref:
+      - briefs/practices/define.notary-public-and-how-to-get-notarized.md
+      - briefs/ronproviders/howto.get-a-remote-online-notarization.jurisdiction=usa-florida.md
+      - briefs/ronproviders/refs/jurisdiction=usa-florida/readme.md
