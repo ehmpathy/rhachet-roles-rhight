@@ -1,0 +1,105 @@
+How to pay Delaware franchise tax online
+Atlas
+
+Delaware franchise tax is due on March 1st, 2026 and can be paid online through the state's website. All Delaware C Corporations are required to pay this tax and file an Annual Report to maintain good standing. The tax amount varies, but for many companies, it's likely to be a few hundred dollars instead of thousands.
+
+Delaware franchise tax is due March 1st, 2026
+Delaware offers two methods of calculating your franchise tax, and defaults to using one called the Authorized Shares method that often results in high tax bills.
+Many Atlas companies can lower the amount of their tax bill significantly by calculating it online using the Assumed Par Value Capital method instead, by following this guide.
+Atlas founders can also get discounted help on Delaware taxes, other state taxes you may owe, and Federal taxes from one of our tax partners or any tax advisor you choose.
+What is Delaware franchise tax?
+
+All Delaware C Corporations are required to pay the Delaware franchise Tax and to file an Annual Report. This is a tax charged by the state on all corporations registered in Delaware. It's important to pay these taxes on time in order to keep your business in good standing and avoid penalties. Even companies with no revenue in the previous fiscal year should expect to pay some amount.
+
+Perks towards tax advisors
+
+Atlas partners with tax and accounting professionals who can help you file your state and federal taxes. View your options on the Atlas Perks page.
+
+Stripe isn’t an accounting firm and can’t provide tax or accounting advice. Consult legal and tax professionals for advice on how to meet ongoing legal, tax, and accounting obligations that apply to you and your company.
+
+How to pay Delaware franchise tax online
+
+Stripe isn’t an accounting firm and can’t provide tax or accounting advice. Consult legal and tax professionals for advice on how to meet ongoing obligations that apply to your company. You can review the Stripe Atlas guide to business taxes before you get started.
+
+Have the following handy before starting:
+
+Your company documents from your Stripe Atlas Dashboard.
+Form 1120 or recent balance sheet, if you haven't yet filed taxes this year.
+Physical company address from Stripe Atlas Dashboard.
+Locate your seven digit Delaware Business Entity File Number. This is how you'll log in to the Delaware website to pay your taxes.
+Payment steps
+
+Download your Filed Certificate of Incorporation in the Stripe Atlas Dashboard. View the second page of the Certificate of Incorporation to get your company’s Delaware Business Entity File Number.
+
+Log in to the state of Delaware website using this Delaware Business Entity File Number.
+
+Click the File Annual Report button. Be sure to click the correct tax year. Taxes for the 2025 tax year are paid in 2026.
+
+Enter the number of issued shares.
+
+The total number of shares will already be populated in the stock details section.
+When you set up your company, you issue some of these shares to the founders. You can find how many shares you initially issued in your Founder Stock Board Consent in the Stripe Atlas Dashboard. If you have issued any additional shares this year, be sure to include those in the number of issued shares.
+
+Enter your Gross Assets.
+
+Gross assets, or total assets, can be found on your federal corporate income tax (IRS Form 1120, Schedule L). If you haven’t yet filed this year’s corporate income tax, you can use a recent balance sheet for this number.
+
+Enter your Asset Date. This will be the last day of this year in which you are filing these taxes (12/31/202X).
+
+Enter your End Date of Fiscal Year. This will be 12/31 of this year, unless you’ve filed to change your fiscal year with the IRS. In that case, use the last day of your fiscal year.
+
+Click Recalculate Tax button to see how much tax you owe for the year.
+
+This button can take some time to load.
+Most companies formed with Stripe Atlas will see the amount they owe decrease. By default, and in any tax notices, Delaware calculates tax owed using the Authorized Shares method. Most Atlas companies find they pay less tax when they use the Assumed Par Value Capital method instead of the default Authorized Shares method.
+View the new Amount due above the table. The minimum tax amount due is $400 (plus $50 Annual Filing Fee).
+
+Enter your Employer Identification Number from the IRS. View your company page to view your EIN in the Stripe Atlas Dashboard.
+
+Enter your company address. Enter the company’s physical location. If you don’t yet have a company office, you can use your home address.
+
+Enter your one company officer’s name and details. You only need to enter one company officer’s information. This can be either your President or Secretary. You can check your officer roles in your Filed Certificate of Incorporation in the Stripe Atlas Dashboard.
+
+Enter company director information
+
+Enter your current number of Directors in the number box. After you enter the number, you can click Enter Directors Info.
+The form will generate a row for each director. For example, entering "2" creates two rows to enter information.
+You can check your initial Directors in your Board Approval in the Stripe Atlas Dashboard. If your Board has changed, be sure to enter the most up to date list of directors.
+
+Authorize your company’s information. Fill out all the required information to attest to the accuracy of the information.
+
+After you verify you entered all of the correct information, click the green Proceed to Payment button. You can choose to pay Delaware Franchise Tax and Annual Report filing fee either by credit card or ACH. After inputting your payment information, click the green Submit button to finish.
+
+You can save your work and return to it later, just make sure to save your session number, which the Delaware portal gives you the option of sending to an email address for easier access.
+
+If you have additional questions regarding Delaware state taxes, you can work with one of our tax partners.
+
+Did this answer your question?
+Yes
+No
+Related articles
+Key tax dates for Atlas companies
+All Atlas companies are incorporated in Delaware and are considered domestic United States companies. Atlas companies will owe Delaware franchise…
+Atlas
+Legal and tax help for your Stripe Atlas company
+Tax and accounting help As US companies, all Atlas companies need to file state and federal taxes each year. Federal business taxes are due by April…
+Atlas
+What taxes (Delaware and federal) do I owe as a U.S. company?
+Your company should expect to pay taxes each year it is in existence. For a general information on what types of tax returns U.S. businesses must file…
+Atlas
+Contact support
+Live chat in English
+24/7 Support Available
+Get email support in English 24/7
+Sign up to get support
+What is Stripe?
+Learn more about Stripe and our products.
+Stripe docs
+Get familiar with the Stripe products and their features.
+API reference
+Explore complete reference documentation for the Stripe API.
+Developer chat on Discord
+Chat live with other developers on the official Stripe Discord.
+ English (United States)
+Stripe will handle your data pursuant to our privacy policy.
+© Stripe

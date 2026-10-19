@@ -1,0 +1,116 @@
+DCIS - eCorp (Delaware Corporations Information System)
+Department of State > Division of Corporations
+icis.corp.delaware.gov/ecorp/
+
+strings transcribed from the Amended Annual Franchise Tax Report flow,
+in a live portal session. these are agency UI text, reproducible by any filer, and carry
+no party identifiers.
+
+⚠️ transcribed from screen captures. the confirmation screen is one-shot and
+cannot be re-obtained, so no deterministic extract of it exists. the captures
+are the artifact of record; these strings are quoted from them.
+
+
+=== the verification block, when a flagged year is opened ===
+
+Information entered for tax year(s) 2023 requires additional verification.
+Please contact your Registered Agent or the Franchise Tax Section at
+302-739-3073 option 3 for assistance.
+
+
+=== the confirmation screen, on successful submission ===
+
+Amended Annual Report
+
+Payment Received and Submitted Successfully.
+
+File Number:
+Submission Date and Time:
+Service Request Number:
+
+Once you leave this screen, you will no longer be able to obtain a confirmation
+copy.
+
+Notice to customers:
+The Division has experienced reported instances where confirmation copies are
+not appearing and/or being emailed.
+You may contact the Division at DosDoc_Tech_Support@state.de.us if a
+confirmation copy does not appear and you require a confirmation copy.
+
+Display Confirmation Copy   Email Confirmation Copy   New Filing
+
+
+=== the email-request acknowledgement ===
+
+Your e-mail request has been received. A filed copy of the annual report will
+be sent once it is available.
+
+Please allow 48 hours for receipt of the filed copy.
+
+
+=== the authorization block, on the review copy ===
+
+Authorization
+Terms & Conditions:
+
+NOTICE: Pursuant to 8 Del. C. § 502(b), "If any officer or director of a
+corporation required to make an annual franchise tax report to the Secretary of
+State shall knowingly make any false statement in the report, such officer or
+director shall be guilty of perjury."
+
+I certify that I have read the Terms and Conditions
+
+
+=== the review-copy figure labels ===
+
+Franchise Tax:
+Penalty:
+1.5% Monthly Interest:
+Annual Filing Fee:
+Previous Credit/Balance:
+Prepaid Quarterly Payments:
+Amount Due:
+
+
+=== the footer, on every screen in the flow ===
+
+For help filing your annual report, call: 302-739-3073, Option 3, or click below
+
+
+=== correspondence — the Franchise Tax Section's reply ===
+
+⚠️ not an agency publication. one sentence of a private email, reproduced
+because the sibling case study turns on its exact words. the sender is a
+Division clerk and is NOT identified here, nor is the entity or its file
+number. the two spaces after "2023." are hers and are preserved.
+
+My apologies, I have removed the flag for 2023.  You should be ok to proceed.
+
+
+=== correspondence, 2026-08-31 — the Franchise Tax Section, on SEQUENCE and CHANNEL ===
+
+⚠️ not an agency publication. a private email, reproduced in full because two
+published briefs turn on its exact words: it states the serial order of the
+amended reports, and it draws the channel boundary that a reader can otherwise
+misread as a registered-agent requirement. the sender is the same Division
+clerk and is NOT identified here, nor is the entity or its file number. the
+double spaces are hers and are preserved.
+
+⭐ read the last sentence carefully. it is conditioned on "If you need
+assistance" and offers the information center and the registered agent as
+ALTERNATIVES. it is a statement about what the Franchise Tax Section does not
+do, never a requirement that an agent file for you.
+
+The wording looks good.  Please have notarized and resent.   Once receives you
+may go online and file an amended 2022 report to list the verified assets and
+issued shares.  Then, once filed proceed with filing an amended 2023 report with
+the correct total issued shares.
+
+After all taxes are paid you can file a Certificate of Renewal.  If you need
+assistance please contact the information center or your registered agent as I
+do not process filings.
+
+⚠️ "Certificate of Renewal" is HER word. the statute and the Division's own
+form both call it a Certificate of Revival (8 Del. C. § 312). the two name the
+same instrument; a search for "renewal" in the corporate forms list returns
+none.
