@@ -221,20 +221,25 @@ the verbatim consent clause per state — in `define.boundary.diligence-answer-v
 4. [15 U.S.C. § 1681k](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681k&num=0&edition=prelim)
 5. [Cal. Civ. Code § 1798.99.80](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.99.80)
 6. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
+7. [Cal. Civ. Code § 1798.125](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.125) — captured direct; (b)(3) read verbatim, 12-month wait included
 
 captured via browser per `rule.require.bhrowser-citations`.
 
-> ⚠️ **six distinct sources, below the `rule.require.seven-distinct-citations` floor, deliberately.**
-> the five ROP statutes are quoted by their owner brief and merely **cited** here, per the
-> canonical-owner convention. ⛔ **to re-quote them in order to reach seven would duplicate exactly
-> what that convention exists to prevent.**
+> ⭐ **seven distinct sources.** the five ROP statutes stay quoted by their owner brief and merely
+> **cited** here, per the canonical-owner convention. the seventh is § 1798.125, which this brief leans
+> on directly and which is now captured direct rather than borrowed.
 
-⚠️ **§ 1798.125(b)(3) is quoted at second hand and is NOT in the list above.** its text reaches this
-brief through the in-repo `../rewards/define.boundary.ccpa-financial-incentive-opt-in.[lesson].md`,
-which captured it on its own route. it is a **reliable secondary source and not our capture**, so it
-does not count toward the citation floor here and it is marked rather than laundered. ⛔ **capture it
-directly before any advice leans on the 12-month cooldown**, which is the clause with the sharpest
-operational consequence and the one most likely to have moved.
+⭐ **§ 1798.125(b)(3) is now captured direct (source 7), and it matches.** its text first reached this
+brief through the in-repo `../rewards/define.boundary.ccpa-financial-incentive-opt-in.[lesson].md`.
+`[observed]` the direct capture reads the same clause word for word: *"A business may enter a consumer
+into a financial incentive program only if the consumer gives the business prior opt-in consent … If a
+consumer refuses to provide opt-in consent, then the business shall wait for at least 12 months before
+next requesting that the consumer provide opt-in consent"*. the 12-month cooldown, the clause with
+the sharpest operational consequence, has not moved.
+
+## .date researched
+
+2026-08-02 to 2026-10-19: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

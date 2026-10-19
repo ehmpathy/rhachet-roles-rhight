@@ -77,7 +77,7 @@ medium of expression."* a measurement is not authored, so it never enters the su
 > **`G-facts-originality` is CLOSED, and it closed against the paragraphs above. § 102(b) IS the
 > provision. the Supreme Court says so in terms.**
 
-`[observed]` **Feist Publications v. Rural Telephone**, 499 U.S. 340, 356 (1991), which quotes
+`[observed]` **Feist Publications, Inc. v. Rural Telephone Service Co.**, 499 U.S. 340, 356 (1991), which quotes
 § 102(b) in full and then holds:
 
 > *"**§ 102(b) is universally understood to prohibit any copyright in facts.** Harper & Row, supra, at
@@ -220,8 +220,8 @@ stated as a `define.boundary` because it **selects** which rules apply, in the s
 5. [17 U.S.C. § 107](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section107&num=0&edition=prelim)
 6. [15 U.S.C. § 1125](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1125&num=0&edition=prelim)
 7. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
-8. Feist Publications, Inc. v. Rural Tel. Serv. Co., 499 U.S. 340 (1991) — https://supreme.justia.com/cases/federal/us/499/340/ (**mirror fallback** — case law has no uscode.house.gov analogue; Justia is the reliable mirror and the fallback is declared here per `rule.require.bhrowser-citations`)
-9. Yelp Terms of Service (`20260101_en_us`) — https://terms.yelp.com/tos/en_us/ (**undated entry point; Yelp redirects to the current dated revision, which is recorded in the capture header**)
+8. [Feist Publications, Inc. v. Rural Tel. Serv. Co., 499 U.S. 340 (1991)](https://supreme.justia.com/cases/federal/us/499/340/) — (**mirror fallback** — case law has no uscode.house.gov analogue; Justia is the reliable mirror and the fallback is declared here per `rule.require.bhrowser-citations`)
+9. [Yelp Terms of Service (`20260101_en_us`)](https://terms.yelp.com/tos/en_us/) — (**undated entry point; Yelp redirects to the current dated revision, which is recorded in the capture header**)
 
 captured via browser per `rule.require.bhrowser-citations`.
 
@@ -230,6 +230,10 @@ conclusion this brief had already published.** the § 102(b) correction stood on
 for as long as the case was un-captured, and read correctly right up until the moment the case was
 opened. **the citation that overturns a claim is rarely the one a draft thinks to seek**, which is the
 argument for the sanity pass as a distinct step rather than an author's self-check.
+
+## .date researched
+
+2026-08-02 to 2026-08-05: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

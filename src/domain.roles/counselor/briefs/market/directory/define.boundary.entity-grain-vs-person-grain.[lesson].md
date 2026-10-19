@@ -43,7 +43,7 @@ that one word. a report **about a company** is not a consumer report no matter w
 | **defamation / trade libel** | ⭐ **applies, and harder** — damages are economic and provable | ✅ applies |
 | **accuracy and currency law** | ⛔ **applies** | ✅ applies |
 | **corporate identity / successor law** | ⛔ **applies** | ✅ n/a |
-| **§ 5 / UDAP** | ✅ applies — about the *publisher's* conduct toward consumers, not the subject's privacy | ✅ applies |
+| **§ 5 / UDAP** | ✅ applies — `[observed]` 15 U.S.C. § 45(a)(1) reaches *"unfair or deceptive acts or practices in or affecting commerce"*: the *publisher's* conduct, not the subject's privacy | ✅ applies |
 | **§ 230** | ✅ applies — turns on *who authored*, not on who the subject is | ✅ applies |
 | **trademark / false association** | ⭐ **applies** — the layer that *replaces* right of publicity | ⛔ generally not |
 
@@ -160,14 +160,19 @@ a licensed professional (usable for linkage) or is person-grain background (cons
 4. [15 U.S.C. § 1681e](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681e&num=0&edition=prelim)
 5. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
 6. [Ind. Code § 32-36-1-6](https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-6/)
+7. [15 U.S.C. § 45 — FTC Act § 5 (govinfo, GPO official; 2023 edition)](https://www.govinfo.gov/content/pkg/USCODE-2023-title15/html/USCODE-2023-title15-chap2-subchapI-sec45.htm)
 
 all captured via browser per `rule.require.bhrowser-citations`. ⚠️ the Indiana cell cites the Justia
-section-grain mirror — fallback noted per `rule.require.five-state-baseline`.
+section-grain mirror — fallback noted per `rule.require.five-state-baseline`. ⚠️ § 45 cites govinfo:
+the OLRC viewer's section urls returned *"Page Not Found"* when it was captured.
 
-> ⚠️ **six distinct sources, below the `rule.require.seven-distinct-citations` floor, deliberately.**
-> § *the five-state sweep* opens with *"cited, not re-derived — the sweep has one owner, and this is
-> not it"*, so the ROP statutes are quoted by their owner brief and merely cited here. ⛔ **extra
-> quotes to reach seven would duplicate what the canonical-owner convention exists to prevent.**
+> ⭐ **seven distinct sources.** § *the five-state sweep* opens with *"cited, not re-derived — the sweep
+> has one owner, and this is not it"*, so the ROP statutes stay quoted by their owner brief and merely
+> cited here. the seventh is § 45, which the regime table leans on and which had gone uncited.
+
+## .date researched
+
+2026-08-02 to 2026-10-19: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

@@ -37,7 +37,7 @@ grain carries four separate exits:
 | regime | the exit | verbatim |
 |---|---|---|
 | **FCRA** | *"consumer"* is a natural person | `[observed]` § 1681a(c): *"The term 'consumer' means an individual."* |
-| **right of publicity** (all five) | reaches only a natural person | `[observed]` FL § 540.08(1) *"any natural person"*; IN § 32-36-1-6 *"a living or deceased natural person"*; TX § 26.002 *"an individual"*; CA § 3344(a)(1) *"in the case of a minor, the prior consent of their parent or legal guardian"* `[inferred]`; NY § 51 *"Any person whose name … is used within this state"* `[inferred]` |
+| **right of publicity** (all five) | reaches only a natural person | `[observed]` FL § 540.08(1) *"any natural person"*; IN § 32-36-1-6 *"a living or deceased natural person"*; TX (Tex. Prop. Code ch. 26) § 26.002 *"an individual"*; CA § 3344(a)(1) *"in the case of a minor, the prior consent of their parent or legal guardian"* `[inferred]`; NY § 51 *"Any person whose name … is used within this state"* `[inferred]` |
 | **CA DELETE Act** | data broker sells *a consumer's* personal information | `[observed]` § 1798.99.80(c) |
 | **CCPA** | *"consumer"* is a natural person | `[observed]` § 1798.140(i): *"'Consumer' means a natural person who is a California resident"* |
 
@@ -167,6 +167,10 @@ brief keeps the trade; that brief keeps the one increment recovered from it.**
 
 captured via browser per `rule.require.bhrowser-citations`. ⚠️ the Indiana cell cites the Justia
 section-grain mirror — fallback noted per `rule.require.five-state-baseline`.
+
+## .date researched
+
+2026-08-02 to 2026-08-03: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

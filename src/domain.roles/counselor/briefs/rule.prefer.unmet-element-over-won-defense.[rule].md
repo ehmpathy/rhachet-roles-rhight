@@ -52,8 +52,8 @@ defeats **every** claim under that regime at once, for every subject, forever.
 
 | regime | the element declined | the defense avoided |
 |---|---|---|
-| ⭐ **four privacy regimes at once** — FCRA · CCPA · a state deletion act · right of publicity | `[observed]` each gates on *"an **individual**"* / *"a **natural person**"*. a subject of record that is a **business entity** never closes it | four separate compliance postures, each argued separately |
-| **money transmission** | `[observed]` the two-element test needs an acceptance **and** a transmission. a **spend-only, non-transferable** credit never closes the second | a money-transmitter licence in every state, or a state-by-state exemption argument |
+| ⭐ **four privacy regimes at once** — FCRA · CCPA · a state deletion act · right of publicity | `[observed]` each gates on *"an **individual**"* / *"a **natural person**"*: FCRA § 1681a(c) *"'consumer' means an individual"*; CCPA § 1798.140(i) *"a natural person who is a California resident"*; the DELETE Act § 1798.99.80(c) on *"the personal information of a consumer"*, that same natural person; Fla. Stat. § 540.08 on the likeness *"of any natural person"*. a subject of record that is a **business entity** never closes it | four separate compliance postures, each argued separately |
+| **money transmission** | `[observed]` the two-element test (31 C.F.R. § 1010.100, via its owner brief) needs an acceptance **and** a transmission. a **spend-only, non-transferable** credit never closes the second | a money-transmitter licence in every state, or a state-by-state exemption argument |
 | ⭐ **copyright** | `[observed]` § 102(a) reaches *"original works of authorship"*. a **count** is a measurement, so it never enters the subject matter | ⛔ § 107 fair use — *"the factors … **shall include**"* — a **multi-factor, fact-bound** defense, which is the worst shape a defense can have |
 | **data-broker registration** | `[observed]` the definition is *collects **and** sells*. a design that never sells never closes it | registration, a deletion queue, a recurring audit |
 
@@ -123,7 +123,7 @@ about your own posture rather than a strategic one.
 4. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
 5. [Cal. Civ. Code § 1798.99.80](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.99.80)
 6. [Fla. Stat. § 540.08](http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0540/Sections/0540.08.html)
-7. 31 C.F.R. § 1010.100 — https://www.law.cornell.edu/cfr/text/31/1010.100 (**mirror** — cited by `market/rewards/define.boundary.spend-only-shuts-three-regimes`, which owns that sweep)
+7. [31 C.F.R. § 1010.100](https://www.law.cornell.edu/cfr/text/31/1010.100) — (**mirror** — cited by `market/rewards/define.boundary.spend-only-shuts-three-regimes`, which owns that sweep)
 
 captured via browser per `rule.require.bhrowser-citations`, except source 7, which is inherited from
 the brief that owns it and is **not independently re-captured here**.
@@ -133,6 +133,10 @@ statement about how litigation works — burden, timing, and forum — and `[inf
 states it.** each source proves that one worked example's element is real; **none proves the
 preference.** stated plainly so a reader does not mistake a well-cited example set for a sourced
 principle.
+
+## .date researched
+
+2026-08-02 to 2026-08-04: the capture dates of the sources listed in `.sources`, each read via browser. the 31 C.F.R. § 1010.100 mirror is cited from another brief and carries that brief's date.
 
 ## .publishability
 

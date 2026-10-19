@@ -202,7 +202,7 @@ a sole proprietor's business name puts the person back inside a statute the enti
 |---|---|---|
 | **FL** | `[observed]` § 540.08(1) — *"any **natural person**"* | ⛔ vacates |
 | **IN** | `[observed]` § 32-36-1-6 — *"'personality' means a **living or deceased natural person**"* | ⛔ vacates |
-| **TX** | `[observed]` Tex. Prop. Code § 26.002 — *"An **individual** has a property right in the use of the individual's name"* | ⛔ vacates |
+| **TX** | `[observed]` Tex. Prop. Code ch. 26, § 26.002 — *"An **individual** has a property right in the use of the individual's name"* | ⛔ vacates |
 | **CA** | `[observed]` § 3344(a)(1) — *"in the case of a **minor**, the prior consent of their parent or legal guardian"* | ⛔ vacates `[inferred]` |
 | **NY** | `[observed]` § 51 — *"Any **person** whose name … is used within this state"* | ⛔ vacates `[inferred]` |
 
@@ -245,6 +245,10 @@ sources 3–7 carry weight here: they establish that the publicity layer **vacat
 which is precisely why this layer takes its place. captured via browser per
 `rule.require.bhrowser-citations`. ⚠️ the Indiana cell cites the Justia section-grain mirror —
 fallback noted per `rule.require.five-state-baseline`.
+
+## .date researched
+
+2026-08-02 to 2026-08-03: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

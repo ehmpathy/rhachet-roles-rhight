@@ -30,7 +30,7 @@ three properties make it distinctive:
 
 | state | the rule | verbatim-cited authority | reaches an entity? |
 |-------|----------|--------------------------|--------------------|
-| **TX** | *"An **individual** has a property right in the use of the individual's name…"*; § 26.014: *"This chapter does not affect a right an **individual** may have… before the death of the individual"* — live-person claims are common law | Tex. Prop. Code §§ 26.002, 26.014 | ⛔ **no** `[observed]` |
+| **TX** | Tex. Prop. Code ch. 26, § 26.002: *"An **individual** has a property right in the use of the individual's name…"*; § 26.014: *"This chapter does not affect a right an **individual** may have… before the death of the individual"* — live-person claims are common law | Tex. Prop. Code §§ 26.002, 26.014 | ⛔ **no** `[observed]` |
 | **IN** | *"A person may not use an aspect of a **personality's** right of publicity for a commercial purpose … without having obtained previous written consent"* — and § 32-36-1-6: *"'personality' means a **living or deceased natural person**"* | Ind. Code §§ 32-36-1-6, -1-8 | ⛔ **no** `[observed]` |
 | **FL** | *"No person shall publish… for purposes of trade or for any commercial or advertising purpose the name… of **any natural person** without the express written or oral consent"* | Fla. Stat. § 540.08(1) | ⛔ **no** `[observed]` ⭐ **strictest on scope** |
 | **CA** | *"Any person who knowingly uses **another's** name… without that person's prior consent, **or, in the case of a minor, the prior consent of their parent or legal guardian**"* — plus a **$750** statutory floor, disgorgement, punitives, and attorney's fees | Cal. Civ. Code § 3344(a)(1) | ⛔ **no** `[inferred]` ⭐ **strictest on remedy** |
@@ -176,6 +176,10 @@ or care taken over what the badges *say* — the exposure attaches to the **use 
 Justia section-grain mirror. the official `iga.in.gov` portal is a javascript application that
 returned navigation chrome only across four attempted URL shapes. **every other cell is captured from
 an official state source via browser.**
+
+## .date researched
+
+2026-08-02 to 2026-08-03: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

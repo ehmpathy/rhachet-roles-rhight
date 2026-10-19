@@ -26,7 +26,10 @@ first is bounded by what you looked at; the second is bounded by what exists in 
 
 so an absence-fact is not merely harder to verify. it is a categorically different assertion, and
 `[inferred]` it carries the exposure of a factual claim about the person while resting on the
-completeness of a search that can never be proven complete.
+completeness of a search that can never be proven complete. and the claim is the directory's own:
+`[observed]` 47 U.S.C. § 230(f)(3) makes an *"information content provider"* of whoever is
+*"responsible, in whole or in part, for the creation or development of information"*, and a "clean"
+badge is information no one but the directory created.
 
 ## ⭐ .the correction — a presence-fact returns a STATUS, not a boolean
 
@@ -78,7 +81,8 @@ increasingly means *this contractor is not currently licensed in good standing.*
 
 `[inferred]` **and where it becomes legible, it is safe**, for three reasons that stack:
 
-1. the inference is **true** — and truth is a complete defense to defamation
+1. the inference is **true** — and truth defeats defamation in all five baseline states, though not
+   on identical terms (§ *truth across the five states*, below)
 2. the underlying fact is published **free by the state**, so the profile discloses no more than the
    registry does
 3. the status is one the contractor is **legally required to hold** to hold themselves out at all
@@ -86,6 +90,24 @@ increasingly means *this contractor is not currently licensed in good standing.*
 > ⭐ **the rows where the implication is legible are the rows where it is true and harmless. the rows
 > where it would be damaging are the rows where it stays illegible — permanently, and more so at
 > scale.**
+
+## ⭐ truth across the five states
+
+`[observed]` truth reaches defamation through three different doors:
+
+| state | authority | the text | what it makes truth |
+|---|---|---|---|
+| TX | Tex. Civ. Prac. & Rem. Code § 73.005(a) | *"The truth of the statement in the publication on which an action for libel is based is a defense to the action."* | a **defense** |
+| CA | Cal. Civ. Code § 45 | *"Libel is a false and unprivileged publication …"* | an **unmet element**: a true statement is not libel at all (`../../rule.prefer.unmet-element-over-won-defense`) |
+| FL | Fla. Const. art. I, § 4 | *"In all criminal prosecutions and civil actions for defamation the truth may be given in evidence. If the matter charged as defamatory is true and was published with good motives, the party shall be acquitted or exonerated."* | a defense **conditioned on good motives**, civil actions included |
+| NY | N.Y. Const. art. I, § 8 | *"In all criminal prosecutions or indictments for libels, the truth may be given in evidence to the jury; and if it shall appear to the jury that the matter charged as libelous is true, and was published with good motives and for justifiable ends, the party shall be acquitted"* | a defense **in criminal libel**, conditioned on motives and ends |
+| IN | Ind. Const. art. 1, § 10 | *"In all prosecutions for libel, the truth of the matters alleged to be libellous, may be given in justification."* | a justification **in libel prosecutions** |
+
+⭐ **so "truth is a complete defense" holds as stated in TX, holds more strongly in CA, and carries a
+motive condition on its face in FL.** `[inferred]` a `⬜` that becomes legible is not a publication with
+a motive at all; it is the absence of a badge. that is the strongest posture any of the five texts
+allows. ⚠️ `[unverified]` the civil-defamation treatment of truth in NY and IN, which these
+constitutional texts address only for prosecutions, and the federal constitutional overlay on all five.
 
 ⚠️ `[unverified]` — **false light** is the live residue. some states reach true-but-misleading
 juxtaposition, which is exactly the `⬜`-beside-`✅` shape. truth answers defamation; it does not
@@ -145,24 +167,36 @@ registry already attests them, and mirroring a registry is the cheapest presence
 
 ## .note on the five-state rule
 
-`rule.require.five-state-baseline` is **not** triggered here: this brief draws no state-law redline.
-its one statutory authority is federal (§ 1681c(a)(5)) plus a structural taxonomy. the state-law layer it points
+`rule.require.five-state-baseline` is met for the one state-law step this brief takes (§ *truth across
+the five states*); it draws no state-law redline of its own. its axis is federal (§ 1681c(a)(5)) plus a
+structural taxonomy. the state-law layer it points
 at — false light, sealed-record republication — is carried by the hazard briefs, where the five-state
 sweep is run. **stated explicitly so a reviewer can tell a scope boundary from an omission.**
 
 ## .sources
 
 1. [15 U.S.C. § 1681c](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681c&num=0&edition=prelim)
-2. license status vocabulary — `../../../../licenser/briefs/industry=.all/define.what-licenses-mean.md`
+2. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
+3. [Tex. Civ. Prac. & Rem. Code § 73.005 (TX Legislature, official; ch. 73 page)](https://statutes.capitol.texas.gov/Docs/CP/htm/CP.73.htm)
+4. [Cal. Civ. Code § 45 (CA Legislative Info, official)](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=45)
+5. [Fla. Const. art. I, § 4 (FL Senate, official)](https://www.flsenate.gov/Laws/Constitution)
+6. [N.Y. Const. art. I, § 8 (NYS Senate, official)](https://www.nysenate.gov/legislation/laws/CNS/A1S8)
+7. [Ind. Const. art. 1, § 10 (Justia mirror)](https://law.justia.com/constitution/indiana/art1.html)
+8. license status vocabulary — `../../../../licenser/briefs/industry=.all/define.what-licenses-mean.md`
    (which cites [Virginia DPOR consumer resources](https://www.dpor.virginia.gov/Consumers))
-3. contractor registration bundle — `src/domain.roles/permiter/briefs/ref.electrical-license-structure.indiana.[ref].md`
+9. contractor registration bundle — `src/domain.roles/permiter/briefs/ref.electrical-license-structure.indiana.[ref].md`
 
 statutory sources captured via browser per `rule.require.bhrowser-citations`.
 
-> ⚠️ **this brief sits BELOW the `rule.require.seven-distinct-citations` floor, deliberately.** its
-> subject *is* a taxonomy: the adverse-vs-favorable axis needs exactly **one** statutory anchor —
-> § 1681c(a)(5) — and every other statute it might quote is owned by a peer brief under the
-> canonical-owner convention. **extra quotes to reach seven would restate what those briefs own.**
+> ⭐ **seven distinct statutory sources.** the adverse-vs-favorable axis still needs only one anchor,
+> § 1681c(a)(5). the other six carry the two steps the argument rests on: that the badge is the
+> directory's own claim (§ 230(f)(3)), and that truth defeats defamation, read state by state rather
+> than assumed. ⚠️ the Indiana row cites the Justia mirror, a fallback per
+> `rule.require.five-state-baseline`.
+
+## .date researched
+
+2026-08-02 to 2026-10-19: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

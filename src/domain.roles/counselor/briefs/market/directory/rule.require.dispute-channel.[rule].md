@@ -48,7 +48,10 @@ four elements, each of which is the law rather than a design preference:
 3. ⛔ **no fee to correct** — `[observed]` **TX § 109.002(a)(1)(B)**: a fee to remove or correct is
    one of the conditions that pulls a business **into** the chapter. it also feeds CCPA's *"other
    valuable consideration"* prong under `[observed]` **Cal. Civ. Code § 1798.140(ad)(1)**, so one fee
-   trips two statutes for two unrelated reasons
+   trips two statutes for two unrelated reasons. ⚠️ and a third where the subject is a natural person:
+   `[observed]` **§ 1798.125(a)(1)(B)** bars a business from *"Charging different prices or rates for
+   goods or services"* because a consumer *"exercised any of the consumer's rights under this title"*,
+   and correction is one of those rights (§ 1798.106)
 4. ⚠️ **it must not become a leak** — the channel is where the publication collapse's one legitimate
    exception lives, so it is **subject-authenticated and logged**, and it is **not** the everyday
    support console (`rule.require.asymmetric-disclosure` § *the projection is the boundary*)
@@ -95,24 +98,46 @@ is itself the violation — there is no partial-credit state.
 
 ## .note on the five-state rule
 
-⚠️ `[unverified]` **the other four states' analogues to the TX channel duty are un-swept.** so the
-duty above is grounded in **one** state and adopted everywhere on the
-**strictest-common-denominator** posture (`rule.require.five-state-baseline` § *the nexus note*) —
-not because four more statutes were read. **stated so a reviewer can tell an adopted posture from a
-completed sweep.** tracked as `G-dispute-sla`.
+⭐ **the sweep is now partial rather than absent: three of five states read, two still open.** each
+analogue below binds **its own** regulated party, and none is a general directory duty. the TX chapter
+stays the only one that reaches a business for publishing criminal record information as such.
+
+| where | authority | who it binds | the duty, `[observed]` |
+|---|---|---|---|
+| TX | Tex. Bus. & Com. Code §§ 109.003–109.004 | a business that publishes criminal record information | the channel above |
+| CA | Cal. Civ. Code § 1798.106(a) | a CCPA business, for a natural person's data | *"the right to request a business that maintains inaccurate personal information about the consumer to correct that inaccurate personal information"* |
+| CA | Cal. Civ. Code § 1786.24(a) | an investigative consumer reporting agency | *"shall, without charge, reinvestigate and record the current status of the disputed information or delete the item from the file … before the end of the 30-day period"* |
+| NY | N.Y. Gen. Bus. Law § 380-f(a) | a consumer reporting agency | *"shall promptly re-investigate and record the current status of such information, unless it has reasonable grounds to believe that the dispute by the consumer is frivolous"* |
+| federal | 15 U.S.C. § 1681i(a)(1)(A) | a consumer reporting agency | *"shall, free of charge, conduct a reasonable reinvestigation"*, inside the consumer-report gate (`hazard.consumer-report-gate`) |
+| IN | — | — | ⚠️ `[unverified]` un-swept: no dispute section was read in ch. 24-4-18 |
+| FL | — | — | ⚠️ `[unverified]` un-swept |
+
+`[inferred]` **the convergence is on two elements, and both are already in the TX duty:** no charge
+(*"free of charge"*, *"without charge"*), and a re-check whose outcome is current status or deletion.
+the TX duty therefore stays the adopted floor, on the **strictest-common-denominator** posture
+(`rule.require.five-state-baseline` § *the nexus note*), now checked against three states rather than
+one. tracked as `G-dispute-sla` until IN and FL are read.
 
 ## .sources
 
 1. [Tex. Bus. & Com. Code ch. 109](https://statutes.capitol.texas.gov/Docs/BC/htm/BC.109.htm)
 2. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
+3. [Cal. Civ. Code § 1798.106](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.106)
+4. [Cal. Civ. Code § 1798.125](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.125)
+5. [Cal. Civ. Code § 1786.24](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1786.24)
+6. [N.Y. Gen. Bus. Law § 380-f (NYS Senate, official)](https://www.nysenate.gov/legislation/laws/GBS/380-F)
+7. [15 U.S.C. § 1681i (govinfo, GPO official; 2023 edition)](https://www.govinfo.gov/content/pkg/USCODE-2023-title15/html/USCODE-2023-title15-chap41-subchapIII-sec1681i.htm)
 
 captured via browser per `rule.require.bhrowser-citations`.
 
-> ⚠️ **two distinct sources, far below the `rule.require.seven-distinct-citations` floor, and
-> deliberately.** this rule states **one duty** grounded in **one** captured chapter, plus the CCPA
-> section its fee prong feeds. ⛔ **to pad it to seven would import statutes this rule does not rest
-> on** — the padded-list defect. the shortfall is the honest measure of how well-sourced the duty is,
-> and § *.note on the five-state rule* says exactly which sweep would close it.
+> ⭐ **seven distinct sources.** the duty still rests on **one** chapter (TX ch. 109); the CCPA sections
+> carry the fee prong, and the dispute statutes are the partial five-state sweep in § *.note on the
+> five-state rule*, each scoped to its own regulated party. ⚠️ § 1681i cites govinfo: the OLRC viewer's
+> section urls returned *"Page Not Found"* at capture.
+
+## .date researched
+
+2026-08-03 to 2026-10-19: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 
