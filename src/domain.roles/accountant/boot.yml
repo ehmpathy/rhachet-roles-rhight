@@ -66,15 +66,13 @@ always:
       - briefs/income-tax/state=florida/howto.file.state=florida.current.active-loss.md
       - briefs/income-tax/state=florida/howto.file.state=florida.delinquent.active-loss.md
       - briefs/income-tax/state=florida/howto.file.state=florida.extension.md
-      # .why = the same current/delinquent pair for four more states. each
+      # .why = the same current/delinquent pair for three more states (indiana held: see PR #41). each
       #        opens with its own nexus gate, so a reader learns first
       #        whether the state applies at all. two of them owe tax on a
       #        loss — California's $800 minimum, New York's fixed dollar
       #        minimum — which is the fact a loss-year filer most misses.
       - briefs/franchise-tax/state=texas/howto.file.state=texas.current.active-loss.md
       - briefs/franchise-tax/state=texas/howto.file.state=texas.delinquent.active-loss.md
-      - briefs/income-tax/state=indiana/howto.file.state=indiana.current.active-loss.md
-      - briefs/income-tax/state=indiana/howto.file.state=indiana.delinquent.active-loss.md
       - briefs/franchise-tax/state=new-york/howto.file.state=new-york.current.active-loss.md
       - briefs/franchise-tax/state=new-york/howto.file.state=new-york.delinquent.active-loss.md
       - briefs/franchise-tax/state=california/howto.file.state=california.current.active-loss.md
