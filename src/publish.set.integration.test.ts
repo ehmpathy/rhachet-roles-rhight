@@ -148,10 +148,8 @@ describe('the published file set', () => {
      * zeros.
      */
     when('[t0] the harness is checked against a known-present file', () => {
-      then('it emits the public sandpine demo readme', () => {
-        expect(published).toContain(
-          'domain.roles/registrator/skills/corp.franchise.reinstate/.demo/v2020_05_21.sandpine/readme.md',
-        );
+      then('it emits a role readme known to ship', () => {
+        expect(published).toContain('domain.roles/patenter/readme.md');
       });
 
       then('it emits a non-trivial number of files', () => {
@@ -162,11 +160,8 @@ describe('the published file set', () => {
     when('[t1] the .demo paths are inspected', () => {
       const demos = published.filter((p) => p.includes('/.demo/'));
 
-      then('every published .demo path is the pseudonymized public one', () => {
-        const leaks = demos.filter(
-          (p) => !p.includes('/.demo/v2020_05_21.sandpine/'),
-        );
-        expect(leaks).toEqual([]);
+      then('no .demo path is published at all', () => {
+        expect(demos).toEqual([]);
       });
     });
   });
@@ -206,7 +201,7 @@ describe('the published file set', () => {
 
     when('[t0] the publish set is generated', () => {
       then(
-        'the real-demo readme is excluded, and the rest still ship',
+        'every .demo readme is excluded, and the rest still ship',
         async () => {
           const root = path.join(
             await genTempDir({ slug: 'publish-set' }),
@@ -217,33 +212,29 @@ describe('the published file set', () => {
             'domain.roles/accountant/.demo/v2000_01_01.real-probe/readme.md';
           const atNested =
             'domain.roles/accountant/.demo/v2020_05_21.sandpine/nested/readme.md';
-          const atPublic =
+          const atFormerPublic =
             'domain.roles/accountant/.demo/v2020_05_21.sandpine/readme.md';
           const atOrdinary = 'domain.roles/accountant/readme.md';
 
           write({ root, at: atProbe });
           write({ root, at: atNested });
-          write({ root, at: atPublic });
+          write({ root, at: atFormerPublic });
           write({ root, at: atOrdinary });
 
           const published = genPublishSet({ from: root });
 
           // 🚨 the defect #109 named: a readme under a REAL demo dir
           expect(published).not.toContain(atProbe);
-
-          /**
-           * ⚠️ the allowlist is a TIGHT LITERAL — `.demo/v2020_05_21.sandpine/readme.md`,
-           * not `**` beneath it. exactly one such file exists, at the top level,
-           * so the tight form preserves today's published set exactly and keeps
-           * the default-deny posture: a future nested readme must be
-           * deliberately allowlisted rather than inherited.
-           *
-           * this assertion documents that choice. it is not incidental.
-           */
           expect(published).not.toContain(atNested);
 
-          // the public demo still ships — the exclude is not a blunt drop
-          expect(published).toContain(atPublic);
+          /**
+           * ⚠️ the sandpine allowlist is withdrawn. a .demo dir is default-deny
+           * with no exceptions: the demo has not passed a verified
+           * pseudonymization pass, so no file under any .demo/ ships. a future
+           * demo that earns publication re-adds a tight literal here AND in
+           * the rsync include, so the two cannot drift apart.
+           */
+          expect(published).not.toContain(atFormerPublic);
 
           // an ordinary readme outside any .demo is untouched
           expect(published).toContain(atOrdinary);
