@@ -207,6 +207,10 @@ tell a scope boundary from an omission.**
 
 captured via browser per `rule.require.bhrowser-citations`.
 
+## .date researched
+
+2026-08-02 to 2026-08-03: the capture dates of the sources listed in `.sources`, each read via browser.
+
 ## .publishability
 
 ☀️ **fullsun** (share) — statutory text and the structural distinction between two federal regimes.

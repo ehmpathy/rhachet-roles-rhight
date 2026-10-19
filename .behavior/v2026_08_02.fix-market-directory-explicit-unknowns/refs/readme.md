@@ -38,6 +38,13 @@ one row per statute actually cited. **run these.**
 | Ind. Code ch. 24-4-18 (index) | `capture.sealed.in.24-4-18.criminal-history-providers` | `sealed.in.24-4-18.txt` |
 | Ind. Code §§ 24-4-18-6, -7, -8 | `capture.sealed.in.24-4-18.sections-6-7-8` | `sealed.in.24-4-18-{6,7,8}.txt` |
 | Fla. Stat. § 943.0585 | `capture.sealed.fl.943.0585.expunge` | `sealed.fl.943.0585.txt` |
+| 15 U.S.C. §§ 45, 1681i, 1681m (via govinfo) | `capture.residuals.uscode.govinfo` | `residual.{ftc.45,fcra.1681i,fcra.1681m}.txt` |
+| Cal. Civ. §§ 1798.106, 1798.125, 1786.24; N.Y. GBL § 380-f; UDAP TX · IN · FL · CA · NY | `capture.residuals.udap-and-dispute` | `residual.{ccpa.*,icraa.1786.24,ny.gbl.380-f,udap.*}.txt` |
+| truth defense TX · CA · FL · NY · IN | `capture.truth-defense.five-state` | `residual.truth.*.txt` |
+
+⚠️ **`capture.residuals.udap-and-dispute` also lists the three uscode sections, and those three fail
+there by design of the record:** it is kept unedited as the run that found the OLRC outage. its nine
+state and CCPA captures are good; the federal three come from the govinfo playbook.
 
 ⚠️ **the five-state ROP sweep covers only four states.** Indiana is deliberately absent from
 `capture.rop.five-state` and captured by the two IN-specific playbooks instead — see the lineage
@@ -51,6 +58,7 @@ kept as the audit record of what was tried. each is superseded.
 |---|---|---|---|
 | `capture.rop.in.retry` | IN chapter body via iga.in.gov | `retry3` + `32-36-1-6.personality` | the portal is a js app; it served navigation chrome only |
 | `capture.rop.in.retry2` | a **probe** of three candidate URL shapes | same | measured which shapes route; none served a chapter body |
+| `capture.residuals.uscode.retry` | §§ 45, 1681i, 1681m via the OLRC viewer | `capture.residuals.uscode.govinfo` | uscode.house.gov runs *"in a temporary format"*; its `view.xhtml` section urls return *"Page Not Found"* |
 
 ⭐ **`retry2` is a PROBE, not a capture, and the distinction is load-bearing.** a capture fetches one
 known source and must refuse to persist a read that is not that source, so it asserts a marker and

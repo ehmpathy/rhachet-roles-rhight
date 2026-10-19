@@ -298,6 +298,10 @@ that is why the no-fee rule is enforced below rather than left as a preference.
 section-grain mirror; `iga.in.gov` is a javascript application that returned navigation chrome only
 across four attempted URL shapes. all other cells cite official state or federal sources.
 
+## .date researched
+
+2026-08-02 to 2026-08-03: the capture dates of the sources listed in `.sources`, each read via browser.
+
 ## .publishability
 
 ☀️ **fullsun** (share) — a five-state statutory sweep quoted verbatim from official sources and one

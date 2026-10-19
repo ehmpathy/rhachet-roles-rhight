@@ -217,6 +217,10 @@ captured via browser per `rule.require.bhrowser-citations`.
 Justia section-grain mirror; the official `iga.in.gov` portal serves a javascript shell to a driven
 navigation. all other cells are cited to official state sources.
 
+## .date researched
+
+2026-08-02 to 2026-08-03: the capture dates of the sources listed in `.sources`, each read via browser.
+
 ## .publishability
 
 ☀️ **fullsun** (share) — an **order of operations** over public law, where every rule it sequences is

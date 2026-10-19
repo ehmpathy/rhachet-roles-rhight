@@ -196,7 +196,7 @@ window, or the log.
 
 ⭐ **the dispute channel's canonical owner is `rule.require.dispute-channel.[rule].md`** — it lives in
 its own file because four peer briefs cite it, and because it carries a **statutory** floor
-(TX §§ 109.003–109.004) rather than a preference. **cite it; do not restate it.** what this rule owns
+(Tex. Bus. & Com. Code ch. 109, §§ 109.003–109.004) rather than a preference. **cite it; do not restate it.** what this rule owns
 is only the constraint the collapse imposes on it: **subject-authenticated, logged, and not the
 everyday console.**
 
@@ -553,6 +553,10 @@ line as surely as one that proves a claim.**
 file, and they carry load in `define.boundary.entity-grain-vs-person-grain` and
 `hazard.go-private-request` respectively. **a source list is a verification aid, not a count to
 reach.**
+
+## .date researched
+
+2026-08-02 to 2026-08-04: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

@@ -69,7 +69,7 @@ separate artifact and is not published.
 | FCRA | `[observed]` § 1681a(c) — *"The term 'consumer' means an **individual**."* |
 | CCPA | `[observed]` § 1798.140(i) — *"'Consumer' means a **natural person** who is a California resident"* |
 | DELETE Act | `[observed]` § 1798.99.80(c) — *"collects and sells … the personal information of a **consumer**"* |
-| right of publicity | `[observed]` FL § 540.08(1) *"any **natural person**"*; TX § 26.002 *"An **individual** has a property right…"*; IN § 32-36-1-6 *"a living or deceased **natural person**"* |
+| right of publicity | `[observed]` FL § 540.08(1) *"any **natural person**"*; TX (Tex. Prop. Code ch. 26) § 26.002 *"An **individual** has a property right…"*; IN § 32-36-1-6 *"a living or deceased **natural person**"* |
 
 > ⭐⭐ **four regimes, one hinge, the same phrase.** entity grain is not one mitigation among several
 > — it is the single move that leaves all four at once.
@@ -278,10 +278,13 @@ than a gap.
 8. [Cal. Civ. Code § 1798.99.80](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.99.80)
 9. [Fla. Stat. § 540.08](http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0540/Sections/0540.08.html)
 10. [Tex. Prop. Code ch. 26](https://statutes.capitol.texas.gov/Docs/PR/htm/PR.26.htm)
-11. Ind. Code § 32-36-1-6 — https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-6/ (**mirror fallback** — the official portal never served a chapter body to a driven navigation)
-12. Feist Publications, Inc. v. Rural Tel. Serv. Co., 499 U.S. 340 (1991) — https://supreme.justia.com/cases/federal/us/499/340/ (**mirror fallback** — case law has no official-portal analogue)
+11. [Ind. Code § 32-36-1-6](https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/section-32-36-1-6/) — (**mirror fallback** — the official portal never served a chapter body to a driven navigation)
 
 captured via browser per `rule.require.bhrowser-citations`.
+
+## .date researched
+
+2026-08-02 to 2026-08-04: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

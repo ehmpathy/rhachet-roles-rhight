@@ -44,7 +44,7 @@ failure stops the analysis.
 `[observed]` **15 U.S.C. § 1681a(c)**: *"The term 'consumer' means an individual."*
 `[observed]` **Cal. Civ. Code § 1798.140(i)**: *"'Consumer' means a natural person who is a
 California resident…"*
-`[observed]` the right-of-publicity sweep is unanimous on the same word — TX § 26.002 *"**An
+`[observed]` the right-of-publicity sweep is unanimous on the same word — TX (Tex. Prop. Code ch. 26) § 26.002 *"**An
 individual** has a property right in the use of the individual's name…"*, FL § 540.08(1) *"any
 natural person"*, IN § 32-36-1-6 *"a living or deceased natural person"*.
 
@@ -195,13 +195,12 @@ simultaneously, `[observed]` all four keyed on the same *"natural person"* / *"i
 1. [15 U.S.C. § 1681a](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681a&num=0&edition=prelim)
 2. [15 U.S.C. § 1681b](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681b&num=0&edition=prelim)
 3. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
-4. [Cal. Civ. Code § 1798.99.80](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.99.80)
-5. [17 U.S.C. § 102](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section102&num=0&edition=prelim)
-6. [Feist Publications v. Rural Telephone, 499 U.S. 340 (1991)](https://supreme.justia.com/cases/federal/us/499/340/)
-7. [Tex. Prop. Code ch. 26](https://statutes.capitol.texas.gov/Docs/PR/htm/PR.26.htm)
-8. [Fla. Stat. § 540.08](http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0540/Sections/0540.08.html)
-9. [Ind. Code § 32-36-1](https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/)
-10. license status vocabulary — `src/domain.roles/licenser/briefs/industry=.all/define.what-licenses-mean.md`
+4. [17 U.S.C. § 102](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section102&num=0&edition=prelim)
+5. [Feist Publications v. Rural Telephone, 499 U.S. 340 (1991)](https://supreme.justia.com/cases/federal/us/499/340/)
+6. [Tex. Prop. Code ch. 26](https://statutes.capitol.texas.gov/Docs/PR/htm/PR.26.htm)
+7. [Fla. Stat. § 540.08](http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0540/Sections/0540.08.html)
+8. [Ind. Code § 32-36-1](https://law.justia.com/codes/indiana/title-32/article-36/chapter-1/)
+9. license status vocabulary — `src/domain.roles/licenser/briefs/industry=.all/define.what-licenses-mean.md`
 
 captured via browser per `rule.require.bhrowser-citations`.
 
@@ -214,6 +213,10 @@ playbooks are retained in the route's `refs/` as the record of what was tried.
 key on *"individual"* / *"natural person"*, which is test 1's ground. **a sweep is worth its lines
 when the finding is that the states agree** — a unanimous answer is a different fact from three
 scattered ones, and it cannot be shown by one citation.
+
+## .date researched
+
+2026-08-02 to 2026-08-05: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

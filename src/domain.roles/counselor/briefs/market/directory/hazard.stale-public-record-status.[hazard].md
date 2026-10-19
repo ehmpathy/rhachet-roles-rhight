@@ -175,12 +175,32 @@ that runs**, and it recruits the one party with both the true facts and a motive
    subject may forward it. *"your license badge will expire on <date>; re-verify to keep it"* is
    branch-blind and true in both cases. *"we found an issue with your license"* is not.
 
-⚠️ `[unverified]` — a **statutory** pre-adverse-action notice duty is a different and stronger
-obligation (FCRA § 1681m, and CA ICRA analogues) and it lives **inside** the consumer-report gate,
+⚠️ a **statutory** adverse-action notice duty is a different and stronger obligation, and it lives
+**inside** the consumer-report gate. `[observed]` FCRA § 1681m(a): *"If any person takes any adverse
+action with respect to any consumer that is based in whole or in part on any information contained in
+a consumer report, the person shall— (1) provide oral, written, or electronic notice of the adverse
+action to the consumer"*. `[unverified]` the CA ICRA analogues. that duty sits inside the gate,
 which this design aims to stay outside of. the notice described here is a **voluntary** control
 adopted because it is cheap and it works; ⛔ **do not model it on the statutory one**, whose schedule,
 content, and copy-of-report requirements are duties this design has not accepted. see
 `hazard.consumer-report-gate`.
+
+## ⭐ a third clock: the dispute
+
+the decay bound runs on the calendar and the re-verify duty runs on use. inside the consumer-report
+gate there is a third clock, and it runs on a **dispute**. `[observed]`, federal and two states:
+
+| authority | the dispute clock, verbatim |
+|---|---|
+| 15 U.S.C. § 1681i(a)(1)(A) | the agency *"shall, free of charge, conduct a reasonable reinvestigation … and record the current status of the disputed information, or delete the item from the file … before the end of the 30-day period beginning on the date on which the agency receives the notice of the dispute"* |
+| Cal. Civ. Code § 1786.24(a) | the investigative agency *"shall, without charge, reinvestigate and record the current status of the disputed information or delete the item from the file … before the end of the 30-day period"* |
+| N.Y. Gen. Bus. Law § 380-f(a) | the agency *"shall promptly re-investigate and record the current status of such information, unless it has reasonable grounds to believe that the dispute by the consumer is frivolous"* |
+
+⭐ **all three name the same act: "record the current status."** a dispute is the event that makes a
+stale status a statutory problem, and the statute's remedy is currency, not a penalty. `[inferred]`
+outside the gate no such duty attaches, but the shape is the right one to borrow: a subject's dispute
+forces a re-check, and the re-check either refreshes the as-of date or reverts the badge to `unknown`.
+`rule.require.dispute-channel` carries the channel itself.
 
 ## ⚠️ the mismatch problem, and why entity grain nearly solves it
 
@@ -242,19 +262,22 @@ tell a scope boundary from an omission.**
 3. [15 U.S.C. § 1681k](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681k&num=0&edition=prelim)
 4. [Cal. Civ. Code § 1786.18](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1786.18)
 5. [Ind. Code § 24-4-18-7](https://law.justia.com/codes/indiana/title-24/article-4/chapter-18/section-24-4-18-7/)
-
-6. license status vocabulary — `src/domain.roles/licenser/briefs/industry=.all/define.what-licenses-mean.md`
-7. contractor registration bundle — `src/domain.roles/permiter/briefs/ref.electrical-license-structure.indiana.[ref].md`
+6. [15 U.S.C. § 1681m (govinfo, GPO official; 2023 edition)](https://www.govinfo.gov/content/pkg/USCODE-2023-title15/html/USCODE-2023-title15-chap41-subchapIII-sec1681m.htm)
+7. [15 U.S.C. § 1681i (govinfo, GPO official; 2023 edition)](https://www.govinfo.gov/content/pkg/USCODE-2023-title15/html/USCODE-2023-title15-chap41-subchapIII-sec1681i.htm)
+8. [Cal. Civ. Code § 1786.24](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1786.24)
+9. [N.Y. Gen. Bus. Law § 380-f (NYS Senate, official)](https://www.nysenate.gov/legislation/laws/GBS/380-F)
+10. license status vocabulary — `src/domain.roles/licenser/briefs/industry=.all/define.what-licenses-mean.md`
+11. contractor registration bundle — `src/domain.roles/permiter/briefs/ref.electrical-license-structure.indiana.[ref].md`
 
 captured via browser per `rule.require.bhrowser-citations`.
 
-> ⚠️ **FCRA § 1681m is deliberately absent from this list.** it is named in the body as a contrast,
-> never quoted, and it was **not captured** — so it stays `[unverified]` rather than listed.
->
-> ⚠️ **and this brief sits at FIVE statutory sources, below the
-> `rule.require.seven-distinct-citations` floor, deliberately.** its subject is a single distinction —
-> a *decay bound* is not a *re-verify duty* — which § 1786.18 and § 24-4-18-7 carry between them.
-> **extra quotes to reach seven would restate what the sealed-record and consumer-report briefs own.**
+> ⭐ **nine statutory sources.** § 1681m, once named only as a contrast and left uncaptured, is now
+> captured and quoted. the three dispute statutes carry the third clock. ⚠️ the federal sections cite
+> govinfo: the OLRC viewer's section urls returned *"Page Not Found"* at capture.
+
+## .date researched
+
+2026-08-02 to 2026-10-19: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

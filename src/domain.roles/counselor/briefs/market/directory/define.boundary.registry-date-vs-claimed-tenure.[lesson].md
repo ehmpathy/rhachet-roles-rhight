@@ -24,6 +24,10 @@ and the price is that a dissolve-and-reform resets every badge. its settlement i
 **age of the registration**, never the **identity of the predecessor** — because every key that would
 link the two entities is a natural person.
 
+`[observed]` two of those exits read straight off the definitions. FCRA: *"The term 'consumer' means
+an individual"* (§ 1681a(c)), so § 1681k's public-record duties never reach a business. CCPA:
+*"'Consumer' means a natural person who is a California resident"* (§ 1798.140(i)).
+
 ⛔ **that settlement is correct and it leaves one thing on the table.** the registry date alone is a
 weak signal: many honest businesses are four months old. what the directory never does is place it
 **beside the subject's own claim**.
@@ -128,14 +132,36 @@ see `define.boundary.presence-fact-vs-absence-fact`, which owns the status corre
 - ✅ **permitted:** both rows adjacent, each attributed, each dated, with no computed relation between
   them
 
+## ⭐ a false tenure claim is the subject's own deceptive act
+
+the UDAP layer lands on the **subject**, not on the directory, and it lands there for the same reason
+§ 230(f)(3) does: the subject authored the claim. `[observed]` the prohibition, federal and five-state:
+
+| jurisdiction | the prohibition, verbatim |
+|---|---|
+| federal | 15 U.S.C. § 45(a)(1): *"unfair or deceptive acts or practices in or affecting commerce, are hereby declared unlawful"* |
+| TX | Tex. Bus. & Com. Code § 17.46(a): *"False, misleading, or deceptive acts or practices in the conduct of any trade or commerce are hereby declared unlawful"* |
+| IN | Ind. Code § 24-5-0.5-3(a): *"A supplier may not commit an unfair, abusive, or deceptive act, omission, or practice in connection with a consumer transaction"*, and it *"includes both implicit and explicit misrepresentations"* |
+| FL | Fla. Stat. § 501.204(1): *"unfair or deceptive acts or practices in the conduct of any trade or commerce are hereby declared unlawful"* |
+| CA | Cal. Bus. & Prof. Code § 17200: *"unfair competition shall mean and include any unlawful, unfair or fraudulent business act or practice and unfair, deceptive, untrue or misleading advertising"* |
+| NY | N.Y. Gen. Bus. Law § 349(a): *"Unfair, deceptive, or abusive acts or practices in the conduct of any business, trade or commerce or in the furnishing of any service in this state are hereby declared unlawful"* |
+
+`[inferred]` *"serving Indy since 1998"* on a profile the subject wrote is the subject's
+representation in trade. if it is false, each row above reaches **the subject's** act. the directory's
+part is to keep it **theirs**: attributed, labeled `claimed`, and never restated in our own voice. the
+same control that holds § 230(f)(3) on their side of the line holds this exposure there too.
+
+⚠️ **the one way the directory inherits it:** restate the claim as ours (*"in business 28 years"*) and
+the representation becomes the directory's own, under every row of that table at once.
+
 ## ⚠️ .what is NOT covered here
 
 - ⚠️ `[unverified]` **false light** — the juxtaposition question this brief lands on. tracked as
   `G-false-light` in `hazard._.catalogue`; it is the cluster's top open question and this brief is the
   fourth place it bites
-- ⚠️ `[unverified]` whether a **tenure claim** is itself an advertising claim the subject owes
-  substantiation for under § 5 / state UDAP. that would be **their** exposure rather than ours, and it
-  is un-swept
+- ⚠️ `[unverified]` the **substantiation standard** a tenure claim must meet, and each state's
+  remedy. the prohibition itself is swept below (§ *a false tenure claim is the subject's own deceptive
+  act*); what proof a "since 1998" claim needs, and who may sue over it, is not
 - ⚠️ `[unverified]` **corporate re-domestication and conversion** mechanics per state — whether a
   converted entity retains its original formation date on the registry varies, and if it does the
   mismatch does not appear at all in that state
@@ -147,23 +173,32 @@ see `define.boundary.presence-fact-vs-absence-fact`, which owns the status corre
 2. [15 U.S.C. § 1681a](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681a&num=0&edition=prelim)
 3. [15 U.S.C. § 1681k](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681k&num=0&edition=prelim)
 4. [Cal. Civ. Code § 1798.140](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.140)
-5. license status vocabulary — `src/domain.roles/licenser/briefs/industry=.all/define.what-licenses-mean.md`
+5. [15 U.S.C. § 45 — FTC Act § 5 (govinfo, GPO official; 2023 edition)](https://www.govinfo.gov/content/pkg/USCODE-2023-title15/html/USCODE-2023-title15-chap2-subchapI-sec45.htm)
+6. [Tex. Bus. & Com. Code § 17.46 — DTPA (TX Legislature, official; ch. 17 page)](https://statutes.capitol.texas.gov/Docs/BC/htm/BC.17.htm)
+7. [Ind. Code § 24-5-0.5-3 — DCSA (Justia mirror)](https://law.justia.com/codes/indiana/title-24/article-5/chapter-0-5/section-24-5-0-5-3/)
+8. [Fla. Stat. § 501.204 — FDUTPA (FL Legislature, official)](http://www.leg.state.fl.us/statutes/index.cfm?App_mode=Display_Statute&URL=0500-0599/0501/Sections/0501.204.html)
+9. [Cal. Bus. & Prof. Code § 17200 — UCL (CA Legislative Info, official)](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=17200)
+10. [N.Y. Gen. Bus. Law § 349 (NYS Senate, official)](https://www.nysenate.gov/legislation/laws/GBS/349)
+11. license status vocabulary — `src/domain.roles/licenser/briefs/industry=.all/define.what-licenses-mean.md`
 
 captured via browser per `rule.require.bhrowser-citations`.
 
-⛔ **this brief rests on FEWER than seven sources, deliberately, and the reason is the point rather
-than an excuse.** it makes exactly one legal claim of its own — `[observed]` § 230(f)(3) decides who
-owns a restated tenure claim. everything else it does is **compose** rules that carry their own
-citations: the publication collapse (`rule.require.asymmetric-disclosure`, 9 sources), the grain exits
-(`hazard.reincorporation-blind-spot`, 8), the status correction
-(`define.boundary.presence-fact-vs-absence-fact`). ⚠️ **a re-citation of a composed brief's sources
-would inflate the count without a verification path added** — a reader who checks the grain claim must
-open the grain brief either way. see `hazard._.catalogue` § *five briefs here rest on fewer than seven
-sources*.
+⭐ **ten distinct sources.** the brief's own legal claims are two: `[observed]` § 230(f)(3) decides who
+owns a restated tenure claim, and the federal and five-state UDAP prohibitions decide whose deceptive
+act a false one is. the rest it **composes** from briefs that carry their own citations: the
+publication collapse (`rule.require.asymmetric-disclosure`), the grain exits
+(`hazard.reincorporation-blind-spot`), the status correction
+(`define.boundary.presence-fact-vs-absence-fact`). ⚠️ the Indiana row cites the Justia
+section-grain mirror, a fallback per `rule.require.five-state-baseline`; § 45 cites govinfo because the
+OLRC viewer's section urls returned *"Page Not Found"* at capture.
 
-⚠️ **and the honest consequence: the ONE claim this brief adds is also its one weak point.** if
+⚠️ **and the honest consequence: the attribution control is still a single weak point.** if
 § 230(f)(3) does not draw the line where this brief reads it, the attribution control fails and the
 tenure row becomes ours. **that is a single point of failure, named rather than buried.**
+
+## .date researched
+
+2026-08-02 to 2026-10-19: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

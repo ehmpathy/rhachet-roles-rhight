@@ -352,10 +352,10 @@ all. the sweep it needs is **per platform**, and exactly one platform is capture
 3. [17 U.S.C. § 107](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section107&num=0&edition=prelim)
 4. [15 U.S.C. § 1681k](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title15-section1681k&num=0&edition=prelim)
 5. [47 U.S.C. § 230](https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title47-section230&num=0&edition=prelim)
-6. Feist Publications, Inc. v. Rural Tel. Serv. Co., 499 U.S. 340 (1991) — https://supreme.justia.com/cases/federal/us/499/340/ (**mirror fallback** — case law has no uscode.house.gov analogue; Justia is the reliable mirror and the fallback is declared here per `rule.require.bhrowser-citations`)
-7. Yelp Terms of Service (20260101_en_us) — https://terms.yelp.com/tos/en_us/ (**resolved** from the undated entry point; the dated path rotates and a prior capture attempt hit a 155-byte 404, caught by the marker assertion)
-8. hiQ Labs, Inc. v. LinkedIn Corp., 31 F.4th 1180 (9th Cir. 2022) — https://law.justia.com/cases/federal/appellate-courts/ca9/17-16783/17-16783-2022-04-18.html (**mirror fallback** — case law has no uscode.house.gov analogue)
-9. Nguyen v. Barnes & Noble Inc., 763 F.3d 1171 (9th Cir. 2014) — https://law.justia.com/cases/federal/appellate-courts/ca9/12-56628/12-56628-2014-08-18.html (**mirror fallback**)
+6. [Feist Publications, Inc. v. Rural Tel. Serv. Co., 499 U.S. 340 (1991)](https://supreme.justia.com/cases/federal/us/499/340/) — (**mirror fallback** — case law has no uscode.house.gov analogue; Justia is the reliable mirror and the fallback is declared here per `rule.require.bhrowser-citations`)
+7. [Yelp Terms of Service (20260101_en_us)](https://terms.yelp.com/tos/en_us/) — (**resolved** from the undated entry point; the dated path rotates and a prior capture attempt hit a 155-byte 404, caught by the marker assertion)
+8. [hiQ Labs, Inc. v. LinkedIn Corp., 31 F.4th 1180 (9th Cir. 2022)](https://law.justia.com/cases/federal/appellate-courts/ca9/17-16783/17-16783-2022-04-18.html) — (**mirror fallback** — case law has no uscode.house.gov analogue)
+9. [Nguyen v. Barnes & Noble Inc., 763 F.3d 1171 (9th Cir. 2014)](https://law.justia.com/cases/federal/appellate-courts/ca9/12-56628/12-56628-2014-08-18.html) — (**mirror fallback**)
 
 captured via browser per `rule.require.bhrowser-citations`.
 
@@ -373,6 +373,10 @@ captured via browser per `rule.require.bhrowser-citations`.
 > ⭐⭐ **note the sequence: each capture answered the question the one before it opened.** the count
 > looked free (Feist), then closed (Yelp), then arguably open again (Nguyen), then closed for **us**
 > (actual knowledge). **a rule stopped at any one of those four would have been confidently wrong.**
+
+## .date researched
+
+2026-08-02 to 2026-08-05: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 

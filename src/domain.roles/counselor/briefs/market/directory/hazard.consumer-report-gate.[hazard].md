@@ -237,6 +237,10 @@ order intact.**
 captured via browser per `rule.require.bhrowser-citations`. ⚠️ the Indiana cells cite the Justia
 section-grain mirror — fallback noted per `rule.require.five-state-baseline`.
 
+## .date researched
+
+2026-08-02 to 2026-08-03: the capture dates of the sources listed in `.sources`, each read via browser.
+
 ## .publishability
 
 ☀️ **fullsun** (share) — statutory analysis of a federal definition, quoted verbatim. no client

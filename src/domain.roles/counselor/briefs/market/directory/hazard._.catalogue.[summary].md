@@ -139,33 +139,29 @@ from its source. **go to the file; this table tells you which file.**
 > that actually holds is on the **authoring** side: keep `= blocker` on one line. widen the pattern
 > before you trust a count, and hand-verify any file whose number moved.
 
-### ⚠️ SIX briefs here rest on FEWER than seven sources, deliberately
+### ⭐ every brief here now clears the seven-source floor, and none by a padded list
 
-> ⛔ **RE-TALLIED — the heading said five and the sweep found six.** the sixth is
-> `define.boundary.registry-date-vs-claimed-tenure` (5), added after this section was written.
-> ⭐ **a count in a heading is a claim, and it decays exactly like a gap tracker does** — this is the
-> third place in this file where a hand-maintained number went stale against its own subject.
+> ⛔ **SUPERSEDED — this section used to list six briefs that rested on fewer than seven sources,
+> deliberately.** each of the six named its own gap in place (an `[unverified]` residual, an
+> un-swept state, a clause *"quoted at second hand"*). the gap was closed by **capturing those named
+> residuals**, never by a re-quote of what an owner brief already holds:
 >
-> ⚠️ **and two briefs CROSSED the floor upward and should no longer be read as short:**
-> `rule.prefer.metadata-over-republication` now carries **9** and
-> `rule.require.opt-out-bounded-to-entity-registry-facts` carries **10**. the second is worth a note
-> — three of its ten are cited **for one word** (*"individual"* / *"natural person"* across TX, FL,
-> IN), which is a legitimate use of three lines because **the finding IS that the states agree**, and
-> a unanimous answer cannot be shown by a single citation.
+> | brief | sources | what closed the gap |
+> |---|---|---|
+> | `rule.require.dispute-channel` | 2 → 7 | the dispute analogues in CA, NY, and FCRA, each scoped to its own regulated party; IN and FL still un-swept |
+> | `define.boundary.presence-fact-vs-absence-fact` | 1 → 7 | *"truth is a complete defense"* read state by state, which **corrected** it (FL conditions truth on good motives) |
+> | `define.boundary.registry-date-vs-claimed-tenure` | 4 → 10 | the `[unverified]` § 5 / state UDAP residual, swept federal + five-state |
+> | `hazard.stale-public-record-status` | 5 → 9 | § 1681m, once named but uncaptured, plus the dispute clock |
+> | `define.boundary.entity-grain-vs-person-grain` | 6 → 7 | § 45, which its regime table leaned on uncited |
+> | `define.boundary.consent-cures-privacy-not-fcra` | 6 → 7 | § 1798.125(b)(3), once quoted at second hand, captured direct and confirmed |
+>
+> ⚠️ counts are numbered `[title](url)` entries under `.sources`, the shape `briefs.integrity` parses;
+> re-run it rather than trust this table. ⚠️ and two pads went the other way: *Feist* left
+> `define.boundary.optin-vs-optout-vs-blocked` (it states it *"needs no case law"*) and § 1798.99.80
+> left `rule.require.opt-out-bounded-to-entity-registry-facts` (no sentence there used it).
 
-⭐ **`rule.require.dispute-channel` (2)** is the sharpest case and it is a **different** one from the
-other four: it is not derived — it is a canonical **owner**. it states **one duty** grounded in **one**
-captured chapter, plus the one further section that duty's fee prong feeds. **there is no seventh
-source it rests on**, so a list of seven would import statutes the rule does not use.
-
-the other four are `define.boundary.presence-fact-vs-absence-fact` (3),
-`hazard.stale-public-record-status` (5), `define.boundary.entity-grain-vs-person-grain` (6), and
-`define.boundary.consent-cures-privacy-not-fcra` (6). **each states the shortfall in place**, and each
-is a **derived** brief that defers its statutory sweep to a canonical owner rather than a re-quote.
-
-⭐ **so the floor is missed for two unrelated reasons**, and the distinction matters to a reviewer:
-a derived brief is short because its sources live elsewhere; a narrow owner is short because **the
-duty itself is narrow**. only the second is a measure of how well-sourced the claim is.
+⭐ **the lesson of the six: a brief that names its own residual has already written its research
+list.** the honest route to the floor was to read what each brief said it had not read.
 
 ⛔ **that is a rule collision, and it deserves a note because it will recur:**
 
@@ -174,9 +170,10 @@ duty itself is narrow**. only the second is a measure of how well-sourced the cl
 | `rule.require.seven-distinct-citations` | **per document** | ≥ 7 distinct sources in *this file* |
 | ⭐ the canonical-owner convention (§ *the convention*, above) | **per cluster** | *"cite it; do not restate it"* — a derived brief points at its owner rather than a re-quote of the statute |
 
-a derived brief that obeys the second cannot satisfy the first without a padded list — which would
-restate what the owner briefs own, the very duplication the convention exists to prevent. **an honest
-four beats a padded seven:** a reader can act on *"this rests on four sources"*; a reader who trusts
+a derived brief that obeys the second can still miss the first, and a padded list is never the fix —
+it would restate what the owner briefs own, the very duplication the convention exists to prevent.
+the fix that held here is the brief's own named residuals. **an honest four still beats a padded
+seven:** a reader can act on *"this rests on four sources"*; a reader who trusts
 a padded seven has been told a falsehood about how well-supported the document is.
 
 ## the bodies of law covered
@@ -544,6 +541,10 @@ thin on law has found its design, not a defect.**
   copyright, contract, accuracy. ⭐ **link it, count it, or licence it — do not copy it**
 - `rule.require.dispute-channel.[rule].md` — the subject's correction path, and why its absence is
   itself the violation rather than a partial one
+
+## .date researched
+
+2026-08-02 to 2026-10-19: the span of the captures behind the briefs this index points to. it reads no source of its own.
 
 ## .publishability
 

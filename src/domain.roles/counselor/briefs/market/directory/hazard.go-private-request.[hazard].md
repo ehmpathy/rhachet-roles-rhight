@@ -283,6 +283,10 @@ this sweep before the person track ships.**
 
 captured via browser per `rule.require.bhrowser-citations`.
 
+## .date researched
+
+2026-08-02 to 2026-08-03: the capture dates of the sources listed in `.sources`, each read via browser.
+
 ## .publishability
 
 ☀️ **fullsun** (share). the grain analysis is statutory definitions — *"it is just the law."* the

@@ -66,7 +66,7 @@ directed the disclosure. two independent hooks:
 | **CA** | `[observed]` § 3344(a)(1) — *"without that person's prior consent, or, in the case of a minor, the prior consent of their parent or legal guardian"* | ✅ yes |
 | **NY** | `[observed]` § 51 — *"without the written consent first obtained as above provided"* | ✅ yes |
 | **IN** | `[observed]` § 32-36-1-8(a) — *"without having obtained previous written consent from a person specified in section 17"* | ✅ yes |
-| **TX** | `[observed]` Tex. Prop. Code § 26.011 — *"without the written consent of a person who may exercise the property right, **a deceased individual's** name…"* | ⛔ **no** — the statute is deceased-only |
+| **TX** | `[observed]` Tex. Prop. Code ch. 26, § 26.011 — *"without the written consent of a person who may exercise the property right, **a deceased individual's** name…"* | ⛔ **no** — the statute is deceased-only |
 
 ⭐ **so consent is an express statutory defense in four of five, and in the fifth there is no statutory
 right a person could consent away while alive.** the practical effect is the same everywhere — a
@@ -144,6 +144,10 @@ navigation across three URL shapes; fallback noted per `rule.require.five-state-
 ⭐ **the consent defense is carried by all five state statutes, not by one exemplar plus an
 *"e.g."*** — `rule.require.five-state-baseline` forbids the shorthand, and the five-state claim in
 § *the consent defense* is the claim that needs it.
+
+## .date researched
+
+2026-08-02 to 2026-08-03: the capture dates of the sources listed in `.sources`, each read via browser.
 
 ## .publishability
 
