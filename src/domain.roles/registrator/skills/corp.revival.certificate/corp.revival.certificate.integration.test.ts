@@ -76,7 +76,10 @@ describe('corp.revival.certificate.sh', () => {
    */
   const asByRule = (text: string): string =>
     text
-      .slice(text.indexOf('By:') + 'By:'.length, text.indexOf('Authorized Officer'))
+      .slice(
+        text.indexOf('By:') + 'By:'.length,
+        text.indexOf('Authorized Officer'),
+      )
       .replace(/_/g, '')
       .trim();
 
