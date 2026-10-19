@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`doc.signature.sh given: [case1] a caller who wants to see the available faces when: [t0] --faces is requested then: it lists every face 1`] = `
+"
+🦅 pick a hand
+
+⚖️ doc.signature --faces
+   ├─ 1: Great Vibes — formal copperplate · a safe default
+   ├─ 2: Allura — flowing, wide loops
+   ├─ 3: Alex Brush — brush-pen, natural stroke variation
+   ├─ 4: Mrs Saint Delafield — looks the most hand-written
+   ├─ 5: Herr Von Muellerhoff — thin, elegant, very slanted
+   ├─ 6: Sacramento — casual, even weight
+   ├─ 7: Parisienne — compact, tidy
+   ├─ 8: Dancing Script — bolder, more legible when small
+   ├─ 9: Petit Formal Script — upright, restrained
+   └─ 10: Italianno — long, sweeping
+"
+`;
+
+exports[`doc.signature.sh given: [case3] a name and a chosen face when: [t0] face 5 is picked then: the report reads as expected 1`] = `
+"
+🦅 sign right here
+
+⚖️ doc.signature
+   ├─ name: Ada Lovelace
+   ├─ face: 5 — Herr Von Muellerhoff
+   ├─ ink: #16264d
+   ├─ bytes: 4222
+   └─ wrote: <TEMPDIR>/pick5.html
+
+   open it with:
+      file://<TEMPDIR>/pick5.html
+
+   ⚠️ if your browser is sandboxed (flatpak/snap), copy it to ~/Downloads first
+
+"
+`;
