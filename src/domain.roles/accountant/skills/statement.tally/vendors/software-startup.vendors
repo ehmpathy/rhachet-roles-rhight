@@ -1,0 +1,99 @@
+######################################################################
+# .what = vendor map: merchant pattern -> Form 1120 line + label
+#
+# .why  = which 1120 line a cost belongs on is a property of the COST,
+#         not of the statement. as data, one entity's vendor set never
+#         gets baked into the skill, and a reviewer can audit the line
+#         assignments without a code read.
+#
+# .how  = one rule per line, three pipe-separated fields:
+#
+#           <ere pattern> | <1120 line> | <label>
+#
+#         patterns are matched case-insensitively, in file order, first
+#         match wins. put narrow patterns above broad ones.
+#
+# .note = the pattern may itself carry "|" as ERE alternation, even though
+#         "|" is also the field delimiter. fields are therefore read from
+#         the RIGHT — last is the label, second-to-last the 1120 line, and
+#         all that precedes them is the pattern. so this reads correctly:
+#
+#           WEWORK|REGUS|INDUSTRIOUS | 16 | shared office (rent)
+#
+#         the label and the line must never contain "|".
+#
+# .note = a merchant that matches no rule lands in `?? unclassified`.
+#         that bucket is a TODO list, not a category — sweep it before
+#         any return goes out.
+#
+# .the lines
+#   16      rents
+#   17      taxes and licenses
+#   18      interest
+#   20/cap  capital asset -> depreciate via Form 4562, do NOT expense
+#   22      the "Advertising" line, per the 1120 label
+#   26      other deductions (itemized on a statement)
+######################################################################
+
+# --- 22: promotion ---
+GOOGLE ?\*ADS          | 22     | Google Ads
+META PLATFORMS|FACEBK  | 22     | Meta Ads
+LINKEDIN               | 22     | LinkedIn Ads
+VISTAPRINT|STICKERAPP  | 22     | print/promo materials
+
+# --- 16: rents ---
+WEWORK|REGUS|INDUSTRIOUS | 16   | shared office (rent)
+
+# --- 17: taxes and licenses ---
+DELAWARE CORP ?& ?TAX  | 17     | DE franchise tax
+REG AGENT|STRIPE ATLAS | 17     | Stripe Atlas (agent)
+NORTHWEST REGISTERED   | 17     | registered agent
+
+# --- 20/cap: capital assets (depreciate, do NOT expense) ---
+DELL INC|LENOVO|NEWEGG | 20/cap | hardware
+
+# --- 26: cloud + infra ---
+AMAZON WEB SERVICES|AWS\. | 26  | AWS
+GOOGLE ?CLOUD|GCP      | 26     | Google Cloud
+AZURE|MICROSOFT AZURE  | 26     | Azure
+FASTLY                 | 26     | Fastly
+CLOUDFLARE             | 26     | Cloudflare
+VERCEL                 | 26     | Vercel
+HEROKU|RENDER\.COM     | 26     | PaaS
+MONGODB|SUPABASE|NEON  | 26     | managed db
+
+# --- 26: ai / llm ---
+# .note = the card prints the PRODUCT name, not the vendor's legal name —
+#         "CHATGPT SUBSCRIPTION" never contains "OPENAI", and "GROK XAI"
+#         never matches "XAI LLC". match on what the statement prints.
+ANTHROPIC|CLAUDE\.AI   | 26     | Anthropic
+OPENAI|CHATGPT         | 26     | OpenAI
+XAI LLC|GROK           | 26     | xAI
+MIDJOURNEY             | 26     | Midjourney
+FIREWORKS\.AI          | 26     | Fireworks AI
+
+# --- 26: comms / api ---
+TWILIO                 | 26     | Twilio
+SENDGRID|POSTMARK|RESEND | 26   | email api
+SLACK                  | 26     | Slack
+
+# --- 26: dev tools / saas ---
+GITHUB|GITLAB          | 26     | source hosts
+APPLE ONLINE STORE|APPLE DEVELOPER | 26 | Apple Developer Program
+ADOBE                  | 26     | Adobe
+FIGMA                  | 26     | Figma
+LOGROCKET|SENTRY|DATADOG | 26   | observability
+LINEAR|NOTION           | 26     | product saas
+STRIPE                 | 26     | Stripe fees
+DROPBOX                | 26     | Dropbox
+CANVA                  | 26     | design tools
+GOOGLE ?\*PLAY         | 26     | Google Play
+
+# .note = "GOOGLE ?\*DOMAINS" — the statement prints "GOOGLE *DOMAINS" WITH
+#         a space before the asterisk, so a pattern without the optional
+#         space silently misses every row. same trap as Google Ads.
+# .note = Squarespace prints a unique invoice/domain id per charge
+#         ("SQSP* DOMAIN#NNNNNNNNN"), so each charge looks like a distinct
+#         merchant. match the SQSP*/SQUARESPACE stem, not the full string.
+GOOGLE ?\*DOMAINS|NAMECHEAP|GODADDY | 26 | domains
+SQSP ?\*|SQUARESPACE   | 26     | Squarespace (domains/site)
