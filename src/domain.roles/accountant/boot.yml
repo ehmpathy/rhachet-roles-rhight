@@ -1,6 +1,88 @@
 always:
   briefs:
+    say:
+      # .why = the twin failure mode, and the quieter one. a figure computed
+      #        by hand at least LOOKS like a claim; a figure summed over the
+      #        wrong card reconciles to the penny and looks like a result.
+      - briefs/records/rule.require.one-card-per-tally.md
+      # .why = "do we owe that state anything?" is THREE questions with three
+      #        tests, and the federal P.L. 86-272 shield does not reach
+      #        software at all. both facts invert the common intuition, so
+      #        they must be in context before a state question is answered.
+      - briefs/nexus/define.three-duties-three-tests.md
+      # .why = $0 tax does NOT mean $0 return. observed in two states under
+      #        two different statutes, which makes it a pattern rather than a
+      #        quirk — assume it holds in a new state until its text says no.
+      - briefs/income-tax/state=florida/hazard.zero-tax-still-owes-a-return.md
+      - briefs/franchise-tax/state=texas/hazard.zero-tax-still-owes-a-report.md
+      - briefs/income-tax/define.delaware-1100-vs-federal-1120-vs-franchise-tax.md
+      - briefs/income-tax/define.void-charter-vs-federal-nol.md
+      - briefs/deductions/define.why-expenses-are-deductible.[philosophy].md
     ref:
+      # .why = the TRIGGER is already in context (the state=florida hazard
+      #        brief above carries the §95.091(3)(a)5 quote and the warn),
+      #        so what stays on demand is the PROCEDURE — the 8 required
+      #        items, the channels, the postmark rule. fetched only when a
+      #        skipped Florida year is actually in play.
+      - briefs/limitations/state=florida/lever.disclose-first-to-cap-the-lookback.md
+      # .why = the TEXAS instance of the nexus framework said above. a ref for
+      #        the same reason as the Florida lever: the framework brief
+      #        already carries the trigger ("presence OR economic nexus"), so
+      #        what stays on demand is the STATE DETAIL — the $500,000 bright
+      #        line, the 21-activity list, and the trap that the threshold is
+      #        no defense against physical presence.
+      - briefs/nexus/state=texas/shield.no-duty-below-the-bright-line.md
+      # .why = the MTC program is Texas's only look-back cap, and the shield
+      #        brief above already carries the pointer plus the order hazard
+      #        (a nexus questionnaire is a "state contact" that spends it).
+      #        the DETAIL — the 4-year term, the disqualifiers, the two
+      #        Texas-only footnotes — is fetched only when a skipped Texas
+      #        year is actually in play.
+      - briefs/limitations/state=texas/lever.mtc-disclosure-caps-an-uncapped-window.md
+      # .why = the gate BEFORE either lever above can be used: both are spent
+      #        by a prior registration, and a free public-registry read
+      #        answers that with no state contact. a ref rather than a say
+      #        because it is procedural — the two lever briefs already carry
+      #        the forfeiture terms that make the check necessary. it also
+      #        carries the four false-absence traps these registries set,
+      #        which is why a naive read of one reports the opposite of the
+      #        truth.
+      - briefs/registration/howto.check-a-registration-before-you-disclose.md
+      - briefs/deductions/catalog.deductible-expenses.md
+      - briefs/deductions/catalog.non-deductible-expenses.md
+      - briefs/deductions/compare.179-vs-168k-bonus-vs-macrs.md
+      - briefs/income-tax/federal/howto.find-form-1120.md
+      - briefs/income-tax/federal/howto.file-form-1120.md
+      - briefs/income-tax/federal/howto.file-delinquent-1120-via-turbotax.md
+      - briefs/income-tax/federal/howto.file.federal.delinquent.active-loss.md
+      - briefs/income-tax/federal/howto.file.federal.current.active-loss.md
+      - briefs/income-tax/state=delaware/howto.file.state=delaware.delinquent.active-loss.md
+      - briefs/income-tax/state=delaware/howto.file.state=delaware.current.active-loss.md
+      # .why = the PROCEDURE behind the Florida hazard said above: which form
+      #        edition, how to e-file or mail, the F-7004 extension (and the
+      #        trap that a federal extension alone does not extend it), and
+      #        the late path with its $300 cap. fetched when a Florida return
+      #        is actually due.
+      - briefs/income-tax/state=florida/howto.file.state=florida.current.active-loss.md
+      - briefs/income-tax/state=florida/howto.file.state=florida.delinquent.active-loss.md
+      - briefs/income-tax/state=florida/howto.file.state=florida.extension.md
+      # .why = the same current/delinquent pair for four more states. each
+      #        opens with its own nexus gate, so a reader learns first
+      #        whether the state applies at all. two of them owe tax on a
+      #        loss — California's $800 minimum, New York's fixed dollar
+      #        minimum — which is the fact a loss-year filer most misses.
+      - briefs/franchise-tax/state=texas/howto.file.state=texas.current.active-loss.md
+      - briefs/franchise-tax/state=texas/howto.file.state=texas.delinquent.active-loss.md
+      - briefs/income-tax/state=indiana/howto.file.state=indiana.current.active-loss.md
+      - briefs/income-tax/state=indiana/howto.file.state=indiana.delinquent.active-loss.md
+      - briefs/franchise-tax/state=new-york/howto.file.state=new-york.current.active-loss.md
+      - briefs/franchise-tax/state=new-york/howto.file.state=new-york.delinquent.active-loss.md
+      - briefs/franchise-tax/state=california/howto.file.state=california.current.active-loss.md
+      - briefs/franchise-tax/state=california/howto.file.state=california.delinquent.active-loss.md
+      - briefs/revenue/howto.collect-figures.from=stripe.md
+      - briefs/records/howto.substantiate-expenses.md
+      - briefs/tools/howto.use_tool.turbotax.desktop.on_linux.md
+
       # rewards books & tax — the float / investable-vs-custodial question
       - briefs/rewards/define.float-interest-on-debt-reserve.[lesson].md
       - briefs/rewards/define.boundary.investable-general-funds-vs-restricted-custodial.[lesson].md

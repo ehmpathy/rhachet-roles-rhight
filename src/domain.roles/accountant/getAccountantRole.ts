@@ -2,14 +2,15 @@ import { Role } from 'rhachet';
 
 /**
  * .what = the accountant role definition
- * .why = advises on books and tax treatment of rewards instruments — debt vs revenue
- *   characterization, recognition, redemption-path treatment, float, and escheat
+ * .why = prepares tax returns and keeps entities compliant, and advises on books and
+ *   tax treatment of rewards instruments — debt vs revenue characterization,
+ *   recognition, redemption-path treatment, float, and escheat
  */
 export const ROLE_ACCOUNTANT: Role = Role.build({
   slug: 'accountant',
   name: 'Accountant',
   purpose:
-    'advise on books and tax treatment of rewards instruments and their redemption paths',
+    'prepare tax returns, keep entities compliant, and advise on books and tax treatment of rewards instruments',
   readme: { uri: `${__dirname}/readme.md` },
   boot: { uri: `${__dirname}/boot.yml` },
   keyrack: { uri: `${__dirname}/keyrack.yml` },

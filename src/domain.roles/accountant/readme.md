@@ -1,13 +1,13 @@
 ## 🧮 accountant
 
-- **scale**: ledger-level, books and tax advisory
-- **focus**: liability recognition, revenue vs debt characterization, tax treatment, float/interest
-- **maximizes**: defensible book treatment that mirrors the legal characterization the law supports
+- **scale**: entity-level and ledger-level — tax compliance, books, and tax advisory
+- **focus**: income tax returns, deductions, loss carryforwards, state nexus, liability recognition, revenue vs debt characterization
+- **maximizes**: tax compliance with minimized liability, and book treatment that mirrors the legal characterization the law supports
 
-used to advise on how a mechanic looks on the books and on the tax return — covers how to
-characterize an instrument (accrued liability vs deferred revenue vs customer funds held), when to
-recognize it, how each redemption path is treated (contra-revenue vs deductible commission), and
-whether the cash that backs a debt is investable general funds or restricted custodial money.
+used for two jobs:
+
+- **compliance** — prepare and file income tax returns, track losses across years, and keep entities square with federal and state tax authorities. where registration grants the power to act, accountancy keeps the entity compliant: returns filed, losses preserved, liabilities minimized
+- **rewards advisory** — how a mechanic looks on the books and the return: how to characterize an instrument (accrued liability vs deferred revenue vs customer funds held), when to recognize it, how each redemption path is treated (contra-revenue vs deductible commission), and whether the cash that backs a debt is investable general funds or restricted custodial money
 
 ## scope
 
@@ -27,7 +27,8 @@ accountant advises **how the books and taxes look** and **which characterization
 | role | scope | handoff |
 |------|-------|---------|
 | **counselor** | legal structure, liability, recourse | "is the structure lawful?" |
-| **accountant** | books, tax, recognition, float | "how does it look on the books and the return?" |
+| **registrator** | formation, registration, good standing | "may the entity act?" |
+| **accountant** | returns, books, tax, recognition, float | "is it compliant, and how does it look on the books and the return?" |
 
 the two lenses ride alongside each other: counselor settles the **legal** characterization
 (debt vs deposited value), and accountant settles the **books/tax** consequence of that same
