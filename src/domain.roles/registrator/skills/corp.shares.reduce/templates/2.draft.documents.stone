@@ -1,0 +1,47 @@
+draft the board resolution and Certificate of Amendment.
+
+.why = Delaware requires a Certificate of Amendment to change authorized shares. the board resolution authorizes it.
+
+---
+
+## board resolution
+
+create a written consent that:
+1. approves the reverse stock split (X:1 ratio)
+2. approves reduction of authorized shares to ≤ 5,000
+3. authorizes officers to file the Certificate of Amendment
+
+template structure:
+```
+ACTION BY UNANIMOUS WRITTEN CONSENT
+OF THE BOARD OF DIRECTORS OF [COMPANY], INC.
+
+RESOLVED: that a reverse stock split of [RATIO]:1 is approved...
+RESOLVED: that authorized shares be reduced to [NUMBER]...
+RESOLVED: that officers are authorized to file Certificate of Amendment...
+
+Signature: _______________
+Date: _______________
+```
+
+---
+
+## Certificate of Amendment
+
+Delaware form: https://corp.delaware.gov/
+
+required fields:
+| field | value |
+|-------|-------|
+| corporation name | |
+| file number | |
+| article amended | (typically Article 4 - capital stock) |
+| new text | "authorized to issue [X] shares of Common Stock, par value $[Y] per share" |
+
+---
+
+## emit
+
+save drafts to:
+- `$route/2.draft.board-resolution.yield.md`
+- `$route/2.draft.certificate-of-amendment.yield.md`

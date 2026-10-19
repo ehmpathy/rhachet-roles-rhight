@@ -1,0 +1,57 @@
+gather current share structure for reverse split calculation.
+
+.why = we need to know current issued and authorized shares to calculate the split ratio.
+
+---
+
+## required fields
+
+| field | your info | source |
+|-------|-----------|--------|
+| corporation name | | Delaware search |
+| file number | | Delaware search |
+| authorized shares | | Delaware search or Certificate of Incorporation |
+| issued shares | | stock ledger, Founder Stock Board Consent |
+| par value | | Certificate of Incorporation |
+| shareholders | | stock ledger |
+
+---
+
+## target structure
+
+to qualify for the **$175/year tax floor** (Authorized Shares Method):
+- authorized shares must be ≤ 5,000
+- issued shares must be ≤ authorized
+
+| field | current | target |
+|-------|---------|--------|
+| authorized | | ≤ 5,000 |
+| issued | | ≤ 5,000 |
+
+### ⚠️ $175 is the TAX. the annual bill is $225.
+
+> 🚩 **this line used to read "to qualify for $175/year." corrected
+> 2026-09-02** — it named the goal of this entire route and dropped the word
+> that scopes it.
+
+| item | amount |
+|------|-------:|
+| franchise tax at ≤5,000 authorized | **$175.00** |
+| annual report fee, non-exempt domestic corporation | **$50.00** |
+| **annual floor** | **$225.00** |
+
+the tax figure is `franchise.tax.delaware --authorized 5000 …`, which prints
+`⬅️ tax only` beside it. the $50 is quoted from the Division of Corporations at
+`corp.delaware.gov/frtax/` (an **exempt** domestic corporation pays $25).
+
+⚠️ the report fee is owed **before and after** the reduction, so it cancels out
+of any *savings* figure — which is why step 6 of the reinstate route correctly
+states the delta as `$400 − $175`. it does **not** cancel out of your bill, and
+this stone states a **level**, not a delta.
+
+---
+
+## emit
+
+paste your current structure into:
+`$route/0.gather.position.yield.md`

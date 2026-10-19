@@ -1,0 +1,76 @@
+verify the reverse split is complete and tax is reduced.
+
+.why = confirm Delaware processed the amendment before your next annual report.
+
+---
+
+## check Delaware
+
+search: https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx
+
+| field | expected |
+|-------|----------|
+| authorized shares | ≤ 5,000 |
+| status | Good Standing |
+
+---
+
+## verify annual tax
+
+file next annual report with:
+- authorized shares: ≤ 5,000
+- method: Authorized Shares Method
+- tax: **$175**
+- annual report fee: **$50** (non-exempt domestic; $25 if exempt)
+- ⬅️ **the portal will show $225.** that is correct
+
+> 🚩 **corrected 2026-09-02.** this section used to list the tax alone. the
+> label was accurate and the instrument still misled: **a verification stone
+> must state the number the driver will actually SEE.** a driver who filed,
+> read $225 off the screen, and compared it against a stone that said $175
+> would conclude the reduction had failed — or call the state about a $50
+> overcharge that is simply the report fee.
+
+⚠️ do not treat a $225 total as a defect. treat a total **above** $225 as one,
+and take the tax line from `franchise.tax.delaware --authorized <count> …`
+before you dispute the bill.
+
+---
+
+## checklist
+
+- [ ] Certificate of Amendment filed and processed
+- [ ] Delaware shows updated authorized shares
+- [ ] Stock ledger updated
+- [ ] Cap table updated (if applicable)
+- [ ] Next annual report ready with new share count
+
+---
+
+## emit
+
+save verification to:
+`$route/5.verify.completion.yield.md`
+
+format:
+```
+## verification
+
+| field | value |
+|-------|-------|
+| date checked | |
+| authorized shares (Delaware) | |
+| status | |
+
+## next annual report
+
+| field | value |
+|-------|-------|
+| due date | March 1, [YEAR] |
+| authorized shares | |
+| tax method | Authorized Shares |
+| expected tax | $175 |
+| annual report fee | $50 |
+| **expected total** | **$225** |
+| actual total charged | |
+```

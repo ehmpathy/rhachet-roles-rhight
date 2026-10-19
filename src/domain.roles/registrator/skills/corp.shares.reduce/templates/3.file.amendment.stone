@@ -1,0 +1,110 @@
+file the Certificate of Amendment with Delaware.
+
+.why = this legally changes your authorized shares and effectuates the reverse split.
+
+---
+
+## fees
+
+⛔ **do NOT quote a total from this table without a re-check.** every row below
+is from Delaware's published schedule, **revised 2026-08-01** — and a fee
+schedule moves. re-read it before you pay:
+[corpfiles.delaware.gov/Fee_Schedule/AugustFee2026.pdf](https://corpfiles.delaware.gov/Fee_Schedule/AugustFee2026.pdf)
+(reachable from the hub at [corp.delaware.gov/fee](https://corp.delaware.gov/fee/)).
+
+| item | cost | schedule row |
+|------|------|--------------|
+| Certificate of Amendment | **$214.00** ⚠️ *varies with stock* | `Amendment *$214.00` |
+| each additional page | +$9.00 | county recording, per the schedule note |
+| certified copy (each) | +$50.00 | column 2 |
+| expedited — same day | +$200.00 | column 3 |
+| expedited — 24 hour | +$100.00 | column 4 |
+| expedited — 2 hour (Priority 2) | +$500.00 | schedule footer |
+| expedited — 1 hour (Priority 1) | +$1000.00 | schedule footer |
+
+⚠️ **the asterisk decides the answer on THIS stone specifically.** the schedule
+marks the amendment fee `*VARIES BASED ON STOCK`, and its note says the column-one
+amount holds "for a 1 page document, however, **may vary if stock changes**".
+a share-count amendment is by definition a stock change — so **$214.00 is a
+floor, not a quote**. call (302) 739-3073 for the figure on your own submission.
+
+> 🚨 **this table read `$50` for the amendment and `+$100` for same-day.**
+> both were wrong: the fee is **$214.00** (4.3×), and same-day is **$200.00**.
+> the `$50` traced to a block quote attributed to `corp.delaware.gov/howtoform/`
+> — a page that contains **neither** the word "amendment" **nor** "minimum fee".
+> see `howto.reduce-franchise-tax-for-delaware-corp-solofounder.md`.
+>
+> ⭐ a stone is the worst possible home for an unsourced figure: a brief is
+> *read*, a stone is **executed**. this one told an agent to record a
+> `fee paid` against a number off by a factor of four.
+
+---
+
+## submission options
+
+| method | details |
+|--------|---------|
+| online | https://corp.delaware.gov/ (DCC Document Portal) |
+| mail | Delaware Division of Corporations, 401 Federal Street – Suite 4, Dover, DE 19901 |
+
+---
+
+## timeline
+
+⚠️ this table asks for a **duration**. do not put a cost in it — the costs are
+in the fees table above, and a prior version of this stone carried three of them
+here (one of which contradicted its own fees table).
+
+| option | duration |
+|--------|----------|
+| standard (Priority 7 — Reg. Work) | ⛔ **none is published** — call for the current processed date |
+| expedited — 24 hour | next business day |
+| expedited — same day | same business day |
+| expedited — 2 hour (Priority 2) | 2 hours |
+| expedited — 1 hour (Priority 1) | 1 hour |
+
+⛔ **the standard row has no duration because the Division publishes none.** the
+four expedite tiers each carry a time; regular work carries a price of `$0` and a
+sentence that declines to name an interval:
+
+> "Processing time for **regular (non-expedited) work varies based upon the
+> volume of items received** by our office."
+>
+> — the FAQ, `registrator/briefs/incorporation/variant=c-corp/refs/pulledAt=2026-09-25.de-faq-regular-work-turnaround.txt`
+
+⇒ the substitute is a call, and the question has a shape: ask **"what date are you
+currently at?"**, never **"how long will mine take?"** the first is on a clerk's
+screen; the second is the forecast the FAQ declines to print.
+
+⭐ an item already in the regular queue can still be **upgraded** to an expedite
+tier by a call, so the cheap default is also the safe first move here.
+
+> 🚨 **this row said `2-3 weeks` until 2026-09-25, with no hedge whatever.** the
+> peer defect in `corp.franchise.reinstate/templates/4.file.revival.stone` at
+> least carried an *"unsourced — treat it as an estimate"* caveat; this one
+> presented an invented interval as a published fact.
+>
+> ⚠️ and note which file the cure reached first. the revival stone was corrected
+> in the same pass that pulled the FAQ; **this stone is a different route, and a
+> sweep for the FIGURE is what found it** — a sweep for the revival topic would
+> have missed it entirely.
+
+---
+
+## emit
+
+record submission in:
+`$route/3.file.amendment.yield.md`
+
+format:
+```
+## submission details
+
+| field | value |
+|-------|-------|
+| date submitted | |
+| method | online / mail |
+| fee paid | $ |
+| expedited? | yes / no |
+| confirmation number | |
+```
