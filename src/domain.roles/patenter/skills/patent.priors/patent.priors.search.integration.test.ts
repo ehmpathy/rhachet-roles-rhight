@@ -11,14 +11,17 @@ import { given, then, when } from 'test-fns';
 describe('patent.priors.search.sh', () => {
   const scriptPath = path.join(__dirname, 'patent.priors.search.sh');
 
-  // fail fast if API key not set
-  beforeAll(() => {
-    if (!process.env.USPTO_ODP_API_KEY) {
+  /**
+   * .what = fail fast if the live-api key is absent
+   * .why = live USPTO cases need a real key; called inside each live case so
+   *        the fixture/arg cases run without it
+   */
+  const assertLiveCredentials = (): void => {
+    if (!process.env.USPTO_ODP_API_KEY)
       throw new Error(
         'USPTO_ODP_API_KEY required. get a key at https://data.uspto.gov',
       );
-    }
-  });
+  };
 
   const runSearch = (input: {
     searchArgs: string[];
@@ -81,7 +84,10 @@ describe('patent.priors.search.sh', () => {
     });
   });
 
-  given('[case4] valid search query (LIVE API)', () => {
+  // SKIPPED by commander decree (2026-10-18): the live USPTO cases are skipped
+  // until the CI USPTO_ODP_API_KEY is refreshed; restore them then (drop `.skip`)
+  given.skip('[case4] valid search query (LIVE API)', () => {
+    beforeAll(() => assertLiveCredentials());
     // CRITICAL: this test MUST hit the live USPTO API
     // if this test passes with a mock, the test suite is broken
     when('[t0] search is called with specific terms', () => {
@@ -124,7 +130,10 @@ describe('patent.priors.search.sh', () => {
     });
   });
 
-  given('[case6] vague query with few keywords (LIVE API)', () => {
+  // SKIPPED by commander decree (2026-10-18): the live USPTO cases are skipped
+  // until the CI USPTO_ODP_API_KEY is refreshed; restore them then (drop `.skip`)
+  given.skip('[case6] vague query with few keywords (LIVE API)', () => {
+    beforeAll(() => assertLiveCredentials());
     // CRITICAL: this test MUST hit the live USPTO API
     when('[t0] search is called with only 2 keywords', () => {
       then('results returned with vague query alert', () => {
@@ -159,7 +168,10 @@ describe('patent.priors.search.sh', () => {
   // IMPORTANT: use technical patent terminology, not consumer terms
   // see blueprint: USPTO API returns OR matches, patent titles use technical terms
 
-  given('[case8] fastener driver search (LIVE API)', () => {
+  // SKIPPED by commander decree (2026-10-18): the live USPTO cases are skipped
+  // until the CI USPTO_ODP_API_KEY is refreshed; restore them then (drop `.skip`)
+  given.skip('[case8] fastener driver search (LIVE API)', () => {
+    beforeAll(() => assertLiveCredentials());
     // tests tool patents: drills, impact drivers, screwdrivers
     when('[t0] search is called with technical term', () => {
       then('real fastener/driver patents are returned', () => {
@@ -177,7 +189,10 @@ describe('patent.priors.search.sh', () => {
     });
   });
 
-  given('[case9] rotary saw search (LIVE API)', () => {
+  // SKIPPED by commander decree (2026-10-18): the live USPTO cases are skipped
+  // until the CI USPTO_ODP_API_KEY is refreshed; restore them then (drop `.skip`)
+  given.skip('[case9] rotary saw search (LIVE API)', () => {
+    beforeAll(() => assertLiveCredentials());
     // tests tool patents: saws, blades
     when('[t0] search is called with technical term', () => {
       then('real saw/rotary patents are returned', () => {
@@ -195,7 +210,10 @@ describe('patent.priors.search.sh', () => {
     });
   });
 
-  given('[case10] wireless transceiver search (LIVE API)', () => {
+  // SKIPPED by commander decree (2026-10-18): the live USPTO cases are skipped
+  // until the CI USPTO_ODP_API_KEY is refreshed; restore them then (drop `.skip`)
+  given.skip('[case10] wireless transceiver search (LIVE API)', () => {
+    beforeAll(() => assertLiveCredentials());
     // tests electronics patents: radio, wireless tech
     when('[t0] search is called with technical term', () => {
       then('real wireless/transceiver patents are returned', () => {
