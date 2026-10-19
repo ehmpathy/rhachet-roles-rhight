@@ -3,8 +3,10 @@ import { RoleRegistry } from 'rhachet';
 import { ROLE_ACCOUNTANT } from './accountant/getAccountantRole';
 import { ROLE_INSURER } from './insurer/getInsurerRole';
 import { ROLE_LICENSER } from './licenser/getLicenserRole';
+import { ROLE_NOTARY } from './notary/getNotaryRole';
 import { ROLE_PATENTER } from './patenter/getPatenterRole';
 import { ROLE_PERMITER } from './permiter/getPermiterRole';
+import { ROLE_SECRETARY } from './secretary/getSecretaryRole';
 import { ROLE_TRANSCRIBER } from './transcriber/getTranscriberRole';
 
 /**
@@ -21,8 +23,10 @@ export const getRoleRegistry = (): RoleRegistry =>
       ROLE_ACCOUNTANT,
       ROLE_INSURER,
       ROLE_LICENSER,
+      ROLE_NOTARY,
       ROLE_PATENTER,
       ROLE_PERMITER,
+      ROLE_SECRETARY,
       ROLE_TRANSCRIBER,
     ],
   });

@@ -31,6 +31,13 @@ roles:
       dirs: dist/domain.roles/licenser/inits
     boot: dist/domain.roles/licenser/boot.yml
     keyrack: dist/domain.roles/licenser/keyrack.yml
+  - slug: notary
+    readme: dist/domain.roles/notary/readme.md
+    briefs:
+      dirs: dist/domain.roles/notary/briefs
+    skills:
+      dirs: dist/domain.roles/notary/skills
+    boot: dist/domain.roles/notary/boot.yml
   - slug: patenter
     readme: dist/domain.roles/patenter/readme.md
     briefs:
@@ -51,6 +58,13 @@ roles:
       dirs: dist/domain.roles/permiter/inits
     boot: dist/domain.roles/permiter/boot.yml
     keyrack: dist/domain.roles/permiter/keyrack.yml
+  - slug: secretary
+    readme: dist/domain.roles/secretary/readme.md
+    briefs:
+      dirs: dist/domain.roles/secretary/briefs
+    skills:
+      dirs: dist/domain.roles/secretary/skills
+    boot: dist/domain.roles/secretary/boot.yml
   - slug: transcriber
     readme: dist/domain.roles/transcriber/readme.md
     briefs:

@@ -1,0 +1,212 @@
+{
+  "pulledAt": "2026-09-02T19:43:26.284Z",
+  "note": "availability strings are VENDOR MARKETING CLAIMS captured verbatim. they evidence intent to staff an hour; they do not guarantee a notary is in the queue at that hour. third-party review text (trustpilot head + availability windows) is withheld, and each vendor window is clipped to the sentence that holds the claim, so no reviewer or testimonial identity is published.",
+  "suspectShort": [],
+  "soft404s": [],
+  "failed": [],
+  "collided": [],
+  "pulled": [
+    {
+      "slug": "proof.home",
+      "url": "https://www.proof.com/",
+      "ok": true,
+      "chars": 4652,
+      "soft404": false,
+      "head": "New Introducing x401 Learn more Verify once. Authorize everything. Proof is the identity network behind the internet's most important transactions. Get Proof Talk to sales Built for the moments that can’t go wrong From the documents you sign to the agents acting on your behalf — every action is tied to a verified identity, sealed at the moment it happens. Everything you sign Signatures and no",
+      "availability": [
+        "PRIVACY BY DESIGN Customers share what's needed and nothing more Every identity request shows your customer exactly what you're asking for, and they approve only the attributes they agree to.",
+        "It’s our anti-fraud platform with deepfake detection and signals from the rest of our network."
+      ],
+      "review": {
+        "score": null,
+        "reviewCount": null
+      },
+      "error": null
+    },
+    {
+      "slug": "proof.pricing",
+      "url": "https://www.proof.com/pricing",
+      "ok": true,
+      "chars": 4225,
+      "soft404": false,
+      "head": "New Introducing x401 Learn more Choose the right plan for your business Proof is the platform to secure every interaction with your customer—whether you need them to sign, notarize, or verify their identity. Our software supports all industries, but for the real estate industry, we have solutions specifically designed for digital closings. Get started below. For businesses For real estate title",
+      "availability": [
+        "ccess to Notarize, Sign, and Identify transactions Notarize℠ Network available on-demand, 24/7 Notarizations accepted in all 50 states Audit logs for every transaction Save time with reusable document templates View tran",
+        "The Notarize Network is Proof’s on-demand pool of commissioned notaries, available 24/7.",
+        "d with Pro Includes access to Notarize, Sign, and Identify transactions Notarize℠ Network available on-demand, 24/7 Notarizations accepted in all 50 states Audit logs for every transaction Save time with reusable documen",
+        "Includes access to Notarize, Sign, and Identify transactions Notarize℠ Network available on-demand, 24/7 Notarizations accepted in all 50 states Audit logs for every transaction Save time with reusable document template",
+        "ize℠ Network meeting $25 $25 Per additional seal $10 $10 Per additional signer $5 $5 Per on-demand witness $10 $10 NOTARIZE (WITH YOUR NOTARY) In-house notary meeting - $15 Per additional seal - $0 Custom pricing Per ad"
+      ],
+      "review": {
+        "score": null,
+        "reviewCount": null
+      },
+      "error": null
+    },
+    {
+      "slug": "notarylive.home",
+      "url": "https://www.notarylive.com/",
+      "ok": true,
+      "chars": 3526,
+      "soft404": false,
+      "head": "Notarize your documents online anywhere, any time Notarize in minutes 24/7/365 Valid in all 50 states Business Account Notarize Now How It Works Have your document signed and notarized within minutes! Connecting with a notary has never been easier. 1. Upload Your Document 2. Verify Your Identity 3. Notarize with an Online Notary 4. Download Your Notarized Doc! Empowering",
+      "availability": [
+        "Notarize your documents online anywhere, any time Notarize in minutes 24/7/365 Valid in all 50 states Business Account Notarize Now How It Works Have your document signed and notarized within",
+        "d Documents Single Use or Monthly Billing (Great for high volume!) Bulk Pricing Options Available API and Whitelabel Integration Available Create Business Account Our Resource Center for Notaries Notary Center Loo",
+        "We offer different account types to best fit your notarization needs."
+      ],
+      "review": {
+        "score": null,
+        "reviewCount": null
+      },
+      "error": null
+    },
+    {
+      "slug": "bluenotary.home",
+      "url": "https://bluenotary.us/",
+      "ok": true,
+      "chars": 5712,
+      "soft404": false,
+      "head": "PRICING USE CASES FOR LENDERS 01 FOR TITLE 02 FOR LAW FIRMS 03 FOR BUSINESSES 04 FOR NOTARIES 05 PRODUCTS RESOURCES INTEGRATIONS FORMS SIGN IN NOTARIZE NOW Paper's Dead. Notarize Online. NOTARIZE NOW Connect with a certified notary instantly—24/7, no waiting, no hassle. Trusted by millions for fast, secure online document notarization—anytime, from anywhere. NOTARIZE A DOCUMENT NOW Notaries online",
+      "availability": [
+        "NOTARIZE NOW Connect with a certified notary instantly—24/7, no waiting, no hassle.",
+        "Rapid and legally compliant process, available 24/7 from any device.",
+        "24/7 Notarization On-Demand Anytime, Anywhere.",
+        "READ LETTER FROM FOUNDER SEE HOW IT WORKS On-Demand Online Notary Our Flagship Product Say goodbye to scheduling hassles and in-person visits—our on-demand notary service",
+        "e Notary Our Flagship Product Say goodbye to scheduling hassles and in-person visits—our on-demand notary service connects you with a certified notary instantly.",
+        "Yes, only $10 for On-Demand Witness service.",
+        "aud Reduction — eClosings Don’t Rely on Trust, They Verify in Real-Time $10 Per Witness — On-Demand Anytime, Anywhere.",
+        "nd continuous training so you stay up to date with the highest industry standards.",
+        "ation Effortlessly add online notarization to your platform with our developer-friendly REST API.",
+        "nced Training Expert guidance and continuous training so you stay up to date with the highest industry standards."
+      ],
+      "review": {
+        "score": null,
+        "reviewCount": null
+      },
+      "error": null
+    },
+    {
+      "slug": "onenotary.home",
+      "url": "https://onenotary.us/",
+      "ok": true,
+      "chars": 6298,
+      "soft404": false,
+      "head": "Pricing For Individuals For Businesses For Businesses Solutions For Law Firms For HR (Form I-9) For Financial Services For VMB (PS-1583) For Title Agencies For Auto Dealerships For Construction For Notaries Mobile Notary Service API Log In Talk to Sales Notarize Now 24/7 Trusted Online Notary Service Legal. Fast. Secure. Join thousands of businesses and individuals who are signing smarter and fas",
+      "availability": [
+        "For Construction For Notaries Mobile Notary Service API Log In Talk to Sales Notarize Now 24/7 Trusted Online Notary Service Legal.",
+        "duced admin overhead and delivered a smooth, compliant, end-to-end experience for members 24/7 On-Demand Notaries Ready to Upgrade Your Notary Process?",
+        "Our notaries are available around the clock, so your clients can easily fit the notarization into their schedule.",
+        "admin overhead and delivered a smooth, compliant, end-to-end experience for members 24/7 On-Demand Notaries Ready to Upgrade Your Notary Process?",
+        "n an eNotary Service Into Your Product Ready-to-use, easy integrations for end-users or REST API for developers.",
+        "ons for end-users or REST API for developers."
+      ],
+      "review": {
+        "score": null,
+        "reviewCount": null
+      },
+      "error": null
+    },
+    {
+      "slug": "notarycam.home",
+      "url": "https://www.notarycam.com/",
+      "ok": true,
+      "chars": 4654,
+      "soft404": false,
+      "head": "Skip to content (800) 931-7423 Info@NotaryCam.com LOGIN PRICING eCLOSE QUICKSTART NOTARIZE NOW GET SOFTWARE & SERVICES OPEN NOTARY POSITIONS WHY NOTARYCAM PLATFORM SERVICES INDUSTRIES RESOURCES CONTACT SALES X NOTARIZE NOW GET SOFTWARE & SERVICES | SIGNING & NOTARIZATION SOLUTIONS Every way to sign or notarize, everywhere you do business. | WHY NOTARYCAM Our award-winning platform ensures docum",
+      "availability": [
+        "That’s why the world’s largest brands rely on NotaryCam to handle their important transactions with enterprise-grade security, seamless accessibility, and un",
+        "an modification timelines using NotaryCam READ » September 30, 2025 CASE STUDIES Bristol West Leverages NotaryCam to Ensure Compliance with Florida’s RON Law READ » July 3, 2025 CASE STUDIES Accurate Group Leverages Nota"
+      ],
+      "review": {
+        "score": null,
+        "reviewCount": null
+      },
+      "error": null
+    },
+    {
+      "slug": "tp.proof",
+      "url": "https://www.trustpilot.com/review/proof.com",
+      "ok": true,
+      "chars": 11743,
+      "soft404": false,
+      "head": "[withheld: third-party review text]",
+      "availability": [],
+      "review": {
+        "score": null,
+        "reviewCount": "1,688"
+      },
+      "error": null
+    },
+    {
+      "slug": "tp.notarize",
+      "url": "https://www.trustpilot.com/review/notarize.com",
+      "ok": true,
+      "chars": 9203,
+      "soft404": false,
+      "head": "[withheld: third-party review text]",
+      "availability": [],
+      "review": {
+        "score": null,
+        "reviewCount": "1,815"
+      },
+      "error": null
+    },
+    {
+      "slug": "tp.notarylive",
+      "url": "https://www.trustpilot.com/review/notarylive.com",
+      "ok": true,
+      "chars": 13055,
+      "soft404": false,
+      "head": "[withheld: third-party review text]",
+      "availability": [],
+      "review": {
+        "score": null,
+        "reviewCount": "217"
+      },
+      "error": null
+    },
+    {
+      "slug": "tp.bluenotary",
+      "url": "https://www.trustpilot.com/review/bluenotary.us",
+      "ok": true,
+      "chars": 9498,
+      "soft404": false,
+      "head": "[withheld: third-party review text]",
+      "availability": [],
+      "review": {
+        "score": null,
+        "reviewCount": "774"
+      },
+      "error": null
+    },
+    {
+      "slug": "tp.onenotary",
+      "url": "https://www.trustpilot.com/review/onenotary.us",
+      "ok": true,
+      "chars": 14145,
+      "soft404": false,
+      "head": "[withheld: third-party review text]",
+      "availability": [],
+      "review": {
+        "score": null,
+        "reviewCount": "1,223"
+      },
+      "error": null
+    },
+    {
+      "slug": "tp.notarycam",
+      "url": "https://www.trustpilot.com/review/notarycam.com",
+      "ok": true,
+      "chars": 11395,
+      "soft404": false,
+      "head": "[withheld: third-party review text]",
+      "availability": [],
+      "review": {
+        "score": null,
+        "reviewCount": "9,830"
+      },
+      "error": null
+    }
+  ]
+}
