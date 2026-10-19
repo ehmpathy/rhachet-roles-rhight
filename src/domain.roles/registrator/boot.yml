@@ -1,0 +1,30 @@
+always:
+  briefs:
+    say:
+      - briefs/practices/define.entity-registration-fundamentals.md
+      - briefs/practices/define.incorporation.md
+      - briefs/practices/define.entity-types-catalog.md
+      - briefs/practices/communications/hazard.subject-lines-are-routing-keys.md
+
+    ref:
+      - briefs/practices/define.why-corporations-are-state-creatures.md
+      # a corporation is a stranger in every state but its charter state.
+      # each of these maps one state's test, its penalty, and — most
+      # usefully — what an absent registration does NOT break.
+      - briefs/incorporation/foreign-registration/hazard.foreign-registration.state=florida.md
+      - briefs/incorporation/foreign-registration/hazard.foreign-registration.state=texas.md
+      # .why = the index of WHEN each state's registration and periodic report
+      #        become required — one entry per state and duty, each with the
+      #        trigger in its first two lines. the root alone boots; entries
+      #        are fetched from its grid on demand.
+      - briefs/incorporation/foreign-registration/inventory.of=registration-trigger._.md
+      - briefs/incorporation/variant=c-corp/in.usa.state.delaware.md
+      - briefs/incorporation/variant=c-corp/delaware.franchise.tax.purpose.md
+      - briefs/incorporation/variant=c-corp/delaware.franchise.tax.delinquency.md
+      - briefs/incorporation/variant=c-corp/delaware.franchise.tax.[howto].renew.md
+      - briefs/incorporation/variant=c-corp/delaware.franchise.tax.[tips].md
+      - briefs/incorporation/variant=c-corp/howto.reinstate-void-delaware-corp.md
+      - briefs/incorporation/variant=c-corp/howto.reduce-franchise-tax-for-delaware-corp-solofounder.md
+      - briefs/incorporation/variant=c-corp/compare.reinstatement-vs-reregistration.md
+      - briefs/incorporation/variant=c-corp/define.authorized-vs-issued-vs-outstanding-shares.md
+      - briefs/incorporation/variant=c-corp/define.why-delaware-wants-a-zero-shares-affidavit.md
