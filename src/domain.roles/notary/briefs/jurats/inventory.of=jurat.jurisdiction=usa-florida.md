@@ -574,4 +574,4 @@ that matters, confirm the year before you rely on a form.
 - `compare.jurat-forms-across-jurisdictions.md` — the five-state grid
 - `inventory.of=jurat.jurisdiction=usa-delaware.md` — and why Delaware accepts
   a Florida-form certificate by its own statute
-- `define.notary-public-and-how-to-get-notarized.md` — jurat vs acknowledgment
+- `../practices/define.notary-public-and-how-to-get-notarized.md` — jurat vs acknowledgment

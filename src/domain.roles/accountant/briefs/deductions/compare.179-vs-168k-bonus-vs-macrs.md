@@ -308,6 +308,6 @@ both §179 editions (2023, 2024) returned **39,218** chars — a collapsed year 
 
 ## .see also
 
-- `records/howto.substantiate-expenses.md` — the §274(d) / §6001 record rules
-- `income-tax/define.void-charter-vs-federal-nol.md` — the §172 carryforward
+- `../records/howto.substantiate-expenses.md` — the §274(d) / §6001 record rules
+- `../income-tax/define.void-charter-vs-federal-nol.md` — the §172 carryforward
 - `skills/assemble.1120` — holds line-20 capital out of line 27 by design

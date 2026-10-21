@@ -70,6 +70,7 @@
     "as-procedure": "1.1.7",
     "domain-objects": "0.31.9",
     "helpful-errors": "1.5.3",
+    "pdf-lib": "1.17.1",
     "rhachet-brains-xai": "0.3.3",
     "rhachet-roles-rhachet": "0.1.7",
     "type-fns": "1.21.0",

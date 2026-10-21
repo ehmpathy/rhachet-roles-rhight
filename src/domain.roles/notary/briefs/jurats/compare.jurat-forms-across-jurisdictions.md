@@ -260,5 +260,5 @@ run for each.
 - `inventory.of=jurat.jurisdiction=usa-texas.md`
 - `inventory.of=jurat.jurisdiction=usa-california.md`
 - `inventory.of=jurat.jurisdiction=usa-indiana.md`
-- `define.notary-public-and-how-to-get-notarized.md` — jurat vs acknowledgment,
+- `../practices/define.notary-public-and-how-to-get-notarized.md` — jurat vs acknowledgment,
   and why the difference decides whether you may pre-sign

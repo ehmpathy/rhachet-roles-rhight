@@ -354,6 +354,6 @@ determined.
 - `skills/stripe.tally` — **computes these figures from the exports above**,
   and reconciles against the summary's own declared totals. run it rather
   than read numbers off the dashboard by eye.
-- `income-tax/federal/howto.file-form-1120.md` — where these land
-- `deductions/catalog.deductible-expenses.md` — the expense side
+- `../income-tax/federal/howto.file-form-1120.md` — where these land
+- `../deductions/catalog.deductible-expenses.md` — the expense side
 - `skills/statement.tally` — the card-expense side of the same return

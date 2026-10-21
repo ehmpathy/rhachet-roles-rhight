@@ -121,9 +121,9 @@ you were probably triaged, not evaluated, if the reply:
 
 ## .see also
 
-- `howto.reinstate-void-delaware-corp.md`
-- `define.why-delaware-wants-a-zero-shares-affidavit.md`
-- `delaware.franchise.tax.delinquency.md`
+- `../../incorporation/variant=c-corp/howto.reinstate-void-delaware-corp.md`
+- `../../incorporation/variant=c-corp/define.why-delaware-wants-a-zero-shares-affidavit.md`
+- `../../incorporation/variant=c-corp/delaware.franchise.tax.delinquency.md`
 
 ## .sources
 

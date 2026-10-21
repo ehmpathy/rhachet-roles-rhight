@@ -347,7 +347,7 @@ package; the quotes stand, the re-run does not. the cure is a move to
 
 ## .see also
 
-- `revenue/howto.collect-figures.from=stripe.md` — the revenue record
-- `deductions/catalog.deductible-expenses.md` — category → 1120 line
+- `../revenue/howto.collect-figures.from=stripe.md` — the revenue record
+- `../deductions/catalog.deductible-expenses.md` — category → 1120 line
 - `skills/statement.tally` — computes + reconciles the card side
 - `skills/stripe.tally` — computes + reconciles the revenue side

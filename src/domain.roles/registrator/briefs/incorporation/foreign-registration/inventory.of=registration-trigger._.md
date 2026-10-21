@@ -43,10 +43,10 @@
 
 ## .see also
 
-- `accountant/briefs/nexus/inventory.of=tax-trigger._.md` — the tax side: when the same five states can tax the corporation
+- `../../../../accountant/briefs/nexus/inventory.of=tax-trigger._.md` — the tax side: when the same five states can tax the corporation
 - [`hazard.foreign-registration.state=florida.md`](./hazard.foreign-registration.state=florida.md) — the Florida duty in depth, and the tax-side sequence constraint
 - [`hazard.foreign-registration.state=texas.md`](./hazard.foreign-registration.state=texas.md) — the Texas duty in depth, the five-year cap, and §9.052
-- `accountant/briefs/nexus/define.three-duties-three-tests.md` — why registration, income tax, and sales tax are three questions
+- `../../../../accountant/briefs/nexus/define.three-duties-three-tests.md` — why registration, income tax, and sales tax are three questions
 
 ## .provenance
 
