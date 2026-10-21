@@ -313,10 +313,10 @@ source: [Last Faoro & Whitehorn - Qualifier Not Acting As Manager](https://www.l
 
 ---
 
-### case 3: $8,000 remodel — neighbor complaint triggers investigation
+### case 3: small remodel — neighbor complaint triggers investigation
 
 **what happened:**
-- contractor used a friend's license for an $8,000 remodel job
+- contractor used a friend's license for a small remodel job
 - neighbor filed complaint with California CSLB (Contractors State License Board)
 - investigation revealed the license rental arrangement
 

@@ -202,7 +202,7 @@ federal tracks and their figures are set out in `ref.tcpa-exposure-tracks`.
 | does a record of the person suffice? | ⭐ **no** — the text requires *"the telephone number to which the signatory authorizes"* |
 | how long must a consent record survive? | ⚠️ **no express federal rule found**; the practical floor is the claim window, ~**4 years** per `§ 1658(a)` |
 | how long must a suppression record survive? | **5 years** — an express duty at `§ 64.1200(d)(6)` |
-| can a vendor hold the record for us? | it may hold it; `(d)(3)` says liability for a failure to honor stays with the entity on whose behalf the call was made |
+| can a vendor hold the record for the sender? | it may hold it; `(d)(3)` says liability for a failure to honor stays with the entity on whose behalf the call was made |
 | is a vendor's compliance assurance the record? | no — it is a contract term, not the artifact a court asks for |
 | can a valid record go stale? | yes — revocation by *"any reasonable method"*, honored within **ten business days** |
 | may we require a specific opt-out channel? | the paragraph says a caller *"may not designate an exclusive means"* |

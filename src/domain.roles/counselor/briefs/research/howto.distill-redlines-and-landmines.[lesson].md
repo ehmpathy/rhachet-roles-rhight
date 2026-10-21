@@ -301,7 +301,7 @@ have.**
 | sauce-test check | this file | verdict |
 |------------------|-----------|---------|
 | names a client, campaign, volume, vendor, schema, or config? | **no** — the worked example is a public-law subject and names no party | ✅ clean |
-| discloses a choice the sources do not force? | ⚠️ **yes, and that is what a method brief IS** — the redline test and the two-file split are **our** choices. ⭐ but they are choices about **how to write a document**, not about what any reader should do about their own risk. the artifact discloses our editorial method, which is the thing `tactics-become-published-role-briefs` says to ship | ✅ clean |
+| discloses a choice the sources do not force? | ⚠️ **yes, and that is what a method brief IS** — the redline test and the two-file split are **this method's** choices. ⭐ but they are choices about **how to write a document**, not about what any reader should do about their own risk. the artifact discloses our editorial method, which is the thing `tactics-become-published-role-briefs` says to ship | ✅ clean |
 | discloses risk appetite? | **no** — it prescribes a **test**, and expressly forbids the artifacts it produces from any rank by cost or urgency | ✅ clean |
 
 ⭐ **note the asymmetry that makes this publishable while a priority order is not.** a method for the
