@@ -1283,11 +1283,19 @@ describe('pii.scan.via.brain.sh', () => {
         // where the role ships practice rules, they are the refs. where it
         // ships none, the skill falls back to its own rubric, since
         // `rhx review` refuses a refs glob that matches zero files
-        const practicesDir = path.join(__dirname, '..', '..', 'briefs', 'practices');
+        const practicesDir = path.join(
+          __dirname,
+          '..',
+          '..',
+          'briefs',
+          'practices',
+        );
         const practicesShipped =
           fs.existsSync(practicesDir) &&
           fs.readdirSync(practicesDir).some((f) => /^rule\..*\.md$/.test(f));
-        expect(argv).toContain(practicesShipped ? 'briefs/practices' : 'pii.scan/rubric');
+        expect(argv).toContain(
+          practicesShipped ? 'briefs/practices' : 'pii.scan/rubric',
+        );
       });
 
       then('it pins the brain it was told to ask', () => {
