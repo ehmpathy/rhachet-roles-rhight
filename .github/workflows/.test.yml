@@ -226,8 +226,8 @@ jobs:
       - name: start:livedb:dev
         run: npm run start:livedb:dev --if-present
 
-      - name: install poppler-utils + ghostscript (for pdf ocr, ps2pdf)
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils ghostscript
+      - name: install poppler-utils + ghostscript + imagemagick (pdf ocr, ps2pdf, doc.sign)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils ghostscript imagemagick
 
       - name: build
         run: npm run build
@@ -306,8 +306,8 @@ jobs:
       - name: start:livedb:dev
         run: npm run start:livedb:dev --if-present
 
-      - name: install poppler-utils + ghostscript (for pdf ocr, ps2pdf)
-        run: sudo apt-get update && sudo apt-get install -y poppler-utils ghostscript
+      - name: install poppler-utils + ghostscript + imagemagick (pdf ocr, ps2pdf, doc.sign)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils ghostscript imagemagick
 
       - name: build
         run: npm run build
