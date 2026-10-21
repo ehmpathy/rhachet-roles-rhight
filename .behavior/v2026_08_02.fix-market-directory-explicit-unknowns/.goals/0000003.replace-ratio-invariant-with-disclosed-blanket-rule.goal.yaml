@@ -1,0 +1,15 @@
+slug: 'replace-ratio-invariant-with-disclosed-blanket-rule'
+source: 'peer:human'
+status:
+  choice: 'fulfilled'
+  reason: 'written into 1.vision.yield.md across ten edits: Q0 ratio condition replaced by the announced-blanket-rule guarantee with an in-place retraction note; new presence-vs-absence axis showing the two row kinds move oppositely as coverage grows; new ''what a ? costs'' section pricing the forfeited clean signal; new ''the aggregation answer'' section; awkward 3 retracted from load-bearing to bounded per-row; both malformed wisher questions withdrawn in place; delta 5 gains national deletion scope; two first-priority research rows added (Reporters Committee capture, and whether disclosure cures a section 5 omission claim); evaluation table and one-line summary restated; r4 self-review carries an addendum naming what the review missed and why'
+updatedAt: '2026-08-03'
+why:
+  ask: 'thats not possible; we want the coverage to be really big and must plan for that. whats a (?) at the cost of ?'
+  purpose: 'the vision priced NOHARM on a STATISTICAL guarantee: public unknown is safe while the class stays large, which decays as coverage rises. the wisher rejected the premise outright: high coverage is the plan, so a guarantee that decays with coverage is the wrong shape of guarantee. the fix is a POLICY guarantee (a disclosed blanket rule, the glomar shape) plus a per-row split, since presence-facts and absence-facts move in opposite directions as coverage grows.'
+  benefit: 'the design survives full coverage instead of degrading into it; the awkwardness i promoted to load-bearing is retracted to a bounded per-row concern; the cost of the questionmark is priced honestly as the forfeited ability to say clean.'
+what:
+  outcome: '1.vision.yield.md Q0 carries a disclosed-blanket-rule guarantee in place of the coverage-ratio invariant; a presence-facts vs absence-facts axis is added beside the axes; awkward 3 is retracted from load-bearing to bounded; the withdrawn wisher question is removed; the cost of the questionmark is stated as the forfeited clean signal, mitigated by presence-fact stacking.'
+how:
+  task: 'edit Q0 to replace the ratio condition with the announced blanket rule and its glomar precedent; add the presence-vs-absence axis and show the two directions coverage moves them; retract awkward 3 and the coverage-ratio wisher question; state the cost of the questionmark; note in the self-review artifacts that this correction came from the wisher and not from the review pass.'
+  gate: 'the vision no longer names a coverage ratio as the NOHARM invariant, carries the presence-vs-absence split, and states the forfeited-clean-signal cost; the self-review record notes the retraction and its source.'
