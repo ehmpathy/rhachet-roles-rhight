@@ -15,19 +15,21 @@ import { genTempDir, given, then, when } from 'test-fns';
 describe('patent.priors.fetch.sh', () => {
   const scriptPath = path.join(__dirname, 'patent.priors.fetch.sh');
 
-  // fail fast if credentials not set
-  beforeAll(() => {
-    if (!process.env.USPTO_ODP_API_KEY) {
+  /**
+   * .what = fail fast if live-api credentials are absent
+   * .why = live USPTO cases need real keys; called inside each live case so
+   *        the fixture/arg cases run without them
+   */
+  const assertLiveCredentials = (): void => {
+    if (!process.env.USPTO_ODP_API_KEY)
       throw new Error(
         'USPTO_ODP_API_KEY required. get a key at https://data.uspto.gov',
       );
-    }
-    if (!process.env.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS) {
+    if (!process.env.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS)
       throw new Error(
         'GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS required for OCR. run: rhx keyrack unlock --owner ehmpath --env test',
       );
-    }
-  });
+  };
 
   const runFetch = (input: {
     fetchArgs: string[];
@@ -95,7 +97,10 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given('[case4] valid exid (LIVE API)', () => {
+  // SKIPPED by commander decree (2026-10-18): the live USPTO cases are skipped
+  // until the CI USPTO_ODP_API_KEY is refreshed; restore them then (drop `.skip`)
+  given.skip('[case4] valid exid (LIVE API)', () => {
+    beforeAll(() => assertLiveCredentials());
     // CRITICAL: this test MUST hit the live USPTO API
     // if this test passes with a mock, the test suite is broken
     // note: USPTO API requires APPLICATION numbers (8 digits), not publication numbers
@@ -196,7 +201,10 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given('[case5] valid exid but patent not found (LIVE API)', () => {
+  // SKIPPED by commander decree (2026-10-18): the live USPTO cases are skipped
+  // until the CI USPTO_ODP_API_KEY is refreshed; restore them then (drop `.skip`)
+  given.skip('[case5] valid exid but patent not found (LIVE API)', () => {
+    beforeAll(() => assertLiveCredentials());
     // CRITICAL: this test MUST hit the live USPTO API to get a real 404
     when('[t0] fetch is called with nonexistent patent', () => {
       then('not found error is returned', () => {
@@ -228,7 +236,10 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given('[case7] --cache skip bypasses cache (LIVE API)', () => {
+  // SKIPPED by commander decree (2026-10-18): the live USPTO cases are skipped
+  // until the CI USPTO_ODP_API_KEY is refreshed; restore them then (drop `.skip`)
+  given.skip('[case7] --cache skip bypasses cache (LIVE API)', () => {
+    beforeAll(() => assertLiveCredentials());
     // CRITICAL: this test verifies --cache skip forces a fresh API call
     const knownExid = '19399196';
     const gitRoot = spawnSync('git', ['rev-parse', '--show-toplevel'], {
