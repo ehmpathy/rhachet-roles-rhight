@@ -421,3 +421,9 @@ inventory accepts out-of-state acts. an **absent element** is the problem.
 - `../jurats/compare.jurat-forms-across-jurisdictions.md` — why a jurat is not portable
 - `../practices/define.notary-public-and-how-to-get-notarized.md` — jurat vs acknowledgment, and why the difference decides whether you may pre-sign
 - `secretary` role — produces the document you bring to the notary
+
+## .date researched
+
+2026-08-30
+
+(taken from the brief's own registry count, stated "as of 2026-08-30")

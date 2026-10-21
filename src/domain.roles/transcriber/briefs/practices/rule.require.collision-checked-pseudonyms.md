@@ -138,3 +138,9 @@ a name adopted without a recorded check is indistinguishable from a name someone
 - `rule.require.bhrowser-citations` — why the check is a pull, never a
   recollection
 - `doc.pseudonymize` — the skill that applies the chosen name
+
+## .date researched
+
+2026-08-28
+
+(taken from the brief's own collision check, "measured (2026-08-28)")
