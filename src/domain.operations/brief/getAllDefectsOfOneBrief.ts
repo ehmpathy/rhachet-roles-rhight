@@ -70,10 +70,14 @@ export const getAllDefectsOfOneBrief = (input: {
     });
 
   // a source no sentence uses is a pad
+  const bodyCollapsed = asSectionMarksCollapsed({
+    text: anatomy.bodyAboveSources,
+  });
   for (const source of anatomy.sources) {
     const anchor = asSourceAnchor({ title: source.title });
     if (!anchor) continue;
-    if (anatomy.bodyAboveSources.includes(anchor)) continue;
+    if (bodyCollapsed.includes(asSectionMarksCollapsed({ text: anchor })))
+      continue;
     defects.push({
       path: input.path,
       check: 'source-anchor-unreferenced',
@@ -173,6 +177,14 @@ export const getAllDefectsOfOneBrief = (input: {
 
   return defects;
 };
+
+/**
+ * .what = collapse every run of section marks and the space after it to one `§`
+ * .why = `§ 170`, `§170`, and `§§ 170` cite one section. the anchor is built
+ *        with a space and a body may write none, so both sides compare collapsed
+ */
+const asSectionMarksCollapsed = (input: { text: string }): string =>
+  input.text.replace(/§+\s*/g, '§');
 
 /**
  * .what = the shortest distinctive token by which a body would cite a source
