@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`publish.redteam.sh given: [case2] a clean repo when: [t0] the red team runs then: the stdout matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 publish.redteam
+   ├─ roster: .pii-map (3 value(s))
+   ├─ published: 2 indexed + 0 untracked, not ignored
+   │
+   ├─ L1 deterministic
+   │  ├─ roster: 0 hit(s) across 0 file(s) of the published set
+   │  ├─ shapes: clean (pii.scan --via regex, tracked + untracked)
+   │  └─ demo verify: none declared (--demo DIR)
+   │
+   ├─ L2 publication surface
+   │  ├─ a. drift: 0 path(s) staged AND changed after (0 staged leak)
+   │  ├─ b. history: skipped (pass --history)
+   │  ├─ c. dist: skipped (no dist dir; --dist DIR to name one)
+   │  ├─ d. transform: 0 magnitude disclosure(s) · 0 structure hint(s) for review
+   │  ├─ e. twins: 0 real date(s) in another format · 0 file(s) with a date pair on a mapped offset (review) · 1 date key(s)
+   │  ├─ f. oracles: 0 digest(s) of a roster value
+   │  ├─ g. evidence: 0 path(s) under **/.demo/** outside a declared --demo
+   │  └─ h. money: skipped (no --entity and no --demo to tie terms to)
+   │
+   ├─ L3 blind review: not emitted (pass --emit-blind FILE) — emit-only by design
+   │
+   └─ L4 triage
+      ├─ P0 fix before release: 0
+      ├─ P1 owner decision: 0
+      ├─ P2 human review: 0
+      └─ every value above is masked (first two chars + ***)
+"
+`;
+
+exports[`publish.redteam.sh given: [case3] a leak staged, then fixed only in the worktree when: [t0] the red team runs then: the stdout matches its snapshot 1`] = `
+"
+🦅 hold up — this would publish a dox risk
+
+🔎 publish.redteam
+   ├─ roster: .pii-map (3 value(s))
+   ├─ published: 2 indexed + 0 untracked, not ignored
+   │
+   ├─ L1 deterministic
+   │  ├─ roster: 1 hit(s) across 1 file(s) of the published set
+   │  │  · notes.md  L1  Zo***
+   │  ├─ shapes: clean (pii.scan --via regex, tracked + untracked)
+   │  └─ demo verify: none declared (--demo DIR)
+   │
+   ├─ L2 publication surface
+   │  ├─ a. drift: 1 path(s) staged AND changed after (1 staged leak)
+   │  │  · notes.md  [staged leak — fixed only in the worktree]
+   │  ├─ b. history: skipped (pass --history)
+   │  ├─ c. dist: skipped (no dist dir; --dist DIR to name one)
+   │  ├─ d. transform: 0 magnitude disclosure(s) · 0 structure hint(s) for review
+   │  ├─ e. twins: 0 real date(s) in another format · 0 file(s) with a date pair on a mapped offset (review) · 1 date key(s)
+   │  ├─ f. oracles: 0 digest(s) of a roster value
+   │  ├─ g. evidence: 0 path(s) under **/.demo/** outside a declared --demo
+   │  └─ h. money: skipped (no --entity and no --demo to tie terms to)
+   │
+   ├─ L3 blind review: not emitted (pass --emit-blind FILE) — emit-only by design
+   │
+   └─ L4 triage
+      ├─ P0 fix before release: 2
+      ├─ P1 owner decision: 0
+      ├─ P2 human review: 0
+      └─ every value above is masked (first two chars + ***)
+"
+`;

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`statement.tally.sh given: [case1] statements that straddle a year boundary when: [t0] the directory is tallied then: output matches snapshot 1`] = `
+"# statement.tally
+
+source: \`$TMP/straddle\`
+card: \`9-99999\`
+
+> buckets by **charge date**, not statement date.
+> credits (cash back, refunds) are netted against charges.
+
+## per tax year
+
+| year | charges | count | credits | **net** | fees | interest |
+|------|--------:|------:|--------:|--------:|-----:|---------:|
+| 2023 | $150.00 | 2 | $0.00 | **$150.00** | $0.00 | $0.00 |
+| 2024 | $200.00 | 1 | $0.00 | **$200.00** | $0.00 | $0.00 |
+
+## reconciliation
+
+✅ every statement reconciles — summed charge rows equal each
+statement's own declared \`Total New Charges\`.
+
+
+🦅 tallied it,
+
+🧮 statement.tally
+   ├─ from: $TMP/straddle
+   ├─ card: 9-99999
+   ├─ statements: 2
+   ├─ rows: 9
+   ├─ by: year
+   └─ reconciled: ✅ all 2 statements
+"
+`;

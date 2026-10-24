@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`pdf.transcribe.via.optical given: [case1] --help flag when: [t0] help is requested then: usage info is displayed 1`] = `
+"usage: pdf.transcribe.via.optical.sh <pdf-path> [--into markdown]
+
+extract text from image-based PDFs via Google Cloud Vision OCR.
+
+args:
+  <pdf-path>       path to the PDF file
+  --into FORMAT    output format (default: markdown)
+  --cache skip     bypass cache and force fresh OCR
+  --help           show this help
+
+examples:
+  pdf.transcribe.via.optical.sh document.pdf
+  pdf.transcribe.via.optical.sh document.pdf --into markdown
+  pdf.transcribe.via.optical.sh scanned.pdf --cache skip
+"
+`;
+
+exports[`pdf.transcribe.via.optical given: [case2] no PDF path provided when: [t0] skill is called without arguments then: error is returned 1`] = `
+"
+🦅 that wont work...
+
+🔎 pdf.transcribe.via.optical
+   └─ blocked: no PDF path provided
+"
+`;
+
+exports[`pdf.transcribe.via.optical given: [case3] PDF file does not exist when: [t0] nonexistent file is specified then: error is returned 1`] = `
+"
+🦅 that wont work...
+
+🔎 pdf.transcribe.via.optical
+   └─ blocked: file not found: /nonexistent/file.pdf
+"
+`;
+
+exports[`pdf.transcribe.via.optical given: [case4] unsupported output format when: [t0] invalid format is specified then: error is returned 1`] = `
+"
+🦅 that wont work...
+
+🔎 pdf.transcribe.via.optical
+   └─ blocked: unsupported format: docx (only markdown supported)
+"
+`;
+
+exports[`pdf.transcribe.via.optical given: [case5] deterministic cached flow (uses fixture) when: [t0] cached result extant then: cache is used instead of OCR (no API calls) 1`] = `
+"
+🦅 found in cache,
+
+🔎 pdf.transcribe.via.optical
+   ├─ source: $TMP/.agent/.cache/patents/19399196/1.event.2025-11-24.office-action.pdf
+   ├─ cached: $TMP/.agent/.cache/patents/19399196/1.event.2025-11-24.office-action.md
+   └─ format: markdown
+
+<!-- generated test fixture, not real OCR -->
+
+## Page 1
+
+UNITED STATES PATENT AND TRADEMARK OFFICE
+OFFICE ACTION SUMMARY
+Application No. 19399196
+Claims 1-20 are pending in the application."
+`;
+
+exports[`pdf.transcribe.via.optical given: [case6] valid scanned PDF (LIVE API) when: [t0] OCR is performed on a real document then: text is extracted and cached 1`] = `
+"
+🦅 let me read that,
+
+🔎 pdf.transcribe.via.optical
+   ├─ source: $TMP/.agent/.cache/patents/19399196/1.event.2025-11-24.office-action.pdf
+   ├─ pages: 1
+   └─ format: markdown
+
+## Page 1
+"
+`;
+
+exports[`pdf.transcribe.via.optical given: [case7] one page of a multi-page scan, via --page (LIVE API) when: [t0] page 2 of a two-page scan is requested then: it reads page 2, labels it 2, and writes no document cache 1`] = `
+"
+🦅 let me read that,
+
+🔎 pdf.transcribe.via.optical
+   ├─ source: $TMP/.agent/.cache/patents/19399196/2.multipage.scanned.pdf
+   ├─ pages: 1
+   └─ format: markdown
+"
+`;

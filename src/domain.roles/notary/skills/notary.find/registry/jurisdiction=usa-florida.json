@@ -1,0 +1,732 @@
+{
+  "url": "https://online-notary.sunbiz.org/ServiceProviders",
+  "pulledAt": "2026-08-30T21:36:59.292Z",
+  "statedTotal": 121,
+  "harvested": 121,
+  "complete": true,
+  "pageCount": 3,
+  "walk": [
+    {
+      "pageNo": 1,
+      "rows": 50
+    },
+    {
+      "pageNo": 2,
+      "rows": 50
+    },
+    {
+      "pageNo": 3,
+      "rows": 21
+    }
+  ],
+  "uniqueNameCount": 100,
+  "names": [
+    "1STAR VENTURES LLC",
+    "AMROCK, LLC/ CLEAR SIGN",
+    "Amrock, LLC/Clear Sign",
+    "Apian Systems, LLC d/b/a NOTARY.IO",
+    "ASAP NOTARIES, INC",
+    "AUTHXPERTS LLC",
+    "Blend Signing Room",
+    "BLEND SIGNING ROOM",
+    "Blue Notary",
+    "BlueNotary",
+    "BLUENOTARY",
+    "CAFFEIN CODE INC - PAPERTRACKER",
+    "Caffeine Code Inc. - Paper Tracker",
+    "CAFFEINE CODE INC. - PAPERTRACKER",
+    "Camson Crown LLC",
+    "Century Legal",
+    "Clear Sign",
+    "CLOSING EXCHANGE",
+    "Cyberize It, LLC",
+    "Cyberize It, LLC a/k/a Cyberizite.com",
+    "CYBERIZE IT, LLC AKA CYBERIZEIT.COM",
+    "Digital Delivery, Inc.",
+    "Direct Mailing & Marketing Corp.",
+    "DocMagic, Inc.",
+    "DOCUSIGN",
+    "Docusign Inc.",
+    "Docusign, Inc.",
+    "DocVerify",
+    "DOCVERIFY",
+    "DOCVERIFY, INC. (WWW.DOCVERIFY.COM)",
+    "Eltropy, Inc.",
+    "eNotary On Call",
+    "ENOTARY ON CALL",
+    "ENOTARYLOG, LLC",
+    "ERNEST EDWARD FORD, JR.",
+    "Expedite",
+    "First American Vacation Ownership Signpost",
+    "FIRST AMERICAN VACATION OWNERSHIP SIGNPOST",
+    "GUARDIAN CONSUMER SERVICES, INC (DBA PAVASO, INC.)",
+    "IdenTrust",
+    "JUSTCAUSEPROCO",
+    "JustNotarized Inc.",
+    "KYS-TECH,INC",
+    "MARIODONOSO.COM",
+    "MB NOTARY SERVICES LLC",
+    "MYNOTARYDOC, LLC",
+    "NEXSYS",
+    "NEXSYS CLEAR SIGN",
+    "NEXSYS CLEAR SIGN (VIS THE CLOSING EXCHANGE)",
+    "NOTARIES.ID BY PROSPERS LLC (A FLORIDA CORP)",
+    "Notarize Genie",
+    "NOTARIZE NORD",
+    "Notarize, Inc.",
+    "NOTARIZE, INC.",
+    "Notarize, Inc. d/b/a Proof.com",
+    "Notarize.com",
+    "NOTARIZE.COM",
+    "Notaron.com",
+    "Notary Central",
+    "Notary Geek",
+    "Notary Launchpad",
+    "NOTARY.IO",
+    "NOTARYCAM, INC.",
+    "NOTARYFIX, INC.",
+    "NotaryHub.com by Everything Legal",
+    "NotaryHub.com by EverythingLegal",
+    "NotaryLive",
+    "NOTARYRON, LLC",
+    "One Notary",
+    "One Span North America Inc.",
+    "ONENOTARY",
+    "OneNotary, Inc.",
+    "ONENOTARY, INC.",
+    "Online Notary Center",
+    "OnlineNotary.net",
+    "OnlineNotary.us",
+    "Pactima",
+    "PACTIMA",
+    "Pactima LLC",
+    "PANDADOC, INC.",
+    "Pavaso",
+    "ProNotary",
+    "Proof.com",
+    "QUALIA LABS, INC",
+    "Rocket Close, LLC",
+    "RONARY",
+    "SECURED SIGNING",
+    "Secured Signing Inc.",
+    "SECURED SIGNING, LLC",
+    "SIGNIX, Inc.",
+    "SIGNIX, INC.",
+    "Simplifile, LC",
+    "Slate www.slate.inc",
+    "Snapdocs (f.k.a. Pactima)",
+    "Snapdocs Technologies LLC",
+    "STAVVY INC.",
+    "Stavvy, Inc.",
+    "TAMI LYNN KOWALKOWSKY",
+    "Team K5 Permits & Consulting LLC",
+    "USA NOTARY"
+  ],
+  "rows": [
+    [
+      "1STAR VENTURES LLC",
+      "[withheld]",
+      "Jun 24, 2025"
+    ],
+    [
+      "AMROCK, LLC/ CLEAR SIGN",
+      "[withheld]",
+      "Feb 24, 2023"
+    ],
+    [
+      "Amrock, LLC/Clear Sign",
+      "[withheld]",
+      "Jan 10, 2024"
+    ],
+    [
+      "Amrock, LLC/Clear Sign",
+      "[withheld]",
+      "Jan 29, 2025"
+    ],
+    [
+      "Apian Systems, LLC d/b/a NOTARY.IO",
+      "[withheld]",
+      "Aug 13, 2024"
+    ],
+    [
+      "ASAP NOTARIES, INC",
+      "[withheld]",
+      "Feb 26, 2022"
+    ],
+    [
+      "AUTHXPERTS LLC",
+      "[withheld]",
+      "Feb 18, 2025"
+    ],
+    [
+      "Blend Signing Room",
+      "[withheld]",
+      "Mar 19, 2025"
+    ],
+    [
+      "Blend Signing Room",
+      "[withheld]",
+      "Mar 19, 2026"
+    ],
+    [
+      "BLEND SIGNING ROOM",
+      "[withheld]",
+      "Apr 17, 2023"
+    ],
+    [
+      "Blend Signing Room",
+      "[withheld]",
+      "Mar 25, 2024"
+    ],
+    [
+      "Blue Notary",
+      "[withheld]",
+      "Jul 05, 2023"
+    ],
+    [
+      "BLUENOTARY",
+      "[withheld]",
+      "Jun 07, 2022"
+    ],
+    [
+      "BlueNotary",
+      "[withheld]",
+      "Oct 14, 2025"
+    ],
+    [
+      "BlueNotary",
+      "[withheld]",
+      "Jul 28, 2025"
+    ],
+    [
+      "CAFFEIN CODE INC - PAPERTRACKER",
+      "[withheld]",
+      "Feb 06, 2023"
+    ],
+    [
+      "Caffeine Code Inc. - Paper Tracker",
+      "[withheld]",
+      "Feb 20, 2024"
+    ],
+    [
+      "Caffeine Code Inc. - Paper Tracker",
+      "[withheld]",
+      "Mar 06, 2025"
+    ],
+    [
+      "CAFFEINE CODE INC. - PAPERTRACKER",
+      "[withheld]",
+      "Feb 24, 2022"
+    ],
+    [
+      "Camson Crown LLC",
+      "[withheld]",
+      "Sep 05, 2023"
+    ],
+    [
+      "Century Legal",
+      "[withheld]",
+      "Aug 21, 2023"
+    ],
+    [
+      "Clear Sign",
+      "[withheld]",
+      "Feb 06, 2026"
+    ],
+    [
+      "CLOSING EXCHANGE",
+      "[withheld]",
+      "Mar 24, 2022"
+    ],
+    [
+      "Cyberize It, LLC",
+      "[withheld]",
+      "Nov 07, 2024"
+    ],
+    [
+      "Cyberize It, LLC a/k/a Cyberizite.com",
+      "[withheld]",
+      "Nov 13, 2023"
+    ],
+    [
+      "CYBERIZE IT, LLC AKA CYBERIZEIT.COM",
+      "[withheld]",
+      "Jan 09, 2023"
+    ],
+    [
+      "Digital Delivery, Inc.",
+      "[withheld]",
+      "Jun 24, 2022"
+    ],
+    [
+      "Direct Mailing & Marketing Corp.",
+      "[withheld]",
+      "Jul 07, 2023"
+    ],
+    [
+      "DocMagic, Inc.",
+      "[withheld]",
+      "Jan 09, 2023"
+    ],
+    [
+      "DocMagic, Inc.",
+      "[withheld]",
+      "Jan 04, 2024"
+    ],
+    [
+      "DocMagic, Inc.",
+      "[withheld]",
+      "Jan 03, 2025"
+    ],
+    [
+      "DocMagic, Inc.",
+      "[withheld]",
+      "Jan 06, 2026"
+    ],
+    [
+      "DOCUSIGN",
+      "[withheld]",
+      "Aug 09, 2022"
+    ],
+    [
+      "Docusign Inc.",
+      "[withheld]",
+      "Jul 23, 2026"
+    ],
+    [
+      "Docusign, Inc.",
+      "[withheld]",
+      "Jul 18, 2023"
+    ],
+    [
+      "DocVerify",
+      "[withheld]",
+      "Apr 23, 2024"
+    ],
+    [
+      "DOCVERIFY",
+      "[withheld]",
+      "Apr 20, 2023"
+    ],
+    [
+      "DOCVERIFY, INC. (WWW.DOCVERIFY.COM)",
+      "[withheld]",
+      "Mar 23, 2022"
+    ],
+    [
+      "Eltropy, Inc.",
+      "[withheld]",
+      "Dec 18, 2025"
+    ],
+    [
+      "eNotary On Call",
+      "[withheld]",
+      "May 15, 2025"
+    ],
+    [
+      "ENOTARY ON CALL",
+      "[withheld]",
+      "Mar 11, 2022"
+    ],
+    [
+      "ENOTARYLOG, LLC",
+      "[withheld]",
+      "Mar 01, 2022"
+    ],
+    [
+      "ERNEST EDWARD FORD, JR.",
+      "[withheld]",
+      "Mar 22, 2022"
+    ],
+    [
+      "Expedite",
+      "[withheld]",
+      "Sep 21, 2025"
+    ],
+    [
+      "Expedite",
+      "[withheld]",
+      "Nov 12, 2025"
+    ],
+    [
+      "Expedite",
+      "[withheld]",
+      "Sep 13, 2024"
+    ],
+    [
+      "First American Vacation Ownership Signpost",
+      "[withheld]",
+      "May 09, 2025"
+    ],
+    [
+      "First American Vacation Ownership Signpost",
+      "[withheld]",
+      "May 05, 2026"
+    ],
+    [
+      "FIRST AMERICAN VACATION OWNERSHIP SIGNPOST",
+      "[withheld]",
+      "Mar 21, 2022"
+    ],
+    [
+      "First American Vacation Ownership Signpost",
+      "[withheld]",
+      "May 15, 2024"
+    ],
+    [
+      "GUARDIAN CONSUMER SERVICES, INC (DBA PAVASO, INC.)",
+      "[withheld]",
+      "Feb 24, 2022"
+    ],
+    [
+      "IdenTrust",
+      "[withheld]",
+      "Oct 02, 2024"
+    ],
+    [
+      "JUSTCAUSEPROCO",
+      "[withheld]",
+      "Sep 09, 2022"
+    ],
+    [
+      "JustNotarized Inc.",
+      "[withheld]",
+      "Jul 30, 2024"
+    ],
+    [
+      "KYS-TECH,INC",
+      "[withheld]",
+      "May 24, 2022"
+    ],
+    [
+      "MARIODONOSO.COM",
+      "[withheld]",
+      "Jun 01, 2023"
+    ],
+    [
+      "MB NOTARY SERVICES LLC",
+      "[withheld]",
+      "Jan 01, 0001"
+    ],
+    [
+      "MYNOTARYDOC, LLC",
+      "[withheld]",
+      "Mar 31, 2022"
+    ],
+    [
+      "NEXSYS",
+      "[withheld]",
+      "Mar 24, 2022"
+    ],
+    [
+      "NEXSYS CLEAR SIGN",
+      "[withheld]",
+      "Mar 08, 2022"
+    ],
+    [
+      "NEXSYS CLEAR SIGN (VIS THE CLOSING EXCHANGE)",
+      "[withheld]",
+      "Mar 19, 2022"
+    ],
+    [
+      "NOTARIES.ID BY PROSPERS LLC (A FLORIDA CORP)",
+      "[withheld]",
+      "Jun 02, 2023"
+    ],
+    [
+      "Notarize Genie",
+      "[withheld]",
+      "Jan 12, 2023"
+    ],
+    [
+      "NOTARIZE NORD",
+      "[withheld]",
+      "Feb 23, 2026"
+    ],
+    [
+      "Notarize, Inc.",
+      "[withheld]",
+      "Dec 03, 2025"
+    ],
+    [
+      "NOTARIZE, INC.",
+      "[withheld]",
+      "Feb 22, 2022"
+    ],
+    [
+      "Notarize, Inc. d/b/a Proof.com",
+      "[withheld]",
+      "Jan 16, 2025"
+    ],
+    [
+      "NOTARIZE.COM",
+      "[withheld]",
+      "Mar 21, 2022"
+    ],
+    [
+      "Notarize.com",
+      "[withheld]",
+      "Jul 05, 2023"
+    ],
+    [
+      "Notaron.com",
+      "[withheld]",
+      "Oct 07, 2025"
+    ],
+    [
+      "Notary Central",
+      "[withheld]",
+      "Nov 21, 2025"
+    ],
+    [
+      "Notary Geek",
+      "[withheld]",
+      "Apr 14, 2026"
+    ],
+    [
+      "Notary Geek",
+      "[withheld]",
+      "Apr 23, 2025"
+    ],
+    [
+      "Notary Geek",
+      "[withheld]",
+      "Apr 19, 2024"
+    ],
+    [
+      "Notary Launchpad",
+      "[withheld]",
+      "Nov 05, 2025"
+    ],
+    [
+      "Notary Launchpad",
+      "[withheld]",
+      "Nov 05, 2025"
+    ],
+    [
+      "NOTARY.IO",
+      "[withheld]",
+      "Aug 13, 2024"
+    ],
+    [
+      "NOTARYCAM, INC.",
+      "[withheld]",
+      "Feb 25, 2022"
+    ],
+    [
+      "NOTARYFIX, INC.",
+      "[withheld]",
+      "May 16, 2022"
+    ],
+    [
+      "NotaryHub.com by Everything Legal",
+      "[withheld]",
+      "Oct 01, 2025"
+    ],
+    [
+      "NotaryHub.com by EverythingLegal",
+      "[withheld]",
+      "Mar 22, 2023"
+    ],
+    [
+      "NotaryHub.com by EverythingLegal",
+      "[withheld]",
+      "May 08, 2024"
+    ],
+    [
+      "NotaryLive",
+      "[withheld]",
+      "Jul 19, 2022"
+    ],
+    [
+      "NOTARYRON, LLC",
+      "[withheld]",
+      "Feb 10, 2026"
+    ],
+    [
+      "One Notary",
+      "[withheld]",
+      "Nov 24, 2025"
+    ],
+    [
+      "One Span North America Inc.",
+      "[withheld]",
+      "Aug 01, 2024"
+    ],
+    [
+      "ONENOTARY",
+      "[withheld]",
+      "Feb 22, 2022"
+    ],
+    [
+      "ONENOTARY, INC.",
+      "[withheld]",
+      "Jan 27, 2023"
+    ],
+    [
+      "OneNotary, Inc.",
+      "[withheld]",
+      "Feb 18, 2025"
+    ],
+    [
+      "Online Notary Center",
+      "[withheld]",
+      "Jul 08, 2024"
+    ],
+    [
+      "OnlineNotary.net",
+      "[withheld]",
+      "Apr 13, 2023"
+    ],
+    [
+      "OnlineNotary.us",
+      "[withheld]",
+      "Feb 27, 2024"
+    ],
+    [
+      "PACTIMA",
+      "[withheld]",
+      "Nov 17, 2022"
+    ],
+    [
+      "Pactima",
+      "[withheld]",
+      "May 16, 2025"
+    ],
+    [
+      "Pactima LLC",
+      "[withheld]",
+      "Dec 15, 2025"
+    ],
+    [
+      "PANDADOC, INC.",
+      "[withheld]",
+      "Mar 15, 2022"
+    ],
+    [
+      "Pavaso",
+      "[withheld]",
+      "Jun 13, 2024"
+    ],
+    [
+      "ProNotary",
+      "[withheld]",
+      "Feb 20, 2024"
+    ],
+    [
+      "Proof.com",
+      "[withheld]",
+      "Jan 19, 2024"
+    ],
+    [
+      "QUALIA LABS, INC",
+      "[withheld]",
+      "Mar 21, 2022"
+    ],
+    [
+      "Rocket Close, LLC",
+      "[withheld]",
+      "Apr 01, 2025"
+    ],
+    [
+      "RONARY",
+      "[withheld]",
+      "Jul 26, 2022"
+    ],
+    [
+      "SECURED SIGNING",
+      "[withheld]",
+      "Mar 21, 2022"
+    ],
+    [
+      "Secured Signing Inc.",
+      "[withheld]",
+      "Dec 26, 2024"
+    ],
+    [
+      "SECURED SIGNING, LLC",
+      "[withheld]",
+      "Feb 22, 2022"
+    ],
+    [
+      "SIGNIX, INC.",
+      "[withheld]",
+      "Mar 29, 2022"
+    ],
+    [
+      "SIGNIX, Inc.",
+      "[withheld]",
+      "Jul 24, 2026"
+    ],
+    [
+      "Simplifile, LC",
+      "[withheld]",
+      "Apr 13, 2026"
+    ],
+    [
+      "Simplifile, LC",
+      "[withheld]",
+      "Apr 01, 2025"
+    ],
+    [
+      "Simplifile, LC",
+      "[withheld]",
+      "Apr 10, 2024"
+    ],
+    [
+      "Simplifile, LC",
+      "[withheld]",
+      "Mar 02, 2023"
+    ],
+    [
+      "Slate www.slate.inc",
+      "[withheld]",
+      "Mar 12, 2026"
+    ],
+    [
+      "Snapdocs (f.k.a. Pactima)",
+      "[withheld]",
+      "Mar 25, 2026"
+    ],
+    [
+      "Snapdocs Technologies LLC",
+      "[withheld]",
+      "Mar 03, 2026"
+    ],
+    [
+      "STAVVY INC.",
+      "[withheld]",
+      "Jan 05, 2023"
+    ],
+    [
+      "Stavvy, Inc.",
+      "[withheld]",
+      "Jan 10, 2024"
+    ],
+    [
+      "Stavvy, Inc.",
+      "[withheld]",
+      "Jan 03, 2025"
+    ],
+    [
+      "Stavvy, Inc.",
+      "[withheld]",
+      "Dec 05, 2025"
+    ],
+    [
+      "TAMI LYNN KOWALKOWSKY",
+      "[withheld]",
+      "Mar 01, 2022"
+    ],
+    [
+      "Team K5 Permits & Consulting LLC",
+      "[withheld]",
+      "Apr 09, 2024"
+    ],
+    [
+      "USA NOTARY",
+      "[withheld]",
+      "Oct 07, 2022"
+    ]
+  ]
+}
