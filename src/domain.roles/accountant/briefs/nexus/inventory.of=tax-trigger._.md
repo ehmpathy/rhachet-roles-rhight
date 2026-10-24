@@ -6,7 +6,11 @@ per state, WHEN a corporation chartered elsewhere — one that sells services or
 
 ⚠️ the tax answer is not the registration answer — different agency, different test. see `define.three-duties-three-tests` and the registration twin below.
 
-⛔ in every state, P.L. 86-272 shields only solicitation of orders for **tangible** goods — never services or software (15 U.S.C. §381).
+⛔ in every state, P.L. 86-272 shields only solicitation of orders for **tangible** goods — never services or software (15 U.S.C. §381). the claim and its sources: `define.three-duties-three-tests`.
+
+## .citations
+
+this root is a navigation/rollup artifact. it makes no independent factual claim: each grid cell is its entry's own `.answer`, and each entry carries the sources for it. per `rule.require.seven-distinct-citations`, it inherits its citations from the docs it links.
 
 ## .the axes
 

@@ -300,19 +300,16 @@ QSBS. investor compatibility holds regardless; QSBS does not.
 
 ### the statutes — pulled 2026-08-31, bhrowser headful
 
-- [26 U.S.C. §1202](https://www.law.cornell.edu/uscode/text/26/1202) — QSBS.
+1. [26 U.S.C. §1202](https://www.law.cornell.edu/uscode/text/26/1202) — QSBS.
   **(a)(5)** the percentage table · **(b)(2)** the holding period · **(b)(4)**
   the cap, and its two tiers · **(b)(5)** indexation after 2026 · **(c)(1)**
   *"any stock in a C corporation"* · **(d)** the gross-assets test ·
   ⭐ **(e)(3)** the qualified-trade-or-business exclusions · **(e)(1)(A)** the
   80%-of-assets-by-value requirement that makes (e)(3) all-or-none
-- [26 U.S.C. §199A](https://www.law.cornell.edu/uscode/text/26/199A) — QBI.
+2. [26 U.S.C. §199A](https://www.law.cornell.edu/uscode/text/26/199A) — QBI.
   ⭐ **(d)(2)(A)** defines a specified service trade or business **by direct
   cross-reference to §1202(e)(3)(A)**, with `employees or owners` substituted ·
   **(d)(3)** the phase-in band above the threshold
-- [26 U.S.C. §1402](https://www.law.cornell.edu/uscode/text/26/1402) —
-  self-employment income. **(b)(1)** the contribution-and-benefit-base cap on
-  the §1401(a) portion · **(a)(12)** the deduction that yields the ~92.35% base
 
 ⭐ the §1202 figures were dated by an **edition diff** against the govinfo 2023
 edition: `$15,000,000` appears twice now and **zero** times in 2023;
@@ -321,7 +318,7 @@ source that still says *"$10M, 5 years, 100%, $50M gross assets"* predates it.
 
 ### the statutes — pulled 2026-09-01, bhrowser headful, two publishers
 
-- [26 U.S.C. §1361](https://www.law.cornell.edu/uscode/text/26/1361) — who may
+3. [26 U.S.C. §1361](https://www.law.cornell.edu/uscode/text/26/1361) — who may
   elect. **(b)(1)(A)–(D)** the four tests · ⭐ **(b)(1)(B)** the three-exception
   parenthesis · **(b)(2)** the closed list of ineligible corporations ·
   ⭐ **(c)(1)** family aggregation, 6 generations, applicable **October 22,
@@ -329,7 +326,7 @@ source that still says *"$10M, 5 years, 100%, $50M gross assets"* predates it.
   alienage carve-out · **(c)(3)** a bankruptcy estate · ⭐ **(c)(4)** the
   vote-difference carve-out · **(c)(5)** straight debt · **(c)(6)** §401(a) and
   §501(c)(3) organizations
-- [26 U.S.C. §1362](https://www.law.cornell.edu/uscode/text/26/1362) — the
+4. [26 U.S.C. §1362](https://www.law.cornell.edu/uscode/text/26/1362) — the
   election. **(a)(2)** shareholder consent · ⭐ **(b)(1)(A)** the prior-year
   window · **(b)(1)(B)** the 15th day of the **3d** month · **(b)(3)** a late
   election is made for the following year · ⭐ **(b)(5)** reasonable-cause
@@ -343,11 +340,19 @@ Cornell lacks — the `3d`/`3rd` outlier (Pub. L. 98–369 §721(l)(2), 1984) an
 
 ### secondary — read as commentary, never as authority
 
-- [IRS: S Corporation Employees, Shareholders and Corporate Officers](https://www.irs.gov/businesses/small-businesses-self-employed/s-corporation-employees-shareholders-and-corporate-officers)
-- [IRS: About Form 2553](https://www.irs.gov/forms-pubs/about-form-2553)
-- [Wolters Kluwer: S Corp vs C Corp Differences](https://www.wolterskluwer.com/en/expert-insights/s-corp-vs-c-corp-differences-benefits)
-- [SDO CPA: S-Corp vs C-Corp Tax Comparison 2026](https://www.sdocpa.com/c-corp-vs-s-corp-tax-comparison/)
-- [SDO CPA: C-Corporation Tax Guide](https://www.sdocpa.com/c-corporation-tax-guide/)
-- [Carta: QSBS Explained](https://carta.com/learn/startups/tax-planning/qsbs/)
-- [The Startup Law Blog: Only C-Corps Can Issue QSBS](https://www.thestartuplawblog.com/only-c-corps-can-issue-qsbs-1202-tax-break/)
-- [WCG CPAs: S Corp Reasonable Salary](https://wcginc.com/business-services/s-corp-salary/)
+5. [IRS: S Corporation Employees, Shareholders and Corporate Officers](https://www.irs.gov/businesses/small-businesses-self-employed/s-corporation-employees-shareholders-and-corporate-officers)
+6. [IRS: About Form 2553](https://www.irs.gov/forms-pubs/about-form-2553)
+7. [Wolters Kluwer: S Corp vs C Corp Differences](https://www.wolterskluwer.com/en/expert-insights/s-corp-vs-c-corp-differences-benefits)
+8. [SDO CPA: S-Corp vs C-Corp Tax Comparison 2026](https://www.sdocpa.com/c-corp-vs-s-corp-tax-comparison/)
+9. [SDO CPA: C-Corporation Tax Guide](https://www.sdocpa.com/c-corporation-tax-guide/)
+10. [Carta: QSBS Explained](https://carta.com/learn/startups/tax-planning/qsbs/)
+11. [The Startup Law Blog: Only C-Corps Can Issue QSBS](https://www.thestartuplawblog.com/only-c-corps-can-issue-qsbs-1202-tax-break/)
+12. [WCG CPAs: S Corp Reasonable Salary](https://wcginc.com/business-services/s-corp-salary/)
+
+### read, not cited above
+
+read in the research and kept for the record; no sentence above relies on it.
+
+- [26 U.S.C. §1402](https://www.law.cornell.edu/uscode/text/26/1402) —
+  self-employment income. **(b)(1)** the contribution-and-benefit-base cap on
+  the §1401(a) portion · **(a)(12)** the deduction that yields the ~92.35% base

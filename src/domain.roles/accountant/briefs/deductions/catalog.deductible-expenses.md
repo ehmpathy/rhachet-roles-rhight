@@ -176,12 +176,12 @@ rate rows pulled with **bhrowser**, headful, per `rule.require.bhrowser-citation
 
 ## .sources
 
-- [26 U.S.C. § 274 — 2024 edition, govinfo](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partIX-sec274.htm)
-- [26 U.S.C. § 274 — Cornell current text](https://www.law.cornell.edu/uscode/text/26/274)
-- [26 U.S.C. § 170 — Cornell current text](https://www.law.cornell.edu/uscode/text/26/170)
-- [IRC § 162 — Trade or business expenses](https://www.law.cornell.edu/uscode/text/26/162)
-- [Stripe: Business startup tax deductions](https://stripe.com/resources/more/business-startup-tax-deductions-101-what-every-business-needs-to-know)
-- [Insureon: C Corporation Tax Deductions](https://www.insureon.com/blog/tax-deductions-for-c-corps)
-- [IRS: Instructions for Form 1120](https://www.irs.gov/instructions/i1120)
+1. [26 U.S.C. § 274 — 2024 edition, govinfo](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partIX-sec274.htm)
+2. [26 U.S.C. § 274 — Cornell current text](https://www.law.cornell.edu/uscode/text/26/274)
+3. [26 U.S.C. § 170 — Cornell current text](https://www.law.cornell.edu/uscode/text/26/170)
+4. [IRC § 162 — Trade or business expenses](https://www.law.cornell.edu/uscode/text/26/162)
+5. [Stripe: Business startup tax deductions](https://stripe.com/resources/more/business-startup-tax-deductions-101-what-every-business-needs-to-know)
+6. [Insureon: C Corporation Tax Deductions](https://www.insureon.com/blog/tax-deductions-for-c-corps)
+7. [IRS: Instructions for Form 1120](https://www.irs.gov/instructions/i1120)
 
 > ⚠️ not tax advice. this catalog helps you *aggregate candidates*; a CPA confirms deductibility and category per item.

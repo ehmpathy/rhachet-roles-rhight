@@ -192,20 +192,20 @@ on **June 1 of the tax year** — and the $85,165.00 method-A figure above is
 
 ### the statute
 
-- [8 Del. C. §503](https://delcode.delaware.gov/title8/c005/index.html) — the two methods: (a)(1) authorized shares, (a)(2) assumed par value, (b) the taxpayer's election, (c) cap and floor
-- [8 Del. C. §504](https://delcode.delaware.gov/title8/c005/index.html) — due dates, the $5,000 installment threshold, interest
-- [30 Del. C. §1902(b)(6)](https://delcode.delaware.gov/title30/c019/index.html) — the corporate income tax exemption quoted above
+1. [8 Del. C. §503](https://delcode.delaware.gov/title8/c005/index.html) — the two methods: (a)(1) authorized shares, (a)(2) assumed par value, (b) the taxpayer's election, (c) cap and floor
+2. [8 Del. C. §504](https://delcode.delaware.gov/title8/c005/index.html) — due dates, the $5,000 installment threshold, interest
+3. [30 Del. C. §1902(b)(6)](https://delcode.delaware.gov/title30/c019/index.html) — the corporate income tax exemption quoted above
 
 ### the agency
 
-- [Delaware Division of Corporations: Franchise Tax](https://corp.delaware.gov/frtax/)
-- [Delaware Division of Corporations: Tax Instructions](https://corp.delaware.gov/paytaxes/)
-- [Delaware Franchise Tax Calculator](https://corp.delaware.gov/taxcalc/)
+4. [Delaware Division of Corporations: Franchise Tax](https://corp.delaware.gov/frtax/)
+5. [Delaware Division of Corporations: Tax Instructions](https://corp.delaware.gov/paytaxes/)
+6. [Delaware Franchise Tax Calculator](https://corp.delaware.gov/taxcalc/)
 
 ### secondary — restates the statute, and is cited above only where quoted
 
-- [DLA Piper: Delaware Franchise Tax](https://www.dlapiper.com/en/insights/publications/accelerate/formation/delaware-franchise-tax)
-- [Clerky: Calculate Delaware Franchise Tax](https://help.clerky.com/article/2796-calculate-delaware-franchise-tax)
+7. [DLA Piper: Delaware Franchise Tax](https://www.dlapiper.com/en/insights/publications/accelerate/formation/delaware-franchise-tax)
+8. [Clerky: Calculate Delaware Franchise Tax](https://help.clerky.com/article/2796-calculate-delaware-franchise-tax)
 
 ---
 

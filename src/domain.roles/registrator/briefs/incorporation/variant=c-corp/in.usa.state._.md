@@ -266,10 +266,10 @@ do you plan to raise VC?
 
 ## .sources
 
-- [LegalZoom: Incorporating in Delaware](https://www.legalzoom.com/articles/incorporating-in-delaware-advantages-and-disadvantages)
-- [Stripe: Incorporating in Delaware vs Other States](https://stripe.com/resources/more/incorporating-in-delaware-vs-other-states-differences-and-key-considerations)
-- [Silicon Valley Bank: Why Incorporate in Delaware](https://www.svb.com/startup-insights/vc-relations/why-incorporate-in-delaware/)
-- [Wolters Kluwer: Why Incorporate in Delaware or Nevada](https://www.wolterskluwer.com/en/expert-insights/why-incorporate-in-delaware-or-nevada)
-- [NCH Inc: Wyoming vs Delaware](https://nchinc.com/compare-your-state/wyoming/vs-delaware)
-- [Nomad Capitalist: State Comparison](https://nomadcapitalist.com/finance/new-mexico-vs-wyoming-llc-comparison/)
-- [WY SoS fee schedule](https://sos.wyo.gov/forms/business/feeschedule.pdf) — effective 2026-07-01
+1. [LegalZoom: Incorporating in Delaware](https://www.legalzoom.com/articles/incorporating-in-delaware-advantages-and-disadvantages)
+2. [Stripe: Incorporating in Delaware vs Other States](https://stripe.com/resources/more/incorporating-in-delaware-vs-other-states-differences-and-key-considerations)
+3. [Silicon Valley Bank: Why Incorporate in Delaware](https://www.svb.com/startup-insights/vc-relations/why-incorporate-in-delaware/)
+4. [Wolters Kluwer: Why Incorporate in Delaware or Nevada](https://www.wolterskluwer.com/en/expert-insights/why-incorporate-in-delaware-or-nevada)
+5. [NCH Inc: Wyoming vs Delaware](https://nchinc.com/compare-your-state/wyoming/vs-delaware)
+6. [Nomad Capitalist: State Comparison](https://nomadcapitalist.com/finance/new-mexico-vs-wyoming-llc-comparison/)
+7. [WY SoS fee schedule](https://sos.wyo.gov/forms/business/feeschedule.pdf) — effective 2026-07-01

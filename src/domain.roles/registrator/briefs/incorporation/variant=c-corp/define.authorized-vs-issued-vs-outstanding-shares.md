@@ -470,26 +470,26 @@ at any stated par value from $0.000001 through $0.10, step 3 yields $10 to $1,00
 
 primary — Delaware statute:
 
-- [8 Del. C. §152, §153, §158, §160 — issuance, consideration, certificates, treasury stock](https://delcode.delaware.gov/title8/c001/sc05/index.html)
-- [8 Del. C. §219, §224 — stock ledger and form of records](https://delcode.delaware.gov/title8/c001/sc07/index.html)
-- [8 Del. C. §241, §242 — charter amendment before and after payment for stock](https://delcode.delaware.gov/title8/c001/sc08/index.html)
-- [8 Del. C. ch. 5 §502, §503, §504 — annual report, rates, penalties](https://delcode.delaware.gov/title8/c005/index.html)
+1. [8 Del. C. §152, §153, §158, §160 — issuance, consideration, certificates, treasury stock](https://delcode.delaware.gov/title8/c001/sc05/index.html)
+2. [8 Del. C. §219, §224 — stock ledger and form of records](https://delcode.delaware.gov/title8/c001/sc07/index.html)
+3. [8 Del. C. §241, §242 — charter amendment before and after payment for stock](https://delcode.delaware.gov/title8/c001/sc08/index.html)
+4. [8 Del. C. ch. 5 §502, §503, §504 — annual report, rates, penalties](https://delcode.delaware.gov/title8/c005/index.html)
 
 primary — Delaware Division of Corporations:
 
-- [How to Calculate Franchise Taxes](https://corp.delaware.gov/frtaxcalc/)
-- [Annual Report and Tax Instructions](https://corp.delaware.gov/paytaxes/)
-- [Franchise Tax Calculator and Disclaimer](https://corp.delaware.gov/taxcalc/)
-- [Franchise Tax FAQ](https://corp.delaware.gov/taxfaq/)
-- [Annual Report and Tax Information](https://corp.delaware.gov/frtax/)
+5. [How to Calculate Franchise Taxes](https://corp.delaware.gov/frtaxcalc/)
+6. [Annual Report and Tax Instructions](https://corp.delaware.gov/paytaxes/)
+7. [Franchise Tax Calculator and Disclaimer](https://corp.delaware.gov/taxcalc/)
+8. [Franchise Tax FAQ](https://corp.delaware.gov/taxfaq/)
+9. [Annual Report and Tax Information](https://corp.delaware.gov/frtax/)
 
 secondary:
 
-- [Harvard Business Services: Common Mistakes on the Delaware Annual Report](https://www.delawareinc.com/blog/common-annual-report-mistakes/)
-- [Harvard Business Services: How To Amend Your Company's Delaware Annual Report](https://www.delawareinc.com/blog/how-to-amend-annual-report/)
-- [Wolters Kluwer: Delaware Incorporation — why the number of authorized shares matters](https://www.wolterskluwer.com/en/expert-insights/delaware-incorporation-why-the-number-of-authorized-shares-matters)
-- [Clerky: How do I calculate the Delaware franchise tax?](https://help.clerky.com/article/2796-calculate-delaware-franchise-tax)
-- [EisnerAmper: How Do I Calculate the Delaware Franchise Tax?](https://www.eisneramper.com/insights/life-sciences/c-corp-delaware-franchise-0122/)
+10. [Harvard Business Services: Common Mistakes on the Delaware Annual Report](https://www.delawareinc.com/blog/common-annual-report-mistakes/)
+11. [Harvard Business Services: How To Amend Your Company's Delaware Annual Report](https://www.delawareinc.com/blog/how-to-amend-annual-report/)
+12. [Wolters Kluwer: Delaware Incorporation — why the number of authorized shares matters](https://www.wolterskluwer.com/en/expert-insights/delaware-incorporation-why-the-number-of-authorized-shares-matters)
+13. [Clerky: How do I calculate the Delaware franchise tax?](https://help.clerky.com/article/2796-calculate-delaware-franchise-tax)
+14. [EisnerAmper: How Do I Calculate the Delaware Franchise Tax?](https://www.eisneramper.com/insights/life-sciences/c-corp-delaware-franchise-0122/)
 
 ---
 

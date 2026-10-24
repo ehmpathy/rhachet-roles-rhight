@@ -324,11 +324,11 @@ fabricated quote — is **not** the live path; the schedule is at
 
 ### secondary — read as commentary, never as authority
 
-- [Stripe: Cheapest State to Incorporate an LLC](https://stripe.com/resources/more/what-is-the-cheapest-state-to-incorporate-an-llc-in-the-us)
-- [NCH Inc: State Filing Fees Breakdown](https://nchinc.com/blog/business-startup/state-filing-fees-breakdown-where-its-cheapest-to-form-an-llc/)
-- [LLC University: LLC Annual Fees by State](https://www.llcuniversity.com/llc-annual-fees-by-state/)
-- [LLC University: Foreign LLC Fees by State](https://www.llcuniversity.com/foreign-llc-fees-by-state/)
-- [Terms.Law: 50-State Corporation Fee Comparison](https://terms.law/2025/04/23/50-state-corporation-fee-comparison-finding-the-most-cost-effective-states-for-incorporation-in-2025/)
-- [Wolters Kluwer: New Mexico LLC Requirements](https://www.wolterskluwer.com/en/solutions/bizfilings/state-guides/new-mexico-llc-requirements)
-- [State Business Compliance: Wyoming LLC Costs](https://www.statebusinesscompliance.com/blog/wyoming-llc-taxes-annual-fees-2026)
-- [MyLLC: Cost of an LLC in 2025](https://www.myllc.com/cost-of-llc-2025.aspx)
+1. [Stripe: Cheapest State to Incorporate an LLC](https://stripe.com/resources/more/what-is-the-cheapest-state-to-incorporate-an-llc-in-the-us)
+2. [NCH Inc: State Filing Fees Breakdown](https://nchinc.com/blog/business-startup/state-filing-fees-breakdown-where-its-cheapest-to-form-an-llc/)
+3. [LLC University: LLC Annual Fees by State](https://www.llcuniversity.com/llc-annual-fees-by-state/)
+4. [LLC University: Foreign LLC Fees by State](https://www.llcuniversity.com/foreign-llc-fees-by-state/)
+5. [Terms.Law: 50-State Corporation Fee Comparison](https://terms.law/2025/04/23/50-state-corporation-fee-comparison-finding-the-most-cost-effective-states-for-incorporation-in-2025/)
+6. [Wolters Kluwer: New Mexico LLC Requirements](https://www.wolterskluwer.com/en/solutions/bizfilings/state-guides/new-mexico-llc-requirements)
+7. [State Business Compliance: Wyoming LLC Costs](https://www.statebusinesscompliance.com/blog/wyoming-llc-taxes-annual-fees-2026)
+8. [MyLLC: Cost of an LLC in 2025](https://www.myllc.com/cost-of-llc-2025.aspx)

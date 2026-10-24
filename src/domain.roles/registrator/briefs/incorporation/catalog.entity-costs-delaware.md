@@ -228,20 +228,20 @@ S-corp SE tax savings must exceed the extra compliance cost (~$1,000-$2,700 more
 ### Delaware Division of Corporations (official)
 - ⭐ [**Fee Schedule**, revised 2026-08-01](https://corpfiles.delaware.gov/Fee_Schedule/AugustFee2026.pdf) — **the actual schedule.** every state filing fee on this page. pulled 2026-08-31 as bytes through the browser request context, extracted with `pdftotext`: 254,794 bytes → 34,625 chars, 208 lines that carry a dollar figure
 - ⛔ [Fee Schedule *hub*](https://corp.delaware.gov/fee/) — **not a fee source.** it carries **zero** dollar figures; its whole content is a link to the PDF above — see `.formation costs` above
-- [Annual Report and Tax Instructions](https://corp.delaware.gov/paytaxes/)
-- [Franchise Tax Information](https://corp.delaware.gov/frtax/)
-- [LLC/LP/GP Tax Instructions](https://corp.delaware.gov/alt-entitytaxinstructions/)
+1. [Annual Report and Tax Instructions](https://corp.delaware.gov/paytaxes/)
+2. [Franchise Tax Information](https://corp.delaware.gov/frtax/)
+3. [LLC/LP/GP Tax Instructions](https://corp.delaware.gov/alt-entitytaxinstructions/)
 
 ### compliance cost sources
-- [WCG CPAs: S Corp Costs](https://wcginc.com/kb/costs-of-operating-an-s-corp/)
-- [SDO CPA: LLC vs S-Corp Comparison](https://www.sdocpa.com/llc-vs-s-corp-complete-comparison/)
-- [SDO CPA: S-Corporation Tax Guide](https://www.sdocpa.com/s-corporation-tax-guide/)
-- [S Corporations Explained: Common Costs](http://scorporationsexplained.com/scorpexplained-costs.htm)
+4. [WCG CPAs: S Corp Costs](https://wcginc.com/kb/costs-of-operating-an-s-corp/)
+5. [SDO CPA: LLC vs S-Corp Comparison](https://www.sdocpa.com/llc-vs-s-corp-complete-comparison/)
+6. [SDO CPA: S-Corporation Tax Guide](https://www.sdocpa.com/s-corporation-tax-guide/)
+7. [S Corporations Explained: Common Costs](http://scorporationsexplained.com/scorpexplained-costs.htm)
 
 ### formation and agent sources
-- [LLC University: Delaware LLC Costs](https://www.llcuniversity.com/delaware-llc/costs/)
-- [Harvard Business Services: Delaware LLC Annual Fee](https://www.delawareinc.com/llc/delaware-llc-annual-fee/)
-- [Harvard Business Services: Registered Agent Fees](https://www.delawareinc.com/compare-registered-agent-fees/)
-- [Stripe: Delaware Incorporation Costs](https://stripe.com/resources/more/delaware-incorporation-costs-and-fees-what-corporations-and-llcs-need-to-know)
-- [Stripe: What is a Registered Agent](https://stripe.com/resources/more/what-is-a-registered-agent-in-delaware-what-they-do-how-much-they-cost-and-when-to-get-one)
-- [Doola: Delaware C-Corp and LLC Fees](https://www.doola.com/blog/delaware-llc-fees/)
+8. [LLC University: Delaware LLC Costs](https://www.llcuniversity.com/delaware-llc/costs/)
+9. [Harvard Business Services: Delaware LLC Annual Fee](https://www.delawareinc.com/llc/delaware-llc-annual-fee/)
+10. [Harvard Business Services: Registered Agent Fees](https://www.delawareinc.com/compare-registered-agent-fees/)
+11. [Stripe: Delaware Incorporation Costs](https://stripe.com/resources/more/delaware-incorporation-costs-and-fees-what-corporations-and-llcs-need-to-know)
+12. [Stripe: What is a Registered Agent](https://stripe.com/resources/more/what-is-a-registered-agent-in-delaware-what-they-do-how-much-they-cost-and-when-to-get-one)
+13. [Doola: Delaware C-Corp and LLC Fees](https://www.doola.com/blog/delaware-llc-fees/)

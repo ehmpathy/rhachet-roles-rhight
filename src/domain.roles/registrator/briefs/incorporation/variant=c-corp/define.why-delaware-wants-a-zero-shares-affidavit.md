@@ -503,39 +503,39 @@ no one has publicly documented the **zero-issued** outcome. the adjacent pattern
 
 ### primary — Delaware statutes
 
-- [Delaware Code Title 8 Ch. 5 — Corporation Franchise Tax](https://delcode.delaware.gov/title8/c005/index.html) — §§ 502(b), 503, 504(d), 505(c)
-- [FindLaw: 8 Del. C. § 503 — Rates and computation of franchise tax](https://codes.findlaw.com/de/title-8-corporations/de-code-sect-8-503/)
-- [FindLaw: 8 Del. C. § 241 — Amendment of certificate of incorporation before receipt of payment for stock](https://codes.findlaw.com/de/title-8-corporations/de-code-sect-8-241.html)
-- [FindLaw: 8 Del. C. § 312 — Revival of certificate of incorporation](https://codes.findlaw.com/de/title-8-corporations/de-code-sect-8-312.html)
-- [FindLaw: 8 Del. C. § 219 — stock ledger definition](https://codes.findlaw.com/de/title-8-corporations/de-code-sect-8-219.html)
-- [Delaware Code Title 11 Ch. 5 subch. VI — perjury and related offenses](https://delcode.delaware.gov/title11/c005/sc06/index.html) — §§ 1221, 1222, 1223, 1233, 1235
-- [Delaware Code Title 29 Ch. 43 subch. II — notarial acts](https://delcode.delaware.gov/title29/c043/sc02/index.html) — §§ 4316, 4319, 4321, 4337
+1. [Delaware Code Title 8 Ch. 5 — Corporation Franchise Tax](https://delcode.delaware.gov/title8/c005/index.html) — §§ 502(b), 503, 504(d), 505(c)
+2. [FindLaw: 8 Del. C. § 503 — Rates and computation of franchise tax](https://codes.findlaw.com/de/title-8-corporations/de-code-sect-8-503/)
+3. [FindLaw: 8 Del. C. § 241 — Amendment of certificate of incorporation before receipt of payment for stock](https://codes.findlaw.com/de/title-8-corporations/de-code-sect-8-241.html)
+4. [FindLaw: 8 Del. C. § 312 — Revival of certificate of incorporation](https://codes.findlaw.com/de/title-8-corporations/de-code-sect-8-312.html)
+5. [FindLaw: 8 Del. C. § 219 — stock ledger definition](https://codes.findlaw.com/de/title-8-corporations/de-code-sect-8-219.html)
+6. [Delaware Code Title 11 Ch. 5 subch. VI — perjury and related offenses](https://delcode.delaware.gov/title11/c005/sc06/index.html) — §§ 1221, 1222, 1223, 1233, 1235
+7. [Delaware Code Title 29 Ch. 43 subch. II — notarial acts](https://delcode.delaware.gov/title29/c043/sc02/index.html) — §§ 4316, 4319, 4321, 4337
 
 ⚠️ FindLaw is a commercial mirror. where `refs/` holds the official delcode bytes, those are the source of record.
 
 ### primary — Delaware Division of Corporations
 
-- [How to Calculate Franchise Taxes](https://corp.delaware.gov/frtaxcalc/) — both methods, "all issued shares (including treasury shares)", Schedule L tie-in
-- [Franchise Tax Calculator & Disclaimer](https://corp.delaware.gov/taxcalc/) — the zero-assets / zero-issued instruction
-- [Annual Report and Tax Information](https://corp.delaware.gov/frtax/)
-- [Annual Report and Tax Instructions](https://corp.delaware.gov/paytaxes/)
-- [Frequently Asked Tax Questions](https://corp.delaware.gov/taxfaq/) — Franchise Tax contact: (302) 739-3073 opt. 3, DOSDOC_Ftax@delaware.gov
-- [Delaware entity search (ICIS)](https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx)
-- [Delaware Notary Public — journal requirements](https://notary.delaware.gov/journal-requirements/)
+8. [How to Calculate Franchise Taxes](https://corp.delaware.gov/frtaxcalc/) — both methods, "all issued shares (including treasury shares)", Schedule L tie-in
+9. [Franchise Tax Calculator & Disclaimer](https://corp.delaware.gov/taxcalc/) — the zero-assets / zero-issued instruction
+10. [Annual Report and Tax Information](https://corp.delaware.gov/frtax/)
+11. [Annual Report and Tax Instructions](https://corp.delaware.gov/paytaxes/)
+12. [Frequently Asked Tax Questions](https://corp.delaware.gov/taxfaq/) — Franchise Tax contact: (302) 739-3073 opt. 3, DOSDOC_Ftax@delaware.gov
+13. [Delaware entity search (ICIS)](https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx)
+14. [Delaware Notary Public — journal requirements](https://notary.delaware.gov/journal-requirements/)
 
 ### primary — federal
 
-- [IRS Instructions for Form 1120](https://www.irs.gov/instructions/i1120) — Schedule L, who must sign
-- [IRS Form 1120](https://www.irs.gov/pub/irs-pdf/f1120.pdf)
-- [IRS Form 15620 — Section 83(b) Election](https://www.irs.gov/pub/irs-pdf/f15620.pdf)
+15. [IRS Instructions for Form 1120](https://www.irs.gov/instructions/i1120) — Schedule L, who must sign
+16. [IRS Form 1120](https://www.irs.gov/pub/irs-pdf/f1120.pdf)
+17. [IRS Form 15620 — Section 83(b) Election](https://www.irs.gov/pub/irs-pdf/f15620.pdf)
 
 ### secondary
 
-- [Cornell LII: affidavit](https://www.law.cornell.edu/wex/affidavit)
-- [Harvard Business Services: Common Mistakes on the Delaware Annual Report](https://www.delawareinc.com/blog/common-annual-report-mistakes/)
-- [Capbase: No, Your Startup Doesn't Owe Thousands of Dollars in Delaware Franchise Tax](https://capbase.com/no-your-startup-doesnt-owe-thousands-of-dollars-in-delaware-franchise-tax/)
-- [Clerky: How do I calculate the Delaware franchise tax?](https://help.clerky.com/article/2796-calculate-delaware-franchise-tax)
-- [DLA Piper: Delaware franchise tax — an overview](https://www.dlapiper.com/en-us/insights/publications/accelerate/formation/delaware-franchise-tax)
+18. [Cornell LII: affidavit](https://www.law.cornell.edu/wex/affidavit)
+19. [Harvard Business Services: Common Mistakes on the Delaware Annual Report](https://www.delawareinc.com/blog/common-annual-report-mistakes/)
+20. [Capbase: No, Your Startup Doesn't Owe Thousands of Dollars in Delaware Franchise Tax](https://capbase.com/no-your-startup-doesnt-owe-thousands-of-dollars-in-delaware-franchise-tax/)
+21. [Clerky: How do I calculate the Delaware franchise tax?](https://help.clerky.com/article/2796-calculate-delaware-franchise-tax)
+22. [DLA Piper: Delaware franchise tax — an overview](https://www.dlapiper.com/en-us/insights/publications/accelerate/formation/delaware-franchise-tax)
 
 ### source caution
 

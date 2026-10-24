@@ -689,9 +689,9 @@ per `rule.require.bhrowser-citations`. both chapter urls were **harvested** from
 | ⭐ **§ 211(c)** | the annual-meeting **savings clause**, the **duty that survives revival**, and the free written-consent substitute | ch. 1 subch. VII, 76,886 ch → 5,568 → 1,715 |
 | § 513 | the post-proclamation criminal penalty | ch. 5 |
 
-- [8 Del. C. ch. 5 — Franchise Tax](https://delcode.delaware.gov/title8/c005/index.html)
-- [8 Del. C. ch. 1, subch. XII — Renewal, Revival, Extension and Restoration of Certificate of Incorporation](https://delcode.delaware.gov/title8/c001/sc12/index.html)
-- [8 Del. C. ch. 1, subch. VII — Meetings, Elections, Voting and Notice](https://delcode.delaware.gov/title8/c001/sc07/index.html)
+1. [8 Del. C. ch. 5 — Franchise Tax](https://delcode.delaware.gov/title8/c005/index.html)
+2. [8 Del. C. § 312 — ch. 1, subch. XII, Renewal, Revival, Extension and Restoration of Certificate of Incorporation](https://delcode.delaware.gov/title8/c001/sc12/index.html)
+3. [8 Del. C. § 211 — ch. 1, subch. VII, Meetings, Elections, Voting and Notice](https://delcode.delaware.gov/title8/c001/sc07/index.html)
 
 the § 503(b) and § 211(c) pulls each overturned a plausible inference carried beside an open flag; carry an open cross-reference **bare**, with no inference attached.
 
@@ -699,14 +699,14 @@ the § 503(b) and § 211(c) pulls each overturned a plausible inference carried 
 
 ⚠️ every entry below is a **summary**. where one conflicts with a section above, the statute governs.
 
-- [Delaware Division of Corporations: Franchise Tax FAQ](https://corp.delaware.gov/taxfaq/)
+4. [Delaware Division of Corporations: Franchise Tax FAQ](https://corp.delaware.gov/taxfaq/)
 - ⭐ [Delaware Division of Corporations: Certificate of Revival Form](https://corpfiles.delaware.gov/Corp_Forms/Revival%20void.pdf) — **`rev. 08/2023`**, 217,343 bytes, harvested by nav from `/corpforms/` → `/formsdoctype09/` → `/renew09/`. states **$189.00** and **"cover letter"** in its own text
-- [Harvard Business Services: My Delaware Corporation Was Voided](https://www.delawareinc.com/blog/my-delaware-corporation-was-voided-now-what/)
-- [Harvard Business Services: What Happens When You Don't Pay Franchise Tax](https://www.delawareinc.com/blog/what-happens-dont-pay-franchise-tax/) — ⛔ its "two years in a row" is wrong; §510 says 1 year
-- [Northwest Registered Agent: How to Reinstate Delaware Corporation](https://www.northwestregisteredagent.com/corporation/delaware/reinstate)
-- [Delaware Registered Agent: Revive a Void Corporation](https://www.delawareregisteredagent.com/delaware-registered-agent/how-to/revive-delaware-corporation)
-- [IncNow: What Happens When Your Delaware Company Is Void](https://www.incnow.com/blog/2023/07/12/void-delaware-company/)
-- [Clerky: How to Calculate Delaware Franchise Tax](https://help.clerky.com/article/2796-calculate-delaware-franchise-tax)
-- [BALL PLLC: Delaware Franchise Tax Best Practices](https://ballpllc.com/understanding-delawares-franchise-tax-system-for-c-corporations-calculation-methods-compliance-and-startup-best-practices/)
+5. [Harvard Business Services: My Delaware Corporation Was Voided](https://www.delawareinc.com/blog/my-delaware-corporation-was-voided-now-what/)
+6. [Harvard Business Services: What Happens When You Don't Pay Franchise Tax](https://www.delawareinc.com/blog/what-happens-dont-pay-franchise-tax/) — ⛔ its "two years in a row" is wrong; §510 says 1 year
+7. [Northwest Registered Agent: How to Reinstate Delaware Corporation](https://www.northwestregisteredagent.com/corporation/delaware/reinstate)
+8. [Delaware Registered Agent: Revive a Void Corporation](https://www.delawareregisteredagent.com/delaware-registered-agent/how-to/revive-delaware-corporation)
+9. [IncNow: What Happens When Your Delaware Company Is Void](https://www.incnow.com/blog/2023/07/12/void-delaware-company/)
+10. [Clerky: How to Calculate Delaware Franchise Tax](https://help.clerky.com/article/2796-calculate-delaware-franchise-tax)
+11. [BALL PLLC: Delaware Franchise Tax Best Practices](https://ballpllc.com/understanding-delawares-franchise-tax-system-for-c-corporations-calculation-methods-compliance-and-startup-best-practices/)
 - 🚩 [Wolters Kluwer: Delaware Franchise Report and Tax **Due March 1**](https://www.wolterskluwer.com/en/expert-insights/delaware-corporations-annual-franchise-report-and-tax-requirement) — ⚠️ the title collapses the §502 report date and the §504(a) tax dates, which diverge at $5,000
-- [Clemta: Consequences of Not Paying Delaware Franchise Tax](https://clemta.com/blog/consequences-of-not-paying-delaware-franchise-tax/)
+12. [Clemta: Consequences of Not Paying Delaware Franchise Tax](https://clemta.com/blog/consequences-of-not-paying-delaware-franchise-tax/)

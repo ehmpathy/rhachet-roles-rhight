@@ -6,6 +6,10 @@
 
 ⚠️ this is the **registration** side only. whether the state can **tax** the corporation is a separate test, owed to a separate agency, with a lower bar — see the tax-trigger inventory below. a "no" here is not a "no" there.
 
+## .citations
+
+this root is a navigation/rollup artifact. it makes no independent factual claim: each grid cell and each through-line summarizes the entries it links, and each entry carries the sources for it. per `rule.require.seven-distinct-citations`, it inherits its citations from those entries.
+
 ## .the axes
 
 | axis | positions |

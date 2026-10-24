@@ -128,7 +128,7 @@ each tax year has its own Form 1120 + instructions. you must use the **2022 form
 
 ### ⛔ paper is NOT freely available. check the 10-return threshold first.
 
-every paper route in this role (here, and the *"simpler paper route"* in its siblings) is conditional on this: electronic filing is **mandatory** over a threshold far lower than most people expect:
+every paper route in this role (here, and the *"simpler paper route"* in its siblings) is conditional on this: electronic filing is **mandatory** over a threshold far lower than most people expect. the statute sets that count, 26 U.S.C. § 6011(e)(5): *"in the case of calendar years after 2021, 10"*; the information-return rule the regulation keys on is 26 CFR § 301.6011-2.
 
 > "(a) *Corporate income tax returns required electronically.*
 > (1) A corporation required to file a corporate income tax return on Form
@@ -241,13 +241,13 @@ a CPA-prepared prior-year 1120 typically runs a few hundred dollars and removes 
 
 ## .sources
 
-- [IRS: About Form 1120](https://www.irs.gov/forms-pubs/about-form-1120)
-- [IRS: Instructions for Form 1120 (2025)](https://www.irs.gov/instructions/i1120)
-- [IRS: Form 1120 (PDF)](https://www.irs.gov/pub/irs-pdf/f1120.pdf)
-- [Delaware Division of Corporations: How to Calculate Franchise Taxes](https://corp.delaware.gov/frtaxcalc/)
-- [26 CFR § 301.6011-5](https://www.law.cornell.edu/cfr/text/26/301.6011-5) — the corporate e-file mandate
-- [26 CFR § 301.6011-2](https://www.law.cornell.edu/cfr/text/26/301.6011-2) — the information-return threshold § 301.6011-5 keys on
-- [26 U.S.C. § 6011(e)(5)](https://www.law.cornell.edu/uscode/text/26/6011) — "in the case of calendar years after 2021, **10**"
+1. [IRS: About Form 1120](https://www.irs.gov/forms-pubs/about-form-1120)
+2. [IRS: Instructions for Form 1120 (2025)](https://www.irs.gov/instructions/i1120)
+3. [IRS: Form 1120 (PDF)](https://www.irs.gov/pub/irs-pdf/f1120.pdf)
+4. [Delaware Division of Corporations: How to Calculate Franchise Taxes](https://corp.delaware.gov/frtaxcalc/)
+5. [26 CFR § 301.6011-5](https://www.law.cornell.edu/cfr/text/26/301.6011-5) — the corporate e-file mandate
+6. [26 CFR § 301.6011-2](https://www.law.cornell.edu/cfr/text/26/301.6011-2) — the information-return threshold § 301.6011-5 keys on
+7. [26 U.S.C. § 6011(e)(5)](https://www.law.cornell.edu/uscode/text/26/6011) — "in the case of calendar years after 2021, **10**"
 
 ### 🔬 provenance of the e-file-mandate section
 

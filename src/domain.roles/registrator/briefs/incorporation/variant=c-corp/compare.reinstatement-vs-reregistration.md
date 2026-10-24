@@ -256,12 +256,17 @@ void Delaware corporation
 
 ## .sources
 
-- [IRS: When to get a new EIN](https://www.irs.gov/businesses/small-businesses-self-employed/do-you-need-a-new-ein) — ⚠️ the slug is `do-you-need-a-new-ein`; "when to get a new EIN" is only the page **title**. ⚠️ the entity-type lists are behind a **collapsed accordion** — the page returns 911 chars unexpanded, 3,611 after `Expand all`
-- [IRS Pub. 1635, *Understanding Your EIN* (PDF)](https://www.irs.gov/pub/irs-pdf/p1635.pdf) — ⭐ **prefer this over the web page.** it carries the same lists plus the word *"form"*, which the web paraphrase drops. 74,796 chars via `pdftotext`
-- [IRS: About Form 2553 (S-corp Election)](https://www.irs.gov/forms-pubs/about-form-2553)
-- [Delaware Division of Corporations: Conversions](https://corp.delaware.gov/conversions09/)
-- [Delaware Code § 265: Conversion of Entities](https://law.justia.com/codes/delaware/title-8/chapter-1/subchapter-ix/section-265/)
+1. [IRS: When to get a new EIN](https://www.irs.gov/businesses/small-businesses-self-employed/do-you-need-a-new-ein) — ⚠️ the slug is `do-you-need-a-new-ein`; "when to get a new EIN" is only the page **title**. ⚠️ the entity-type lists are behind a **collapsed accordion** — the page returns 911 chars unexpanded, 3,611 after `Expand all`
+2. [IRS Pub. 1635, *Understanding Your EIN* (PDF)](https://www.irs.gov/pub/irs-pdf/p1635.pdf) — ⭐ **prefer this over the web page.** it carries the same lists plus the word *"form"*, which the web paraphrase drops. 74,796 chars via `pdftotext`
+3. [IRS: About Form 2553 (S-corp Election)](https://www.irs.gov/forms-pubs/about-form-2553)
+4. [Delaware Division of Corporations: Conversions](https://corp.delaware.gov/conversions09/)
+5. [Delaware Code § 265: Conversion of Entities](https://law.justia.com/codes/delaware/title-8/chapter-1/subchapter-ix/section-265/)
+6. [Harvard Business Services: My Delaware Corporation Was Voided](https://www.delawareinc.com/blog/my-delaware-corporation-was-voided-now-what/)
+7. [Delaware Registered Agent: Revive a Void Corporation](https://www.delawareregisteredagent.com/delaware-registered-agent/how-to/revive-delaware-corporation)
+8. [Northwest Registered Agent: How to Reinstate Delaware Corporation](https://www.northwestregisteredagent.com/corporation/delaware/reinstate)
+
+### read, not cited above
+
+read in the research and kept for the record; no sentence above relies on it.
+
 - [Delaware Code § 311: Revocation of Voluntary Dissolution](https://law.justia.com/codes/delaware/title-8/chapter-1/subchapter-xii/section-311/)
-- [Harvard Business Services: My Delaware Corporation Was Voided](https://www.delawareinc.com/blog/my-delaware-corporation-was-voided-now-what/)
-- [Delaware Registered Agent: Revive a Void Corporation](https://www.delawareregisteredagent.com/delaware-registered-agent/how-to/revive-delaware-corporation)
-- [Northwest Registered Agent: How to Reinstate Delaware Corporation](https://www.northwestregisteredagent.com/corporation/delaware/reinstate)

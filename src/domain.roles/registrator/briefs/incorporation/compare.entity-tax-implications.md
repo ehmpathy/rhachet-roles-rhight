@@ -337,9 +337,9 @@ consult a CPA for state-specific guidance.
 
 ### the statutes — pulled 2026-08-31, bhrowser headful
 
-- [26 U.S.C. §1202](https://www.law.cornell.edu/uscode/text/26/1202) — QSBS: (a)(5) the percentage table, (b)(2) the holding period, (b)(4) the $10M/$15M split, (c)(1) "C corporation", (e)(1) the 80% asset test, **(e)(3) the excluded trades**
-- [26 U.S.C. §199A](https://www.law.cornell.edu/uscode/text/26/199A) — QBI: (d)(1) the denial, **(d)(2)(A) the cross-reference to §1202(e)(3)(A)**, (d)(3) the phase-in
-- [26 U.S.C. §1402](https://www.law.cornell.edu/uscode/text/26/1402) — SE tax: (a)(12) the ~92.35% base, **(b)(1) the contribution-and-benefit-base cap**
+1. [26 U.S.C. §1202](https://www.law.cornell.edu/uscode/text/26/1202) — QSBS: (a)(5) the percentage table, (b)(2) the holding period, (b)(4) the $10M/$15M split, (c)(1) "C corporation", (e)(1) the 80% asset test, **(e)(3) the excluded trades**
+2. [26 U.S.C. §199A](https://www.law.cornell.edu/uscode/text/26/199A) — QBI: (d)(1) the denial, **(d)(2)(A) the cross-reference to §1202(e)(3)(A)**, (d)(3) the phase-in
+3. [26 U.S.C. §1402](https://www.law.cornell.edu/uscode/text/26/1402) — SE tax: (a)(12) the ~92.35% base, **(b)(1) the contribution-and-benefit-base cap**
 
 **edition check:** the current Cornell text and the govinfo **2023 edition** of
 §1202 were diffed: `$15,000,000` → 2 hits current / **0** in 2023; `75,000,000` →
@@ -348,11 +348,11 @@ test were established.
 
 ### secondary — read as commentary, never as authority
 
-- [IRS: S Corporation Employees, Shareholders and Corporate Officers](https://www.irs.gov/businesses/small-businesses-self-employed/s-corporation-employees-shareholders-and-corporate-officers)
-- [IRS: About Form 2553](https://www.irs.gov/forms-pubs/about-form-2553)
-- [SDO CPA: LLC vs S-Corp Complete Comparison](https://www.sdocpa.com/llc-vs-s-corp-complete-comparison/)
-- [SDO CPA: Self-Employment Tax Guide 2026](https://www.sdocpa.com/self-employment-tax-guide/)
-- [SDO CPA: C-Corporation Tax Guide](https://www.sdocpa.com/c-corporation-tax-guide/)
-- [Carta: QSBS Explained](https://carta.com/learn/startups/tax-planning/qsbs/)
-- [Wolters Kluwer: S Corp vs C Corp Differences](https://www.wolterskluwer.com/en/expert-insights/s-corp-vs-c-corp-differences-benefits)
-- [Otterz: LLC vs S-Corp vs C-Corp 2026 Tax Comparison](https://otterz.co/how-the-new-2025-tax-rules-impact-llcs-s-corps-and-c-corps-entity-comparison-guide/)
+4. [IRS: S Corporation Employees, Shareholders and Corporate Officers](https://www.irs.gov/businesses/small-businesses-self-employed/s-corporation-employees-shareholders-and-corporate-officers)
+5. [IRS: About Form 2553](https://www.irs.gov/forms-pubs/about-form-2553)
+6. [SDO CPA: LLC vs S-Corp Complete Comparison](https://www.sdocpa.com/llc-vs-s-corp-complete-comparison/)
+7. [SDO CPA: Self-Employment Tax Guide 2026](https://www.sdocpa.com/self-employment-tax-guide/)
+8. [SDO CPA: C-Corporation Tax Guide](https://www.sdocpa.com/c-corporation-tax-guide/)
+9. [Carta: QSBS Explained](https://carta.com/learn/startups/tax-planning/qsbs/)
+10. [Wolters Kluwer: S Corp vs C Corp Differences](https://www.wolterskluwer.com/en/expert-insights/s-corp-vs-c-corp-differences-benefits)
+11. [Otterz: LLC vs S-Corp vs C-Corp 2026 Tax Comparison](https://otterz.co/how-the-new-2025-tax-rules-impact-llcs-s-corps-and-c-corps-entity-comparison-guide/)

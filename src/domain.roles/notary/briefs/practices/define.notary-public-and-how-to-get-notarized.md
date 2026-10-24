@@ -222,6 +222,8 @@ notary fees are capped by statute in most states. Texas caps them in Gov't Code 
 >
 > — [Texas SoS: Online Notary Public Educational Information](https://www.sos.state.tx.us/statdoc/online-np-educational.shtml)
 
+the statute behind that cap is Tex. Gov't Code § 406.111.
+
 the TX SoS page gives the worked example: $25 + $10 = **$35** for one signature online.
 
 ---
@@ -466,59 +468,59 @@ wet-ink. either answer is better than an inference.
 
 ### what a notary is / notarial acts
 
-- [Texas Secretary of State: Notary Public](https://www.sos.state.tx.us/statdoc/notary-public.shtml)
-- [NNA: What is a Notary Public](https://www.nationalnotary.org/knowledge-center/about-notaries/what-is-a-notary-public)
-- [NNA: Acknowledgements and Jurats (webinar PDF)](https://www.nationalnotary.org/file%20library/nna/webinars/acknowledgements-and-jurats.pdf)
-- [Superior Notary: Jurats and Acknowledgements](https://www.superiornotaryservices.com/blog/jurats-and-acknowledgements/)
-- [NYC Dept. of Consumer Affairs: Notario Publico](https://www.nyc.gov/assets/dca/downloads/pdf/consumers/Consumers-Notario-Publico.pdf)
+1. [Texas Secretary of State: Notary Public](https://www.sos.state.tx.us/statdoc/notary-public.shtml)
+2. [NNA: What is a Notary Public](https://www.nationalnotary.org/knowledge-center/about-notaries/what-is-a-notary-public)
+3. [NNA: Acknowledgements and Jurats (webinar PDF)](https://www.nationalnotary.org/file%20library/nna/webinars/acknowledgements-and-jurats.pdf)
+4. [Superior Notary: Jurats and Acknowledgements](https://www.superiornotaryservices.com/blog/jurats-and-acknowledgements/)
+5. [NYC Dept. of Consumer Affairs: Notario Publico](https://www.nyc.gov/assets/dca/downloads/pdf/consumers/Consumers-Notario-Publico.pdf)
 
 ### what notarization proves
 
-- [Cal. Civ. Code § 1189](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1189)
-- [Cornell LII: Federal Rule of Evidence 902](https://www.law.cornell.edu/rules/fre/rule_902)
+6. [Cal. Civ. Code § 1189](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1189)
+7. [Cornell LII: Federal Rule of Evidence 902](https://www.law.cornell.edu/rules/fre/rule_902)
 
 ### history
 
-- [Hugill & IP: The Notary Public — A 5,000 Year Old Story](https://www.hugillandip.com/2020/07/the-notary-public-a-5000-year-old-story/)
-- [Notary NI: History of Notaries Explained](https://notaryni.com/history-of-notaries-explained/)
-- [Wikipedia: Scriba (ancient Rome)](https://en.wikipedia.org/wiki/Scriba_(ancient_Rome))
+8. [Hugill & IP: The Notary Public — A 5,000 Year Old Story](https://www.hugillandip.com/2020/07/the-notary-public-a-5000-year-old-story/)
+9. [Notary NI: History of Notaries Explained](https://notaryni.com/history-of-notaries-explained/)
+10. [Wikipedia: Scriba (ancient Rome)](https://en.wikipedia.org/wiki/Scriba_(ancient_Rome))
 
 ### Texas law
 
-- [Tex. Gov't Code § 406.024 — fees](https://texas.public.law/statutes/tex._gov't_code_section_406.024)
-- [Tex. Gov't Code § 406.108 — records](https://texas.public.law/statutes/tex._gov't_code_section_406.108)
-- [Tex. Gov't Code § 406.110 — identity verification](https://texas.public.law/statutes/tex._gov't_code_section_406.110)
-- [Tex. Gov't Code § 406.111 — online notarization fee](https://texas.public.law/statutes/tex._gov't_code_section_406.111)
-- [Texas SoS: how to start as an online notary](https://www.sos.state.tx.us/statdoc/gettingstarted.shtml)
-- [Texas SoS: Online Notary Public Educational Information](https://www.sos.state.tx.us/statdoc/online-np-educational.shtml)
+11. [Tex. Gov't Code § 406.024 — fees](https://texas.public.law/statutes/tex._gov't_code_section_406.024)
+12. [Tex. Gov't Code § 406.108 — records](https://texas.public.law/statutes/tex._gov't_code_section_406.108)
+13. [Tex. Gov't Code § 406.110 — identity verification](https://texas.public.law/statutes/tex._gov't_code_section_406.110)
+14. [Tex. Gov't Code § 406.111 — online notarization fee](https://texas.public.law/statutes/tex._gov't_code_section_406.111)
+15. [Texas SoS: how to start as an online notary](https://www.sos.state.tx.us/statdoc/gettingstarted.shtml)
+16. [Texas SoS: Online Notary Public Educational Information](https://www.sos.state.tx.us/statdoc/online-np-educational.shtml)
 
 ### Delaware law and agency policy
 
-- [29 Del. C. ch. 43 subch. II — Notarial Acts (§ 4320 remote, § 4324 other states)](https://delcode.delaware.gov/title29/c043/sc02/index.shtml)
-- [Delaware Division of Corporations: Certifications, Apostilles and Authentication](https://corp.delaware.gov/apost_info/)
+17. [29 Del. C. ch. 43 subch. II — Notarial Acts (§ 4320 remote, § 4324 other states)](https://delcode.delaware.gov/title29/c043/sc02/index.shtml)
+18. [Delaware Division of Corporations: Certifications, Apostilles and Authentication](https://corp.delaware.gov/apost_info/)
 
 ### federal / uniform law
 
-- [H.R. 1777 — SECURE Notarization Act of 2025](https://www.congress.gov/bill/119th-congress/house-bill/1777)
-- [S. 1561 — SECURE Notarization Act of 2025 (text)](https://www.congress.gov/bill/119th-congress/senate-bill/1561/text)
-- [Sen. Warner press release: bipartisan RON legislation](https://www.warner.senate.gov/newsroom/press-releases/warner-cramer-lead-bipartisan-legislation-to-allow-remote-online-notarizations-nationwide/)
+19. [H.R. 1777 — SECURE Notarization Act of 2025](https://www.congress.gov/bill/119th-congress/house-bill/1777)
+20. [S. 1561 — SECURE Notarization Act of 2025 (text)](https://www.congress.gov/bill/119th-congress/senate-bill/1561/text)
+21. [Sen. Warner press release: bipartisan RON legislation](https://www.warner.senate.gov/newsroom/press-releases/warner-cramer-lead-bipartisan-legislation-to-allow-remote-online-notarizations-nationwide/)
 
 ### RON availability and rates (commercial / secondary — treat with caution)
 
-- [Proof: Is RON legal in all states?](https://www.proof.com/blog/is-remote-online-notarization-legal-in-all-states)
-- [NotaryCam: What states allow remote notary?](https://www.notarycam.com/what-states-allow-remote-notary/)
-- [NotaryPublic24: RON in the US 2026](https://www.notarypublic24.com/remote-online-notarization-ron-us-2026/)
-- [Notarize/Proof rate card](https://www.notarize.com/pricing)
-- [BlueNotary rate card](https://bluenotaryonline.com/pricing?tab=business)
-- [NotaryCam rate card](https://www.notarycam.com/pricing/)
-- [RemoteNotaryExperts: online notary cost comparison](https://remotenotaryexperts.com/online-notary-cost/)
+22. [Proof: Is RON legal in all states?](https://www.proof.com/blog/is-remote-online-notarization-legal-in-all-states)
+23. [NotaryCam: What states allow remote notary?](https://www.notarycam.com/what-states-allow-remote-notary/)
+24. [NotaryPublic24: RON in the US 2026](https://www.notarypublic24.com/remote-online-notarization-ron-us-2026/)
+25. [Notarize/Proof rate card](https://www.notarize.com/pricing)
+26. [BlueNotary rate card](https://bluenotaryonline.com/pricing?tab=business)
+27. [NotaryCam rate card](https://www.notarycam.com/pricing/)
+28. [RemoteNotaryExperts: online notary cost comparison](https://remotenotaryexperts.com/online-notary-cost/)
 
 ### where to find a notary (secondary)
 
-- [LegalClarity: where to get a document notarized](https://legalclarity.org/where-to-get-a-document-notarized-banks-libraries-more/)
-- [Crediful: banks that notarize for free](https://www.crediful.com/banks-that-notarize-for-free/)
-- [AAA: notary services](https://mwg.aaa.com/more-services/notary-services)
-- [The UPS Store: notary services](https://www.theupsstore.com/print/notary)
+29. [LegalClarity: where to get a document notarized](https://legalclarity.org/where-to-get-a-document-notarized-banks-libraries-more/)
+30. [Crediful: banks that notarize for free](https://www.crediful.com/banks-that-notarize-for-free/)
+31. [AAA: notary services](https://mwg.aaa.com/more-services/notary-services)
+32. [The UPS Store: notary services](https://www.theupsstore.com/print/notary)
 
 ---
 
