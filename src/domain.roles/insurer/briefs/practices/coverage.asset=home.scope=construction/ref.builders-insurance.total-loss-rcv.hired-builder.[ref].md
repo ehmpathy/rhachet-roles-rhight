@@ -1,5 +1,7 @@
 # ref.insurance-home-total-loss-replacement-cost-value.hired-builder
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 when a hired contractor's work causes total loss of your home, builder's risk policies often pay only **depreciated value (ACV)** for the prior structure — not full replacement cost (RCV). however, you have additional recovery avenues through contractor liability.
@@ -211,6 +213,10 @@ hired-builder total loss has **better recovery prospects** than owner-builder:
 - [Builder's Shield: RCV vs ACV](https://www.buildersshield.com/28255/replacementcostvsactualcashvalue/)
 - [IRMI: Subrogation in Builder's Risk](https://www.irmi.com/articles/expert-commentary/builders-risk-naming-of-insureds-reloaded)
 - [Insurance Claims Authority: First vs Third Party](https://insuranceclaimsauthority.com/first-party-vs-third-party-claims.html)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic total-loss replacement-cost analysis for a hired builder from public sources; no client identity or applied strategy.
 
 ## .date researched
 

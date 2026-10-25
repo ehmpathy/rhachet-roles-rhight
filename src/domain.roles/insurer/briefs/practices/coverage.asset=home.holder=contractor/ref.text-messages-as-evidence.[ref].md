@@ -1,5 +1,7 @@
 # ref.text-messages-as-evidence
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 text messages (SMS, iMessage, WhatsApp) are admissible as evidence in court when properly authenticated.
@@ -112,6 +114,10 @@ you are not headed to court — you are buildng evidence in case insurance denie
 this is sufficient to prove the contractor made the statement. if insurance disputes, the screenshot plus original on your phone provides authentication.
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

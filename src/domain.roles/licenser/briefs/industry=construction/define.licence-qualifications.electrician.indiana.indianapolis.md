@@ -1,5 +1,7 @@
 # define.licence-qualifications.electrician.indiana.indianapolis
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 requirements to obtain an electrician licence in Indianapolis, Indiana (Marion County).
@@ -112,6 +114,10 @@ Indianapolis issues two electrician licence types:
 | email | Contractors@indy.gov |
 | address | 1200 Madison Ave, Suite 100, Indianapolis, IN 46225 |
 | board | Board of Electrical Examiners (meets 2nd Thursday, 1:30pm) |
+
+## .publishability
+
+☀️ **fullsun** (share) — public Indianapolis licensure requirements; no client identity or client-specific mechanic.
 
 ## .sources
 

@@ -1,5 +1,7 @@
 # define.coverage-timeline
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 which insurance policy covers cascade damage at each phase of construction and ownership. the policy changes, but the coverage logic stays the same.
@@ -255,6 +257,10 @@ cascade: covered         cascade: covered          cascade: covered
 | owner-builder difference? | no subrogation target at any phase |
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

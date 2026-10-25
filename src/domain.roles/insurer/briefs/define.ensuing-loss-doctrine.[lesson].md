@@ -1,5 +1,7 @@
 # define.ensuing-loss-doctrine
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 the ensuing loss doctrine determines when damage from an excluded cause (like workmanship defect) is still covered — because a **second, covered peril** intervened.
@@ -197,6 +199,10 @@ NOT COVERED:
 - if NO → exclusion applies → DENIED
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

@@ -22,7 +22,7 @@ that duty is the whole role, and its absence is expensive:
   - trigger, notice, and extension, quoted whole: `registrator/…/delaware.franchise.tax.delinquency.md`
 - every downstream cost (the assessment, the reinstatement fee, the back returns, the lost good-standing certificate) descends from one missed calendar entry
 - ⚠️ the franchise tax is not a single Mar 1 date. **8 Del. C. §504(a)** moves it to **40% Jun 1 · 20% Sep 1 · 20% Dec 1 · 20% Mar 1 after** once the year's estimated liability reaches **$5,000** — a corporation that calendars March 1 alone has missed **three** due dates and accrued §504(c) interest on each. a 10M-share charter can be billed **$85,165**, seventeen times the trigger
-  - the schedule: `registrator/…/delaware.franchise.tax.[howto].renew.md` § *⚠️ March 1 is the whole answer only BELOW $5,000* · the per-installment accrual: `rhx franchise.tax.delaware.accrue`
+  - the per-installment accrual: `rhx franchise.tax.delaware.accrue`
 
 a role that held only the calendar would pay for itself.
 
@@ -34,7 +34,7 @@ a role that held only the calendar would pay for itself.
 | **document production** | letterhead, rendered signatures, a signature placed onto a PDF |
 | **the record** | minutes, resolutions, certified copies |
 
-the **stock ledger is not held here** — it lives at `registrator/briefs/incorporation/variant=c-corp/define.stock-ledger.md`. vanish test: a nonprofit has a secretary and has no stock ledger, so the artifact belongs to the role that owns the entity type (`rule.require.bounded-roles`).
+the **stock ledger is not held here** — it belongs to `registrator`. vanish test: a nonprofit has a secretary and has no stock ledger, so the artifact belongs to the role that owns the entity type (`rule.require.bounded-roles`).
 
 ### 🚫 the boundary with `notary`
 
@@ -62,10 +62,9 @@ take it to a licensed attorney. every brief in this repo carries *"⚠️ not le
 
 ### ⚠️ the name collides — write the government office in full
 
-bare "the Secretary" already means two different offices inside quoted primary law in this repo (Delaware Secretary of State; Secretary of the Treasury). the convention that resolves it: `briefs/practices/rule.require.disambiguate-secretary.md`.
+bare "the Secretary" already means two different offices inside quoted primary law in this repo (Delaware Secretary of State; Secretary of the Treasury). write the office in full: **Secretary of State**, **Secretary of the Treasury**; bare `secretary` names this role.
 
 ### .see also
 
-- `define.why-secretary.[philosophy]` — why this name, and not `scrivener`
 - `notary` — the external, public counterpart
 - `registrator` — the filings whose deadlines this role tracks

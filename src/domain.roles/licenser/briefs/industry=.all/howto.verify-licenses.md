@@ -1,5 +1,7 @@
 # howto.verify-licenses
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 step-by-step process to verify a professional license is legitimate and unexpired.
@@ -148,6 +150,10 @@ keep a record:
 | refuses to provide number | may be expired/revoked |
 | license is from another state | may not be valid locally |
 | "just renewed" but portal shows expired | may be dishonest |
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public license-verification steps; no client identity or client-specific mechanic.
 
 ## .sources
 

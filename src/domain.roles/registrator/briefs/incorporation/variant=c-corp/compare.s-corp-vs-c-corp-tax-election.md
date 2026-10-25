@@ -1,5 +1,7 @@
 # compare.s-corp-vs-c-corp-tax-election
 
+> ⚠️ **not legal advice**, and not tax advice. this brief helps you find what to ask; confirm it for your facts with a licensed attorney or CPA.
+
 ## .what
 
 S-corp is not a different entity type — it's an **IRS tax election** on your extant Delaware corporation. this brief explains what that election means and how it affects your taxes.
@@ -296,6 +298,10 @@ QSBS. investor compatibility holds regardless; QSBS does not.
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — public tax-election law; no client identity or client-specific mechanic.
+
 ## .sources
 
 ### the statutes — pulled 2026-08-31, bhrowser headful
@@ -356,3 +362,9 @@ read in the research and kept for the record; no sentence above relies on it.
 - [26 U.S.C. §1402](https://www.law.cornell.edu/uscode/text/26/1402) —
   self-employment income. **(b)(1)** the contribution-and-benefit-base cap on
   the §1401(a) portion · **(a)(12)** the deduction that yields the ~92.35% base
+
+## .date researched
+
+2026-09-01
+
+(taken from the brief's own sources, "the statutes — pulled 2026-09-01, bhrowser headful, two publishers"; the brief also states "the statutes — pulled 2026-08-31, bhrowser headful")

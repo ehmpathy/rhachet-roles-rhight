@@ -1,5 +1,7 @@
 # hazard.zero-tax-still-owes-a-return
 
+> ⚠️ **not legal advice**, and not tax advice. this brief helps you find what to ask; confirm it for your facts with a licensed attorney or CPA.
+
 ## .what
 
 Florida exempts the first **$50,000** of net income from corporate income tax.
@@ -220,3 +222,23 @@ behind any line. the playbook is committed and re-runnable:
   — the **other** Florida duty, owed to a different agency on a different test
 - `income-tax/define.delaware-1100-vs-federal-1120-vs-franchise-tax` — the same
   three-document confusion, for Delaware
+
+## .publishability
+
+☀️ **fullsun** (share) — generic Florida statute and department-rule analysis of the zero-tax return duty; no client identity.
+
+## .sources
+
+1. [Fla. Stat. §220.14 — exemption](https://www.flsenate.gov/Laws/Statutes/2024/220.14) — `refs/pulledAt=2026-10-25.flsenate-gov-laws-statutes-2024-220-14.txt`
+2. [Fla. Stat. §220.22 — returns; filing requirement](https://www.flsenate.gov/Laws/Statutes/2024/220.22) — `refs/pulledAt=2026-10-25.flsenate-gov-laws-statutes-2024-220-22.txt`
+3. [IRS, Instructions for Form 1120](https://www.irs.gov/pub/irs-pdf/i1120.pdf) — `refs/pulledAt=2026-10-25.irs-gov-pub-irs-pdf-i1120-pdf.txt`
+4. [Fla. Stat. §220.11 — tax imposed](https://www.flsenate.gov/Laws/Statutes/2024/220.11) — `refs/pulledAt=2026-10-25.flsenate-gov-laws-statutes-2024-220-11.txt`
+5. [Fla. Stat. §220.801 — penalties; failure to timely file returns](https://www.flsenate.gov/Laws/Statutes/2024/220.801) — `refs/pulledAt=2026-10-25.flsenate-gov-laws-statutes-2024-220-801.txt`
+6. [Florida Dept. of Revenue, Corporate Income Tax](https://floridarevenue.com/taxes/taxesfees/Pages/corporate.aspx) — `refs/pulledAt=2026-10-25.floridarevenue-com-taxes-taxesfees-pages-corporate-aspx.txt`
+7. [Fla. Stat. §95.091 — limitations on tax assessment](https://www.flsenate.gov/Laws/Statutes/2024/95.091) — `refs/pulledAt=2026-10-25.flsenate-gov-laws-statutes-2024-95-091.txt`
+
+## .date researched
+
+2026-10-04
+
+(taken from the brief's own text, "✅ **closed 2026-10-04**")

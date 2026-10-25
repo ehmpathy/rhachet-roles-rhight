@@ -1,5 +1,7 @@
 # compare.tenant-damage-recovery-mechanisms
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .scope
 
 **this comparison applies to:**
@@ -306,6 +308,10 @@ vs potential loss of $10,000-$50,000+ from major tenant destruction.
 - `define.loss-of-rents-coverage.[lesson].md` — lost rent in repairs
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

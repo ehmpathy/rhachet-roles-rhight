@@ -1,5 +1,7 @@
 # define.retroactive-permits
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 retroactive permits for unpermitted work — process, requirements, and limitations.
@@ -193,3 +195,7 @@ some jurisdictions offer periodic amnesty:
 | state contractor license board | contractor requirements |
 | municipal code | penalty structures |
 | permit department website | application forms and fees |
+
+## .publishability
+
+☀️ **fullsun** (share) — generic explainer on retroactive permits across jurisdictions; no client identity.

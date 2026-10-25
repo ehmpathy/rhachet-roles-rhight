@@ -1,5 +1,7 @@
 # inventory.of=tax-trigger.tax=corporate.state=washington
 
+> ⚠️ **not legal advice**, and not tax advice. this entry helps you find what to ask; confirm the answer for your facts with a licensed attorney or CPA.
+
 ## .answer
 
 **business & occupation (B&O) tax** — a gross receipts tax; Washington has no corporate income tax. customer sales alone create it once cumulative gross receipts from Washington **exceed $100,000 in the current or immediately prior calendar year** (from January 1, 2020; RCW 82.04.067).
@@ -62,15 +64,23 @@ no income tax; the B&O tax on remote access software (SaaS, a retail sale in Was
 | RCW 82.04.050 prints two concurrent versions (2026 c 238 and 2026 c 250) and a 2029 one | the 2026 c 250 text of (6)(b)(i) is the same save an exception for sales within an affiliated group (its new subsection (17)); only the c 238 text was promoted |
 | SaaS income that is not a retail sale (e.g. digital storage or hosting under the service classification) | apportioned instead by RCW 82.04.462's benefit rule; which classification a given product falls in is a WA DOR fact question |
 
+## .publishability
+
+☀️ **fullsun** (share) — generic public state tax law, quoted from the state's own pages; no client identity, no applied mechanic, no recommendation that settles a lawful choice.
+
 ## .sources
 
-| ref | what | chars |
-|---|---|---:|
-| `refs/pulledAt=2026-10-05.washington-rcw-82.04.050-6.txt` | RCW 82.04.050(6), remote access software is a retail sale (2026 c 238 version) | 1,644 |
-| `refs/pulledAt=2026-10-05.washington-rcw-82.04.258.txt` | RCW 82.04.258, digital products apportionment | 2,491 |
-| `refs/pulledAt=2026-10-05.washington-rcw-82.32.730-1.txt` | RCW 82.32.730(1)(a)-(d), retail sale source rules | 1,751 |
-| `refs/pulledAt=2026-10-05.washington-rcw-82.04.462.txt` | RCW 82.04.462(1)-(3)(b), receipts factor and benefit rule | 4,138 |
-| `refs/pulledAt=2026-10-05.washington-dor-digital-products.txt` | WA DOR digital products page: remote access software is a retail sale; storage and hosting fall under the service classification | 7,947 |
-| `refs/pulledAt=2026-10-05.washington-rcw-82.04.067.txt` | RCW 82.04.067 | 5,177 |
-| `refs/pulledAt=2026-10-05.washington-dor-out-of-state-thresholds.txt` | WA DOR thresholds page | 4,957 |
-| `refs/effectiveAt=1959-09-14.usc-15-381.pl-86-272.txt` | 15 U.S.C. §381 | 2,983 |
+1. [RCW 82.04.050(6), remote access software is a retail sale (2026 c 238 version)](https://apps.leg.wa.gov/rcw/default.aspx?cite=82.04.050) — `refs/pulledAt=2026-10-05.washington-rcw-82.04.050-6.txt` · 1,644 chars
+2. [RCW 82.04.258, digital products apportionment](https://apps.leg.wa.gov/rcw/default.aspx?cite=82.04.258) — `refs/pulledAt=2026-10-05.washington-rcw-82.04.258.txt` · 2,491 chars
+3. [RCW 82.32.730(1)(a)-(d), retail sale source rules](https://apps.leg.wa.gov/rcw/default.aspx?cite=82.32.730) — `refs/pulledAt=2026-10-05.washington-rcw-82.32.730-1.txt` · 1,751 chars
+4. [RCW 82.04.462(1)-(3)(b), receipts factor and benefit rule](https://apps.leg.wa.gov/rcw/default.aspx?cite=82.04.462) — `refs/pulledAt=2026-10-05.washington-rcw-82.04.462.txt` · 4,138 chars
+5. [WA DOR digital products page: remote access software is a retail sale; storage and hosting fall under the service classification](https://dor.wa.gov/forms-publications/publications-subject/tax-topics/digital-products-including-digital-goods) — `refs/pulledAt=2026-10-05.washington-dor-digital-products.txt` · 7,947 chars
+6. [RCW 82.04.067](https://apps.leg.wa.gov/rcw/default.aspx?cite=82.04.067) — `refs/pulledAt=2026-10-05.washington-rcw-82.04.067.txt` · 5,177 chars
+7. [WA DOR thresholds page](https://dor.wa.gov/education/industry-guides/out-state-businesses-reporting-thresholds-and-nexus) — `refs/pulledAt=2026-10-05.washington-dor-out-of-state-thresholds.txt` · 4,957 chars
+8. [15 U.S.C. §381](https://www.law.cornell.edu/uscode/text/15/381) — `refs/effectiveAt=1959-09-14.usc-15-381.pl-86-272.txt` · 2,983 chars
+
+## .date researched
+
+2026-10-05
+
+(taken from the pull date of the captures this entry cites, `refs/pulledAt=2026-10-05.*`)

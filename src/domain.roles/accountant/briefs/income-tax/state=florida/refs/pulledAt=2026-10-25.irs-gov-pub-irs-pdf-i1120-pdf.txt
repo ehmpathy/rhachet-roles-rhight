@@ -1,0 +1,172 @@
+Who Must File
+
+Unless exempt under section 501, all domestic corporations
+(including corporations in bankruptcy) must file an income tax
+return whether or not they have taxable income. Domestic
+corporations must file Form 1120, unless they are required, or
+elect to file a special return. See Special Returns for Certain
+Organizations, later.
+
+Entities electing to be taxed as corporations. A domestic
+entity electing to be classified as an association taxable as a
+corporation must file Form 1120, unless it is required to or elects
+to file a special return listed under Special Returns for Certain
+Organizations. The entity must also file Form 8832, Entity
+Classification Election, and attach a copy of Form 8832 to Form
+1120 (or the applicable return) for the year of the election. For
+more information, see Form 8832 and its instructions.
+Limited liability companies (LLC). If an entity with more than
+one owner was formed as an LLC under state law, it is generally
+treated as a partnership for federal income tax purposes and
+files Form 1065, U.S. Return of Partnership Income. Generally, a
+single-member LLC is disregarded as an entity separate from its
+owner and reports its income and deductions on its owner’s
+federal income tax return. The LLC can file a Form 1120 only if it
+has filed Form 8832 to elect to be treated as an association
+taxable as a corporation. For more information about LLCs, see
+Pub. 3402, Taxation of Limited Liability Companies.
+Corporations engaged in farming. A corporation (other than
+a corporation that is a subchapter T cooperative) that engages in
+farming should use Form 1120 to report the income (loss) from
+such activities. Enter the income and deductions of the
+corporation according to the instructions for lines 1 through 10
+and 12 through 29.
+Ownership interest in a Financial Asset Securitization Investment Trust (FASIT). Special rules apply to a FASIT in
+existence on October 22, 2004, to the extent that regular
+interests issued by the FASIT before October 22, 2004, continue
+to remain outstanding in accordance with their original terms.
+If a corporation holds an ownership interest in a FASIT to
+which these special rules apply, it must report all items of
+income, gain, deductions, losses, and credits on the
+corporation’s income tax return (except as provided in section
+860H). Show a breakdown of the items on an attached
+statement. For more information, see sections 860H and 860L
+(repealed with certain exceptions).
+Instructions for Form 1120 (2025)
+
+Foreign-owned domestic disregarded entities. If a foreign
+person, including a foreign corporation, wholly owns a domestic
+disregarded entity (DE), the domestic DE is treated as a
+domestic corporation separate from its owner (the foreign
+corporation) for the limited purposes of the requirements under
+section 6038A that apply to 25% foreign-owned domestic
+corporations. While a DE is not required to file a U.S. income tax
+return, a DE covered by these rules is required to file a pro forma
+Form 1120 with Form 5472 attached by the due date (including
+extensions) of the return. See the Instructions for Form 5472 for
+additional information and coordination with Form 5472 reporting
+by the domestic DE.
+Qualified opportunity fund. If a corporation intends to
+self-certify as a qualified opportunity fund (QOF), the corporation
+must file Form 1120 and attach Form 8996, Qualified
+Opportunity Fund, even if the corporation had no income or
+expenses to report. See Schedule K, Question 25, later. Also,
+see the Instructions for Form 8996.
+Qualified opportunity investment. If the corporation held a
+qualified investment in a QOF at any time during the year, the
+corporation must file its return with Form 8997, Initial and Annual
+Statement of Qualified Opportunity Fund (QOF) Investments,
+attached. See the instructions for Form 8997.
+
+Special Returns for Certain Organizations
+Instead of filing Form 1120, certain organizations, as shown below, file special
+returns.
+If the organization is a:
+▼
+
+File Form
+▼
+
+Exempt organization with unrelated
+trade or business income
+
+990-T
+
+Religious or apostolic organization
+exempt under section 501(d)
+
+1065
+
+Entity formed as a limited liability
+company under state law and treated
+as a partnership for federal income tax
+purposes
+
+1065
+
+Subchapter T cooperative association
+(including a farmers’ cooperative)
+
+1120-C
+
+Entity that elects to be treated as a real
+estate mortgage investment conduit
+(REMIC) under section 860D
+
+1066
+
+Interest charge domestic international
+sales corporation (section 992)
+
+1120-IC-DISC
+
+Foreign corporation (other than life or
+property and casualty insurance
+company filing Form 1120-L or Form
+1120-PC)
+
+1120-F
+
+Foreign sales corporation (section 922)
+
+1120-FSC
+
+Condominium management,
+residential real estate management, or
+timeshare association that elects to be
+treated as a homeowners association
+under section 528
+
+1120-H
+
+Life insurance company
+(section 801)
+
+1120-L
+
+Fund set up to pay for nuclear
+decommissioning costs (section 468A)
+
+Instructions for Form 1120 (2025)
+
+Property and casualty insurance
+company
+(section 831)
+
+1120-PC
+
+Political organization
+(section 527)
+
+1120-POL
+
+Real estate investment trust (section
+856)
+
+1120-REIT
+
+Regulated investment company
+(section 851)
+
+1120-RIC
+
+S corporation (section 1361)
+
+1120-S
+
+Settlement fund
+(section 468B)
+
+1120-SF
+
+Electronic Filing

@@ -1,5 +1,7 @@
 # define.gl-breach-of-contract-gap
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 if GC signs contract promising "no secret subs" and "all subs have comp/GL" then breaches it, their GL insurance will NOT cover your losses from that breach. GL covers bodily injury and property damage — not contract disputes.
@@ -248,6 +250,10 @@ that's **economic loss**, not bodily injury or property damage.
 
 ### misrepresentation claims
 7. [Prove My Florida Case - Misrepresentation vs Breach](https://provemyfloridacase.com/a-misrepresentation-is-not-the-same-as-a-breach-of-contract/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage analysis from public sources; no client identity or client-specific mechanic.
 
 ## .date researched
 

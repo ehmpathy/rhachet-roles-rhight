@@ -1,5 +1,7 @@
 # compare.reinstatement-vs-reregistration
 
+> ⚠️ **not legal advice**, and not tax advice. this brief helps you find what to ask; confirm it for your facts with a licensed attorney or CPA.
+
 ## .what
 
 comparison of two paths when a Delaware corporation is void: reinstate the extant entity vs dissolve and form a new one.
@@ -254,6 +256,10 @@ void Delaware corporation
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — public statute comparison of two lawful paths; no client identity or client-specific mechanic.
+
 ## .sources
 
 1. [IRS: When to get a new EIN](https://www.irs.gov/businesses/small-businesses-self-employed/do-you-need-a-new-ein) — ⚠️ the slug is `do-you-need-a-new-ein`; "when to get a new EIN" is only the page **title**. ⚠️ the entity-type lists are behind a **collapsed accordion** — the page returns 911 chars unexpanded, 3,611 after `Expand all`
@@ -270,3 +276,9 @@ void Delaware corporation
 read in the research and kept for the record; no sentence above relies on it.
 
 - [Delaware Code § 311: Revocation of Voluntary Dissolution](https://law.justia.com/codes/delaware/title-8/chapter-1/subchapter-xii/section-311/)
+
+## .date researched
+
+2026-08-31
+
+(taken from the brief's own body, "pulled 2026-08-31.")

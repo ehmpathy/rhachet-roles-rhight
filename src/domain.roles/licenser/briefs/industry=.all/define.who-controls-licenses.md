@@ -1,5 +1,7 @@
 # define.who-controls-licenses
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 licenses are controlled primarily by **state governments**, with federal involvement in specific cross-border domains.
@@ -87,6 +89,10 @@ to verify a license, you must know:
 3. **which portal/API** that agency provides
 
 there is no single national database for most professions.
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public licensure law; no client identity or client-specific mechanic.
 
 ## .sources
 

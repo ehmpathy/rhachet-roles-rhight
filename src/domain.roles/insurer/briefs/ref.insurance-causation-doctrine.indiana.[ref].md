@@ -1,5 +1,7 @@
 # ref.insurance-causation-doctrine.indiana
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 Indiana is a **"yellow light" jurisdiction** — no clear established rule on causation doctrine. courts apply general contract interpretation principles.
@@ -73,6 +75,10 @@ no definitive Indiana case law. courts would likely follow "freedom of contract"
 - check if unpermitted work was done by subcontractor (coverage more likely)
 - check if work was unintentional/negligent vs. intentional violation
 - provide 60 days written notice before any construction defect lawsuit
+
+## .publishability
+
+☀️ **fullsun** (share) — public state insurance-causation case law, cited to sources; no client identity or applied strategy.
 
 ## .sources
 

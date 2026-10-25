@@ -1,5 +1,7 @@
 # howto.reinstate-void-delaware-corp
 
+> ⚠️ **not legal advice**, and not tax advice. this brief helps you find what to ask; confirm it for your facts with a licensed attorney or CPA.
+
 ## .what
 
 step-by-step guide to reinstate a Delaware corporation after it has been voided for tax delinquency.
@@ -668,6 +670,10 @@ rhx franchise.tax.delaware.accrue --repo rhight --role accountant \
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — public statute and fee analysis; the pseudonymized case study is a placeholder actor over generic law.
+
 ## .sources
 
 ### ⭐ primary — pulled with bhrowser, HEADFUL, as full chapters and sliced
@@ -710,3 +716,9 @@ the § 503(b) and § 211(c) pulls each overturned a plausible inference carried 
 11. [BALL PLLC: Delaware Franchise Tax Best Practices](https://ballpllc.com/understanding-delawares-franchise-tax-system-for-c-corporations-calculation-methods-compliance-and-startup-best-practices/)
 - 🚩 [Wolters Kluwer: Delaware Franchise Report and Tax **Due March 1**](https://www.wolterskluwer.com/en/expert-insights/delaware-corporations-annual-franchise-report-and-tax-requirement) — ⚠️ the title collapses the §502 report date and the §504(a) tax dates, which diverge at $5,000
 12. [Clemta: Consequences of Not Paying Delaware Franchise Tax](https://clemta.com/blog/consequences-of-not-paying-delaware-franchise-tax/)
+
+## .date researched
+
+2026-09-25
+
+(taken from the brief's own quote attribution, "the FAQ, `refs/pulledAt=2026-09-25.de-faq-regular-work-turnaround.txt`")

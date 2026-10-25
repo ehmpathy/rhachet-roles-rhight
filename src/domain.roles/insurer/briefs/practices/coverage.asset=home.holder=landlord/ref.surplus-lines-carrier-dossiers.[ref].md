@@ -1,5 +1,7 @@
 # ref.surplus-lines-carrier-dossiers
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .scope
 
 **this reference applies to:**
@@ -622,4 +624,8 @@ georgia insurance commissioner issued bulletin to remind surplus lines brokers t
 29. [North Carolina DOI - Consumer guide to surplus lines](https://www.ncdoi.gov/documents/consumer/publications/consumer-guide-surplus-lines-insurance/open)
 30. [BBB - Kinsale Insurance complaints](https://www.bbb.org/us/va/richmond/profile/insurance-companies/kinsale-insurance-company-0603-63405196/complaints)
 31. [BBB - Markel Insurance complaints](https://www.bbb.org/us/va/glen-allen/profile/insurance-companies/markel-insurance-company-0603-4017547/complaints)
+
+## .publishability
+
+☀️ **fullsun** (share) — carrier dossiers built from public filings, ratings, and complaint records; no client identity or applied strategy.
 

@@ -1,5 +1,7 @@
 # inventory.of=tax-trigger.tax=corporate.state=hawaii
 
+> ⚠️ **not legal advice**, and not tax advice. this entry helps you find what to ask; confirm the answer for your facts with a licensed attorney or CPA.
+
 ## .answer
 
 two business-level taxes: the **general excise tax (GET)**, a gross receipts tax on the business itself, owed once Hawaii gross income reaches **$100,000** or **200 transactions** in the current or prior calendar year (services used in Hawaii count); and the **corporate net income tax** (HRS ch. 235) — ⚠️ no dollar bright line found for it.
@@ -58,14 +60,22 @@ two business-level taxes: the **general excise tax (GET)**, a gross receipts tax
 | special-industry factor changes (HAR §18-235-38-06) and the Hawaii sales-factor rule text (HAR §18-235-38-03) | the N-30 instructions cite them; the HAR text was not pulled |
 | apportionment of the GET | GET is a gross receipts tax with its own rules; this section covers only the ch. 235 net income tax |
 
+## .publishability
+
+☀️ **fullsun** (share) — generic public state tax law, quoted from the state's own pages; no client identity, no applied mechanic, no recommendation that settles a lawful choice.
+
 ## .sources
 
-| ref | what | chars |
-|---|---|---:|
-| `refs/pulledAt=2026-10-05.hawaii-announcement-2018-10.txt` | Announcement 2018-10, Act 41 | 16,446 |
-| `refs/pulledAt=2026-10-05.hawaii-get-page.txt` | GET page | 9,317 |
-| `refs/pulledAt=2026-10-05.hawaii-outline-of-tax-system.jul2025.txt` | tax outline, July 2025 (flow order) | 24,570 |
-| `refs/effectiveAt=1959-09-14.usc-15-381.pl-86-272.txt` | P.L. 86-272 | 2,983 |
-| `refs/pulledAt=2026-10-05.hawaii-hrs-235-29.txt` | HRS §235-29, the three-factor formula (short but complete) | 365 |
-| `refs/pulledAt=2026-10-05.hawaii-hrs-235-37.txt` | HRS §235-37, sales other than tangible property (short but complete) | 561 |
-| `refs/pulledAt=2026-10-05.hawaii-n30-sch-o-p-instructions.rev2024.txt` | N-30 Schedules O and P instructions, Rev. 2024 | 16,083 |
+1. [Announcement 2018-10, Act 41](https://files.hawaii.gov/tax/news/announce/ann18-10_amended.pdf) — `refs/pulledAt=2026-10-05.hawaii-announcement-2018-10.txt` · 16,446 chars
+2. [GET page](https://tax.hawaii.gov/get/) — `refs/pulledAt=2026-10-05.hawaii-get-page.txt` · 9,317 chars
+3. [tax outline, July 2025 (flow order)](https://files.hawaii.gov/tax/news/pubs/25outline.pdf) — `refs/pulledAt=2026-10-05.hawaii-outline-of-tax-system.jul2025.txt` · 24,570 chars
+4. [P.L. 86-272](https://www.law.cornell.edu/uscode/text/15/381) — `refs/effectiveAt=1959-09-14.usc-15-381.pl-86-272.txt` · 2,983 chars
+5. [HRS §235-29, the three-factor formula (short but complete)](https://www.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0235/HRS_0235-0029.htm) — `refs/pulledAt=2026-10-05.hawaii-hrs-235-29.txt` · 365 chars
+6. [HRS §235-37, sales other than tangible property (short but complete)](https://www.capitol.hawaii.gov/hrscurrent/Vol04_Ch0201-0257/HRS0235/HRS_0235-0037.htm) — `refs/pulledAt=2026-10-05.hawaii-hrs-235-37.txt` · 561 chars
+7. [N-30 Schedules O and P instructions, Rev. 2024](https://files.hawaii.gov/tax/forms/current/n30opins.pdf) — `refs/pulledAt=2026-10-05.hawaii-n30-sch-o-p-instructions.rev2024.txt` · 16,083 chars
+
+## .date researched
+
+2026-10-05
+
+(taken from the pull date of the captures this entry cites, `refs/pulledAt=2026-10-05.*`)

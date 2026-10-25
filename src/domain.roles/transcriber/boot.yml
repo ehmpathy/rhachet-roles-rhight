@@ -1,11 +1,4 @@
 always:
   briefs:
-    say:
-      - briefs/practices/rule.forbid.hand-transcription.md
-      - briefs/practices/rule.require.deterministic-redaction.md
-      - briefs/practices/rule.require.provable-pseudonymization.md
-      - briefs/practices/rule.forbid.auth-escalation-disclosures.md
-      - briefs/practices/rule.forbid.financial-position-disclosures.md
-    ref:
-      - briefs/practices/rule.require.collision-checked-pseudonyms.md
-      - briefs/practices/howto.redteam-before-publish.md
+    say: []
+    ref: []

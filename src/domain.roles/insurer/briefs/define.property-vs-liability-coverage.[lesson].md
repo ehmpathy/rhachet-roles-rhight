@@ -1,5 +1,7 @@
 # define.property-vs-liability-coverage
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 property insurance covers YOUR stuff. liability insurance covers when YOU hurt OTHERS (or their stuff). additional insured status only matters for liability — not property.
@@ -391,6 +393,10 @@ most contractors can add you at no charge — standard practice in construction.
 | what if contractor is uninsured? | you absorb all risk |
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

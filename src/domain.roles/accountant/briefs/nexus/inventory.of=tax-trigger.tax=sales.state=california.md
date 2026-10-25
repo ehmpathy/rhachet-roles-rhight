@@ -1,5 +1,7 @@
 # inventory.of=tax-trigger.tax=sales.state=california
 
+> ⚠️ **not legal advice**, and not tax advice. this entry helps you find what to ask; confirm the answer for your facts with a licensed attorney or CPA.
+
 ## .answer
 
 **SaaS is not taxable through December 31, 2026, and is taxable from January 1, 2027** — SB 122 (Stats. 2026, Ch. 23) makes software accessed remotely, SaaS named, tangible personal property. a seller must register if it has a California **place of business, representative, or leased server**, or if its sales of tangible personal property for delivery in California (with related persons) **exceed $500,000 in the current or prior calendar year** — and it must register **on the day** it crosses.
@@ -56,14 +58,22 @@ register online for a seller's permit or a Certificate of Registration – Use T
 | SB 122 emergency regulations | the *Retailers* page: *"Emergency regulations are being drafted to interpret and clarify SB 122."* |
 | the $5,000,000 per-purchaser shift to the buyer | applies to large single customers from 2027; CCPI-indexed |
 
+## .publishability
+
+☀️ **fullsun** (share) — generic public state tax law, quoted from the state's own pages; no client identity, no applied mechanic, no recommendation that settles a lawful choice.
+
 ## .sources
 
-| ref | chars |
-|---|---:|
-| `refs/pulledAt=2026-10-05.ca-reg-1502.txt` | 30,917 |
-| `refs/pulledAt=2026-10-05.ca-rtc-6203.txt` | 2,502 |
-| `refs/pulledAt=2026-10-05.ca-cdtfa.wayfair-overview.txt` | 2,878 |
-| `refs/pulledAt=2026-10-05.ca-cdtfa.wayfair-faq.txt` | 20,920 |
-| `refs/pulledAt=2026-10-05.ca-cdtfa.digital-products-overview.txt` | 2,062 |
-| `refs/pulledAt=2026-10-05.ca-cdtfa.digital-products-definitions.txt` | 5,322 |
-| `refs/pulledAt=2026-10-05.ca-cdtfa.digital-products-retailers.txt` | 6,538 |
+1. [18 CCR 1502, with its history notes](https://cdtfa.ca.gov/lawguides/vol1/sutr/1502.html) — `refs/pulledAt=2026-10-05.ca-reg-1502.txt` · 30,917 chars
+2. [Cal. Rev. & Tax. Code §6203(a)-(c)(4), Business Taxes Law Guide revision 2026](https://cdtfa.ca.gov/lawguides/vol1/sutl/6203.html) — `refs/pulledAt=2026-10-05.ca-rtc-6203.txt` · 2,502 chars
+3. [CDTFA tax guide on use tax collection after Wayfair, Overview](https://cdtfa.ca.gov/industry/wayfair/) — `refs/pulledAt=2026-10-05.ca-cdtfa.wayfair-overview.txt` · 2,878 chars
+4. [CDTFA Wayfair guide FAQs](https://cdtfa.ca.gov/industry/wayfair/frequently-asked-questions.htm) — `refs/pulledAt=2026-10-05.ca-cdtfa.wayfair-faq.txt` · 20,920 chars
+5. [CDTFA tax guide on digital products, Overview](https://cdtfa.ca.gov/industry/retailers-and-purchasers-of-digital-products/) — `refs/pulledAt=2026-10-05.ca-cdtfa.digital-products-overview.txt` · 2,062 chars
+6. [CDTFA digital products guide, Definitions](https://cdtfa.ca.gov/industry/retailers-and-purchasers-of-digital-products/definitions.htm) — `refs/pulledAt=2026-10-05.ca-cdtfa.digital-products-definitions.txt` · 5,322 chars
+7. [CDTFA digital products guide, Retailers](https://cdtfa.ca.gov/industry/retailers-and-purchasers-of-digital-products/retailers.htm) — `refs/pulledAt=2026-10-05.ca-cdtfa.digital-products-retailers.txt` · 6,538 chars
+
+## .date researched
+
+2026-10-05
+
+(taken from the pull date of the captures this entry cites, `refs/pulledAt=2026-10-05.*`)

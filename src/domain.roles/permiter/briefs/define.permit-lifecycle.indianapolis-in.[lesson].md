@@ -1,5 +1,7 @@
 # define.permit-lifecycle.indianapolis-in
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 in Indianapolis, work cannot legally begin until a permit is **issued** — not just filed or approved.
@@ -124,6 +126,10 @@ Indianapolis does not have a documented emergency permit exception for residenti
 | [indy.gov Residential Development Permits](https://www.indy.gov/activity/residential-development-permits) | primary |
 | [indy.gov Permit Application Review Times](https://www.indy.gov/activity/permit-application-review-times) | primary |
 | [Permit Place: Permit Status Definitions](https://permitplace.com/building-permit-status-definitions/) | reference |
+
+## .publishability
+
+☀️ **fullsun** (share) — public Indianapolis permit rules and public agency forms; no client identity.
 
 ## .date researched
 

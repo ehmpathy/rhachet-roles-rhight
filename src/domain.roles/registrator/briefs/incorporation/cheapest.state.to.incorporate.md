@@ -1,5 +1,7 @@
 # cheapest.state.to.incorporate
 
+> ⚠️ **not legal advice**, and not tax advice. this brief helps you find what to ask; confirm it for your facts with a licensed attorney or CPA.
+
 ## .what
 
 a cost comparison of U.S. states for incorporation, with guidance on when cheap is the right choice.
@@ -308,6 +310,10 @@ do you plan to raise VC?
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — cited public state fee schedules and a generic cost comparison; no client identity or client-specific mechanic.
+
 ## .sources
 
 ### the one schedule pulled — 2026-09-01, bhrowser headful, bytes embedded
@@ -332,3 +338,9 @@ fabricated quote — is **not** the live path; the schedule is at
 6. [Wolters Kluwer: New Mexico LLC Requirements](https://www.wolterskluwer.com/en/solutions/bizfilings/state-guides/new-mexico-llc-requirements)
 7. [State Business Compliance: Wyoming LLC Costs](https://www.statebusinesscompliance.com/blog/wyoming-llc-taxes-annual-fees-2026)
 8. [MyLLC: Cost of an LLC in 2025](https://www.myllc.com/cost-of-llc-2025.aspx)
+
+## .date researched
+
+2026-09-01
+
+(taken from the brief's own sources, "the one schedule pulled — 2026-09-01, bhrowser headful, bytes embedded"; the brief also states "pulled 2026-08-31")

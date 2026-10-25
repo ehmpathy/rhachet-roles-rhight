@@ -1,13 +1,4 @@
 always:
   briefs:
-    say:
-      - briefs/practices/records/rule.require.permanent-yields.md
-      - briefs/practices/records/rule.require.comms-filename-facets.md
-      - briefs/practices/communications/rule.forbid.baggage.md
-      - briefs/practices/communications/rule.forbid.ai-tells.md
-      - briefs/practices/communications/rule.require.crisp.md
-      - briefs/practices/communications/rule.require.friendly.md
-      - briefs/practices/rule.require.disambiguate-secretary.md
-
-    ref:
-      - briefs/practices/define.why-secretary.[philosophy].md
+    say: []
+    ref: []

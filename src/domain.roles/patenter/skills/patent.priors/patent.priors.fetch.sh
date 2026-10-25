@@ -28,15 +28,24 @@ source "$SCRIPT_DIR/output.sh"
 # path to asStatusEmoji for status indicators
 AS_STATUS_EMOJI_CMD="$SCRIPT_DIR/asStatusEmoji.sh"
 
-# path to transcribe.pdf skill
+# path to the transcriber's OCR leaf
 # compute the domain.roles directory, then build path to transcriber skill
 # this avoids issues with ../ traversal in paths
+#
+# .note = this points at the OPTICAL leaf on purpose, not at the
+#   pdf.transcribe dispatcher. USPTO prosecution documents are scans end
+#   to end, so per-page dispatch buys us no free pages, and the
+#   dispatcher emits "## page N" where this caller parses "## Page N".
+#   renamed: transcribe.pdf -> pdf.transcribe.via.optical
 _DOMAIN_ROLES_DIR="$(dirname "$(dirname "$(dirname "$SCRIPT_DIR")")")"
-TRANSCRIBE_CMD="$_DOMAIN_ROLES_DIR/transcriber/skills/transcribe.pdf/transcribe.pdf.sh"
+TRANSCRIBE_CMD="$_DOMAIN_ROLES_DIR/transcriber/skills/pdf.transcribe/pdf.transcribe.via.optical.sh"
 
-# cache location for patent documents (repo-local)
+# cache location for patent documents (repo-local).
+# under .agent/ rather than at the repo root: this is agent scratch state,
+# so it belongs beside the rest of the agent's files rather than as another
+# top-level directory in the project.
 GIT_ROOT="$(git rev-parse --show-toplevel 2>/dev/null || pwd)"
-CACHE_BASE="${GIT_ROOT}/.cache/patents"
+CACHE_BASE="${GIT_ROOT}/.agent/.cache/patents"
 # CACHE_DIR is set per-patent in main() as $CACHE_BASE/$PATENT_EXID/
 CACHE_DIR=""
 
@@ -319,21 +328,30 @@ fetch_metadata() {
       ;;
     404)
       print_blocked "patent not found"
-      echo ""
-      echo "application number $PATENT_EXID does not exist"
+      # ⛔ >&2 IS LOAD-BEARING. main() calls `metadata=$(fetch_metadata)` at
+      #    :968, so this whole function runs in a command substitution and
+      #    every plain `echo` here is captured into $metadata and discarded.
+      #    only `print_blocked`, which writes to stderr, escapes. `echo "$body"`
+      #    on the 200 arm is this function's RETURN VALUE — that is why the
+      #    channel is taken, and why every refusal must step off it.
+      echo "" >&2
+      echo "application number $PATENT_EXID does not exist" >&2
       exit 2
       ;;
     429)
       print_blocked "rate limited"
-      echo ""
-      echo "USPTO API rate limit exceeded. please wait and retry."
+      # >&2 per the note on the 404 arm above.
+      echo "" >&2
+      echo "USPTO API rate limit exceeded. please wait and retry." >&2
       exit 1
       ;;
     *)
       print_blocked "API error"
-      echo ""
-      echo "status: $http_code"
-      echo "response: ${body:0:200}"
+      # >&2 per the note on the 404 arm above. without it the caller sees a
+      # bare "API error" and never learns which status code produced it.
+      echo "" >&2
+      echo "status: $http_code" >&2
+      echo "response: ${body:0:200}" >&2
       exit 1
       ;;
   esac
@@ -760,7 +778,7 @@ fetch_prosecution_documents() {
       if [[ -f "$md_path" && "$CACHE_SKIP" != "true" ]]; then
         transcription_status="cached"
       else
-        # OCR the PDF (use absolute path to transcribe.pdf for cwd independence)
+        # OCR the PDF via the optical leaf (absolute path, for cwd independence)
         local transcribe_err
         # capture both stdout and stderr to see error messages
         transcribe_err=$(bash "$TRANSCRIBE_CMD" "$pdf_path" --into markdown 2>&1) || {
@@ -792,10 +810,35 @@ fetch_prosecution_documents() {
       local status_line
       status_line=$(cat "$status_file")
 
-      local retrieval_status transcription_status error_msg
-      retrieval_status=$(echo "$status_line" | sed 's/.*retrieval:\([^|]*\).*/\1/')
-      transcription_status=$(echo "$status_line" | sed 's/.*transcription:\([^|]*\).*/\1/')
-      error_msg=$(echo "$status_line" | sed 's/.*error:\(.*\)/\1/')
+      # ⛔ EXTRACT FROM THE FRONT, never with a greedy `.*<field>:`.
+      #
+      # the record is `key:value|key:value|error:<payload>`, and the payload
+      # is ANOTHER TOOL'S message — which routinely carries the very tokens
+      # used as delimiters here. sed's `.*` is leftmost-LONGEST, so
+      #
+      #     sed 's/.*error:\(.*\)/\1/'
+      #
+      # matches the LAST `error:` on the line, not the field marker. jq emits
+      # `parse error: ...` for malformed input, so the whole verdict written
+      # at :785 — `transcribe failed: ` — was silently deleted, and a caller
+      # was handed a bare tool error with no word for WHICH PHASE produced it.
+      #
+      # observed 2026-09-04, exactly: `Invalid literal at line 2, column 0`
+      # reached the caller where `transcribe failed: parse error: Invalid
+      # literal at line 2, column 0` was written.
+      #
+      # ⚠️ the two hardcoded fetch verdicts (:764, :771) cannot expose this —
+      #    their payloads are fixed strings with no `error:` in them. only an
+      #    arm that RELAYS a tool's own words can, and that arm had no case.
+      #
+      # `#` and `%%` are shortest-match-from-the-end-you-name, so they anchor
+      # on the field marker rather than on the payload.
+      local retrieval_status transcription_status error_msg rest
+      rest="${status_line#retrieval:}"
+      retrieval_status="${rest%%|*}"
+      rest="${status_line#*|transcription:}"
+      transcription_status="${rest%%|*}"
+      error_msg="${status_line#*|error:}"
 
       echo "   │  │  │  ├─ retrieval: $retrieval_status"
       echo "   │  │  │  └─ transcription: $transcription_status"
@@ -929,8 +972,8 @@ emit_document_header() {
 # emit_document_footer - cache and hint lines
 ######################################################################
 emit_document_footer() {
-  print_tree_branch "cache" ".cache/patents/${PATENT_EXID}/"
-  echo "   └─ hint: tree -f .cache/patents/${PATENT_EXID}"
+  print_tree_branch "cache" ".agent/.cache/patents/${PATENT_EXID}/"
+  echo "   └─ hint: tree -f .agent/.cache/patents/${PATENT_EXID}"
 }
 
 ######################################################################

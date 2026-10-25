@@ -1,5 +1,7 @@
 # howto.file-form-1120
 
+> ⚠️ **not legal advice**, and not tax advice. this brief helps you find what to ask; confirm it for your facts with a licensed attorney or CPA.
+
 ## .what
 
 how to file a Form 1120 — especially a **prior-year** return that was never filed (e.g., a loss year you skipped).
@@ -239,6 +241,10 @@ a CPA-prepared prior-year 1120 typically runs a few hundred dollars and removes 
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — a generic Form 1120 filing guide over public IRS rules; no client identity.
+
 ## .sources
 
 1. [IRS: About Form 1120](https://www.irs.gov/forms-pubs/about-form-1120)
@@ -270,3 +276,9 @@ pull traps met (all in the citation rule):
 3. the first IRS url was a **soft 404** (every language link pointed at `/404`); the live path, walked from the agency's directory, is under `/businesses/corporations/`, not `/e-file-providers/`
 
 ⚠️ the playbooks, `.scratch/irc-6011-efile-mandate{,.round2,.round3,.round4}.play.ts`, are **gitignored** — a package reader cannot re-run them. the move to `briefs/refs/` is pending.
+
+## .date researched
+
+2026-08-31
+
+(taken from the brief's own text, "§6651 pulled 2026-08-31")

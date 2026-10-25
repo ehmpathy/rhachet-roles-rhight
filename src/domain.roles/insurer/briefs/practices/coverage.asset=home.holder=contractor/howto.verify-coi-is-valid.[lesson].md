@@ -1,5 +1,7 @@
 # howto.verify-coi-is-valid
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 how to verify a Certificate of Insurance (COI) is legitimate and that you are actually listed as additional insured.
@@ -190,3 +192,7 @@ save the rep's name and any confirmation number they give you.
 
 - `howto.check-cg-22-94.[lesson].md` — detailed guide to verify CG 22 94 endorsement
 - `ref.subcontractor-coverage-case-law.[ref].md` — case law on subcontractor coverage
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.

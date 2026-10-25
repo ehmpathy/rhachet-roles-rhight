@@ -1,5 +1,7 @@
 # howto.gather-insurance-documents
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 best practices to collect and retain homeowners insurance documents.
@@ -76,6 +78,10 @@ the evidence of insurance is **not your policy** — it's a summary for your len
 - [ ] pull free CLUE report from LexisNexis
 - [ ] review for errors and coverage gaps
 - [ ] store copies in fireproof safe + cloud backup
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## .sources
 

@@ -28,77 +28,6 @@ note: use application numbers, not publication numbers (US7654321B2)
 "
 `;
 
-exports[`patent.priors.fetch.sh given: [case4] valid exid (LIVE API) when: [t0] fetch is called with valid USPTO exid then: patent is fetched from live API 1`] = `
-"
-   fetch metadata...    
-[K
-   fetch document list...    
-[K🦅 got one,
-
-🌎 patent.priors.fetch --exid 19399196
-   ├─ title: Cutter and Drill Bit Design by Virtual Testing with Digitized Rocks
-   ├─ inventor: Xiaoge Gan
-   ├─ status
-   │  ├─ 🌱 Docketed New Case - Ready for Examination
-   │  ├─ filed on = 2025-11-24
-   │  ├─ published on = 2026-03-19
-   │  └─ granted on = not yet granted
-   ├─ documents
-   │  ├─ application: 6 documents
-   │  │  ├─ 0.application.drawings-supplemental.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 0.application.application.xml
-   │  │  │  └─ retrieval: unavailable
-   │  │  ├─ 0.application.specification.xml
-   │  │  │  └─ retrieval: fetched
-   │  │  ├─ 0.application.claims.xml
-   │  │  │  └─ retrieval: fetched
-   │  │  ├─ 0.application.abstract.xml
-   │  │  │  └─ retrieval: fetched
-   │  │  └─ 0.application.drawings.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  ├─ prosecution: 11 documents
-   │  │  ├─ 1.event.2025-11-24.document.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 1.event.2025-11-24.document.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 1.event.2025-11-24.document.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 1.event.2025-11-24.office-action.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 1.event.2025-11-24.document.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 1.event.2025-11-24.notice.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 1.event.2025-11-24.notice.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 1.event.2025-12-11.fee.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 1.event.2025-12-11.document.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 1.event.2025-12-11.document.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  │  ├─ 1.event.2026-03-19.document.pdf
-   │  │  │  ├─ retrieval: fetched
-   │  │  │  └─ transcription: fetched
-   │  └─ grant: unavailable (not yet granted)
-   ├─ cache: .cache/patents/19399196/
-   └─ hint: tree -f .cache/patents/19399196
-"
-`;
-
 exports[`patent.priors.fetch.sh given: [case5] valid exid but patent not found (LIVE API) when: [t0] fetch is called with nonexistent patent then: not found error is returned 1`] = `
 "🦅 that wont do...
    └─ patent not found
@@ -115,7 +44,7 @@ exports[`patent.priors.fetch.sh given: [case8] deterministic cached flow (uses f
 
 🌎 patent.priors.fetch --exid 19399196
    ├─ title: Cutter and Drill Bit Design by Virtual Testing with Digitized Rocks
-   ├─ inventor: Xiaoge Gan
+   ├─ inventor: Alex ExampleA
    ├─ status
    │  ├─ 🌱 Docketed New Case - Ready for Examination
    │  ├─ filed on = 2025-11-24
@@ -172,8 +101,8 @@ exports[`patent.priors.fetch.sh given: [case8] deterministic cached flow (uses f
    │  │  │  ├─ retrieval: cached
    │  │  │  └─ transcription: cached
    │  └─ grant: unavailable (not yet granted)
-   ├─ cache: .cache/patents/19399196/
-   └─ hint: tree -f .cache/patents/19399196
+   ├─ cache: .agent/.cache/patents/19399196/
+   └─ hint: tree -f .agent/.cache/patents/19399196
 "
 `;
 
@@ -186,7 +115,7 @@ exports[`patent.priors.fetch.sh given: [case9] deterministic uncached flow (empt
 
 🌎 patent.priors.fetch --exid 19399196
    ├─ title: Cutter and Drill Bit Design by Virtual Testing with Digitized Rocks
-   ├─ inventor: Xiaoge Gan
+   ├─ inventor: Alex ExampleA
    ├─ status
    │  ├─ 🌱 Docketed New Case - Ready for Examination
    │  ├─ filed on = 2025-11-24

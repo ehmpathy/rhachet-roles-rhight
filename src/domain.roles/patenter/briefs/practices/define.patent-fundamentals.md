@@ -1,5 +1,7 @@
 # define.patent-fundamentals
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 core patent terminology and office action types.
@@ -438,6 +440,10 @@ two further limits a "20 years + PTA" estimate ignores:
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — generic patent statute and USPTO practice; no client identity or client-specific mechanic.
+
 ## .sources
 
 every quote above was pulled with **bhrowser**, headful, per
@@ -500,4 +506,10 @@ each delta was diagnosed per body: magnitude does not rank substance (a changed 
 
 - `howto.patent-techniques.[lesson]` — the transitional phrases, and why
   "consisting essentially of" usually buys no narrowness
+
+## .date researched
+
+2026-09-01
+
+(taken from the brief's own .sources, "pulled 2026-09-01.")
 

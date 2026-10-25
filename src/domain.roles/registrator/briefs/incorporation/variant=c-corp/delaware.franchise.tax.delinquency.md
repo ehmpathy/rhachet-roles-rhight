@@ -1,5 +1,7 @@
 # delaware.franchise.tax.delinquency
 
+> ⚠️ **not legal advice**, and not tax advice. this brief helps you find what to ask; confirm it for your facts with a licensed attorney or CPA.
+
 ## .what
 
 a Delaware corporation that fails to pay franchise tax faces penalties, interest, and eventually void status. this brief covers the consequences and the recovery.
@@ -320,6 +322,10 @@ expedited service is available for additional fees.
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — public statute analysis of franchise tax delinquency; no client identity or client-specific mechanic.
+
 ## .sources
 
 ### the statute — quote these, not the summaries below
@@ -390,3 +396,9 @@ the §275, §312(e), and *In re Russell* texts are shared with `accountant/brief
 | whether the unqualified **report prong** is enforced as written | 🚩 **open.** §510 puts no duration on an unfiled complete annual report. whether the Division voids on a single unfiled report in practice cannot be read from the text |
 | "bank accounts may be frozen" · "foreign qualifications may be revoked" | ⚠️ **uncited**, and both are hedged with "may". these are third-party and other-state consequences that Delaware law does not itself impose |
 | the reinstatement timeline (1–3 days, 1–5 days) | ⚠️ **uncited** operational detail |
+
+## .date researched
+
+2026-08-31
+
+(taken from the brief's own sources, "§510 re-pulled 2026-08-31, whole chapter, headful bhrowser")

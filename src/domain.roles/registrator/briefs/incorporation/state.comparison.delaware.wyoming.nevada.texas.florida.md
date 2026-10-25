@@ -1,5 +1,7 @@
 # state.comparison.delaware.wyoming.nevada.texas.florida
 
+> ⚠️ **not legal advice**, and not tax advice. this brief helps you find what to ask; confirm it for your facts with a licensed attorney or CPA.
+
 ## .what
 
 a comparison of the five most popular states for incorporation: Delaware, Wyoming, Nevada, Texas, and Florida. fees are cited to each state's own schedule; where a figure is a **function** (of stock, assets, or an election) it is marked so.
@@ -466,6 +468,10 @@ despite higher costs, Delaware dominates for companies that plan to raise instit
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — cited public state fee schedules in a neutral comparison; no client identity or client-specific mechanic.
+
 ## .sources
 
 ### the schedules — pulled 2026-09-01, bhrowser headful, bytes embedded
@@ -500,3 +506,9 @@ must not claim a date the source does not state.
 9. [Capbase: Why Not Texas](https://capbase.com/why-you-shouldnt-incorporate-your-company-in-texas/)
 10. [Commenda: Texas vs Delaware](https://www.commenda.io/blog/texas-vs-delaware-incorporation)
 11. [LLC University: Florida LLC Costs](https://www.llcuniversity.com/florida-llc/costs/)
+
+## .date researched
+
+2026-09-01
+
+(taken from the brief's own body, "pulled 2026-09-01, 931 chars"; the brief also states "pulled 2026-08-31")

@@ -1,5 +1,7 @@
 # ref.builders-insurance.claim-denial-gotchas
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 common reasons builder's risk claims are denied and how to avoid them.
@@ -241,6 +243,10 @@ for electrical projects: test damage (arc flash, commission failures) may be exc
 - [IA Magazine: 5 Coverage Gaps](https://www.iamagazine.com/2025/11/10/builders-risk-insurance-5-coverage-gaps-and-policy-misconceptions/) — WebFetch verified
 - [BuildersRisk.net: What Does Builder's Risk Cover](https://buildersrisk.net/what-does-builders-risk-cover/)
 - [Procore: Contractor's Guide](https://www.procore.com/library/builders-risk-insurance)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic builder's risk claim-denial pitfalls from public sources; no client identity or applied strategy.
 
 ## .date researched
 

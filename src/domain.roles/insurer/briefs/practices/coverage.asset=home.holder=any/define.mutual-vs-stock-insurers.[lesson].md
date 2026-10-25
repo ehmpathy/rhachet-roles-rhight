@@ -1,5 +1,7 @@
 # define.mutual-vs-stock-insurers
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 the structural mechanism that determines whether an insurer pays claims or denies them.
@@ -303,6 +305,10 @@ choose accordingly.
 - `risk.surplus-lines-insurance.[lesson].md` — why surplus lines is riskier
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

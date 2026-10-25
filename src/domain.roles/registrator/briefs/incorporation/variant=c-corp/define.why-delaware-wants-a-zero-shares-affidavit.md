@@ -499,6 +499,10 @@ no one has publicly documented the **zero-issued** outcome. the adjacent pattern
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — public statute and agency-practice analysis; the pseudonymized case is a placeholder actor over generic law.
+
 ## .sources
 
 ### primary — Delaware statutes
@@ -544,3 +548,9 @@ no one has publicly documented the **zero-issued** outcome. the adjacent pattern
 ---
 
 > ⚠️ not legal advice
+
+## .date researched
+
+2026-08-26
+
+(taken from the brief's own quote attribution, "source of record: `refs/pulledAt=2026-08-26.de-frtaxcalc.txt`"; the brief also cites "refs/pulledAt=2026-08-04.hbs-common-annual-report-mistakes.txt")

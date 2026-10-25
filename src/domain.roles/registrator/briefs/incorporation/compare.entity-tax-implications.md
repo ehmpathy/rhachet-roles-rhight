@@ -1,5 +1,7 @@
 # compare.entity-tax-implications
 
+> ⚠️ **not legal advice**, and not tax advice. this brief helps you find what to ask; confirm it for your facts with a licensed attorney or CPA.
+
 ## .what
 
 comparison of tax implications across LLC, S-corp, and C-corp structures for solo founders.
@@ -333,6 +335,10 @@ consult a CPA for state-specific guidance.
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — public tax law across entity types; no client identity or client-specific mechanic.
+
 ## .sources
 
 ### the statutes — pulled 2026-08-31, bhrowser headful
@@ -356,3 +362,9 @@ test were established.
 9. [Carta: QSBS Explained](https://carta.com/learn/startups/tax-planning/qsbs/)
 10. [Wolters Kluwer: S Corp vs C Corp Differences](https://www.wolterskluwer.com/en/expert-insights/s-corp-vs-c-corp-differences-benefits)
 11. [Otterz: LLC vs S-Corp vs C-Corp 2026 Tax Comparison](https://otterz.co/how-the-new-2025-tax-rules-impact-llcs-s-corps-and-c-corps-entity-comparison-guide/)
+
+## .date researched
+
+2026-08-31
+
+(taken from the brief's own sources, "the statutes — pulled 2026-08-31, bhrowser headful")

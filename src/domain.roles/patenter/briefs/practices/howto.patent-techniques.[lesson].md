@@ -1,5 +1,7 @@
 # howto.patent-techniques
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 techniques for patent claim drafts and prior art search.
@@ -183,6 +185,10 @@ your search is complete when:
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — generic claim-draft and prior-art-search technique over public patent law; no client identity or client-specific mechanic.
+
 ## .sources
 
 the transitional-phrase section was pulled with **bhrowser**, headful, per
@@ -204,4 +210,10 @@ the body, never by the grep.
 
 - `define.patent-fundamentals` — the term, the response period, and the
   rejection grounds, each with its statute
+
+## .date researched
+
+2026-09-01
+
+(taken from the brief's own .sources, "pulled 2026-09-01, as the whole container")
 

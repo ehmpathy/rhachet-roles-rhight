@@ -2,9 +2,7 @@
 
 exports[`getAllBriefIntegrityDefects given: [case1] every brief in the repo when: [t0] the integrity suite runs over it then: the full tally is snapshotted, so any change surfaces in a diff 1`] = `
 {
-  "date-researched-absent": 80,
-  "not-advice-callout-absent": 143,
-  "publishability-tag-absent": 142,
+  "date-researched-absent": 78,
   "see-also-target-absent": 18,
   "source-anchor-unreferenced": 31,
   "sources-below-seven": 143,

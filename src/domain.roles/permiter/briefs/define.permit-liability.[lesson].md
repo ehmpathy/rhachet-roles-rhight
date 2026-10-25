@@ -1,5 +1,7 @@
 # define.permit-liability
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 a permit is a legal document that assigns liability. whoever pulls the permit certifies code compliance and accepts responsibility for defects, fines, and injuries.
@@ -257,6 +259,10 @@ $150-400 to transfer pre-approval risk = rational for complex or inherited work.
 ### indiana-specific
 - [Indiana Contractor Authority FAQ](https://indianacontractorauthority.com/indiana-contractor-services-frequently-asked-questions)
 - [Indy.gov: Contractor Licenses](https://www.indy.gov/activity/contractor-licenses)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic explainer on who bears liability under a permit; no client identity, no applied mechanic.
 
 ## .date researched
 

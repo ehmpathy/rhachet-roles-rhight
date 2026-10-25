@@ -1,5 +1,7 @@
 # ref.ho3-dp3-claim-scenarios-matrix
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 comprehensive matrix of insurance claim types and their coverage outcomes under HO-3 (homeowner) vs DP-3 (landlord) policies when a property is used as a rental.
@@ -762,3 +764,7 @@ when a property is used as a rental but insured with an HO-3 homeowner's policy:
 - `define.homeowner-vs-landlord-insurance.[lesson].md` — policy type comparison
 - `risk.ho-policy-on-rental-property.[lesson].md` — why HO on rental fails
 - `howto.find-landlord-insurance.[lesson].md` — how to shop for DP-3
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.

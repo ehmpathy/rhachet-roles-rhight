@@ -1,5 +1,7 @@
 # evidence.anecdotal.rental-purchase-wrong-insurance
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 real-world cases and forum discussions documenting claim denials when rental properties were insured with homeowners policies (HO-3) instead of landlord policies (DP-3).
@@ -177,6 +179,10 @@ these scattered stories confirm:
 - `ref.ho3-dp3-claim-scenarios-matrix.[ref].md` — case law that confirms denials are upheld
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

@@ -1,5 +1,7 @@
 # define.wrap-up-ocip-policy
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 a wrap-up or OCIP (Owner Controlled Insurance Program) is a single insurance policy purchased by the property owner that covers ALL workers on a project — GC, subs, and secret subs alike.
@@ -285,6 +287,10 @@ OCIP covers all "bodily injury arising out of operations at the project site."
 | when to use? | major renovation, new construction, multiple subs |
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

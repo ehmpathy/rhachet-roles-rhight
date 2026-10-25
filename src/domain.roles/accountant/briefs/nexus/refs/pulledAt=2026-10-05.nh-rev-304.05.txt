@@ -1,0 +1,125 @@
+Rev 304.05  Sales Factor. For taxable periods ending on or after December 31, 2021:
+
+ 
+
+(a)  The sales factor shall include:
+
+ 
+
+(1)  Sales less returns and allowances;
+
+ 
+
+(2)  Dividends not eligible for the dividend deduction under RSA 77-A:4, or the factor relief provided in RSA 77-A:3, II(b);
+
+ 
+
+(3)  Interest;
+
+ 
+
+(4)  Rents;
+
+ 
+
+(5)  Royalties;
+
+ 
+
+(6)  Capital gain net income;
+
+ 
+
+(7)  Net gains or losses; and
+
+ 
+
+(8)  Other income unless the other income is properly includible as a reduction of an expense or allowance;
+
+ 
+
+(b)  The sales factor numerator for separate business organizations and all members of a combined group shall include the sum of:
+
+ 
+
+(1)  Sales of tangible personal property, regardless of the conditions of sale delivered in New Hampshire, other than to the United States government;
+
+ 
+
+(2)  Sales of tangible personal property originating in New Hampshire to a purchaser in another state in which the business organization is not taxable or subject to tax;
+
+ 
+
+(3)  Sales of tangible personal property originating in New Hampshire and delivered to the United States government in any state;
+
+ 
+
+(4)  Ordinary net gains or losses and capital gains from the sale of real or tangible property, if and to the extent the property is located in this state;
+
+ 
+
+(5) Ordinary net gains or losses and capital gains from the sale of intangible property, if and to the extent the property is used in this state;
+
+ 
+
+(6)  Sales, rental, lease, licensing, or other use of real property, if and to the extent the property is located in this state;
+
+ 
+
+(7)  Rental, lease, licensing, or other use of tangible personal property, if and to the extent the property is located in this state;
+
+ 
+
+(8)  Sales of services, if and to the extent the service is delivered to a location in this state;
+
+ 
+
+(9)  Sale, rental, lease, license, or other use of intangible property, if and to the extent the property is used in this state;
+
+ 
+
+(10)  Interest income, if and to the extent the debtor or encumbered property is located in this state;
+
+ 
+
+(11)  Dividend income, if and to the extent the business organization’s commercial domicile is in this state; and
+
+ 
+
+(12)  Other income, if and to the extent the income is derived from sources in this state;
+
+ 
+
+(c)  In the case of the delivery of a service to a customer by in-person means, the service shall be considered delivered in New Hampshire if and to the extent that the customer receives the service in New Hampshire;
+
+ 
+
+(d)  In the case of the delivery of a service to a customer by electronic transmission, the service shall be considered delivered in New Hampshire if and to the extent that the taxpayer’s customer receives the service in New Hampshire;
+
+ 
+
+(e)  In the case of the delivery of a service by electronic transmission, where the service is delivered electronically to end users or other third-party recipients through or on behalf of the customer, the service shall be considered delivered in New Hampshire if and to the extent that the end users or other third-party recipients are in New Hampshire;
+
+ 
+
+(f)  In the case of the delivery of a professional service to a customer other than by in-person means, the service shall be considered delivered in New Hampshire if and to the extent that the customer receives the benefit of the service in New Hampshire;
+
+ 
+
+(g)  In the case of sales other than sales of tangible personal property, if the state or states of assignment cannot be determined, the state or states of assignment shall be reasonably approximated. Methods to reasonably approximate such sales shall include, but not be limited to, multiplying such sales by a percentage that equals the ratio that the population of New Hampshire bears to the combined total population of every state within the United States where such business organization is taxable or subject to tax.  The need, and methodology used, for reasonable approximation shall be determined on a separate entity basis consistent with the separate entity treatment provided in RSA 77-A:1, I, notwithstanding that a combined report is filed;  
+
+ 
+
+(h)  In the case of sales other than sales of tangible personal property, if the taxpayer is not taxable in a state to which a sale is assigned, or if the state of assignment cannot be determined or reasonably approximated, such sale shall be excluded from the denominator of the sales factor;
+
+ 
+
+(i)  The sales price shall include all interest, carrying charges or time-price differential charges, and excise taxes passed on to the buyer or included as part of the selling price of the product; and
+
+ 
+
+(j)  Business organizations includible in a combined group shall eliminate all intergroup transactions with other members of the combined group for both the numerator and denominator of the sales factor.
+
+ 
+
+Source.  #13177, eff 3-6-21; ss by #14231, eff 4-3-25 (formerly Rev 304.041), EXPIRES 4-3-35

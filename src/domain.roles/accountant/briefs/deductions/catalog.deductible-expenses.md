@@ -174,6 +174,10 @@ rate rows pulled with **bhrowser**, headful, per `rule.require.bhrowser-citation
 
 ⚠️ a needle search for `100 percent` found **zero hits in any §274 source** — (n)(2)(D) is drafted as an *exception* and never states a percentage. only the slice from `(n)` to `(o)`, with a refusal guard on a missed start marker, found it.
 
+## .publishability
+
+☀️ **fullsun** (share) — a catalog of generic deductible-expense categories drawn from public tax law; no client identity, no applied mechanic.
+
 ## .sources
 
 1. [26 U.S.C. § 274 — 2024 edition, govinfo](https://www.govinfo.gov/content/pkg/USCODE-2024-title26/html/USCODE-2024-title26-subtitleA-chap1-subchapB-partIX-sec274.htm)
@@ -184,4 +188,10 @@ rate rows pulled with **bhrowser**, headful, per `rule.require.bhrowser-citation
 6. [Insureon: C Corporation Tax Deductions](https://www.insureon.com/blog/tax-deductions-for-c-corps)
 7. [IRS: Instructions for Form 1120](https://www.irs.gov/instructions/i1120)
 
-> ⚠️ not tax advice. this catalog helps you *aggregate candidates*; a CPA confirms deductibility and category per item.
+> ⚠️ not legal advice, and not tax advice. this catalog helps you *aggregate candidates*; a CPA confirms deductibility and category per item.
+
+## .date researched
+
+2026-08-31
+
+(taken from the brief's own text, "rate rows pulled with **bhrowser**, headful, per `rule.require.bhrowser-citations`, 2026-08-31")

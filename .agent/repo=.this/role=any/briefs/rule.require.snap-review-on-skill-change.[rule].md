@@ -2,16 +2,33 @@
 
 ## .what
 
-whenever skills are updated, snapshot diffs must be reviewed to verify test intent is preserved.
+whenever skills are updated, review the snapshot diffs to verify test intent is preserved.
 
 ## .why
 
-snapshots are symptoms, not the disease. when a snapshot changes unexpectedly:
+snapshots are symptoms, not the disease:
 - the snapshot didn't break — the **behavior** broke
 - the snapshot reveals the breakage — it's a diagnostic tool
 - a fix to the snapshot without a fix to the behavior hides the problem
 
-blind snapshot updates (`RESNAP=true`) without review mask regressions.
+blind updates (`RESNAP=true`) without review mask regressions.
+
+## 🚩 when `--updateSnapshot` is ALWAYS on, this diff is the ONLY review
+
+- an unquoted `[ -n $RESNAP ]` in `package.json` collapses to `[ -n ]`, which POSIX evaluates as *"is the string `-n` non-empty"* — **true for every value of `RESNAP`**
+  - ⇒ `--updateSnapshot` passes on every run, and no snapshot can fail
+  - measured: live in this repo for ~6 months
+- the harness still **rewrites** a drifted snapshot to disk, so every would-be red file sits in the worktree as an unstaged diff:
+
+```sh
+git diff --stat -- '*.snap'
+```
+
+- measured: 5 files. four were correct new output with stale committed copies; the fifth embedded a per-run timestamp, a uuid, and an absolute home path — it could never pass, and it leaked that path into the npm package
+
+> generalize: **a broken guard usually still leaves a trace.** before you call the damage unmeasurable, ask *"what did it write instead of a failure?"* — and read that.
+
+⛔ no env-var workaround exists: unset and `""` word-split to `[ -n ]` (true), and `"false"` / `"0"` are non-empty (true). read the diff above, or run `npx jest -c …` directly to bypass the npm command.
 
 ## .how
 
@@ -46,7 +63,7 @@ git diff src/**/__snapshots__/*.snap
 
 ## .diagnosis
 
-when snapshots differ from expected, **diagnose the root cause** before you fix:
+diagnose the root cause before you fix:
 
 | source | symptoms | fix |
 |--------|----------|-----|
@@ -60,13 +77,8 @@ when snapshots differ from expected, **diagnose the root cause** before you fix:
 2. **check extant snapshots**: do staged snapshots show correct expected output?
 3. **compare unstaged vs staged**: `git diff path/to/snap` — what differs?
 
-if staged behavior is correct AND staged snapshots show correct output:
-- the **mocks** yield wrong output
-- fix the mocks, not the behavior
-
-if staged behavior has bugs:
-- the **behavior** is broken
-- fix the behavior code
+- staged behavior correct AND staged snapshots correct → the **mocks** yield wrong output. fix the mocks, not the behavior
+- staged behavior has bugs → fix the behavior code
 
 ### common misdiagnosis
 
@@ -75,8 +87,6 @@ if staged behavior has bugs:
 **right**: "snapshot shows absent hints → check if staged behavior is correct → if yes, mocks yield wrong output → fix mocks"
 
 ## .pattern
-
-when you see broken snapshots:
 
 1. **do not** run `RESNAP=true` to make tests pass
 2. **do** diagnose: is it behavior, mocks, or test setup?

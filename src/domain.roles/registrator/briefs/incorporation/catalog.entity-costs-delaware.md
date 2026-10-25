@@ -1,5 +1,7 @@
 # catalog.entity-costs-delaware
 
+> ⚠️ **not legal advice**, and not tax advice. this brief helps you find what to ask; confirm it for your facts with a licensed attorney or CPA.
+
 ## .what
 
 cited catalog of Delaware entity formation and annual costs for LLC vs Corporation (C-corp and S-corp).
@@ -223,6 +225,10 @@ S-corp SE tax savings must exceed the extra compliance cost (~$1,000-$2,700 more
 
 ---
 
+## .publishability
+
+☀️ **fullsun** (share) — cited public Delaware fee and tax figures; no client identity or client-specific mechanic.
+
 ## .sources
 
 ### Delaware Division of Corporations (official)
@@ -245,3 +251,9 @@ S-corp SE tax savings must exceed the extra compliance cost (~$1,000-$2,700 more
 11. [Stripe: Delaware Incorporation Costs](https://stripe.com/resources/more/delaware-incorporation-costs-and-fees-what-corporations-and-llcs-need-to-know)
 12. [Stripe: What is a Registered Agent](https://stripe.com/resources/more/what-is-a-registered-agent-in-delaware-what-they-do-how-much-they-cost-and-when-to-get-one)
 13. [Doola: Delaware C-Corp and LLC Fees](https://www.doola.com/blog/delaware-llc-fees/)
+
+## .date researched
+
+2026-08-31
+
+(taken from the brief's own sources, "pulled 2026-08-31 as bytes through the browser request context")

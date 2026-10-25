@@ -86,6 +86,12 @@ source "$SCRIPT_DIR/output.sh"
 
 DIFFS=""
 BRAINS=()
+# ⚠️ the reviewer refuses a prompt past 75% of its context window, so a
+#    large staged set must be graded in BATCHES. a byte budget per batch
+#    keeps each prompt well under that cap: push mode carries a file's
+#    content and its diff, about bytes/2 tokens.
+BATCH_BYTES="${PII_REVIEW_BATCH_BYTES:-240000}"
+BATCH_PARALLEL="${PII_REVIEW_BATCH_PARALLEL:-4}"
 RUBRIC="$SCRIPT_DIR/rubric/rule.forbid.pii-in-a-diff.md"
 MODE="apply"
 
@@ -329,6 +335,21 @@ print_binaries_branch() {
   fi
 }
 
+# .what = one batch's file list as ONE glob for `rhx review --paths-with`
+# .why  = the flag keeps only its last value, so a batch must travel as a
+#         single pattern: a brace list of literal paths. each glob
+#         metacharacter is escaped so a path like `x.[rule].md` matches
+#         itself, never a character class
+as_batch_glob() {
+  local list="$1" out="" p count
+  count=$(grep -c . "$list" 2>/dev/null || true)
+  while IFS= read -r p; do
+    p="$(printf '%s' "$p" | sed -E 's/([][{}()*?!,@+\\])/\\\1/g')"
+    out="${out:+$out,}$p"
+  done < "$list"
+  if [[ "$count" -gt 1 ]]; then printf '{%s}' "$out"; else printf '%s' "$out"; fi
+}
+
 # a reviewer's slug, flattened for use in a filename
 brain_slug() {
   printf '%s' "$1" | tr '/' '-'
@@ -343,9 +364,9 @@ brain_slug() {
 #    PII", so a reviewer whose count cannot be read must block.
 ######################################################################
 run_one_reviewer() {
-  local brain="$1" outdir="$2"
+  local brain="$1" outdir="$2" tag="$3" glob="$4"
   local slug verdict raw report blockers nitpicks
-  slug="$(brain_slug "$brain")"
+  slug="$(brain_slug "$brain")$tag"
   verdict="$outdir/$slug.verdict.tsv"
 
   # ⛔ NO PROMPT IS BUILT HERE, AND THAT IS THE POINT OF THE SWAP.
@@ -401,6 +422,7 @@ run_one_reviewer() {
           --rules "$RUBRIC" \
           --refs "$REFS" \
           --diffs "$DIFFS" \
+          --paths-with "$glob" \
           --brain "$brain" \
           --focus push \
           --goal exhaustive \
@@ -478,9 +500,27 @@ main() {
 
   WORKDIR=$(mktemp -d)
 
-  local files filecount
+  local files filecount f
   files="$WORKDIR/files.txt"
   collect_files | sort -u > "$files"
+
+  # ⚠️ a DIRECTORY SYMLINK is staged as one entry — a skill shared
+  #    between two roles (rule.require.bounded-roles). `rhx review` reads
+  #    every scoped path as a file, so the link crashes it (EISDIR) and
+  #    the whole gate reads as a malfunction. the link carries only a
+  #    path; its target files sit in the scope on their own paths. so the
+  #    link leaves the list here, and so stays out of every batch glob.
+  local dirlinks
+  dirlinks="$WORKDIR/dirlinks.txt"
+  : > "$dirlinks"
+  while IFS= read -r f; do
+    if [[ -d "$f" ]]; then printf "%s\n" "$f" >> "$dirlinks"; fi
+  done < "$files"
+  if [[ -s "$dirlinks" ]]; then
+    grep -vxFf "$dirlinks" "$files" > "$files.kept" || true
+    mv "$files.kept" "$files"
+  fi
+
   filecount=$(grep -c . "$files" 2>/dev/null || true)
   [[ -z "$filecount" ]] && filecount=0
 
@@ -513,14 +553,40 @@ main() {
   binarycount=$(grep -c . "$binaries" 2>/dev/null || true)
   [[ -z "$binarycount" ]] && binarycount=0
 
+  # ── batch the text files ───────────────────────────────────────────
+  #
+  # a binary is not handed to the reviewer: its bytes are not text, so a
+  # text brain cannot read them, and the unread branch already names it.
+  # each batch reaches `rhx review` as ONE glob (a repeated --paths-with
+  # keeps only its last value), intersected with --diffs.
+  local texts batchcount=0 batchbytes=0 size
+  texts="$WORKDIR/texts.txt"
+  cp "$files" "$texts"
+  if [[ -s "$binaries" ]]; then
+    { grep -vxFf "$binaries" "$files" || true; } > "$texts"
+  fi
+  while IFS= read -r f; do
+    [[ -n "$f" ]] || continue
+    size=$(wc -c < "$f" 2>/dev/null || echo 0)
+    if [[ "$batchcount" -eq 0 || $((batchbytes + size)) -gt "$BATCH_BYTES" && "$batchbytes" -gt 0 ]]; then
+      batchcount=$((batchcount + 1))
+      batchbytes=0
+      : > "$WORKDIR/batch.$batchcount.txt"
+    fi
+    printf '%s\n' "$f" >> "$WORKDIR/batch.$batchcount.txt"
+    batchbytes=$((batchbytes + size))
+  done < "$texts"
+
   if [[ "$MODE" == "plan" ]]; then
     print_eagle_header "heres the plan,"
     print_tree_start "pii.review"
     print_tree_branch "scope" "$(scope_label)"
     print_tree_branch "files" "$filecount"
     print_binaries_branch "$binarycount" "$binaries"
+    [[ -s "$dirlinks" ]] && print_tree_branch "dirlinks" "$(grep -c . "$dirlinks") excluded — a directory symlink; its target files are scanned on their own paths"
     print_tree_branch "rubric" "$(basename "$RUBRIC")"
     print_tree_branch "refs" "$(basename "$REFS")"
+    print_tree_branch "batches" "$batchcount"
     print_tree_branch "brains" "${#BRAINS[@]}"
     local b
     for b in "${BRAINS[@]}"; do
@@ -535,9 +601,32 @@ main() {
   outdir="$WORKDIR/reviews"
   mkdir -p "$outdir"
 
+  # an all-binary scope leaves naught for a text brain to grade
+  if [[ "$batchcount" -eq 0 ]]; then
+    print_eagle_header "clear skies,"
+    print_tree_start "pii.review"
+    print_tree_branch "scope" "$(scope_label)"
+    print_tree_branch "files" "$filecount"
+    print_binaries_branch "$binarycount" "$binaries"
+    print_tree_leaf "text" "0 — no review needed"
+    exit 0
+  fi
+
+  local units="$WORKDIR/units.psv" n tag glob label
+  : > "$units"
   for brain in "${BRAINS[@]}"; do
-    run_one_reviewer "$brain" "$outdir" &
-    pids+=("$!")
+    for ((n = 1; n <= batchcount; n++)); do
+      tag=""; label="$brain"
+      if [[ "$batchcount" -gt 1 ]]; then tag=".b$n"; label="$brain [batch $n/$batchcount]"; fi
+      glob="$(as_batch_glob "$WORKDIR/batch.$n.txt")"
+      printf '%s|%s|%s\n' "$brain" "$tag" "$label" >> "$units"
+      run_one_reviewer "$brain" "$outdir" "$tag" "$glob" &
+      pids+=("$!")
+      if [[ "${#pids[@]}" -ge "$BATCH_PARALLEL" ]]; then
+        wait "${pids[0]}" || true
+        pids=("${pids[@]:1}")
+      fi
+    done
   done
 
   local pid
@@ -549,26 +638,26 @@ main() {
   local totalBlockers=0 malfunctions=0 status blockers nitpicks slug
   local lines=""
 
-  for brain in "${BRAINS[@]}"; do
-    slug="$(brain_slug "$brain")"
+  while IFS='|' read -r brain tag label; do
+    slug="$(brain_slug "$brain")$tag"
     if [[ ! -f "$outdir/$slug.verdict.tsv" ]]; then
       malfunctions=$((malfunctions + 1))
-      lines="$lines   │  ├─ 💥 $brain — no verdict written"$'\n'
+      lines="$lines   │  ├─ 💥 $label — no verdict written"$'\n'
       continue
     fi
     IFS=$'\t' read -r status blockers nitpicks < "$outdir/$slug.verdict.tsv"
     if [[ "$status" == "MALFUNCTION" ]]; then
       malfunctions=$((malfunctions + 1))
-      lines="$lines   │  ├─ 💥 $brain — verdict unreadable"$'\n'
+      lines="$lines   │  ├─ 💥 $label — verdict unreadable"$'\n'
       continue
     fi
     totalBlockers=$((totalBlockers + blockers))
     if [[ "$blockers" -gt 0 ]]; then
-      lines="$lines   │  ├─ 🚨 $brain — $blockers blocker(s), $nitpicks nitpick(s)"$'\n'
+      lines="$lines   │  ├─ 🚨 $label — $blockers blocker(s), $nitpicks nitpick(s)"$'\n'
     else
-      lines="$lines   │  ├─ ✅ $brain — clean ($nitpicks nitpick(s))"$'\n'
+      lines="$lines   │  ├─ ✅ $label — clean ($nitpicks nitpick(s))"$'\n'
     fi
-  done
+  done < "$units"
 
   # hits first: a real hit outranks a malfunction, because it is
   # actionable and the malfunction is not
@@ -591,8 +680,8 @@ main() {
     #
     #    the fallback to stdout is the malfunction case: when the report
     #    was never written, the stdout is the only evidence there is.
-    for brain in "${BRAINS[@]}"; do
-      slug="$(brain_slug "$brain")"
+    while IFS='|' read -r brain tag label; do
+      slug="$(brain_slug "$brain")$tag"
       if [[ -s "$outdir/$slug.report.md" ]]; then
         cp "$outdir/$slug.report.md" "./.pii-review.$slug.md" 2>/dev/null || true
       elif [[ -f "$outdir/$slug.stdout.txt" ]]; then
@@ -601,7 +690,7 @@ main() {
         continue
       fi
       echo "      └─ .pii-review.$slug.md"
-    done
+    done < "$units"
     exit 2
   fi
 
@@ -618,14 +707,14 @@ main() {
     echo "   │"
     # the evidence. a block with no cause is a block a human cannot
     # clear, and a gate nobody can clear is a gate that gets bypassed
-    for brain in "${BRAINS[@]}"; do
-      slug="$(brain_slug "$brain")"
+    while IFS='|' read -r brain tag label; do
+      slug="$(brain_slug "$brain")$tag"
       [[ -f "$outdir/$slug.whyfail.txt" ]] || continue
       while IFS= read -r line; do
         echo "   │  $line"
       done < "$outdir/$slug.whyfail.txt"
       echo "   │"
-    done
+    done < "$units"
     echo "   ├─ most often: keyrack is locked. unlock and retry:"
     echo "   │     rhx keyrack unlock --owner ehmpath --env test"
     echo "   └─ a check that could not run must never look like one that"

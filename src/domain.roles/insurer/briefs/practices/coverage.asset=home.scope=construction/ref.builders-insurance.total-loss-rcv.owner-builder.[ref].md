@@ -1,5 +1,7 @@
 # ref.insurance-home-total-loss-replacement-cost-value.owner-builder
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 when an owner-builder's work causes total loss of their home, builder's risk policies often pay only **depreciated value (ACV)** for the prior structure — not full replacement cost (RCV).
@@ -218,6 +220,10 @@ owner-builder total loss is **higher risk** than hired-builder:
 - [J.S. Held: Builder's Risk Complexities](https://www.jsheld.com/insights/articles/builders-risk-complexities-in-insuring-existing-property)
 - [NY Appellate Digest: Fruchthandler v. Tri-State (2019)](https://www.newyorkappellatedigest.com/2019/04/03/the-exception-to-the-faulty-workmanship-exclusion-in-the-fire-insurance-policy-applied-to-preserve-coverage-for-ensuing-loss-second-dept/)
 - [Cozen O'Connor: Bob Robison v. RLI (8th Cir. 2025)](https://www.propertyinsurancelawobserver.com/2025/04/01/coverage-for-defective-workmanship-not-restored-by-ensuing-loss-provision/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic total-loss replacement-cost analysis for an owner-builder from public sources; no client identity or applied strategy.
 
 ## .date researched
 

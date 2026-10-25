@@ -1,5 +1,7 @@
 # howto.survive-insurance-nonrenewal-obsolete-electrical
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .scope
 
 **this guide applies to:**
@@ -396,4 +398,8 @@ if you have a mortgage and cannot obtain coverage, your lender will force-place 
 32. [Massachusetts MPIUA - FAIR Plan](https://www.mpiua.com/)
 33. [Robertson Ryan - Electrical Insurance Implications](https://www.robertsonryan.com/maloneygroup/blog/obsolete-electrical-panels-risks-types-and-insurance-implications/)
 34. [Branham Electric - Insurance Requirements](https://branhambysuburbanelectricalservices.com/why-insurance-companies-are-requiring-electrical-upgrades/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic nonrenewal how-to for obsolete electrical from public sources; no client identity or applied strategy.
 

@@ -41,9 +41,7 @@ and is never evidence a vendor is unregistered. it exits `0` either way.
 
 one vendor registers under several names, so the printed list is longer than the
 set of businesses you can book with: on the 2026-08-30 Florida snapshot,
-`--retail` prints **19 names**, roughly **9 vendors**. the alias table:
-`briefs/ronproviders/howto.get-a-remote-online-notarization.jurisdiction=usa-florida.md`
-§ *🎯 the shortlist*.
+`--retail` prints **19 names**, roughly **9 vendors**.
 
 ⚠️ the output labels the section `vendors` and the figure `distinct names`; read
 every count on that screen as a count of **names**.
@@ -51,8 +49,7 @@ every count on that screen as a count of **names**.
 ⛔ **the registry cannot be fetched — it must be driven.** Florida's page is a
 search form whose list appears only after a "View All" click; a raw GET returns
 `200 OK` with zero table rows. so this skill answers from a **committed,
-completeness-asserted snapshot** and prints how stale it is. see
-`briefs/ronproviders/refs/jurisdiction=usa-florida/readme.md`.
+completeness-asserted snapshot** and prints how stale it is: `skills/notary.find/registry/jurisdiction=usa-florida.json`.
 
 ### 🚫 the boundary with `secretary`
 
@@ -85,12 +82,5 @@ take it to a licensed attorney.
 
 ### .see also
 
-- `briefs/jurats/` — the certificate text per jurisdiction; why a jurat is not
-  portable across state lines, and the rule that resolves it: **match the form
-  to where the signer and notary are, then check the destination's mandatory
-  ELEMENTS are all present** — the destination accepts the foreign *form*, and
-  that is not a pass on its elements
-- `briefs/ronproviders/` — how to get a remote online notarization, and the
-  committed state registry behind `notary.find`
 - `secretary` — produces the document you bring to the notary
 - `registrator` — the agencies that demand notarized filings

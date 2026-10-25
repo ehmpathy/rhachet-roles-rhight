@@ -1,5 +1,7 @@
 # define.conditional-coverage-repair-window
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 some carriers issue coverage with a 30-60-90 day window to fix hazards like K&T wiring before cancellation. this is called **conditional coverage** or **coverage pending repairs**.
@@ -160,6 +162,10 @@ outright denial means surplus lines or FAIR plan.
 - `ref.dp3-carriers-knob-tube.[ref].md` — carrier-specific K&T policies
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

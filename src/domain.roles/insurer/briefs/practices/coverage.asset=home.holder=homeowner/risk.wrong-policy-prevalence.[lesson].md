@@ -1,5 +1,7 @@
 # risk.wrong-policy-prevalence
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 how common it is for rental property investors to have homeowners insurance instead of landlord insurance, and why this problem persists.
@@ -252,6 +254,10 @@ the realtor's insurance referral is optimized for primary residence buyers. inve
 5. **check annually** — occupancy changes require policy changes
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

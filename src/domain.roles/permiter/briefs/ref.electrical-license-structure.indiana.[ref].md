@@ -1,5 +1,7 @@
 # ref.electrical-license-structure.indiana
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 Indiana has no statewide electrical contractor license. Each municipality sets its own requirements.
@@ -47,6 +49,10 @@ when a user asks about permit requirements:
 2. check local contractor registration requirements
 3. verify homeowner exemption rules for that jurisdiction
 4. do not assume reciprocity between Indiana cities
+
+## .publishability
+
+☀️ **fullsun** (share) — public Indiana and Indianapolis licensing structure; no client identity.
 
 ## .sources
 
