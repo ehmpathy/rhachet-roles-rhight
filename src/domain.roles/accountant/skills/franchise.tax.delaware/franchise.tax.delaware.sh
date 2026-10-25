@@ -259,8 +259,22 @@ assets_band_for_tax() {
   }'
 }
 
-money() { awk -v n="$1" 'BEGIN { printf "%\047.2f\n", n }' ; }
-count() { awk -v n="$1" 'BEGIN { printf "%\047d\n", n }' ; }
+# .what = group digits by thousands, with no locale dependence
+# .why  = printf's ' flag needs both a grouping locale and an awk that
+#         honors it; mawk (the Ubuntu default) does neither, so the CI
+#         runner printed $85165.00 where a reader expects $85,165.00
+group_thousands() {
+  awk -v n="$1" -v fmt="$2" 'BEGIN {
+    s = sprintf(fmt, n); sign = ""
+    if (substr(s, 1, 1) == "-") { sign = "-"; s = substr(s, 2) }
+    p = index(s, "."); whole = (p ? substr(s, 1, p - 1) : s); frac = (p ? substr(s, p) : "")
+    out = ""
+    while (length(whole) > 3) { out = "," substr(whole, length(whole) - 2) out; whole = substr(whole, 1, length(whole) - 3) }
+    print sign whole out frac
+  }'
+}
+money() { group_thousands "$1" "%.2f" ; }
+count() { group_thousands "$1" "%d" ; }
 
 ######################################################################
 # report

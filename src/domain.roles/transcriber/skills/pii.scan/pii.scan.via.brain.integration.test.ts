@@ -1289,11 +1289,19 @@ describe('pii.scan.via.brain.sh', () => {
         // where the role ships practice rules, they are the refs. where it
         // ships none, the skill falls back to its own rubric, since
         // `rhx review` refuses a refs glob that matches zero files
-        const practicesDir = path.join(__dirname, '..', '..', 'briefs', 'practices');
+        const practicesDir = path.join(
+          __dirname,
+          '..',
+          '..',
+          'briefs',
+          'practices',
+        );
         const practicesShipped =
           fs.existsSync(practicesDir) &&
           fs.readdirSync(practicesDir).some((f) => /^rule\..*\.md$/.test(f));
-        expect(argv).toContain(practicesShipped ? 'briefs/practices' : 'pii.scan/rubric');
+        expect(argv).toContain(
+          practicesShipped ? 'briefs/practices' : 'pii.scan/rubric',
+        );
       });
 
       then('it pins the brain it was told to ask', () => {
@@ -1403,14 +1411,20 @@ describe('pii.scan.via.brain.sh', () => {
       const made = genTempRepo({ files: { 'shared/skill.sh': 'echo hi' } });
       fs.mkdirSync(path.join(made.dir, 'other'), { recursive: true });
       fs.symlinkSync('../shared', path.join(made.dir, 'other/skill'));
-      const res = spawnSync('git', ['add', 'shared/skill.sh', 'other/skill'], { cwd: made.dir, encoding: UTF8 });
+      const res = spawnSync('git', ['add', 'shared/skill.sh', 'other/skill'], {
+        cwd: made.dir,
+        encoding: UTF8,
+      });
       if (res.status !== 0) throw new Error('git add failed: ' + res.stderr);
       return made;
     });
 
     when('[t0] planned', () => {
       const result = useBeforeAll(async () =>
-        runSkill({ args: ['--diffs', 'since-staged', '--mode', 'plan'], cwd: repo.dir }),
+        runSkill({
+          args: ['--diffs', 'since-staged', '--mode', 'plan'],
+          cwd: repo.dir,
+        }),
       );
 
       then('it names the link as excluded, and counts only the file', () => {
@@ -1421,14 +1435,21 @@ describe('pii.scan.via.brain.sh', () => {
     });
 
     when('[t1] reviewed', () => {
-      const fake = useBeforeAll(async () => genRhxThatCapturesTheArgv({ dir: repo.dir }));
+      const fake = useBeforeAll(async () =>
+        genRhxThatCapturesTheArgv({ dir: repo.dir }),
+      );
       const result = useBeforeAll(async () =>
-        runSkill({ args: ['--diffs', 'since-staged', '--brain', 'fake/one'], cwd: repo.dir, binFirst: fake.bin }),
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
       );
 
       then('it scopes the review to the target file, never the link', () => {
         const argv = fake.readArgv();
-        if (result.exitCode !== 0) console.log('PROOF: stdout:', result.stdout, 'argv:', argv);
+        if (result.exitCode !== 0)
+          console.log('PROOF: stdout:', result.stdout, 'argv:', argv);
         expect(argv).toContain('--paths-with');
         expect(argv).toContain('shared/skill.sh');
         expect(argv).not.toContain('other/skill');
@@ -1436,7 +1457,6 @@ describe('pii.scan.via.brain.sh', () => {
       });
     });
   });
-
 
   /**
    * .what = a staged set too large for one prompt
@@ -1448,7 +1468,11 @@ describe('pii.scan.via.brain.sh', () => {
   given('[case19] a staged set larger than one batch', () => {
     const repo = useBeforeAll(async () =>
       genTempRepo({
-        files: { 'a.md': 'a'.repeat(400), 'b.md': 'b'.repeat(400), 'c.md': 'c'.repeat(400) },
+        files: {
+          'a.md': 'a'.repeat(400),
+          'b.md': 'b'.repeat(400),
+          'c.md': 'c'.repeat(400),
+        },
         stage: ['a.md', 'b.md', 'c.md'],
       }),
     );
@@ -1473,7 +1497,12 @@ describe('pii.scan.via.brain.sh', () => {
         const made = genRhxThatCapturesTheArgv({ dir: repo.dir });
         // append, so every batch call leaves its argv on record
         const at = path.join(made.bin, 'rhx');
-        fs.writeFileSync(at, fs.readFileSync(at, UTF8).replace(`> "${made.captureAt}"`, `>> "${made.captureAt}"`));
+        fs.writeFileSync(
+          at,
+          fs
+            .readFileSync(at, UTF8)
+            .replace(`> "${made.captureAt}"`, `>> "${made.captureAt}"`),
+        );
         return made;
       });
       const result = useBeforeAll(async () =>
@@ -1485,31 +1514,48 @@ describe('pii.scan.via.brain.sh', () => {
         }),
       );
 
-      then('it asks the reviewer once per batch, each scoped to its own file', () => {
-        const argv = fake.readArgv();
-        expect(argv.split('\n').filter((l) => l === 'review').length).toBe(3);
-        for (const name of ['a.md', 'b.md', 'c.md']) expect(argv).toContain(name);
-      });
+      then(
+        'it asks the reviewer once per batch, each scoped to its own file',
+        () => {
+          const argv = fake.readArgv();
+          expect(argv.split('\n').filter((l) => l === 'review').length).toBe(3);
+          for (const name of ['a.md', 'b.md', 'c.md'])
+            expect(argv).toContain(name);
+        },
+      );
 
-      then('it reports each batch, and passes when every batch is clean', () => {
-        if (result.exitCode !== 0) console.log('PROOF: stdout:', result.stdout);
-        expect(result.stdout).toContain('[batch 1/3]');
-        expect(result.stdout).toContain('[batch 3/3]');
-        expect(result.exitCode).toBe(0);
-      });
+      then(
+        'it reports each batch, and passes when every batch is clean',
+        () => {
+          if (result.exitCode !== 0)
+            console.log('PROOF: stdout:', result.stdout);
+          expect(result.stdout).toContain('[batch 1/3]');
+          expect(result.stdout).toContain('[batch 3/3]');
+          expect(result.exitCode).toBe(0);
+        },
+      );
     });
 
     when('[t2] reviewed at the default budget', () => {
-      const fake = useBeforeAll(async () => genRhxThatCapturesTheArgv({ dir: repo.dir }));
+      const fake = useBeforeAll(async () =>
+        genRhxThatCapturesTheArgv({ dir: repo.dir }),
+      );
       const result = useBeforeAll(async () =>
-        runSkill({ args: ['--diffs', 'since-staged', '--brain', 'fake/one'], cwd: repo.dir, binFirst: fake.bin }),
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
       );
 
-      then('the control: a set that fits is ONE batch, in one brace glob', () => {
-        expect(result.exitCode).toBe(0);
-        expect(result.stdout).not.toContain('[batch');
-        expect(fake.readArgv()).toContain('{a.md,b.md,c.md}');
-      });
+      then(
+        'the control: a set that fits is ONE batch, in one brace glob',
+        () => {
+          expect(result.exitCode).toBe(0);
+          expect(result.stdout).not.toContain('[batch');
+          expect(fake.readArgv()).toContain('{a.md,b.md,c.md}');
+        },
+      );
     });
   });
 
@@ -1528,16 +1574,24 @@ describe('pii.scan.via.brain.sh', () => {
     );
 
     when('[t0] reviewed', () => {
-      const fake = useBeforeAll(async () => genRhxThatCapturesTheArgv({ dir: repo.dir }));
+      const fake = useBeforeAll(async () =>
+        genRhxThatCapturesTheArgv({ dir: repo.dir }),
+      );
       const result = useBeforeAll(async () =>
-        runSkill({ args: ['--diffs', 'since-staged', '--brain', 'fake/one'], cwd: repo.dir, binFirst: fake.bin }),
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
       );
 
-      then('it escapes the brackets, so the glob matches the path itself', () => {
-        expect(result.exitCode).toBe(0);
-        expect(fake.readArgv()).toContain('{a.md,x.\\[rule\\].md}');
-      });
+      then(
+        'it escapes the brackets, so the glob matches the path itself',
+        () => {
+          expect(result.exitCode).toBe(0);
+          expect(fake.readArgv()).toContain('{a.md,x.\\[rule\\].md}');
+        },
+      );
     });
   });
-
 });
