@@ -4,6 +4,14 @@ import * as path from 'path';
 import { genTempDir, given, then, useBeforeAll, when } from 'test-fns';
 
 /**
+ * .what = mask each inventor name in skill output before a snapshot
+ * .why  = live uspto records name real people; a snapshot must never carry one
+ *        (rule.forbid.real-identities-in-fixtures). the line shape stays checked
+ */
+const asOutputWithoutInventorNames = (input: { output: string }): string =>
+  input.output.replace(/(inventor(?: =|:) )[^,\n]+/g, '$1<inventor>');
+
+/**
  * BLOCKER: USPTO_ODP_API_KEY required for live API tests
  *
  * get a key at: https://data.uspto.gov
@@ -140,7 +148,9 @@ describe('patent.priors.search.sh', () => {
         expect(result.exitCode).toBe(0);
         expect(result.stdout).toContain('usage');
         expect(result.stdout).toContain('--query');
-        expect(result.stdout).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stdout }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -155,7 +165,9 @@ describe('patent.priors.search.sh', () => {
         // error messages go to stderr
         expect(result.exitCode).toBe(2);
         expect(result.stderr).toContain('too short');
-        expect(result.stderr).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stderr }),
+        ).toMatchSnapshot();
       });
 
       then('⭐ and the REMEDY reaches the caller — on STDOUT', () => {
@@ -184,7 +196,9 @@ describe('patent.priors.search.sh', () => {
         // error messages go to stderr
         expect(result.exitCode).toBe(2);
         expect(result.stderr).toContain('query required');
-        expect(result.stderr).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stderr }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -213,7 +227,9 @@ describe('patent.priors.search.sh', () => {
         expect(result.stdout).toContain('patent.priors.search');
         // verify results returned (shows results count or has patents listed)
         expect(result.stdout).not.toContain('(none found)');
-        expect(result.stdout).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stdout }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -228,7 +244,9 @@ describe('patent.priors.search.sh', () => {
         // error messages go to stderr
         expect(result.exitCode).toBe(2);
         expect(result.stderr).toContain('too long');
-        expect(result.stderr).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stderr }),
+        ).toMatchSnapshot();
       });
 
       then('⭐ and the CAP reaches the caller — on STDOUT', () => {
@@ -265,7 +283,9 @@ describe('patent.priors.search.sh', () => {
         expect(result.exitCode).toBe(0);
         expect(result.stdout).toContain('🦅');
         expect(result.stdout).toContain('vague');
-        expect(result.stdout).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stdout }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -279,7 +299,9 @@ describe('patent.priors.search.sh', () => {
       then('error is returned', () => {
         expect(result.exitCode).toBe(2);
         expect(result.stderr).toContain('unknown argument');
-        expect(result.stderr).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stderr }),
+        ).toMatchSnapshot();
       });
 
       then('⭐ it names the OPTION, not an absent --query', () => {
@@ -317,7 +339,9 @@ describe('patent.priors.search.sh', () => {
         expect(result.stdout).toContain('patent.priors.search');
         // should find patents with "fastener" or "driver" in title
         expect(result.stdout).not.toContain('(none found)');
-        expect(result.stdout).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stdout }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -337,7 +361,9 @@ describe('patent.priors.search.sh', () => {
         expect(result.stdout).toContain('patent.priors.search');
         // should find patents with "rotary" or "saw" in title
         expect(result.stdout).not.toContain('(none found)');
-        expect(result.stdout).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stdout }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -357,7 +383,9 @@ describe('patent.priors.search.sh', () => {
         expect(result.stdout).toContain('patent.priors.search');
         // should find patents with "wireless" or "transceiver" in title
         expect(result.stdout).not.toContain('(none found)');
-        expect(result.stdout).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stdout }),
+        ).toMatchSnapshot();
       });
     });
   });

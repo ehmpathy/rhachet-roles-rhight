@@ -4,6 +4,14 @@ import * as path from 'path';
 import { genTempDir, given, then, useBeforeAll, when } from 'test-fns';
 
 /**
+ * .what = mask each inventor name in skill output before a snapshot
+ * .why  = live uspto records name real people; a snapshot must never carry one
+ *        (rule.forbid.real-identities-in-fixtures). the line shape stays checked
+ */
+const asOutputWithoutInventorNames = (input: { output: string }): string =>
+  input.output.replace(/(inventor(?: =|:) )[^,\n]+/g, '$1<inventor>');
+
+/**
  * BLOCKER: credentials required for live API tests
  *
  * USPTO_ODP_API_KEY: get a key at https://data.uspto.gov
@@ -336,7 +344,9 @@ describe('patent.priors.fetch.sh', () => {
         expect(result.exitCode).toBe(0);
         expect(result.stdout).toContain('usage');
         expect(result.stdout).toContain('--exid');
-        expect(result.stdout).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stdout }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -351,7 +361,9 @@ describe('patent.priors.fetch.sh', () => {
         // error messages go to stderr
         expect(result.exitCode).toBe(2);
         expect(result.stderr).toContain('exid required');
-        expect(result.stderr).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stderr }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -368,7 +380,9 @@ describe('patent.priors.fetch.sh', () => {
         expect(result.exitCode).toBe(2);
         expect(result.stderr).toContain('invalid');
         expect(result.stderr).toContain('application number');
-        expect(result.stderr).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stderr }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -430,7 +444,9 @@ describe('patent.priors.fetch.sh', () => {
         expect(result.stdout).toContain('🦅');
         expect(result.stdout).toContain('patent.priors.fetch');
         expect(result.stdout).toContain(knownExid);
-        expect(result.stdout).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stdout }),
+        ).toMatchSnapshot();
       });
 
       then('metadata cache file is created with raw USPTO response', () => {
@@ -502,7 +518,9 @@ describe('patent.priors.fetch.sh', () => {
         // error messages go to stderr (propagate through command substitution)
         expect(result.exitCode).toBe(2);
         expect(result.stderr).toContain('not found');
-        expect(result.stderr).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stderr }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -518,7 +536,9 @@ describe('patent.priors.fetch.sh', () => {
       then('error is returned', () => {
         expect(result.exitCode).toBe(2);
         expect(result.stderr).toContain('unknown argument');
-        expect(result.stderr).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stderr }),
+        ).toMatchSnapshot();
       });
 
       then('⭐ it names the OPTION, and is not a DIFFERENT refusal', () => {
@@ -644,7 +664,9 @@ describe('patent.priors.fetch.sh', () => {
         expect(result.stdout).not.toContain('transcription: fetched');
 
         // snapshot for vibecheck
-        expect(result.stdout).toMatchSnapshot();
+        expect(
+          asOutputWithoutInventorNames({ output: result.stdout }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -686,7 +708,9 @@ describe('patent.priors.fetch.sh', () => {
           expect([0, 1]).toContain(result.exitCode);
 
           // snapshot for vibecheck
-          expect(result.stdout).toMatchSnapshot();
+          expect(
+            asOutputWithoutInventorNames({ output: result.stdout }),
+          ).toMatchSnapshot();
         });
 
         then('cache is populated in temp dir', () => {

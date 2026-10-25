@@ -44,7 +44,7 @@ exports[`patent.priors.fetch.sh given: [case8] deterministic cached flow (uses f
 
 🌎 patent.priors.fetch --exid 19399196
    ├─ title: Cutter and Drill Bit Design by Virtual Testing with Digitized Rocks
-   ├─ inventor: Alex ExampleA
+   ├─ inventor: <inventor>
    ├─ status
    │  ├─ 🌱 Docketed New Case - Ready for Examination
    │  ├─ filed on = 2025-11-24
@@ -115,7 +115,7 @@ exports[`patent.priors.fetch.sh given: [case9] deterministic uncached flow (empt
 
 🌎 patent.priors.fetch --exid 19399196
    ├─ title: Cutter and Drill Bit Design by Virtual Testing with Digitized Rocks
-   ├─ inventor: Alex ExampleA
+   ├─ inventor: <inventor>
    ├─ status
    │  ├─ 🌱 Docketed New Case - Ready for Examination
    │  ├─ filed on = 2025-11-24
