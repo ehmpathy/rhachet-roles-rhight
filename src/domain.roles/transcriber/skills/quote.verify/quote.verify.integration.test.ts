@@ -409,7 +409,9 @@ describe('quote.verify', () => {
 
   given('[case9] a refusal path', () => {
     when('[t0] --from is absent', () => {
-      const result = useBeforeAll(async () => runSkill({ args: ['--in', '/tmp/x'] }));
+      const result = useBeforeAll(async () =>
+        runSkill({ args: ['--in', '/tmp/x'] }),
+      );
 
       then('it exits 2', () => {
         expect(result.exitCode).toEqual(2);
@@ -421,7 +423,9 @@ describe('quote.verify', () => {
     });
 
     when('[t1] the source file does not exist', () => {
-      const scene = useBeforeAll(async () => genTempPair({ artifact: '# empty' }));
+      const scene = useBeforeAll(async () =>
+        genTempPair({ artifact: '# empty' }),
+      );
       const result = useBeforeAll(async () =>
         runSkill({
           args: ['--from', '/tmp/no-such-source-zzz.txt', '--in', scene.in],
@@ -438,7 +442,9 @@ describe('quote.verify', () => {
     });
 
     when('[t2] --min is not a number', () => {
-      const scene = useBeforeAll(async () => genTempPair({ artifact: '# empty' }));
+      const scene = useBeforeAll(async () =>
+        genTempPair({ artifact: '# empty' }),
+      );
       const result = useBeforeAll(async () =>
         runSkill({
           args: ['--from', scene.from, '--in', scene.in, '--min', 'lots'],
@@ -455,7 +461,9 @@ describe('quote.verify', () => {
     });
 
     when('[t3] an unknown option is passed', () => {
-      const result = useBeforeAll(async () => runSkill({ args: ['--sideways'] }));
+      const result = useBeforeAll(async () =>
+        runSkill({ args: ['--sideways'] }),
+      );
 
       then('it exits 2', () => {
         expect(result.exitCode).toEqual(2);
@@ -493,9 +501,7 @@ describe('quote.verify', () => {
       });
 
       then('the aside is counted in its own bucket', () => {
-        expect(result.stdout).toContain(
-          'editorial asides, not citations: 1',
-        );
+        expect(result.stdout).toContain('editorial asides, not citations: 1');
       });
 
       then('it is not counted as a live defect', () => {
@@ -540,14 +546,7 @@ describe('quote.verify', () => {
     when('[t1] both sources are supplied', () => {
       const result = useBeforeAll(async () =>
         runSkill({
-          args: [
-            '--from',
-            scene.from,
-            '--from',
-            scene.other,
-            '--in',
-            scene.in,
-          ],
+          args: ['--from', scene.from, '--from', scene.other, '--in', scene.in],
         }),
       );
 
@@ -592,7 +591,7 @@ describe('quote.verify', () => {
           '> does:',
           '>',
           '> > "and upon such delivery and tender of the required dues the',
-          '> > harbormaster shall endorse upon it the word \'Logged\'."',
+          "> > harbormaster shall endorse upon it the word 'Logged'.\"",
           '> >',
           '> > — Harbor Code § 1',
         ].join('\n'),
@@ -677,359 +676,431 @@ describe('quote.verify', () => {
     });
   });
 
-  given('[case14] a SECTION LABEL above a blank line, then the quotation', () => {
-    // ⛔ THE SEAM THE FLATTENER ERASED.
-    //
-    // the near-universal shape of a statutory citation is a bold label on
-    // its own line, a bare `>`, then the quotation inside its own `"` marks.
-    // both halves are verbatim in the source. what no source ever held is
-    // the JOIN — the artifact opens a `"` the statute has no mark for.
-    //
-    // flat() collapses a bare `>` into a space, so unless the paragraph seam
-    // is cut FIRST, the two halves are tested as one string that cannot
-    // match. worse, the break lands on the LABEL, which points the reader at
-    // the one part that was never in doubt.
-    const LABELLED = [
-      // ⚠️ over the 40-char `--min` floor ON PURPOSE. at 31 chars the label
-      //    is dropped as too short to test, and the case would assert
-      //    `verified: 2` against a run that verified one fragment and
-      //    skipped the other — a clamp that grades a fragment it never read.
-      '§ 4. Endorsement upon delivery of the signed instrument.',
-      '',
-      'the tortoise shall deliver the signed instrument to the harbormaster,',
-      'and upon such delivery and tender of the required fees the harbormaster',
-      'shall endorse upon it the word "Logged".',
-    ].join('\n');
-
-    const scene = useBeforeAll(async () =>
-      genTempPair({
-        source: LABELLED,
-        artifact: [
-          '# the endorsement rule',
-          '',
-          '> **§ 4. Endorsement upon delivery of the signed instrument.**',
-          '>',
-          '> "the tortoise shall deliver the signed instrument to the',
-          '> harbormaster, and upon such delivery and tender of the required',
-          '> fees the harbormaster shall endorse upon it the word "Logged"."',
-          '>',
-          '> — Harbor Code § 4',
-        ].join('\n'),
-      }),
-    );
-
-    when('[t0] the fixture is inspected', () => {
-      // ⭐ THE CONTROL, and it must FAIL in one direction.
+  given(
+    '[case14] a SECTION LABEL above a blank line, then the quotation',
+    () => {
+      // ⛔ THE SEAM THE FLATTENER ERASED.
       //
-      // without it, [t1] passes just as happily against a source that
-      // happens to hold the label and the body on ONE line — which would
-      // prove only that a contiguous string matches itself, and would say
-      // not one word about the paragraph seam.
-      // ⚠️ DERIVED from LABELLED, never restated.
+      // the near-universal shape of a statutory citation is a bold label on
+      // its own line, a bare `>`, then the quotation inside its own `"` marks.
+      // both halves are verbatim in the source. what no source ever held is
+      // the JOIN — the artifact opens a `"` the statute has no mark for.
       //
-      //    this control used to carry the literal `upon delivery.\n\nthe
-      //    tortoise`, which was correct WHEN WRITTEN and false three lines
-      //    later: the note above records that the label was lengthened past
-      //    the 40-char floor, and the needle did not travel with it. the
-      //    fixture was cured; the assertion ABOUT the fixture was not.
-      //
-      //    it rots toward a FALSE ALARM rather than a false green, which is
-      //    the survivable direction — but a control nobody can satisfy is a
-      //    control the next reader deletes.
-      then('the source really does separate label from body by a BLANK line', () => {
-        const raw = fs.readFileSync(scene.from, UTF8);
-        const [label, blank, body] = LABELLED.split('\n');
-        expect(blank).toEqual('');
-        expect(raw).toContain([label, '', body].join('\n'));
-        expect(raw).not.toContain([label, body].join(' '));
-      });
+      // flat() collapses a bare `>` into a space, so unless the paragraph seam
+      // is cut FIRST, the two halves are tested as one string that cannot
+      // match. worse, the break lands on the LABEL, which points the reader at
+      // the one part that was never in doubt.
+      const LABELLED = [
+        // ⚠️ over the 40-char `--min` floor ON PURPOSE. at 31 chars the label
+        //    is dropped as too short to test, and the case would assert
+        //    `verified: 2` against a run that verified one fragment and
+        //    skipped the other — a clamp that grades a fragment it never read.
+        '§ 4. Endorsement upon delivery of the signed instrument.',
+        '',
+        'the tortoise shall deliver the signed instrument to the harbormaster,',
+        'and upon such delivery and tender of the required fees the harbormaster',
+        'shall endorse upon it the word "Logged".',
+      ].join('\n');
 
-      // ⭐ AND THE SECOND CONTROL: the artifact must carry the `"` that the
-      // source lacks. that inserted mark is the whole reason the join fails,
-      // so a fixture without it would clamp no defect at all.
-      then('the artifact opens a quote mark the source has no mark for', () => {
-        const raw = fs.readFileSync(scene.in, UTF8);
-        expect(raw).toContain('> "the tortoise');
-        expect(fs.readFileSync(scene.from, UTF8)).toContain('\nthe tortoise');
-      });
-    });
-
-    when('[t1] the artifact is checked', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({ args: ['--from', scene.from, '--in', scene.in] }),
+      const scene = useBeforeAll(async () =>
+        genTempPair({
+          source: LABELLED,
+          artifact: [
+            '# the endorsement rule',
+            '',
+            '> **§ 4. Endorsement upon delivery of the signed instrument.**',
+            '>',
+            '> "the tortoise shall deliver the signed instrument to the',
+            '> harbormaster, and upon such delivery and tender of the required',
+            '> fees the harbormaster shall endorse upon it the word "Logged"."',
+            '>',
+            '> — Harbor Code § 4',
+          ].join('\n'),
+        }),
       );
 
-      then('both halves verify, and neither is called a fabrication', () => {
-        expect(result.exitCode).toEqual(0);
-        expect(result.stdout).toContain('live defects: 0');
-      });
-
-      then('each paragraph was tested on its own, as with an ellipsis', () => {
-        expect(result.stdout).toContain('verified: 2');
-      });
-    });
-  });
-
-  given('[case15] the SAME label seam, inline — `§ 4(a) — "the tortoise ...`', () => {
-    // the one-line form of [case14]. a label, an em-dash, then the quote.
-    // it breaks at char 5 — right after the section number — which is the
-    // least useful place a report can point, because the section number is
-    // the part a reader is most confident about.
-    const LABELLED = [
-      '§ 4. Endorsement upon delivery of the signed instrument.',
-      '',
-      'the tortoise shall deliver the signed instrument to the harbormaster,',
-      'and upon such delivery and tender of the required fees the harbormaster',
-      'shall endorse upon it the word "Logged".',
-    ].join('\n');
-
-    const scene = useBeforeAll(async () =>
-      genTempPair({
-        source: LABELLED,
-        artifact: [
-          '# the endorsement rule',
-          '',
-          '> § 4(a) — "the tortoise shall deliver the signed instrument to the',
-          '> harbormaster, and upon such delivery and tender of the required',
-          '> fees the harbormaster shall endorse upon it the word "Logged"."',
-          '>',
-          '> — Harbor Code § 4',
-        ].join('\n'),
-      }),
-    );
-
-    when('[t0] the fixture is inspected', () => {
-      // ⭐ THE CONTROL, and it must FAIL in one direction.
-      //
-      // the source must NOT hold the joined string `§ 4(a) — "the tortoise`.
-      // if it did, the case would pass with the seam cut or without it, and
-      // would clamp no defect at all.
-      then('the source holds neither the subsection label nor the em-dash join', () => {
-        const raw = fs.readFileSync(scene.from, UTF8);
-        expect(raw).not.toContain('§ 4(a)');
-        expect(raw).not.toContain('— "the tortoise');
-      });
-
-      then('the artifact really does glue the label onto the quotation', () => {
-        expect(fs.readFileSync(scene.in, UTF8)).toContain('§ 4(a) — "the tortoise');
-      });
-    });
-
-    when('[t1] the artifact is checked', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({ args: ['--from', scene.from, '--in', scene.in] }),
-      );
-
-      then('the body verifies and the label is not read as fabricated', () => {
-        expect(result.exitCode).toEqual(0);
-        expect(result.stdout).toContain('live defects: 0');
-        expect(result.stdout).toContain('verified: 1');
-      });
-
-      // ⚠️ `§ 4(a)` is 6 chars, so it lands under the --min floor rather
-      //    than being verified. that is the correct outcome and it is
-      //    asserted HERE, so a later change that silently DROPPED the label
-      //    instead of splitting it cannot pass unnoticed.
-      then('the split label is reported as under the floor, never as absent', () => {
-        expect(result.stdout).toContain('under the 40-char floor, not tested: 1');
-      });
-    });
-  });
-
-  given('[case16] the CENSUS — one --in that names a DIRECTORY of artifacts', () => {
-    // .why = the loop this replaces was written by hand on every sweep. an
-    //        adhoc loop is not the same measurement twice, carries no test,
-    //        and a permission allowlist refuses it outright — which is where
-    //        the gap was finally felt rather than reasoned about.
-    //
-    // ⭐ the fixture is DELIBERATELY MIXED: one clean artifact, one with a
-    //    fabrication, and a `.stone` beside the `.md` so the extension pair
-    //    is exercised. a set where every member is clean would pass just as
-    //    well if the census read the first file twice and never opened the
-    //    rest.
-    const scene = useBeforeAll(async () => {
-      const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'quote-verify-census-'));
-      const from = path.join(dir, 'source.txt');
-      fs.writeFileSync(from, SOURCE);
-
-      const arts = fs.mkdtempSync(path.join(os.tmpdir(), 'quote-verify-arts-'));
-      const clean = path.join(arts, 'a.clean.md');
-      const dirty = path.join(arts, 'b.dirty.stone');
-      fs.writeFileSync(
-        clean,
-        [
-          '# the delivery rule',
-          '',
-          '> upon such delivery and tender of the required fees the',
-          '> harbormaster shall endorse upon it the word "Logged".',
-          '> — Harbor Code § 1',
-        ].join('\n'),
-      );
-      fs.writeFileSync(
-        dirty,
-        [
-          '# the fee rule',
-          '',
-          '> no fee shall be charged to the harbormaster for receipt of an',
-          '> affidavit of extraordinary tide.',
-          '> — Harbor Code § 2',
-        ].join('\n'),
-      );
-      return { from, arts, clean, dirty };
-    });
-
-    when('[t0] the fixture is inspected', () => {
-      // ⭐ THE CONTROL, and it must FAIL in one direction. the dirty
-      //    artifact says `charged to` where the source says `paid to`. if
-      //    the source happened to hold both, the census would report clean
-      //    whether or not it ever opened the second file.
-      then('the source holds the clean form and NOT the dirty one', () => {
-        const raw = fs.readFileSync(scene.from, UTF8);
-        expect(raw).toContain('no fee shall be paid to the harbormaster');
-        expect(raw).not.toContain('no fee shall be charged to the harbormaster');
-      });
-
-      then('the two artifacts carry the two different extensions', () => {
-        expect(scene.clean.endsWith('.md')).toEqual(true);
-        expect(scene.dirty.endsWith('.stone')).toEqual(true);
-      });
-    });
-
-    when('[t1] the directory is handed to a single --in', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({ args: ['--from', scene.from, '--in', scene.arts] }),
-      );
-
-      // ⛔ the decisive assertion. if the census read only the first
-      //    artifact — alphabetically the CLEAN one — this reports 0 live
-      //    and exit 0, which is exactly the failure a census must not have.
-      then('the defect in the SECOND artifact is found', () => {
-        expect(result.exitCode).toEqual(2);
-        expect(result.stdout).toContain('live defects: 1');
-        expect(result.stdout).toContain('NOT-IN-SOURCE');
-      });
-
-      // ⚠️ a rollup alone cannot tell "2 files, one dirty" apart from "1 file
-      //    read twice". the per-artifact row is what makes an artifact that
-      //    was never opened visible as a suspect rather than a pass.
-      //
-      // ⛔ matched against the `artifact:` ROW, never a bare path.
-      //
-      //    a bare `toContain(path)` passed under a deliberate sabotage that
-      //    read only the FIRST artifact — because the shell echoes `in:
-      //    <path>` for every --in, so the assertion was satisfied by a file
-      //    that was NAMED and never OPENED. the echo is a proxy the defect
-      //    does not move, which is the one thing a clamp must not rest on.
-      then('every artifact gets a CENSUS ROW, not merely an echo of its path', () => {
-        const rows = result.stdout
-          .split('\n')
-          .filter((l) => l.includes('artifact:'));
-        expect(rows.length).toEqual(2);
-        expect(rows.filter((l) => l.includes(scene.clean)).length).toEqual(1);
-        expect(rows.filter((l) => l.includes(scene.dirty)).length).toEqual(1);
-      });
-
-      then('the dirty artifact is the one the detail block is filed under', () => {
-        const at = result.stdout.indexOf('NOT-IN-SOURCE');
-        // ⛔ guard the -1. `slice(0, -1)` is nearly the WHOLE string, so on a
-        //    run with no defect at all this passed on the header echo — a
-        //    vacuous green that read as a located hit.
-        expect(at).toBeGreaterThan(-1);
-        expect(result.stdout.slice(0, at)).toContain(scene.dirty);
-        expect(result.stdout.slice(0, at)).not.toContain('── ' + scene.clean);
-      });
-    });
-
-    // ⭐ THE PROPERTY THAT MAKES THE CENSUS TRUSTWORTHY, asserted directly.
-    //
-    //    a census that re-implemented the check would drift from the
-    //    single-artifact check, and the drift would surface as a file that
-    //    reads clean in the census and dirty on its own. this goes red on a
-    //    double-count, a skip, or a divergent reader.
-    when('[t2] the same artifacts are checked one at a time', () => {
-      const parts = useBeforeAll(async () => ({
-        clean: runSkill({ args: ['--from', scene.from, '--in', scene.clean] }),
-        dirty: runSkill({ args: ['--from', scene.from, '--in', scene.dirty] }),
-      }));
-      const whole = useBeforeAll(async () =>
-        runSkill({ args: ['--from', scene.from, '--in', scene.arts] }),
-      );
-
-      const verifiedOf = (out: string): number =>
-        Number(/verified: (\d+)/.exec(out)?.[1] ?? NaN);
-      const liveOf = (out: string): number =>
-        Number(/live defects: (\d+)/.exec(out)?.[1] ?? NaN);
-
-      then('the census totals equal the sum of the individual runs', () => {
-        expect(verifiedOf(whole.stdout)).toEqual(
-          verifiedOf(parts.clean.stdout) + verifiedOf(parts.dirty.stdout),
+      when('[t0] the fixture is inspected', () => {
+        // ⭐ THE CONTROL, and it must FAIL in one direction.
+        //
+        // without it, [t1] passes just as happily against a source that
+        // happens to hold the label and the body on ONE line — which would
+        // prove only that a contiguous string matches itself, and would say
+        // not one word about the paragraph seam.
+        // ⚠️ DERIVED from LABELLED, never restated.
+        //
+        //    this control used to carry the literal `upon delivery.\n\nthe
+        //    tortoise`, which was correct WHEN WRITTEN and false three lines
+        //    later: the note above records that the label was lengthened past
+        //    the 40-char floor, and the needle did not travel with it. the
+        //    fixture was cured; the assertion ABOUT the fixture was not.
+        //
+        //    it rots toward a FALSE ALARM rather than a false green, which is
+        //    the survivable direction — but a control nobody can satisfy is a
+        //    control the next reader deletes.
+        then(
+          'the source really does separate label from body by a BLANK line',
+          () => {
+            const raw = fs.readFileSync(scene.from, UTF8);
+            const [label, blank, body] = LABELLED.split('\n');
+            expect(blank).toEqual('');
+            expect(raw).toContain([label, '', body].join('\n'));
+            expect(raw).not.toContain([label, body].join(' '));
+          },
         );
-        expect(liveOf(whole.stdout)).toEqual(
-          liveOf(parts.clean.stdout) + liveOf(parts.dirty.stdout),
+
+        // ⭐ AND THE SECOND CONTROL: the artifact must carry the `"` that the
+        // source lacks. that inserted mark is the whole reason the join fails,
+        // so a fixture without it would clamp no defect at all.
+        then(
+          'the artifact opens a quote mark the source has no mark for',
+          () => {
+            const raw = fs.readFileSync(scene.in, UTF8);
+            expect(raw).toContain('> "the tortoise');
+            expect(fs.readFileSync(scene.from, UTF8)).toContain(
+              '\nthe tortoise',
+            );
+          },
         );
       });
 
-      // the control for the control: the individual runs must DISAGREE with
-      // each other, or the sum above would hold under any reader at all.
-      then('the two individual runs really do differ', () => {
-        expect(parts.clean.exitCode).toEqual(0);
-        expect(parts.dirty.exitCode).toEqual(2);
-      });
-    });
+      when('[t1] the artifact is checked', () => {
+        const result = useBeforeAll(async () =>
+          runSkill({ args: ['--from', scene.from, '--in', scene.in] }),
+        );
 
-    // ⛔ the empty expansion must BLOCK, never pass quietly — the same
-    //    guarantee --from already carries. `verified: 0` read as clean is a
-    //    check that never opened a file.
-    when('[t3] the directory holds no artifact of either extension', () => {
-      // ⚠️ an OBJECT, not a bare string. `useBeforeAll` hands back a proxy
-      //    that defers property access, so a primitive return interpolates
-      //    into an arg list as `[object Object]` — which the skill then
-      //    refuses as a path that does not exist. the refusal is correct and
-      //    the case would have clamped the WRONG branch.
-      const empty = useBeforeAll(async () => ({
-        dir: fs.mkdtempSync(path.join(os.tmpdir(), 'quote-verify-empty-')),
-      }));
-      const result = useBeforeAll(async () =>
-        runSkill({ args: ['--from', scene.from, '--in', empty.dir] }),
+        then('both halves verify, and neither is called a fabrication', () => {
+          expect(result.exitCode).toEqual(0);
+          expect(result.stdout).toContain('live defects: 0');
+        });
+
+        then(
+          'each paragraph was tested on its own, as with an ellipsis',
+          () => {
+            expect(result.stdout).toContain('verified: 2');
+          },
+        );
+      });
+    },
+  );
+
+  given(
+    '[case15] the SAME label seam, inline — `§ 4(a) — "the tortoise ...`',
+    () => {
+      // the one-line form of [case14]. a label, an em-dash, then the quote.
+      // it breaks at char 5 — right after the section number — which is the
+      // least useful place a report can point, because the section number is
+      // the part a reader is most confident about.
+      const LABELLED = [
+        '§ 4. Endorsement upon delivery of the signed instrument.',
+        '',
+        'the tortoise shall deliver the signed instrument to the harbormaster,',
+        'and upon such delivery and tender of the required fees the harbormaster',
+        'shall endorse upon it the word "Logged".',
+      ].join('\n');
+
+      const scene = useBeforeAll(async () =>
+        genTempPair({
+          source: LABELLED,
+          artifact: [
+            '# the endorsement rule',
+            '',
+            '> § 4(a) — "the tortoise shall deliver the signed instrument to the',
+            '> harbormaster, and upon such delivery and tender of the required',
+            '> fees the harbormaster shall endorse upon it the word "Logged"."',
+            '>',
+            '> — Harbor Code § 4',
+          ].join('\n'),
+        }),
       );
 
-      then('it blocks, and names the directory it could not expand', () => {
-        expect(result.exitCode).toEqual(2);
-        expect(result.stdout + result.stderr).toContain('no .md or .stone artifacts');
-        expect(result.stdout + result.stderr).toContain(empty.dir);
+      when('[t0] the fixture is inspected', () => {
+        // ⭐ THE CONTROL, and it must FAIL in one direction.
+        //
+        // the source must NOT hold the joined string `§ 4(a) — "the tortoise`.
+        // if it did, the case would pass with the seam cut or without it, and
+        // would clamp no defect at all.
+        then(
+          'the source holds neither the subsection label nor the em-dash join',
+          () => {
+            const raw = fs.readFileSync(scene.from, UTF8);
+            expect(raw).not.toContain('§ 4(a)');
+            expect(raw).not.toContain('— "the tortoise');
+          },
+        );
+
+        then(
+          'the artifact really does glue the label onto the quotation',
+          () => {
+            expect(fs.readFileSync(scene.in, UTF8)).toContain(
+              '§ 4(a) — "the tortoise',
+            );
+          },
+        );
       });
 
-      then('it does NOT report a count that a reader could mistake for clean', () => {
-        expect(result.stdout).not.toContain('verified: 0');
+      when('[t1] the artifact is checked', () => {
+        const result = useBeforeAll(async () =>
+          runSkill({ args: ['--from', scene.from, '--in', scene.in] }),
+        );
+
+        then(
+          'the body verifies and the label is not read as fabricated',
+          () => {
+            expect(result.exitCode).toEqual(0);
+            expect(result.stdout).toContain('live defects: 0');
+            expect(result.stdout).toContain('verified: 1');
+          },
+        );
+
+        // ⚠️ `§ 4(a)` is 6 chars, so it lands under the --min floor rather
+        //    than being verified. that is the correct outcome and it is
+        //    asserted HERE, so a later change that silently DROPPED the label
+        //    instead of splitting it cannot pass unnoticed.
+        then(
+          'the split label is reported as under the floor, never as absent',
+          () => {
+            expect(result.stdout).toContain(
+              'under the 40-char floor, not tested: 1',
+            );
+          },
+        );
       });
-    });
+    },
+  );
 
-    // the no-regression clamp. a single artifact must render exactly as it
-    // did before the census existed — no per-artifact row, because with one
-    // file the row and the total are the same number said twice.
-    when('[t4] a single artifact is checked', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({ args: ['--from', scene.from, '--in', scene.clean] }),
-      );
+  given(
+    '[case16] the CENSUS — one --in that names a DIRECTORY of artifacts',
+    () => {
+      // .why = the loop this replaces was written by hand on every sweep. an
+      //        adhoc loop is not the same measurement twice, carries no test,
+      //        and a permission allowlist refuses it outright — which is where
+      //        the gap was finally felt rather than reasoned about.
+      //
+      // ⭐ the fixture is DELIBERATELY MIXED: one clean artifact, one with a
+      //    fabrication, and a `.stone` beside the `.md` so the extension pair
+      //    is exercised. a set where every member is clean would pass just as
+      //    well if the census read the first file twice and never opened the
+      //    rest.
+      const scene = useBeforeAll(async () => {
+        const dir = fs.mkdtempSync(
+          path.join(os.tmpdir(), 'quote-verify-census-'),
+        );
+        const from = path.join(dir, 'source.txt');
+        fs.writeFileSync(from, SOURCE);
 
-      then('no per-artifact census row is printed', () => {
-        expect(result.stdout).not.toContain('artifact:');
-        expect(result.stdout).toContain('verified: 1');
+        const arts = fs.mkdtempSync(
+          path.join(os.tmpdir(), 'quote-verify-arts-'),
+        );
+        const clean = path.join(arts, 'a.clean.md');
+        const dirty = path.join(arts, 'b.dirty.stone');
+        fs.writeFileSync(
+          clean,
+          [
+            '# the delivery rule',
+            '',
+            '> upon such delivery and tender of the required fees the',
+            '> harbormaster shall endorse upon it the word "Logged".',
+            '> — Harbor Code § 1',
+          ].join('\n'),
+        );
+        fs.writeFileSync(
+          dirty,
+          [
+            '# the fee rule',
+            '',
+            '> no fee shall be charged to the harbormaster for receipt of an',
+            '> affidavit of extraordinary tide.',
+            '> — Harbor Code § 2',
+          ].join('\n'),
+        );
+        return { from, arts, clean, dirty };
       });
-    });
 
-    when('[t5] --in names a path that is neither file nor directory', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({ args: ['--from', scene.from, '--in', '/tmp/zzz-no-such-artifact-zzz'] }),
-      );
+      when('[t0] the fixture is inspected', () => {
+        // ⭐ THE CONTROL, and it must FAIL in one direction. the dirty
+        //    artifact says `charged to` where the source says `paid to`. if
+        //    the source happened to hold both, the census would report clean
+        //    whether or not it ever opened the second file.
+        then('the source holds the clean form and NOT the dirty one', () => {
+          const raw = fs.readFileSync(scene.from, UTF8);
+          expect(raw).toContain('no fee shall be paid to the harbormaster');
+          expect(raw).not.toContain(
+            'no fee shall be charged to the harbormaster',
+          );
+        });
 
-      then('it blocks and names the path', () => {
-        expect(result.exitCode).toEqual(2);
-        expect(result.stdout + result.stderr).toContain('artifact not found');
-        expect(result.stdout + result.stderr).toContain('zzz-no-such-artifact-zzz');
+        then('the two artifacts carry the two different extensions', () => {
+          expect(scene.clean.endsWith('.md')).toEqual(true);
+          expect(scene.dirty.endsWith('.stone')).toEqual(true);
+        });
       });
-    });
-  });
+
+      when('[t1] the directory is handed to a single --in', () => {
+        const result = useBeforeAll(async () =>
+          runSkill({ args: ['--from', scene.from, '--in', scene.arts] }),
+        );
+
+        // ⛔ the decisive assertion. if the census read only the first
+        //    artifact — alphabetically the CLEAN one — this reports 0 live
+        //    and exit 0, which is exactly the failure a census must not have.
+        then('the defect in the SECOND artifact is found', () => {
+          expect(result.exitCode).toEqual(2);
+          expect(result.stdout).toContain('live defects: 1');
+          expect(result.stdout).toContain('NOT-IN-SOURCE');
+        });
+
+        // ⚠️ a rollup alone cannot tell "2 files, one dirty" apart from "1 file
+        //    read twice". the per-artifact row is what makes an artifact that
+        //    was never opened visible as a suspect rather than a pass.
+        //
+        // ⛔ matched against the `artifact:` ROW, never a bare path.
+        //
+        //    a bare `toContain(path)` passed under a deliberate sabotage that
+        //    read only the FIRST artifact — because the shell echoes `in:
+        //    <path>` for every --in, so the assertion was satisfied by a file
+        //    that was NAMED and never OPENED. the echo is a proxy the defect
+        //    does not move, which is the one thing a clamp must not rest on.
+        then(
+          'every artifact gets a CENSUS ROW, not merely an echo of its path',
+          () => {
+            const rows = result.stdout
+              .split('\n')
+              .filter((l) => l.includes('artifact:'));
+            expect(rows.length).toEqual(2);
+            expect(rows.filter((l) => l.includes(scene.clean)).length).toEqual(
+              1,
+            );
+            expect(rows.filter((l) => l.includes(scene.dirty)).length).toEqual(
+              1,
+            );
+          },
+        );
+
+        then(
+          'the dirty artifact is the one the detail block is filed under',
+          () => {
+            const at = result.stdout.indexOf('NOT-IN-SOURCE');
+            // ⛔ guard the -1. `slice(0, -1)` is nearly the WHOLE string, so on a
+            //    run with no defect at all this passed on the header echo — a
+            //    vacuous green that read as a located hit.
+            expect(at).toBeGreaterThan(-1);
+            expect(result.stdout.slice(0, at)).toContain(scene.dirty);
+            expect(result.stdout.slice(0, at)).not.toContain(
+              '── ' + scene.clean,
+            );
+          },
+        );
+      });
+
+      // ⭐ THE PROPERTY THAT MAKES THE CENSUS TRUSTWORTHY, asserted directly.
+      //
+      //    a census that re-implemented the check would drift from the
+      //    single-artifact check, and the drift would surface as a file that
+      //    reads clean in the census and dirty on its own. this goes red on a
+      //    double-count, a skip, or a divergent reader.
+      when('[t2] the same artifacts are checked one at a time', () => {
+        const parts = useBeforeAll(async () => ({
+          clean: runSkill({
+            args: ['--from', scene.from, '--in', scene.clean],
+          }),
+          dirty: runSkill({
+            args: ['--from', scene.from, '--in', scene.dirty],
+          }),
+        }));
+        const whole = useBeforeAll(async () =>
+          runSkill({ args: ['--from', scene.from, '--in', scene.arts] }),
+        );
+
+        const verifiedOf = (out: string): number =>
+          Number(/verified: (\d+)/.exec(out)?.[1] ?? NaN);
+        const liveOf = (out: string): number =>
+          Number(/live defects: (\d+)/.exec(out)?.[1] ?? NaN);
+
+        then('the census totals equal the sum of the individual runs', () => {
+          expect(verifiedOf(whole.stdout)).toEqual(
+            verifiedOf(parts.clean.stdout) + verifiedOf(parts.dirty.stdout),
+          );
+          expect(liveOf(whole.stdout)).toEqual(
+            liveOf(parts.clean.stdout) + liveOf(parts.dirty.stdout),
+          );
+        });
+
+        // the control for the control: the individual runs must DISAGREE with
+        // each other, or the sum above would hold under any reader at all.
+        then('the two individual runs really do differ', () => {
+          expect(parts.clean.exitCode).toEqual(0);
+          expect(parts.dirty.exitCode).toEqual(2);
+        });
+      });
+
+      // ⛔ the empty expansion must BLOCK, never pass quietly — the same
+      //    guarantee --from already carries. `verified: 0` read as clean is a
+      //    check that never opened a file.
+      when('[t3] the directory holds no artifact of either extension', () => {
+        // ⚠️ an OBJECT, not a bare string. `useBeforeAll` hands back a proxy
+        //    that defers property access, so a primitive return interpolates
+        //    into an arg list as `[object Object]` — which the skill then
+        //    refuses as a path that does not exist. the refusal is correct and
+        //    the case would have clamped the WRONG branch.
+        const empty = useBeforeAll(async () => ({
+          dir: fs.mkdtempSync(path.join(os.tmpdir(), 'quote-verify-empty-')),
+        }));
+        const result = useBeforeAll(async () =>
+          runSkill({ args: ['--from', scene.from, '--in', empty.dir] }),
+        );
+
+        then('it blocks, and names the directory it could not expand', () => {
+          expect(result.exitCode).toEqual(2);
+          expect(result.stdout + result.stderr).toContain(
+            'no .md or .stone artifacts',
+          );
+          expect(result.stdout + result.stderr).toContain(empty.dir);
+        });
+
+        then(
+          'it does NOT report a count that a reader could mistake for clean',
+          () => {
+            expect(result.stdout).not.toContain('verified: 0');
+          },
+        );
+      });
+
+      // the no-regression clamp. a single artifact must render exactly as it
+      // did before the census existed — no per-artifact row, because with one
+      // file the row and the total are the same number said twice.
+      when('[t4] a single artifact is checked', () => {
+        const result = useBeforeAll(async () =>
+          runSkill({ args: ['--from', scene.from, '--in', scene.clean] }),
+        );
+
+        then('no per-artifact census row is printed', () => {
+          expect(result.stdout).not.toContain('artifact:');
+          expect(result.stdout).toContain('verified: 1');
+        });
+      });
+
+      when('[t5] --in names a path that is neither file nor directory', () => {
+        const result = useBeforeAll(async () =>
+          runSkill({
+            args: [
+              '--from',
+              scene.from,
+              '--in',
+              '/tmp/zzz-no-such-artifact-zzz',
+            ],
+          }),
+        );
+
+        then('it blocks and names the path', () => {
+          expect(result.exitCode).toEqual(2);
+          expect(result.stdout + result.stderr).toContain('artifact not found');
+          expect(result.stdout + result.stderr).toContain(
+            'zzz-no-such-artifact-zzz',
+          );
+        });
+      });
+    },
+  );
 
   given('[case17] a SOURCE OF RECORD that is a `.md` transcript', () => {
     // .why = `rule.forbid.hand-transcription` makes the deterministic
@@ -1054,20 +1125,35 @@ describe('quote.verify', () => {
       const srcMd = fs.mkdtempSync(path.join(os.tmpdir(), 'qv-src-md-'));
       fs.writeFileSync(
         path.join(srcMd, 'atlas.bylaws.transform.md'),
-        ['# ATLAS BYLAWS — transcript of record', '', '2.11. Quorum At The Annual Muster', '', passage].join('\n'),
+        [
+          '# ATLAS BYLAWS — transcript of record',
+          '',
+          '2.11. Quorum At The Annual Muster',
+          '',
+          passage,
+        ].join('\n'),
       );
 
       const srcTxt = fs.mkdtempSync(path.join(os.tmpdir(), 'qv-src-txt-'));
       fs.writeFileSync(
         path.join(srcTxt, 'statute.txt'),
-        ['HARBOR CODE', '', 'Every vessel shall lodge its manifest with the harbormaster.'].join('\n'),
+        [
+          'HARBOR CODE',
+          '',
+          'Every vessel shall lodge its manifest with the harbormaster.',
+        ].join('\n'),
       );
 
       const arts = fs.mkdtempSync(path.join(os.tmpdir(), 'qv-art-17-'));
       const art = path.join(arts, 'brief.md');
       fs.writeFileSync(
         art,
-        ['# the quorum rule', '', '> ' + passage.split('\n').join('\n> '), '> — Atlas Bylaws § 2.11'].join('\n'),
+        [
+          '# the quorum rule',
+          '',
+          '> ' + passage.split('\n').join('\n> '),
+          '> — Atlas Bylaws § 2.11',
+        ].join('\n'),
       );
 
       return { srcMd, srcTxt, art, passage };
@@ -1076,13 +1162,23 @@ describe('quote.verify', () => {
     when('[t0] the fixture is inspected', () => {
       // ⭐ the source sets must be DISJOINT by extension, or [t1] and [t2]
       //    would not isolate the expansion glob as the one input that moved.
-      then('the md source dir holds no .txt, and the txt dir holds no .md', () => {
-        expect(fs.readdirSync(s17.srcMd).some((f) => f.endsWith('.txt'))).toEqual(false);
-        expect(fs.readdirSync(s17.srcTxt).some((f) => f.endsWith('.md'))).toEqual(false);
-      });
+      then(
+        'the md source dir holds no .txt, and the txt dir holds no .md',
+        () => {
+          expect(
+            fs.readdirSync(s17.srcMd).some((f) => f.endsWith('.txt')),
+          ).toEqual(false);
+          expect(
+            fs.readdirSync(s17.srcTxt).some((f) => f.endsWith('.md')),
+          ).toEqual(false);
+        },
+      );
 
       then('only the md source holds the quoted passage', () => {
-        const md = fs.readFileSync(path.join(s17.srcMd, 'atlas.bylaws.transform.md'), UTF8);
+        const md = fs.readFileSync(
+          path.join(s17.srcMd, 'atlas.bylaws.transform.md'),
+          UTF8,
+        );
         const txt = fs.readFileSync(path.join(s17.srcTxt, 'statute.txt'), UTF8);
         expect(md).toContain(s17.passage);
         expect(txt).not.toContain(s17.passage);
@@ -1113,17 +1209,20 @@ describe('quote.verify', () => {
     //    the verdict flips. that is the whole short-source hazard, clamped:
     //    a live defect is evidence about the SOURCE SET at least as much as
     //    it is evidence about the author.
-    when('[t2] the SAME artifact is checked against a source set that lacks it', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({ args: ['--from', s17.srcTxt, '--in', s17.art] }),
-      );
+    when(
+      '[t2] the SAME artifact is checked against a source set that lacks it',
+      () => {
+        const result = useBeforeAll(async () =>
+          runSkill({ args: ['--from', s17.srcTxt, '--in', s17.art] }),
+        );
 
-      then('the identical quote is now reported NOT-IN-SOURCE', () => {
-        expect(result.exitCode).toEqual(2);
-        expect(result.stdout).toContain('live defects: 1');
-        expect(result.stdout).toContain('NOT-IN-SOURCE');
-      });
-    });
+        then('the identical quote is now reported NOT-IN-SOURCE', () => {
+          expect(result.exitCode).toEqual(2);
+          expect(result.stdout).toContain('live defects: 1');
+          expect(result.stdout).toContain('NOT-IN-SOURCE');
+        });
+      },
+    );
 
     // ⛔ the hazard the wider glob opened, and the reason it is safe to open.
     when('[t3] one path is handed to BOTH --from and --in', () => {
@@ -1149,7 +1248,9 @@ describe('quote.verify', () => {
 
       then('it refuses, and names the path that is both', () => {
         expect(blocked.exitCode).toEqual(2);
-        expect(blocked.stdout + blocked.stderr).toContain('both a source and an artifact');
+        expect(blocked.stdout + blocked.stderr).toContain(
+          'both a source and an artifact',
+        );
         expect(blocked.stdout + blocked.stderr).toContain('selfcite.md');
       });
 
@@ -1179,210 +1280,214 @@ describe('quote.verify', () => {
   //    source saw a delta on EVERY row and had no way to tell a whitespace
   //    normalization from a truncated document. the guard could not be
   //    checked against the world it guards.
-  given('[case18] a source whose whitespace collapses under normalization', () => {
-    const s18 = useBeforeAll(async () => {
-      const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'qv-manifest-'));
-      const at = path.join(dir, 'padded.txt');
+  given(
+    '[case18] a source whose whitespace collapses under normalization',
+    () => {
+      const s18 = useBeforeAll(async () => {
+        const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'qv-manifest-'));
+        const at = path.join(dir, 'padded.txt');
 
-      // ⚠️ the extra whitespace is the POINT. without runs that collapse, raw
-      //    and flat are equal, and an assertion on either passes whichever
-      //    one the code prints — a clamp that cannot fail.
-      const body = [
-        'The harbormaster shall keep a register of every vessel that moors',
-        '',
-        '',
-        '        within the inner basin, and shall enter therein the name of',
-        '',
-        '  the master and the tonnage of the vessel.',
-      ].join('\n');
-      fs.writeFileSync(at, body);
-
-      const art = path.join(dir, 'brief.md');
-      fs.writeFileSync(
-        art,
-        [
-          '# the register duty',
+        // ⚠️ the extra whitespace is the POINT. without runs that collapse, raw
+        //    and flat are equal, and an assertion on either passes whichever
+        //    one the code prints — a clamp that cannot fail.
+        const body = [
+          'The harbormaster shall keep a register of every vessel that moors',
           '',
-          '> "The harbormaster shall keep a register of every vessel that moors',
-          '> within the inner basin, and shall enter therein the name of the',
-          '> master and the tonnage of the vessel."',
-        ].join('\n'),
-      );
-
-      return { dir, at, art, raw: body.length };
-    });
-
-    when('[t0] the fixture is measured', () => {
-      // ⛔ THE CONTROL FOR THE CLAMP BELOW. if raw and flat ever coincide,
-      //    the assertion on the on-disk figure would pass against the OLD
-      //    code too, and would clamp naught.
-      then('raw and flattened lengths genuinely differ', () => {
-        const raw = fs.readFileSync(s18.at, UTF8);
-        const flatLen = raw.replace(/\s+/g, ' ').trim().length;
-        expect(raw.length).toBeGreaterThan(flatLen);
-      });
-    });
-
-    when('[t1] the manifest is printed', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({ args: ['--from', s18.at, '--in', s18.art] }),
-      );
-
-      // ⭐ THE CLAMP. the on-disk figure is what a pull, `wc -m`, and the
-      //    ~2,000-char floor in rule.require.bhrowser-citations all speak in.
-      //    revert to `body.length` and this goes red.
-      then('it leads with the ON-DISK character count', () => {
-        expect(result.stdout).toContain(String(s18.raw) + ' chars on disk');
-      });
-
-      then('it still reports the flattened search corpus, labelled', () => {
-        expect(result.stdout).toMatch(/chars on disk · \d+ flat/);
-      });
-
-      // ⚠️ the manifest must not have cost the verdict its correctness.
-      then('the quote still verifies across the collapsed whitespace', () => {
-        expect(result.exitCode).toEqual(0);
-        expect(result.stdout).toContain('verified: 1');
-        expect(result.stdout).toContain('live defects: 0');
-      });
-    });
-  });
-
-  given('[case19] --except, so an artifact can be checked against its OWN dir', () => {
-    // ⭐ WHY THIS FLAG EXISTS. the correct source was UNREACHABLE by the
-    //    convenient invocation. a route's comms yields are the clerk's verbatim
-    //    emails — the source of record for every quote of her — and they live
-    //    IN the route directory, beside the page that quotes them. so
-    //    `--from route/ --in route/page.md` is both the obvious call and a
-    //    REFUSED one: the expansion pulls in page.md itself and the overlap
-    //    guard fires, correctly.
-    //
-    //    the workaround was one --from per yield. the failure mode when a caller
-    //    does not write them all is not an error — it is a WALL OF RED against a
-    //    correct document. measured at 61:1 on one page: 62 defects reported, 61
-    //    of them the tool's own input.
-    const s19 = useBeforeAll(async () =>
-      genTempPair({
-        artifact: [
-          '# the delivery rule',
           '',
-          '> upon such delivery and tender of the required fees the',
-          '> harbormaster shall endorse upon it the word "Logged".',
-          '> — Harbor Code § 1',
-        ].join('\n'),
-      }),
-    );
+          '        within the inner basin, and shall enter therein the name of',
+          '',
+          '  the master and the tonnage of the vessel.',
+        ].join('\n');
+        fs.writeFileSync(at, body);
 
-    // ⛔ THE CONTROL THE FLAG EXISTS TO ANSWER. without --except this exact
-    //    call is refused — and it must stay refused, because the overlap guard
-    //    is correct. a run that no longer blocks here means --except did not
-    //    add a path around the guard, it DELETED the guard.
-    when('[t0] the dir is the source AND holds the artifact, with no --except', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({
-          args: ['--from', path.dirname(s19.in), '--in', s19.in],
-        }),
-      );
-
-      then('it is refused — a path cannot verify against itself', () => {
-        expect(result.exitCode).toEqual(2);
-        expect(result.stdout).toContain('both a source and an artifact');
-      });
-    });
-
-    when('[t1] the same call names the artifact in --except', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({
-          args: [
-            '--from',
-            path.dirname(s19.in),
-            '--except',
-            s19.in,
-            '--in',
-            s19.in,
-          ],
-        }),
-      );
-
-      then('it runs, and the quote verifies against its neighbor source', () => {
-        expect(result.exitCode).toEqual(0);
-        expect(result.stdout).toContain('verified: 1');
-        expect(result.stdout).toContain('live defects: 0');
-      });
-
-      // ⚠️ the subtraction must remove the artifact and KEEP the rest. a
-      //    --except that quietly dropped the whole dir would also exit 0 here,
-      //    with zero quotes checked — so assert the source survived by name.
-      then('the neighbor source is still in the manifest', () => {
-        expect(result.stdout).toContain(s19.from);
-      });
-
-      // ⛔ A `not.toContain` IS VACUOUS AGAINST A RUN THAT PRINTED NO MANIFEST.
-      //    measured: with --except neutered, this assertion went GREEN while
-      //    every other one in the block went red — the run had blocked, so the
-      //    manifest was absent and the artifact was trivially "not in" it.
-      //
-      // ⇒ so assert the SHAPE of the manifest, not an absence within it: the
-      //   source set must be exactly one entry, and it must be the neighbor.
-      //   that is false when the subtraction fails (two entries) and false when
-      //   it over-reaches (zero entries), so it discriminates in both
-      //   directions where the bare absence discriminated in neither.
-      then('the source set is EXACTLY the neighbor, one entry', () => {
-        const manifest = result.stdout
-          .split('\n')
-          .filter((l) => l.includes('from: '));
-        expect(manifest.length).toEqual(1);
-        expect(manifest[0]).toContain(s19.from);
-      });
-    });
-
-    // ⛔ a silently-ignored exclusion is the empty-expansion defect under a
-    //    second name: the caller believes the corpus was narrowed, the run says
-    //    so nowhere, and the overlap guard then refuses with a message about a
-    //    path the caller thought they had already removed.
-    when('[t2] --except names a path that is not in the source set', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({
-          args: [
-            '--from',
-            path.dirname(s19.in),
-            '--except',
-            path.join(path.dirname(s19.in), 'no-such-file.md'),
-            '--in',
-            s19.in,
-          ],
-        }),
-      );
-
-      then('it blocks rather than ignore the typo', () => {
-        expect(result.exitCode).toEqual(2);
-        expect(result.stdout).toContain(
-          '--except names a path that is not in the source set',
+        const art = path.join(dir, 'brief.md');
+        fs.writeFileSync(
+          art,
+          [
+            '# the register duty',
+            '',
+            '> "The harbormaster shall keep a register of every vessel that moors',
+            '> within the inner basin, and shall enter therein the name of the',
+            '> master and the tonnage of the vessel."',
+          ].join('\n'),
         );
-      });
-    });
 
-    // ⛔ a subtraction that leaves ZERO sources reports every quote as a
-    //    fabrication. that is the 61:1 failure in its purest form, so it blocks.
-    when('[t3] --except removes the only source', () => {
-      const result = useBeforeAll(async () =>
-        runSkill({
-          args: [
-            '--from',
-            s19.from,
-            '--except',
-            s19.from,
-            '--in',
-            s19.in,
-          ],
+        return { dir, at, art, raw: body.length };
+      });
+
+      when('[t0] the fixture is measured', () => {
+        // ⛔ THE CONTROL FOR THE CLAMP BELOW. if raw and flat ever coincide,
+        //    the assertion on the on-disk figure would pass against the OLD
+        //    code too, and would clamp naught.
+        then('raw and flattened lengths genuinely differ', () => {
+          const raw = fs.readFileSync(s18.at, UTF8);
+          const flatLen = raw.replace(/\s+/g, ' ').trim().length;
+          expect(raw.length).toBeGreaterThan(flatLen);
+        });
+      });
+
+      when('[t1] the manifest is printed', () => {
+        const result = useBeforeAll(async () =>
+          runSkill({ args: ['--from', s18.at, '--in', s18.art] }),
+        );
+
+        // ⭐ THE CLAMP. the on-disk figure is what a pull, `wc -m`, and the
+        //    ~2,000-char floor in rule.require.bhrowser-citations all speak in.
+        //    revert to `body.length` and this goes red.
+        then('it leads with the ON-DISK character count', () => {
+          expect(result.stdout).toContain(String(s18.raw) + ' chars on disk');
+        });
+
+        then('it still reports the flattened search corpus, labelled', () => {
+          expect(result.stdout).toMatch(/chars on disk · \d+ flat/);
+        });
+
+        // ⚠️ the manifest must not have cost the verdict its correctness.
+        then('the quote still verifies across the collapsed whitespace', () => {
+          expect(result.exitCode).toEqual(0);
+          expect(result.stdout).toContain('verified: 1');
+          expect(result.stdout).toContain('live defects: 0');
+        });
+      });
+    },
+  );
+
+  given(
+    '[case19] --except, so an artifact can be checked against its OWN dir',
+    () => {
+      // ⭐ WHY THIS FLAG EXISTS. the correct source was UNREACHABLE by the
+      //    convenient invocation. a route's comms yields are the clerk's verbatim
+      //    emails — the source of record for every quote of her — and they live
+      //    IN the route directory, beside the page that quotes them. so
+      //    `--from route/ --in route/page.md` is both the obvious call and a
+      //    REFUSED one: the expansion pulls in page.md itself and the overlap
+      //    guard fires, correctly.
+      //
+      //    the workaround was one --from per yield. the failure mode when a caller
+      //    does not write them all is not an error — it is a WALL OF RED against a
+      //    correct document. measured at 61:1 on one page: 62 defects reported, 61
+      //    of them the tool's own input.
+      const s19 = useBeforeAll(async () =>
+        genTempPair({
+          artifact: [
+            '# the delivery rule',
+            '',
+            '> upon such delivery and tender of the required fees the',
+            '> harbormaster shall endorse upon it the word "Logged".',
+            '> — Harbor Code § 1',
+          ].join('\n'),
         }),
       );
 
-      then('it blocks rather than report a wall of false defects', () => {
-        expect(result.exitCode).toEqual(2);
-        expect(result.stdout).toContain('--except removed every source');
-      });
-    });
-  });
+      // ⛔ THE CONTROL THE FLAG EXISTS TO ANSWER. without --except this exact
+      //    call is refused — and it must stay refused, because the overlap guard
+      //    is correct. a run that no longer blocks here means --except did not
+      //    add a path around the guard, it DELETED the guard.
+      when(
+        '[t0] the dir is the source AND holds the artifact, with no --except',
+        () => {
+          const result = useBeforeAll(async () =>
+            runSkill({
+              args: ['--from', path.dirname(s19.in), '--in', s19.in],
+            }),
+          );
 
+          then('it is refused — a path cannot verify against itself', () => {
+            expect(result.exitCode).toEqual(2);
+            expect(result.stdout).toContain('both a source and an artifact');
+          });
+        },
+      );
+
+      when('[t1] the same call names the artifact in --except', () => {
+        const result = useBeforeAll(async () =>
+          runSkill({
+            args: [
+              '--from',
+              path.dirname(s19.in),
+              '--except',
+              s19.in,
+              '--in',
+              s19.in,
+            ],
+          }),
+        );
+
+        then(
+          'it runs, and the quote verifies against its neighbor source',
+          () => {
+            expect(result.exitCode).toEqual(0);
+            expect(result.stdout).toContain('verified: 1');
+            expect(result.stdout).toContain('live defects: 0');
+          },
+        );
+
+        // ⚠️ the subtraction must remove the artifact and KEEP the rest. a
+        //    --except that quietly dropped the whole dir would also exit 0 here,
+        //    with zero quotes checked — so assert the source survived by name.
+        then('the neighbor source is still in the manifest', () => {
+          expect(result.stdout).toContain(s19.from);
+        });
+
+        // ⛔ A `not.toContain` IS VACUOUS AGAINST A RUN THAT PRINTED NO MANIFEST.
+        //    measured: with --except neutered, this assertion went GREEN while
+        //    every other one in the block went red — the run had blocked, so the
+        //    manifest was absent and the artifact was trivially "not in" it.
+        //
+        // ⇒ so assert the SHAPE of the manifest, not an absence within it: the
+        //   source set must be exactly one entry, and it must be the neighbor.
+        //   that is false when the subtraction fails (two entries) and false when
+        //   it over-reaches (zero entries), so it discriminates in both
+        //   directions where the bare absence discriminated in neither.
+        then('the source set is EXACTLY the neighbor, one entry', () => {
+          const manifest = result.stdout
+            .split('\n')
+            .filter((l) => l.includes('from: '));
+          expect(manifest.length).toEqual(1);
+          expect(manifest[0]).toContain(s19.from);
+        });
+      });
+
+      // ⛔ a silently-ignored exclusion is the empty-expansion defect under a
+      //    second name: the caller believes the corpus was narrowed, the run says
+      //    so nowhere, and the overlap guard then refuses with a message about a
+      //    path the caller thought they had already removed.
+      when('[t2] --except names a path that is not in the source set', () => {
+        const result = useBeforeAll(async () =>
+          runSkill({
+            args: [
+              '--from',
+              path.dirname(s19.in),
+              '--except',
+              path.join(path.dirname(s19.in), 'no-such-file.md'),
+              '--in',
+              s19.in,
+            ],
+          }),
+        );
+
+        then('it blocks rather than ignore the typo', () => {
+          expect(result.exitCode).toEqual(2);
+          expect(result.stdout).toContain(
+            '--except names a path that is not in the source set',
+          );
+        });
+      });
+
+      // ⛔ a subtraction that leaves ZERO sources reports every quote as a
+      //    fabrication. that is the 61:1 failure in its purest form, so it blocks.
+      when('[t3] --except removes the only source', () => {
+        const result = useBeforeAll(async () =>
+          runSkill({
+            args: ['--from', s19.from, '--except', s19.from, '--in', s19.in],
+          }),
+        );
+
+        then('it blocks rather than report a wall of false defects', () => {
+          expect(result.exitCode).toEqual(2);
+          expect(result.stdout).toContain('--except removed every source');
+        });
+      });
+    },
+  );
 });
