@@ -12,13 +12,8 @@ const asOutputWithoutInventorNames = (input: { output: string }): string =>
   input.output.replace(/(inventor(?: =|:) )[^,\n]+/g, '$1<inventor>');
 
 /**
- * BLOCKER: credentials required for live API tests
- *
- * USPTO_ODP_API_KEY: get a key at https://data.uspto.gov
- * GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS: for OCR transcription
- *
- * locally: rhx keyrack unlock --owner ehmpath --env test
- * in CI: secrets injected via GitHub secrets
+ * .note = the LIVE USPTO cases are out of scope for now; they skip through
+ *         SCOPE_LIVE_USPTO below, which names the brief that declares it
  */
 describe('patent.priors.fetch.sh', () => {
   const scriptPath = path.join(__dirname, 'patent.priors.fetch.sh');
@@ -49,6 +44,21 @@ describe('patent.priors.fetch.sh', () => {
         'GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS required for OCR in this LIVE case. run: rhx keyrack unlock --owner ehmpath --env test',
       );
   };
+
+  /**
+   * .what = the declared scope for every LIVE USPTO case in this file
+   * .why = the live USPTO api is unsupported for now: its live cases are out
+   *        of scope and never a gate, and a 403 from it is no defect to chase.
+   *        a human-authorized skip (rule.forbid.test-skip, exception), with
+   *        its reason in the brief at SCOPE_LIVE_USPTO.brief
+   * .note = to unskip: retire that brief, swap givenLiveUspto back to given,
+   *         and delete the [scope] case
+   */
+  const SCOPE_LIVE_USPTO = {
+    brief:
+      'src/domain.roles/patenter/briefs/rule.forbid.live-uspto-api-for-now.md',
+  };
+  const givenLiveUspto = given.skip;
 
   const runFetch = (input: {
     fetchArgs: string[];
@@ -126,10 +136,9 @@ describe('patent.priors.fetch.sh', () => {
    *
    * .why  = `fetch_metadata`'s three refusal arms sit behind a live http code,
    *         and `check_api_key`'s two keyrack refusals sit behind a live
-   *         `rhx`. neither is reachable from the LIVE cases in this file —
-   *         which are red today anyway while USPTO_ODP_API_KEY is unfilled.
-   *         so this harness is hermetic on purpose: it must be able to bite
-   *         while that credential is still absent.
+   *         `rhx`. neither is reachable from the LIVE cases in this file,
+   *         which are out of scope (SCOPE_LIVE_USPTO). so this harness is
+   *         hermetic on purpose: it bites with no credential at all.
    *
    * the `curl` stub answers the exact shape `fetch_metadata` parses — a body
    * line, then the http code on its own line, because the skill runs
@@ -334,6 +343,24 @@ describe('patent.priors.fetch.sh', () => {
     return { cacheDir };
   };
 
+  given(
+    `[scope] the LIVE USPTO cases skip, per ${SCOPE_LIVE_USPTO.brief}`,
+    () => {
+      when('[t0] the scope brief is read', () => {
+        then('it exists and declares the live api unsupported for now', () => {
+          const briefPath = path.resolve(
+            __dirname,
+            '../../../../..',
+            SCOPE_LIVE_USPTO.brief,
+          );
+          expect(fs.readFileSync(briefPath, 'utf-8')).toContain(
+            'unsupported for now',
+          );
+        });
+      });
+    },
+  );
+
   given('[case1] --help', () => {
     when('[t0] help is requested', () => {
       then('usage is shown', () => {
@@ -387,7 +414,7 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given('[case4] valid exid (LIVE API)', () => {
+  givenLiveUspto('[case4] valid exid (LIVE API)', () => {
     // CRITICAL: this test MUST hit the live USPTO API
     // if this test passes with a mock, the test suite is broken
     // note: USPTO API requires APPLICATION numbers (8 digits), not publication numbers
@@ -502,7 +529,7 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given('[case5] valid exid but patent not found (LIVE API)', () => {
+  givenLiveUspto('[case5] valid exid but patent not found (LIVE API)', () => {
     // CRITICAL: this test MUST hit the live USPTO API to get a real 404
     // .note = no OCR here — a 404 never reaches a document to transcribe
     beforeAll(() => requireUsptoKey());
@@ -559,7 +586,7 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given('[case7] --cache skip bypasses cache (LIVE API)', () => {
+  givenLiveUspto('[case7] --cache skip bypasses cache (LIVE API)', () => {
     // CRITICAL: this test verifies --cache skip forces a fresh API call
     const knownExid = '19399196';
 
@@ -671,7 +698,7 @@ describe('patent.priors.fetch.sh', () => {
     });
   });
 
-  given.skip(
+  givenLiveUspto(
     '[case9] deterministic uncached flow (empty temp dir, LIVE API)',
     () => {
       // this test uses an empty temp directory to prove fresh fetch works
@@ -762,10 +789,10 @@ describe('patent.priors.fetch.sh', () => {
    *    other two.
    *
    * ⚠️ hermetic by construction. every arm here refuses during parse, before
-   *    a credential is read or a request is made, so these hold while
-   *    USPTO_ODP_API_KEY is unfilled and the LIVE cases above are red.
+   *    a credential is read or a request is made, so these hold with no
+   *    USPTO_ODP_API_KEY and gate while the LIVE cases above are out of scope.
    *
-   * ⚠️ this is [case10], not [case9] — `[case9]` is taken by the given.skip'd
+   * ⚠️ this is [case10], not [case9] — `[case9]` is taken by the skipped
    *    uncached flow above, whose label is invisible in a normal run because
    *    a skipped block prints no `given` line. a label collision fails no
    *    test; it just makes two blocks indistinguishable in a report.
@@ -921,8 +948,8 @@ describe('patent.priors.fetch.sh', () => {
    * ⚠️ hermetic by construction. `curl` and `rhx` are both shadowed, and
    *    USPTO_ODP_API_KEY is REMOVED from the child env so `check_api_key`
    *    cannot return early at :134. these hold whether or not that
-   *    credential is ever filled, which is what lets them bite today while
-   *    every LIVE case in this file is red on task #21.
+   *    credential is ever filled, which is what lets them gate while every
+   *    LIVE case in this file is out of scope (SCOPE_LIVE_USPTO).
    */
   given('[case11] the fetch_metadata refusal arms', () => {
     when('[t0] the API answers 404', () => {

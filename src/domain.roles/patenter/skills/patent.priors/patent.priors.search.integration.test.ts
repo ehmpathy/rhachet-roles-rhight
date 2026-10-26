@@ -12,10 +12,8 @@ const asOutputWithoutInventorNames = (input: { output: string }): string =>
   input.output.replace(/(inventor(?: =|:) )[^,\n]+/g, '$1<inventor>');
 
 /**
- * BLOCKER: USPTO_ODP_API_KEY required for live API tests
- *
- * get a key at: https://data.uspto.gov
- * then: rhx keyrack fill (or export USPTO_ODP_API_KEY=your_key)
+ * .note = the LIVE USPTO cases are out of scope for now; they skip through
+ *         SCOPE_LIVE_USPTO below, which names the brief that declares it
  */
 describe('patent.priors.search.sh', () => {
   const scriptPath = path.join(__dirname, 'patent.priors.search.sh');
@@ -39,6 +37,21 @@ describe('patent.priors.search.sh', () => {
         'USPTO_ODP_API_KEY required for this LIVE case. get a key at https://data.uspto.gov, then: rhx keyrack unlock --owner ehmpath --env test',
       );
   };
+
+  /**
+   * .what = the declared scope for every LIVE USPTO case in this file
+   * .why = the live USPTO api is unsupported for now: its live cases are out
+   *        of scope and never a gate, and a 403 from it is no defect to chase.
+   *        a human-authorized skip (rule.forbid.test-skip, exception), with
+   *        its reason in the brief at SCOPE_LIVE_USPTO.brief
+   * .note = to unskip: retire that brief, swap givenLiveUspto back to given,
+   *         and delete the [scope] case
+   */
+  const SCOPE_LIVE_USPTO = {
+    brief:
+      'src/domain.roles/patenter/briefs/rule.forbid.live-uspto-api-for-now.md',
+  };
+  const givenLiveUspto = given.skip;
 
   const runSearch = (input: {
     searchArgs: string[];
@@ -69,9 +82,9 @@ describe('patent.priors.search.sh', () => {
    * .why  = every flag that shapes the REQUEST — `--limit`, `--since`,
    *         `--until` — is observable only in the url handed to `curl`. the
    *         LIVE cases in this file cannot see it (they assert on rendered
-   *         patents), and they are red today anyway while USPTO_ODP_API_KEY
-   *         is unfilled. so the arm walk below is hermetic on purpose: it
-   *         must be able to bite while that credential is still absent.
+   *         patents), and they are out of scope (SCOPE_LIVE_USPTO). so the
+   *         arm walk below is hermetic on purpose: it bites with no
+   *         credential at all.
    *
    * the `curl` stub records the url into `urlLog` and answers the exact shape
    * `search_uspto` parses — a one-line body, then the http code on its own
@@ -138,6 +151,24 @@ describe('patent.priors.search.sh', () => {
     return { bin, urlLog };
   };
 
+  given(
+    `[scope] the LIVE USPTO cases skip, per ${SCOPE_LIVE_USPTO.brief}`,
+    () => {
+      when('[t0] the scope brief is read', () => {
+        then('it exists and declares the live api unsupported for now', () => {
+          const briefPath = path.resolve(
+            __dirname,
+            '../../../../..',
+            SCOPE_LIVE_USPTO.brief,
+          );
+          expect(fs.readFileSync(briefPath, 'utf-8')).toContain(
+            'unsupported for now',
+          );
+        });
+      });
+    },
+  );
+
   given('[case1] --help', () => {
     when('[t0] help is requested', () => {
       then('usage is shown', () => {
@@ -203,7 +234,7 @@ describe('patent.priors.search.sh', () => {
     });
   });
 
-  given('[case4] valid search query (LIVE API)', () => {
+  givenLiveUspto('[case4] valid search query (LIVE API)', () => {
     beforeAll(() => requireUsptoKey());
 
     // CRITICAL: this test MUST hit the live USPTO API
@@ -269,7 +300,7 @@ describe('patent.priors.search.sh', () => {
     });
   });
 
-  given('[case6] vague query with few keywords (LIVE API)', () => {
+  givenLiveUspto('[case6] vague query with few keywords (LIVE API)', () => {
     beforeAll(() => requireUsptoKey());
 
     // CRITICAL: this test MUST hit the live USPTO API
@@ -324,7 +355,7 @@ describe('patent.priors.search.sh', () => {
   // IMPORTANT: use technical patent terminology, not consumer terms
   // see blueprint: USPTO API returns OR matches, patent titles use technical terms
 
-  given('[case8] fastener driver search (LIVE API)', () => {
+  givenLiveUspto('[case8] fastener driver search (LIVE API)', () => {
     beforeAll(() => requireUsptoKey());
 
     // tests tool patents: drills, impact drivers, screwdrivers
@@ -346,7 +377,7 @@ describe('patent.priors.search.sh', () => {
     });
   });
 
-  given('[case9] rotary saw search (LIVE API)', () => {
+  givenLiveUspto('[case9] rotary saw search (LIVE API)', () => {
     beforeAll(() => requireUsptoKey());
 
     // tests tool patents: saws, blades
@@ -368,7 +399,7 @@ describe('patent.priors.search.sh', () => {
     });
   });
 
-  given('[case10] wireless transceiver search (LIVE API)', () => {
+  givenLiveUspto('[case10] wireless transceiver search (LIVE API)', () => {
     beforeAll(() => requireUsptoKey());
 
     // tests electronics patents: radio, wireless tech
@@ -407,10 +438,9 @@ describe('patent.priors.search.sh', () => {
    *    :147-155 — which is why these cases shim the network rather than
    *    assert on the header.
    *
-   * ⚠️ hermetic ON PURPOSE. the LIVE cases above are red today while
-   *    USPTO_ODP_API_KEY is unfilled, so a clamp that needed the credential
-   *    could not bite until that lands. these four run with no key and no
-   *    network, and hold whatever the credential does.
+   * ⚠️ hermetic ON PURPOSE. the LIVE cases above are out of scope
+   *    (SCOPE_LIVE_USPTO), so a clamp that needed the credential could not
+   *    bite. these four run with no key and no network, and still gate.
    */
   given('[case11] the arg-parse arms', () => {
     when('[t0] the -h alias is used', () => {

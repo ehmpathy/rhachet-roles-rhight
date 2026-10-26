@@ -5,7 +5,7 @@ exports[`getAllBriefIntegrityDefects given: [case1] every brief in the repo when
   "date-researched-absent": 78,
   "see-also-target-absent": 18,
   "source-anchor-unreferenced": 31,
-  "sources-below-seven": 143,
+  "sources-below-seven": 144,
 }
 `;
 
