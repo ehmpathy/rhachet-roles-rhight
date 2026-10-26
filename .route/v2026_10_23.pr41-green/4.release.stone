@@ -1,0 +1,7 @@
+after 20:00 CT, commit the brief repairs, push #41, and watch CI.
+
+- stage by name only; never `--unstaged include`
+- keep package.json and pnpm-lock.yaml (the rhachet-roles-ehmpathy 1.39.9 bump) out of #41
+- `rhx git.release --watch`, then record the check tally
+
+emit into $route/4.release.yield.md

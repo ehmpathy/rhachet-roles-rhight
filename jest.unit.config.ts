@@ -36,6 +36,7 @@ const config: Config = {
     '!**/*.integration.test.ts',
     '!**/.yalc/**',
     '!**/.agent/.actors/**', // gitignored per-actor brain caches; their tests are not ours
+    '!**/.temp/**', // gitignored scratch and genTempDir clones; their tests are not ours
   ],
   setupFilesAfterEnv: ['./jest.unit.env.ts'],
 
