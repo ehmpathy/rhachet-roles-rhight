@@ -50,8 +50,8 @@ exports[`transcribe.pdf given: [case5] deterministic cached flow (uses fixture) 
 🦅 found in cache,
 
 🔎 transcribe.pdf
-   ├─ source: /home/vlad/git/ehmpathy/_worktrees/rhachet-roles-rhight.vlad.permit-required/.temp/genTempDir.symlink/2026-04-11T22-13-49.473Z.transcribe-cached.c59f6646/.cache/patents/19399196/1.event.2025-11-24.office-action.pdf
-   ├─ cached: /home/vlad/git/ehmpathy/_worktrees/rhachet-roles-rhight.vlad.permit-required/.temp/genTempDir.symlink/2026-04-11T22-13-49.473Z.transcribe-cached.c59f6646/.cache/patents/19399196/1.event.2025-11-24.office-action.md
+   ├─ source: <repo>/.temp/genTempDir.symlink/2026-04-11T22-13-49.473Z.transcribe-cached.c59f6646/.cache/patents/19399196/1.event.2025-11-24.office-action.pdf
+   ├─ cached: <repo>/.temp/genTempDir.symlink/2026-04-11T22-13-49.473Z.transcribe-cached.c59f6646/.cache/patents/19399196/1.event.2025-11-24.office-action.md
    └─ format: markdown
 
 ## Page 1
@@ -92,7 +92,7 @@ PTO-2038 submitted for payment purposes are not retained in the application file
 LEGAL NAME OF INVENTOR
 Inventor:
 Signature:
-Xiaoge Gan
+Alex ExampleA
 Date (Optional):
 Note: An application data sheet (PTO/SB/14 or equivalent), including naming the entire inventive entity, must accompany this form or must have
 been previously filed. Use an additional PTO/AIA/01 form for each additional inventor.
@@ -142,7 +142,7 @@ PTO
 LEGAL NAME OF INVENTOR
 Inventor:
 Signature:
-Ke Chen
+Blair ExampleB
 Date (Optional): 11/19/202/
 Notes: An again as sheet (PTO/SB/14 or equivalent), including mamming the entire inventive entity, must accompany this form or musi we
 been previously fled. Use an additional PTO/AA form for each additional inventor
@@ -189,10 +189,10 @@ patent. Furthermore, the record from an abandoned application may also be availa
 referenced in a published application or an issued patent (see 37 CFR 1.14). Checks and credit card authorization forms
 PTO-2038 submitted for payment purposes are not retained in the application file and therefore are not publicly available.
 LEGAL NAME OF INVENTOR
-Yansong Huang
+Casey ExampleC
 Inventor:
 Signature:
-黄岩松
+示例签名
 Date (Optional): Nov. 19 2021
 Note: An application data sheet (PTO/SB/14 or equivalent), including naming the entire inventive entity, must accompany this form or must have
 been previously filed. Use an additional PTO/AIA/01 form for each additional inventor.
@@ -241,7 +241,7 @@ referenced in a published application or an issued patent (see 37 CFR 1.14). Che
 PTO-2038 submitted for payment purposes are not retained in the application file and therefore are not publicly available.
 LEGAL NAME OF INVENTOR
 Inventor:
-Paul Bolchover
+Drew ExampleD
 8.
 Signature:
 Date (Optional): 11Jan 2022
@@ -316,7 +316,7 @@ exports[`transcribe.pdf given: [case6] valid scanned PDF (LIVE API) when: [t0] O
 🦅 let me read that,
 
 🔎 transcribe.pdf
-   ├─ source: /home/vlad/git/ehmpathy/_worktrees/rhachet-roles-rhight.vlad.permit-required/.temp/genTempDir.symlink/2026-04-11T22-13-49.782Z.transcribe-live.b35d73db/.cache/patents/19399196/1.event.2025-11-24.office-action.pdf
+   ├─ source: <repo>/.temp/genTempDir.symlink/2026-04-11T22-13-49.782Z.transcribe-live.b35d73db/.cache/patents/19399196/1.event.2025-11-24.office-action.pdf
    ├─ pages: 5
    └─ format: markdown
 
