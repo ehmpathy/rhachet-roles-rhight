@@ -1,0 +1,43 @@
+update your stock ledger to reflect the reverse split.
+
+.why = your internal records must match the filed Certificate of Amendment.
+
+---
+
+## stock ledger update
+
+| field | before | after |
+|-------|--------|-------|
+| shareholder | | (same) |
+| shares held | | (÷ ratio) |
+| par value | $ | $ (× ratio) |
+| total value | $ | $ (same) |
+
+---
+
+## cap table (if applicable)
+
+if you use Carta, Pulley, or similar:
+1. record the reverse split transaction
+2. verify share counts match
+
+if spreadsheet:
+1. update share counts
+2. update par value
+3. add note with effective date and ratio
+
+---
+
+## stock certificates (if issued)
+
+if you issued paper certificates:
+1. cancel old certificates
+2. issue new certificates with updated share count
+3. note: most startups don't issue paper certificates
+
+---
+
+## emit
+
+save updated ledger to:
+`$route/4.update.ledger.yield.md`

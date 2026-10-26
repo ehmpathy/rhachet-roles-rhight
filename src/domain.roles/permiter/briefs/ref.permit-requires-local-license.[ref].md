@@ -1,5 +1,7 @@
 # ref.permit-requires-local-license
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 to pull a permit, contractors must be licensed or registered in that jurisdiction. out-of-jurisdiction licenses do not automatically authorize permit pulls.
@@ -141,6 +143,10 @@ even in states with statewide licensing (Florida, Louisiana), **permits are stil
 | interstate reciprocity | limited (CA, FL, MS + partners) |
 
 **bottom line:** assume local registration is required unless you verify otherwise for that specific jurisdiction.
+
+## .publishability
+
+☀️ **fullsun** (share) — public licensing law; no client identity.
 
 ## .date researched
 

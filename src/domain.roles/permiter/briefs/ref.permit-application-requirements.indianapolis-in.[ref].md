@@ -1,5 +1,7 @@
 # ref.permit-application-requirements.indianapolis-in
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 documentation required to apply for an electrical permit in Indianapolis/Marion County.
@@ -70,6 +72,10 @@ after permit issuance and work completion:
 |------------|---------------|
 | rough-in | before walls closed |
 | final | after work complete, before energize |
+
+## .publishability
+
+☀️ **fullsun** (share) — public Indianapolis permit application requirements; no client identity.
 
 ## .sources
 

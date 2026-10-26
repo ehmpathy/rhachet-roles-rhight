@@ -1,5 +1,7 @@
 # hazard.obsolete-electrical-systems
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .scope
 
 **this hazard applies to:**
@@ -446,4 +448,8 @@ some insurers accept homes with obsolete electrical if:
 32. [HomeGuide - Cost to Replace Knob and Tube Wiring](https://homeguide.com/costs/cost-to-replace-knob-and-tube-wiring)
 33. [Worth Insurance - Florida 4-Point Inspection: Requirements, Costs](https://www.worthinsurance.com/florida-home-insurance/4-point-inspection)
 34. [BM Electric - Electrical inspection for insurance](https://bmelectric310.com/blog/electrical-inspection-for-insurance-guide/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic obsolete-electrical insurance hazards from public sources; no client identity or applied strategy.
 

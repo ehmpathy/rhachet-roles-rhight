@@ -1,0 +1,9 @@
+always:
+  briefs:
+    say: []
+
+    ref:
+      - briefs/incorporation/variant=c-corp/delaware.franchise.tax.delinquency.md
+      - briefs/incorporation/variant=c-corp/howto.reinstate-void-delaware-corp.md
+      - briefs/incorporation/variant=c-corp/compare.reinstatement-vs-reregistration.md
+      - briefs/incorporation/variant=c-corp/define.why-delaware-wants-a-zero-shares-affidavit.md

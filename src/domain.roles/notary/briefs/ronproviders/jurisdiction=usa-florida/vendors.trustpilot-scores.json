@@ -1,0 +1,74 @@
+{
+  "pulledAt": "2026-09-02T19:47:06.862Z",
+  "source": "schema.org JSON-LD emitted by trustpilot.com",
+  "note": "a review score is a POPULARITY signal, never a substitute for the sunbiz registry check. state registration is the gate; reviews are the tiebreak among vendors that already passed it.",
+  "unanchored": [],
+  "pulled": [
+    {
+      "slug": "proof",
+      "url": "https://www.trustpilot.com/review/proof.com",
+      "aggregateCount": 1,
+      "score": "4.6",
+      "reviewCount": "3335",
+      "bestRating": "5",
+      "subjectName": "Proof",
+      "ldBlockCount": 2,
+      "exactlyOneAggregate": true
+    },
+    {
+      "slug": "notarize",
+      "url": "https://www.trustpilot.com/review/notarize.com",
+      "aggregateCount": 1,
+      "score": "4.6",
+      "reviewCount": "24617",
+      "bestRating": "5",
+      "subjectName": "Notarize",
+      "ldBlockCount": 2,
+      "exactlyOneAggregate": true
+    },
+    {
+      "slug": "notarylive",
+      "url": "https://www.trustpilot.com/review/notarylive.com",
+      "aggregateCount": 1,
+      "score": "4.8",
+      "reviewCount": "1205",
+      "bestRating": "5",
+      "subjectName": "NotaryLive",
+      "ldBlockCount": 2,
+      "exactlyOneAggregate": true
+    },
+    {
+      "slug": "bluenotary",
+      "url": "https://www.trustpilot.com/review/bluenotary.us",
+      "aggregateCount": 1,
+      "score": "4.9",
+      "reviewCount": "2884",
+      "bestRating": "5",
+      "subjectName": "BlueNotary",
+      "ldBlockCount": 2,
+      "exactlyOneAggregate": true
+    },
+    {
+      "slug": "onenotary",
+      "url": "https://www.trustpilot.com/review/onenotary.us",
+      "aggregateCount": 1,
+      "score": "4.9",
+      "reviewCount": "3456",
+      "bestRating": "5",
+      "subjectName": "OneNotary",
+      "ldBlockCount": 2,
+      "exactlyOneAggregate": true
+    },
+    {
+      "slug": "notarycam",
+      "url": "https://www.trustpilot.com/review/notarycam.com",
+      "aggregateCount": 1,
+      "score": "4.8",
+      "reviewCount": "16746",
+      "bestRating": "5",
+      "subjectName": "NotaryCam",
+      "ldBlockCount": 2,
+      "exactlyOneAggregate": true
+    }
+  ]
+}

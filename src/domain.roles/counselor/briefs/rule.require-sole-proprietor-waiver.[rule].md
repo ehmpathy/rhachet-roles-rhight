@@ -1,5 +1,7 @@
 # rule.require-sole-proprietor-waiver
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 when contractor claims sole proprietor exemption from workers' comp, **REQUIRE** a signed waiver/hold harmless agreement. without it, they can sue you if injured.
@@ -233,6 +235,10 @@ a signed **waiver of liability and hold harmless agreement** that:
 ### state forms
 9. [NY WCB - Attestation of Exemption](https://www.wcb.ny.gov/icexempt/wavhelp.jsp)
 10. [Indiana WCE-1 Form](https://forms.in.gov/download.aspx?id=7134)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic consumer-protection guidance from public sources; no client identity or client-specific mechanic.
 
 ## .date researched
 

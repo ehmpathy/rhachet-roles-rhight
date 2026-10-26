@@ -1,5 +1,7 @@
 # ref.builders-risk-defect-gap
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 builder's risk insurance does NOT cover direct defect damage. this is a gap for owner-builders: when defect = damage (no fire), there is no coverage.
@@ -214,6 +216,10 @@ builder's risk is **property** coverage, not **liability** coverage.
 ### liability gap
 8. [The Hartford - Builder's Risk vs GL](https://www.thehartford.com/general-liability-insurance/builders-risk-vs-general-liability)
 9. [Landesblosch - Builder's Risk Ultimate Guide](https://www.landesblosch.com/blog/builders-risk-insurance-the-ultimate-guide)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic builder's risk defect-exclusion gap from public sources; no client identity or applied strategy.
 
 ## .date researched
 

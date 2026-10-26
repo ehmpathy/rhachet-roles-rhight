@@ -1,5 +1,7 @@
 # rule.require-additional-insured
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .rule
 
 **REQUIRE** from contractors:
@@ -364,6 +366,10 @@ STEP 4: Interior only, single-family, no visitors during work?
 ### additional insured
 16. [IRMI - Defense in Construction Defect Suits](https://www.irmi.com/articles/expert-commentary/who-provides-the-defense-in-construction-defect-suits)
 17. [NH Insurance Dept - Verify Contractor Insurance](https://www.insurance.nh.gov/news-and-media/blog/how-verify-if-your-contractor-has-right-insurance)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic consumer-protection insurance guidance from public sources; no client identity or client-specific mechanic.
 
 ## .date researched
 

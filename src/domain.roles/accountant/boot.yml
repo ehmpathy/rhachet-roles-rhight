@@ -1,6 +1,14 @@
 always:
   briefs:
+    say:
+      # .why = $0 tax does NOT mean $0 return. observed in two states under
+      #        two different statutes, which makes it a pattern rather than a
+      #        quirk — assume it holds in a new state until its text says no.
+      - briefs/income-tax/state=florida/hazard.zero-tax-still-owes-a-return.md
     ref:
+      - briefs/deductions/catalog.deductible-expenses.md
+      - briefs/income-tax/federal/howto.file-form-1120.md
+
       # rewards books & tax — the float / investable-vs-custodial question
       - briefs/rewards/define.float-interest-on-debt-reserve.[lesson].md
       - briefs/rewards/define.boundary.investable-general-funds-vs-restricted-custodial.[lesson].md

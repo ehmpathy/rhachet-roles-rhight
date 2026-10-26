@@ -1,5 +1,7 @@
 # ref.owner-builder-insurance-products.subcontractor-gap
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 coverage gap when a contractor subs out work without disclosure — and why builder's risk protects the homeowner when contractor insurance fails.
@@ -196,6 +198,10 @@ for $3k job: ~$30-150 for short-term policy
 - [Policygenius: Builders Risk for Homeowners](https://www.policygenius.com/homeowners-insurance/builders-risk-insurance-for-homeowners/)
 - [Distinguished: Contractor vs Owner Named Insureds](https://distinguished.com/blog/contractor-and-property-owner-named-insureds-on-builders-risk-policy/)
 - [Smart Compliance: How to Handle Subcontractors Without Insurance](https://smartcompliance.co/blog/subcontractor-no-insurance)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic subcontractor-coverage gap for owner-builders from public sources; no client identity or applied strategy.
 
 ## .date researched
 

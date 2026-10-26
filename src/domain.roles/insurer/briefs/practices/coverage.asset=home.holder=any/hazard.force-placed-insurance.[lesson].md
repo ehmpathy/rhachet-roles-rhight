@@ -1,5 +1,7 @@
 # hazard.force-placed-insurance
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 force-placed insurance (also called "lender-placed insurance") is when your mortgage lender buys insurance on your behalf — without your consent — and bills you for it.
@@ -172,6 +174,10 @@ even if you cannot find standard coverage:
 - `define.conditional-coverage-repair-window.[lesson].md` — 30-day fix requirements
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

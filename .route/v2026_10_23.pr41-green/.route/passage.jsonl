@@ -1,0 +1,13 @@
+{"stone":"1.publish-redteam.fix","status":"arrived","reason":"entered guard reviews"}
+{"stone":"1.publish-redteam.fix","status":"passed"}
+{"stone":"2.briefs.in-rule","status":"arrived","reason":"entered guard reviews"}
+{"stone":"2.briefs.in-rule","status":"passed"}
+{"stone":"3.suites.local","status":"arrived","reason":"entered guard reviews"}
+{"stone":"3.suites.local","status":"passed"}
+{"stone":"4.release","status":"arrived","reason":"entered guard reviews"}
+{"stone":"4.release","status":"passed"}
+{"stone":"5.briefs.short","status":"blocked"}
+{"stone":"5.briefs.short","status":"arrived","reason":"entered guard reviews"}
+{"stone":"5.briefs.short","status":"passed"}
+{"stone":"5.briefs.short","status":"arrived","reason":"entered guard reviews"}
+{"stone":"5.briefs.short","status":"passed"}

@@ -1,5 +1,7 @@
 # howto.relocate-tenant-during-major-repairs
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 how to handle tenant displacement during major repairs like K&T rewiring, roof replacement, or mold remediation.
@@ -171,4 +173,8 @@ compare to force-placed insurance at 8x premiums ($9,600/year) — rewiring pays
 4. [Avail — Handling Tenant Relocation](https://www.avail.co/education/articles/tenant-relocation-assistance)
 5. Electrician estimates — K&T rewiring timelines
 6. Indiana rental market data — typical rent ranges
+
+## .publishability
+
+☀️ **fullsun** (share) — generic tenant-relocation how-to during repairs from public sources; no client identity or applied strategy.
 

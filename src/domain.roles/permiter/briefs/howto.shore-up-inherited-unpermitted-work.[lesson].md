@@ -1,5 +1,7 @@
 # howto.shore-up-inherited-unpermitted-work
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 practical guide to legitimize inherited unpermitted work via retroactive permits — eliminate insurance denial risk for ~$500-1,500 per system.
@@ -330,6 +332,10 @@ if multiple systems need permits, prioritize by:
 - [Bogleheads: Liability of unpermitted work when sold](https://www.bogleheads.org/forum/viewtopic.php?t=446875)
 - [Houzz: Unpermitted work what should I do](https://www.houzz.com/discussions/6095283/did-a-lot-unpermitted-work-what-should-i-do-to-sell-the-house)
 - [Fine Home Build: Unpermitted Work & Inspectors](https://www.finehomebuilding.com/forum/unpermitted-work-inspectors)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic how-to for a class of homeowners, drawn from public sources; no client identity.
 
 ## .date researched
 

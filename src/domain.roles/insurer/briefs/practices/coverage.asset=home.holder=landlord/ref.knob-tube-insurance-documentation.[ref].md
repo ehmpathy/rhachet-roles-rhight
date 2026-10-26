@@ -1,5 +1,7 @@
 # ref.knob-tube-insurance-documentation
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 verified documentation requirements for K&T insurance coverage, with sources.
@@ -128,6 +130,10 @@ source: Kuhlman Electrical Services (https://kuhlmanelectrical.com/)
 - `hazard.obsolete-electrical-systems.[lesson].md` — K&T coverage analysis
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic knob-and-tube insurance documentation guidance from public sources; no client identity or applied strategy.
 
 ## .date researched
 

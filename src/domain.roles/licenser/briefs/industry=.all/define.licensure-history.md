@@ -1,5 +1,7 @@
 # define.licensure-history
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 professional licensure evolved from medieval guilds to modern state regulatory boards.
@@ -68,6 +70,10 @@ licensure expands via:
 4. **board** — practitioners control entry
 
 rarely do licenses get *removed* once established — they accumulate.
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public licensure history; no client identity or client-specific mechanic.
 
 ## .sources
 

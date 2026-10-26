@@ -6,6 +6,10 @@ import type { Config } from 'jest';
 // ensure tests run in utc, like they will on cicd and on server; https://stackoverflow.com/a/56277249/15593329
 process.env.TZ = 'UTC';
 
+// ensure tests run in the cicd locale, so a local green predicts a cicd green; a grouping locale (en_US) formats numbers that cicd's C.UTF-8 does not
+process.env.LC_ALL = 'C.UTF-8';
+process.env.LANG = 'C.UTF-8';
+
 // ensure tests run like on local machines, so snapshots are equal on local && cicd
 process.env.FORCE_COLOR = 'true';
 
@@ -31,6 +35,8 @@ const config: Config = {
     '!**/*.acceptance.test.ts',
     '!**/*.integration.test.ts',
     '!**/.yalc/**',
+    '!**/.agent/.actors/**', // gitignored per-actor brain caches; their tests are not ours
+    '!**/.temp/**', // gitignored scratch and genTempDir clones; their tests are not ours
   ],
   setupFilesAfterEnv: ['./jest.unit.env.ts'],
 

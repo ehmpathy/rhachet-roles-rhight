@@ -1,5 +1,7 @@
 # ref.owner-builder-insurance-products.scenario-analysis
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 six concrete scenarios that illustrate builder's risk coverage outcomes based on who does the work, damage type, and loss severity.
@@ -384,6 +386,10 @@ the additional recourse (contractor's GL) helps, but:
 
 ### late notice and claim denial
 - [Cozen O'Connor: Late Notice as Bar to Coverage](https://www.propertyinsurancelawobserver.com/2026/03/23/court-finds-late-notice-an-absolute-bar-to-coverage-in-property-claim/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic owner-builder coverage scenarios using illustrative figures; no client identity or applied strategy.
 
 ## .date researched
 

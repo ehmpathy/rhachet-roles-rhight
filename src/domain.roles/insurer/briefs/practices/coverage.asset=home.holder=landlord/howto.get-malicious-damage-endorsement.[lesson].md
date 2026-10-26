@@ -1,5 +1,7 @@
 # howto.get-malicious-damage-endorsement
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .scope
 
 **this guide applies to:**
@@ -282,4 +284,8 @@ most policies require:
 8. [Wexford Insurance - Tenant Verification and Insurance Claims](https://www.wexfordins.com/post/tenant-screening-and-its-impact-on-apartment-insurance-claims)
 9. [Merlin Law Group - Vandalism and Malicious Mischief Coverage](https://www.merlinlawgroup.com/vandalism-malicious-mischief-coverage-insurance/)
 10. [InsZone Insurance - The Right Way to Insure Your Rental Property](https://inszoneinsurance.com/blog/the-right-way-to-insure-your-rental-property-so-your-claim-is-paid/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic malicious-damage endorsement how-to from public sources; no client identity or applied strategy.
 

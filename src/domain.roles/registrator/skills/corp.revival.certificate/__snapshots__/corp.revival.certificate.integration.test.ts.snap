@@ -1,0 +1,205 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`corp.revival.certificate.sh given: [case1] the demo corporation, in plan mode then: the report reads as expected 1`] = `
+"
+🦅 the charter remembers...
+
+⚖️ corp.revival.certificate --mode plan
+   ├─ name: SANDPINE, INC.
+   ├─ office: 1209 ORANGE STREET, WILMINGTON, New Castle 19801
+   ├─ agent: THE CORPORATION TRUST COMPANY
+   ├─ art 3 — incorporated: May 21, 2020
+   ├─ art 5 — void: 1st day of March A.D. 2024
+   ├─ officer: Eagle Of'Rhight (President)
+   ├─ execution: blank rule — sign in ink, or rerun with --sign-as
+   ├─ fidelity: 23 fragments matched the rev. 08/2023 bytes
+   ├─ artifact: the Division's own fillable form, rev. 08/2023
+   └─ planned: no file written — rerun with --mode final --into <path>
+
+"
+`;
+
+exports[`corp.revival.certificate.sh given: [case2] the demo corporation, in final mode then: the document reads as expected 1`] = `
+"                  STATE OF DELAWARE
+          CERTIFICATE FOR REVIVAL OF CHARTER
+The corporation organized under the laws of the State of Delaware, the charter of which
+was voided for non-payment of taxes and/or for failure to file a complete annual report,
+now desires to procure a revival of its charter pursuant to Section 312 of the General
+Corporation Law of the State of Delaware, and hereby certifies as follows:
+
+1.      The name of the corporation is ________________________________________
+                                         SANDPINE, INC.
+_______________________________________________________________________
+and, if different, the name under which the corporation was originally incorporated
+_______________________________________________________________________.
+
+2.      The Registered Office of the corporation in the State of Delaware is located at
+_________________________________________________________________(street),
+  1209 ORANGE   STREET
+in the City of _____________________________,County
+                 WILMINGTON                                 of_____________________
+                                                                 New Castle
+Zip Code_________________. The name of the Registered Agent at such address upon
+            19801
+whom process against this Corporation may be served is __________________________
+                                                           THE CORPORATION TRUST COMPANY
+_______________________________________________________________________.
+
+3.    The date of filing of the Corporation’s original Certificate of Incorporation in
+Delaware was ___________________________________________________________.
+               May 21, 2020
+
+
+4.     The corporation desiring to be revived and so reviving its certificate of
+incorporation was organized under the laws of this State.
+
+5.      The corporation was duly organized and carried on the business authorized by its
+charter until the__________
+                  1st         day of ________________
+                                       March              A.D. ________,
+                                                                 2024      at which time its
+charter became inoperative and void for non-payment of taxes and/or failure to file a
+complete annual report and the certificate of revival is filed by authority of the duly
+elected directors of the corporation in accordance with the laws of the State of Delaware.
+
+
+
+
+                                          By:____________________________________
+                                                    Authorized Officer
+
+
+                                       Name:____________________________________
+                                              Eagle Of'Rhight
+                                                      Print or Type
+"
+`;
+
+exports[`corp.revival.certificate.sh given: [case4] a corporation that was RENAMED after incorporation then: the document reads as expected 1`] = `
+"                  STATE OF DELAWARE
+          CERTIFICATE FOR REVIVAL OF CHARTER
+The corporation organized under the laws of the State of Delaware, the charter of which
+was voided for non-payment of taxes and/or for failure to file a complete annual report,
+now desires to procure a revival of its charter pursuant to Section 312 of the General
+Corporation Law of the State of Delaware, and hereby certifies as follows:
+
+1.      The name of the corporation is ________________________________________
+                                         SANDPINE HOLDINGS, INC.
+_______________________________________________________________________
+and, if different, the name under which the corporation was originally incorporated
+_______________________________________________________________________.
+  SANDPINE, INC.
+
+
+2.      The Registered Office of the corporation in the State of Delaware is located at
+_________________________________________________________________(street),
+  1209 ORANGE   STREET
+in the City of _____________________________,County
+                 WILMINGTON                                 of_____________________
+                                                                 New Castle
+Zip Code_________________. The name of the Registered Agent at such address upon
+            19801
+whom process against this Corporation may be served is __________________________
+                                                           THE CORPORATION TRUST COMPANY
+_______________________________________________________________________.
+
+3.    The date of filing of the Corporation’s original Certificate of Incorporation in
+Delaware was ___________________________________________________________.
+               May 21, 2020
+
+
+4.     The corporation desiring to be revived and so reviving its certificate of
+incorporation was organized under the laws of this State.
+
+5.      The corporation was duly organized and carried on the business authorized by its
+charter until the__________
+                  2nd         day of ________________
+                                       March              A.D. ________,
+                                                                 2023      at which time its
+charter became inoperative and void for non-payment of taxes and/or failure to file a
+complete annual report and the certificate of revival is filed by authority of the duly
+elected directors of the corporation in accordance with the laws of the State of Delaware.
+
+
+
+
+                                          By:____________________________________
+                                                    Authorized Officer
+
+
+                                       Name:____________________________________
+                                              Eagle Of'Rhight
+                                                      Print or Type
+"
+`;
+
+exports[`corp.revival.certificate.sh given: [case11] --help then: the help reads as expected 1`] = `
+"🦅 corp.revival.certificate
+
+  render an executable Delaware Certificate of Revival of Charter
+  (8 Del. C. § 312) for a corporation whose charter is void.
+
+usage:
+  rhx corp.revival.certificate --demo
+  rhx corp.revival.certificate [args] --mode final --into <path>
+
+args:
+  --name            current name, EXACTLY as the register prints it   (required)
+  --name-original   the name at incorporation, if it differs          (optional)
+  --office-street   registered office street address                  (required)
+  --office-city     registered office city                            (required)
+  --office-county   registered office county                          (required)
+  --office-zip      registered office zip                             (required)
+  --agent           registered agent name at that address             (required)
+  --incorporated-on date the original certificate was filed, MM/DD/YYYY (required)
+  --voided-on       the date DELAWARE says the charter went void        (required)
+  --officer         the authorized officer who will sign               (required)
+  --capacity        their office — President, Secretary, ...           (required)
+  --sign-as         render the officer's signature on the By: rule    (optional)
+  --sign-font       cursive family  (default: Herr Von Muellerhoff)   (optional)
+  --mode            plan | final            (default: plan)
+  --into            output path                     (required in final)
+  --demo            render the example corporation instead
+  --help, -h        this
+
+ⓘ --sign-as is LAWFUL here, and this is not the general case.
+   8 Del. C. § 103(h): "Any signature on any instrument authorized to be
+   filed with the Secretary of State under this title may be a facsimile,
+   a conformed signature or an electronically transmitted signature."
+   a certificate of revival is such an instrument, so a rendered
+   signature is a permitted form of execution. no notary is involved —
+   the template carries no jurat.
+   to see the ten faces: rhx doc.signature --faces
+
+⛔ but the SIGNATURE IS THE OATH. § 103(b)(2): the signature "without
+   more ... shall constitute the affirmation or acknowledgment of the
+   signatory, UNDER PENALTIES OF PERJURY, that the instrument is such
+   person's act and deed or the act and deed of the corporation, and
+   that the facts stated therein shall be true."
+   ⇒ the named officer must READ the rendered certificate and adopt it
+   before it is filed. a signature applied on their behalf, unread, is
+   a perjury exposure and not an execution.
+
+⛔ --voided-on is DELAWARE'S RECORD, not your § 510 computation.
+   read it off the entity record — the "Status as of" field. a § 510
+   derivation is a corroboration of that value and never a substitute
+   for it. this is the value that goes into article 5 of a one-way-door
+   filing.
+
+⛔ § 312(d)(1) names four facts the certificate must state; the template
+   shows blanks for two of them. the other two are pre-printed as
+   articles 3 and 4. do not treat a blank-free article as a blank line.
+
+⛔ check name availability BEFORE you execute. the Division's own
+   instructions say so, and a § 312(f) collision is found at the counter.
+
+⛔ all taxes owed at the time the charter went void must be PAID and all
+   applicable annual reports FILED before the certificate can be filed.
+   the cover letter states this outright.
+
+⛔ this filing shuts the § 505(b) door. § 505(b) opens only "prior to the
+   filing of a certificate required by § 312(c)". if you still mean to
+   contest an assessment, contest it first.
+
+"
+`;

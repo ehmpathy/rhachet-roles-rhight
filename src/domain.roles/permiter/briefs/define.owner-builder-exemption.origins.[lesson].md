@@ -1,5 +1,7 @@
 # define.owner-builder-exemption.origins
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 the owner-builder exemption allows homeowners to do electrical, plumbing, HVAC, and structural work on their own homes without a trade license. this brief covers why it exists, where it came from, and how it varies across jurisdictions.
@@ -255,6 +257,10 @@ the permit/inspection system catches safety issues regardless of who does the wo
 ### california contractor license
 - [CSLB: Owner-Builder Overview](https://www.cslb.ca.gov/consumers/building_officials/owner_builder_overview.aspx)
 - [California Contractor School: Do I Need A License?](https://contractorslicensingschools.com/blog/do-i-need-a-license-to-work-on-my-home-in-california/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic history and jurisdiction survey of the owner-builder exemption from public sources; no client identity.
 
 ## .date researched
 

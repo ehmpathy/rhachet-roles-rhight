@@ -1,5 +1,7 @@
 # howto.verify-contractor-insurance
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 step-by-step process to verify contractor insurance coverage and create a paper trail that ensures claims will pay out.
@@ -217,3 +219,7 @@ with the paper trail above, you can prove:
 4. **payment** — you paid [Business Name], not an individual
 
 insurance cannot deny based on "worker wasn't covered" if you have this documentation.
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.

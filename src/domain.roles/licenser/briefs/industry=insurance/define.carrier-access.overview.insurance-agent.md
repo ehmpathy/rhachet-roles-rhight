@@ -1,5 +1,7 @@
 # define.carrier-access-overview.insurance-agent
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 obtaining an insurance license is the first step but not the final barrier to selling insurance products. agents must navigate a multi-layered access system spanning direct carrier appointments, aggregator/cluster memberships, producer sub-codes, and surplus lines/E&S wholesaler relationships to achieve comprehensive market access.
@@ -391,3 +393,7 @@ the surplus lines market represents increased importance:
 - define.purpose-of-insurance-agent-licenses — why licensing exists
 - define.insurance-agent-license-process — how to obtain a license
 - define.insurance-agent-license-reciprocity — multi-state licensing
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public insurance-market analysis; no client identity or client-specific mechanic.

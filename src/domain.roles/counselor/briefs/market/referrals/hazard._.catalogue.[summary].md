@@ -1,5 +1,7 @@
 # hazard._.catalogue — referrals
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 > scan-first map of the hazards that can turn a lawful refer→reward into an unlawful one. one row
 > per hazard, with its severity, the jurisdiction, and a link to the full `hazard.$slug.[hazard].md`.
 >

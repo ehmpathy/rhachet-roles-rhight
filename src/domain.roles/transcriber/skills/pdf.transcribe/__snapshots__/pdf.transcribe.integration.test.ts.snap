@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`pdf.transcribe.sh given: [case1] a MIXED pdf — text, image-only, text when: [t0] the routing is planned then: the plan matches snapshot 1`] = `
+"
+🦅 heres how I'd read it,
+
+🔎 pdf.transcribe --mode plan
+   ├─ source: <tmp>/mixed.pdf
+   ├─ via: auto
+   ├─ pages: 3
+   ├─ textual: 2 (free, offline)
+   ├─ optical: 1 (costs per page, needs creds)
+   └─ routes: 
+      ├─ page 1: textual
+      ├─ page 2: optical
+      └─ page 3: textual
+"
+`;
+
+exports[`pdf.transcribe.sh given: [case1] a MIXED pdf — text, image-only, text when: [t1] --via textual is forced on it then: the refusal matches snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pdf.transcribe
+   └─ blocked: --via textual, but these pages have no text layer: 2
+
+   they would come back empty, which reads as a blank page.
+   use --via auto to OCR only those pages, or --via optical for all.
+
+"
+`;

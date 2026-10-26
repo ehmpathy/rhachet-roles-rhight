@@ -166,8 +166,12 @@ search_uspto() {
           continue
         fi
         print_blocked "API unavailable"
-        echo ""
-        echo "check network connection and try again"
+        # ⛔ >&2 IS LOAD-BEARING. main() calls `response=$(search_uspto)`, so
+        #    this whole function runs in a command substitution and every plain
+        #    `echo` is captured into $response and discarded. without >&2 the
+        #    caller is told the API is unreachable and never told what to do.
+        echo "" >&2
+        echo "check network connection and try again" >&2
         exit 1
       }
 
@@ -189,15 +193,19 @@ search_uspto() {
           continue
         fi
         print_blocked "rate limited"
-        echo ""
-        echo "try again in a few seconds"
+        # >&2 per the note on the transport arm above — this function's stdout
+        # is captured by a command substitution in main().
+        echo "" >&2
+        echo "try again in a few seconds" >&2
         exit 1
         ;;
       401|403)
         print_blocked "API authentication failed: HTTP $http_code"
-        echo ""
-        echo "verify USPTO_ODP_API_KEY is valid"
-        echo "get a key at: https://data.uspto.gov"
+        # ⛔ the sharpest instance: without >&2 a caller who has no key is told
+        #    authentication failed and is NEVER handed the url that fixes it.
+        echo "" >&2
+        echo "verify USPTO_ODP_API_KEY is valid" >&2
+        echo "get a key at: https://data.uspto.gov" >&2
         exit 2
         ;;
       *)
