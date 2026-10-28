@@ -1,5 +1,6 @@
 import { spawnSync } from 'child_process';
 import * as fs from 'fs';
+import { UnexpectedCodePathError } from 'helpful-errors';
 import * as os from 'os';
 import * as path from 'path';
 import { given, then, useBeforeAll, when } from 'test-fns';
@@ -33,45 +34,152 @@ const scriptPath = path.join(__dirname, 'pii.scan.via.brain.sh');
 
 const UTF8 = 'utf-8' as const;
 
+/**
+ * .what = mask the two values that differ run to run in a skill stdout
+ * .why  = a snapshot must go red for a change in what the skill SAYS,
+ *         never for the pid in the fake's log dir or the temp dir path
+ */
+const asStdoutStable = (stdout: string): string =>
+  stdout
+    .replace(/fake\.\d+/g, 'fake.<pid>')
+    .replace(
+      new RegExp(
+        os.tmpdir().replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '[^\\s]*',
+        'g',
+      ),
+      '<tmp>',
+    );
+
+/**
+ * .what = a shell single-quote literal
+ * .why  = a path or key spliced into a generated script must never expand,
+ *         whatever `$`, backtick, or quote it holds
+ */
+const asShellLiteral = (value: string): string =>
+  `'${value.replace(/'/g, `'\\''`)}'`;
+
+/**
+ * .what = run the skill under bash and capture its streams
+ * .why  = exit 1 is the malfunction verdict these cases assert on, so a
+ *         run that never started (spawn failure, signal kill) must throw,
+ *         never default to 1 and read as a verdict
+ */
+/** under the 90s jest hook timeout, so a hung run fails as a named spawn timeout */
+const SKILL_SPAWN_TIMEOUT_MS = 80_000;
+
 const runSkill = (input: {
   args: string[];
   cwd: string;
   /** prepended to PATH — see genRhxThatCapturesTheArgv */
   binFirst?: string;
+  /** replaces PATH whole — see genPathWoutTool */
+  pathOnly?: string;
 }): { stdout: string; stderr: string; exitCode: number } => {
+  const pathForRun =
+    input.pathOnly ??
+    (input.binFirst
+      ? `${input.binFirst}:${process.env.PATH ?? ''}`
+      : process.env.PATH);
   const result = spawnSync('bash', [scriptPath, ...input.args], {
     encoding: UTF8,
     cwd: input.cwd,
     stdio: ['pipe', 'pipe', 'pipe'],
-    env: input.binFirst
-      ? { ...process.env, PATH: `${input.binFirst}:${process.env.PATH ?? ''}` }
-      : process.env,
+    env: { ...process.env, PATH: pathForRun },
+    timeout: SKILL_SPAWN_TIMEOUT_MS,
   });
+
+  // a run that produced no exit status produced no verdict
+  if (result.error || result.status === null)
+    throw new UnexpectedCodePathError('the skill run produced no exit status', {
+      args: input.args,
+      timeoutMs: SKILL_SPAWN_TIMEOUT_MS,
+      error: result.error?.message ?? null,
+      signal: result.signal,
+    });
+
   return {
-    stdout: result.stdout ?? '',
-    stderr: result.stderr ?? '',
-    exitCode: result.status ?? 1,
+    stdout: result.stdout,
+    stderr: result.stderr,
+    exitCode: result.status,
   };
+};
+
+/**
+ * .what = a PATH dir that mirrors the host PATH, one symlink per tool,
+ *         minus one tool
+ * .why  = a host that lacks one tool, while bash, git, and every coreutil
+ *         the skill calls still resolve
+ */
+const genPathWoutTool = (input: {
+  dir: string;
+  tool: string;
+}): { dir: string } => {
+  // an absent PATH would build an empty mirror and lack every tool, not one
+  const hostPath = process.env.PATH;
+  if (!hostPath)
+    throw new UnexpectedCodePathError('no PATH to mirror', {
+      tool: input.tool,
+    });
+
+  fs.mkdirSync(input.dir, { recursive: true });
+  const entries = hostPath
+    .split(':')
+    .filter((from) =>
+      fs.statSync(from, { throwIfNoEntry: false })?.isDirectory(),
+    );
+  for (const from of entries) {
+    for (const name of fs.readdirSync(from)) {
+      // first PATH entry wins, as in a real lookup; lstat sees a dangling link
+      const at = path.join(input.dir, name);
+      const taken = fs.lstatSync(at, { throwIfNoEntry: false });
+      if (name !== input.tool && !taken)
+        fs.symlinkSync(path.join(from, name), at);
+    }
+  }
+
+  // the mirror must hold bash and lack the tool, or the case tests aught else
+  if (!fs.lstatSync(path.join(input.dir, 'bash'), { throwIfNoEntry: false }))
+    throw new UnexpectedCodePathError('the PATH mirror lacks bash', {
+      dir: input.dir,
+    });
+  if (fs.lstatSync(path.join(input.dir, input.tool), { throwIfNoEntry: false }))
+    throw new UnexpectedCodePathError('the PATH mirror still holds the tool', {
+      dir: input.dir,
+      tool: input.tool,
+    });
+
+  return { dir: input.dir };
 };
 
 const genTempRepo = (input: {
   files: Record<string, string>;
   /** raw bytes, for fixtures that must NOT be text — see [case8] */
   binaries?: Record<string, Buffer>;
+  /** link path → target, e.g. a dir symlink — see [case32] */
+  symlinks?: Record<string, string>;
   stage?: string[];
 }): { dir: string } => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pii-review-'));
 
-  const git = (args: string[]): void => {
-    const res = spawnSync('git', args, { cwd: dir, encoding: UTF8 });
-    if (res.status !== 0) {
-      throw new Error(`git ${args.join(' ')} failed: ${res.stderr}`);
-    }
+  // run git in the fixture; a git that never ran names that, not a git error
+  const git = (gitInput: { args: string[] }): void => {
+    const res = spawnSync('git', gitInput.args, { cwd: dir, encoding: UTF8 });
+    if (res.error)
+      throw new UnexpectedCodePathError('git could not be run', {
+        args: gitInput.args,
+        error: res.error.message,
+      });
+    if (res.status !== 0)
+      throw new UnexpectedCodePathError('git failed in the fixture', {
+        args: gitInput.args,
+        status: res.status,
+        stderr: res.stderr,
+      });
   };
 
-  git(['init', '--quiet']);
-  git(['config', 'user.email', 'test@example.com']);
-  git(['config', 'user.name', 'test']);
+  git({ args: ['init', '--quiet'] });
+  git({ args: ['config', 'user.email', 'test@example.com'] });
+  git({ args: ['config', 'user.name', 'test'] });
 
   for (const [rel, content] of Object.entries(input.files)) {
     const full = path.join(dir, rel);
@@ -85,21 +193,43 @@ const genTempRepo = (input: {
     fs.writeFileSync(full, bytes);
   }
 
-  if (input.stage?.length) git(['add', ...input.stage]);
+  for (const [rel, target] of Object.entries(input.symlinks ?? {}))
+    fs.symlinkSync(target, path.join(dir, rel));
+
+  if (input.stage?.length) git({ args: ['add', ...input.stage] });
 
   return { dir };
 };
 
 /**
- * .what = put a fake `rhx` first on PATH that captures the prompt and
- *         answers a readable, clean verdict
+ * .what = the body of a fake `rhx review`, shared by every fake below
  *
- * .why  = the prompt is the ONLY place the binary paths appear. the
- *         count in the tree says how many there were; it says no word
- *         about whether the reviewer was ever handed them, and those are
- *         the two halves of this change. a test that asserts only the
- *         count would go green on a build where the prompt section was
- *         deleted.
+ * .why  = the skill reads FOUR things off a review, and a fake that
+ *         supplies fewer than four exercises a path production never
+ *         takes:
+ *           1. the argv        — so a case can assert which flags went out
+ *           2. the `--output`  — the report body lives in that FILE, and
+ *              the skill copies it out; stdout carries only counts
+ *           3. the `logs:`     — the sole discriminator between a clean
+ *              pass and a SKIPPED review, which print identical counts
+ *           4. the verdict json at `<logs>/output.response.json` — the
+ *              ONLY place the skill reads its counts from. the stdout
+ *              summary is printed for realism, never trusted
+ *
+ * ⚠️ `withLogs: false` impersonates a skip. `rhx review` skips when its
+ *    rules glob matches zero files, and prints the same
+ *    `0 blockers / 0 nitpicks`, exit 0, as a clean pass — so the skip
+ *    guard cannot be clamped without a fake that can omit that one line.
+ *
+ * ⚠️ the log dir is unique per fake process (`fake.$$`), the way real
+ *    `rhx review` names its dir `<iso-ms>.<pid>.<uuid>`. several
+ *    `--brain` reviewers run in parallel, and a shared dir would hand
+ *    one reviewer another's verdict.
+ *
+ * .note = `verdictJson` overrides the json written: `null` writes none
+ *         (the absent case), a string writes those exact bytes (the
+ *         unparseable and non-array cases). `stdoutAhead` echoes lines
+ *         before the summary, the way `rhx review` echoes staged paths.
  *
  * .note = `rule.forbid.integration.mocks` allows a mock where the
  *         circumstance is unavoidable and the exception is documented
@@ -114,23 +244,6 @@ const genTempRepo = (input: {
  *    calls, and the failure it produces — empty stdout, exit 1 — reads
  *    exactly like a skill that blocked without a message.
  */
-/**
- * .what = the body of a fake `rhx review`, shared by every fake below
- *
- * .why  = the skill reads THREE things off a review, and a fake that
- *         supplies fewer than three exercises a path production never
- *         takes:
- *           1. the argv        — so a case can assert which flags went out
- *           2. the `--output`  — the report body lives in that FILE, and
- *              the skill copies it out; stdout carries only counts
- *           3. the `logs:`     — the sole discriminator between a clean
- *              pass and a SKIPPED review, which print identical counts
- *
- * ⚠️ `withLogs: false` impersonates a skip. `rhx review` skips when its
- *    rules glob matches zero files, and prints the same
- *    `0 blockers / 0 nitpicks`, exit 0, as a clean pass — so the skip
- *    guard cannot be clamped without a fake that can omit that one line.
- */
 const asFakeReviewBody = (input: {
   captureAt: string;
   reportBody: string;
@@ -138,28 +251,112 @@ const asFakeReviewBody = (input: {
   nitpicks: number;
   /** omit the `logs:` line, to impersonate a skipped review */
   withLogs?: boolean;
-}): string[] => [
-  '#!/usr/bin/env bash',
-  `printf '%s\\n' "$@" > "${input.captureAt}"`,
-  'prev=""',
-  'out=""',
-  'for a in "$@"; do',
-  '  if [[ "$prev" == "--output" ]]; then out="$a"; fi',
-  '  prev="$a"',
-  'done',
-  'if [[ -n "$out" ]]; then',
-  '  mkdir -p "$(dirname "$out")"',
-  `  printf '%s\\n' "${input.reportBody}" > "$out"`,
-  'fi',
-  'echo "🔍 review"',
-  ...(input.withLogs === false
-    ? []
-    : ['echo "   ├─ logs: .log/bhrain/review/x"']),
-  'echo "   ├─ review: $out"',
-  'echo "   └─ summary"',
-  `echo "      ├─ ${input.blockers} blockers"`,
-  `echo "      └─ ${input.nitpicks} nitpicks"`,
-];
+  /** the verdict json bytes; null = write no json; absent = derived from the counts */
+  verdictJson?: string | null;
+  /** lines echoed to stdout ahead of the summary, e.g. a staged path */
+  stdoutAhead?: string[];
+  /**
+   * do what `rhx review` does by default: drop route paperwork, dreams,
+   * and lockfiles from scope, and refuse a scope left empty — unless
+   * `--polluters keep` was passed
+   */
+  emulatePolluterDrop?: boolean;
+  /** print this refusal and exit 2 with no logs, as `rhx review` does */
+  refusal?: string;
+  /** lines printed under the refusal header */
+  refusalBody?: string[];
+  /** the verdict json filename, to impersonate an upstream rename */
+  verdictName?: string;
+  /** write the prompt, the answer, and the metrics beside the json, as upstream does */
+  withPrompt?: boolean;
+}): string[] => {
+  const verdictJson =
+    input.verdictJson !== undefined
+      ? input.verdictJson
+      : JSON.stringify({
+          done: true,
+          blockers: Array.from({ length: input.blockers }, (_, i) => ({
+            rule: 'rule.forbid.pii-in-a-diff.md',
+            title: `fake blocker ${i + 1}`,
+          })),
+          nitpicks: Array.from({ length: input.nitpicks }, (_, i) => ({
+            rule: 'rule.forbid.pii-in-a-diff.md',
+            title: `fake nitpick ${i + 1}`,
+          })),
+        });
+  return [
+    '#!/usr/bin/env bash',
+    `printf '%s\\n' "$@" > ${asShellLiteral(input.captureAt)}`,
+    `echo x >> ${asShellLiteral(`${input.captureAt}.calls`)}`,
+    ...(input.refusal
+      ? [
+          `echo ${asShellLiteral(`✋ ConstraintError: ${input.refusal}`)}`,
+          ...(input.refusalBody ?? []).map(
+            (line) => `echo ${asShellLiteral(line)}`,
+          ),
+          'exit 2',
+        ]
+      : []),
+    ...(input.emulatePolluterDrop
+      ? [
+          'keep=""; prevp=""',
+          'for a in "$@"; do',
+          '  if [[ "$prevp" == "--polluters" && "$a" == "keep" ]]; then keep=1; fi',
+          '  prevp="$a"',
+          'done',
+          `if [[ -z "$keep" ]] && ! git diff --cached --name-only | grep -qvE '^(\\.route|\\.behavior|\\.dream)/'; then`,
+          '  echo "✋ ConstraintError: combined scope resolves to zero files"',
+          '  exit 2',
+          'fi',
+        ]
+      : []),
+    'prev=""',
+    'out=""',
+    'for a in "$@"; do',
+    '  if [[ "$prev" == "--output" ]]; then out="$a"; fi',
+    '  prev="$a"',
+    'done',
+    'if [[ -n "$out" ]]; then',
+    '  mkdir -p "$(dirname "$out")"',
+    `  printf '%s\\n' ${asShellLiteral(input.reportBody)} > "$out"`,
+    'fi',
+    'logdir=".log/bhrain/review/fake.$$"',
+    ...(input.withLogs === false
+      ? []
+      : [
+          'mkdir -p "$logdir"',
+          ...(input.withPrompt
+            ? [
+                'echo "a staged diff" > "$logdir/input.prompt.md"',
+                'echo "a staged diff" > "$logdir/input.prompt.head.md"',
+                'echo "{}" > "$logdir/metrics.realized.json"',
+                'echo "a staged diff" > "$logdir/input.future.md"',
+              ]
+            : []),
+          // a run that wrote no json wrote no answer either; an answer
+          // beside an absent json is the rename [case29] pins
+          ...(input.withPrompt && verdictJson !== null
+            ? ['echo "an answer" > "$logdir/output.review.md"']
+            : []),
+          ...(verdictJson === null
+            ? []
+            : [
+                `cat > "$logdir/"${asShellLiteral(input.verdictName ?? 'output.response.json')} <<'FAKE_VERDICT_JSON'`,
+                verdictJson,
+                'FAKE_VERDICT_JSON',
+              ]),
+        ]),
+    ...(input.stdoutAhead ?? []).map(
+      (line) => `printf '%s\\n' ${asShellLiteral(line)}`,
+    ),
+    'echo "🔍 review"',
+    ...(input.withLogs === false ? [] : ['echo "   ├─ logs: $logdir"']),
+    'echo "   ├─ review: $out"',
+    'echo "   └─ summary"',
+    `echo "      ├─ ${input.blockers} blockers"`,
+    `echo "      └─ ${input.nitpicks} nitpicks"`,
+  ];
+};
 
 /**
  * .what = a fake `rhx` that records the ARGV it was called with
@@ -173,6 +370,8 @@ const asFakeReviewBody = (input: {
  *         the argv is now the whole contract: `--rules`, `--refs`,
  *         `--diffs`, `--brain`, `--focus`, `--goal`, `--output`. each is
  *         load-bearing, and each is invisible unless the fake keeps it.
+ *
+ * .note = a fake of the rhx review boundary: see the .note on asFakeReviewBody
  */
 const genRhxThatCapturesTheArgv = (input: {
   dir: string;
@@ -213,8 +412,8 @@ const genRhxThatCapturesTheArgv = (input: {
  *    a fake that echoed the body to stdout would clamp a copy-out the
  *    skill no longer performs.
  *
- * .note = same `rule.forbid.integration.mocks` exception as its peer
- *         above: a real brain call is slow, paid, and answers
+ * .note = same `rule.forbid.integration.mocks` exception as
+ *         asFakeReviewBody: a real brain call is slow, paid, and answers
  *         differently each run. the REAL invocation stays clamped in
  *         pii.scan.via.brain.live.integration.test.ts.
  */
@@ -223,7 +422,20 @@ const genRhxThatAnswers = (input: {
   blockers: number;
   nitpicks: number;
   marker: string;
-}): { bin: string } => {
+  /** see asFakeReviewBody: null = no json; a string = those exact bytes */
+  verdictJson?: string | null;
+  /** see asFakeReviewBody: lines echoed ahead of the summary */
+  stdoutAhead?: string[];
+  /** see asFakeReviewBody */
+  emulatePolluterDrop?: boolean;
+  /** see asFakeReviewBody */
+  refusal?: string;
+  /** see asFakeReviewBody */
+  verdictName?: string;
+  /** see asFakeReviewBody */
+  refusalBody?: string[];
+  withPrompt?: boolean;
+}): { bin: string; readCalls: () => number } => {
   const bin = path.join(input.dir, '.fakebin');
   fs.mkdirSync(bin, { recursive: true });
 
@@ -234,7 +446,83 @@ const genRhxThatAnswers = (input: {
       reportBody: input.marker,
       blockers: input.blockers,
       nitpicks: input.nitpicks,
+      verdictJson: input.verdictJson,
+      stdoutAhead: input.stdoutAhead,
+      emulatePolluterDrop: input.emulatePolluterDrop,
+      refusal: input.refusal,
+      verdictName: input.verdictName,
+      refusalBody: input.refusalBody,
+      withPrompt: input.withPrompt,
     }).join('\n'),
+  );
+  fs.chmodSync(path.join(bin, 'rhx'), '755');
+
+  // a fresh count per fake, since cases share one repo dir
+  const callsAt = path.join(input.dir, '.argv.txt.calls');
+  fs.rmSync(callsAt, { force: true });
+  return {
+    bin,
+    readCalls: () =>
+      fs.existsSync(callsAt)
+        ? fs.readFileSync(callsAt, UTF8).trim().split('\n').length
+        : 0,
+  };
+};
+
+/**
+ * .what = a fake `rhx` that answers DIFFERENTLY per `--brain`
+ *
+ * .why  = the union in `main` folds one verdict per reviewer. a fake
+ *         that answers every brain alike can never show a block that
+ *         outranks a clean and a malfunction in the same run.
+ *
+ * .note = each brain gets its own fake body at `.fakebin/rhx.<slug>`, and
+ *         `rhx` dispatches on the `--brain` value.
+ * .note = a fake of the rhx review boundary: see the .note on asFakeReviewBody
+ */
+const genRhxThatAnswersPerBrain = (input: {
+  dir: string;
+  byBrain: Record<
+    string,
+    { blockers: number; nitpicks: number; verdictJson?: string | null }
+  >;
+}): { bin: string } => {
+  const bin = path.join(input.dir, '.fakebin');
+  fs.mkdirSync(bin, { recursive: true });
+
+  const arms = Object.entries(input.byBrain).map(([brain, answer], index) => {
+    // the index keeps the slug injective: `fake/a` and `fake.a` never share a file
+    const slug = `${index}-${brain.replace(/[^a-z0-9]+/gi, '-')}`;
+    const at = path.join(bin, `rhx.${slug}`);
+    fs.writeFileSync(
+      at,
+      asFakeReviewBody({
+        captureAt: path.join(input.dir, `.argv.${slug}.txt`),
+        reportBody: `REPORT-OF-${slug}`,
+        blockers: answer.blockers,
+        nitpicks: answer.nitpicks,
+        verdictJson: answer.verdictJson,
+      }).join('\n'),
+    );
+    fs.chmodSync(at, '755');
+    return `  ${asShellLiteral(brain)}) exec ${asShellLiteral(at)} "$@" ;;`;
+  });
+
+  fs.writeFileSync(
+    path.join(bin, 'rhx'),
+    [
+      '#!/usr/bin/env bash',
+      'prev=""',
+      'brain=""',
+      'for a in "$@"; do',
+      '  if [[ "$prev" == "--brain" ]]; then brain="$a"; fi',
+      '  prev="$a"',
+      'done',
+      'case "$brain" in',
+      ...arms,
+      '  *) echo "💥 MalfunctionError: fake rhx has no arm for brain $brain" >&2; exit 1 ;;',
+      'esac',
+    ].join('\n'),
   );
   fs.chmodSync(path.join(bin, 'rhx'), '755');
 
@@ -254,6 +542,8 @@ const genRhxThatAnswers = (input: {
  *    prove the skill reads it. a skip writes no log artifacts, so it
  *    advertises none; the `review:` line is NOT usable, because a skip
  *    writes that file and its presence proves naught.
+ *
+ * .note = a fake of the rhx review boundary: see the .note on asFakeReviewBody
  */
 const genRhxThatSkips = (input: { dir: string }): { bin: string } => {
   const bin = path.join(input.dir, '.fakebin');
@@ -314,6 +604,11 @@ describe('pii.scan.via.brain.sh', () => {
         //    that the reviewer would grade with no practice rules at all
         expect(result.stdout).toContain('refs');
       });
+
+      then('the stdout of the plan matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
     });
   });
 
@@ -371,6 +666,11 @@ describe('pii.scan.via.brain.sh', () => {
         }
         expect(result.exitCode).toBe(1);
         expect(result.stdout).toContain('rubric not found');
+      });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
       });
     });
   });
@@ -435,31 +735,36 @@ describe('pii.scan.via.brain.sh', () => {
       });
 
       /**
-       * ⭐ THE REMEDY, and the one line here with real operational weight.
+       * ⭐ THE REMEDY. a block with no cause is a block a human cannot
+       *    clear, and a gate nobody can clear gets bypassed
+       *    (`rule.require.errors-name-the-fix`).
        *
-       *    this branch's own source comment states the stake outright — "a
-       *    block with no cause is a block a human cannot clear, and a gate
-       *    nobody can clear is a gate that gets bypassed". the cause is the
-       *    per-reviewer evidence above; the CURE is this line, and only this
-       *    line, because the overwhelmingly common cause is a locked
-       *    keyrack rather than a defect in the diff.
-       *
-       * ⛔ delete it and every extant clamp stays green. the human at the
-       *    pre-commit gate then gets a block, a tail of raw reviewer output,
-       *    and no next move — which per `rule.require.errors-name-the-fix`
-       *    is a symptom with no fix attached.
-       *
-       * ⚠️ the command is asserted too, not just the prose. "keyrack is
-       *    locked" tells a reader WHAT; only the invocation tells them HOW,
-       *    and the two are separate lines in the source, so one can be lost
-       *    without the other.
+       * ⚠️ in this throwaway repo `rhx review` cannot find its own skill
+       *    (no linked `.agent/`), so it REFUSES at exit 2. the remedy that
+       *    fits is the quoted refusal and its own tip, never a keyrack
+       *    step. the keyrack remedy, with its commands, is pinned where its
+       *    cause occurs: `[case18][t2]`, a log dir with no verdict json.
        */
-      then('⭐ and it names the FIX, with the command to run', () => {
-        expect(result.stdout).toContain('most often: keyrack is locked');
-        expect(result.stdout).toContain(
-          'rhx keyrack unlock --owner ehmpath --env test',
-        );
-      });
+      then(
+        '⭐ and it names the FIX: the refusal, quoted, with its hint',
+        () => {
+          expect(result.stdout).toContain(
+            'cause: rhx review refused: no skill "review" found',
+          );
+          expect(result.stdout).toContain('rhx review refused its input');
+        },
+      );
+
+      then(
+        '⭐ and it keeps a first step for a cause a human cannot place',
+        () => {
+          expect(result.stdout).toContain('if the cause above is unclear');
+          expect(result.stdout).toContain('most often: keyrack is locked');
+          expect(result.stdout).toContain(
+            'rhx keyrack unlock --owner ehmpath --env prep',
+          );
+        },
+      );
     });
   });
 
@@ -481,6 +786,11 @@ describe('pii.scan.via.brain.sh', () => {
         // reviewer's flags must not have to learn a second set here
         expect(result.stdout).not.toContain('--staged');
       });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
     });
   });
 
@@ -496,6 +806,11 @@ describe('pii.scan.via.brain.sh', () => {
         expect(result.exitCode).toBe(0);
         expect(result.stdout).toContain('pii.scan --via brain');
         expect(result.stdout).toContain('can only ADD blocks');
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
       });
     });
   });
@@ -514,6 +829,11 @@ describe('pii.scan.via.brain.sh', () => {
       then('it exits 2 with a constraint message', () => {
         expect(result.exitCode).toBe(2);
         expect(result.stdout).toContain('unknown option');
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
       });
     });
   });
@@ -609,6 +929,11 @@ describe('pii.scan.via.brain.sh', () => {
         // bypassed within a day, and a bypassed gate catches none of
         // what it was built to catch
         expect(result.exitCode).toBe(0);
+      });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
       });
     });
   });
@@ -759,6 +1084,11 @@ describe('pii.scan.via.brain.sh', () => {
       //    dash-prefixed token and would stay GREEN under it.
       then('⭐ it is NOT reported as an unknown OPTION', () => {
         expect(result.stdout).not.toContain('unknown option');
+      });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
       });
     });
   });
@@ -920,6 +1250,11 @@ describe('pii.scan.via.brain.sh', () => {
         // [case5]'s message, from the guard immediately above this one
         expect(result.stdout).not.toContain('needs a scope');
       });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
     });
 
     when('[t1] --mode carries a typo', () => {
@@ -962,6 +1297,11 @@ describe('pii.scan.via.brain.sh', () => {
 
       then('⭐ it does NOT report clean', () => {
         expect(result.stdout).not.toContain('clear skies');
+      });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
       });
     });
   });
@@ -1094,6 +1434,11 @@ describe('pii.scan.via.brain.sh', () => {
       then('⭐ and it NAMES the reason', () => {
         expect(result.stdout).toContain('not inside a git work tree');
       });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
     });
   });
 
@@ -1148,11 +1493,6 @@ describe('pii.scan.via.brain.sh', () => {
       );
 
       then('it blocks at exit 2', () => {
-        if (result.exitCode !== 2) {
-          console.log('PROOF: exitCode:', result.exitCode);
-          console.log('PROOF: stdout:', result.stdout);
-          console.log('PROOF: stderr:', result.stderr);
-        }
         expect(result.exitCode).toBe(2);
       });
 
@@ -1317,6 +1657,31 @@ describe('pii.scan.via.brain.sh', () => {
         expect(fake.readArgv()).toContain('exhaustive');
       });
 
+      then(
+        '⭐ it KEEPS route paperwork, dreams, and lockfiles in scope',
+        () => {
+          // the default drops them, so a commit of only such paths would
+          // review naught and block, and a mixed one would hide them
+          expect(fake.readArgv()).toContain('--polluters\nkeep');
+        },
+      );
+
+      then(
+        '⭐ it cuts lockfiles from scope — names and hashes, ~90k tokens',
+        () => {
+          const argv = fake.readArgv();
+          expect(argv).toContain('--paths-wout\n**/pnpm-lock.yaml');
+          expect(argv).toContain('--paths-wout\n**/package-lock.json');
+          expect(argv).toContain('--paths-wout\n**/yarn.lock');
+        },
+      );
+
+      then('⛔ it NEVER passes --partition — one run writes one json', () => {
+        // the verdict read takes the LAST logs line. a partitioned run
+        // prints one per partition, so the earlier ones would go unread
+        expect(fake.readArgv()).not.toContain('--partition');
+      });
+
       then('⛔ it NEVER passes --optional', () => {
         // ⛔ `--optional rules` turns a zero-match rules glob into
         //    `0 blockers / 0 nitpicks`, exit 0 — the exact failhide this
@@ -1378,6 +1743,15 @@ describe('pii.scan.via.brain.sh', () => {
         expect(result.stdout).toContain('the review could not run');
       });
 
+      then(
+        '⭐ its cause line names the absent logs line, skip or crash',
+        () => {
+          expect(result.stdout).toContain(
+            'cause: no logs: line — the review skipped, or crashed before it wrote logs',
+          );
+        },
+      );
+
       then('⭐ it says the diff was never examined', () => {
         // a human handed `0 blockers` and an exit 1 cannot tell a broken
         // reviewer from a broken skill. the words are the whole remedy
@@ -1389,6 +1763,1775 @@ describe('pii.scan.via.brain.sh', () => {
         // completely different paths: one hunts a value in a diff, the
         // other repairs a reviewer that did not run
         expect(result.stdout).not.toContain('hold up — a brain saw PII');
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  /**
+   * .what = the verdict comes from the reviewer JSON, never from stdout
+   *
+   * ⛔ THE CLAMP FOR ehmpathy/rhachet-roles-rhight#52.
+   *
+   *    the prior parse took the FIRST `blocker…<digit>` match across raw
+   *    `rhx review` stdout. `rhx review` echoes staged paths ahead of its
+   *    summary, so a staged `blocker/5.briefs.short.md` read as 5 blockers
+   *    over a clean review — and blocked a clean commit — while
+   *    `blocker/0…` ahead of a real `2 blockers` read as 0 and let a leak
+   *    through. the fake below prints exactly that stdout; the json is the
+   *    truth, and the skill must follow it in both directions.
+   *
+   * ⚠️ revert the cure (the stdout regex back in run_one_reviewer) and
+   *    [t0] goes red: it reads 5 and exits 2. [t1] goes red too: it reads
+   *    0 and exits 0 over a real hit. [t2] goes red: it reads the stray
+   *    `0 blockers` summary and exits 0 over a review with no verdict.
+   */
+  given('[case18] a staged path whose digit competes with the verdict', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] path blocker/5.x.md in stdout, json clean', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          verdictJson: JSON.stringify({ blockers: [], nitpicks: [] }),
+          stdoutAhead: ['   ├─ targets: blocker/5.x.md'],
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it reads 0 blockers off the json and passes at exit 0', () => {
+        if (result.exitCode !== 0) {
+          console.log('PROOF: exitCode:', result.exitCode);
+          console.log('PROOF: stdout:', result.stdout);
+          console.log('PROOF: stderr:', result.stderr);
+        }
+        expect(result.exitCode).toBe(0);
+      });
+
+      then('⭐ it renders the clean verdict, 0 nitpicks', () => {
+        expect(result.stdout).toContain('clear skies');
+        expect(result.stdout).toContain('✅ fake/one — clean (0 nitpick(s))');
+      });
+
+      then('it does NOT read the path digit as a count', () => {
+        expect(result.stdout).not.toContain('5 blocker(s)');
+      });
+
+      then('the stdout of the clean run matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when('[t1] path blocker/0.x.md in stdout, json with 2 blockers', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 2,
+          nitpicks: 0,
+          marker: 'two hits',
+          stdoutAhead: ['   ├─ targets: blocker/0.x.md'],
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it reads 2 blockers off the json and blocks at exit 2', () => {
+        if (result.exitCode !== 2) {
+          console.log('PROOF: exitCode:', result.exitCode);
+          console.log('PROOF: stdout:', result.stdout);
+          console.log('PROOF: stderr:', result.stderr);
+        }
+        expect(result.exitCode).toBe(2);
+      });
+
+      then('⭐ it names the reviewer with the json count', () => {
+        expect(result.stdout).toContain(
+          '🚨 fake/one — 2 blocker(s), 0 nitpick(s)',
+        );
+      });
+
+      then('the stdout of the block matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when('[t2] logs line present, json absent', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          verdictJson: null,
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it is a MALFUNCTION at exit 1, never a clean 0/0', () => {
+        if (result.exitCode !== 1) {
+          console.log('PROOF: exitCode:', result.exitCode);
+          console.log('PROOF: stdout:', result.stdout);
+          console.log('PROOF: stderr:', result.stderr);
+        }
+        expect(result.exitCode).toBe(1);
+      });
+
+      then('⭐ its cause line names the absent json', () => {
+        expect(result.stdout).toMatch(
+          /cause: no verdict json at \.log\/bhrain\/review\/fake\.\d+\/output\.response\.json/,
+        );
+        expect(result.stdout).toContain(
+          'rhx keyrack unlock --owner ehmpath --env prep',
+        );
+        expect(result.stdout).toContain(
+          'rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep',
+        );
+      });
+
+      then('it does NOT claim the diff is clean', () => {
+        expect(result.stdout).not.toContain('clear skies');
+      });
+
+      then('the stdout of the malfunction matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  /**
+   * .what = a json that parses badly, or parses to the wrong shape
+   *
+   * ⛔ BOTH MUST FAIL CLOSED, each with its own cause.
+   *
+   *    an unparseable file is a run that died mid-write. a non-array
+   *    `.blockers` is an upstream reshape — and the dangerous one, because
+   *    `jq '.blockers | length'` on null is 0. the type check must run
+   *    BEFORE the count, or a reshaped json reads as a clean review.
+   */
+  given('[case19] a verdict json the skill cannot trust', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] the json is truncated mid-write', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          verdictJson: '{"done": true, "blockers": [',
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it is a MALFUNCTION at exit 1', () => {
+        expect(result.exitCode).toBe(1);
+      });
+
+      then('⭐ its cause line says the json is unparseable', () => {
+        expect(result.stdout).toContain('cause: verdict json unparseable at');
+      });
+
+      then('it retries once — a truncated write may not recur', () => {
+        expect(fake.readCalls()).toBe(2);
+      });
+
+      then(
+        'the stdout of the unparseable malfunction matches its snapshot',
+        () => {
+          expect(result.stdout).not.toContain('clear skies');
+          expect(result.exitCode).toBe(1);
+          expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+        },
+      );
+    });
+
+    when('[t1] .blockers is null and .nitpicks is absent', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          verdictJson: JSON.stringify({ done: true, blockers: null }),
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it is a MALFUNCTION at exit 1 — null never reads as 0', () => {
+        expect(result.exitCode).toBe(1);
+      });
+
+      then('it asks once — a json written whole and misshaped recurs', () => {
+        expect(fake.readCalls()).toBe(1);
+      });
+
+      then('⭐ its cause line says the arrays are absent', () => {
+        expect(result.stdout).toContain(
+          'cause: verdict json .blockers is null, not an array; .nitpicks is absent, at',
+        );
+      });
+
+      then(
+        'it never claims the diff is clean, and its stdout matches the snapshot of a null field',
+        () => {
+          expect(result.exitCode).toBe(1);
+          expect(result.stdout).not.toContain('clear skies');
+          expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+        },
+      );
+    });
+
+    when('[t2] the json is a bare null', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          verdictJson: 'null',
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then(
+        '⭐ it is a MALFUNCTION at exit 1, named as a shape fault, not a parse fault',
+        () => {
+          expect(result.exitCode).toBe(1);
+          expect(result.stdout).toContain(
+            'cause: verdict json is null, not an object, at',
+          );
+        },
+      );
+
+      then(
+        'it never claims the diff is clean, and its stdout matches the snapshot of a bare null',
+        () => {
+          expect(result.exitCode).toBe(1);
+          expect(result.stdout).not.toContain('clear skies');
+          expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+        },
+      );
+    });
+
+    when('[t3] .blockers is a number', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          verdictJson: JSON.stringify({
+            done: true,
+            blockers: 2,
+            nitpicks: [],
+          }),
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it is a MALFUNCTION at exit 1, not a count of 2', () => {
+        expect(result.exitCode).toBe(1);
+        expect(result.stdout).toContain(
+          'cause: verdict json .blockers is number, not an array, at',
+        );
+      });
+
+      then(
+        'it never claims the diff is clean, and its stdout matches the snapshot of a number field',
+        () => {
+          expect(result.exitCode).toBe(1);
+          expect(result.stdout).not.toContain('clear skies');
+          expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+        },
+      );
+    });
+  });
+
+  /**
+   * .what = many reviewers, each read off its own json, folded in order
+   *
+   * ⛔ ONE BLOCK BLOCKS, whatever the others said. a block outranks a
+   *    malfunction, and a malfunction outranks a pass. each reviewer runs
+   *    its own `rhx review` in parallel, so each must read its OWN json —
+   *    a shared dir would hand one reviewer another's verdict.
+   */
+  given('[case20] three reviewers that disagree', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] a blocks, b is clean, c wrote no json', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswersPerBrain({
+          dir: repo.dir,
+          byBrain: {
+            'fake/a': { blockers: 1, nitpicks: 0 },
+            'fake/b': { blockers: 0, nitpicks: 2 },
+            'fake/c': { blockers: 0, nitpicks: 0, verdictJson: null },
+          },
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: [
+            '--diffs',
+            'since-staged',
+            '--brain',
+            'fake/a',
+            '--brain',
+            'fake/b',
+            '--brain',
+            'fake/c',
+          ],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it blocks at exit 2', () => {
+        if (result.exitCode !== 2) {
+          console.log('PROOF: exitCode:', result.exitCode);
+          console.log('PROOF: stdout:', result.stdout);
+          console.log('PROOF: stderr:', result.stderr);
+        }
+        expect(result.exitCode).toBe(2);
+      });
+
+      then('⭐ each reviewer shows its own verdict', () => {
+        expect(result.stdout).toContain(
+          '🚨 fake/a — 1 blocker(s), 0 nitpick(s)',
+        );
+        expect(result.stdout).toContain('✅ fake/b — clean (2 nitpick(s))');
+        expect(result.stdout).toContain('💥 fake/c — verdict unreadable');
+      });
+
+      then('it states the UNION rule', () => {
+        expect(result.stdout).toContain(
+          'results are UNIONED: any blocker from any reviewer blocks',
+        );
+      });
+
+      then('the stdout of the mixed block matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when('[t1] a is clean, b wrote no json', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswersPerBrain({
+          dir: repo.dir,
+          byBrain: {
+            'fake/a': { blockers: 0, nitpicks: 0 },
+            'fake/b': { blockers: 0, nitpicks: 0, verdictJson: null },
+          },
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: [
+            '--diffs',
+            'since-staged',
+            '--brain',
+            'fake/a',
+            '--brain',
+            'fake/b',
+          ],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then(
+        '⭐ it is a MALFUNCTION at exit 1 — a clean never vouches for an unread verdict',
+        () => {
+          expect(result.exitCode).toBe(1);
+          expect(result.stdout).not.toContain('clear skies');
+        },
+      );
+
+      then(
+        '⭐ it lists both reviewers, and the unread one names its cause',
+        () => {
+          expect(result.stdout).toContain('✅ fake/a — clean (0 nitpick(s))');
+          expect(result.stdout).toContain('💥 fake/b — verdict unreadable');
+          expect(result.stdout).toContain('cause: no verdict json at');
+        },
+      );
+
+      then(
+        'the stdout of the clean-plus-malfunction matches its snapshot',
+        () => {
+          expect(result.exitCode).toBe(1);
+          expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+        },
+      );
+    });
+  });
+
+  /**
+   * .what = one dropped verdict does not speak for the whole check
+   *
+   * ⚠️ the gate retries an unread verdict once. a fake that writes NO json
+   *    on its first call and a clean json on its second proves the retry
+   *    reads the SECOND run's own json — and that a recovered retry passes
+   *    rather than carry the first attempt's malfunction forward.
+   */
+  given('[case21] a review whose first attempt wrote no verdict', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] the retry writes a clean json', () => {
+      const fake = useBeforeAll(async () => {
+        const bin = path.join(repo.dir, '.fakebin');
+        fs.mkdirSync(bin, { recursive: true });
+        // a fake of the rhx review boundary: see the .note on asFakeReviewBody
+        const body = (verdictJson: string | null): string =>
+          asFakeReviewBody({
+            captureAt: path.join(repo.dir, '.argv.txt'),
+            reportBody: 'no hits',
+            blockers: 0,
+            nitpicks: 0,
+            verdictJson,
+          }).join('\n');
+        fs.writeFileSync(path.join(bin, 'rhx.first'), body(null));
+        fs.writeFileSync(
+          path.join(bin, 'rhx.second'),
+          body(JSON.stringify({ blockers: [], nitpicks: [] })),
+        );
+        fs.chmodSync(path.join(bin, 'rhx.first'), '755');
+        fs.chmodSync(path.join(bin, 'rhx.second'), '755');
+        const countAt = path.join(repo.dir, '.calls');
+        fs.writeFileSync(
+          path.join(bin, 'rhx'),
+          [
+            '#!/usr/bin/env bash',
+            `echo x >> ${asShellLiteral(countAt)}`,
+            `if [[ "$(wc -l < ${asShellLiteral(countAt)})" -le 1 ]]; then exec ${asShellLiteral(`${bin}/rhx.first`)} "$@"; fi`,
+            `exec ${asShellLiteral(`${bin}/rhx.second`)} "$@"`,
+          ].join('\n'),
+        );
+        fs.chmodSync(path.join(bin, 'rhx'), '755');
+        return { bin, countAt };
+      });
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it passes at exit 0 on the recovered retry', () => {
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('✅ fake/one — clean (0 nitpick(s))');
+      });
+
+      then('⭐ the first attempt leaves no trace of a malfunction', () => {
+        expect(result.stdout).not.toContain('verdict unreadable');
+        expect(result.stdout).not.toContain('cause:');
+      });
+
+      then('the stdout of the recovered retry matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+
+      then('it asked the reviewer exactly twice', () => {
+        expect(
+          fs.readFileSync(fake.countAt, UTF8).trim().split('\n'),
+        ).toHaveLength(2);
+      });
+    });
+  });
+
+  /**
+   * .what = a host with no jq fails fast, and says so
+   *
+   * ⚠️ every verdict read goes through jq. absent jq, each read would fail
+   *    as "verdict json unparseable" — closed, but under a false cause. the
+   *    PATH below mirrors the host's, one symlink per tool, minus jq, so
+   *    bash, git, and every coreutil the skill calls still resolve.
+   */
+  given('[case22] a host with no jq on PATH', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] the skill runs in its default mode, apply', () => {
+      const pathWoutJq = useBeforeAll(async () =>
+        genPathWoutTool({
+          dir: path.join(repo.dir, '.path-wout-jq'),
+          tool: 'jq',
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          pathOnly: pathWoutJq.dir,
+        }),
+      );
+
+      then('⭐ it blocks at exit 1, before any review runs', () => {
+        expect(result.exitCode).toBe(1);
+        expect(result.stdout).not.toContain('pii.review');
+        expect(result.stdout).not.toContain('fake/one —');
+      });
+
+      then('⭐ it names jq as the absent tool', () => {
+        expect(result.stdout).toContain('jq not found');
+      });
+
+      then('the stdout of the jq precondition matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  given('[case33] a host with no rhx on PATH', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] the skill runs in its default mode, apply', () => {
+      const pathWoutRhx = useBeforeAll(async () =>
+        genPathWoutTool({
+          dir: path.join(repo.dir, '.path-wout-rhx'),
+          tool: 'rhx',
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          pathOnly: pathWoutRhx.dir,
+        }),
+      );
+
+      then('⭐ it blocks at exit 1 and names rhx, not the keyrack', () => {
+        expect(result.exitCode).toBe(1);
+        expect(result.stdout).toContain('rhx not found');
+        expect(result.stdout).not.toContain('keyrack');
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  given('[case34] a review that refuses for an absent brain key', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] the brain is the default provider, anthropic', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          refusal:
+            'ANTHROPIC_API_KEY not found in keyrack (owner ehmpath, env prep)',
+        }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: [
+            '--diffs',
+            'since-staged',
+            '--brain',
+            'anthropic/claude/haiku',
+          ],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it blocks at exit 1 and asks once', () => {
+        expect(result.exitCode).toBe(1);
+        expect(fake.readCalls()).toBe(1);
+      });
+
+      then(
+        '⭐ it quotes the refusal and names the key the provider reads',
+        () => {
+          expect(result.stdout).toContain(
+            'rhx review refused: ANTHROPIC_API_KEY not found in keyrack',
+          );
+          expect(result.stdout).toContain(
+            'rhx keyrack set --owner ehmpath --key ANTHROPIC_API_KEY --env prep',
+          );
+        },
+      );
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when('[t1] the brain is an openrouter slug', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          refusal:
+            'OPENROUTER_API_KEY not found in keyrack (owner ehmpath, env prep)',
+        }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: [
+            '--diffs',
+            'since-staged',
+            '--brain',
+            'openrouter/deepseek/flash',
+          ],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('it names OPENROUTER_API_KEY in the fill command', () => {
+        expect(result.exitCode).toBe(1);
+        expect(result.stdout).toContain(
+          'rhx keyrack set --owner ehmpath --key OPENROUTER_API_KEY --env prep',
+        );
+      });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  /**
+   * .what = only the LAST `├─ logs: ` line points at the verdict
+   *
+   * ⛔ the json path is itself read off stdout, so a staged path that
+   *    echoes as `├─ logs: <dir>` is this same defect one level down. the
+   *    skill reads the last such line — the one `rhx review` prints in its
+   *    closing summary, after every echoed path. both directions: a stale
+   *    blocker ahead of a clean verdict must not block, and a stale clean
+   *    ahead of a real leak must not pass.
+   */
+  given('[case23] an echoed logs line ahead of the real one', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    /**
+     * .what = write a verdict json at a dir no real run owns
+     * .why  = the decoy an echoed `├─ logs: ` line points at
+     */
+    const genStaleVerdict = (input: { blockers: number }): string => {
+      const rel = `.stale-${input.blockers}`;
+      fs.mkdirSync(path.join(repo.dir, rel), { recursive: true });
+      fs.writeFileSync(
+        path.join(repo.dir, rel, 'output.response.json'),
+        JSON.stringify({
+          done: true,
+          blockers: Array.from({ length: input.blockers }, (_, i) => ({
+            title: `stale blocker ${i + 1}`,
+          })),
+          nitpicks: [],
+        }),
+      );
+      return rel;
+    };
+
+    when(
+      '[t0] the echoed line points at 3 blockers, the real verdict is clean',
+      () => {
+        const fake = useBeforeAll(async () =>
+          genRhxThatAnswers({
+            dir: repo.dir,
+            blockers: 0,
+            nitpicks: 0,
+            marker: 'no hits',
+            stdoutAhead: [`   ├─ logs: ${genStaleVerdict({ blockers: 3 })}`],
+          }),
+        );
+
+        const result = useBeforeAll(async () =>
+          runSkill({
+            args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+            cwd: repo.dir,
+            binFirst: fake.bin,
+          }),
+        );
+
+        then('⭐ it passes at exit 0 — the echoed dir never speaks', () => {
+          expect(result.exitCode).toBe(0);
+          expect(result.stdout).toContain('✅ fake/one — clean (0 nitpick(s))');
+          expect(result.stdout).not.toContain('🚨');
+        });
+
+        then(
+          'the stdout of the stale-blocker echo matches its snapshot',
+          () => {
+            expect(result.exitCode).toBe(0);
+            expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+          },
+        );
+      },
+    );
+
+    when(
+      '[t1] the echoed line points at a clean verdict, the real one has 2 blockers',
+      () => {
+        const fake = useBeforeAll(async () =>
+          genRhxThatAnswers({
+            dir: repo.dir,
+            blockers: 2,
+            nitpicks: 0,
+            marker: 'two hits',
+            stdoutAhead: [`   ├─ logs: ${genStaleVerdict({ blockers: 0 })}`],
+          }),
+        );
+
+        const result = useBeforeAll(async () =>
+          runSkill({
+            args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+            cwd: repo.dir,
+            binFirst: fake.bin,
+          }),
+        );
+
+        then(
+          '⭐ it blocks at exit 2 — a stale clean never lets a leak through',
+          () => {
+            expect(result.exitCode).toBe(2);
+            expect(result.stdout).toContain(
+              '🚨 fake/one — 2 blocker(s), 0 nitpick(s)',
+            );
+            expect(result.stdout).not.toContain('✅ fake/one — clean');
+          },
+        );
+
+        then('the stdout of the stale-clean echo matches its snapshot', () => {
+          expect(result.exitCode).toBe(2);
+          expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+        });
+      },
+    );
+  });
+  /**
+   * .what = a flag that takes a value, given none, blocks with its name
+   *
+   * ⚠️ `shift 2` past the last argument dies under `set -e` with empty
+   *    stdout and exit 1 — the shape of a malfunction, with no cause.
+   */
+  given('[case24] a flag that takes a value, given none', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] --diffs is the last argument', () => {
+      const result = useBeforeAll(async () =>
+        runSkill({ args: ['--diffs'], cwd: repo.dir }),
+      );
+
+      then('⭐ it blocks at exit 2 and names the flag', () => {
+        expect(result.exitCode).toBe(2);
+        expect(result.stdout).toContain(
+          '✋ ConstraintError: --diffs needs a value. run --help for the values it takes',
+        );
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when('[t1] --diffs is followed by another flag', () => {
+      const result = useBeforeAll(async () =>
+        runSkill({ args: ['--diffs', '--brain', 'fake/one'], cwd: repo.dir }),
+      );
+
+      then(
+        '⭐ it blocks at exit 2 rather than read the flag as the value',
+        () => {
+          expect(result.exitCode).toBe(2);
+          expect(result.stdout).toContain(
+            '✋ ConstraintError: --diffs needs a value. run --help for the values it takes',
+          );
+        },
+      );
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+  /**
+   * .what = each upstream literal this gate reads, pinned against the
+   *         installed rhachet-roles-bhrain
+   * .why  = a rename upstream fails the gate closed on every commit in
+   *         the org; here it fails one test, before a release ships it
+   */
+  given('[case25] the reviewer contract of the installed bhrain', () => {
+    const repoTop = path.resolve(__dirname, '../../../../..');
+    const distOf = (rel: string): string =>
+      fs.readFileSync(
+        path.join(repoTop, 'node_modules/rhachet-roles-bhrain/dist', rel),
+        UTF8,
+      );
+    const skillText = fs.readFileSync(scriptPath, UTF8);
+
+    when('[t0] the skill constants are read beside the bhrain sources', () => {
+      then(
+        '⭐ bhrain prints the logs line behind the anchor the skill reads',
+        () => {
+          expect(skillText).toContain(`ANCHOR_OF_LOGS_LINE='├─ logs: '`);
+          expect(
+            distOf('domain.operations/review/genReviewOutputStdout.js'),
+          ).toContain('├─ logs: ${');
+        },
+      );
+
+      then('⭐ bhrain names the verdict json as the skill expects', () => {
+        expect(skillText).toContain(
+          `NAME_OF_VERDICT_JSON='output.response.json'`,
+        );
+        expect(
+          distOf('domain.operations/review/asRunArtifactPath.js'),
+        ).toContain(`response: 'output.response.json'`);
+      });
+
+      then(
+        '⭐ bhrain refuses an empty scope with the words the skill matches',
+        () => {
+          expect(skillText).toContain(
+            `REFUSAL_OF_ZERO_SCOPE='combined scope resolves to zero files'`,
+          );
+          expect(
+            distOf('domain.operations/review/getOneReviewScope.js'),
+          ).toContain('combined scope resolves to zero files');
+        },
+      );
+
+      then(
+        '⭐ each artifact the prune keeps is still one bhrain writes',
+        () => {
+          const names = Object.values(
+            // the map is not on the package's exports, so it is read by path
+            require(
+              path.join(
+                repoTop,
+                'node_modules/rhachet-roles-bhrain/dist/domain.operations/review/asRunArtifactPath.js',
+              ),
+            ).NAME_OF_RUN_ARTIFACT,
+          );
+          const kept = (
+            skillText.match(/^ARTIFACTS_OF_FIGURES=\(([^)]*)\)/m)?.[1] ?? ''
+          )
+            .split(/\s+/)
+            .filter((word) => word.length > 0)
+            .map((word) => word.replace(/'/g, ''));
+          expect(kept.length).toBeGreaterThan(0);
+          for (const name of kept) expect(names).toContain(name);
+          expect(kept).toContain('metrics.realized.json');
+        },
+      );
+
+      then('⭐ bhrain still takes the two scope flags the skill passes', () => {
+        const help = distOf('contract/cli/review.js');
+        expect(skillText).toContain('--polluters keep');
+        expect(help).toContain('--polluters <mode>');
+        expect(help).toContain('--paths-wout <glob>');
+      });
+
+      then(
+        '⭐ bhrain refuses an overflow with the words the skill matches',
+        () => {
+          expect(skillText).toContain(
+            `REFUSAL_OF_OVERFLOW='prompt exceeds 75% of context window'`,
+          );
+          expect(
+            distOf('domain.operations/review/ReviewOverflowRefusedError.js'),
+          ).toContain(`'prompt exceeds 75% of context window'`);
+        },
+      );
+    });
+  });
+
+  /**
+   * .what = the commit this wish exists for: a route file whose path
+   *         holds a digit, staged alone
+   *
+   * ⛔ `rhx review` drops route paperwork from scope by default. staged
+   *    alone, the scope is empty, the review refuses with no logs line,
+   *    and a clean commit blocks as a malfunction. the fake below drops
+   *    as `rhx review` does, unless the skill passes `--polluters keep`.
+   */
+  given(
+    '[case26] a route file staged alone, its path digit beside the word blocker',
+    () => {
+      const repo = useBeforeAll(async () =>
+        genTempRepo({
+          files: {
+            '.route/v2026_10_23.pr41-green/blocker/5.briefs.short.md':
+              'brief notes',
+          },
+          stage: ['.route/v2026_10_23.pr41-green/blocker/5.briefs.short.md'],
+        }),
+      );
+
+      when('[t0] the reviewer finds it clean', () => {
+        const fake = useBeforeAll(async () =>
+          genRhxThatAnswers({
+            dir: repo.dir,
+            blockers: 0,
+            nitpicks: 0,
+            marker: 'no hits',
+            emulatePolluterDrop: true,
+            stdoutAhead: [
+              '   │  .route/v2026_10_23.pr41-green/blocker/5.briefs.short.md',
+            ],
+          }),
+        );
+
+        const result = useBeforeAll(async () =>
+          runSkill({
+            args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+            cwd: repo.dir,
+            binFirst: fake.bin,
+          }),
+        );
+
+        then(
+          '⭐ it passes at exit 0 — the route file is reviewed, not dropped',
+          () => {
+            expect(result.exitCode).toBe(0);
+            expect(result.stdout).toContain(
+              '✅ fake/one — clean (0 nitpick(s))',
+            );
+          },
+        );
+
+        then('the stdout of the route-file commit matches its snapshot', () => {
+          expect(result.exitCode).toBe(0);
+          expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+        });
+      });
+    },
+  );
+
+  /**
+   * .what = a refusal no second ask can change is named, asked once,
+   *         and answered with the fix that fits it
+   */
+  given('[case27] a review that refuses an empty scope', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] rhx review refuses with no logs line', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'unused',
+          refusal: 'combined scope resolves to zero files',
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it blocks at exit 1 and names the dropped scope', () => {
+        expect(result.exitCode).toBe(1);
+        expect(result.stdout).toContain(
+          'cause: rhx review dropped every staged path from its scope',
+        );
+      });
+
+      then('⭐ it asks once — a second ask returns the same refusal', () => {
+        expect(fake.readCalls()).toBe(1);
+      });
+
+      then('⭐ its hint fits the cause, not a locked keyrack', () => {
+        expect(result.stdout).toContain('a new upstream filter');
+        expect(result.stdout).not.toContain('rhx keyrack unlock');
+      });
+
+      then('the stdout of the empty-scope refusal matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  given('[case28] a review that refuses an overflow', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] rhx review refuses with no logs line', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'unused',
+          refusal: 'prompt exceeds 75% of context window',
+          refusalBody: [
+            '   ├─ 111.4% of 200,000 tokens',
+            '   ├─ target mass by directory — 869.1k chars over 25 directories',
+            '   │  ├─  41.4%    359.4k chars  1 file    vendor/big.json',
+            '   │  ├─  24.0%    208.7k chars  5 files   src/domain.roles/transcriber',
+            '   ├─ lever — partition what the rubric grades, cut what it does not',
+            "   │  ├─ --partition 'src=src/**'",
+          ],
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then(
+        '⭐ it blocks at exit 1, asks once, and says to split the commit',
+        () => {
+          expect(result.exitCode).toBe(1);
+          expect(result.stdout).toContain(
+            'cause: the staged diff overflows the review brain',
+          );
+          expect(fake.readCalls()).toBe(1);
+          expect(result.stdout).toContain('split them into separate commits');
+          expect(result.stdout).not.toContain('rhx keyrack unlock');
+        },
+      );
+
+      then(
+        '⭐ it shows the window share and the heaviest dirs, not the partition lever',
+        () => {
+          expect(result.stdout).toContain('111.4% of 200,000 tokens');
+          expect(result.stdout).toContain('vendor/big.json');
+          expect(result.stdout).not.toContain('--partition');
+        },
+      );
+
+      then('the stdout of the overflow refusal matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+  /**
+   * .what = a verdict json written under a name the gate does not read
+   * .why  = an upstream rename and a run that died before it wrote both
+   *         leave no `output.response.json`; the log dir listing in the
+   *         cause tells the two apart
+   */
+  given('[case29] a log dir whose verdict json was renamed upstream', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] rhx review writes output.verdict.json', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          verdictName: 'output.verdict.json',
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it blocks at exit 1 and names what the log dir holds', () => {
+        expect(result.exitCode).toBe(1);
+        expect(result.stdout).toContain(
+          '(the log dir holds: output.verdict.json)',
+        );
+      });
+
+      then(
+        '⭐ it asks once and names the contract change — a rename recurs',
+        () => {
+          expect(fake.readCalls()).toBe(1);
+          expect(result.stdout).toContain("rhx review's");
+          expect(result.stdout).not.toContain('rhx keyrack unlock');
+        },
+      );
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  /**
+   * .what = a refusal the skill holds no name for
+   * .why  = the exit code, not a list of known headlines, marks a refusal.
+   *         an unlisted one (a renamed flag, say) is asked once and quoted,
+   *         never read as a locked keyrack
+   */
+  given('[case30] a review that refuses with an unlisted header', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] rhx review exits 2 on an unknown flag', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'unused',
+          refusal: 'unknown option --polluters',
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it blocks at exit 1, quotes the header, and asks once', () => {
+        expect(result.exitCode).toBe(1);
+        expect(result.stdout).toContain(
+          'cause: rhx review refused: unknown option --polluters',
+        );
+        expect(fake.readCalls()).toBe(1);
+      });
+
+      then(
+        '⭐ its hint says the input was refused, not that a key is locked',
+        () => {
+          expect(result.stdout).toContain('rhx review refused its input');
+          // the fitted key hint claims the key is the cause; it stays out.
+          // only the conditional first step for an unplaced cause appears
+          expect(result.stdout).not.toContain('so unlock prep and retry');
+          expect(result.stdout).toContain('if the cause above is unclear');
+        },
+      );
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  /**
+   * .what = the review log dir, after the verdict is read
+   * .why  = the log dir holds the prompt, which holds the staged diff; a
+   *         clean read removes it, and a malfunction keeps it for the cause
+   */
+  given('[case31] the review log dir after the read', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+    const logRoot = (): string => path.join(repo.dir, '.log/bhrain/review');
+    const listLogFiles = (): string[] =>
+      fs.existsSync(logRoot())
+        ? fs
+            .readdirSync(logRoot())
+            .flatMap((dir) =>
+              fs
+                .readdirSync(path.join(logRoot(), dir))
+                .map((f) => `${dir}/${f}`),
+            )
+        : [];
+    const listByName = (name: string): string[] =>
+      listLogFiles().filter((f) => f.endsWith(`/${name}`));
+    // the four content artifacts upstream writes today, plus one it might
+    // add later; each must go, since only the figures are kept
+    const CONTENT = [
+      'input.prompt.md',
+      'input.prompt.head.md',
+      'output.response.json',
+      'output.review.md',
+      'input.future.md',
+    ];
+
+    when('[t0] the verdict reads clean', () => {
+      const fake = useBeforeAll(async () => {
+        fs.rmSync(logRoot(), { recursive: true, force: true });
+        return genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          withPrompt: true,
+        });
+      });
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it passes and leaves no copy of the prompt behind', () => {
+        expect(result.exitCode).toBe(0);
+        for (const name of CONTENT) expect(listByName(name)).toEqual([]);
+      });
+
+      then('⭐ it keeps the metrics upstream meters spend from', () => {
+        expect(result.exitCode).toBe(0);
+        expect(listByName('metrics.realized.json')).toHaveLength(1);
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when('[t1] the verdict json is absent', () => {
+      const fake = useBeforeAll(async () => {
+        fs.rmSync(logRoot(), { recursive: true, force: true });
+        return genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          verdictJson: null,
+          withPrompt: true,
+        });
+      });
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('it keeps each prompt, for the cause', () => {
+        expect(result.exitCode).toBe(1);
+        expect(listByName('input.prompt.md')).toHaveLength(2);
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when(
+      '[t2] the first attempt writes no json and the retry reads clean',
+      () => {
+        const fake = useBeforeAll(async () => {
+          fs.rmSync(logRoot(), { recursive: true, force: true });
+          const bin = path.join(repo.dir, '.fakebin.retry');
+          fs.mkdirSync(bin, { recursive: true });
+          // a fake of the rhx review boundary: see the .note on asFakeReviewBody
+          const body = (verdictJson: string | null): string =>
+            asFakeReviewBody({
+              captureAt: path.join(repo.dir, '.argv.txt'),
+              reportBody: 'no hits',
+              blockers: 0,
+              nitpicks: 0,
+              verdictJson,
+              withPrompt: true,
+            }).join('\n');
+          fs.writeFileSync(path.join(bin, 'rhx.first'), body(null));
+          fs.writeFileSync(
+            path.join(bin, 'rhx.second'),
+            body(JSON.stringify({ blockers: [], nitpicks: [] })),
+          );
+          fs.chmodSync(path.join(bin, 'rhx.first'), '755');
+          fs.chmodSync(path.join(bin, 'rhx.second'), '755');
+          const countAt = path.join(repo.dir, '.calls.retry');
+          fs.rmSync(countAt, { force: true });
+          fs.writeFileSync(
+            path.join(bin, 'rhx'),
+            [
+              '#!/usr/bin/env bash',
+              `echo x >> ${asShellLiteral(countAt)}`,
+              `if [[ "$(wc -l < ${asShellLiteral(countAt)})" -le 1 ]]; then exec ${asShellLiteral(`${bin}/rhx.first`)} "$@"; fi`,
+              `exec ${asShellLiteral(`${bin}/rhx.second`)} "$@"`,
+            ].join('\n'),
+          );
+          fs.chmodSync(path.join(bin, 'rhx'), '755');
+          return { bin };
+        });
+        const result = useBeforeAll(async () =>
+          runSkill({
+            args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+            cwd: repo.dir,
+            binFirst: fake.bin,
+          }),
+        );
+
+        then('⭐ neither attempt leaves a prompt behind', () => {
+          expect(result.exitCode).toBe(0);
+          expect(listByName('metrics.realized.json')).toHaveLength(2);
+          for (const name of CONTENT) expect(listByName(name)).toEqual([]);
+        });
+      },
+    );
+  });
+
+  given('[case35] a report a prior block left behind', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: {
+          'letter.md': 'Dear reader,',
+          '.pii-review.fake-one.md': 'a stale report that quotes a value',
+        },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] the next scan reads clean', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+        }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it passes and removes the stale report', () => {
+        expect(result.exitCode).toBe(0);
+        expect(
+          fs.existsSync(path.join(repo.dir, '.pii-review.fake-one.md')),
+        ).toBe(false);
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  given('[case36] the skill run from a subdir of the repo', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,', 'sub/notes.md': 'notes' },
+        binaries: {
+          'scan.pdf': Buffer.from([0x25, 0x50, 0x44, 0x46, 0x00, 0xff]),
+        },
+        stage: ['letter.md', 'scan.pdf'],
+      }),
+    );
+
+    when('[t0] the plan is asked from sub/', () => {
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--mode', 'plan'],
+          cwd: path.join(repo.dir, 'sub'),
+        }),
+      );
+
+      then(
+        '⭐ it reads the staged paths from the repo top, binary included',
+        () => {
+          expect(result.exitCode).toBe(0);
+          expect(result.stdout).toContain('files: 2');
+          expect(result.stdout).toContain('unread: 1');
+          expect(result.stdout).toContain('· scan.pdf');
+        },
+      );
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  given('[case37] a review that crashes with a stack trace', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'letter.md': 'Dear reader,' },
+        stage: ['letter.md'],
+      }),
+    );
+
+    when('[t0] rhx review dies before it writes logs', () => {
+      // a fake of the rhx review boundary: see the .note on asFakeReviewBody
+      const fake = useBeforeAll(async () => {
+        const bin = path.join(repo.dir, '.fakebin.crash');
+        fs.mkdirSync(bin, { recursive: true });
+        fs.writeFileSync(
+          path.join(bin, 'rhx'),
+          [
+            '#!/usr/bin/env bash',
+            'echo "Error: Could not resolve authentication method."',
+            ...Array.from(
+              { length: 14 },
+              (_, i) =>
+                `echo "    at frame${i} (/node_modules/.pnpm/sdk/index.js:${i}:1)"`,
+            ),
+            'echo "}"',
+            'echo ""',
+            'echo "Node.js v24.0.0"',
+            'exit 1',
+          ].join('\n'),
+        );
+        fs.chmodSync(path.join(bin, 'rhx'), '755');
+        return { bin };
+      });
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ the evidence shows the error line, not the stack', () => {
+        expect(result.exitCode).toBe(1);
+        expect(result.stdout).toContain(
+          'Error: Could not resolve authentication method.',
+        );
+        expect(result.stdout).not.toContain('    at frame');
+        expect(result.stdout).not.toContain('Node.js v24');
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  given('[case32] a staged set that `rhx review` would cut whole', () => {
+    when('[t0] only a lockfile is staged', () => {
+      const repo = useBeforeAll(async () =>
+        genTempRepo({
+          files: { 'pnpm-lock.yaml': 'lockfileVersion: 9.0' },
+          stage: ['pnpm-lock.yaml'],
+        }),
+      );
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          refusal: 'combined scope resolves to zero files',
+        }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it passes, names the cut path, and asks no brain', () => {
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('files: 0 — no review needed');
+        expect(result.stdout).toContain(
+          'skipped: 1 (lockfile 1) — never sent to the brain',
+        );
+        expect(result.stdout).toContain('· pnpm-lock.yaml');
+        expect(fake.readCalls()).toBe(0);
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when('[t1] only a dir symlink is staged', () => {
+      const repo = useBeforeAll(async () =>
+        genTempRepo({
+          files: { 'real/letter.md': 'Dear reader,' },
+          symlinks: { door: 'real' },
+          stage: ['door'],
+        }),
+      );
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          refusal: 'combined scope resolves to zero files',
+        }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it passes and names the dir it cut', () => {
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('skipped: 1 (dir 1)');
+        expect(result.stdout).toContain('· door');
+        expect(fake.readCalls()).toBe(0);
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when('[t2] a lockfile is staged beside a letter', () => {
+      const repo = useBeforeAll(async () =>
+        genTempRepo({
+          files: {
+            'pnpm-lock.yaml': 'lockfileVersion: 9.0',
+            'letter.md': 'Dear reader,',
+          },
+          stage: ['pnpm-lock.yaml', 'letter.md'],
+        }),
+      );
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+        }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('it reviews the letter and names the lockfile it cut', () => {
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('files: 1');
+        expect(result.stdout).toContain('skipped: 1 (lockfile 1)');
+        expect(fake.readCalls()).toBe(1);
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  /**
+   * .what = a staged rename whose edit adds new content
+   * .why  = `--diff-filter` must carry `R`: under `ACM` git lists a rename
+   *         as neither added nor modified, so the moved file drops out of
+   *         the file list and its new content is never scanned
+   */
+  given('[case38] a staged rename whose edit adds a value', () => {
+    const repo = useBeforeAll(async () => {
+      const made = genTempRepo({
+        files: { 'staged.md': 'line of plain prose\n'.repeat(20) },
+        stage: ['staged.md'],
+      });
+      // a fixture step that git refused fails here, named
+      const git = (args: string[]): string => {
+        const res = spawnSync('git', args, { cwd: made.dir, encoding: UTF8 });
+        if (res.status !== 0)
+          throw new UnexpectedCodePathError(
+            `git ${args[0]} failed in the fixture`,
+            {
+              args,
+              status: res.status,
+              stderr: res.stderr,
+            },
+          );
+        return res.stdout;
+      };
+      git([
+        '-c',
+        'core.hooksPath=/dev/null',
+        'commit',
+        '--quiet',
+        '-m',
+        'seed',
+      ]);
+      git(['mv', 'staged.md', 'moved.md']);
+      fs.appendFileSync(
+        path.join(made.dir, 'moved.md'),
+        '\nnew notes, added in the move\n',
+      );
+      git(['add', 'moved.md']);
+      return { ...made, status: git(['diff', '--cached', '--name-status']) };
+    });
+
+    when('[t0] reviewed', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatCapturesTheArgv({ dir: repo.dir }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('the fixture is a rename, as git reports it', () => {
+        expect(repo.status).toMatch(/^R\d+\tstaged\.md\tmoved\.md/m);
+      });
+
+      then('⭐ the renamed file is in scope, so the brain is asked', () => {
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('files: 1');
+        expect(fake.readArgv()).toContain('--diffs');
+      });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
       });
     });
   });
