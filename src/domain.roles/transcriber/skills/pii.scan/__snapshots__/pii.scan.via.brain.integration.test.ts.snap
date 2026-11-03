@@ -10,7 +10,7 @@ exports[`pii.scan.via.brain.sh given: [case1] a staged file, in plan mode when: 
    ├─ rubric: rule.forbid.pii-in-a-diff.md
    ├─ refs: rule.*.md
    ├─ brains: 1
-   │  └─ anthropic/claude/opus
+   │  └─ anthropic/claude/haiku
    │
    └─ mode: plan — no brain was asked
 "
@@ -62,7 +62,7 @@ why a brain, when pii.scan already ran:
   through a hit the scanner already caught.
 
 brains:
-  one by default: anthropic/claude/opus, an API brain. --brain is
+  one by default: anthropic/claude/haiku, an API brain. --brain is
   repeatable, and several are run in parallel with their results
   UNIONED — any blocker from any reviewer blocks.
 
@@ -779,7 +779,7 @@ exports[`pii.scan.via.brain.sh given: [case36] the skill run from a subdir of th
    ├─ rubric: rule.forbid.pii-in-a-diff.md
    ├─ refs: rule.*.md
    ├─ brains: 1
-   │  └─ anthropic/claude/opus
+   │  └─ anthropic/claude/haiku
    │
    └─ mode: plan — no brain was asked
 "

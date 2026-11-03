@@ -25,13 +25,7 @@ export const ROLE_LICENSER: Role = Role.build({
   },
   hooks: {
     onBrain: {
-      onBoot: [
-        {
-          command:
-            './node_modules/.bin/rhachet roles boot --repo rhight --role licenser',
-          timeout: 'PT60S',
-        },
-      ],
+      onBoot: [],
       onTool: [],
       onStop: [],
     },

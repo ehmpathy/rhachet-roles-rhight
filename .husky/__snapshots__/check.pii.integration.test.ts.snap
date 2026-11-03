@@ -1,0 +1,421 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`check.pii.sh (the pre-commit gate) given: [case1] a staged file that carries a bare SSN when: [t0] the hook runs then: the stdout of the PII block matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 hold up — that carries PII
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ hits: 2 across 1 file(s) (ein 1 · ssn 1)
+   │
+   ├─ staged.md
+   │  ├─ L1      ein     666******
+   │  ├─ L1      ssn     666******
+   │
+   └─ fix each, or add the value to .pii-allow with a reason
+
+      the values above are masked on purpose — this output must
+      not become the leak. open the file at the line to see it.
+
+✋ ConstraintError: the PII scan blocked the commit.
+
+   commit blocked: the staged set carries PII, or the scanner
+   refused an input. the scan output above names which, and the
+   fix that fits it.
+
+   if a detector or the roster caught it: fix the value, or —
+   where it is synthetic or public — add it to .pii-allow with
+   a reason.
+
+   if a brain caught it: the regexes passed, so this is a value
+   with no fixed shape — a name, an address, a derived id — or
+   a set of harmless facts that together name one person. fix
+   the value, or add it to .pii-map as a line of the real value,
+   a tab, and its stand-in; the roster then catches it exactly
+   and offline from now on.
+
+   if the scanner refused an input: the refusal above names the
+   flag or file at fault. fix it, then retry.
+
+   to bypass in a genuine emergency: git commit --no-verify.
+   this is the LAST local gate — after it, the next check is CI
+   on the PR, and by then the value sits in a commit object.
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case2] a staged file with no PII when: [t0] the hook runs then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+stub reviewer: exit 0
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case3] the scanner cannot be found when: [t0] the hook runs against a tree that carries PII then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+💥 MalfunctionError: the PII scan could not run, so the commit is blocked.
+
+   the scanner was not found at:
+     <tmp>
+   restore it from git (git checkout -- that path), or reinstall
+   the role package, then retry.
+
+   a gate that could not run must never look like a gate that
+   passed, so this blocks rather than waves it through.
+   to bypass in a genuine emergency: git commit --no-verify. CI
+   scans the PR, while the branch is still rewritable.
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case4] a real \`git commit\`, through the husky chain when: [t0] the commit is attempted with PII staged then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+── stderr ──
+
+🦅 hold up — that carries PII
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ hits: 2 across 1 file(s) (ein 1 · ssn 1)
+   │
+   ├─ staged.md
+   │  ├─ L1      ein     666******
+   │  ├─ L1      ssn     666******
+   │
+   └─ fix each, or add the value to .pii-allow with a reason
+
+      the values above are masked on purpose — this output must
+      not become the leak. open the file at the line to see it.
+
+✋ ConstraintError: the PII scan blocked the commit.
+
+   commit blocked: the staged set carries PII, or the scanner
+   refused an input. the scan output above names which, and the
+   fix that fits it.
+
+   if a detector or the roster caught it: fix the value, or —
+   where it is synthetic or public — add it to .pii-allow with
+   a reason.
+
+   if a brain caught it: the regexes passed, so this is a value
+   with no fixed shape — a name, an address, a derived id — or
+   a set of harmless facts that together name one person. fix
+   the value, or add it to .pii-map as a line of the real value,
+   a tab, and its stand-in; the roster then catches it exactly
+   and offline from now on.
+
+   if the scanner refused an input: the refusal above names the
+   flag or file at fault. fix it, then retry.
+
+   to bypass in a genuine emergency: git commit --no-verify.
+   this is the LAST local gate — after it, the next check is CI
+   on the PR, and by then the value sits in a commit object.
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case5] a real \`git commit\` of a clean staged set when: [t0] the commit is attempted then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+[<branch> <sha>] test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 staged.md
+
+── stderr ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+stub reviewer: exit 0
+🟡 yalc not available, wont check for yalc references
+🟡 commitlint not available, wont check commit message
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case6] the scanner passes but a reviewer sees PII when: [t0] the hook runs then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+stub reviewer: exit 2
+
+✋ ConstraintError: the PII scan blocked the commit.
+
+   commit blocked: the staged set carries PII, or the scanner
+   refused an input. the scan output above names which, and the
+   fix that fits it.
+
+   if a detector or the roster caught it: fix the value, or —
+   where it is synthetic or public — add it to .pii-allow with
+   a reason.
+
+   if a brain caught it: the regexes passed, so this is a value
+   with no fixed shape — a name, an address, a derived id — or
+   a set of harmless facts that together name one person. fix
+   the value, or add it to .pii-map as a line of the real value,
+   a tab, and its stand-in; the roster then catches it exactly
+   and offline from now on.
+
+   if the scanner refused an input: the refusal above names the
+   flag or file at fault. fix it, then retry.
+
+   to bypass in a genuine emergency: git commit --no-verify.
+   this is the LAST local gate — after it, the next check is CI
+   on the PR, and by then the value sits in a commit object.
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case7] the scanner passes but the reviewer malfunctions when: [t0] the hook runs then: the stdout of the malfunction block matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+stub reviewer: exit 1
+
+💥 MalfunctionError: the PII scan could not run, so the commit is blocked.
+
+   the scan exited 1. this is a malfunction, not a PII hit:
+   the staged set was never fully examined. a gate that could not
+   run must never look like a gate that passed.
+
+   the scan output above names the cause and the fix that fits it.
+   if it names none, the scan died before it could say; the most
+   common cause is a locked keyrack, so unlock it and retry:
+     rhx keyrack unlock --owner ehmpath --env prep
+
+   to bypass in a genuine emergency: git commit --no-verify. CI
+   scans the PR, while the branch is still rewritable.
+
+   to run the free, offline regex pass by hand:
+     bash <tmp> --diffs since-staged --via regex
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case8] the reviewer is absent entirely when: [t0] the hook runs then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: 💥 MalfunctionError: the brain mechanism was not found at: <tmp> — restore it from git (git checkout -- that path), or reinstall the role package, then retry
+
+💥 MalfunctionError: the PII scan could not run, so the commit is blocked.
+
+   the scan exited 1. this is a malfunction, not a PII hit:
+   the staged set was never fully examined. a gate that could not
+   run must never look like a gate that passed.
+
+   the scan output above names the cause and the fix that fits it.
+   if it names none, the scan died before it could say; the most
+   common cause is a locked keyrack, so unlock it and retry:
+     rhx keyrack unlock --owner ehmpath --env prep
+
+   to bypass in a genuine emergency: git commit --no-verify. CI
+   scans the PR, while the branch is still rewritable.
+
+   to run the free, offline regex pass by hand:
+     bash <tmp> --diffs since-staged --via regex
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case9] a local allowlist beside the tracked one when: [t0] the local allowlist cannot be read then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+💥 MalfunctionError: the PII scan could not run, so the commit is blocked.
+
+   the allowlist could not be read:
+     <tmp>
+   fix its permissions, then retry.
+
+── stderr ──
+cat: <tmp> Permission denied
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case9] a local allowlist beside the tracked one when: [t1] the tracked allowlist is absent, the local one is readable then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged minus .pii-allow
+   ├─ files: 1
+   └─ hits: 0
+stub reviewer: exit 0
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case10] a TMPDIR whose path holds a space when: [t0] a local allowlist is merged for a clean staged set then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged minus .pii-allow
+   ├─ files: 1
+   └─ hits: 0
+stub reviewer: exit 0
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case11] a cwd outside any git repo when: [t0] the hook runs then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+💥 MalfunctionError: the PII scan could not run, so the commit is blocked.
+
+   git could not name the repo top (git rev-parse --show-toplevel
+   failed; its error is above). run the commit from inside the repo.
+
+── stderr ──
+fatal: not a git repository (or any of the parent directories): .git
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case12] the hook sourced inside a caller's chain when: [t0] the staged set is unchanged between passes then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case12] the hook sourced inside a caller's chain when: [t1] the staged set changes between passes then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case12] the hook sourced inside a caller's chain when: [t2] the caller holds args of its own then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+args=2:one two
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case12] the hook sourced inside a caller's chain when: [t3] a clean-tree mark set by hand names some other tree then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case13] a staged rename whose edit adds an SSN when: [t0] the hook runs then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 hold up — that carries PII
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ hits: 2 across 1 file(s) (ein 1 · ssn 1)
+   │
+   ├─ moved.md
+   │  ├─ L41     ein     666******
+   │  ├─ L41     ssn     666******
+   │
+   └─ fix each, or add the value to .pii-allow with a reason
+
+      the values above are masked on purpose — this output must
+      not become the leak. open the file at the line to see it.
+
+✋ ConstraintError: the PII scan blocked the commit.
+
+   commit blocked: the staged set carries PII, or the scanner
+   refused an input. the scan output above names which, and the
+   fix that fits it.
+
+   if a detector or the roster caught it: fix the value, or —
+   where it is synthetic or public — add it to .pii-allow with
+   a reason.
+
+   if a brain caught it: the regexes passed, so this is a value
+   with no fixed shape — a name, an address, a derived id — or
+   a set of harmless facts that together name one person. fix
+   the value, or add it to .pii-map as a line of the real value,
+   a tab, and its stand-in; the roster then catches it exactly
+   and offline from now on.
+
+   if the scanner refused an input: the refusal above names the
+   flag or file at fault. fix it, then retry.
+
+   to bypass in a genuine emergency: git commit --no-verify.
+   this is the LAST local gate — after it, the next check is CI
+   on the PR, and by then the value sits in a commit object.
+"
+`;
+
+exports[`check.pii.sh (the pre-commit gate) given: [case14] the route file at blocker/5.briefs.short.md, through every layer when: [t0] the hook runs over the staged route file then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 2
+   └─ hits: 0
+
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 2
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ anthropic/claude/haiku — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;

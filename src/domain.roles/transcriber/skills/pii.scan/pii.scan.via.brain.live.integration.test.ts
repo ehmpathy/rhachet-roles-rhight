@@ -5,6 +5,8 @@ import * as os from 'os';
 import * as path from 'path';
 import { given, then, useBeforeAll, when } from 'test-fns';
 
+import { RUN_BRAIN_TEST } from '@src/.test/RUN_BRAIN_TEST';
+
 /**
  * .what = a LIVE brain call, so the `rhx review` invocation is proven
  * .why  = the sibling harness suite stubs the reviewer, so it proves the
@@ -247,7 +249,13 @@ const genTempRepo = (input: {
   return { dir };
 };
 
-describe('pii.scan.via.brain.sh — LIVE', () => {
+// ⚠️ targeted only, by a NAMED FLAG: `BRAIN_LIVE=true`. a human-authorized
+//    gate (commander rule, bulletin live-brain-tests-three-tiers), not a
+//    silent skip: every live call bills the api, so ci never spends it.
+//    the stubbed sibling suite proves the gate's behavior on every push;
+//    this file proves the real `rhx review` invocation, on demand, and is
+//    run before a change to the gate's argv or brain lands
+given.runIf(RUN_BRAIN_TEST)('pii.scan.via.brain.sh — LIVE', () => {
   // ⚠️ a locked keyrack is a BLOCKER, never a skip. a suite that quietly
   //    skips its only live case reports green while the one thing it
   //    exists to prove goes untested — which is the same failhide shape

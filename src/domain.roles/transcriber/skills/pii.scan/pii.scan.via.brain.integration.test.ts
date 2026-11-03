@@ -27,7 +27,8 @@ import { given, then, useBeforeAll, when } from 'test-fns';
  *         but a harness proven only against its own error paths is a
  *         harness nobody has watched succeed, so the live invocation is
  *         clamped separately, in
- *         pii.scan.via.brain.live.integration.test.ts.
+ *         pii.scan.via.brain.live.integration.test.ts — targeted by
+ *         `BRAIN_LIVE=true`, never on a ci push.
  */
 
 const scriptPath = path.join(__dirname, 'pii.scan.via.brain.sh');
@@ -231,13 +232,15 @@ const genTempRepo = (input: {
  *         unparseable and non-array cases). `stdoutAhead` echoes lines
  *         before the summary, the way `rhx review` echoes staged paths.
  *
- * .note = `rule.forbid.integration.mocks` allows a mock where the
- *         circumstance is unavoidable and the exception is documented
- *         where it is declared. this is that case, and it is the same
- *         one the file header already states: a brain call is slow,
- *         costs money, and answers differently each run. the REAL
- *         invocation stays clamped in
- *         pii.scan.via.brain.live.integration.test.ts.
+ * .mock = the `rhx review` boundary — the brain call, behind a fake
+ *         `rhx` on PATH that writes the reviewer json a real review writes
+ * .why  = a brain call bills the api, takes minutes, and answers
+ *         differently each run. ci runs this suite on every push, and a
+ *         safety guard's real brain belongs at commit, not in ci (bulletin
+ *         live-brain-tests-three-tiers)
+ * .real = the gate itself, at every commit, on the real brain; and
+ *         pii.scan.via.brain.live.integration.test.ts, targeted by
+ *         `BRAIN_LIVE=true`, before a change to the argv or brain lands
  *
  * ⚠️ the fake is PREPENDED to the real PATH, never substituted for it.
  *    a stripped PATH drops the interpreter and every coreutil the skill
@@ -371,7 +374,10 @@ const asFakeReviewBody = (input: {
  *         `--diffs`, `--brain`, `--focus`, `--goal`, `--output`. each is
  *         load-bearing, and each is invisible unless the fake keeps it.
  *
- * .note = a fake of the rhx review boundary: see the .note on asFakeReviewBody
+ * .mock = the `rhx review` boundary, via asFakeReviewBody
+ * .why  = a real brain call bills the api, is slow, and answers
+ *         differently each run
+ * .real = the gate at commit; the live suite under `BRAIN_LIVE=true`
  */
 const genRhxThatCapturesTheArgv = (input: {
   dir: string;
@@ -412,10 +418,10 @@ const genRhxThatCapturesTheArgv = (input: {
  *    a fake that echoed the body to stdout would clamp a copy-out the
  *    skill no longer performs.
  *
- * .note = same `rule.forbid.integration.mocks` exception as
- *         asFakeReviewBody: a real brain call is slow, paid, and answers
- *         differently each run. the REAL invocation stays clamped in
- *         pii.scan.via.brain.live.integration.test.ts.
+ * .mock = the `rhx review` boundary, via asFakeReviewBody
+ * .why  = a real brain call bills the api, is slow, and answers
+ *         differently each run
+ * .real = the gate at commit; the live suite under `BRAIN_LIVE=true`
  */
 const genRhxThatAnswers = (input: {
   dir: string;
@@ -478,7 +484,10 @@ const genRhxThatAnswers = (input: {
  *
  * .note = each brain gets its own fake body at `.fakebin/rhx.<slug>`, and
  *         `rhx` dispatches on the `--brain` value.
- * .note = a fake of the rhx review boundary: see the .note on asFakeReviewBody
+ * .mock = the `rhx review` boundary, via asFakeReviewBody
+ * .why  = a real brain call bills the api, is slow, and answers
+ *         differently each run
+ * .real = the gate at commit; the live suite under `BRAIN_LIVE=true`
  */
 const genRhxThatAnswersPerBrain = (input: {
   dir: string;
@@ -543,7 +552,10 @@ const genRhxThatAnswersPerBrain = (input: {
  *    advertises none; the `review:` line is NOT usable, because a skip
  *    writes that file and its presence proves naught.
  *
- * .note = a fake of the rhx review boundary: see the .note on asFakeReviewBody
+ * .mock = the `rhx review` boundary, via asFakeReviewBody
+ * .why  = a real brain call bills the api, is slow, and answers
+ *         differently each run
+ * .real = the gate at commit; the live suite under `BRAIN_LIVE=true`
  */
 const genRhxThatSkips = (input: { dir: string }): { bin: string } => {
   const bin = path.join(input.dir, '.fakebin');
@@ -595,7 +607,14 @@ describe('pii.scan.via.brain.sh', () => {
         // times the latency and spend at EVERY commit, and `--brain` is
         // repeatable — so the union is one flag away when a tree wants it
         expect(result.stdout).toContain('brains');
-        expect(result.stdout).toContain('anthropic/claude/opus');
+        expect(result.stdout).toContain('anthropic/claude/haiku');
+      });
+
+      then('the default reviewer is haiku, never a pricier model', () => {
+        // the gate's spend bound (under $0.50 per run) holds only at
+        // haiku's price: opus estimated $0.89 for one 118k-token attempt
+        expect(result.stdout).not.toContain('anthropic/claude/opus');
+        expect(result.stdout).not.toContain('anthropic/claude/sonnet');
       });
 
       then('it names the briefs it WOULD hand the reviewer', () => {

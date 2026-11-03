@@ -50,7 +50,7 @@
 # usage:
 #   pii.scan.via.brain.sh --diffs since-staged
 #   pii.scan.via.brain.sh --diffs since-main
-#   pii.scan.via.brain.sh --diffs since-staged --brain 'anthropic/claude/haiku'
+#   pii.scan.via.brain.sh --diffs since-staged --brain 'openrouter/deepseek/flash'
 #   pii.scan.via.brain.sh --diffs since-staged --mode plan
 #
 # options:
@@ -110,17 +110,24 @@ if ! compgen -G "$REFS" >/dev/null; then
   REFS="$SCRIPT_DIR/rubric/rule.*.md"
 fi
 
-# one by default.
+# one by default: haiku, the cheapest brain the anthropic catalog holds.
 #
-# ⚠️ `anthropic/claude/opus` is an ALIAS THAT MOVES — upstream pins it to
-#    the newest opus, so this gate auto-upgrades on their release with no
-#    edit here. that is the intent: the strongest available reviewer, on
-#    the one check whose miss is permanent.
+# ⚠️ the spend is BOUNDED BY CONSTRUCTION, under $0.50 per run:
+#    `rhx review` refuses a prompt past 75% of the 200k window, so one
+#    attempt reads at most 150k tokens. at haiku's $1/MTok in and $5/MTok
+#    out that is ~$0.15 in plus cents out, and the gate makes at most
+#    two attempts. opus, at five times the price, broke the bound on a
+#    118k-token diff ($0.89 estimated for one attempt).
+#
+#    a live-brain call is a safety-guard spend, and this gate is one: the
+#    real brain runs at commit, where a miss is permanent. tests never
+#    spend it; ci runs the stubbed suite (bulletin
+#    live-brain-tests-three-tiers).
 #
 #    it is an API brain (`○` in `rhx review --help`), never a repl brain
 #    (`↻`). a repl brain re-introduces the cwd jail this skill moved off.
 DEFAULT_BRAINS=(
-  "anthropic/claude/opus"
+  "anthropic/claude/haiku"
 )
 
 WORKDIR=""
@@ -167,7 +174,7 @@ why a brain, when pii.scan already ran:
   through a hit the scanner already caught.
 
 brains:
-  one by default: anthropic/claude/opus, an API brain. --brain is
+  one by default: anthropic/claude/haiku, an API brain. --brain is
   repeatable, and several are run in parallel with their results
   UNIONED — any blocker from any reviewer blocks.
 
@@ -467,7 +474,7 @@ print_binaries_branch() {
 }
 
 # the keyrack key a brain's provider reads, e.g.
-#   anthropic/claude/opus      → ANTHROPIC_API_KEY
+#   anthropic/claude/haiku     → ANTHROPIC_API_KEY
 #   openrouter/deepseek/flash  → OPENROUTER_API_KEY
 asBrainKeyName() {
   local provider="${1%%/*}"

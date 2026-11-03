@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`the PII gate guarantee (commit boundary) given: [case1] PII staged, husky fully installed when: [t0] a normal commit is attempted then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+── stderr ──
+
+🦅 hold up — that carries PII
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ hits: 2 across 1 file(s) (ein 1 · ssn 1)
+   │
+   ├─ leak.md
+   │  ├─ L1      ein     666******
+   │  ├─ L1      ssn     666******
+   │
+   └─ fix each, or add the value to .pii-allow with a reason
+
+      the values above are masked on purpose — this output must
+      not become the leak. open the file at the line to see it.
+
+✋ ConstraintError: the PII scan blocked the commit.
+
+   commit blocked: the staged set carries PII, or the scanner
+   refused an input. the scan output above names which, and the
+   fix that fits it.
+
+   if a detector or the roster caught it: fix the value, or —
+   where it is synthetic or public — add it to .pii-allow with
+   a reason.
+
+   if a brain caught it: the regexes passed, so this is a value
+   with no fixed shape — a name, an address, a derived id — or
+   a set of harmless facts that together name one person. fix
+   the value, or add it to .pii-map as a line of the real value,
+   a tab, and its stand-in; the roster then catches it exactly
+   and offline from now on.
+
+   if the scanner refused an input: the refusal above names the
+   flag or file at fault. fix it, then retry.
+
+   to bypass in a genuine emergency: git commit --no-verify.
+   this is the LAST local gate — after it, the next check is CI
+   on the PR, and by then the value sits in a commit object.
+"
+`;
+
+exports[`the PII gate guarantee (commit boundary) given: [case2] PII staged, husky runtime absent (a fresh clone) when: [t0] a normal commit is attempted then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+
+── stderr ──
+
+🦅 hold up — that carries PII
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ hits: 2 across 1 file(s) (ein 1 · ssn 1)
+   │
+   ├─ leak.md
+   │  ├─ L1      ein     666******
+   │  ├─ L1      ssn     666******
+   │
+   └─ fix each, or add the value to .pii-allow with a reason
+
+      the values above are masked on purpose — this output must
+      not become the leak. open the file at the line to see it.
+
+✋ ConstraintError: the PII scan blocked the commit.
+
+   commit blocked: the staged set carries PII, or the scanner
+   refused an input. the scan output above names which, and the
+   fix that fits it.
+
+   if a detector or the roster caught it: fix the value, or —
+   where it is synthetic or public — add it to .pii-allow with
+   a reason.
+
+   if a brain caught it: the regexes passed, so this is a value
+   with no fixed shape — a name, an address, a derived id — or
+   a set of harmless facts that together name one person. fix
+   the value, or add it to .pii-map as a line of the real value,
+   a tab, and its stand-in; the roster then catches it exactly
+   and offline from now on.
+
+   if the scanner refused an input: the refusal above names the
+   flag or file at fault. fix it, then retry.
+
+   to bypass in a genuine emergency: git commit --no-verify.
+   this is the LAST local gate — after it, the next check is CI
+   on the PR, and by then the value sits in a commit object.
+"
+`;
+
+exports[`the PII gate guarantee (commit boundary) given: [case3] a clean staged set, husky runtime absent when: [t0] a normal commit is attempted then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+[<branch> <sha>] test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 note.md
+
+── stderr ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+stub reviewer: exit 0
+🟡 husky not available, the rest of the chain is skipped
+🟡 husky not available, skipping hook
+"
+`;
+
+exports[`the PII gate guarantee (commit boundary) given: [case4] a clean staged set, husky fully installed when: [t0] a normal commit is attempted then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+[<branch> <sha>] test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 note.md
+
+── stderr ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   └─ hits: 0
+stub reviewer: exit 0
+🟡 yalc not available, wont check for yalc references
+🟡 commitlint not available, wont check commit message
+"
+`;
+
+exports[`the PII gate guarantee (commit boundary) given: [case5] PII forced past the gate with --no-verify when: [t0] the commit is forced then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+[<branch> <sha>] test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 leak.md
+"
+`;
+
+exports[`the PII gate guarantee (commit boundary) given: [case6] a binary that carries PII, on the default path when: [t0] a normal commit is attempted then: the output a committer reads matches its snapshot 1`] = `
+"── stdout ──
+[<branch> <sha>] test
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 render.png
+
+── stderr ──
+
+🦅 clear skies,
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 0
+   ├─ skipped: 1 (binary 1) — not judged, only never opened
+   │  └─ ⚠️ a binary carries no text for a regex to read. these
+   │     1 file(s) were NOT scanned — open them by hand,
+   │     or re-run with --via brain, which can see a document.
+   └─ hits: 0
+stub reviewer: exit 0
+🟡 yalc not available, wont check for yalc references
+🟡 commitlint not available, wont check commit message
+"
+`;
