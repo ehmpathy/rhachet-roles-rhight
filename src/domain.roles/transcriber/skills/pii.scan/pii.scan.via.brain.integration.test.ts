@@ -144,6 +144,8 @@ const asFakeReviewBody = (input: {
   nitpicks: number;
   /** omit the `logs:` line, to impersonate a skipped review */
   withLogs?: boolean;
+  /** lines echoed ahead of the summary, as a real review echoes the paths it read */
+  stdoutBefore?: string[];
 }): string[] => [
   '#!/usr/bin/env bash',
   `printf '%s\\n' "$@" > "${input.captureAt}"`,
@@ -158,6 +160,7 @@ const asFakeReviewBody = (input: {
   `  printf '%s\\n' "${input.reportBody}" > "$out"`,
   'fi',
   'echo "🔍 review"',
+  ...(input.stdoutBefore ?? []).map((line) => `echo "${line}"`),
   ...(input.withLogs === false
     ? []
     : ['echo "   ├─ logs: .log/bhrain/review/x"']),
@@ -229,6 +232,7 @@ const genRhxThatAnswers = (input: {
   blockers: number;
   nitpicks: number;
   marker: string;
+  stdoutBefore?: string[];
 }): { bin: string } => {
   const bin = path.join(input.dir, '.fakebin');
   fs.mkdirSync(bin, { recursive: true });
@@ -240,6 +244,7 @@ const genRhxThatAnswers = (input: {
       reportBody: input.marker,
       blockers: input.blockers,
       nitpicks: input.nitpicks,
+      stdoutBefore: input.stdoutBefore,
     }).join('\n'),
   );
   fs.chmodSync(path.join(bin, 'rhx'), '755');
@@ -1592,6 +1597,56 @@ describe('pii.scan.via.brain.sh', () => {
           expect(fake.readArgv()).toContain('{a.md,x.\\[rule\\].md}');
         },
       );
+    });
+  });
+  /**
+   * .what = a reviewed PATH that holds the word "blocker" and a digit
+   *
+   * .why  = the tally read the first number near the word "blocker"
+   *         anywhere in stdout. a real review echoes the paths it read,
+   *         so a staged `blocker/5.notes.md` read as "5 blockers" and a
+   *         clean review blocked the commit. observed on a route halt
+   *         record, `.route/<route>/blocker/5.briefs.short.md`
+   */
+  given('[case21] a staged path that names "blocker" beside a digit', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'blocker/5.notes.md': 'the halt was resolved.' },
+        stage: ['blocker/5.notes.md'],
+      }),
+    );
+
+    when('[t0] reviewed under a fake that echoes the path, then 0 / 0', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no issues found.',
+          stdoutBefore: ['   ├─ paths: blocker/5.notes.md'],
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('it passes at exit 0', () => {
+        if (result.exitCode !== 0) {
+          console.log('PROOF: exitCode:', result.exitCode);
+          console.log('PROOF: stdout:', result.stdout);
+        }
+        expect(result.exitCode).toBe(0);
+      });
+
+      then('⭐ it reads the summary count, not the digit in the path', () => {
+        expect(result.stdout).toContain('clear skies');
+        expect(result.stdout).not.toContain('5 blocker(s)');
+      });
     });
   });
 });

@@ -356,6 +356,22 @@ brain_slug() {
 }
 
 ######################################################################
+# read one count (blockers | nitpicks) off a review's stdout; empty if
+# none is readable. the canonical summary line wins; the tolerant form
+# is the fallback, with path chars barred from its gap
+######################################################################
+as_review_count() {
+  local label="$1" raw="$2" found
+  found="$(grep -oiE "^[[:space:]│├└─]*[0-9]+ ${label%s}s?[[:space:]]*\$" "$raw" 2>/dev/null \
+    | grep -oE '[0-9]+' | head -1 || true)"
+  if [[ -z "$found" ]]; then
+    found="$(grep -oiE "([0-9]+)[^0-9a-z/._-]{0,6}${label%s}s?|${label%s}s?[^0-9a-z/._-]{0,6}([0-9]+)" "$raw" 2>/dev/null \
+      | grep -oE '[0-9]+' | head -1 || true)"
+  fi
+  printf '%s' "$found"
+}
+
+######################################################################
 # run one reviewer. writes its report, and a one-line verdict of the
 # form STATUS<TAB>BLOCKERS<TAB>NITPICKS
 #
@@ -464,10 +480,16 @@ run_one_reviewer() {
     # ⛔ the gap admits punctuation and space ONLY. it can never bridge a
     #    word, so "no blockers" still fails to parse, and "blockers" in a
     #    sentence cannot borrow a digit from a neighboring clause.
-    blockers="$(grep -oiE '([0-9]+)[^0-9a-z]{0,6}blockers?|blockers?[^0-9a-z]{0,6}([0-9]+)' "$raw" 2>/dev/null \
-      | grep -oE '[0-9]+' | head -1 || true)"
-    nitpicks="$(grep -oiE '([0-9]+)[^0-9a-z]{0,6}nitpicks?|nitpicks?[^0-9a-z]{0,6}([0-9]+)' "$raw" 2>/dev/null \
-      | grep -oE '[0-9]+' | head -1 || true)"
+    #
+    # ⛔ a review ECHOES THE PATHS IT READ, so a path can hold the label
+    #    beside a digit: `blocker/5.notes.md` read as "5 blockers" and a
+    #    clean review blocked the commit. so the canonical summary line —
+    #    `├─ N blockers`, alone on its line — is read FIRST. the tolerant
+    #    form stays as the fallback, and its gap excludes the path chars
+    #    `/ . _ -`, so a path cannot donate a digit there either.
+    #    clamped by [case21].
+    blockers="$(as_review_count blockers "$raw")"
+    nitpicks="$(as_review_count nitpicks "$raw")"
 
     [[ -n "$blockers" && -n "$nitpicks" ]] && break
   done
