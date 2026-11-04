@@ -222,7 +222,7 @@ main() {
 
   # ── mechanism 2: brain, on an already-clean set ────────────────────
   if [[ ! -f "$brainSkill" ]]; then
-    print_blocked "the brain mechanism was not found at: $brainSkill"
+    print_blocked "💥 MalfunctionError: the brain mechanism was not found at: $brainSkill — restore it from git (git checkout -- that path), or reinstall the role package, then retry"
     exit 1
   fi
 

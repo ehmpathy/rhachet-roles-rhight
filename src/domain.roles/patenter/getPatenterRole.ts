@@ -25,13 +25,7 @@ export const ROLE_PATENTER: Role = Role.build({
   },
   hooks: {
     onBrain: {
-      onBoot: [
-        {
-          command:
-            './node_modules/.bin/rhachet roles boot --repo rhight --role patenter',
-          timeout: 'PT60S',
-        },
-      ],
+      onBoot: [],
       onTool: [],
       onStop: [],
     },

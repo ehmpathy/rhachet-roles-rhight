@@ -50,7 +50,7 @@
 # usage:
 #   pii.scan.via.brain.sh --diffs since-staged
 #   pii.scan.via.brain.sh --diffs since-main
-#   pii.scan.via.brain.sh --diffs since-staged --brain 'anthropic/claude/haiku'
+#   pii.scan.via.brain.sh --diffs since-staged --brain 'openrouter/deepseek/flash'
 #   pii.scan.via.brain.sh --diffs since-staged --mode plan
 #
 # options:
@@ -58,7 +58,7 @@
 #   --paths-with G  accepted and dropped; the brain pass reviews a diff
 #   --brain SLUG    a brain to ask; repeatable. defaults to one
 #   --rubric PATH   the rules that focus the reviewer
-#   --mode          plan | apply (default apply)
+#   --mode MODE     plan | apply (default apply)
 #   --help, -h      show this help
 #
 # ⚠️ --diffs is `rhx review`'s flag, with `rhx review`'s value set. one
@@ -76,6 +76,11 @@
 #     `0 blockers / 0 nitpicks` as a clean pass. the one discriminator
 #     is the `logs:` line: a skip writes no logs, so it advertises none.
 #     this skill demands that line, so a skip can never read as a pass
+#   - the verdict is read from the reviewer json (`<logs>/output.response.json`:
+#     `.blockers | length`, `.nitpicks | length`), never from stdout. a
+#     staged path like `blocker/5.x.md` is echoed to stdout and must
+#     never read as a count. an absent, unparseable, or non-array json
+#     is a malfunction, with its cause named
 #   - an empty scope is a clean pass, not a malfunction
 #   - exit 0 clean, exit 1 malfunction, exit 2 hits (constraint)
 ######################################################################
@@ -105,26 +110,41 @@ if ! compgen -G "$REFS" >/dev/null; then
   REFS="$SCRIPT_DIR/rubric/rule.*.md"
 fi
 
-# one by default.
+# one by default: haiku, the cheapest brain the anthropic catalog holds.
 #
-# ⚠️ `anthropic/claude/opus` is an ALIAS THAT MOVES — upstream pins it to
-#    the newest opus, so this gate auto-upgrades on their release with no
-#    edit here. that is the intent: the strongest available reviewer, on
-#    the one check whose miss is permanent.
+# ⚠️ the spend is BOUNDED BY CONSTRUCTION, under $0.50 per run:
+#    `rhx review` refuses a prompt past 75% of the 200k window, so one
+#    attempt reads at most 150k tokens. at haiku's $1/MTok in and $5/MTok
+#    out that is ~$0.15 in plus cents out, and the gate makes at most
+#    two attempts. opus, at five times the price, broke the bound on a
+#    118k-token diff ($0.89 estimated for one attempt).
+#
+#    a live-brain call is a safety-guard spend, and this gate is one: the
+#    real brain runs at commit, where a miss is permanent. tests never
+#    spend it; ci runs the stubbed suite (bulletin
+#    live-brain-tests-three-tiers).
 #
 #    it is an API brain (`○` in `rhx review --help`), never a repl brain
 #    (`↻`). a repl brain re-introduces the cwd jail this skill moved off.
 DEFAULT_BRAINS=(
-  "anthropic/claude/opus"
+  "anthropic/claude/haiku"
 )
 
 WORKDIR=""
+######################################################################
+# .what = remove the temp workdir on exit
+# .why  = returns 0 so a cleanup failure never masks the real exit code
+######################################################################
 cleanup() {
   [[ -n "$WORKDIR" ]] && rm -rf "$WORKDIR"
   return 0
 }
 trap cleanup EXIT
 
+######################################################################
+# .what = print the --help text
+# .why  = flags, defaults, and exit codes, on demand
+######################################################################
 print_usage() {
   cat <<'EOF'
 🧠 pii.scan --via brain — ask a brain whether a diff carries PII
@@ -137,7 +157,7 @@ options:
   --diffs WHICH   since-staged | since-commit | since-main
   --brain SLUG    a brain to ask; repeatable
   --rubric PATH   the rules to grade against
-  --mode          plan | apply (default apply)
+  --mode MODE     plan | apply (default apply)
   --help, -h      show this help
 
 ⚠️ --diffs is `rhx review`'s flag, verbatim. one word per concept.
@@ -154,7 +174,7 @@ why a brain, when pii.scan already ran:
   through a hit the scanner already caught.
 
 brains:
-  one by default: anthropic/claude/opus, an API brain. --brain is
+  one by default: anthropic/claude/haiku, an API brain. --brain is
   repeatable, and several are run in parallel with their results
   UNIONED — any blocker from any reviewer blocks.
 
@@ -169,6 +189,45 @@ exit:
 EOF
 }
 
+######################################################################
+# .what = fail fast when a flag that takes a value has none
+# .why  = `shift 2` past the last argument dies under `set -e` with no
+#         message, and a next flag read as the value hides the error
+######################################################################
+need_value() {
+  local flag="$1"
+  local value="${2-}"
+  if [[ -z "$value" || "$value" == -* ]]; then
+    print_blocked "✋ ConstraintError: $flag needs a value. run --help for the values it takes"
+    exit 2
+  fi
+}
+
+######################################################################
+# .what = close a quoted tree whose last lines a filter removed
+# .why  = the tail drops the reviewer's `summary` header and counts, so
+#         its last surviving child would end on an open `├─`. trailing
+#         spacer lines go, and the last child closes on `└─`
+######################################################################
+as_tree_tail_closed() {
+  awk '
+    { lines[NR] = $0 }
+    END {
+      last = NR
+      while (last > 0 && lines[last] ~ /^[[:space:]│]*$/) last--
+      for (i = 1; i <= last; i++) {
+        line = lines[i]
+        if (i == last) sub(/├─/, "└─", line)
+        print line
+      }
+    }
+  '
+}
+
+######################################################################
+# .what = read the flags into DIFFS, BRAINS, RUBRIC, MODE
+# .why  = the guard ahead of validate(); unknown flags block at exit 2
+######################################################################
 parse_args() {
   while [[ $# -gt 0 ]]; do
     case $1 in
@@ -177,14 +236,17 @@ parse_args() {
         exit 0
         ;;
       --diffs)
+        need_value "$1" "${2-}"
         DIFFS="${2:-}"
         shift 2
         ;;
       --brain)
+        need_value "$1" "${2-}"
         BRAINS+=("${2:-}")
         shift 2
         ;;
       --rubric)
+        need_value "$1" "${2-}"
         RUBRIC="${2:-}"
         shift 2
         ;;
@@ -198,6 +260,7 @@ parse_args() {
         shift
         ;;
       --mode)
+        need_value "$1" "${2-}"
         MODE="${2:-}"
         shift 2
         ;;
@@ -206,11 +269,11 @@ parse_args() {
         shift 2
         ;;
       -*)
-        print_blocked "unknown option: $1"
+        print_blocked "✋ ConstraintError: unknown option: $1. run --help for the flags"
         exit 2
         ;;
       *)
-        print_blocked "unexpected argument: $1"
+        print_blocked "✋ ConstraintError: unexpected argument: $1. run --help for the flags"
         exit 2
         ;;
     esac
@@ -231,33 +294,57 @@ parse_args() {
 
 validate() {
   if ! git rev-parse --is-inside-work-tree &>/dev/null; then
-    print_blocked "not inside a git work tree"
+    print_blocked "✋ ConstraintError: not inside a git work tree. run from inside the repo"
     exit 2
   fi
   if [[ -z "$DIFFS" ]]; then
-    print_blocked "needs a scope: --diffs since-staged|since-commit|since-main"
+    print_blocked "✋ ConstraintError: needs a scope: --diffs since-staged|since-commit|since-main"
     exit 2
   fi
   case "$DIFFS" in
     since-staged|since-commit|since-main) ;;
     *)
-      print_blocked "--diffs must be since-staged, since-commit, or since-main"
+      print_blocked "✋ ConstraintError: --diffs must be since-staged, since-commit, or since-main"
       exit 2
       ;;
   esac
   if [[ ! -f "$RUBRIC" ]]; then
     # ⚠️ an absent rubric would make every reviewer grade against
     #    no rules and return a clean 0/0 — a silent pass at the gate
-    print_blocked "rubric not found: $RUBRIC"
+    print_blocked "💥 MalfunctionError: rubric not found; pass --rubric PATH, or reinstall the role package so its rubric ships with it. looked at: $RUBRIC"
     exit 1
   fi
+  # the staged paths, the log dir, and the report are repo-relative, so
+  # the skill runs from the repo top. a caller's relative --rubric is
+  # made absolute first, so the move never loses it
+  RUBRIC="$(cd "$(dirname -- "$RUBRIC")" && pwd)/$(basename -- "$RUBRIC")"
+  [[ "$REFS" == /* ]] || REFS="$PWD/$REFS"
+  cd "$(git rev-parse --show-toplevel)" || {
+    print_blocked "💥 MalfunctionError: could not enter the repo top. run from inside the repo"
+    exit 1
+  }
+
   case "$MODE" in
     plan|apply) ;;
     *)
-      print_blocked "--mode must be plan or apply"
+      print_blocked "✋ ConstraintError: --mode must be plan or apply"
       exit 2
       ;;
   esac
+  if [[ "$MODE" == "apply" ]] && ! command -v jq >/dev/null 2>&1; then
+    # ⚠️ the verdict is read from the reviewer json, and jq reads it. with
+    #    no jq every read would fail as "unparseable" — a cause that sends
+    #    a human to hunt a corrupt file that does not exist
+    print_blocked "💥 MalfunctionError: jq not found: the verdict is read from the reviewer json with jq. install jq, then retry"
+    exit 1
+  fi
+
+  # with no `rhx` the review exits 127 and prints no logs line, which reads
+  # as a locked keyrack. name the absent tool instead, before any ask
+  if [[ "$MODE" == "apply" ]] && ! command -v rhx >/dev/null 2>&1; then
+    print_blocked "💥 MalfunctionError: rhx not found: the brain pass asks through rhx review. run pnpm install so node_modules/.bin holds rhx, or put rhx on PATH, then retry"
+    exit 1
+  fi
 }
 
 diff_base() {
@@ -271,9 +358,9 @@ diff_base() {
 
 collect_files() {
   case "$DIFFS" in
-    since-staged) git diff --cached --name-only --diff-filter=ACM ;;
-    since-commit) git diff --name-only --diff-filter=ACM HEAD ;;
-    since-main)   git diff --name-only --diff-filter=ACM "$(diff_base)...HEAD" ;;
+    since-staged) git diff --cached --name-only --diff-filter=ACMR ;;
+    since-commit) git diff --name-only --diff-filter=ACMR HEAD ;;
+    since-main)   git diff --name-only --diff-filter=ACMR "$(diff_base)...HEAD" ;;
   esac
 }
 
@@ -312,6 +399,63 @@ scope_label() {
 #
 # .note = one function for three call sites on purpose. three copies of
 #         this is three chances for them to disagree about one number.
+# .what = the reason `rhx review` drops this path from its scope, or naught
+# .why  = a lockfile is cut by --paths-wout, and a dir (a staged dir
+#         symlink, a submodule) is never a target file upstream. a set
+#         made only of such paths is clean, never an empty-scope refusal
+as_skip_kind_of_review() {
+  local f="$1" glob
+  [[ -d "$f" ]] && { printf 'dir'; return 0; }
+  for glob in "${LOCKFILE_GLOBS[@]}"; do
+    [[ "$(basename -- "$f")" == "${glob##*/}" ]] && { printf 'lockfile'; return 0; }
+  done
+  return 0
+}
+
+# .what = name each path the brain is never handed, and why
+# .why  = a counter makes blindness visible. the label and the tally match
+#         the regex pass's `skipped: N (lockfile N)`, so one concept reads
+#         one way across both passes
+print_skipped_branch() {
+  local n="$1" listFile="$2" tally
+  [[ "$n" -gt 0 ]] || return 0
+  tally="$(cut -f1 "$listFile" | sort | uniq -c | sort -rn \
+    | awk '{ printf "%s%s %s", (NR > 1 ? " · " : ""), $2, $1 }')"
+  print_tree_branch "skipped" "$n ($tally) — never sent to the brain"
+  cut -f2 "$listFile" | while IFS= read -r f; do
+    echo "   │  · $f"
+  done
+  echo "   │"
+}
+
+# .what = remove every artifact but the figures from each log dir a review wrote
+# .why  = once read, the prompt is a copy of what this gate contains.
+#         only a dir at upstream's own known shape is touched; the figures
+#         stay for upstream's spend meter
+del_content_of_review_logs() {
+  local dir file kept name figure
+  for dir in "$@"; do
+    [[ "$dir" =~ ^\.log/bhrain/review/[^/]+$ && -d "$dir" ]] || continue
+    for file in "$dir"/* "$dir"/.[!.]*; do
+      [[ -f "$file" ]] || continue
+      name="$(basename -- "$file")"
+      kept=""
+      for figure in "${ARTIFACTS_OF_FIGURES[@]}"; do
+        [[ "$name" == "$figure" ]] && kept=1
+      done
+      [[ -n "$kept" ]] || rm -f -- "$file"
+    done
+  done
+}
+
+# .what = the log dir a review names, off its last `├─ logs: ` line
+# .why  = the json path is read off stdout, so an echoed path ahead of the
+#         summary must never outrank the summary's own line. one decode, so
+#         the read and the prune can never disagree on which dir it is
+as_logs_dir_of_review() {
+  grep -F "$ANCHOR_OF_LOGS_LINE" "$1" 2>/dev/null | tail -n 1 | sed -E "s/.*$ANCHOR_OF_LOGS_LINE//; s/[[:space:]]+\$//" || true
+}
+
 print_binaries_branch() {
   local n="$1" listFile="${2:-}" f
   [[ "$n" -gt 0 ]] || return 0
@@ -329,9 +473,161 @@ print_binaries_branch() {
   fi
 }
 
+# the keyrack key a brain's provider reads, e.g.
+#   anthropic/claude/haiku     → ANTHROPIC_API_KEY
+#   openrouter/deepseek/flash  → OPENROUTER_API_KEY
+asBrainKeyName() {
+  local provider="${1%%/*}"
+  printf '%s_API_KEY' "$(printf '%s' "$provider" | tr '[:lower:]-' '[:upper:]_')"
+}
+
 # a reviewer's slug, flattened for use in a filename
 brain_slug() {
   printf '%s' "$1" | tr '/' '-'
+}
+
+# the upstream contract this gate reads, named once. each literal is
+# pinned against the installed rhachet-roles-bhrain by the integration
+# suite ([case25]), so an upstream rename fails a test, not a commit.
+ANCHOR_OF_LOGS_LINE='├─ logs: '
+NAME_OF_VERDICT_JSON='output.response.json'
+REFUSAL_OF_ZERO_SCOPE='combined scope resolves to zero files'
+REFUSAL_OF_OVERFLOW='prompt exceeds 75% of context window'
+
+# the exit code `rhx review` uses for a refusal it prints instead of a run
+EXIT_OF_REFUSAL=2
+
+# lockfiles, cut from the review scope. each holds package names and
+# hashes, never a person; `pnpm-lock.yaml` alone measured ~90k tokens,
+# which pushed a routine commit past the opus window. the regex pass
+# skips them by default too.
+LOCKFILE_GLOBS=('**/pnpm-lock.yaml' '**/package-lock.json' '**/yarn.lock')
+
+# the log artifacts a clean read keeps: args, scope, metrics, and token
+# counts hold only paths and figures, and upstream's spend meter reads
+# them. every other file goes, so an artifact upstream adds later — which
+# may hold the staged diff — is removed by default, never kept by default.
+ARTIFACTS_OF_FIGURES=('input.args.json' 'input.scope.json' 'input.scope.debug.json' 'metrics.compiled.json' 'metrics.realized.json' 'metrics.expected.json' 'tokens.expected.json' 'tokens.expected.md')
+
+# a jq program: empty on a well-shaped verdict, else one fault per key, e.g.
+#   "is null, not an object"
+#   ".blockers is number, not an array; .nitpicks is absent"
+JQ_VERDICT_SHAPE_FAULT='
+  def fault($k):
+    if has($k) | not then "." + $k + " is absent"
+    elif (.[$k] | type) != "array" then "." + $k + " is " + (.[$k] | type) + ", not an array"
+    else empty end;
+  if type != "object" then "is " + type + ", not an object"
+  else [fault("blockers"), fault("nitpicks")] | join("; ")
+  end'
+
+######################################################################
+# read one review's verdict off the json it wrote. emits one line, in
+# one of three shapes:
+#   OK<TAB>BLOCKERS<TAB>NITPICKS    the verdict was read
+#   RETRY<TAB>KIND<TAB>CAUSE        unread; a second ask may change it
+#   FIXED<TAB>KIND<TAB>CAUSE        unread; a second ask returns the same
+# KIND picks the recovery hint: key | capture | contract | scope | overflow | refusal.
+# every field is non-empty, so `read` never collapses one away.
+#
+# ⛔ THE VERDICT COMES FROM output.response.json, NEVER FROM STDOUT.
+#    stdout is a human summary that also echoes staged paths, rule
+#    names, and reviewer prose, so any digit in it can sit beside the
+#    word "blocker": a staged `blocker/5.briefs.short.md` reads as 5
+#    over a clean review, and `blocker/0…` ahead of a real `2 blockers`
+#    reads as 0 — a fail OPEN. the json is the one object `rhx review`
+#    both writes to disk and tallies its own summary from
+#    (`blockers.length`), so no staged text can reach it.
+#
+# ⛔ THE `logs:` LINE IS THE SKIP DISCRIMINATOR, and also the
+#    pointer to the json. a skip prints the same `0 blockers / 0
+#    nitpicks` as a clean pass and writes no log dir, so it advertises
+#    no `logs:` line. the LAST `├─ logs: ` line is read, anchored on its
+#    tree glyph, because `rhx review` prints it in its closing summary,
+#    after any echoed path.
+#
+# ⚠️ every unread state is UNREAD, never 0/0 — absent, unparseable, or
+#    a json whose fields are not arrays. the shape check comes FIRST:
+#    `jq '.blockers | length'` on null is 0, which would read a
+#    reshaped json as clean. each state names its own cause, because
+#    "the tool changed" and "the run died" need different fixes.
+######################################################################
+get_verdict_of_review() {
+  local raw="$1" exitCode="$2"
+  local logs json shapeFault
+
+  # a capture the skill cannot read is its own cause, not a skip.
+  # untested on purpose: the skill's own redirect writes this file, so
+  # only a full or yanked temp dir makes it unreadable
+  if [[ ! -r "$raw" ]]; then
+    printf 'RETRY\tcapture\t%s\n' "review capture unreadable at $raw"
+    return 0
+  fi
+
+  # a skip writes no log dir, so it prints no logs line; no match is not an error
+  logs="$(as_logs_dir_of_review "$raw")"
+
+  # with no logs line, the exit code says whether rhx review refused. a
+  # refusal recurs on a second ask; its own header names the cause, and
+  # two known headers pick a sharper hint. read only then, so no echoed
+  # text outranks a written json
+  if [[ -z "$logs" ]]; then
+    if [[ "$exitCode" == "$EXIT_OF_REFUSAL" ]]; then
+      local header
+      # the class is read to find the header, then dropped: the cause line
+      # carries one label, and the evidence tail below quotes the header whole
+      header="$(grep -m1 -oE 'ConstraintError: .*' "$raw" | sed -E 's/^ConstraintError: //' | cut -c1-160 || true)"
+      if [[ "$header" == *"$REFUSAL_OF_ZERO_SCOPE"* ]]; then
+        printf 'FIXED\tscope\t%s\n' "rhx review dropped every staged path from its scope ($REFUSAL_OF_ZERO_SCOPE)"
+        return 0
+      fi
+      if [[ "$header" == *"$REFUSAL_OF_OVERFLOW"* ]]; then
+        printf 'FIXED\toverflow\t%s\n' "the staged diff overflows the review brain ($REFUSAL_OF_OVERFLOW)"
+        return 0
+      fi
+      if grep -qiE 'keyrack|api.?key|credential' <<< "$header"; then
+        printf 'FIXED\tkey\t%s\n' "rhx review refused: ${header:-no header}"
+        return 0
+      fi
+      printf 'FIXED\trefusal\t%s\n' "rhx review refused: ${header:-no header}"
+      return 0
+    fi
+    printf 'RETRY\tkey\t%s\n' "no logs: line — the review skipped, or crashed before it wrote logs"
+    return 0
+  fi
+
+  # the verdict json lives in that log dir. name what the dir holds, so
+  # a renamed artifact reads apart from a run that died before it wrote
+  json="$logs/$NAME_OF_VERDICT_JSON"
+  if [[ ! -f "$json" ]]; then
+    local held
+    held="$(ls -A "$logs" 2>/dev/null | tr '\n' ' ' || true)"
+    held="${held% }"
+    # an output.* file beside an absent json is a rename upstream; it recurs
+    if grep -qE '(^| )output\.' <<< "$held"; then
+      printf 'FIXED\tcontract\t%s\n' "no verdict json at $json (the log dir holds: $held)"
+      return 0
+    fi
+    printf 'RETRY\tkey\t%s\n' "no verdict json at $json (the log dir holds: ${held:-naught})"
+    return 0
+  fi
+  # `jq empty` tests parse alone; `jq -e .` would also reject a valid `null`
+  if ! jq empty "$json" >/dev/null 2>&1; then
+    printf 'RETRY\tcontract\t%s\n' "verdict json unparseable at $json"
+    return 0
+  fi
+  # name each key that is absent or mistyped, and what it held instead —
+  # a cause that names no key sends a human to hunt one that is present.
+  # a json written whole and misshaped is an upstream contract change, so
+  # a second ask returns the same shape
+  shapeFault="$(jq -r "$JQ_VERDICT_SHAPE_FAULT" "$json")"
+  if [[ -n "$shapeFault" ]]; then
+    printf 'FIXED\tcontract\t%s\n' "verdict json $shapeFault, at $json"
+    return 0
+  fi
+
+  # count the findings
+  printf 'OK\t%s\t%s\n' "$(jq '.blockers | length' "$json")" "$(jq '.nitpicks | length' "$json")"
 }
 
 ######################################################################
@@ -344,7 +640,7 @@ brain_slug() {
 ######################################################################
 run_one_reviewer() {
   local brain="$1" outdir="$2"
-  local slug verdict raw report blockers nitpicks
+  local slug verdict raw report blockers nitpicks verdictRead readStatus cause
   slug="$(brain_slug "$brain")"
   verdict="$outdir/$slug.verdict.tsv"
 
@@ -392,65 +688,53 @@ run_one_reviewer() {
   #    --goal exhaustive a REPRESENTATIVE sample of leaks is not a gate.
   #                      one missed SSN is the whole failure.
   #
+  #    --polluters keep  route paperwork and dreams are part of what a
+  #                      commit captures. the default drops them from
+  #                      scope, so a commit of only such paths would
+  #                      review naught, and a mixed one would hide them
+  #                      from the brain.
+  #    --paths-wout      lockfiles stay out: see LOCKFILE_GLOBS.
+  #
   # ⛔ --optional is NEVER passed. it turns a zero-match rules glob into
   #    `0 blockers / 0 nitpicks, exit 0` — the exact failhide this gate
   #    exists to stop. `validate()` already refuses an absent rubric.
-  local attempt
+  local attempt causeKind reviewExit glob logsOfAttempt
+  local pathsWout=() logsSeen=()
+  for glob in "${LOCKFILE_GLOBS[@]}"; do pathsWout+=(--paths-wout "$glob"); done
   for attempt in 1 2; do
-    if ! rhx review \
-          --rules "$RUBRIC" \
-          --refs "$REFS" \
-          --diffs "$DIFFS" \
-          --brain "$brain" \
-          --focus push \
-          --goal exhaustive \
-          --output "$report" > "$raw" 2>&1; then
-      : # a non-zero exit is expected when hits exist; read the counts
+    # `rhx review` exits 0 on a completed review, blockers or not, and 2 on
+    # a refusal. the code never carries the verdict; it only tells a
+    # refusal apart from a crash when no logs line was printed
+    reviewExit=0
+    rhx review \
+      --rules "$RUBRIC" \
+      --refs "$REFS" \
+      --diffs "$DIFFS" \
+      --brain "$brain" \
+      --focus push \
+      --goal exhaustive \
+      --polluters keep \
+      "${pathsWout[@]}" \
+      --output "$report" > "$raw" 2>&1 || reviewExit=$?
+
+    # note each attempt's log dir, so a retry leaves no prompt behind
+    logsOfAttempt="$(as_logs_dir_of_review "$raw")"
+    [[ -n "$logsOfAttempt" ]] && logsSeen+=("$logsOfAttempt")
+
+    # read the verdict off the reviewer json, never off stdout prose
+    verdictRead="$(get_verdict_of_review "$raw" "$reviewExit")"
+    readStatus="${verdictRead%%$'\t'*}"
+    if [[ "$readStatus" == "OK" ]]; then
+      IFS=$'\t' read -r readStatus blockers nitpicks <<< "$verdictRead"
+      break
     fi
+    IFS=$'\t' read -r readStatus causeKind cause <<< "$verdictRead"
 
-    # ⛔ THE SKIP GUARD. a skipped review prints the SAME two count lines
-    #    as a clean pass — `0 blockers / 0 nitpicks`, exit 0 — so the
-    #    parse below cannot tell them apart, and a skip would read as a
-    #    green gate over a diff nobody graded.
-    #
-    #    the one discriminator is the `logs:` line: a skip writes no log
-    #    artifacts, so it advertises none. the `review:` line is NOT
-    #    usable — a skip writes that file, so its presence proves naught.
-    #
-    #    an absent `logs:` line is scored a MALFUNCTION below, alongside
-    #    an unreadable verdict, because both mean the same thing: the
-    #    diff was never examined.
-    if ! grep -q 'logs:' "$raw" 2>/dev/null; then
-      blockers=""
-      nitpicks=""
-      continue
-    fi
-
-    # per contract.reviewer-output: a NUMERIC count for both dimensions.
-    # word forms ("no blockers") deliberately do not satisfy it — they
-    # carry no number, so there is nothing to read.
-    #
-    # ⚠️ the `[^0-9a-z]{0,6}` gap is what tolerates MARKDOWN, and it is
-    #    load-bearing. a reviewer writes prose, and prose is emphasized:
-    #    "**Blockers:** 0" puts `:** ` between the label and the number.
-    #    the earlier `blockers?:[[:space:]]*` demanded a digit straight
-    #    after the colon, found `*`, and reported the verdict unreadable
-    #    — so a reviewer that had answered CORRECTLY was scored a
-    #    malfunction, and a clean commit was blocked for it.
-    #    observed 2026-08-30, on the clean control of the live suite.
-    #
-    # ⛔ the gap admits punctuation and space ONLY. it can never bridge a
-    #    word, so "no blockers" still fails to parse, and "blockers" in a
-    #    sentence cannot borrow a digit from a neighboring clause.
-    blockers="$(grep -oiE '([0-9]+)[^0-9a-z]{0,6}blockers?|blockers?[^0-9a-z]{0,6}([0-9]+)' "$raw" 2>/dev/null \
-      | grep -oE '[0-9]+' | head -1 || true)"
-    nitpicks="$(grep -oiE '([0-9]+)[^0-9a-z]{0,6}nitpicks?|nitpicks?[^0-9a-z]{0,6}([0-9]+)' "$raw" 2>/dev/null \
-      | grep -oE '[0-9]+' | head -1 || true)"
-
-    [[ -n "$blockers" && -n "$nitpicks" ]] && break
+    # a fault no second ask can change is not retried, and not billed twice
+    [[ "$readStatus" == "FIXED" ]] && break
   done
 
-  if [[ -z "$blockers" || -z "$nitpicks" ]]; then
+  if [[ "$readStatus" != "OK" ]]; then
     # ⚠️ keep WHY. "verdict unreadable" with no evidence is a block a
     #    human cannot act on, and a gate nobody can clear gets bypassed.
     #    the causes are wildly unalike — a locked keyrack, a role that
@@ -461,15 +745,38 @@ run_one_reviewer() {
     #    output is a reviewer's account of a diff that may carry PII;
     #    to print it in full would make this report a second copy of the
     #    thing the gate exists to contain.
+    #
+    # ⛔ the tail drops the reviewer's own count lines: a "0 blockers"
+    #    under a malfunction banner is the 0/0 read this gate refuses.
     printf 'MALFUNCTION\t0\t0\n' > "$verdict"
+    printf '%s\n' "$causeKind" > "$outdir/$slug.causekind.txt"
     {
-      echo "── $brain: no readable verdict, on 2 attempts ──"
-      tail -n 12 "$raw" 2>/dev/null | cut -c1-160
+      echo "── $brain: no readable verdict, on $attempt attempt(s) ──"
+      echo "cause: $cause"
+      if [[ "$causeKind" == "overflow" ]]; then
+        # the share of the window, and the heaviest staged dirs: the split
+        grep -E '% of [0-9,]+ tokens|^[[:space:]│├└─]+[0-9.]+%[[:space:]]' "$raw" 2>/dev/null \
+          | head -n 8 | cut -c1-120 || true
+      else
+        # stack frames, the node banner, and lone braces bury the error
+        # line a human acts on, so they are dropped before the cap
+        grep -vE '^[[:space:]]+at |^Node\.js v[0-9]|^[[:space:]]*[{}][[:space:]]*$|^[[:space:]]*$' "$raw" 2>/dev/null \
+          | tail -n 12 \
+          | grep -vE '[0-9]+ (blocker|nitpick)s?' \
+          | grep -vE '^[[:space:]│├└─]*summary[[:space:]]*$' \
+          | grep -vxF "✋ ConstraintError: ${cause#rhx review refused: }" \
+          | as_tree_tail_closed \
+          | cut -c1-160 || true
+      fi
     } > "$outdir/$slug.whyfail.txt"
     return 0
   fi
 
   printf 'OK\t%s\t%s\n' "$blockers" "$nitpicks" > "$verdict"
+
+  # once the verdict is read, each attempt's prompt is a copy of what
+  # this gate contains. kept on a malfunction, for the cause
+  del_content_of_review_logs "${logsSeen[@]}"
 }
 
 main() {
@@ -478,11 +785,21 @@ main() {
 
   WORKDIR=$(mktemp -d)
 
-  local files filecount
+  local files filecount skips skipcount f kind
   files="$WORKDIR/files.txt"
-  collect_files | sort -u > "$files"
+  skips="$WORKDIR/skips.tsv"
+  : > "$files"
+  : > "$skips"
+  while IFS= read -r f; do
+    [[ -n "$f" ]] || continue
+    kind="$(as_skip_kind_of_review "$f")"
+    if [[ -n "$kind" ]]; then printf '%s\t%s\n' "$kind" "$f" >> "$skips"; continue; fi
+    printf '%s\n' "$f" >> "$files"
+  done < <(collect_files | sort -u)
   filecount=$(grep -c . "$files" 2>/dev/null || true)
   [[ -z "$filecount" ]] && filecount=0
+  skipcount=$(grep -c . "$skips" 2>/dev/null || true)
+  [[ -z "$skipcount" ]] && skipcount=0
 
   # an empty scope is genuinely clean. to block here would block every
   # commit that touches only deleted files, and a gate that blocks a
@@ -491,6 +808,7 @@ main() {
     print_eagle_header "clear skies,"
     print_tree_start "pii.review"
     print_tree_branch "scope" "$(scope_label)"
+    print_skipped_branch "$skipcount" "$skips"
     print_tree_leaf "files" "0 — no review needed"
     exit 0
   fi
@@ -503,7 +821,7 @@ main() {
   #    "binaries: N" here — must be the SAME N. two predicates for one
   #    question is two chances to drift, and a drift here reads as a file
   #    the counter flagged and the reviewer was never handed.
-  local binaries binarycount f
+  local binaries binarycount
   binaries="$WORKDIR/binaries.txt"
   : > "$binaries"
   while IFS= read -r f; do
@@ -518,14 +836,18 @@ main() {
     print_tree_start "pii.review"
     print_tree_branch "scope" "$(scope_label)"
     print_tree_branch "files" "$filecount"
+    print_skipped_branch "$skipcount" "$skips"
     print_binaries_branch "$binarycount" "$binaries"
     print_tree_branch "rubric" "$(basename "$RUBRIC")"
     print_tree_branch "refs" "$(basename "$REFS")"
     print_tree_branch "brains" "${#BRAINS[@]}"
-    local b
-    for b in "${BRAINS[@]}"; do
-      echo "   │  ├─ $b"
+    # each brain is a child of its label; the last closes the branch
+    local i
+    for i in "${!BRAINS[@]}"; do
+      if [[ "$i" -eq $((${#BRAINS[@]} - 1)) ]]; then echo "   │  └─ ${BRAINS[$i]}"; continue; fi
+      echo "   │  ├─ ${BRAINS[$i]}"
     done
+    echo "   │"
     print_tree_leaf "mode" "plan — no brain was asked"
     exit 0
   fi
@@ -577,13 +899,15 @@ main() {
     print_tree_start "pii.review"
     print_tree_branch "scope" "$(scope_label)"
     print_tree_branch "files" "$filecount"
+    print_skipped_branch "$skipcount" "$skips"
     print_binaries_branch "$binarycount" "$binaries"
     print_tree_branch "reviewers" "${#BRAINS[@]}"
     echo "   │"
     printf '%s' "$lines"
     echo "   │"
     echo "   ├─ results are UNIONED: any blocker from any reviewer blocks"
-    echo "   └─ read the reports:"
+    echo "   ├─ fix each value, or add it to .pii-map with its stand-in"
+    echo "   └─ read the reports"
     # ⚠️ the REPORT, not the stdout. `rhx review` puts what it found in
     #    its --output file and prints only counts and paths to stdout —
     #    so a copy of stdout would name a count and no hit, and a human
@@ -591,6 +915,7 @@ main() {
     #
     #    the fallback to stdout is the malfunction case: when the report
     #    was never written, the stdout is the only evidence there is.
+    local reports=() report glyph
     for brain in "${BRAINS[@]}"; do
       slug="$(brain_slug "$brain")"
       if [[ -s "$outdir/$slug.report.md" ]]; then
@@ -600,7 +925,13 @@ main() {
       else
         continue
       fi
-      echo "      └─ .pii-review.$slug.md"
+      reports+=(".pii-review.$slug.md")
+    done
+    # the last report closes the list; every one before it branches
+    for report in "${reports[@]}"; do
+      glyph="├─"
+      [[ "$report" == "${reports[-1]}" ]] && glyph="└─"
+      echo "      $glyph $report"
     done
     exit 2
   fi
@@ -613,7 +944,7 @@ main() {
     echo "   │"
     printf '%s' "$lines"
     echo "   │"
-    echo "   ├─ this is a MALFUNCTION, not a detected leak — the diff"
+    echo "   ├─ this is a malfunction, not a PII hit — the diff"
     echo "   │  was never actually examined by those reviewers"
     echo "   │"
     # the evidence. a block with no cause is a block a human cannot
@@ -626,17 +957,83 @@ main() {
       done < "$outdir/$slug.whyfail.txt"
       echo "   │"
     done
-    echo "   ├─ most often: keyrack is locked. unlock and retry:"
-    echo "   │     rhx keyrack unlock --owner ehmpath --env test"
+    # one hint per cause kind seen, so the fix named fits the cause found
+    local kinds
+    kinds="$(cat "$outdir"/*.causekind.txt 2>/dev/null | sort -u)"
+    if grep -qx key <<< "$kinds" && grep -qh 'not found in keyrack' "$outdir"/*.whyfail.txt 2>/dev/null; then
+      # the cause says the key is absent, so an unlock cannot help
+      echo "   ├─ the review brain's key is absent from keyrack env prep, where"
+      echo "   │  rhx review boots its brain. a human fills it:"
+      for brain in "${BRAINS[@]}"; do
+        grep -qx key "$outdir/$(brain_slug "$brain").causekind.txt" 2>/dev/null || continue
+        asBrainKeyName "$brain"
+      done | sort -u | while IFS= read -r keyName; do
+        echo "   │     rhx keyrack set --owner ehmpath --key $keyName --env prep"
+      done
+    elif grep -qx key <<< "$kinds"; then
+      echo "   ├─ no logs or no verdict json: most often the review brain has"
+      echo "   │  no key. rhx review boots its brain under keyrack env prep,"
+      echo "   │  so unlock prep and retry:"
+      echo "   │     rhx keyrack unlock --owner ehmpath --env prep"
+      echo "   │  if the brain key is absent there, a human fills it:"
+      # one line per key a keyless brain needs; a clean brain needs none
+      for brain in "${BRAINS[@]}"; do
+        grep -qx key "$outdir/$(brain_slug "$brain").causekind.txt" 2>/dev/null || continue
+        asBrainKeyName "$brain"
+      done | sort -u | while IFS= read -r keyName; do
+        echo "   │     rhx keyrack set --owner ehmpath --key $keyName --env prep"
+      done
+    fi
+    if grep -qx capture <<< "$kinds"; then
+      echo "   ├─ the review capture could not be read from the temp dir."
+      echo "   │  check that TMPDIR is writable and has space, then retry"
+    fi
+    if grep -qx contract <<< "$kinds"; then
+      echo "   ├─ the verdict json is unparseable or reshaped: rhx review's"
+      echo "   │  artifact contract changed upstream. a retry will not help."
+      echo "   │  report it to the gate's owners; in a genuine emergency:"
+      echo "   │     git commit --no-verify"
+    fi
+    if grep -qx scope <<< "$kinds"; then
+      echo "   ├─ rhx review dropped every staged path from its scope, though"
+      echo "   │  this gate pins --polluters keep: a new upstream filter."
+      echo "   │  report it to the gate's owners; in a genuine emergency:"
+      echo "   │     git commit --no-verify"
+    fi
+    if grep -qx overflow <<< "$kinds"; then
+      echo "   ├─ the staged diff is too large for one review. the heaviest"
+      echo "   │  dirs are listed above; split them into separate commits,"
+      echo "   │  then retry each"
+    fi
+    if grep -qx refusal <<< "$kinds"; then
+      echo "   ├─ rhx review refused its input (the header above names why)."
+      echo "   │  a retry will not help. report it to the gate's owners; in a"
+      echo "   │  genuine emergency:"
+      echo "   │     git commit --no-verify"
+    fi
+    # a refusal is the one cause a human may not place (an unlisted
+    # header, a skill not found), so it keeps a first step; a certain
+    # cause (scope, overflow, contract) gets its fitted fix alone
+    if grep -qx refusal <<< "$kinds" && ! grep -qx key <<< "$kinds"; then
+      echo "   ├─ if the cause above is unclear — most often: keyrack is locked:"
+      echo "   │     rhx keyrack unlock --owner ehmpath --env prep"
+    fi
     echo "   └─ a check that could not run must never look like one that"
     echo "      passed, so this blocks"
     exit 1
   fi
 
+  # a report a prior block left behind may quote the value it caught. a
+  # clean read of this set retires it, so no stale copy outlives the fix
+  for brain in "${BRAINS[@]}"; do
+    rm -f -- "./.pii-review.$(brain_slug "$brain").md"
+  done
+
   print_eagle_header "clear skies,"
   print_tree_start "pii.review"
   print_tree_branch "scope" "$(scope_label)"
   print_tree_branch "files" "$filecount"
+  print_skipped_branch "$skipcount" "$skips"
   print_binaries_branch "$binarycount" "$binaries"
   print_tree_branch "reviewers" "${#BRAINS[@]}"
   echo "   │"

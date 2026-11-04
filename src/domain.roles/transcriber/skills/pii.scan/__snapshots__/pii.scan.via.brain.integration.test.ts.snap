@@ -1,0 +1,829 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`pii.scan.via.brain.sh given: [case1] a staged file, in plan mode when: [t0] planned then: the stdout of the plan matches its snapshot 1`] = `
+"
+🦅 heres the plan,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ rubric: rule.forbid.pii-in-a-diff.md
+   ├─ refs: rule.*.md
+   ├─ brains: 1
+   │  └─ anthropic/claude/haiku
+   │
+   └─ mode: plan — no brain was asked
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case3] a rubric that cannot be found when: [t0] reviewed with a bogus rubric path then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: 💥 MalfunctionError: rubric not found; pass --rubric PATH, or reinstall the role package so its rubric ships with it. looked at: <tmp>
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case5] no scope given when: [t0] called bare then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: ✋ ConstraintError: needs a scope: --diffs since-staged|since-commit|since-main
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case6] the skill invoked for help when: [t0] called with --help then: the stdout matches its snapshot 1`] = `
+"🧠 pii.scan --via brain — ask a brain whether a diff carries PII
+
+usage:
+  pii.scan.via.brain.sh --diffs since-staged   review the staged set
+  pii.scan.via.brain.sh --diffs since-main     review a branch range
+
+options:
+  --diffs WHICH   since-staged | since-commit | since-main
+  --brain SLUG    a brain to ask; repeatable
+  --rubric PATH   the rules to grade against
+  --mode MODE     plan | apply (default apply)
+  --help, -h      show this help
+
+⚠️ --diffs is \`rhx review\`'s flag, verbatim. one word per concept.
+
+why a brain, when pii.scan already ran:
+  a regex cannot tell a real SSN from a synthetic fixture — same
+  shape, opposite verdict. and it cannot see a quasi-identifier: a
+  ZIP, a gender, and a birth date are each harmless and together
+  name one person. those are the misses that matter, because a
+  name or a birth date can never be rotated.
+
+  this layer can only ADD blocks. pii.scan runs first and its
+  verdict is final, so a brain that says "clean" can never wave
+  through a hit the scanner already caught.
+
+brains:
+  one by default: anthropic/claude/haiku, an API brain. --brain is
+  repeatable, and several are run in parallel with their results
+  UNIONED — any blocker from any reviewer blocks.
+
+  an API brain has no filesystem, so it can never stall to ask
+  permission for a path outside a sandbox. that is why this gate
+  can run at pre-commit without a privilege prompt.
+
+exit:
+  0  clean
+  1  malfunction (a reviewer could not run — this BLOCKS)
+  2  hits (constraint)
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case7] an unknown option when: [t0] called with a bad flag then: the stdout matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: ✋ ConstraintError: unknown option: --nope. run --help for the flags
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case8] a staged BINARY, which no upstream check can read when: [t0] reviewed then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 2
+   ├─ unread: 1 — no pass has looked inside these
+   │  · scan.png
+   │
+   │  a regex cannot read them and the diff does not carry them.
+   │  to put them under both gates: transcribe, then stage the
+   │  transcript —
+   │     rhx pdf.transcribe <file> --into <file>.md
+   │  otherwise, look at them yourself before you commit.
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ fake/one — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case10] the arg-parse arms with no prior case when: [t2] a bare token is passed then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: ✋ ConstraintError: unexpected argument: ledger.md. run --help for the flags
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case12] the value-guards with no prior case when: [t0] --diffs carries a near-miss value then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: ✋ ConstraintError: --diffs must be since-staged, since-commit, or since-main
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case12] the value-guards with no prior case when: [t1] --mode carries a typo then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: ✋ ConstraintError: --mode must be plan or apply
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case14] a directory that is NOT a git work tree when: [t0] the reviewer is invoked there then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: ✋ ConstraintError: not inside a git work tree. run from inside the repo
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case17] a review that SKIPS when: [t0] the reviewer reports zero counts with no logs then: the stdout matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 2 attempt(s) ──
+   │  cause: no logs: line — the review skipped, or crashed before it wrote logs
+   │  🔍 review
+   │     └─ review: <tmp>
+   │
+   ├─ no logs or no verdict json: most often the review brain has
+   │  no key. rhx review boots its brain under keyrack env prep,
+   │  so unlock prep and retry:
+   │     rhx keyrack unlock --owner ehmpath --env prep
+   │  if the brain key is absent there, a human fills it:
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case18] a staged path whose digit competes with the verdict when: [t0] path blocker/5.x.md in stdout, json clean then: the stdout of the clean run matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ fake/one — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case18] a staged path whose digit competes with the verdict when: [t1] path blocker/0.x.md in stdout, json with 2 blockers then: the stdout of the block matches its snapshot 1`] = `
+"
+🦅 hold up — a brain saw PII
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ reviewers: 1
+   │
+   │  ├─ 🚨 fake/one — 2 blocker(s), 0 nitpick(s)
+   │
+   ├─ results are UNIONED: any blocker from any reviewer blocks
+   ├─ fix each value, or add it to .pii-map with its stand-in
+   └─ read the reports
+      └─ .pii-review.fake-one.md
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case18] a staged path whose digit competes with the verdict when: [t2] logs line present, json absent then: the stdout of the malfunction matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 2 attempt(s) ──
+   │  cause: no verdict json at .log/bhrain/review/fake.<pid>/output.response.json (the log dir holds: naught)
+   │  🔍 review
+   │     ├─ logs: .log/bhrain/review/fake.<pid>
+   │     └─ review: <tmp>
+   │
+   ├─ no logs or no verdict json: most often the review brain has
+   │  no key. rhx review boots its brain under keyrack env prep,
+   │  so unlock prep and retry:
+   │     rhx keyrack unlock --owner ehmpath --env prep
+   │  if the brain key is absent there, a human fills it:
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case19] a verdict json the skill cannot trust when: [t0] the json is truncated mid-write then: the stdout of the unparseable malfunction matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 2 attempt(s) ──
+   │  cause: verdict json unparseable at .log/bhrain/review/fake.<pid>/output.response.json
+   │  🔍 review
+   │     ├─ logs: .log/bhrain/review/fake.<pid>
+   │     └─ review: <tmp>
+   │
+   ├─ the verdict json is unparseable or reshaped: rhx review's
+   │  artifact contract changed upstream. a retry will not help.
+   │  report it to the gate's owners; in a genuine emergency:
+   │     git commit --no-verify
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case19] a verdict json the skill cannot trust when: [t1] .blockers is null and .nitpicks is absent then: it never claims the diff is clean, and its stdout matches the snapshot of a null field 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 1 attempt(s) ──
+   │  cause: verdict json .blockers is null, not an array; .nitpicks is absent, at .log/bhrain/review/fake.<pid>/output.response.json
+   │  🔍 review
+   │     ├─ logs: .log/bhrain/review/fake.<pid>
+   │     └─ review: <tmp>
+   │
+   ├─ the verdict json is unparseable or reshaped: rhx review's
+   │  artifact contract changed upstream. a retry will not help.
+   │  report it to the gate's owners; in a genuine emergency:
+   │     git commit --no-verify
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case19] a verdict json the skill cannot trust when: [t2] the json is a bare null then: it never claims the diff is clean, and its stdout matches the snapshot of a bare null 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 1 attempt(s) ──
+   │  cause: verdict json is null, not an object, at .log/bhrain/review/fake.<pid>/output.response.json
+   │  🔍 review
+   │     ├─ logs: .log/bhrain/review/fake.<pid>
+   │     └─ review: <tmp>
+   │
+   ├─ the verdict json is unparseable or reshaped: rhx review's
+   │  artifact contract changed upstream. a retry will not help.
+   │  report it to the gate's owners; in a genuine emergency:
+   │     git commit --no-verify
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case19] a verdict json the skill cannot trust when: [t3] .blockers is a number then: it never claims the diff is clean, and its stdout matches the snapshot of a number field 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 1 attempt(s) ──
+   │  cause: verdict json .blockers is number, not an array, at .log/bhrain/review/fake.<pid>/output.response.json
+   │  🔍 review
+   │     ├─ logs: .log/bhrain/review/fake.<pid>
+   │     └─ review: <tmp>
+   │
+   ├─ the verdict json is unparseable or reshaped: rhx review's
+   │  artifact contract changed upstream. a retry will not help.
+   │  report it to the gate's owners; in a genuine emergency:
+   │     git commit --no-verify
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case20] three reviewers that disagree when: [t0] a blocks, b is clean, c wrote no json then: the stdout of the mixed block matches its snapshot 1`] = `
+"
+🦅 hold up — a brain saw PII
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ reviewers: 3
+   │
+   │  ├─ 🚨 fake/a — 1 blocker(s), 0 nitpick(s)
+   │  ├─ ✅ fake/b — clean (2 nitpick(s))
+   │  ├─ 💥 fake/c — verdict unreadable
+   │
+   ├─ results are UNIONED: any blocker from any reviewer blocks
+   ├─ fix each value, or add it to .pii-map with its stand-in
+   └─ read the reports
+      ├─ .pii-review.fake-a.md
+      ├─ .pii-review.fake-b.md
+      └─ .pii-review.fake-c.md
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case20] three reviewers that disagree when: [t1] a is clean, b wrote no json then: the stdout of the clean-plus-malfunction matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 2
+   │
+   │  ├─ ✅ fake/a — clean (0 nitpick(s))
+   │  ├─ 💥 fake/b — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/b: no readable verdict, on 2 attempt(s) ──
+   │  cause: no verdict json at .log/bhrain/review/fake.<pid>/output.response.json (the log dir holds: naught)
+   │  🔍 review
+   │     ├─ logs: .log/bhrain/review/fake.<pid>
+   │     └─ review: <tmp>
+   │
+   ├─ no logs or no verdict json: most often the review brain has
+   │  no key. rhx review boots its brain under keyrack env prep,
+   │  so unlock prep and retry:
+   │     rhx keyrack unlock --owner ehmpath --env prep
+   │  if the brain key is absent there, a human fills it:
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case21] a review whose first attempt wrote no verdict when: [t0] the retry writes a clean json then: the stdout of the recovered retry matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ fake/one — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case22] a host with no jq on PATH when: [t0] the skill runs in its default mode, apply then: the stdout of the jq precondition matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: 💥 MalfunctionError: jq not found: the verdict is read from the reviewer json with jq. install jq, then retry
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case23] an echoed logs line ahead of the real one when: [t0] the echoed line points at 3 blockers, the real verdict is clean then: the stdout of the stale-blocker echo matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ fake/one — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case23] an echoed logs line ahead of the real one when: [t1] the echoed line points at a clean verdict, the real one has 2 blockers then: the stdout of the stale-clean echo matches its snapshot 1`] = `
+"
+🦅 hold up — a brain saw PII
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ reviewers: 1
+   │
+   │  ├─ 🚨 fake/one — 2 blocker(s), 0 nitpick(s)
+   │
+   ├─ results are UNIONED: any blocker from any reviewer blocks
+   ├─ fix each value, or add it to .pii-map with its stand-in
+   └─ read the reports
+      └─ .pii-review.fake-one.md
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case24] a flag that takes a value, given none when: [t0] --diffs is the last argument then: the stdout matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: ✋ ConstraintError: --diffs needs a value. run --help for the values it takes
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case24] a flag that takes a value, given none when: [t1] --diffs is followed by another flag then: the stdout matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: ✋ ConstraintError: --diffs needs a value. run --help for the values it takes
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case26] a route file staged alone, its path digit beside the word blocker when: [t0] the reviewer finds it clean then: the stdout of the route-file commit matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ fake/one — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case27] a review that refuses an empty scope when: [t0] rhx review refuses with no logs line then: the stdout of the empty-scope refusal matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 1 attempt(s) ──
+   │  cause: rhx review dropped every staged path from its scope (combined scope resolves to zero files)
+   │  ✋ ConstraintError: combined scope resolves to zero files
+   │
+   ├─ rhx review dropped every staged path from its scope, though
+   │  this gate pins --polluters keep: a new upstream filter.
+   │  report it to the gate's owners; in a genuine emergency:
+   │     git commit --no-verify
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case28] a review that refuses an overflow when: [t0] rhx review refuses with no logs line then: the stdout of the overflow refusal matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 1 attempt(s) ──
+   │  cause: the staged diff overflows the review brain (prompt exceeds 75% of context window)
+   │     ├─ 111.4% of 200,000 tokens
+   │     │  ├─  41.4%    359.4k chars  1 file    vendor/big.json
+   │     │  ├─  24.0%    208.7k chars  5 files   src/domain.roles/transcriber
+   │
+   ├─ the staged diff is too large for one review. the heaviest
+   │  dirs are listed above; split them into separate commits,
+   │  then retry each
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case29] a log dir whose verdict json was renamed upstream when: [t0] rhx review writes output.verdict.json then: the stdout matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 1 attempt(s) ──
+   │  cause: no verdict json at .log/bhrain/review/fake.<pid>/output.response.json (the log dir holds: output.verdict.json)
+   │  🔍 review
+   │     ├─ logs: .log/bhrain/review/fake.<pid>
+   │     └─ review: <tmp>
+   │
+   ├─ the verdict json is unparseable or reshaped: rhx review's
+   │  artifact contract changed upstream. a retry will not help.
+   │  report it to the gate's owners; in a genuine emergency:
+   │     git commit --no-verify
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case30] a review that refuses with an unlisted header when: [t0] rhx review exits 2 on an unknown flag then: the stdout matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 1 attempt(s) ──
+   │  cause: rhx review refused: unknown option --polluters
+   │
+   ├─ rhx review refused its input (the header above names why).
+   │  a retry will not help. report it to the gate's owners; in a
+   │  genuine emergency:
+   │     git commit --no-verify
+   ├─ if the cause above is unclear — most often: keyrack is locked:
+   │     rhx keyrack unlock --owner ehmpath --env prep
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case31] the review log dir after the read when: [t0] the verdict reads clean then: the stdout matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ fake/one — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case31] the review log dir after the read when: [t1] the verdict json is absent then: the stdout matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 2 attempt(s) ──
+   │  cause: no verdict json at .log/bhrain/review/fake.<pid>/output.response.json (the log dir holds: input.future.md input.prompt.head.md input.prompt.md metrics.realized.json)
+   │  🔍 review
+   │     ├─ logs: .log/bhrain/review/fake.<pid>
+   │     └─ review: <tmp>
+   │
+   ├─ no logs or no verdict json: most often the review brain has
+   │  no key. rhx review boots its brain under keyrack env prep,
+   │  so unlock prep and retry:
+   │     rhx keyrack unlock --owner ehmpath --env prep
+   │  if the brain key is absent there, a human fills it:
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case32] a staged set that \`rhx review\` would cut whole when: [t0] only a lockfile is staged then: the stdout matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ skipped: 1 (lockfile 1) — never sent to the brain
+   │  · pnpm-lock.yaml
+   │
+   └─ files: 0 — no review needed
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case32] a staged set that \`rhx review\` would cut whole when: [t1] only a dir symlink is staged then: the stdout matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ skipped: 1 (dir 1) — never sent to the brain
+   │  · door
+   │
+   └─ files: 0 — no review needed
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case32] a staged set that \`rhx review\` would cut whole when: [t2] a lockfile is staged beside a letter then: the stdout matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ skipped: 1 (lockfile 1) — never sent to the brain
+   │  · pnpm-lock.yaml
+   │
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ fake/one — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case33] a host with no rhx on PATH when: [t0] the skill runs in its default mode, apply then: the stdout matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: 💥 MalfunctionError: rhx not found: the brain pass asks through rhx review. run pnpm install so node_modules/.bin holds rhx, or put rhx on PATH, then retry
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case34] a review that refuses for an absent brain key when: [t0] the brain is the default provider, anthropic then: the stdout matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 anthropic/claude/haiku — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── anthropic/claude/haiku: no readable verdict, on 1 attempt(s) ──
+   │  cause: rhx review refused: ANTHROPIC_API_KEY not found in keyrack (owner ehmpath, env prep)
+   │
+   ├─ the review brain's key is absent from keyrack env prep, where
+   │  rhx review boots its brain. a human fills it:
+   │     rhx keyrack set --owner ehmpath --key ANTHROPIC_API_KEY --env prep
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case34] a review that refuses for an absent brain key when: [t1] the brain is an openrouter slug then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 openrouter/deepseek/flash — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── openrouter/deepseek/flash: no readable verdict, on 1 attempt(s) ──
+   │  cause: rhx review refused: OPENROUTER_API_KEY not found in keyrack (owner ehmpath, env prep)
+   │
+   ├─ the review brain's key is absent from keyrack env prep, where
+   │  rhx review boots its brain. a human fills it:
+   │     rhx keyrack set --owner ehmpath --key OPENROUTER_API_KEY --env prep
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case35] a report a prior block left behind when: [t0] the next scan reads clean then: the stdout matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ fake/one — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case36] the skill run from a subdir of the repo when: [t0] the plan is asked from sub/ then: the stdout matches its snapshot 1`] = `
+"
+🦅 heres the plan,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 2
+   ├─ unread: 1 — no pass has looked inside these
+   │  · scan.pdf
+   │
+   │  a regex cannot read them and the diff does not carry them.
+   │  to put them under both gates: transcribe, then stage the
+   │  transcript —
+   │     rhx pdf.transcribe <file> --into <file>.md
+   │  otherwise, look at them yourself before you commit.
+   ├─ rubric: rule.forbid.pii-in-a-diff.md
+   ├─ refs: rule.*.md
+   ├─ brains: 1
+   │  └─ anthropic/claude/haiku
+   │
+   └─ mode: plan — no brain was asked
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case37] a review that crashes with a stack trace when: [t0] rhx review dies before it writes logs then: the stdout matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 2 attempt(s) ──
+   │  cause: no logs: line — the review skipped, or crashed before it wrote logs
+   │  Error: Could not resolve authentication method.
+   │
+   ├─ no logs or no verdict json: most often the review brain has
+   │  no key. rhx review boots its brain under keyrack env prep,
+   │  so unlock prep and retry:
+   │     rhx keyrack unlock --owner ehmpath --env prep
+   │  if the brain key is absent there, a human fills it:
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case38] a staged rename whose edit adds a value when: [t0] reviewed then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ fake/one — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;

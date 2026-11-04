@@ -25,13 +25,7 @@ export const ROLE_COUNSELOR: Role = Role.build({
   },
   hooks: {
     onBrain: {
-      onBoot: [
-        {
-          command:
-            './node_modules/.bin/rhachet roles boot --repo rhight --role counselor',
-          timeout: 'PT60S',
-        },
-      ],
+      onBoot: [],
       onTool: [],
       onStop: [],
     },
