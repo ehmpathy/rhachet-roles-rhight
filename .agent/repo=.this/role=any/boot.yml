@@ -1,3 +1,5 @@
+budget:
+  tokens: 5_000
 always:
   briefs:
     say:
