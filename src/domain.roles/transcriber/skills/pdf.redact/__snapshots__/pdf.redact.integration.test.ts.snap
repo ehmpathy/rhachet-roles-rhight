@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`pdf.redact.sh given: [case1] text with a dash-separated SSN on stdin when: [t0] redacted with --what ssn then: stderr matches snapshot 1`] = `""`;
+
+exports[`pdf.redact.sh given: [case1] text with a dash-separated SSN on stdin when: [t0] redacted with --what ssn then: stdout matches snapshot 1`] = `"owner SSN ***-**-**** holds 100%"`;
+
+exports[`pdf.redact.sh given: [case2] text with a space-separated SSN when: [t0] redacted then: stderr matches snapshot 1`] = `""`;
+
+exports[`pdf.redact.sh given: [case2] text with a space-separated SSN when: [t0] redacted then: stdout matches snapshot 1`] = `"id ***-**-**** end"`;
+
+exports[`pdf.redact.sh given: [case3] text with a bare 9-digit EIN (no separators) when: [t0] redacted then: stderr matches snapshot 1`] = `""`;
+
+exports[`pdf.redact.sh given: [case3] text with a bare 9-digit EIN (no separators) when: [t0] redacted then: stdout matches snapshot 1`] = `"EIN 123456789 stays"`;
+
+exports[`pdf.redact.sh given: [case4] a file input with multiple SSNs when: [t0] redacted from file into file then: the redacted file content matches snapshot 1`] = `
+"first ***-**-**** line
+second ***-**-**** line
+"
+`;
+
+exports[`pdf.redact.sh given: [case4] a file input with multiple SSNs when: [t0] redacted from file into file then: the summary stdout matches snapshot 1`] = `
+"
+🦅 redacted,
+
+🔎 pdf.redact
+   ├─ what: ssn
+   ├─ from: <tmp>/doc.md
+   └─ into: <tmp>/doc.redacted.md
+"
+`;
+
+exports[`pdf.redact.sh given: [case5] no --what provided when: [t0] invoked then: stderr matches snapshot 1`] = `""`;
+
+exports[`pdf.redact.sh given: [case5] no --what provided when: [t0] invoked then: the blocked stdout matches snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pdf.redact
+   └─ blocked: no target given: pass --what ssn and/or --text PHRASE
+"
+`;
+
+exports[`pdf.redact.sh given: [case6] an unsupported --what when: [t0] invoked then: stderr matches snapshot 1`] = `""`;
+
+exports[`pdf.redact.sh given: [case6] an unsupported --what when: [t0] invoked then: the blocked stdout matches snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pdf.redact
+   └─ blocked: unsupported --what: phone (currently: ssn)
+"
+`;
+
+exports[`pdf.redact.sh given: [case10] an unsupported --style when: [t0] invoked then: the blocked stdout matches snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pdf.redact
+   └─ blocked: unsupported --style: rainbow (solid | tape)
+"
+`;

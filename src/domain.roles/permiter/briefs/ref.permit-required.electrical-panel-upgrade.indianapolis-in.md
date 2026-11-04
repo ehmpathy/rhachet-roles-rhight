@@ -1,5 +1,7 @@
 # ref.permit-required.electrical-panel-upgrade.indianapolis-in
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 a permit **is required** to upgrade a fuse box to a breaker panel in Indianapolis, Indiana (Marion County).
@@ -71,6 +73,10 @@ the following electrical work is **exempt** from permits per IRC R105.2:
 | authority | Department of Business & Neighborhood Services |
 | phone | (317) 327-8700 |
 | address | 1200 Madison Ave, Suite 100, Indianapolis, IN 46225 |
+
+## .publishability
+
+☀️ **fullsun** (share) — proof chain from public model code and Indiana adoption; no client identity.
 
 ## .sources
 

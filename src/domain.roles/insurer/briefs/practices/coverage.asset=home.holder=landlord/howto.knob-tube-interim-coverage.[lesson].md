@@ -1,5 +1,7 @@
 # howto.knob-tube-interim-coverage
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 practical steps to maintain insurance coverage during the gap between K&T disconnect and full rewire.
@@ -128,6 +130,10 @@ be direct about K&T status:
 - Inszone: https://www.inszone.com/
 - E&S market structure: industry knowledge
 - 60-day contract requirement: carrier underwrite guidelines (verified via broker sources)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic interim-coverage options for knob-and-tube wiring from public sources; no client identity or applied strategy.
 
 ## .date researched
 

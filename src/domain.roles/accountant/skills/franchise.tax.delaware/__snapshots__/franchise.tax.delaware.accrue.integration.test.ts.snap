@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`franchise.tax.delaware.accrue.sh given: [case1] a liability at or above the §504(a) $5,000 threshold when: [t0] the schedule is emitted for tax year 2022 then: output matches snapshot 1`] = `
+"
+🦅 reckoned the accrual,
+
+🏛️ franchise.tax.delaware.accrue --asof 2024-03-01
+   ├─ annual tax: $85,165.00
+   ├─ tax years: 2022
+   │
+   └─ schedule
+      ├─ tax year 2022
+      │  ├─ 2022-06-01  $   34,066.00  × 21 mo → $ 10,730.79  40% estimated (§504(a)(1))
+      │  ├─ 2022-09-01  $   17,033.00  × 18 mo → $  4,598.91  20% estimated (§504(a)(2))
+      │  ├─ 2022-12-01  $   17,033.00  × 15 mo → $  3,832.43  20% estimated (§504(a)(3))
+      │  ├─ 2023-03-01  $   17,033.00  × 12 mo → $  3,065.94  20% remainder (§504(a)(4))
+      │  └─ + $200.00 penalty (§502(c))
+      │
+      ├─ penalty   $200.00
+      ├─ interest  $22,228.06
+      └─ TOTAL     $107,593.06
+
+⚠️ derived to TEST the State's figure, not to replace it.
+   simple interest assumed; §504(c) does not state compound accrual.
+
+"
+`;

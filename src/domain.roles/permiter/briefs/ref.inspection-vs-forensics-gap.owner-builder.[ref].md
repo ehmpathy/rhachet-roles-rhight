@@ -1,5 +1,7 @@
 # ref.inspection-vs-forensics-gap.owner-builder
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 when a homeowner performs electrical work WITH permit and inspection, fire forensics can still identify workmanship defects that passed inspection. this brief examines the exposure AFTER permit approval — not unpermitted work.
@@ -226,6 +228,10 @@ when a homeowner performs electrical work WITH permit and inspection, fire foren
 
 ### case studies
 11. [Alpine Intel - Electrical Fire Case Study](https://alpineintel.com/resource/electrical-fire-case-study/)
+
+## .publishability
+
+☀️ **fullsun** (share) — public case law and general fire-forensics practice; no client identity.
 
 ## .date researched
 

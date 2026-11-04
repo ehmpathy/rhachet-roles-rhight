@@ -1,0 +1,61 @@
+Retailers selling digital products for use in California are generally required to:
+
+Register with CDTFA (see publication 107, Do You Need a California Seller's Permit?) Please note that out-of-state retailers may need to register with CDTFA to collect use tax if they are considered engaged in business in California (see publication 107)
+Report and pay sales tax or collect use tax on taxable sales
+Maintain adequate records
+Properly allocate local and district taxes
+
+Marketplace facilitators that facilitate sales of digital products transferred electronically or accessed remotely made by marketplace sellers on the marketplace facilitators' platform may need to register for a seller's permit or a Certificate of Registration - Use Tax. For more information, see our Tax Guide for Marketplace Facilitator Act.
+
+See Registration and Filing and Payments below for more information on how to register, file, and pay.
+
+Threshold rule that may shift tax liability from retailer to purchaser
+
+A retailer may be relieved from the liability to pay sales tax (unless the purchaser is an insurer) or the obligation to collect use tax on sales or purchases of digital products transferred electronically or accessed remotely when:
+
+The aggregate gross receipts from sales of digital products by the retailer to the same purchaser that are transferred electronically or accessed remotely exceed $5,000,000 in the 2027 calendar year, or
+Beginning January 1, 2028, the aggregate gross receipts from sales of digital products by the retailer to the same purchaser that are transferred electronically or accessed remotely exceed $5,000,000 in the current or preceding calendar year. The $5,000,000 aggregate threshold amount is subject to adjustments based on the California Consumer Price Index (CCPI).
+
+When a retailer is relieved from the liability, the purchaser becomes responsible for reporting and paying use tax directly to us on the transaction that caused the retailer to exceed the aggregate threshold amount. A purchaser subject to direct reporting requirements must issue to the retailer of digital products transferred electronically or accessed remotely a Use Tax Direct Payment Exemption Certificate.
+
+Even when the aggregate threshold amount is met, we may require the retailer to pay sales tax or collect and pay use tax when necessary for the efficient administration of the Sales and Use Tax Law if the purchaser submits a request for a waiver to us. When this occurs, the purchaser must provide the retailer with all places of business where the purchaser expects to be a place of first use. These locations will be considered the place of sale for purposes of the sales tax or the place of use for purposes of the use tax.
+
+Regulation 1567, Banks and Insurance Companies, subdivision (b), provides that use tax does not apply to the storage, use, or other consumption in this state by insurance companies of tangible personal property. Therefore, insurance companies are excluded from the aggregate threshold rule.
+
+Please note: Emergency regulations are being drafted to interpret and clarify SB 122. This guide will be updated with direct payment and waiver process information as soon as it's available.
+
+Local and district tax allocation
+
+Local and district tax allocation for sales of digital products is based on the place of sale. The place of sale for digital products transferred electronically or accessed remotely is determined as follows:
+
+In-person sales:
+
+When a sale occurs at a seller's California place of business, for which the seller is required to hold a seller's permit, the place of sale is the seller's place of business where the sale occurs.
+
+Remote sales:
+
+When the sale does not occur in person, the place of sale is the purchaser's known address in California shown in the seller's records maintained in good faith in the ordinary course of business. If the purchaser provided more than one address to the seller during the consummation of the sale or purchase, the purchaser's known address is determined from those addresses in California in the following order of priority:
+
+Billing address
+Shipping or delivery address
+Mailing address associated with the payment instrument.
+Mailing address
+
+If no address is provided during the sale transaction, the retailer must use the most recent, previously provided California address in the same order of priority as above. If no California address is available, the sale is treated as occurring outside California.
+
+Sale for resale
+
+Digital products sold for resale are not subject to sales tax when the seller accepts a timely and valid resale certificate in good faith from the purchaser as required by Regulation 1668, Sales for Resale.
+
+Interstate or foreign commerce exemption
+
+A retailer is relieved from the responsibility to pay sales tax or collect use tax on the sale or purchase of a digital product transferred electronically or accessed remotely if the place of the sale or purchase of the digital product was deemed to be outside of California based on the purchaser's known address or addresses as specified in law. The retailer must also demonstrate to our satisfaction that they made a reasonable effort to obtain accurate and complete address information from the purchaser.
+
+The sale of, and the storage, use, or other consumption of, a digital product purchased solely for use outside of California or in interstate or foreign commerce is exempt from sales and use taxes. A seller is relieved from the duty of paying sales tax and collecting the use tax if the seller takes in good faith an exemption certificate from the purchaser certifying that the property is purchased solely for use outside of California or in interstate or foreign commerce. More information about the form of exemption certificate will be provided as it becomes available.
+
+Other exemptions and exclusions
+Representing a service exemption
+
+The sale of, and the storage, use, or other consumption of, a digital product that represents a service provided in electronic form is exempt from sales and use tax if the service primarily involves human effort by the service provider and the human effort originated after the customer requested the service.
+
+This exemption does not apply to the sale or purchase of the right to use the provider's prewritten computer software running on a cloud infrastructure or the right to access that software from various client devices through either a thin client interface, including a web browser, or a program interface.

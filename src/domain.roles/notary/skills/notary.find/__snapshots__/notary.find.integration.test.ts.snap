@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`notary.find.sh given: [case1] a vendor the state HAS registered when: [t0] Proof is checked against the Florida snapshot then: output matches snapshot 1`] = `
+"
+🦅 registered,
+
+🖋️ notary.find --state florida --vendor 'Proof'
+   ├─ match: yes
+   ├─ names matched: 2
+   ├─ as registered
+   │     Notarize, Inc. d/b/a Proof.com
+   │     Proof.com
+   ├─ snapshot: 2026-08-30 (NNd old)
+   └─ re-verify (a registration can lapse)
+      └─ https://online-notary.sunbiz.org/ServiceProviders
+
+"
+`;
+
+exports[`notary.find.sh given: [case2] a vendor absent from the snapshot when: [t0] a vendor with no rows is checked then: output matches snapshot 1`] = `
+"
+🦅 not in this snapshot,
+
+🖋️ notary.find --state florida --vendor 'a vendor that is not in this registry'
+   ├─ match: none
+   ├─ snapshot: 2026-08-30 (NNd old, 121 registrations)
+   ├─ ⚠️  this is NOT evidence the vendor is unregistered
+   │     the registry grows continuously, and vendors register
+   │     under a parent name, a d/b/a, or a product name.
+   │     121 registrations here carry only 100 distinct names.
+   └─ check by hand
+      ├─ open https://online-notary.sunbiz.org/ServiceProviders
+      └─ click 'View All' — the list is empty until you do
+
+"
+`;

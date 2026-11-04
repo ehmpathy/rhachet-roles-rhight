@@ -1,5 +1,7 @@
 # define.carrier-access.direct.insurance-agent
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 obtaining an insurance license grants legal permission to conduct insurance business but does not authorize selling for any specific carrier. each carrier appointment is a separate authorization that must be filed with the state, and carriers impose qualification barriers beyond licensing including E&O insurance, production minimums, background checks, product certifications, and surety bonds.
@@ -436,3 +438,7 @@ production requirements should be transparent:
 - define.purpose-of-insurance-agent-licenses - why licenses exist
 - define.insurance-agent-license-process - how to obtain a license
 - define.insurance-agent-license-reciprocity - multi-state licensing
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public insurance-market analysis; no client identity or client-specific mechanic.

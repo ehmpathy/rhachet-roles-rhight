@@ -1,0 +1,422 @@
+verify your corporation has been restored to good status.
+
+.why = confirm Delaware processed the revival before you rely on the corporation for contracts, bank accounts, or operations.
+
+---
+
+## check status
+
+search: https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx
+
+enter your corporation name or file number.
+
+---
+
+## what to look for
+
+| field | void | restored |
+|-------|------|----------|
+| status | "Void, AR's or Tax Delinquent" | "Good Standing" |
+| tax due | $XXX,XXX | $0 or current year only |
+
+---
+
+## if still void
+
+| days since submission | action |
+|-----------------------|--------|
+| < 5 business days | wait (standard) |
+| 5-10 business days | call to check status |
+| > 10 business days | escalate |
+
+contact: (302) 739-3073
+
+### 🚨 but "wait (standard)" is the WRONG default if the instrument was suspended
+
+⛔ **the < 5 business days row and § 103(c)(4)'s cure window are the same five
+days**, and they point opposite ways:
+
+| if the instrument is… | those five days are |
+|---|---|
+| in the queue, normal | 🕐 a wait. do naught |
+| **held in suspension** | ⏳ **the entire cure window.** spend it and the original filing date is gone |
+
+⭐ **so the two states are indistinguishable from the outside, and the cheap
+action is only correct in one of them.** the tie-breaker is a notice you may not
+have received — under § 103(c)(4) it goes to *the filer*, who may be an agent.
+
+🎯 **the rule this yields: if you filed through an agent, or if you cannot
+confirm the instrument is in the normal queue, CALL on day one or two — not on
+day five.** a call that confirms "in the queue" costs a few minutes. a call that
+arrives on day six, after a suspension you were never told about, costs the
+filing date and every void-window day behind it.
+
+⚠️ this is the one place in the route where the conservative move is to act
+*early* rather than wait. everywhere else, patience is free.
+
+---
+
+## obtain Certificate of Good Status (optional)
+
+if you need proof for banks, contracts, or investors:
+
+### ⛔ FIRST — § 502(f) bars the certificate on TWO independent grounds
+
+> this stone priced the certificate and never stated what
+> **prevents** its issue. the bar is statutory, and one half of it is not about
+> money at all.
+
+> "The Secretary of State **shall not issue certificates of good standing** that
+> pertain to any corporation that **has an unpaid franchise tax balance** due to
+> the State **or does not have on file a completed annual franchise tax report
+> for the relevant time period**."
+>
+> — 8 Del. C. § 502(f), https://delcode.delaware.gov/title8/c005/index.html
+
+read the **or**. two conditions, either of which is fatal:
+
+| ground | cured by |
+|---|---|
+| an unpaid franchise tax balance | payment (step 3) |
+| ⛔ **no completed annual report on file for the relevant period** | **a REPORT**, per year. money does not cure it |
+
+⭐ **so a revived corporation that paid in full can still be refused a
+certificate** — the second ground is independent, and it is the one a payment
+mindset skips.
+
+⚠️ **and note which years this reaches.** § 312(g) caps the *revival payment* at
+the balance due on the **void date**, so the years **inside** the void window
+can look settled. § 502(f) is not keyed to the void date at all — it asks
+whether a **completed report** is on file for *"the relevant time period."*
+
+🚩 **"the relevant time period" is undefined in chapter 5** and I have no source
+for how the Division applies it. **ask.** the answer decides whether every
+void-window year needs its own report before a certificate will issue.
+
+⛔ **do not infer the answer from the § 312(g) cap.** that cap is about what you
+**pay**; § 502(f) is about what you **file**. § 510 makes the same split — it
+voids a charter for an unfiled complete annual report **independently** of the
+tax.
+
+### 🚨 SECOND — a THIRD bar lives in chapter 1, and § 502(f) gives no hint of it
+
+> added 2026-09-14. § 502(f) reads as a complete list of the grounds that block
+> a certificate. it is not. the third is **§ 103(c)(4)**, and it sits in a
+> different chapter of the DGCL — which is precisely why a reader who checks
+> § 502 concludes the question is settled.
+
+> "The Secretary of State **shall not issue a certificate of good standing** with
+> respect to any corporation with an **instrument held in suspension** pursuant
+> to this subsection."
+>
+> — 8 Del. C. § 103(c)(4),
+> https://delcode.delaware.gov/title8/c001/sc01/index.html
+
+⭐ **this produces the symptom most likely to be misread in the whole route.** you
+file the renewal, you order the certificate to confirm it landed, and the office
+declines. the natural read is *"the revival was refused."* the statutory read may
+be the opposite — **the instrument is alive, held in suspension, and a cure
+window is open.**
+
+| what you observe | ground | what it means | what cures it |
+|---|---|---|---|
+| certificate refused, balance shows unpaid | § 502(f) | tax still owed | pay (step 3) |
+| certificate refused, balance shows clear | § 502(f) | a **report** is absent for the relevant period | file the report |
+| certificate refused, and a rejection notice went to the filer | ⛔ **§ 103(c)(4)** | an instrument is **in suspension** | a replacement instrument **AND a re-tender of the taxes and fees**, **within 5 business days of their notice** |
+| entity itself still reads void | none of the above | the instrument was rejected **outright**, without suspension | re-file from scratch; the original date is lost |
+
+⛔ **the three grounds are independent and can be true at once.** a clean tax
+balance rules out the first and says naught about the other two.
+
+### 🚨 so the FIRST question on a refusal is not about money
+
+ask it in this order, because only the third carries a live clock:
+
+1. **is an instrument of ours held in suspension?** — § 103(c)(4). if yes, **a
+   5-business-day cure window is open or has already expired**, and it started
+   when notice reached *the filer*, who may be an agent rather than you.
+
+   ⛔ **and the cure is TWO acts on ONE clock.** the statute conditions the
+   saved date on:
+
+   > "...upon delivery of a replacement instrument in proper form for filing
+   > **and tender of the required taxes and fees** **within 5 business days
+   > after notice of such suspension is given to the filer**, the Secretary of
+   > State shall establish as the filing date of such instrument the date and
+   > time that would have been the filing date of the rejected instrument had it
+   > been accepted for filing."
+   >
+   > — 8 Del. C. § 103(c)(4)
+
+   a corrected paper delivered without the money re-tendered does not cure — it
+   is a fresh non-filing under § 103(c)(2), on the same reasoning that makes the
+   original filing a two-part act. **ask what the office still holds of your
+   original tender, and what must be re-sent.**
+
+   ⚠️ and read the clock's start: *"after notice ... is given to the filer."*
+   not after you learned of it. if the notice went to an agent, days are already
+   spent.
+2. is there an unpaid franchise tax balance? — § 502(f), first ground.
+3. is a completed annual report on file for *"the relevant time period"*? —
+   § 502(f), second ground.
+
+⚠️ **question 1 is time-critical and the other two are not.** an unpaid balance
+and an absent report wait for you indefinitely; a suspension does not. so the
+order above is not a preference — it is the only order in which a refusal can be
+triaged without loss.
+
+🎯 **and ask question 1 even when a rejection notice never reached you.** the
+statute starts the clock at notice **to the filer**, and a refused certificate
+may be the first signal you get that a notice went somewhere else.
+
+⇒ the full read of § 103(c)(4) — what the 5-day cure buys, and why the office's
+power to suspend is discretionary rather than owed — is in
+`4.file.revival.stone`.
+
+### ⚠️ Delaware sells TWO good-standing certificates, and they are 3.5× apart
+
+ask the requester which one they want **before** you order.
+
+| item | cost | same-day | 24-hour |
+|------|------|----------|---------|
+| Good Standing — **short form** | **$50.00** | +$50.00 | +$40.00 |
+| Good Standing — **long form** | **$175.00** | +$80.00 | +$60.00 |
+| certified copy (each) | $50.00 + $2.00/page | +$60.00 | +$50.00 |
+| special certificate (references void, name change, merger) | $50.00 | +$50.00 | +$40.00 |
+
+> ```
+> Good Standing Short form:
+>   All Entities Domestic and Foreign     $50.00 (per certificate)    $50.00    $40.00
+> Good Standing Long form:
+>   All Entities Domestic                $175.00 (per certificate)    $80.00    $60.00
+> ```
+> — [DE Division of Corporations, Fee Schedule, revised 2026-08-01](https://corpfiles.delaware.gov/Fee_Schedule/AugustFee2026.pdf)
+
+> ✅ **CLOSED 2026-09-14 — the schedule is embedded**, and all four rows above
+> were checked against it cell by cell. the source of record is
+> `registrator/briefs/incorporation/variant=c-corp/refs/effectiveAt=2026-08-01.de-doc-fee-schedule.{pdf,txt}`
+> — 254,794 bytes, extract 34,625 chars, revision read off the **body**, which
+> carries exactly one date token: `Revised August 1, 2026`.
+>
+> ⛔ **the table above sits on a DIFFERENT AXIS than the fee table in
+> `4.file.revival.stone`, and that is the whole mechanism of the `+$100` defect
+> retracted below.** the schedule runs two tables with different column counts:
+>
+> ```
+> corporate     Certificate Type | State Filing Fee | Certified Copy | Same Day | 24-Hour
+> certificates  Certificate Type | Fee              | Same Day       | 24-Hour
+> ```
+>
+> the certificates table has **no certified-copy column at all**. so a reader who
+> carries the corporate header across lands every figure one column to the left,
+> and a same-day fee reads as a certified-copy fee. **every cell stays true and
+> the row becomes false** — which is why no check of the individual numbers would
+> ever have caught it. read the header that sits above the row you are in.
+>
+> ⚠️ **a stale fee schedule has already cost this matter once**, in the direction
+> that punishes the careful reader: a pull that succeeded against an **old
+> revision** retracted a correct figure and shipped the retraction as verified.
+> the check that closes it is a read of the revision stamp off the **document** —
+> the slug `AugustFee2026.pdf` agrees here, but that agreement is the *result* of
+> the check, never a substitute for it.
+
+⭐ **for a corporation just revived, the LONG form is usually what is wanted.**
+the short form states only that the entity is in good standing today; the long
+form lists the entity's full history of prior filings. a bank or an investor who
+asks for proof after a void period asks about the **history**, which is exactly
+what the short form omits.
+
+⛔ **a special certificate is a third option, at `$50.00`** — it references a
+specific event such as a void. where a counterparty wants confirmation the void
+was cured rather than the whole history, this is the cheap precise answer.
+
+> 🚨 **this table read `$50` flat with `expedited +$100`.**
+>
+> the `$50` was the **short form** only, unlabeled — so it read as *the* price
+> of a certificate of status and hid the $175 option entirely.
+>
+> ⚠️ **and `+$100` matches NEITHER form.** short form expedite is `$50.00`
+> same-day / `$40.00` 24-hour; long form is `$80.00` / `$60.00`. the figure was
+> carried over from the `$200.00` / `$100.00` column pair that applies to
+> *filings* — but certificates are priced on a different table entirely, with
+> its own columns.
+>
+> ⭐ **this is the third expedite-column defect found in this route on one day**
+> — the others in `4.file.revival.stone` and
+> `corp.shares.reduce/templates/3.file.amendment.stone`. in every one the
+> headline fee was right and the expedite figure was borrowed from a row it
+> does not belong to.
+
+order at: https://corp.delaware.gov/
+
+---
+
+## ⭐ then restore your OWN record — the §211(c) duty Delaware never asks about
+
+good standing with the State is half of restoration. the other half is a duty
+under the DGCL that no agency will bill you for and no status page will show.
+
+> "(c) A failure to hold the annual meeting at the designated time or to elect
+> a sufficient number of directors to conduct the business of the corporation
+> **shall not affect otherwise valid corporate acts or work a forfeiture or
+> dissolution of the corporation** except as may be otherwise specifically
+> provided in this chapter. If the annual meeting for election of directors is
+> not held on the date designated therefor **or action by written consent to
+> elect directors in lieu of an annual meeting has not been taken, the directors
+> shall cause the meeting to be held as soon as is convenient.** If there be a
+> failure to hold the annual meeting or to take action by written consent to
+> elect directors in lieu of an annual meeting **for a period of 30 days after
+> the date designated for the annual meeting**, or if no date has been
+> designated, **for a period of 13 months** after the latest to occur of the
+> organization of the corporation, its last annual meeting or the last action by
+> written consent to elect directors in lieu of an annual meeting, **the Court of
+> Chancery may summarily order a meeting to be held upon the application of any
+> stockholder or director.** The shares of stock represented at such meeting,
+> either in person or by proxy, and entitled to vote thereat, **shall constitute
+> a quorum for the purpose of such meeting, notwithstanding any provision of the
+> certificate of incorporation or bylaws to the contrary.** The Court of Chancery
+> may issue such orders as may be appropriate, including, without limitation,
+> orders designating the time and place of such meeting, the record date or dates
+> for determination of stockholders entitled to notice of the meeting and to vote
+> thereat, and the form of notice of such meeting."
+>
+> — [8 Del. C. § 211(c)](https://delcode.delaware.gov/title8/c001/sc07/index.html),
+> verified against
+> `registrator/briefs/incorporation/variant=c-corp/refs/de-title8-ch1-sc07-meetings.txt`
+
+> ✅ **CLOSED 2026-09-14 — subchapter VII is pulled and embedded.** 76,886 chars,
+> url earned from the chapter-1 index's own nav rather than pattern-matched, and
+> the body confirmed to carry `Subchapter VII. Meetings, Elections, Voting and
+> Notice` before any quote was taken from it. this closes the whole cluster: the
+> window arithmetic below, and every § 212 / § 228 / § 232 claim elsewhere in
+> this route, all sit in this one container.
+>
+> 🚨 **and the pull found a defect the flag did not predict — THE QUOTE WAS
+> TRUNCATED, by more than half.** the old version ended at *"as soon as is
+> convenient."* three further sentences follow, and the first of them is the
+> operative remedy:
+>
+> | what the old quote showed | what § 211(c) actually carries |
+> |---|---|
+> | a savings clause + a soft duty | ⛔ **plus a 30-day / 13-month deadline** |
+> | no consequence named | ⛔ **plus a Court of Chancery summary order, on the application of ANY stockholder or director** |
+> | — | ⛔ **plus a quorum override that defeats your own bylaws** |
+>
+> ⭐ **the truncation cut at a sentence boundary, so it read as a complete
+> subsection** — the eye supplies a period the legislature did not write. that is
+> the same mechanism as the § 224 proviso dropped from `0.gather.position.stone`.
+>
+> ⚠️ **the window arithmetic below was already correct** — it states the 30-day
+> and 13-month limits and the summary-order remedy. but it sits ~30 lines *after*
+> the block quote, and **the block quote is where a reader meets § 211(c) first.**
+> a correction that never travels back to the head of its own section is a
+> correction only the second reader gets.
+
+read the two halves, because they point opposite ways:
+
+| clause | what it does for you |
+|---|---|
+| *"shall not ... work a forfeiture or dissolution"* | ⭐ **a savings clause.** the annual meetings you missed while void did **not** compound the void. the void came from the franchise tax statute, and only from there |
+| *"the directors **shall** cause the meeting to be held as soon as is convenient"* | ⛔ **a live, mandatory duty** — and it survives the revival. the savings clause forgives the past; it does not cancel the obligation |
+
+⚠️ § 312(i) makes the **void period count** inside § 211(c)'s 30-day and
+13-month windows, so a corporation revived after a multi-year void is already
+far past them. past the window, *"the Court of Chancery may summarily order a
+meeting to be held upon the application of any stockholder or director."*
+
+⭐ **for a sole-founder corporation that risk is inert — but for a reason that
+matters.** the windows apply in full; what makes them harmless is the
+**applicant set**. only a stockholder or a director may apply, and there is one
+of each, and he is the same person. add a second stockholder and the analysis
+changes that day.
+
+### the cheap instrument
+
+§ 211(c) names its own substitute, four separate times: **"action by written
+consent to elect directors in lieu of an annual meeting."** that is a full
+substitute, not a lesser form.
+
+| you have | what discharges the duty |
+|---|---|
+| a sole stockholder | **one signed written consent.** no meeting, no notice, no quorum |
+| several stockholders | a written consent per your bylaws, or hold the meeting |
+
+| item | value |
+|---|---|
+| fee | **none** |
+| filed with Delaware | ⛔ **no** — this is an internal record |
+| where it lives | the minute book |
+| when | after the revival lands |
+
+#### ⭐ and § 312(i) names a SECOND free discharge — one you may have already used
+
+the same subsection that counts the void period against you
+closes with a sentence that can settle the duty outright:
+
+> "A **special meeting of stockholders held in accordance with subsection (h) of
+> this section shall be deemed an annual meeting of stockholders for purposes of
+> § 211(c)** of this title."
+>
+> — 8 Del. C. § 312(i), https://delcode.delaware.gov/title8/c001/sc12/index.html
+
+⭐ **if you had no directors and held the § 312(h) special meeting to elect a
+board, that meeting IS your annual meeting.** the duty is discharged by the act
+you already performed to make the revival possible — no consent, no second
+meeting, no fee.
+
+| your position at revival | what discharges § 211(c) |
+|---|---|
+| directors were in office (the deemed board authorized it) | the **written consent** above |
+| ⛔ **no directors — stockholders elected a board under (h)** | ✅ **that meeting already did it**, per § 312(i) |
+
+⚠️ **read the condition: "in accordance with subsection (h)."** the rule applies
+to the (h) meeting — the one called *"by any officer or stockholder upon notice
+given in accordance with § 222"* to elect directors. an informal conversation
+among the same people is not that meeting. **minute it as an (h) meeting when
+you hold it**, or you forfeit a discharge you had earned.
+
+> § 312(h) deems the board to be whoever *would* be directors but for the void,
+> so a signer exists either way — but a post-revival date is the clean record.
+
+⛔ **do not skip this because it is free and unobserved.** skip it and you hold
+a corporation that is current on tax, restored on the register, and carries no
+record that a board was ever elected. that is the gap a diligence request finds,
+and it surfaces at the worst moment — mid-raise, mid-sale, mid-loan.
+
+---
+
+## emit
+
+record verification in:
+`$route/5.verify.restoration.yield.md`
+
+format:
+```
+## verification
+
+| field | value |
+|-------|-------|
+| date checked | |
+| status | |
+| tax due | $ |
+
+## screenshot
+
+[attach screenshot from icis.corp.delaware.gov]
+
+## certificate of status (if obtained)
+
+| field | value |
+|-------|-------|
+| ordered | yes / no |
+| date | |
+| confirmation | |
+
+## the §211(c) written consent
+
+| field | value |
+|-------|-------|
+| signed on | |
+| directors elected | |
+| filed in minute book | yes / no |
+```

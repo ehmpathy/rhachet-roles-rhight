@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`statement.parse.sh given: [case1] a typical amex statement when: [t0] the statement is parsed then: output matches snapshot 1`] = `
+"date	kind	amount	merchant
+2023-05-31	payment	-500.00	MOBILE PAYMENT - THANK YOU
+2023-06-12	payment	-1500.00	MOBILE PAYMENT - THANK YOU
+2023-06-02	credit	-50.00	YOUR CASH REWARD/REFUND IS
+2023-05-27	charge	10.00	GOOGLE*DOMAINS GOOGLE PAYMENT G.CO HELPPAY#
+2023-06-01	charge	300.00	GOOGLE *ADS0000000000 CC@GOOGLE.COM
+2023-06-02	charge	1000.00	ACME HOSTING ACMEHOST.COM
+2023-06-21	charge	200.00	GITHUB, INC. SAN FRANCISCO
+2023-06-23	account	0.00	9-99999
+2023-06-23	declared.charges	1510.00	Total New Charges
+"
+`;

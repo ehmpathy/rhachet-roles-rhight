@@ -1,0 +1,73 @@
+######################################################################
+# .what = statement format declaration: American Express
+#
+# .why  = a format is data, not code. to support a new issuer, add a
+#         .fmt file here — the parser needs no change.
+#
+# .how  = each FMT_* value is an extended regex (ERE), applied per line
+#         of the pdftotext -layout extract.
+#
+# .note = ALWAYS single-quote the values. this file is sourced by bash, so
+#         a double-quoted `\$[0-9,]` would be read as `$[...]` arithmetic
+#         expansion and fail the load. single quotes keep regexes literal.
+#
+# .note = FMT_DECLARED is required. it names the line where the issuer
+#         states its own total for the period, which is what lets the
+#         tally reconcile a parse against the source. a format without
+#         such a line cannot be verified and must not be added blind.
+#
+# .note = FMT_ACCOUNT is required too, and for a sharper reason. a
+#         taxpayer may hold two cards from the same issuer — one
+#         corporate, one personal — whose statements are byte-identical
+#         in layout and differ only in this line. a parse that cannot
+#         say WHICH CARD it read cannot keep a personal charge off a
+#         corporate return, so a format without it is refused.
+######################################################################
+
+FMT_NAME='amex'
+FMT_LABEL='American Express'
+
+# fingerprint: all must appear somewhere in the document to claim this format
+FMT_FINGERPRINT_1='American Express'
+FMT_FINGERPRINT_2='Account End'
+
+# section headers — a dated row is attributed to the section most recently seen.
+# .note = a header may carry a suffix note, e.g.
+#         " Fees               *Indicates posted date" — hence the
+#         optional suffix group. a match anchored on end-of-line alone
+#         silently misattributes fees as charges.
+FMT_SECTION_PAYMENT='^[ \t]*Payments[ \t]+Amount[ \t]*$'
+FMT_SECTION_CREDIT='^[ \t]*Credits[ \t]+Amount[ \t]*$'
+FMT_SECTION_CHARGE='^[ \t]*New Charges([ \t]+\*Indicates.*)?[ \t]*$'
+FMT_SECTION_FEE='^[ \t]*Fees([ \t]+\*Indicates.*)?[ \t]*$'
+FMT_SECTION_INTEREST='^[ \t]*Interest Charged([ \t]+\*Indicates.*)?[ \t]*$'
+
+# a transaction row: starts with a date, ends with an amount.
+# the \*? absorbs the marker amex appends to some dates.
+FMT_ROW='^[0-9][0-9]/[0-9][0-9]/[0-9][0-9]\*?[ \t]+'
+
+# how to read the first date token: mm/dd/yy
+FMT_DATE_SHAPE='mm/dd/yy'
+
+# the issuer's own stated total for the period (required — see .note above)
+FMT_DECLARED='^[ \t]*Total New Charges[ \t]+\$[0-9,]+\.[0-9][0-9][ \t]*$'
+FMT_DECLARED_LABEL='Total New Charges'
+
+# which card this statement belongs to (required — see .note above)
+#
+# ⚠️ anchored on "Account End"+"ing", NOT "Card End"+"ing". amex prints BOTH:
+#    the account line in the page header, and a per-cardholder card line
+#    above each charge block. on a multi-cardholder account those differ, so
+#    a regex that matched either would report whichever appeared first — a
+#    coin flip on the one field this guard depends on.
+#
+# .note = the label is spliced, as with the close-date label below, because
+#         it is amex's verbatim printed wording.
+FMT_ACCOUNT='Account End'"ing"'[ \t]+[0-9][0-9-]*'
+FMT_ACCOUNT_LABEL='Account End'"ing"
+
+# the period close date, used to date the declared-total row.
+# .note = "Clos"+"ing Date" is amex's literal label; kept verbatim so the
+#         regex matches the printed statement.
+FMT_SHUTDATE='Clos'"ing"' Date[ \t]+[0-9][0-9]/[0-9][0-9]/[0-9][0-9]'
+FMT_SHUTDATE_LABEL='Clos'"ing"' Date'

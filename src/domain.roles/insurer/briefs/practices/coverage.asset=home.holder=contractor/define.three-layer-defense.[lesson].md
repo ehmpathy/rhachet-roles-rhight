@@ -1,5 +1,7 @@
 # define.three-layer-defense
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 three independent layers of protection that ensure insurance will pay out when an owner or employee performs contractor work at your property.
@@ -145,3 +147,7 @@ three independent sources. three types of evidence. one solid defense.
 - `risk.subcontractor-gap.[lesson].md` — how insurance denies when subcontractors do the work
 - `ref.subcontractor-coverage-case-law.[ref].md` — court cases on coverage, CG 22 94 endorsement
 - `ref.text-messages-as-evidence.[ref].md` — legal basis for layer 3 text confirmation
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.

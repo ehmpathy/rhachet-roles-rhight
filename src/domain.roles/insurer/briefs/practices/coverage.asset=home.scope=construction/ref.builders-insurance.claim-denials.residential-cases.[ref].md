@@ -1,5 +1,7 @@
 # ref.builders-insurance.claim-denials.residential-cases
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 documented residential single-home builder's risk claim denial cases and patterns.
@@ -151,6 +153,10 @@ searched for Zurich and carrier-specific residential claim denial court cases:
 - [US Assure: Lessons Learned from Claim Setbacks](https://usassure.com/resources/articles/builders-risk-insurance-lessons-learned-from-claim-setbacks) — WebFetch verified
 - [US Assure: 7 Tips to Avoid Claim Problems](https://usassure.com/resources/articles/7-tips-to-avoid-common-residential-builders-risk-claim-problems) — WebFetch verified
 - WebSearch: "builder's risk claim denied residential single family" — 2026-04-29
+
+## .publishability
+
+☀️ **fullsun** (share) — residential builder's risk claim-denial cases drawn from public sources; no client identity or applied strategy.
 
 ## .date researched
 

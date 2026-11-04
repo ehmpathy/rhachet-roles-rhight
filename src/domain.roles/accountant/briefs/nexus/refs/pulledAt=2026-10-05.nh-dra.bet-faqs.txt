@@ -1,0 +1,141 @@
+Skip to main content
+ Change Site Language  Search The Site
+Main navigation
+OPEN MENU
+Home
+About DRA
+Taxes at a Glance
+Licenses & Certifications
+Resource Center
+Transparency
+Business Enterprise Tax
+Frequently asked questions in regard to Business Enterprise Tax (BET).
+
+What is Business Enterprise Tax (BET)?
+
+A tax assessed on the enterprise value tax base, which is the sum of all compensation paid or accrued, interest paid or accrued, and dividends paid by the business enterprise, after special adjustments and apportionment.
+
+Business Enterprise Tax Rates
+For Taxable Periods Ending	BET Rate
+On or after December 31, 2022	0.55%
+On or after December 31, 2019	0.60%
+On or after December 31, 2018	0.675%
+On or after December 31, 2017	0.72%
+On or after December 31, 2016	0.72%
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+For taxable periods ending before December 31, 2016, please contact the Department at (603) 230-5920.
+
+Who pays it? 
+
+Pursuant to RSA 77-E:5, I, the Commissioner of DRA biennially adjusts the BET filing thresholds for inflation, rounding to the nearest $1,000, using the Consumer Price Index for All Urban Consumers, Northeast Region as published by the Bureau of Labor Statistics, United States Department of Labor using the amount published for the month of June in the year prior to the start of the tax year. Payments can be made on our online portal; Granite Tax Connect at ttps://gtc.revenue.nh.gov/. 
+
+Business Enterprise Tax Historical Filing Thresholds  
+
+Taxable Periods Beginning on or after 1/1/2025
+Gross receipts in excess of $298,000 or
+Enterprise value tax base greater than $298,000
+Taxable Periods Beginning on or after 1/1/2023 - 12/31/2024
+Gross receipts in excess of $281,000 or
+Enterprise value tax base greater than $281,000
+Taxable Periods Ending on or after 12/31/2022
+Gross receipts in excess of $250,000 or
+Enterprise value tax base greater than$250,000
+Taxable Periods Beginning on or after 1/1/2021
+Gross receipts in excess of $222,000 or
+Enterprise value tax base greater than$111,000
+Taxable Periods Beginning on or after 1/1/20019 - 12/31/2020
+Gross receipts in excess of $217,000 or
+Enterprise value tax base greater than$108,000  
+Taxable Periods Beginning on or after 1/1/2017 - 12/31/2018
+Gross receipts in excess of $208,000 or
+Enterprise value tax base greater than$104,000
+Taxable Periods Ending on or after 1/1/2015 - 12/31/2016
+Gross receipts in excess of $207,000 or
+Enterprise value tax base greater than$103,000
+Taxable Periods Ending on or after 1/1/2014 - 12/31/2015
+Gross receipts in excess of $200,000 or
+Enterprise value tax base greater than$100,000
+Taxable Periods Ending on or after 7/1/2001 - 12/31/2013
+Gross receipts in excess of $150,000 or
+Enterprise value tax base greater than$75,000
+Taxable Periods Prior to 7/01/2001
+Gross receipts in excess of $100,000 or
+Enterprise value tax base greater than$50,000
+
+When is the return due? 
+
+For taxable periods beginning after December 31, 2015, partnership returns are due on the 15th day of the 3rd month following the end of the taxable period. Corporate, proprietorship, fiduciary and combined returns are due on the 15th day of the 4th month following the end of the taxable period.
+
+Do I have to make estimated payments? 
+
+Yes, for taxable periods ending on or after December 31, 2013, if your estimated tax liability exceeds $260. Four estimate payments are required, paid at 25% each on the 15th day of the 4th, 6th, 9th and 12th month of the taxable period.
+
+For taxable periods ending before December 31, 2013, if your estimated tax liability exceeds $200, four estimate payments are required, paid at 25% each on the 15th day of the 4th, 6th, 9th and 12th month of the taxable period.
+
+Who do I contact with questions? 
+
+Call Taxpayer Services at (603)230-5920.
+
+I am not required to file a BET return, why do you want the form? 
+
+If the BET return is not required, you must check NO in Step 2 on Form BT-Summary, otherwise the Department assumes you are required to file the BET return. All taxpayers must file the Form BT-Summary to report the correct name and address information, summarize the taxes due and payment information and sign the return.
+
+Where can I obtain more information?
+
+For more information, you may review RSA 77-E and NH Code of Administrative Rules, Rev 2400.
+
+Are guaranteed payments to partners included in BET base?
+
+Yes
+
+Who pays BET on intercompany dividends?
+
+The affiliate and the parent can deduct the dividend.
+
+Can unused BET credit be carried forward to future years and for how long?
+
+Any unused BET credit from taxable periods ending before December 31, 2014, may be carried forward for 5 years from the taxable period in which it was paid; and any unused BET credit from taxable periods ending on or after December 31, 2014, may be carried forward for 10 years from the taxable period in which it was paid.
+
+Is interest paid to depositors included in the BET base of a bank?
+
+Yes
+
+Is a non-profit organization required to file the BET return?
+
+Yes, if it meets the filing requirements and is not an organization exempt from federal taxes as described in Internal Revenue Code section 501(c)(3).
+
+When should an "Employee Leasing Company" include payments made to its "Leased Employees" for services provided to the Employee Leasing Company's customers (the "servicing company(s)" in their capacity as a "leased employee" in its Business Enterprise Tax Base?
+
+If the leasing company qualifies as the "employer" (paying the W-2 wages of the leased employee) the compensation factor would apply to the leasing company. Therefore, the compensation paid or accrued by the leasing company would be included in the tax base of that enterprise if that enterprise issued the individuals federal W-2 statement. However, effective July 1, 2015, an employee leasing company and client company may elect to make the client company solely responsible for including the wages of a leased employee in the compensation portion of the client company enterprise value tax base. For can election submission, complete form DP-216, Employee Leasing Company Business Enterprise Tax (BET) Election, which can be found on our Forms page under the Business Tax section.
+
+109 Pleasant Street | Concord NH 03301
+(603) 230-5000
+TDD Access: 1-800-735-2964
+Hours: Monday through Friday | 8 AM – 4:30 PM
+
+Footer - Agency Links
+Taxpayer Assistance
+News and Announcements
+Reports and Publications
+Directions to NHDRA
+Contact the Webmaster
+Footer - State Links
+NH Web Portal - NH.gov
+NH Travel & Tourism
+ReadyNH.gov
+NH Government Careers
+Transparent NH
+NH Business Gateway
+© 2026 State of New Hampshire • All rights reserved
+Accessibility Policy  Privacy Policy
+AN OFFICIAL NEW HAMPSHIRE GOVERNMENT WEBSITE

@@ -1,5 +1,7 @@
 # define.insurance-agent-license-reciprocity
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 insurance agent license reciprocity is a mutual agreement between states that allows a producer licensed in good standing in their home state to obtain a nonresident license in another state without taking that state's examination or pre-licensing course.
@@ -394,3 +396,7 @@ Florida requires matching lines of authority:
 - define.purpose-of-insurance-agent-licenses — why licensing exists
 - define.history-of-insurance-agent-licenses — historical evolution
 - define.insurance-agent-license-process — how to obtain a license
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public insurance reciprocity law; no client identity or client-specific mechanic.

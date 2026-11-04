@@ -1,5 +1,7 @@
 # define.loss-of-rents-coverage
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .scope
 
 **this coverage applies to:**
@@ -241,4 +243,8 @@ if you lease to a business tenant, both coverages may apply — your loss-of-ren
 6. [SageSure - What Is a DP3 Policy](https://sagesure.com/insurance-insights/what-is-a-dp3-policy/)
 7. [Risman - 12 Months Isn't Always Enough](https://www.risman.com/12-months-isnt-always-enough-what-landlords-should-know-about-loss-of-rent-coverage/)
 8. [Weed & Ross - Understanding Loss of Rental Income Coverage](https://weedross.com/understanding-and-calculating-loss-of-rental-income-coverage/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic landlord loss-of-rents coverage explained from public sources; no client identity or applied strategy.
 

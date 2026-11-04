@@ -1,5 +1,7 @@
 # howto.verify.licence.electrician.indiana.indianapolis
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 step-by-step process to verify an electrician licence in Indianapolis, Indiana (Marion County).
@@ -144,6 +146,10 @@ do **not** use the Indiana PLA portal ([mylicense.in.gov](https://mylicense.in.g
 | plumber | Indiana PLA (state) | mylicense.in.gov |
 | HVAC | Indiana PLA (state) | mylicense.in.gov |
 | electrician | Indianapolis DBNS (local) | aca-prod.accela.com/INDY |
+
+## .publishability
+
+☀️ **fullsun** (share) — public Indianapolis license-verification steps; no client identity or client-specific mechanic.
 
 ## .sources
 

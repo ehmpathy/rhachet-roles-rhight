@@ -1,5 +1,7 @@
 # hazard.license-rental.electrician.indiana
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 "license rental" = an unlicensed or out-of-jurisdiction electrician uses another electrician's license number to pull permits and perform work they are not authorized to do.
@@ -473,6 +475,10 @@ this is the exception, not the rule. most jurisdictions rely on:
 | Vebr v. Culp, Cal. Court of Appeal (2015) | case law |
 | Grit Insurance case studies | reference |
 | Jury Verdict Alert - Fireman's Fund v. Triton | case law |
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public hazard analysis with public case law; no client identity or client-specific mechanic.
 
 ## .date researched
 

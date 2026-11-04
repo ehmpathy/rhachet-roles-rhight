@@ -1,5 +1,7 @@
 # hazard.subcontractor-injury-gl-gap
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 GC's GL may NOT cover injuries to subcontractor employees — depends on "action over" exclusion language in the policy.
@@ -256,6 +258,10 @@ most GCs won't know. ask for the policy — or ask their broker to confirm in te
 ### general contractor responsibility
 10. [MyNewMarkets - Workers' Comp: GC's Responsibility](https://www.mynewmarkets.com/articles/92397/workers-compensation-the-general-contractor-s-responsibility)
 11. [Landesblosch - Are GCs Responsible for Subcontractors](https://www.landesblosch.com/blog/are-general-contractors-responsible-for-subcontractors)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage hazard from public sources; no client identity or client-specific mechanic.
 
 ## .date researched
 

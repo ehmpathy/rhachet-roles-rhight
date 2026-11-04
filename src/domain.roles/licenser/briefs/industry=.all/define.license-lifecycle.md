@@ -1,5 +1,7 @@
 # define.license-lifecycle
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 a license moves through defined states from issuance to expiration or revocation.
@@ -95,6 +97,10 @@ when you verify a license, you check:
 3. **disciplinary history** — any actions on record?
 
 an "active" status with no disciplinary history is the green light.
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public licensure knowledge; no client identity or client-specific mechanic.
 
 ## .sources
 

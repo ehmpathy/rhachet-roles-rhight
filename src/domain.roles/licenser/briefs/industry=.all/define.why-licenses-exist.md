@@ -1,5 +1,7 @@
 # define.why-licenses-exist
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 licenses exist to protect the public from harm by unqualified practitioners.
@@ -63,6 +65,10 @@ licensure is a tradeoff:
 - **cost**: reduced competition, higher prices, barriers to entry
 
 whether the tradeoff is worth it depends on the occupation's risk profile.
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public licensure rationale; no client identity or client-specific mechanic.
 
 ## .sources
 

@@ -1,5 +1,7 @@
 # hazard.underinsurance
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 coverage limits set below actual replacement cost, discovered only after total loss.
@@ -170,6 +172,10 @@ underinsured homeowners **25% less likely** to rebuild.
 | independent appraisal | $300-500 | verify replacement cost estimate |
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

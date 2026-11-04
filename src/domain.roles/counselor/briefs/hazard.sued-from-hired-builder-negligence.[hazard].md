@@ -1,5 +1,7 @@
 # hazard.sued-from-hired-builder-negligence
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 when your hired contractor causes injury or damage to a third party, YOU get sued too — even though you didn't do the work.
@@ -300,6 +302,10 @@ builders use additional insured claims as settlement leverage:
 7. [AllLaw - Contractor Injury Liability](https://www.alllaw.com/articles/nolo/personal-injury/homeowner-liable-injuries-contractor.html)
 8. [Progressive - Contractor Damage](https://www.progressive.com/answers/property-damage-caused-by-contractors/)
 9. [ForYourRights - Uninsured Contractor](https://www.foryourrights.com/faqs/am-i-liable-if-an-uninsured-contractor-is-injured-on-my-property/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic homeowner-liability hazard from public sources; no client identity or client-specific mechanic.
 
 ## .date researched
 

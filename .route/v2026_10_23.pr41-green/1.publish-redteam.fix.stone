@@ -1,0 +1,6 @@
+clear the publish.redteam failure on #41 at its cause.
+
+.why = publish.redteam [case8] fails in CI with "doc.pseudonymize not found".
+
+emit into $route/1.publish-redteam.fix.yield.md
+- the cause, the fix, and the local proof

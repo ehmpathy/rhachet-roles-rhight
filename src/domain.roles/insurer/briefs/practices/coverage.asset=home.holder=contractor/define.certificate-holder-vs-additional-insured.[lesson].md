@@ -1,5 +1,7 @@
 # define.certificate-holder-vs-additional-insured
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 the critical distinction between two statuses on a Certificate of Insurance (COI) — one gives you a document, the other gives you rights.
@@ -138,3 +140,6 @@ before work begins:
 - `howto.verify-coi-is-valid.[lesson].md` — full verification process
 - `risk.subcontractor-gap.[lesson].md` — additional coverage risks
 
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.

@@ -1,0 +1,152 @@
+Frequently Asked Questions (FAQ's) about Use Tax Collection Requirements Due to the Amendments to Revenue and Taxation Code (RTC) sections 6203 and 7262
+
+Important note – Generally, you are required to register with the California Department of Tax and Fee Administration (CDTFA) and collect, report, and pay use tax when you are engaged in business in California. When you have either a physical presence or economic nexus in California, you are engaged in business in this state.
+
+According to RTC sections 6203 and 7262, there are five common ways in which you can be considered engaged in business in California. If any of the following situations apply to you, you are required to collect, report, and pay sales and/or use tax.
+
+You maintain, occupy, or use, directly or indirectly, or through a subsidiary or agent, a permanent or temporary office, place of distribution, sales or sample room, warehouse or storage place, or other physical place of business in California.
+You have representatives, agents, or independent contractors operating in California on your behalf or under your authority, or under the authority of your subsidiary, for purposes of making sales, taking orders, assembling or installing tangible personal property, training customers, making deliveries, or otherwise establishing or maintaining a market for your products.
+You receive rental payments from the leases of tangible personal property located in California, such as leases of machinery, equipment, and furniture.
+You own or lease real property or personal property such as, machinery or equipment, furniture, or computer servers located in California.
+Beginning April 1, 2019, you have total combined sales of tangible personal property for delivery in California by you and all persons related to you exceeding $500,000 during the preceding or current calendar year.
+
+For more information on these registration requirements, see our online Tax Guide for Out-of-State Retailers.
+
+The questions and answers below pertain mainly to out-of-state retailers (remote sellers) that are required to be registered with CDTFA and collect, report, and pay use tax according to RTC sections 6203 and 7262 and may help you better understand the new use tax collection requirements resulting from AB147.
+
+What items are subject to California tax?
+
+In general, California sales or use tax applies to all tangible personal property, such as personal property which may be seen, weighed, measured, felt, or touched, or which is in any other manner perceptible to the senses. Household items, appliances, electronics, clothes, shoes, books, computers, cell phones, personal care items, toys and games, arts and crafts, office supplies, tools, etc. are generally subject to tax.
+
+Sales tax applies to the retail sales of tangible personal property made within California. Sales tax does not apply to charges for services unless the services are part of the sale of tangible personal property. When sales tax does not apply, use tax generally applies to the sales price of tangible personal property that was purchased from a retailer for storage, use, or other consumption in California and is actually stored, used, or otherwise consumed in the state. In general, if California sales tax would apply when tangible personal property is purchased from a retailer in California, then California use tax would apply to a California consumer's purchase of the same tangible personal property from a retailer located outside the state for delivery in California.
+
+However, certain items are specifically exempt from tax by law. Examples of items exempt from tax include, but are not limited to the following:
+
+Food products for human consumption. However, some sales of food products, including sales of hot prepared food products, or food purchased for dine-in at a restaurant, are generally subject to tax.
+Animal life, feed for animal life, seeds, and plants the products of which are normally food for human consumption.
+Prescription medicines sold under specific circumstances (see Regulation 1591, Medicines and Medical Devices).
+
+In addition, the following charges are not considered charges for tangible personal property, and therefore, are not subject to tax:
+
+Admission charges to amusement parks, theaters, sports events, golf courses, etc.
+Finance charges.
+Charges for real property.
+Charges for securities, such as stocks, bonds, and memberships in limited liability companies.
+Charges for services unless the services are part of the sale of tangible personal property.
+Charges for transportation, such as bus, airplane, or train tickets.
+Does AB 147 impose a new tax on retailers located outside of California?
+
+No, there is not a new tax on out-of-state retailers. AB 147 expands the registration and reporting requirements for retailers based outside of California. State, local and district use taxes are imposed on consumers. This includes consumers who purchase tangible personal property from out-of-state retailers. When an out-of-state retailer is not registered with CDTFA, their consumers are responsible for paying the use tax directly to the state.
+
+How do I determine whether I meet the sales threshold requiring me to register with CDTFA and to collect, report, and pay California use tax according to RTC sections 6203 and 7262?
+
+If during the current or prior calendar year, you made sales of tangible personal property for delivery in California and the total sales price charged was greater than $500,000, you are required to register with CDTFA, and you are required to collect, report, and pay the state and local use tax due on your taxable sales made into California. Additionally, when you meet the threshold as described above, you are also considered engaged in business in all districts that impose a district tax and are required to collect the district use tax in addition to the state and local tax on your taxable sales for delivery in California.
+
+You are considered to have met the $500,000 sales threshold based on your total sales of tangible personal property, which may include nontaxable sales, such as sales for resale.
+
+Example – Remote seller makes taxable sales and sales for resale
+
+You are located outside of California and do not have a physical presence in this state. During calendar year 2018, your sales for delivery into California totaled $600,000. Those sales included $300,000 of sales for resale to other retailers who will resell the tangible personal property in the regular course of their businesses and $300,000 of retail sales to consumers. Because your total sales for delivery in California in calendar year 2018 exceeded $500,000, you are considered engaged in business in this state and required to register with CDTFA. You are also required to collect, report, and pay the state, local, and district use tax due on your taxable retail sales of tangible personal property into California; your sales for resale are generally not subject to tax.
+
+To document that your sales into California are nontaxable sales for resale, you must obtain a valid California resale certificate from your customer and keep it in your records. For more information, see publication 103, Sales for Resale.
+
+Example 2 – Remote seller
+
+You are located outside of California and prior to April 1, 2019, you were not a retailer engaged in business in this state. Your sales for delivery into California did not exceed $500,000. Therefore, since your sales in 2018 and the first three months of 2019 did not meet the $500,000 sales thresholds you are not required to register with CDTFA and begin collecting use tax as of April 1, 2019. However, if your sales later meet the threshold, you will need to register with CDTFA and collect, report, and pay tax at that point.
+
+For example, if during 2019, your sales increased and by June 30, 2019, your sales for delivery in California totaled $499,000. In July 2019, you make the following sales for delivery in California:
+
+$500 on July 4, 2019
+$300 on July 6, 2019
+$400 on July 7, 2019
+
+On July 7, 2019, your sales for delivery in California exceed $500,000 for 2019 ($499,000 + $500 + $300 + $400 = $500,200). You were required to register with CDTFA on July 7, 2019, and begin collecting the state, local, and district use taxes from your customers on your retail sales for delivery into California. You are not liable for collection of the use tax on sales delivered to California made prior to July 7, 2019, including the $400 transaction that put you over the $500,000 threshold. Your customers will remain liable for the payment of the use taxes on these transactions.
+
+Am I responsible for any use taxes on my retail sales into California prior to April 1, 2019?
+
+If you were considered engaged in business in California before April 1, 2019, then you may be liable for use taxes that you were required to collect, report, and pay to CDTFA on your sales made prior to April 1, 2019. CDTFA can assess a use tax liability up to eight years owed by a retailer that did not file a return. This assessment period may be reduced to three years if you qualify under our Voluntary Disclosure program. To find out more about this program and how to apply, visit the Out-of-State Voluntary Disclosure Program webpage.
+
+Prior to April 1, 2019, the four most common ways you would be considered engaged in business in this state are listed below:
+
+You maintain, occupy, or use, directly or indirectly, or through a subsidiary or agent, a permanent or temporary office, place of distribution, sales or sample room, warehouse or storage place, or other physical place of business in California.
+You have representatives, agents, or independent contractors operating in California on your behalf or under your authority, or under the authority of your subsidiary, for purposes of making sales, taking orders, assembling or installing merchandise, training customers, making deliveries, or otherwise establishing or maintaining a market for your products.
+You receive rental payments from the leases of tangible personal property located in California, such as leases of machinery, equipment, and furniture.
+You own or lease real property or personal property such as, machinery or equipment, furniture, or computer servers located in California.
+
+Effective April 1, 2019, there is an additional common way you are considered engaged in business in this state:
+
+You have total combined sales of tangible personal property by you and all persons related to you for delivery in California exceeding $500,000 during the preceding or current calendar year.
+
+For more information on the registration requirements, see our online Tax Guide for Out-of-State Retailers.
+
+I make sales through an online marketplace. My sales into California exceeded $500,000 during the calendar year. Do I still need to register with CDTFA and collect, report, and pay the use tax on my sales to California customers?
+
+Beginning October 1, 2019, according to the Marketplace Facilitator Act, you will no longer be considered the retailer of your sales of tangible merchandise facilitated through a marketplace, provided the marketplace facilitator is registered or required to be registered for a seller's permit or Certificate of Registration – Use Tax.
+
+The marketplace facilitator will be the retailer responsible for collecting, reporting, and paying the tax to CDTFA on those facilitated sales for delivery in California. However, if you make any direct sales of tangible personal property in California or for delivery in California you may have a registration requirement. That is, if you make any sales of tangible personal property that are not facilitated by a registered marketplace facilitator and are engaged in business in this state, you are required to register with CDTFA for a Certificate of Registration – Use Tax, to collect, report, and pay use tax from your customers.
+
+For more information on the Marketplace Facilitator Act, please see our Tax Guide for the Marketplace Facilitator Act.
+
+I am located outside of California and make sales through my own website. Do I need to register with CDTFA and collect, report, and pay use tax from my customers?
+
+Yes. If you meet the $500,000 sales threshold, you have total combined sales of tangible personal property for delivery in California exceeding $500,000 during the preceding or current calendar year, you are required to register with CDTFA to collect, report, and pay the state, local, and district use taxes from your customers.
+
+What if I determine that I do not meet the $500,000 sales thresholds in the prior or current calendar year?
+
+If you do not meet the $500,000 sales threshold in the prior or current calendar year and are not otherwise considered to be engaged in business in California, you are not required to register with CDTFA.
+
+Please keep in mind that if you continue to make sales into California, and at a later date, meet the $500,000 sales threshold, you will be required to register with CDTFA and collect, report, and pay state, local, and district use taxes. You should keep records of your sales into California to document you do not meet the sales threshold.
+
+If I am located outside California and currently registered with CDTFA to collect, report, and pay the use tax on my sales to California customers, do I need to re-register?
+
+No, you will not need to re-register if you are currently registered with CDTFA. You will remain registered with CDTFA. However, there may be changes in your obligation to collect, report, and pay district use tax.
+
+I am a distributor located outside of California and sell only at wholesale to other vendors (sales for resale). Do I need to register with CDTFA to collect, report, and pay use tax?
+
+No. You do not need to register with CDTFA to collect, report, and pay use tax if you do not make any retail sales for delivery in California and all your sales into California are sales for resale to other vendors and if these wholesalers and retailers will resell the property in the regular course of business.
+
+However, if your sales for delivery into California exceed $500,000 during the preceding or current calendar year, and if you make any retail sale (a sale to a California consumer), you are then required to register with CDTFA and begin filing sales and use tax returns to report your total sales to customers in California. You will also be required to collect, report, and pay tax on your retail sales to customers in California. Your valid sales for resale to other retailers are not subject to tax and may be claimed as a deduction on your return. For information about your sales for resale and documentation to support your sales for resale, please see the next question.
+
+Most of my sales into California are to distributors (wholesalers) who resell the product to their customers in every state. Do I need to collect, report, and pay the tax on my sales to distributors?
+
+No. Use tax does not apply to your sales of tangible personal property to a customer who will resell the product in the regular course of business. Therefore, you are not required to collect, report, and pay use tax on your sales to distributors who will resell the item in the regular course of business. You should maintain proper documentation to support that the sale was for resale, which is explained below.
+
+To document that your sales into California are nontaxable sales for resale, you should obtain a signed resale certificate from your customer, the distributor or wholesaler. You may issue the resale certificate template (CDTFA-230) available on our website. However, a resale certificate may be any document, letter, purchase order, etc., but a resale certificate must contain the following information:
+
+The name and address of the purchaser's business.
+The purchaser's seller's permit number or an explanation stating why the purchaser is not required to hold a seller's permit.
+A description of the property to be purchased.
+A statement that the described property is being purchased for resale. The document must contain the phrase “for resale.” Phrases such as “nontaxable” or “exempt” are not acceptable.
+The signature of the purchaser, purchaser's employee, or authorized representative.
+The date of the document (an otherwise valid resale certificate will not be considered invalid solely because it is undated).
+
+For more information, see publication 103, Sales for Resale.
+
+I am a distributor located outside of California. On occasion, a supplier or vendor will purchase tangible personal property from me for resale and instruct me to ship it directly to their customer in California. Am I responsible for any tax on these transactions?
+
+Yes. If you are a retailer engaged in business in this state, including a retailer that meets the sales threshold (your total combined sales made into California exceed $500,000 during the preceding or current calendar year) and you deliver tangible personal property directly to a California consumer on behalf of an unregistered supplier or vendor, you are making a retail sale and are considered the retailer in the transaction. As such, you are responsible for collecting the tax from the California consumer and reporting and paying the tax to CDTFA.
+
+These types of transactions are referred to as "drop shipments." Typically, drop shipment transactions involve a "true retailer," a "drop shipper," and one consumer:
+
+The true retailer is a retailer that is not engaged in business in this state and not registered with CDTFA and that sells a product to a consumer in California.
+The drop shipper sells the product to the true retailer but ships the product directly to the California consumer according to instructions from the true retailer in a drop shipment.
+The consumer in California buys and receives the product.
+
+An out-of-state drop shipper that is a retailer engaged in business in this state is reclassified as the retailer in a drop shipment transaction and is responsible for collecting the use tax from the California customer.
+
+Example
+
+You are a distributor located outside of California that sells merchandise for resale to suppliers and vendors throughout the country. Your sales for delivery into California in the current year are over $500,000. These sales to your California customers are sales for resale to suppliers from whom you obtained valid resale certificates.
+
+One of your customers, a supplier located outside of California, purchases tangible personal property from you and asks you to send (drop ship) it on their behalf to their California customer. The supplier is not a retailer engaged in business in California. The supplier is the true retailer. Therefore, because your sales for delivery into California exceed $500,000 in the current year and you ship merchandise to a California consumer on behalf of a supplier that is not a retailer engaged in business in California, you are considered the retailer in the drop shipment transaction. As such, you are now required to register with CDTFA. You must also collect the use taxes on your retail sales to California customers, including your transactions made on behalf of the supplier (the true retailer), and report and pay the taxes to CDTFA.
+
+When you are responsible for the tax as the drop shipper, the amount of tax you are responsible for on the drop-shipped item is measured by either of the following:
+
+The amount the true retailer (your customer, the supplier/vendor) charged the California consumer, or
+The amount you charged the true retailer (your customer, supplier/vendor) plus a mark-up of 10 percent.
+
+As a drop shipper, you may calculate the amount subject to tax based on the retail selling price of the tangible personal property plus a markup of 10 percent. You may use a lower markup percentage if you can document that the lower markup accurately and the documentation reflects the selling price charged by the true retailer to the California consumer.
+
+However, if the supplier located outside of California in the above scenario is a retailer engaged in business in California, then you are not liable for the use tax on the transaction. Instead, the supplier is responsible for the collection of the use tax from their California customer and must report and pay it to CDTFA. You should obtain a valid resale certificate from the supplier to document that you made a nontaxable sale for resale to the supplier.
+
+Your customer, the supplier, is a retailer engaged in business in California and is responsible for collecting, reporting, and paying the use tax if their sales for delivery in California, including those sales in which the supplier directs you or another person to deliver the tangible personal property to the California customer on their behalf, exceed $500,000 during the preceding or current calendar year. This is pursuant to RTC Section 6203.

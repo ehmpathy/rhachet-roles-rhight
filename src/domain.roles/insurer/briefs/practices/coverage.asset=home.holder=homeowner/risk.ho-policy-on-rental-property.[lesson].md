@@ -1,5 +1,7 @@
 # risk.ho-policy-on-rental-property
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 the coverage gap when you have a homeowner's policy (HO-3) on a property that is rented to tenants.
@@ -216,6 +218,10 @@ before you convert owner-occupied to rental:
 - `risk.vacancy-clause.[lesson].md` — vacancy coverage gaps
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

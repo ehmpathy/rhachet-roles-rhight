@@ -1,5 +1,7 @@
 # risk.subcontractor-gap
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 how insurance can deny a claim when a subcontractor performs the work, even after the contractor said they would do it themselves.
@@ -193,6 +195,10 @@ the three-layer defense assumes owner/employee. if a subcontractor appears, your
 - `ref.subcontractor-coverage-case-law.[ref].md` — court cases on insurance coverage for subcontractor work
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

@@ -221,6 +221,10 @@ some homeowners take a middle path:
 - see `howto.retroactive-permit.inherited-work.[lesson].md` for inherited path details
 - see `define.owner-builder-exemption.[lesson].md` for owner-builder rules
 
+## .publishability
+
+☀️ **fullsun** (share) — generic homeowner tradeoff analysis over public permit practice; no client identity, no applied mechanic.
+
 ## .date researched
 
 2026-04-18

@@ -1,5 +1,7 @@
 # define.guild-model-history
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 the apprentice → journeyman → master progression used in electrician licensure descends directly from medieval European craft guilds. this brief traces that lineage.
@@ -159,6 +161,10 @@ the apprentice-journeyman-master model has survived 900+ years because:
 > "The essential features of the medieval guild system — apprenticeship, journeyman status, and master certification — survive in modern trade licensure because they address fundamental problems of skill transmission and quality assurance in dangerous work."
 >
 > — paraphrased from various labor history sources
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public history of the guild model; no client identity or client-specific mechanic.
 
 ## .sources
 

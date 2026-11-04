@@ -1,5 +1,7 @@
 # define.licence-jurisdiction.electrician.indiana
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 in Indiana, electrician licences are **local** — issued by cities and counties, not the state. a licence from one city is **not valid** in another.
@@ -110,6 +112,10 @@ a valid Indiana electrician licence means:
 - valid in the **issuer city only**
 - must be **active** (not expired, suspended, or revoked)
 - must match the **contractor's name**
+
+## .publishability
+
+☀️ **fullsun** (share) — public Indiana licensure law; no client identity or client-specific mechanic.
 
 ## .sources
 

@@ -1,5 +1,7 @@
 # howto.detect-unpermitted-work
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 methods for homebuyers to detect unpermitted work before purchase.
@@ -329,6 +331,10 @@ insurer denies claim citing:
 **if seller is vague or defensive:** assume unpermitted work exists.
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic buyer how-to over public permit records and cited sources; no client identity.
 
 ## .sources
 

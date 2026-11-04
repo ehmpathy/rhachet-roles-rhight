@@ -28,3 +28,7 @@ ignores:
   - rhachet-roles-rhachet
   - rhachet-roles-rhight
   - playwright
+# gitignored dirs hold local state (per-actor brain caches, scratch, temp clones); their imports are not ours
+ignore-patterns:
+  - .agent/.actors
+  - .temp

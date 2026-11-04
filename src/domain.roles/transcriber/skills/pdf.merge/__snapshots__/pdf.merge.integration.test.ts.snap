@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`pdf.merge.sh given: [case1] a 1 page cover and a 2 page body when: [t0] they are merged in argument order then: the readout matches snapshot 1`] = `
+"
+🦅 bound together,
+
+🔎 pdf.merge
+   ├─ 1. <tmp>/cover.pdf: 1 page(s)
+   ├─ 2. <tmp>/body.pdf: 2 page(s)
+   ├─ pages: 3 of 3 expected ✅
+   ├─ bytes: 2203
+   └─ into: <tmp>/packet.pdf
+"
+`;
+
+exports[`pdf.merge.sh given: [case9] --help is asked for when: [t0] the skill is invoked with --help then: the help matches snapshot 1`] = `
+".what = concatenate several PDFs into one, in the order given
+
+.why  = an agency upload form often takes ONE file per request while
+        the request itself is several documents — a cover letter, then
+        the instrument, then an exhibit. the filer is left to fuse
+        them, and the fuse is where two silent defects live:
+
+        1. PAGE LOSS. a merge that drops a page writes a valid PDF at
+           a plausible size and reports success. so this skill counts
+           the pages of every input, counts the pages of the output,
+           and REFUSES if the two disagree. a merge you did not verify
+           is a claim, not a fact.
+
+        2. ORDER. on a filing the order is substantive — a cover
+           letter behind the instrument it transmits is a different
+           document. so the order is the ARGUMENT ORDER, never a sort,
+           and the skill prints the resulting sequence so a human can
+           read it back before the upload.
+
+usage:
+  pdf.merge.sh cover.pdf certificate.pdf --into packet.pdf
+  pdf.merge.sh a.pdf b.pdf c.pdf --into out.pdf --mode plan
+  pdf.merge.sh --help
+
+options:
+  <pdf-path>...  two or more PDFs, in the order they must appear
+  --into FILE    output path (required, must end in .pdf)
+  --mode MODE    plan (report what would happen, write no file)
+                 apply (default — write the file)
+  --help         show usage and exit
+
+guarantee:
+  - refuses a SIGNED input outright. pdfunite rewrites the document,
+    which voids a cryptographic signature while every visual check
+    still passes. see rule.forbid.rewrite-of-signed-documents
+  - verifies the output page count equals the sum of the inputs, and
+    exits 1 if it does not
+  - refuses when an input path is also the --into path
+  - writes exactly one file, at exactly the path you named
+  - exit 0 success, exit 1 malfunction, exit 2 constraint
+
+⚠️ this concatenates. it does not re-paginate, re-number, or add a
+   transmittal page. the output is the inputs, in order, unaltered.
+"
+`;

@@ -1,5 +1,7 @@
 # ref.inspection-vs-forensics-gap.hired-builder
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 when a licensed contractor performs electrical work WITH permit and inspection, fire forensics can still identify workmanship defects that passed inspection. the key difference: subrogation allows insurer recovery from contractor.
@@ -258,6 +260,10 @@ avoid waiver of subrogation in residential contracts — it eliminates the recov
 ### case studies
 13. [Policygenius - Maida Family Fire](https://www.policygenius.com/homeowners-insurance/claims-diary-house-fire/)
 14. [Alpine Intel - Electrical Fire Case Study](https://alpineintel.com/resource/electrical-fire-case-study/)
+
+## .publishability
+
+☀️ **fullsun** (share) — public case law and general fire-forensics practice; no client identity.
 
 ## .date researched
 

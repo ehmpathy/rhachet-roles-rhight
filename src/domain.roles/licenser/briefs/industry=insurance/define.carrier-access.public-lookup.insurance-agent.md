@@ -1,5 +1,7 @@
 # define.carrier-access.public-lookup.insurance-agent
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 public access to insurance agent carrier appointment data allows consumers, insurers, and regulators to verify whether an agent is authorized to sell insurance products on behalf of a specific carrier, with transparency varying significantly by state jurisdiction.
@@ -408,3 +410,7 @@ market conduct depends on verifiable appointments:
 - define.carrier-access.wholesalers — wholesaler and MGA access
 - define.purpose-of-insurance-agent-licenses — why licensing exists
 - define.insurance-agent-license-process — how to obtain a license
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public insurance-regulator lookup analysis; no client identity or client-specific mechanic.

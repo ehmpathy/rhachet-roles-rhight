@@ -423,3 +423,34 @@
 # a URL-encoded space plus a date (%204-10-2026) in a Louisiana CIT-620i form URL,
 # read as an SSN by shape
 204102026
+
+# published agency contact lines, quoted in the licenser, permiter and
+# insurer briefs as the place a reader calls: Indianapolis DBNS (general
+# and licensure), Richmond IN city hall and building, Bay County FL
+# builders services, Texas Department of Insurance licensing, the
+# insurance-consumer helpline, LexisNexis consumer (CLUE) disclosure
+317-327-8700
+317-327-4316
+765-983-7341
+765-983-7200
+850-248-8350
+512-676-6500
+1-800-927-4357
+800-927-4357
+1-866-312-8076
+866-312-8076
+
+# published business lines of insurance brokers and agencies listed by
+# name in the insurer briefs (Indianapolis and Fort Wayne offices)
+317-810-0722
+317-895-5555
+317-559-3022
+260-471-7555
+
+# the public office address of Indianapolis DBNS, as the briefs quote it
+1200 Madison Ave, Suite
+1200 Madison Ave Suite
+
+# a case id inside a public findlaw citation url; it reads as a 9-digit
+# ein/ssn shape and is neither
+117186361

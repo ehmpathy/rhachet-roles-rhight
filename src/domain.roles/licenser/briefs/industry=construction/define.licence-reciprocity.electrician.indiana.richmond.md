@@ -1,5 +1,7 @@
 # define.licence-reciprocity.electrician.indiana.richmond
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 Richmond, Indiana accepts electrician licences from other jurisdictions **if** the applicant passed the same exam with 75%+ score.
@@ -66,6 +68,10 @@ Prometric ≠ Prov, so Indianapolis licences do not qualify for Richmond recipro
 | phone | (765) 983-7341 |
 | email | csittloh@richmondindiana.gov |
 | address | 50 North 5th St, Richmond, IN 47374 |
+
+## .publishability
+
+☀️ **fullsun** (share) — public Richmond reciprocity rules; no client identity or client-specific mechanic.
 
 ## .sources
 

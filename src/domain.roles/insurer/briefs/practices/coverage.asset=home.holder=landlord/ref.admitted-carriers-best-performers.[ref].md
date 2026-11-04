@@ -1,5 +1,7 @@
 # ref.admitted-carriers-best-performers
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 comparison of top-performing admitted carriers for landlord insurance — denial rates, claims satisfaction, and guaranty fund protection.
@@ -325,4 +327,8 @@ even admitted carriers can have issues. watch for:
 13. [Weiss Ratings - Insurance Claim Satisfaction Study](https://weissratings.com/)
 14. [ValuePenguin - Best Homeowners Insurance](https://www.valuepenguin.com/best-homeowners-insurance-companies)
 15. [NerdWallet - Best Landlord Insurance](https://www.nerdwallet.com/article/insurance/best-landlord-insurance)
+
+## .publishability
+
+☀️ **fullsun** (share) — carrier performance data from public ratings and sources; no client identity or applied strategy.
 

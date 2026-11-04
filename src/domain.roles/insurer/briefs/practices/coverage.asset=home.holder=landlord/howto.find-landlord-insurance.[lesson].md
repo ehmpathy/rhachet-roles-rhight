@@ -1,5 +1,7 @@
 # howto.find-landlord-insurance
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 how to shop for and select a DP-3 landlord insurance policy for your rental property.
@@ -210,3 +212,7 @@ before you bind coverage:
 9. [Nationwide - What Does Landlord Insurance Cover?](https://www.nationwide.com/lc/resources/home/articles/what-does-landlord-insurance-cover)
 10. [Steadily - 2026 Complete Guide to Landlord Insurance](https://www.steadily.com/faq/landlord-insurance-guide)
 11. [MoneyGeek - How Much Renters Insurance Should a Landlord Require?](https://www.moneygeek.com/insurance/renters/how-much-renters-insurance-should-a-landlord-require/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic how-to for shop for landlord insurance from public sources; no client identity or applied strategy.

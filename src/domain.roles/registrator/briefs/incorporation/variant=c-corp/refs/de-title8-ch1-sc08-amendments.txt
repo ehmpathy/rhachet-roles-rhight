@@ -1,0 +1,123 @@
+The Delaware Code Online
+LAWS OF
+DELAWARE
+REGULATIONS
+ADMINISTRATIVE
+CODE
+MUNICIPAL
+CHARTERS
+FAQ
+TITLE 8 > CHAPTER 1
+Authenticated PDF
+§ 241 § 242 § 243 § 244 § 245 § 246
+TITLE 8
+Corporations
+CHAPTER 1. General Corporation Law
+Subchapter VIII. Amendment of Certificate of Incorporation; Changes in Capital and Capital Stock
+§ 241. Amendment of certificate of incorporation before receipt of payment for stock.
+
+(a) Before a corporation has received any payment for any of its stock, it may amend its certificate of incorporation at any time or times, in any and as many respects as may be desired, so long as its certificate of incorporation as amended would contain only such provisions as it would be lawful and proper to insert in an original certificate of incorporation filed at the time of filing the amendment.
+
+(b) The amendment of a certificate of incorporation authorized by this section shall be adopted by a majority of the incorporators, if directors were not named in the original certificate of incorporation or have not yet been elected, or, if directors were named in the original certificate of incorporation or have been elected and have qualified, by a majority of the directors. A certificate setting forth the amendment and certifying that the corporation has not received any payment for any of its stock, or that the corporation has no members, as applicable, and that the amendment has been duly adopted in accordance with this section shall be executed, acknowledged and filed in accordance with § 103 of this title. Upon such filing, the corporation’s certificate of incorporation shall be deemed to be amended accordingly as of the date on which the original certificate of incorporation became effective, except as to those persons who are substantially and adversely affected by the amendment and as to those persons the amendment shall be effective from the filing date.
+
+(c) This section will apply to a nonstock corporation before such a corporation has any members; provided, however, that all references to directors shall be deemed to be references to members of the governing body of the corporation.
+
+8 Del. C. 1953, §  241;  56 Del. Laws, c. 50;  64 Del. Laws, c. 112, §  23;  70 Del. Laws, c. 587, §  13;  77 Del. Laws, c. 253, §§  31, 32; 
+
+
+§ 242. Amendment of certificate of incorporation after receipt of payment for stock; nonstock corporations.
+
+(a) After a corporation has received payment for any of its capital stock, or after a nonstock corporation has members, it may amend its certificate of incorporation, from time to time, in any and as many respects as may be desired, so long as its certificate of incorporation as amended would contain only such provisions as it would be lawful and proper to insert in an original certificate of incorporation filed at the time of the filing of the amendment; and, if a change in stock or the rights of stockholders, or an exchange, reclassification, subdivision, combination or cancellation of stock or rights of stockholders is to be made, such provisions as may be necessary to effect such change, exchange, reclassification, subdivision, combination or cancellation. In particular, and without limitation upon such general power of amendment, a corporation may amend its certificate of incorporation, from time to time, so as:
+
+(1) To change its corporate name; or
+
+(2) To change, substitute, enlarge or diminish the nature of its business or its corporate powers and purposes; or
+
+(3) To increase or decrease its authorized capital stock or to reclassify the same, by changing the number, par value, designations, preferences, or relative, participating, optional, or other special rights of the shares, or the qualifications, limitations or restrictions of such rights, or by changing shares with par value into shares without par value, or shares without par value into shares with par value either with or without increasing or decreasing the number of shares, or by subdividing or combining the issued shares of any class or series of a class of shares into a greater or lesser number of issued shares; or
+
+(4) To cancel or otherwise affect the right of the holders of the shares of any class to receive dividends which have accrued but have not been declared; or
+
+(5) To create new classes of stock having rights and preferences either prior and superior or subordinate and inferior to the stock of any class then authorized, whether issued or unissued; or
+
+(6) To change the period of its duration; or
+
+(7) To delete:
+
+a. Such provisions of the original certificate of incorporation which named the incorporator or incorporators, the initial board of directors and the original subscribers for shares; and
+
+b. Such provisions contained in any amendment to the certificate of incorporation as were necessary to effect a change, exchange, reclassification, subdivision, combination or cancellation of stock, if such change, exchange, reclassification, subdivision, combination or cancellation has become effective.
+
+Any or all such changes or alterations may be effected by 1 certificate of amendment.
+
+(b) Every amendment authorized by subsection (a) of this section shall be made and effected in the following manner:
+
+(1) If the corporation has capital stock, its board of directors shall adopt a resolution setting forth the amendment proposed, declaring its advisability, and either calling a special meeting of the stockholders entitled to vote in respect thereof for the consideration of such amendment or directing that the amendment proposed be considered at the next annual meeting of the stockholders. Such special or annual meeting shall be called and held upon notice in accordance with § 222 of this title. The notice shall set forth such amendment in full or a brief summary of the changes to be effected thereby unless such notice constitutes a notice of internet availability of proxy materials under the rules promulgated under the Securities Exchange Act of 1934 [15 U.S.C. § 78a et seq.]. At the meeting a vote of the stockholders entitled to vote thereon shall be taken for and against any proposed amendment that requires adoption by stockholders. If no vote of stockholders is required to effect such amendment, or if a majority of the outstanding stock entitled to vote thereon, and a majority of the outstanding stock of each class entitled to vote thereon as a class has been voted in favor of the amendment, a certificate setting forth the amendment and certifying that such amendment has been duly adopted in accordance with this section shall be executed, acknowledged and filed and shall become effective in accordance with § 103 of this title.
+
+(2) The holders of the outstanding shares of a class shall be entitled to vote as a class upon a proposed amendment, whether or not entitled to vote thereon by the certificate of incorporation, if the amendment would increase or decrease the aggregate number of authorized shares of such class, increase or decrease the par value of the shares of such class, or alter or change the powers, preferences, or special rights of the shares of such class so as to affect them adversely. If any proposed amendment would alter or change the powers, preferences, or special rights of 1 or more series of any class so as to affect them adversely, but shall not so affect the entire class, then only the shares of the series so affected by the amendment shall be considered a separate class for the purposes of this paragraph. The number of authorized shares of any such class or classes of stock may be increased or decreased (but not below the number of shares thereof then outstanding) by the affirmative vote of the holders of a majority of the stock of the corporation entitled to vote irrespective of this subsection, if so provided in the original certificate of incorporation, in any amendment thereto which created such class or classes of stock or which was adopted prior to the issuance of any shares of such class or classes of stock, or in any amendment thereto which was authorized by a resolution or resolutions adopted by the affirmative vote of the holders of a majority of such class or classes of stock.
+
+(3) If the corporation is a nonstock corporation, then the governing body thereof shall adopt a resolution setting forth the amendment proposed and declaring its advisability. If a majority of all the members of the governing body shall vote in favor of such amendment, a certificate thereof shall be executed, acknowledged and filed and shall become effective in accordance with § 103 of this title. The certificate of incorporation of any nonstock corporation may contain a provision requiring any amendment thereto to be approved by a specified number or percentage of the members or of any specified class of members of such corporation in which event such proposed amendment shall be submitted to the members or to any specified class of members of such corporation in the same manner, so far as applicable, as is provided in this section for an amendment to the certificate of incorporation of a stock corporation; and in the event of the adoption thereof by such members, a certificate evidencing such amendment shall be executed, acknowledged and filed and shall become effective in accordance with § 103 of this title.
+
+(4) Whenever the certificate of incorporation shall require for action by the board of directors of a corporation other than a nonstock corporation or by the governing body of a nonstock corporation, by the holders of any class or series of shares or by the members, or by the holders of any other securities having voting power the vote of a greater number or proportion than is required by any section of this title, the provision of the certificate of incorporation requiring such greater vote shall not be altered, amended or repealed except by such greater vote.
+
+(c) The resolution authorizing a proposed amendment to the certificate of incorporation may provide that at any time prior to the effectiveness of the filing of the amendment with the Secretary of State, notwithstanding authorization of the proposed amendment by the stockholders of the corporation or by the members of a nonstock corporation, the board of directors or governing body may abandon such proposed amendment without further action by the stockholders or members.
+
+(d) Notwithstanding the provisions of subsection (b) of this section, unless otherwise expressly required by the certificate of incorporation:
+
+(1) No meeting or vote of stockholders shall be required to adopt an amendment that (A) affects only changes described in paragraph (a)(1) or (7) of this section; or (B) reclassifies by subdividing the issued shares of a class of stock into a greater number of issued shares of the same class of stock (and, in connection therewith, such amendment may increase the number of authorized shares of such class of stock up to an amount proportionate to the subdivision), provided the corporation has only 1 class of stock outstanding and such class is not divided into series; and
+
+(2) An amendment to increase or decrease the authorized number of shares of a class of capital stock or an amendment to reclassify by combining the issued shares of a class of capital stock into a lesser number of issued shares of the same class of stock may be made and effected, without obtaining the vote or votes of stockholders otherwise required by subsection (b) of this section if: (A) the shares of such class are listed on a national securities exchange immediately before such amendment becomes effective and meet the listing requirements of such national securities exchange relating to the minimum number of holders immediately after such amendment becomes effective, (B) at a meeting called in accordance with paragraph (b)(1) of this section, a vote of the stockholders entitled to vote thereon, voting as a single class, is taken for and against the proposed amendment, and the votes cast for the amendment exceed the votes cast against the amendment, and (C) if the amendment increases or decreases the authorized number of shares of a class of capital stock for which no provision has been made pursuant to the last sentence of paragraph (b)(2) of this section, the votes cast for the amendment by the holders of such class exceed the votes cast against the amendment by the holders of such class.
+
+A provision of the certificate of incorporation providing that the number of authorized shares of 1 or more classes of stock may be increased or decreased by the affirmative vote of the holders of a majority of the stock (or a majority of the votes of such stock) of the corporation entitled to vote irrespective of the last sentence of paragraph (b)(2) of this section shall not constitute an express requirement to obtain an additional or greater vote than is provided by this subsection, unless such provision expressly states that the corporation is not to be governed by paragraph (d)(1) or (2), or both, of this section or such provision requires a greater or additional vote than is contemplated by the last sentence of paragraph (b)(2) of this section.
+
+8 Del. C. 1953, §  242;  56 Del. Laws, c. 50;  57 Del. Laws, c. 148, §§  18-21;  59 Del. Laws, c. 106, §  7;  63 Del. Laws, c. 25, §  12;  64 Del. Laws, c. 112, §  24;  67 Del. Laws, c. 376, §  10;  70 Del. Laws, c. 349, §§  5-7;  70 Del. Laws, c. 587, §§  14, 15;  72 Del. Laws, c. 123, §  5;  77 Del. Laws, c. 253, §§  33-35;  77 Del. Laws, c. 290, §  7;  79 Del. Laws, c. 327, §  6;  84 Del. Laws, c. 98, § 7;  85 Del. Laws, c. 279, § 1; 
+
+
+§ 243. Retirement of stock.
+
+(a) A corporation, by resolution of its board of directors, may retire any shares of its capital stock that are issued but are not outstanding.
+
+(b) Whenever any shares of the capital stock of a corporation are retired, they shall resume the status of authorized and unissued shares of the class or series to which they belong unless the certificate of incorporation otherwise provides. If the certificate of incorporation prohibits the reissuance of such shares, or prohibits the reissuance of such shares as a part of a specific series only, a certificate stating that reissuance of the shares (as part of the class or series) is prohibited identifying the shares and reciting their retirement shall be executed, acknowledged and filed and shall become effective in accordance with § 103 of this title. When such certificate becomes effective, it shall have the effect of amending the certificate of incorporation so as to reduce accordingly the number of authorized shares of the class or series to which such shares belong or, if such retired shares constitute all of the authorized shares of the class or series to which they belong, of eliminating from the certificate of incorporation all reference to such class or series of stock.
+
+(c) If the capital of the corporation will be reduced by or in connection with the retirement of shares, the reduction of capital shall be effected pursuant to § 244 of this title.
+
+8 Del. C. 1953, §  243;  56 Del. Laws, c. 50;  57 Del. Laws, c. 149;  57 Del. Laws, c. 421, §  7;  59 Del. Laws, c. 106, §  8;  66 Del. Laws, c. 136, §§  15, 16; 
+
+
+§ 244. Reduction of capital.
+
+(a) A corporation, by resolution of its board of directors, may reduce its capital in any of the following ways:
+
+(1) By reducing or eliminating the capital represented by shares of capital stock which have been retired;
+
+(2) By applying to an otherwise authorized purchase or redemption of outstanding shares of its capital stock some or all of the capital represented by the shares being purchased or redeemed, or any capital that has not been allocated to any particular class of its capital stock;
+
+(3) By applying to an otherwise authorized conversion or exchange of outstanding shares of its capital stock some or all of the capital represented by the shares being converted or exchanged, or some or all of any capital that has not been allocated to any particular class of its capital stock, or both, to the extent that such capital in the aggregate exceeds the total aggregate par value or the stated capital of any previously unissued shares issuable upon such conversion or exchange; or
+
+(4) By transferring to surplus (i) some or all of the capital not represented by any particular class of its capital stock; (ii) some or all of the capital represented by issued shares of its par value capital stock, which capital is in excess of the aggregate par value of such shares; or (iii) some of the capital represented by issued shares of its capital stock without par value.
+
+(b) Notwithstanding the other provisions of this section, no reduction of capital shall be made or effected unless the assets of the corporation remaining after such reduction shall be sufficient to pay any debts of the corporation for which payment has not been otherwise provided. No reduction of capital shall release any liability of any stockholder whose shares have not been fully paid.
+
+(c) [Repealed.]
+
+8 Del. C. 1953, §  244;  56 Del. Laws, c. 50;  59 Del. Laws, c. 106, §  9;  64 Del. Laws, c. 112, §§  25, 26; 
+
+
+§ 245. Restated certificate of incorporation.
+
+(a) A corporation may, whenever desired, integrate into a single instrument all of the provisions of its certificate of incorporation which are then in effect and operative as a result of there having theretofore been filed with the Secretary of State 1 or more certificates or other instruments pursuant to any of the sections referred to in § 104 of this title, and it may at the same time also further amend its certificate of incorporation by adopting a restated certificate of incorporation.
+
+(b) If the restated certificate of incorporation merely restates and integrates but does not further amend the certificate of incorporation, as theretofore amended or supplemented by any instrument that was filed pursuant to any of the sections mentioned in § 104 of this title, it may be adopted by the board of directors without a vote of the stockholders, or it may be proposed by the directors and submitted by them to the stockholders for adoption, in which case the procedure and vote required, if any, by § 242 of this title for amendment of the certificate of incorporation shall be applicable. If the restated certificate of incorporation restates and integrates and also further amends in any respect the certificate of incorporation, as theretofore amended or supplemented, it shall be proposed by the directors and adopted by the stockholders in the manner and by the vote prescribed by § 242 of this title or, if the corporation has not received any payment for any of its stock, in the manner and by the vote prescribed by § 241 of this title.
+
+(c) A restated certificate of incorporation shall be specifically designated as such in its heading. It shall state, either in its heading or in an introductory paragraph, the corporation’s present name, and, if it has been changed, the name under which it was originally incorporated, and the date of filing of its original certificate of incorporation with the Secretary of State. A restated certificate shall also state that it was duly adopted in accordance with this section. If it was adopted by the board of directors without a vote of the stockholders (unless it was adopted pursuant to § 241 of this title or without a vote of members pursuant to 242(b)(3) of this title), it shall state that it only restates and integrates and does not further amend (except, if applicable, as permitted under § 242(a)(1) and § 242(d)(1)(A) of this title) the provisions of the corporation’s certificate of incorporation as theretofore amended or supplemented, and that there is no discrepancy between those provisions and the provisions of the restated certificate. A restated certificate of incorporation may omit (a) such provisions of the original certificate of incorporation which named the incorporator or incorporators, the initial board of directors and the original subscribers for shares, and (b) such provisions contained in any amendment to the certificate of incorporation as were necessary to effect a change, exchange, reclassification, subdivision, combination or cancellation of stock, if such change, exchange, reclassification, subdivision, combination or cancellation has become effective. Any such omissions shall not be deemed a further amendment.
+
+(d) A restated certificate of incorporation shall be executed, acknowledged and filed in accordance with § 103 of this title. Upon its filing with the Secretary of State, the original certificate of incorporation, as theretofore amended or supplemented, shall be superseded; thenceforth, the restated certificate of incorporation, including any further amendments or changes made thereby, shall be the certificate of incorporation of the corporation, but the original date of incorporation shall remain unchanged.
+
+(e) Any amendment or change effected in connection with the restatement and integration of the certificate of incorporation shall be subject to any other provision of this chapter, not inconsistent with this section, which would apply if a separate certificate of amendment were filed to effect such amendment or change.
+
+8 Del. C. 1953, §  245;  56 Del. Laws, c. 50;  56 Del. Laws, c. 186, §  15;  59 Del. Laws, c. 437, §  11;  64 Del. Laws, c. 112, §§  27-29;  70 Del. Laws, c. 587, §  16;  73 Del. Laws, c. 82, §  13;  77 Del. Laws, c. 253, §§  36, 37;  80 Del. Laws, c. 40, §  10;  84 Del. Laws, c. 98, § 14; 
+
+
+§ 246. [Reserved.]
+
+
+Delaware General Assembly Judicial Executive Contact Twitter Help

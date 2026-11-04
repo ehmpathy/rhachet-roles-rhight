@@ -1,5 +1,7 @@
 # howto.acquire-builders-risk.landlord-hired-contractor
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 how to acquire builder's risk insurance as a landlord on a rental property when hiring a licensed, permitted contractor for significant renovation work (e.g., $20k electrical upgrade).
@@ -255,6 +257,10 @@ some landlord insurers offer "renovation endorsements" as an alternative to stan
 - [Inszone: Vacant & Renovation Property Insurance](https://inszoneinsurance.com/personal-insurance/vacant-home-insurance)
 - [Chase: Builder's Risk Insurance Guide](https://www.chase.com/personal/mortgage/education/owning-a-home/builders-risk-insurance)
 - [Rocket Mortgage: Builder's Risk Complete Guide](https://www.rocketmortgage.com/learn/builders-risk-insurance)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic how-to for acquire builder's risk insurance from public sources; no client identity or applied strategy.
 
 ## .date researched
 

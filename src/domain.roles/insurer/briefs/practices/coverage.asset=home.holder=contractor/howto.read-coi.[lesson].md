@@ -1,5 +1,7 @@
 # howto.read-coi
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 how to read a Certificate of Liability Insurance (COI) and verify you're actually protected, not just named on a piece of paper.
@@ -215,3 +217,7 @@ this is a standard request. legitimate contractors do it routinely.
 - `howto.verify-coi-is-valid.[lesson].md` — full verification process
 - `howto.check-cg-22-94.[lesson].md` — subcontractor coverage endorsement
 - `define.three-layer-defense.[lesson].md` — insurance verification as layer 1
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.

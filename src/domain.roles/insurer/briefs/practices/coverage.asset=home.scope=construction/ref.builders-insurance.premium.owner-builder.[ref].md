@@ -1,5 +1,7 @@
 # ref.builders-insurance-premium.owner-builder
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 owner-builders often face **higher premiums** and **underwriting restrictions** on builders insurance compared to licensed contractors.
@@ -165,6 +167,10 @@ builders insurance IS priced on **who** builds, not just **what** is built.
 
 ### premium factors
 - [Procore: Builders Risk Insurance Guide](https://www.procore.com/library/builders-risk-insurance)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic owner-builder premium ranges from public sources; no client identity or applied strategy.
 
 ## .date researched
 

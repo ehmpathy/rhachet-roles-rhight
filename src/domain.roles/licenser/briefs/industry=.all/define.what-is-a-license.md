@@ -1,5 +1,7 @@
 # define.what-is-a-license
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 a professional license is government-issued permission to practice an occupation.
@@ -42,6 +44,10 @@ this grant can be:
 - **suspended** — temporarily revoked for violations
 - **revoked** — permanently terminated for serious violations
 - **expired** — lapsed due to non-renewal
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public licensure knowledge; no client identity or client-specific mechanic.
 
 ## .sources
 

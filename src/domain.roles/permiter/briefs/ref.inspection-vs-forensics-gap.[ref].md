@@ -1,5 +1,7 @@
 # ref.inspection-vs-forensics-gap
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 permit inspections and fire forensic investigations serve different purposes, use different methods, and see different evidence. this gap explains how insurers can identify workmanship defects that passed inspection.
@@ -210,6 +212,10 @@ permit inspections and fire forensic investigations serve different purposes, us
 10. [Envista Forensics - Electrical Fires](https://www.envistaforensics.com/services/forensic-engineering/electrical-failure-analysis/electrical-fires/)
 
 **full source lists**: see sub-briefs (16 + 21 sources)
+
+## .publishability
+
+☀️ **fullsun** (share) — public explainer of how permit inspections differ from fire forensics; no client identity.
 
 ## .date researched
 

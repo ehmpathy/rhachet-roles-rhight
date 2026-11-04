@@ -1,5 +1,7 @@
 # ref.dp3-carriers-knob-tube
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 verified carrier stances on knob-and-tube (K&T) wiring for landlord DP-3 policies.
@@ -286,4 +288,8 @@ when calling carriers or brokers about K&T:
 11. Burns & Wilcox Indianapolis — secondary rental property target class
 12. Erie Insurance agent reports — K&T for owner-occupied only, refuses investment properties
 13. State Farm agent reports — K&T for owner-occupied only, refuses short-term rentals
+
+## .publishability
+
+☀️ **fullsun** (share) — carrier knob-and-tube stances from public sources and agent reports; no client identity or applied strategy.
 

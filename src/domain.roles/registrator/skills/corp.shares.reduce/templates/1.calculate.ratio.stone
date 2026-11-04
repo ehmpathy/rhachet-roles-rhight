@@ -1,0 +1,87 @@
+calculate the reverse split ratio.
+
+.why = the ratio determines how many old shares become one new share.
+
+---
+
+## formula
+
+```
+ratio = issued shares ÷ target shares
+```
+
+example:
+- issued: 8,000,000
+- target: 1,000
+- ratio: 8,000,000 ÷ 1,000 = **8000:1**
+
+---
+
+## calculate yours
+
+| field | value |
+|-------|-------|
+| current issued | |
+| target issued | |
+| **ratio** | :1 |
+
+---
+
+## par value adjustment
+
+one common treatment scales par by the same ratio, so stated capital is
+unchanged:
+
+| field | before | after |
+|-------|--------|-------|
+| shares | 8,000,000 | 1,000 |
+| par value | $0.00001 | $0.08 |
+| total value | $80 | $80 |
+
+> 🚩 **this section read "par value increases by the same ratio" until
+> 2026-09-02** — stated as a mechanical certainty, uncited, in the stone whose
+> output becomes a **filed Certificate of Amendment**.
+>
+> ⛔ **whether Delaware requires the par change is NOT established in this
+> repo.** a reverse split that holds par constant reduces stated capital, which
+> raises a § 244 question this route has never pulled. do not treat the table
+> above as the required form.
+
+✅ **what IS measured: the choice does not move the tax.** at 5,000 authorized /
+1,000 issued / $50,000 gross assets, `franchise.tax.delaware` returns **$175.00**
+under **both** treatments —
+
+| par after the split | annual tax |
+|---|---:|
+| $0.08 (scaled) | **$175.00** |
+| $0.00001 (held constant) | **$175.00** |
+
+— because the Authorized Shares Method governs at ≤5,000 authorized and *"does
+not count assets at all."* so the franchise-tax goal of this route gives you **no
+reason to prefer either treatment**, and the decision belongs to whoever drafts
+the amendment.
+
+calculate yours:
+
+| field | before | after |
+|-------|--------|-------|
+| shares | | |
+| par value | $ | $ |
+| total value | $ | $ |
+
+---
+
+## authorized shares
+
+also reduce authorized to ≤ 5,000:
+
+| field | before | after |
+|-------|--------|-------|
+| authorized | | ≤ 5,000 |
+
+---
+
+## emit
+
+save calculations to:
+`$route/1.calculate.ratio.yield.md`

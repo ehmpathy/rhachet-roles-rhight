@@ -1,5 +1,7 @@
 # define.purpose-of-insurance-agent-licenses
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 insurance agent licensing exists to protect consumers through competency assurance, market integrity, regulatory oversight, fiduciary accountability, and fraud prevention.
@@ -265,3 +267,7 @@ licensing enables fraud detection and enforcement:
 - define.history-of-insurance-agent-licenses — historical evolution
 - define.insurance-agent-license-process — how to obtain a license
 - define.insurance-agent-license-reciprocity — multi-state licensing
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public insurance licensure rationale; no client identity or client-specific mechanic.

@@ -1,5 +1,7 @@
 # define.licence-qualifications.electrician.indiana.richmond
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 requirements to obtain an electrician licence in Richmond, Indiana (Wayne County).
@@ -91,6 +93,10 @@ BS&A portal: bsaonline.com
 | name | Christine Sittloh, Administrative Assistant |
 | address | 50 North 5th St, Richmond, IN 47374 |
 | city hall | (765) 983-7200 |
+
+## .publishability
+
+☀️ **fullsun** (share) — public Richmond licensure requirements; no client identity or client-specific mechanic.
 
 ## .sources
 

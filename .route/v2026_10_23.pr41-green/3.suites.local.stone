@@ -1,0 +1,6 @@
+run the getAllBriefsOnDisk and publish.redteam integration suites locally.
+
+.why = the push should be the last step.
+
+emit into $route/3.suites.local.yield.md
+- the PASS/FAIL line of each suite, and the cap tally

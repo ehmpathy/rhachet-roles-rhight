@@ -1,5 +1,7 @@
 # define.why-experience-requirements-exist
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 electrician licences require documented work experience (typically 4+ years) before you can sit for the exam. this brief explains why and how that time is measured.
@@ -142,6 +144,10 @@ some jurisdictions reduce hour requirements for formal education:
 ## .the bottom line
 
 experience requirements exist because electrical work is dangerous and skill comes from practice, not just knowledge. hours are measured through employer documentation, and most jurisdictions require 8,000 hours (4 years) plus classroom instruction.
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public licensure rationale; no client identity or client-specific mechanic.
 
 ## .sources
 

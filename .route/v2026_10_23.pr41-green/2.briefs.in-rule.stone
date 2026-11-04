@@ -1,0 +1,10 @@
+repair the briefs the citation rule lets us repair without new research.
+
+.why = getAllBriefsOnDisk `sources-below-seven` is over its cap on #41.
+
+- B.a: number the `.sources` lists that already hold >= 7 distinct urls
+- B.b: state the rule's exception only in briefs the rule lets us exempt
+- raise no other check above its cap
+
+emit into $route/2.briefs.in-rule.yield.md
+- what was repaired, what was declined and why, and the count left

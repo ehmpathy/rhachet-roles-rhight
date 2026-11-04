@@ -1,0 +1,539 @@
+call Delaware to recalculate your taxes via Assumed Par Value Method.
+
+.why = the assessment on file was computed under § 503(a)(1), Authorized Shares,
+because a report was absent — § 502(c) directs exactly that. this call confirms
+the balance, the years, and the order of operations, so the reports that follow
+are correct on the first submission.
+
+> 🚩 **this `.why` read "you must call to request recalculation. this cannot be
+> done online." until a later pass. it named the wrong instrument.**
+>
+> § 502(c) grants the election *"by **filing the annual franchise tax report**
+> and complying with the provisions of § 503(b)."* the **report** is the
+> instrument; the call is coordination and grants no election. a reader who
+> believed the old line would end a productive call and wait for a revised bill
+> that never issues.
+>
+> ⚠️ "this cannot be done online" is also contradicted by this route's own later
+> step, which files amended reports through the tax portal at a per-year fee.
+
+### ✅ the PORTAL question is CLOSED — for the case that matters
+
+> 🚩 **this section read "what remains genuinely open is whether the portal
+> exposes an amended report for a year the charter was void" until a later pass.**
+> the Division answered it **on the record** — and the reply predated the
+> sentence that called it open.
+
+a Franchise Tax analyst at the Division, by email, directed the filer to the
+portal **while the charter stood void**:
+
+> "Once receives you may **go online and file an amended 2022 report** to list
+> the verified assets and issued shares. Then, once filed proceed with **filing
+> an amended 2023 report** with the correct total issued shares.
+>
+> After all taxes are paid you can file a Certificate of Renewal."
+>
+> — Delaware Division of Corporations, Franchise Tax, by email (date withheld)
+
+> 🚩 **the source bytes for that quotation do NOT ship, and that is a DECLARED
+> PERMANENT GAP.** the email is held as a comms yield inside a matter directory
+> that `.gitignore` excludes (`**/.demo/*`), because it carries a real entity, a
+> real file number and a real person. ⇒ a `quote.verify` census aimed at the
+> published sources alone reports this passage as **NOT-IN-SOURCE**.
+>
+> ⛔ that is an **ABSENT-SOURCE** verdict, never a fabrication verdict, and the
+> two are indistinguishable from the count alone. do not widen the detector, and
+> do not delete the quotation to make a number green. add your own matter
+> directory to `--from` if you hold one, or read the gap as declared right here.
+
+> ⛔ **so this template has TWO censuses, and a number is meaningless without the
+> invocation beside it.** record both, always:
+>
+> | invocation | result |
+> |---|---|
+> | `--from …/refs --in templates` | `verified 138 · live 2` — the 2 are **this quote's two sentences**, expected |
+> | `--from …/refs --from …/.demo/<matter> --in templates` | ✅ `verified 140 · live 0` |
+>
+> 🚩 **a remembered number from an unrecorded invocation cost three wrong
+> predictions in two cycles.** each time the change was sound and the *comparator*
+> came from a different instrument — which looks exactly like a broken change and
+> says not one word about it. ⇒ **a baseline is a number AND the command that
+> produced it.** carry them together or discard both.
+>
+> ⭐ **the free discriminator settles which case you are in, at zero cost:** if the
+> defect list **equals** the set of gaps the page already declares, it is a
+> `--from` omission — a fabrication cannot know what your source set contains.
+
+> ⛔ **"2022" and "2023" are the QUOTED MATTER's years, not yours.** they stay
+> because a quotation is verbatim or it is worthless (`rule.forbid.hand-transcription`)
+> — a template may not swap a year inside quotation marks for a placeholder.
+>
+> 🚩 **"Once receives" is the analyst's own slip, and it stays too — corrected
+> back to verbatim.** this passage carried `Once receive[d]` for weeks:
+> a silent hand-repair of a verb, inside quotation marks, **nine lines above the
+> sentence that forbids exactly that.** the year rule was honored and the verb
+> rule was not, from one keystroke of tidiness.
+>
+> ⭐ **a principle a file states is not thereby a principle the file obeys** — and
+> the miss was invisible to any reader, because a repaired quote reads *better*
+> than a faithful one. `quote.verify` is what caught it: the match broke at char
+> 12 against the source bytes on disk.
+>
+> ⚠️ so read the quote for its **shape**, never its digits: *the earliest
+> delinquent year carries assets **and** shares; each later year carries the
+> correction that year needs; the revival certificate comes **after** the money.*
+> substitute your own delinquent years into that shape, and confirm the per-year
+> content with the Division — the years a filer owes are set by § 510's trigger
+> date for **that** charter, and no two matters share them.
+
+> ⚠️ **"Certificate of Renewal" is her name for it; the statute is § 312, NOT
+> § 314.** the office, the fee schedule and the form use *renewal* and *revival*
+> for one instrument, so do not hunt for a separate "renewal" document — and do
+> not follow the word into § 314, which is captioned *"Status of corporation"*
+> and prescribes no procedure at all.
+>
+> ⇒ on the call, name the branch the way the catalogue does: **Corporation →
+> Revival for Void**. the full trap, its three baits, and why **§ 311** is the
+> costlier wrong door are worked in `4.file.revival.stone` under `## form`.
+
+> 🚩 **TESTIMONY, not a publication — so it has no source bytes and never will.**
+> `quote.verify` reports it as unverified against `refs/`, and that report is
+> **correct**: there is no public document to compare it to.
+>
+> ⭐ **its artifact of record is the `grain=final` comms yield** that captured
+> the reply verbatim on the day it arrived, per `rule.require.permanent-yields`.
+> that yield is where a reader checks this quotation. it is deliberately **not**
+> wired in as a `--from` here, because a route's own yield corroborates our
+> bookkeeping rather than a publisher — and to point at it would turn the count
+> green on the wrong evidence.
+>
+> ⚠️ **so weigh it as what it is.** an analyst's email is a **direction**, not
+> law. every statutory claim in this route verifies against embedded bytes; this
+> one rests on a named agency, a dated channel, and a preserved reply. that is
+> strong enough to act on and too weak to override § 502 or § 312 — which is
+> exactly why the table below splits what it settles from what it leaves open.
+
+⭐ **so a void charter does not close the portal to back-year amendments.** the
+statutory election under § 502(c) has an operational path, and it is self-serve.
+
+### ⛔ but read WHICH cell that answers
+
+two questions were fused into one sentence, and only one is now settled:
+
+| the question | status |
+|---|---|
+| may you file an amended back-year report **while the charter is void**? | ✅ **yes** — directed by the Division, on the record |
+| will the portal expose an amended report for a **tax year whose charter stood void**? | 🚩 **still open** — the years she named both predate the void |
+
+⚠️ the distinction is not academic. the § 312(g) revival payment is capped at
+what was due *"at the time its certificate of incorporation became forfeited or
+void,"* so the years inside the void window sit outside that cap and are reached
+by a different rule. **do not read a direction about pre-void years as coverage
+of the void years.**
+>
+> ⭐ the call still earns its place — it is the cheapest way to learn the years,
+> the balance, and whether each year takes an amended or an original report. it
+> is a step, not the cure.
+
+⛔ **do not pay from this call.** see the precondition at the head of
+`3.pay.taxes.stone`: a payment made before the reports discharges the
+Authorized-Shares number.
+
+---
+
+## contact info
+
+| method | details |
+|--------|---------|
+| phone | (302) 739-3073, option 3 |
+| email | DOSDOC_Ftax@delaware.gov |
+| hours | Mon-Fri 8am-4:30pm EST |
+
+---
+
+## what to have ready
+
+from your yields:
+
+| field | value |
+|-------|-------|
+| file number | |
+| corporation name | |
+| gross assets (each delinquent year) | |
+| issued shares | |
+
+---
+
+## conversation guide
+
+⭐ **lines for YOU to say — and that is why they are fenced rather than
+block-quoted.** a `>` block in this route means *"someone published these words
+and you can check them against bytes on disk."* speech you have not uttered yet
+has no publisher and never will, so a `>` block would file it alongside the
+statutes and send `quote.verify` hunting for a source that cannot exist.
+⚠️ **do not "tidy" this back into a block quote.**
+
+```text
+"Hi, I'd like to request a recalculation of back taxes for a void
+ corporation using the Assumed Par Value Method."
+
+"The file number is [NUMBER]."
+
+"The corporation name is [NAME]."
+
+"For tax year [YEAR], total assets on Schedule L were $[AMOUNT] and
+ issued shares were [NUMBER]."
+
+"Can you recalculate the tax owed using Assumed Par Value?"
+```
+
+⛔ **say the figure, not an approximation of it.** that line used to read *"gross
+assets were **approximately** $[AMOUNT]"* — but 8 Del. C. § 503(i) defines gross
+assets as the *"total assets" reported to the United States on U.S. Form 1120
+Schedule L*, and the state will ask for that signed return to substantiate it. an
+approximation invites a second call and a discrepancy of your own creation.
+
+⚠️ if you do not have the figure from Schedule L, you are not ready for this
+call — go back to step 0.
+
+---
+
+## what to ask
+
+### ⛔ ask this FIRST — every question below presupposes its answer
+
+**ask, in these words — "which tax years does the account currently show as
+delinquent?"**
+
+⚠️ **you probably do not know this, and you probably think you do.** the count
+is easy to derive wrongly from either end:
+
+| you reason from | you get |
+|---|---|
+| the **void date** — "void since March 2024, so 2024 and 2025 too" | the larger set |
+| the **assessed total** ÷ the per-year figure | whatever divides evenly |
+
+⭐ **those two can disagree, and when they do the second is the better witness**
+— it is arithmetic on a number Delaware actually sent you. but it is still a
+**fit**, never a statement: a residual that "looks like penalty and interest"
+is a hypothesis about the State's books.
+
+⇒ the year set multiplies through every figure and every step:
+
+```
+tax        = per-year amount  ×  YEARS
+penalty    = $200             ×  YEARS      (§502(c))
+reports    = one amendment    ×  YEARS      (§503(b), each a fee + a round trip)
+interest   = per-month, from EACH year's own due dates  (§504(c))
+```
+
+⛔ **a wrong year count does not make the total slightly wrong — it makes the
+WORK PLAN wrong**, because step 2 submits one amended report per year and they
+must be serialized. two extra years is two extra submissions, two extra fees,
+and two more chances for a returned document.
+
+🚩 **and write down which years, not just how many.** "four years" cannot be
+acted on; "2022, 2023, 2024, 2025" can. the per-year rows below depend on it.
+
+#### ⭐ but do NOT call the whole year set open — §312(g) fixes HALF of it
+
+**two different year sets hide under one word, and only one of them is a
+question for the clerk.** the statute settles the other:
+
+> "Any corporation that revives its certificate of incorporation under this
+> chapter shall pay to this State a sum equal to all franchise taxes, penalties
+> and interest thereon **due at the time its certificate of incorporation became
+> forfeited or void** pursuant to this title"
+>
+> — 8 Del. C. § 312(g),
+> https://delcode.delaware.gov/title8/c001/sc12/index.html
+
+**"due at the time … became void"** makes the revival payment a **snapshot**,
+taken on the void date. a year whose March 1 had not yet arrived on that date
+was not due then, so §312(g) does not reach it — however many years the account
+has carried since.
+
+| question | who answers it |
+|---|---|
+| which years must be paid **to revive**? | ⭐ **the statute** — every year already due on the void date |
+| which years does the **account** carry today? | the clerk, on this call — Chapter 5 accrues annually |
+| is the **revival year itself** covered by that payment? | ⛔ no. §312(g)'s last sentence says so in terms |
+
+⇒ so ask the clerk for the **ledger**, and expect it to be the larger set. do
+not let a larger ledger talk you into a larger revival payment, and do not let
+the §312(g) snapshot talk you out of a tax the account still shows.
+
+⚠️ **the snapshot rule has a cliff at five years.** the same subsection swaps it
+for *"a sum equal to 3 times the amount of the annual franchise tax that would be
+due and payable … for the year in which the revival is effected"* once the
+charter has been void **more than 5 years**. check your void date against that
+line before you compute a figure — past the cliff, the back years no longer set
+the revival sum; the current year's rate sets it instead.
+
+---
+
+1. what is the recalculated tax for each year?
+2. what is the total penalty and interest?
+3. **is there an annual report fee for each back year, and how much?**
+4. what is the total amount owed?
+5. can I pay by credit card or do I need ACH?
+6. what is the reference number for this recalculation?
+
+### ⭐ the § 503(b) questions — ask these PER YEAR, or the election may not land
+
+7. **which years already have a report on file?** a year with one takes an
+   **amended** report; a year with none takes an **original**. a wrong
+   submission costs a fee and a round trip.
+8. 🚨 **which fiscal year's Form 1120 Schedule L does each back-year report
+   take?** ⚠️ see the retraction below — this question replaces an earlier one
+   that read § 503(b) without § 503(i), and got the answer backwards.
+
+   ✅ **this is no longer open-ended — put BOTH texts to them.**
+   the Division's own calculator page anchors gross assets to *"the company’s
+   fiscal year ending the calendar year of the report"*, which points a 2023
+   report at fiscal year **2023**. § 503(i) anchors to the calendar year prior
+   to when you file, which points the same report at fiscal year **2025**. so
+   ask it with the citation attached — **say this**:
+
+   **"your calculate-franchise-taxes page says the fiscal year of the report.
+   § 503(i) says the year prior to when I file. for an amended 2023 report
+   submitted in 2026, which Schedule L do you want?"**
+
+   ⇒ a 20-second question with an authority behind each option, rather than an
+   open one that invites a guess. the full read is in `0.gather.position.stone`;
+   the pulled bytes are at
+   `briefs/incorporation/variant=c-corp/refs/pulledAt=2026-08-26.de-frtaxcalc.txt`.
+9. **do you need issued shares broken out per class?** § 503(b) asks for *"the
+   number of shares of each class of stock actually issued, **if any**"* —
+   ⚠️ **issued**, never authorized, and zero is a valid answer the statute names.
+10. **will the portal expose an amended report for a tax year whose charter
+    stood void?** ⚠️ **ask this narrowly.** the Division has already confirmed
+    you may file back-year amendments **while void** (see the retraction at the
+    head of this stone) — so do not spend the call on that. what is open is the
+    years **inside** the void window, which is a different question and a
+    different answer.
+
+11. 🚨 **has a Governor's proclamation under § 511 issued that names this file
+    number, and on what date?** ⚠️ ask it as a **records lookup**, never as a
+    legal question — see the section below for the exact phrasing and for why it
+    belongs on this call.
+12. 🚨 **what signature does the office accept on the Certificate of Renewal —
+    wet ink, a scan of wet ink, or a digital signature?** ⛔ § 116(b)(1) pulls
+    *"A document filed with or submitted to the Secretary of State"* out of the
+    DGCL's electronic-signature safe harbor, **and expressly creates no
+    presumption either way** — so the statute routes this question to the office
+    rather than answers it. ⚠️ do **not** infer it from the fact that the
+    Division accepted a signed PDF by email: acceptance of a **substantiation
+    document** is not acceptance of a **filed certificate**. the full read is in
+    `4.file.revival.stone`.
+13. 🚨 **for each back year, what figure anchors the § 504(e) tentative-tax
+    estimate — the assessed method-A figure, or the recalculated one?** and
+    **what was the annual franchise tax of record for the year before the first
+    delinquent year?** ⭐ a money question, not a formality: § 504(e) keys the
+    quarterly regime to *"the annual franchise tax of the preceding year"*, so if
+    the anchor is the recalculated figure, **no tentative return was ever due**
+    and § 504(c) interest runs from March 1 only — instead of from June 1,
+    September 1 and December 1 of each tax year. ⚠️ ask for the prior year's
+    figure **as it sits on their record**; it predates the void and is not in
+    our files. the full read is in `1.calculate.owed.stone`.
+14. 🚨 **(only if a year's federal return is not yet on file) what will you
+    accept for gross assets on that year's amended report?** ⭐ **lead with the fact that it cannot
+    move the money**, because that reframes the whole ask — **say this**:
+
+    **"under the assumed-par method we land on the $400.00 minimum across the
+    entire plausible range of gross assets — the figure cannot change the tax.
+    the federal return for that year is not filed yet. what will you accept on
+    the report in the meantime?"**
+
+    ⚠️ **this is a FORM gate, never a MONEY gate**, and the two have different
+    cures. § 503(b) demands a figure on the report; § 503(a)(2) computes a tax
+    that sits on the floor whatever the figure is. so the question is what
+    satisfies the **form** — a good-faith estimate, a zero with a note, an
+    amendment once the return lands, or a wait.
+
+    ⛔ do **not** put a number on a sworn report to unblock yourself. § 502(b)
+    is under penalty of perjury and § 504(d) gives inquiry power over *"the
+    truth or falsity or accuracy of every report."* ask, then do what they say.
+
+### 🛑 RETRACTED — question 8 read the GRANT and missed the LIMIT
+
+> **the question 8 above replaces this one, retracted:**
+>
+> > ~~8. **what as-of date do you want for gross assets, per year?** § 503(b)
+> > says *"as of the nearest date on which the amount is obtainable"* — it is
+> > not a strict fiscal-year-end rule, so ask what they will accept rather than
+> > assume.~~
+
+the quote was accurate and the conclusion drawn from it was **backwards**, because
+§ 503(b) is only half the provision. read the two together:
+
+> "(b) Unless a corporation shall submit to the Secretary of State, at the time
+> of filing its annual franchise tax report, a statement setting forth the number
+> of shares of each class of stock actually issued, if any, and the amount of the
+> total gross assets of the corporation, **as of the nearest date on which the
+> amount is obtainable** ..."
+>
+> "**(i) As used in subsections (a) and (b) of this section** … Such total assets
+> and total gross assets **shall be** those 'total assets' reported to the United
+> States on U.S. Form 1120 Schedule L, relative to the company's fiscal year
+> ending in the calendar year prior to **filing** with the Secretary of State
+> pursuant to this section."
+>
+> — 8 Del. C. § 503(b), § 503(i)
+
+| the half you read | what it appears to say |
+|---|---|
+| **(b) alone** — the grant | a soft standard: whatever date the figure is obtainable on |
+| ⭐ **(b) + (i)** — the limit | **"shall be"** one named page of one named return, for one named fiscal year |
+
+⭐ **(i) scopes itself onto (b) in its own first words**, so this is not an
+inference — the statute says which subsections it governs. a question built on
+(b) alone invites the clerk to bless a date the statute does not leave open, and
+you would file a sworn report on it.
+
+🎯 **so the live ambiguity is not "which date" — it is "which FISCAL YEAR."**
+(i) keys on the **filing**, and a delinquent filer's filing year and report year
+diverge by however many years they are behind. that is the question now on the
+list, and `0.gather.position.stone` carries the worked table.
+
+⚠️ **the tell, for next time:** sentence one granted, sentence two limited, and
+only sentence one was quoted. when a provision reads permissive, look for the
+subsection that names it by letter.
+
+### 🚨 the § 511 question — ask it, because § 513 carries a CRIMINAL penalty
+
+§ 510 voids the charter, and that is where most readers stop. a **separate**
+ladder runs beside it and ends somewhere else entirely:
+
+> "On or before **June 30** in each year, the Secretary of State shall report to
+> the Governor a list of all the corporations, which for **1 year** next
+> preceding such report, have failed, neglected or refused to pay the franchise
+> taxes assessed against them or due by them, **or to file a complete annual
+> franchise tax report** ..., and the Governor shall forthwith issue a
+> **proclamation declaring that the charters of these corporations are
+> repealed**."
+>
+> — 8 Del. C. § 511, https://delcode.delaware.gov/title8/c005/index.html
+
+> "Whoever exercises or attempts to exercise any powers under the certificate of
+> incorporation of any corporation **which has been proclaimed by the Governor,
+> after the issuance of the proclamation**, shall be **fined not more than
+> $1,000 or imprisoned not more than 1 year, or both**."
+>
+> — 8 Del. C. § 513
+
+⛔ **read what § 513 attaches to.** not the void — the **proclamation**. and not
+the corporation — *"whoever"*, which reaches the human who acted. so a
+delinquent corporation that kept up its business has a civil problem under § 510
+and may have a **criminal** one under § 513, and the two turn on different facts
+and different dates.
+
+⭐ **§ 512 is what makes this a cheap question rather than an alarming one.** the
+list *"shall be filed in the office of the Secretary of State"*, and the
+proclamation is published each year. **whether your corporation is on it is a
+records lookup the person on the phone can perform** — not an opinion, not
+advice, and not a matter they will decline to answer.
+
+🎯 **phrase it exactly that way:**
+
+```text
+"Can you check whether a Governor's proclamation under section 511
+ lists file number [NUMBER]? And if it does, what date did that
+ proclamation issue?"
+```
+
+⚠️ fenced, not block-quoted — same reason as the conversation guide above: these
+are words **you** will say, so there is no publisher to check them against.
+
+⚠️ **what you do with the answer is not a phone question.** § 513 is a criminal
+statute. if a proclamation names the corporation and business continued after
+its date, take that to a licensed attorney.
+
+### ⭐ the SAME answer closes a second door — § 509 and the receiver
+
+the proclamation is not only the trigger of a criminal penalty. it is also a
+**precondition** of a receiver, and that makes one records question do two jobs:
+
+> "(a) After any corporation ... **has failed or neglected for the period of 1
+> year to pay the franchise taxes** imposed by law, **and the Secretary of State
+> shall have reported such corporation to the Governor** of the State, as
+> provided in **§ 511** of this title, **then the Attorney General** of this
+> State **may proceed against the corporation in the Court of Chancery** of this
+> State **for the appointment of a receiver**, or otherwise."
+>
+> — 8 Del. C. § 509(a), https://delcode.delaware.gov/title8/c005/index.html
+
+⛔ **read the conjunction.** § 509(a) needs **both** — a year of unpaid franchise
+tax **and** the § 511 report. a delinquent corporation satisfies the first by
+definition, so the § 511 answer is the whole question.
+
+| the answer to question 11 | what it settles |
+|---|---|
+| **no proclamation names the file** | ⛔ § 513 has no purchase, and § 509(a)'s second condition is unmet |
+| **a proclamation issued on [DATE]** | ⚠️ both doors stand open as of that date |
+
+⭐ **a receiver is the one outcome in this route that takes the matter out of
+your hands entirely** — the Court appoints, the Court ascertains the amount, and
+§ 509(b) issues process to collect it. so the § 511 answer is not trivia; it
+tells you how much time pressure you are actually under.
+
+🎯 **and it argues for the order this route already takes.** the taxes you pay at
+step 3 remove § 509(a)'s **first** condition. ⚠️ whether an action already
+commenced is affected by a later payment or a later revival is **a question for
+counsel**, not for this stone.
+
+🚩 **and one question stays open here, stated bare.** § 312(e) validates
+*"all contracts, acts, matters and things"* done while the charter was void, as
+if it had never lapsed. **whether that reaches a § 513 penalty is unestablished**
+— this route does not answer it, and a guess in this cell would close a gate that
+should stay open.
+
+⛔ **questions 7-9 are not paperwork.** § 503(b) closes with *"it shall pay a
+franchise tax for such year computed in the manner prescribed by paragraph
+(a)(1)"* — so an incomplete statement does not reject, it routes that year back
+to Authorized Shares **silently**. there is no error message to catch it later.
+
+⚠️ **question 3 is the one the tools cannot answer.** `franchise.tax.delaware`
+prints `⬅️ tax only` and `.accrue` returns penalty and interest — neither covers
+the report fee, and § 510 voids on an unfiled complete annual report
+independently of the tax, so a report is owed for every delinquent year. the
+current-year fee is $50 non-exempt / $25 exempt; **whether the same applies to a
+back report is unestablished**, which is why it is asked rather than assumed.
+
+---
+
+## emit
+
+record the call results in:
+`$route/2.comms.on=$date.mech=phone.subj=apv-recalc.grain=final.md`
+
+format:
+```
+## call details
+
+| field | value |
+|-------|-------|
+| date | |
+| spoke with | |
+| reference number | |
+
+## recalculated amounts
+
+| year | tax | penalty | interest |
+|------|-----|---------|----------|
+| | | | |
+
+## total owed
+
+| item | amount |
+|------|--------|
+| taxes | $ |
+| penalties | $ |
+| interest | $ |
+| annual report fee × years (their quoted figure) | $ |
+| **total** | **$** |
+
+## payment instructions
+
+[notes from call]
+```

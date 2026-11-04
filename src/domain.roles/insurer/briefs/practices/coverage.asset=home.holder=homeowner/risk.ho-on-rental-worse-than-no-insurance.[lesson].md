@@ -1,5 +1,7 @@
 # risk.ho-on-rental-worse-than-no-insurance
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 keeping an HO-3 policy on a property you rent out is worse than having no insurance at all.
@@ -130,6 +132,10 @@ the second state is worse because:
 see `howto.find-landlord-insurance.[lesson].md` for DP-3 shopping guidance.
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

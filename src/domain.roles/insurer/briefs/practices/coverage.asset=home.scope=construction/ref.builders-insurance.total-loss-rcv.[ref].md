@@ -1,5 +1,7 @@
 # ref.insurance-home-total-loss-replacement-cost-value
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 renovation builder's risk policies often cover the prior structure at **depreciated value (ACV)**, not full replacement cost (RCV). this creates a gap when a small job burns down the whole house.
@@ -125,6 +127,10 @@ a $3k job can burn down a $400k house. if your builder's risk only covers the pr
 ### statistics
 - [NFPA: Construction Fires](https://www.nfpa.org/education-and-research/research/nfpa-research/fire-statistical-reports/fires-in-structures-under-construction)
 - [United Policyholders: Underinsurance 101](https://uphelp.org/claim-guidance-publications/underinsurance-101/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic total-loss replacement-cost overview from public sources; no client identity or applied strategy.
 
 ## .date researched
 

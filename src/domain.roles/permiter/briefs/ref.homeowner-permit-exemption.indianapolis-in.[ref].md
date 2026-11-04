@@ -1,5 +1,7 @@
 # ref.homeowner-permit-exemption.indianapolis-in
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 homeowners in Indianapolis/Marion County can pull their own electrical permits for work on their primary residence without a contractor license.
@@ -39,6 +41,10 @@ even without a contractor license, homeowners must:
 | work on rental property | owner-builder exemption requires occupancy |
 | work for others | that requires contractor registration |
 | skip inspections | inspections required regardless of who does work |
+
+## .publishability
+
+☀️ **fullsun** (share) — public Indianapolis permit policy; no client identity.
 
 ## .sources
 

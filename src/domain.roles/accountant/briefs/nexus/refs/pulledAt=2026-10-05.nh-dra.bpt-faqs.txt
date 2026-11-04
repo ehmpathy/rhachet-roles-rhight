@@ -1,0 +1,144 @@
+Skip to main content
+ Change Site Language  Search The Site
+Main navigation
+OPEN MENU
+Home
+About DRA
+Taxes at a Glance
+Licenses & Certifications
+Resource Center
+Transparency
+Business Profits Tax
+Frequently asked questions in regard to Business Profits Tax (BPT).
+
+What is the Business Profits Tax (BPT)?
+
+A tax assessed on income from conducting business activity within the State of New Hampshire. For multi-state businesses, income is apportioned, using a weighted sales factor of two and the payroll and property factors. For tax periods ending on or after December 31, 2022, the income is apportioned based on the sales factor only. Organizations operating a unitary business must use combined reporting in filing their New Hampshire Business Tax return.  
+
+Business Profits Tax Rates
+For Taxable Periods Ending	BPT Rate
+On or after December 31, 2023	7.5%
+On or after December 31, 2022	7.6%
+On or after December 31, 2021	7.7%
+On or after December 31, 2020	7.7%
+On or after December 31, 2019	7.7%
+On or after December 31, 2018	7.9%
+On or after December 31, 2017	8.2%
+On or after December 31, 2016	8.2%
+
+For taxable periods prior to the above listed please contact the Department at (603) 230-5920.
+
+Who pays the Business Profits Tax (BPT)?
+
+Any business organization, organized for gain or profit carrying on business activity within the State is subject to this tax. However, organizations with $50,000 or less of gross business income from all their activities are not required to file a return. For taxable periods ending on or after December 31, 2022, this filing threshold is increased to $92,000.
+
+For tax years beginning January 1, 2023, pursuant to RSA 77-A:6, the Commissioner of the DRA biennially adjusts the BPT filing thresholds for inflation, rounding to the nearest $1,000, using the Consumer Price Index for All Urban Consumers, Northeast Region as published by the Bureau of Labor Statistics, United States Department of Labor using the amount published for the month of June in the year prior to the start of the tax year. Payments can be made on our online portal; Granite Tax Connect at https://gtc.revenue.nh.gov/.
+
+Business Profits Tax Historical Filing Thresholds
+Taxable Periods Beginning
+On or after 1/1/2025
+Gross Business Income in Excess of $109,000
+On or after 1/1/2023 through 12/31/2024
+Gross Business Income in Excess of $103,000
+Taxable Periods Ending
+On or after 12/31/2022
+Gross Business Income in Excess of $92,000
+After 6/30/1993
+Gross Business Income in Excess of $50,000
+
+When is the BPT return due?
+
+For taxable periods beginning after December 31, 2015, partnership returns are due on the 15th day of the 3rd month following the end of the taxable period. Corporate, proprietorship, fiduciary and combined returns are due on the 15th day of the 4th month following the end of the taxable period.
+
+Do I have to make estimated payments?
+
+Four estimates are required, paid at 25% each on the 15th day of the 4th, 6th, 9th and 12th month of the taxable period, for any tax liability greater than $200.
+
+When filing a Form DP-2210/2220, must the same exception be used in all four quarters?
+
+No, each quarter stands on its own.
+
+Am I required to pay estimates during my first year?
+
+Yes, if the tax liability is greater than $200, but you may qualify for an exception from the penalty under RSA 21-J:32, IV(d) by filing form DP-2210/2220, which can be found on our Forms page under the Business Tax section.
+
+Who do I contact with questions?
+
+Call Taxpayer Services at (603)230-5920.
+
+I have a proprietorship; can I split the rental income between my wife and myself?
+
+No, not unless two separate and distinct proprietorships exist. See NH Code of Administrative Rules Rev 307.04(e).
+
+Do I have to file a BPT return if my installment sale income is less than the required gross business income filing threshold?
+
+The filing requirement is determined in the year of the sale for all years irrespective of the years in which income is received. So, if the gross business income is greater than $50,000 for taxable periods ending before December 31, 2022, $92,000 for taxable periods beginning on or after December 31, 2022, and $103,000 for taxable periods beginning on or after January 1, 2023, in the year of the sale, regardless of the amount received in subsequent years, you are required to file until all installments are reported. See NH Code of Administrative Rules Rev 302.07(f).
+
+Are Sub-S corporations treated differently in New Hampshire than C corporations for tax purposes?
+
+No, Sub-S corporations are treated the same as C Corporations. The flow-through items on Schedule K are incorporated into corporate income when determining taxable business profits.
+
+Do all Federal Schedules need to be attached to returns?
+
+Yes. All federal schedules must be included with original and amended returns. Proprietorships must include Schedules C, D, E, F, 4797, 6252, if applicable. For more information, see the "General Instructions" under the applicable tax year on the Forms and Instructions page of our website.
+
+How do I calculate the Net Operating Loss (NOL) carryover?
+
+For purposes of calculating the amount of any NOL carryover deduction allowed under RSA 77-A:4, XIII for tax periods ending on or after December 31, 2022, Section 172 of the Internal Revenue Code in effect per RSA 77-A:1, shall be followed. For taxable periods ending on or after July 1, 2005, through tax periods ending before December 31, 2022, Section 172 of the Internal Revenue Code in effect on December 31, 1996, shall be followed. For tax periods ending before July 1, 2005:
+
+Any loss amount shall first be carried back to those tax years required by the Internal Revenue code without application of the election in section 172(b)(3) and applied to any income in the carryback tax years, before any remaining loss is carried forward as a NOL deduction.
+The carryback of losses as provided in (1) above shall result in neither an allowable NOL deduction in the carryback years nor a refund of previously paid taxes. An Amended return filed for such purposes shall be prohibited.
+The business organization's failure to carryback NOLs and apply them to the income of prior profitable years shall result in the loss being presumed to be fully absorbed in the carryback year(s).
+
+How is the NOL carryforward computed?
+
+An NOL may only be carried forward for the 10 years following the loss year. The amount of NOL generated in a tax year that may be carried forward is limited as follows:
+
+Date	Maximum Amount
+On or after 1/1/2013	$10,000,000
+7/1/2005 - 12/31/2012	$1,000,000
+7/1/2004 - 6/30/2005	$750,000
+7/1/2003 - 6/30/2004	$500,000
+On or before 6/30/2003	$250,000
+
+Is the DP-132, NOL Deduction Form, required?
+
+Yes, for the year the NOL deduction is used. You must show proof of the loss year being claimed.
+
+Can I amend for an NOL and get a refund?
+
+No. NOLs must be carried back for 3 years only for purposes of determining the carry forward amount for tax periods ending before July 1, 2005. See "How do I calculate the Net Operating Loss (NOL)?" above.
+
+Can the NH Community Development Finance Authority (CDFA) credit be taken against BPT & Business Enterprise Tax?
+
+Yes. For more information call the New Hampshire Department of Revenue Administration's Taxpayer Services at (603) 230-5920 or visit the NH CDFA's website at www.nhcdfa.org.
+
+What is a unitary business?
+
+A unitary business is defined by RSA 77-A:1 XIV as "one or more related business organizations engaged in business activity both within and without this state among which there exists a unity of ownership, operation, and use or an interdependence in their functions." See NH Code of Administrative Rules Rev 300 Unity of Ownership; Unity of Operation; Unity of Use; Interdependence in their functions.
+
+What does nexus mean?
+
+Whether an entity is required to file business tax returns depends on whether it has nexus with a state. Nexus is defined as some definite link, or minimum connection, between the state and the entity it seeks to tax. If you are an out-of-state business that sells or leases tangible personal property in this State, refer to NH Code of Administrative Rules Rev 304.01 for an illustrative listing of those activities that create nexus.
+
+109 Pleasant Street | Concord NH 03301
+(603) 230-5000
+TDD Access: 1-800-735-2964
+Hours: Monday through Friday | 8 AM – 4:30 PM
+
+Footer - Agency Links
+Taxpayer Assistance
+News and Announcements
+Reports and Publications
+Directions to NHDRA
+Contact the Webmaster
+Footer - State Links
+NH Web Portal - NH.gov
+NH Travel & Tourism
+ReadyNH.gov
+NH Government Careers
+Transparent NH
+NH Business Gateway
+© 2026 State of New Hampshire • All rights reserved
+Accessibility Policy  Privacy Policy
+AN OFFICIAL NEW HAMPSHIRE GOVERNMENT WEBSITE

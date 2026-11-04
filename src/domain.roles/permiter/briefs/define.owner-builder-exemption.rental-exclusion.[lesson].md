@@ -1,5 +1,7 @@
 # define.owner-builder-exemption.rental-exclusion
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 the owner-builder exemption requires **owner-resident** status — not just ownership. you must occupy the property as your primary residence.
@@ -104,6 +106,10 @@ some jurisdictions allow this with documentation of intent. verify with local pe
 - https://www.indy.gov/activity/residential-development-permits
 - `define.owner-builder-exemption.[lesson].md` (parent brief)
 - `ref.homeowner-permit-exemption.indianapolis-in.[ref].md`
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public-law explainer on the owner-resident requirement; no client identity.
 
 ## .date researched
 

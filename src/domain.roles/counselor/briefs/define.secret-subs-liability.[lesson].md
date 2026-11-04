@@ -1,5 +1,7 @@
 # define.secret-subs-liability
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 when a GC uses unauthorized or uninsured subcontractors ("secret subs"), contract language does NOT protect you. the certificate of insurance does.
@@ -231,6 +233,10 @@ GL policies cover claims "arising out of the named insured's operations."
 2. [CLM Magazine - Outsized Influence](https://www.theclm.org/Magazine/articles/outsized-influence/3308)
 3. [Anderson Kill - Indemnity vs Additional Insured](https://andersonkill.com/article/dont-assume-indemnity-and-additional-insured-coverage-are-not-the-same/)
 4. [FindLaw - Indemnity and Additional Insureds](https://corporate.findlaw.com/litigation-disputes/indemnity-and-additional-insureds.html)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage analysis from public sources; no client identity or client-specific mechanic.
 
 ## .date researched
 

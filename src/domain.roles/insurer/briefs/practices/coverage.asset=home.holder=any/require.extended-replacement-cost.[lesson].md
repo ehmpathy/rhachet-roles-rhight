@@ -1,5 +1,7 @@
 # require.extended-replacement-cost
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 extended replacement cost (ERC) endorsement adds 25-50% buffer above policy limit for $25-50/year.
@@ -200,6 +202,10 @@ typical endorsement codes:
 | premium | upgrade to GRC if available | varies |
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

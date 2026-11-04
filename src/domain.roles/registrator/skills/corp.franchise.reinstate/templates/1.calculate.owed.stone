@@ -1,0 +1,410 @@
+calculate what you owe — before and after recalculation.
+
+.why = Delaware's bill uses Authorized Shares Method. most solo founders qualify for Assumed Par Value Method, which is dramatically cheaper.
+
+---
+
+## Delaware's bill (Authorized Shares Method)
+
+from your 0.gather.position.yield.md:
+
+| field | value |
+|-------|-------|
+| tax due | $ |
+| annual assessment | $ |
+| authorized shares | |
+
+this is calculated as:
+- 5,000 shares or less: $175
+- 5,001 - 10,000 shares: $250
+- each additional 10,000 shares: +$85
+- 10,000,000 shares = **$85,165.00**/year (computed, not approximated)
+- 20,000,000 shares = **$170,165.00**/year
+- 23,510,000 shares and above = **$200,000.00**/year, the statutory maximum
+
+---
+
+## recalculated bill (Assumed Par Value Method)
+
+⛔ **do NOT compute this by hand.** run the role's tested calculator and
+paste its output. every figure that reaches Delaware must come from it,
+per `rule.forbid.hand-computed-figures`.
+
+```sh
+rhx franchise.tax.delaware \
+  --authorized <authorized shares> \
+  --par        <STATED par value, e.g. 0.0001> \
+  --issued     <issued shares> \
+  --assets     <gross assets, Form 1120 Sch. L "total assets"> \
+  --years      <number of delinquent years>
+```
+
+gather the four inputs first:
+
+| field | value | where it comes from |
+|-------|-------|---------------------|
+| authorized shares | | certificate of incorporation |
+| **stated par value** | $ | certificate of incorporation |
+| issued shares | | stock ledger / board consents |
+| gross assets | $ | Form 1120 Schedule L, per §503(i) |
+
+⚠️ **gross assets is PER YEAR, and its year anchor is contested.** the table
+above is one year. a back-filed set has one Schedule L figure **per year**, and
+two primary sources point at different years once you are late:
+
+| source | the anchor | a 2023 report submitted in 2026 |
+|---|---|---|
+| **§503(i)** — statute | the fiscal year that ends in the calendar year *prior to filing* | fiscal year **2025** 🚫 |
+| ⭐ **the Division** — `corp.delaware.gov/frtaxcalc/` | the fiscal year that ends the calendar year *of the report* | fiscal year **2023** ✅ |
+
+they agree for an **on-time** filer and come apart by the full width of the
+delinquency. confirm the anchor before any figure is sworn to — it is question
+**8** on `2.call.delaware.stone`, and the two quotes sit side by side in
+`0.gather.position.stone` and `3.pay.taxes.stone`.
+
+⚠️ **stated par value is required and is easy to skip.** §503(a)(2) splits
+the authorized shares by whether their stated par sits **below** or
+**at-or-above** the assumed par, and the two halves are computed
+differently. the old three-line formula on this stone covered only the
+first half — on a $1.00-par charter it **understates the tax by 2×**.
+
+paste the calculator's output here, verbatim:
+
+```
+<paste the full `franchise.tax.delaware` output>
+```
+
+⭐ **record the SENSITIVITY line.** it states the gross-assets range over
+which the answer holds. gross assets are provisional at this stage — a
+bank balance or receivable often surfaces later — and the band answers
+"how wrong can that figure be?" once, instead of a fresh re-run on every
+revision. it is also the line you can say aloud to the clerk.
+
+| | |
+|---|---|
+| governs | |
+| annual tax | $ |
+| **holds for gross assets up to** | $ |
+
+### ⭐ then ASK what the band retires — this is the step that gets skipped
+
+the line above is not a clerical record. **read it against your actual assets
+and write down which of these two cases you are in**, because they hand you
+different work:
+
+| your gross assets vs. the band | what the Schedule L figure IS |
+|---|---|
+| **far below** it | ⭐ a **report-completeness** input under §503(b) — it decides what the form SAYS. **it cannot move the tax.** |
+| near it, or above it | a **tax** input. the figure must be exact before any number is quoted |
+
+⛔ **the trap is to carry "blocked on the gross-assets figure" as though it were
+one blocker.** it is two, and they have different costs:
+
+```
+what does the form have to SAY?     <- §503(b) report completeness
+what do we actually OWE?            <- §503(a)(2), and the band may already answer it
+```
+
+a charter whose assumed-par-value capital floors at the **§503(c)** minimum owes
+the minimum for **every** assets value inside the band.
+
+> 🚩 **this sentence said "the §503(a)(2) minimum" until a later pass, and the
+> mis-cite has a SPECIFIC failure mode — I walked into it myself that day.**
+>
+> §503(a)(2) is the **method**; the floor is one subsection down, at **§503(c)**:
+> *"in no case shall the tax … computed by paragraph (a)(2) of this section be
+> more than $200,000 **nor less than $400**."*
+>
+> ⛔ follow the old cite and you land instead on §503(a)'s final sentence,
+> which is a **PRORATION and reads like a floor**:
+>
+> > "Whenever the amount of the assumed par value capital … is **less than
+> > $1,000,000**, the amount of the tax attributable thereto shall be the amount
+> > that **bears the same relation to $400** that the amount of the assumed par
+> > value capital bears to $1,000,000."
+> >
+> > — 8 Del. C. § 503(a), https://delcode.delaware.gov/title8/c005/index.html
+>
+> a 10,000,000-share charter at $0.00001 par has ~$100 of assumed par value
+> capital, so that sentence yields a few **cents** — and a reader who stops
+> there concludes the minimum is negligible rather than $400. the floor is real,
+> it is statutory, and it is **not in the subsection that computes**.
+>
+> ⭐ this is the container rule in one page: §503(a) computes, §503(c) bounds,
+> and a pull scoped to the computation returns a wrong answer that looks whole. if yours sits orders of
+magnitude under the band's upper bound, **the second question is already
+closed** and only the first is open. that is a much smaller gate than
+"blocked", and it changes what you ask the clerk.
+
+⚠️ **the federal return is still a precondition either way.** §503(i) defines
+gross assets as those *"reported to the United States"* — past tense — so a year
+with no return leaves the statutory term with no referent. **the return gates
+the FORM, never the FIGURE.**
+
+🚩 **and state the band's own limits.** it is computed from the inputs you
+supplied. if the authorized-share count, the stated par, or the issued count is
+itself provisional, the band is provisional too — re-run before you rely on it.
+
+---
+
+## ⛔ FIRST — which tax figure feeds the accrual? § 502(c) decides it
+
+**what.** the number Delaware assessed is **not** the number you accrue on, if
+you make the election. § 502(c) says so in its own first sentence:
+
+> "If the annual franchise tax report and the franchise tax due are not filed or
+> paid by the corporation as required by this chapter, the Secretary of State
+> shall ascertain and fix the amount of the franchise tax as determined in the
+> manner prescribed by § 503(a) of this title and the amount so fixed by the
+> Secretary of State shall stand as the basis of taxation under the provisions of
+> this chapter **unless the corporation shall thereafter elect to compute the
+> franchise tax in the manner prescribed by § 503(a)(2) of this title by filing
+> the annual franchise tax report and complying with the provisions of § 503(b)**
+> of this title."
+>
+> — 8 Del. C. § 502(c), first sentence
+> · source of record: `refs/de-title8-ch5-franchise-tax.txt`
+
+**why it is the first question on this page, not a later one.** every figure
+below is computed from an annual tax. feed it the assessed Authorized-Shares
+number and the accrual is arithmetically perfect and answers the wrong question
+— by two orders of magnitude on a low-par charter.
+
+⭐ **read the three words that do the work.**
+
+| the words | what they settle |
+|---|---|
+| *"shall stand … **unless**"* | the assessment is a **default**, never a determination. it stands because no report was filed, not because it was found correct |
+| *"shall **thereafter** elect"* | the election is expressly available **after** the Secretary has already fixed the amount. the sentence attaches no deadline to it |
+| *"**and** complying with … § 503(b)"* | the report alone is not enough. § 503(b) wants issued shares **and** total gross assets, in one statement, at the time of filing |
+
+⚠️ **so a clerk who asks for one of the two has not waived the other.** § 502(c)
+routes the election through § 503(b), and § 503(b) makes the consequence of an
+incomplete statement silent rather than loud — it does not reject the report, it
+re-prices the year back onto (a)(1).
+
+🚩 **this subsection has TWO sentences and they do opposite jobs.** the second
+adds a **$200** penalty for a report not filed by March 1, and it is the one this
+page used to cite. a pull scoped to "the § 502(c) penalty" returns a cost and
+never the cure, and reads complete either way.
+
+**how.** settle it before you run a figure below:
+
+1. take the **assessed** annual figure from the bill
+2. compute the **elected** figure — `rhx franchise.tax.delaware`, per the section above
+3. accrue on the **elected** figure, and record both, so the delta is on the page
+4. carry the § 503(b) pair — shares **and** assets — into every amended report
+
+---
+
+## total owed (estimated)
+
+⛔ **do NOT hand-total this either.** the accrual has three parts that
+move independently — a per-installment due-date structure (§504(a)), a
+per-year penalty (§502(c)), and per-month interest that runs from **each**
+due date (§504(c)). run:
+
+```sh
+rhx franchise.tax.delaware.accrue \
+  --tax   <annual tax from above> \
+  --years <comma-separated tax years, e.g. 2022,2023> \
+  --asof  <YYYY-MM-DD>
+```
+
+⚠️ **once the annual liability reaches $5,000, March 1 is NOT the accrual
+date.** §504(a) puts 40% on **June 1 of the tax year**, 20% September 1,
+20% December 1, and the remainder on the next March 1. an accrual computed
+off a single March 1 understates the interest badly, and the gap widens
+with the assessment.
+
+### 🚨 but WHICH $5,000 — and the answer is in §504(e), not §504(a)
+
+the warning above says *"once the annual liability reaches $5,000."* **that
+phrasing is loose in the one direction that costs you money**, and the statute
+settles it two subsections down:
+
+> "(a) The franchise tax shall be due and payable on March 1 following the close
+> of the calendar year, except that with respect to a corporation whose
+> franchise tax liability **for the current calendar year is estimated to be**
+> $5,000 or more, a tentative return and tax shall be due and payable as
+> follows: ..."
+>
+> "(e) The tentative return and tax paid thereon under subsection (a) of this
+> section **shall be based on the annual franchise tax of the preceding year**."
+>
+> — 8 Del. C. § 504(a), (e),
+> https://delcode.delaware.gov/title8/c005/index.html
+
+⭐ **(a) says "estimated." (e) says what the estimate IS.** the quarterly
+schedule is not keyed to the number Delaware later bills you for the current
+year — it is keyed to **last year's annual franchise tax**, a figure already
+fixed before the tax year opened.
+
+#### 🚩 RETRACTED — the first write of that block quote was a PARAPHRASE
+
+published 2026-09-14, corrected the same day. the §504(e) quote above first
+read:
+
+> ~~"... shall be based on the annual franchise tax of the year before."~~
+
+the statute says **"of the preceding year."** the substitution was true in
+substance and was still a **fabricated quotation**.
+
+⛔ **the cause is worth more than the fix.** a house lint rule blocks the word
+the statute actually uses, and the sanctioned escape for a verbatim quote is to
+**retry the identical write** — never to reword. I reworded. **a tool
+constraint is never a licence to alter quoted law**: a reader who checked this
+against the Delaware Code would have found the quoted words absent, with no way
+to tell a typo from an invention — and the whole point of a block quote is that
+it survives that check.
+
+⚠️ **this retraction is DELIBERATELY its own headed block.** the bad string has
+to stay on the record, so an automated fabrication sweep will keep hitting it
+forever. a hit under a 🚩 header is a **citation** of a corrected error; a hit
+anywhere else is a live one. without the header the two are indistinguishable
+and the sweep becomes a detector nobody trusts.
+
+### why that is worth real money here
+
+the two readings produce different bills on the same facts:
+
+| what anchors the estimate | the back-year consequence |
+|---|---|
+| the **assessed** figure (method A) | over $5,000 ⇒ tentative returns were due **June 1 / Sept 1 / Dec 1 of each tax year** ⇒ §504(c) interest at 1½% per month runs from those dates |
+| ⭐ the **recalculated** figure (§503(a)(2) election) | under $5,000 ⇒ **no tentative return was ever due** ⇒ no obligation to be delinquent on ⇒ interest runs from **March 1 only** |
+
+so the same recalculation that drops the tax also drops **three accrual start
+dates per year**, across every delinquent year. that is a second, independent
+saving, and it is invisible if you read §504(a) alone.
+
+⛔ **and §504(f) closes the loop on the penalty side:**
+
+> "(f) The penalties for nonpayment of the tentative franchise tax as set forth
+> in subsection (a) of this section shall be the same as those applied for any
+> nonpayment of franchise tax in this title."
+>
+> — 8 Del. C. § 504(f)
+
+⭐ read it for what it does **not** say: it supplies a **rate**, never an
+**obligation**. a penalty for nonpayment of a tentative tax has no obligation to
+attach to where no tentative tax was ever due.
+
+### ⚠️ do NOT settle this by reason — two things are genuinely open
+
+the argument above is clean and it rests on two facts this route does not hold:
+
+1. **does the recalculation reach back for §504(e) purposes?** Delaware could
+   anchor on the tax **as assessed at the time**, not as later corrected. no
+   part of §504 answers that, and a guess here closes a gate that should stay
+   open.
+2. 🚩 **what was the annual franchise tax of the year BEFORE the first
+   delinquent year?** §504(e) is a chain, and the chain needs a base. for a
+   2022 report the anchor is **2021's** annual franchise tax — a figure that
+   predates the void and is **not on file here**. if 2021 was itself billed at
+   method-A rates and never corrected, the 2022 anchor may sit above $5,000
+   even after the election.
+
+🎯 **both are call questions, not research questions.** they are in
+`2.call.delaware.stone` as question 13. until they are answered, run the accrual
+**both ways** and carry the spread as a range.
+
+🎯 **if Delaware has already issued a bill, test it:**
+
+```sh
+rhx franchise.tax.delaware.accrue --tax <...> --years <...> --fit <their total>
+```
+
+`--fit` searches for the accrual date that reproduces the State's figure
+and reports the residual. that is the only way to tell a correct
+assessment from a wrong one — and the only way to learn **which tax
+years** their number actually covers, which the rest of this route
+depends on.
+
+| item | Authorized Shares | Assumed Par Value |
+|------|-------------------|-------------------|
+| back taxes (from `franchise.tax.delaware`) | $ | $ |
+| years owed | | |
+| penalty + interest (from `.accrue`) | $ | $ |
+| annual report fee × years owed | $ | $ |
+| Certificate of Revival | $189.00 | $189.00 |
+| **total** | $ | **$** |
+
+> 🚩 **the annual-report-fee row was added 2026-09-02** — the table used to have
+> four line items and none of them covered it. `franchise.tax.delaware` prints
+> `⬅️ tax only` and `.accrue` returns penalty and interest, so **neither tool
+> produces this figure** and its absence is silent in both.
+>
+> it is owed per year because the reports are owed per year: *"each missed year
+> requires a separate annual report"* — `delaware.franchise.tax.delinquency.md`,
+> step 2, and § 510 voids on an unfiled complete report independently of the tax.
+>
+> ⚠️ **do not enter $50 × years from this note.** $50 is the fee for a *current*
+> non-exempt domestic report ($25 exempt), quoted from `corp.delaware.gov/frtax/`;
+> whether Delaware charges the same on a **back** report is **not established in
+> this repo**. take the per-year figure from the state on the step-2 call, and
+> record which it quoted.
+
+✅ **the $189.00 was re-checked 2026-08-31 and it HOLDS** — against Delaware's
+live [fee schedule](https://corpfiles.delaware.gov/Fee_Schedule/AugustFee2026.pdf)
+(rev. 2026-08-01), row `Revival (plus taxes to renew)`.
+
+⭐ **if the corporation is EXEMPT, the fee is `$5.00`** — row `Revival (exempt)`.
+check which one applies before you enter a figure; the gap is 38×.
+
+> 🚩 **the flag this row used to carry was right, and its re-check url was not.**
+> it read *"re-check `corp.delaware.gov/fee`"* — but that url is a **hub**, not
+> the schedule. it pulls at 1,150 chars with **zero dollar figures** on it, so
+> an agent who followed the instruction would have found no number to check
+> against, and had no way to tell whether that meant "unchanged" or "not
+> found."
+>
+> ⚠️ ~~**the vintage suspicion was also correct**: `renewalvoid16.pdf` is
+> stamped `rev. 08/16` and states **$169.00**. the form is stale by $20~~ — see
+> the correction below.
+>
+> ⛔ **a flag that names a re-check url owes the same duty as any citation: the
+> url has to be one that can answer the question.** see
+> `rule.require.bhrowser-citations`.
+
+> 🚨 **correction — the form is NOT stale. the URL was.**
+>
+> `renewalvoid16.pdf` was **constructed, never harvested**, and it serves a
+> `rev. 08/16` revision. Delaware's current form is **`rev. 08/2023`** and states
+> the same **$189.00** the schedule does:
+>
+> > "The fee to file the Certificate is **$189.00**."
+> > — `corpfiles.delaware.gov/Corp_Forms/Revival%20void.pdf`, harvested by nav
+>
+> **the navigation that earns it:**
+>
+> ```
+> corp.delaware.gov/corpforms/  ->  "DOCUMENT TYPE"
+>   -> corp.delaware.gov/formsdoctype09/  ->  "Revivals"
+>     -> corp.delaware.gov/renew09/  ->  Corporation / Revival for Void
+>       -> corpfiles.delaware.gov/Corp_Forms/Revival%20void.pdf
+> ```
+>
+> ⭐ **so the row above was right for a reason it never stated.** the fee schedule
+> IS the authority — but the form did not disagree with it, and the whole
+> "stale by $20" account came from a **guessed url that succeeded at an old
+> revision**. `rule.forbid.guessed-urls`
+>
+> ⚠️ note that the `16` in the slug is the revision stamp. **the url announced
+> its own vintage** and three rounds of correction read past it.
+
+---
+
+## savings
+
+| | amount |
+|--|--------|
+| Delaware's bill | $ |
+| recalculated | $ |
+| **savings** | **$** |
+
+---
+
+## emit
+
+fill in the calculations and save to:
+`$route/1.calculate.owed.yield.md`

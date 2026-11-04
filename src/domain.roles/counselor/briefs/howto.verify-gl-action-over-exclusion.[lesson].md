@@ -1,5 +1,7 @@
 # howto.verify-gl-action-over-exclusion
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 a certificate of insurance proves coverage exists — it does NOT prove that coverage applies to subcontractor injuries. you must verify the policy itself for action over exclusions.
@@ -242,6 +244,10 @@ if you can't verify GC's GL covers sub injuries, require certificates from each 
 
 ### verification practices
 7. [NH Insurance Dept - Verify Contractor Insurance](https://www.insurance.nh.gov/news-and-media/blog/how-verify-if-your-contractor-has-right-insurance)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic policy-verification steps from public sources; no client identity or client-specific mechanic.
 
 ## .date researched
 

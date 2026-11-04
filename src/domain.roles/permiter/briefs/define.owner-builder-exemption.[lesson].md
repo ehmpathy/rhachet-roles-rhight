@@ -1,5 +1,7 @@
 # define.owner-builder-exemption
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 homeowners can legally do their own electrical, plumbing, HVAC, and structural work on their primary residence WITHOUT a trade license — they just need permits and inspections.
@@ -166,6 +168,10 @@ yes — as owner-builder, you're responsible for the work quality. if it causes 
 - [DIY Chat Room: Permit as a homeowner](https://www.diychatroom.com/threads/permitting-as-a-homeowner.772415/)
 - Indianapolis DBNS Homeowner Permit Guide
 - [indy.gov: Residential Development Permits](https://www.indy.gov/activity/residential-development-permits)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public-law explainer on the owner-builder exemption; no client identity, no applied mechanic.
 
 ## .date researched
 

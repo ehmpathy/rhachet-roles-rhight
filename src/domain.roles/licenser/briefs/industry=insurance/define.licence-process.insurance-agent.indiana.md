@@ -1,5 +1,7 @@
 # define.licence-process.insurance-agent.indiana
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 indiana insurance agent licensing requires pre-licensing education, passing a state examination administered by pearson vue, submitting an application through NIPR or sircon, and maintaining compliance through biennial continuing education renewal.
@@ -341,3 +343,7 @@ penalty waiver provisions:
 
 - define.purpose-of-insurance-agent-licenses — why licensing exists
 - define.insurance-agent-license-reciprocity — multi-state licensing
+
+## .publishability
+
+☀️ **fullsun** (share) — public Indiana insurance licensure process; no client identity or client-specific mechanic.

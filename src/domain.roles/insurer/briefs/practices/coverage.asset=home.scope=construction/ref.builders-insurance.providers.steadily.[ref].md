@@ -1,5 +1,7 @@
 # ref.builders-insurance.providers.steadily
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 Steadily builder's risk insurance acquisition details for landlords.
@@ -234,6 +236,10 @@ From Coverage Cat:
 - [Steadily Glossary: Builder's Risk Coverage Form](https://www.steadily.com/glossary/builders-risk-coverage-form) — WebFetch verified
 - [Coverage Cat: Steadily Review](https://www.coveragecat.com/reviews/steadily-insurance-review) — WebFetch verified
 - [Real Estate Skills: Steadily Review](https://www.realestateskills.com/blog/steadily-insurance-reviews) — WebFetch verified
+
+## .publishability
+
+☀️ **fullsun** (share) — public profile of a carrier's builder's risk product; no client identity or applied strategy.
 
 ## .date researched
 

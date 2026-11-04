@@ -1,5 +1,7 @@
 # ref.subcontractor-coverage-case-law
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 court cases and policy endorsements that determine whether insurance covers damage caused by subcontractors.
@@ -146,6 +148,10 @@ before work begins, verify with the insurance company:
 - `risk.subcontractor-gap.[lesson].md` — how insurance denies when subcontractors do the work
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

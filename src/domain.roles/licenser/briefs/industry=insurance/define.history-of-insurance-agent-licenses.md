@@ -1,5 +1,7 @@
 # define.history-of-insurance-agent-licenses
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 the history of insurance agent licensing in the united states spans from informal state oversight in the early 1800s through the establishment of formal regulatory departments, landmark supreme court decisions, and the modern technology-enabled licensing infrastructure.
@@ -351,3 +353,7 @@ the organization continues to evolve:
 - define.purpose-of-insurance-agent-licenses — why licensing exists
 - define.insurance-agent-license-process — how to obtain a license
 - define.insurance-agent-license-reciprocity — multi-state licensing
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public history of insurance licensure; no client identity or client-specific mechanic.

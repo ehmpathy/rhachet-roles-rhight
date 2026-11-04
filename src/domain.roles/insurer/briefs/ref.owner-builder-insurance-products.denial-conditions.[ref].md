@@ -1,5 +1,7 @@
 # ref.owner-builder-insurance-products.denial-conditions
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 conditions under which builder's risk / owner-builder insurance claims are denied, with case law and documented scenarios.
@@ -318,6 +320,10 @@ conditions under which builder's risk / owner-builder insurance claims are denie
 ### misrepresentation
 - [Wyly Law: Misrepresentation in Insurance](https://wylylawfirm.com/understanding-misrepresentation-in-insurance/)
 - [FindLaw: Misrepresentations and Concealments](https://corporate.findlaw.com/corporate-governance/misrepresentations-and-concealments-in-the-application-for.html)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic owner-builder policy denial conditions from public sources; no client identity or applied strategy.
 
 ## .date researched
 

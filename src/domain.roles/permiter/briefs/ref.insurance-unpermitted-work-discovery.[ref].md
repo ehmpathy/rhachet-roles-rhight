@@ -1,5 +1,7 @@
 # ref.insurance-unpermitted-work-discovery
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 how insurance companies discover unpermitted work, determine liability, and the legal precedents for claim denials.
@@ -259,6 +261,10 @@ sellers must disclose known unpermitted work in most states.
 - state doctrine (efficient proximate cause vs. concurrent causation)
 - ensuing loss provisions
 - whether covered peril also contributed to damage
+
+## .publishability
+
+☀️ **fullsun** (share) — public case law and general insurer practice; no client identity.
 
 ## .date researched
 

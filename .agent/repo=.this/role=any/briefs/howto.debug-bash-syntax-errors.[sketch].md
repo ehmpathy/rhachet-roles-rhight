@@ -42,6 +42,55 @@ if [[ "$HEADER" =~ ^[a-z]+\(([^)]+)\): ]]; then
 SCOPE=$(echo "$HEADER" | sed -n 's/^[a-z]*(\([^)]*\)):.*/\1/p')
 ```
 
+### awk interval expressions match no line, silently
+
+`awk` on Debian/Ubuntu is usually **mawk**, which does not support `{n,m}`
+interval expressions. the pattern does not error — it simply never matches, so
+a guard clause quietly does no work and the whole input falls through.
+
+```bash
+# 🚫 matches no line under mawk — no error, no warn, wrong result
+awk '/^#{10,}$/ { exit }' file.sh
+
+# ✓ works under both mawk and gawk
+awk '/^#####/ { exit }' file.sh
+```
+
+the tell: an awk filter that should stop early instead emits the whole input
+(measured: a `--help` renderer that dumped the whole executable).
+
+**this failure has no exit code and no stderr**, so the flow below misses it.
+suspect it whenever awk output is *too long* rather than absent.
+
+### an apostrophe inside `${var:-word}` — even within double quotes
+
+`${var:-word}` performs **quote removal on `word`**, and it does so even when
+the whole expansion sits inside double quotes. so a lone `'` in a default value
+opens a single-quoted string that runs to the end of the file.
+
+```bash
+# 🚫 breaks the PARSE. the ' opens a string that never closes
+SIGNER="${SIGNER:-Eagle Of'Rhight}"
+
+# ✓ hold the default in its own variable, where the normal quote rules apply
+DEMO_SIGNER="Eagle Of'Rhight"
+SIGNER="${SIGNER:-$DEMO_SIGNER}"
+```
+
+the error points at the **end of file**, not the line that broke:
+
+```
+line 913: unexpected EOF while looking for matching `''
+```
+
+on a 930-line file that reads as a corrupt tail rather than a bad default on
+line 400.
+
+**the tell is the pass/fail pattern.** paths that `exec`/`exit` out *before* the
+broken line (`--help`, `--variants`) still pass; every case past it fails at once.
+a genuinely corrupt tail would fail all of them. measured: 22 of 26 tests red
+from one apostrophe in a demo name.
+
 ### character classes with special chars
 
 ```bash

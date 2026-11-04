@@ -1,5 +1,7 @@
 # ref.premium-impact-unrecovered-claims
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 when insurers pay claims but cannot recover via subrogation (owner-builder scenario), what happens to premiums and renewability?
@@ -265,6 +267,10 @@ insurers may view owner-builder electrical work as:
 
 ### case study
 14. [Policygenius - Maida Family Fire Claim](https://www.policygenius.com/homeowners-insurance/claims-diary-house-fire/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic premium effect of unrecovered claims from public sources; no client identity or applied strategy.
 
 ## .date researched
 

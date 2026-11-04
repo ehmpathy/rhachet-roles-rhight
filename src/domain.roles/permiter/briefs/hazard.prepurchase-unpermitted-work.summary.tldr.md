@@ -1,5 +1,7 @@
 # hazard.prepurchase-unpermitted-work.summary.tldr
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .the hazard
 
 you bought a house. previous owner made changes (electrical, plumbing, HVAC, bathroom, kitchen) without permits. you don't know. years later, something fails. insurer searches permits. finds none. may deny claim.
@@ -126,3 +128,7 @@ at claim time, adjuster:
 | Florida doctrine | `ref.insurance-causation-doctrine.florida.[ref].md` |
 | Oregon doctrine | `ref.insurance-causation-doctrine.oregon.[ref].md` |
 | Indiana doctrine | `ref.insurance-causation-doctrine.indiana.[ref].md` |
+
+## .publishability
+
+☀️ **fullsun** (share) — generic buyer-hazard summary over public case law; no client identity.

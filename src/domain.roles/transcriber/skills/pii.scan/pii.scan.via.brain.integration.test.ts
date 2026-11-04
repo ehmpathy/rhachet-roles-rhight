@@ -38,14 +38,20 @@ const runSkill = (input: {
   cwd: string;
   /** prepended to PATH — see genRhxThatCapturesTheArgv */
   binFirst?: string;
+  /** extra env, e.g. a small PII_REVIEW_BATCH_BYTES to force batches */
+  env?: Record<string, string>;
 }): { stdout: string; stderr: string; exitCode: number } => {
   const result = spawnSync('bash', [scriptPath, ...input.args], {
     encoding: UTF8,
     cwd: input.cwd,
     stdio: ['pipe', 'pipe', 'pipe'],
-    env: input.binFirst
-      ? { ...process.env, PATH: `${input.binFirst}:${process.env.PATH ?? ''}` }
-      : process.env,
+    env: {
+      ...process.env,
+      ...(input.binFirst
+        ? { PATH: `${input.binFirst}:${process.env.PATH ?? ''}` }
+        : {}),
+      ...(input.env ?? {}),
+    },
   });
   return {
     stdout: result.stdout ?? '',
@@ -138,6 +144,8 @@ const asFakeReviewBody = (input: {
   nitpicks: number;
   /** omit the `logs:` line, to impersonate a skipped review */
   withLogs?: boolean;
+  /** lines echoed ahead of the summary, as a real review echoes the paths it read */
+  stdoutBefore?: string[];
 }): string[] => [
   '#!/usr/bin/env bash',
   `printf '%s\\n' "$@" > "${input.captureAt}"`,
@@ -152,6 +160,7 @@ const asFakeReviewBody = (input: {
   `  printf '%s\\n' "${input.reportBody}" > "$out"`,
   'fi',
   'echo "🔍 review"',
+  ...(input.stdoutBefore ?? []).map((line) => `echo "${line}"`),
   ...(input.withLogs === false
     ? []
     : ['echo "   ├─ logs: .log/bhrain/review/x"']),
@@ -223,6 +232,7 @@ const genRhxThatAnswers = (input: {
   blockers: number;
   nitpicks: number;
   marker: string;
+  stdoutBefore?: string[];
 }): { bin: string } => {
   const bin = path.join(input.dir, '.fakebin');
   fs.mkdirSync(bin, { recursive: true });
@@ -234,6 +244,7 @@ const genRhxThatAnswers = (input: {
       reportBody: input.marker,
       blockers: input.blockers,
       nitpicks: input.nitpicks,
+      stdoutBefore: input.stdoutBefore,
     }).join('\n'),
   );
   fs.chmodSync(path.join(bin, 'rhx'), '755');
@@ -1389,6 +1400,252 @@ describe('pii.scan.via.brain.sh', () => {
         // completely different paths: one hunts a value in a diff, the
         // other repairs a reviewer that did not run
         expect(result.stdout).not.toContain('hold up — a brain saw PII');
+      });
+    });
+  });
+
+  /**
+   * .what = a staged DIRECTORY SYMLINK — a skill shared between two roles
+   * .why  = `rhx review` reads each scoped path as a file, so a dir link in
+   *         the scope crashed it with EISDIR, and the gate blocked every
+   *         commit that carried one as a malfunction. the link holds only a
+   *         path; its target files are in scope on their own paths
+   */
+  given('[case18] a staged directory symlink beside its target', () => {
+    const repo = useBeforeAll(async () => {
+      const made = genTempRepo({ files: { 'shared/skill.sh': 'echo hi' } });
+      fs.mkdirSync(path.join(made.dir, 'other'), { recursive: true });
+      fs.symlinkSync('../shared', path.join(made.dir, 'other/skill'));
+      const res = spawnSync('git', ['add', 'shared/skill.sh', 'other/skill'], {
+        cwd: made.dir,
+        encoding: UTF8,
+      });
+      if (res.status !== 0) throw new Error('git add failed: ' + res.stderr);
+      return made;
+    });
+
+    when('[t0] planned', () => {
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--mode', 'plan'],
+          cwd: repo.dir,
+        }),
+      );
+
+      then('it names the link as excluded, and counts only the file', () => {
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('dirlinks');
+        expect(result.stdout).toMatch(/files\D+1\b/);
+      });
+    });
+
+    when('[t1] reviewed', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatCapturesTheArgv({ dir: repo.dir }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('it scopes the review to the target file, never the link', () => {
+        const argv = fake.readArgv();
+        if (result.exitCode !== 0)
+          console.log('PROOF: stdout:', result.stdout, 'argv:', argv);
+        expect(argv).toContain('--paths-with');
+        expect(argv).toContain('shared/skill.sh');
+        expect(argv).not.toContain('other/skill');
+        expect(result.exitCode).toBe(0);
+      });
+    });
+  });
+
+  /**
+   * .what = a staged set too large for one prompt
+   * .why  = the reviewer refuses a prompt past 75% of its context window,
+   *         and that refusal is a malfunction, so one large commit could
+   *         never clear the gate. the set is graded in batches, and the
+   *         verdicts are unioned exactly as reviewers are
+   */
+  given('[case19] a staged set larger than one batch', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: {
+          'a.md': 'a'.repeat(400),
+          'b.md': 'b'.repeat(400),
+          'c.md': 'c'.repeat(400),
+        },
+        stage: ['a.md', 'b.md', 'c.md'],
+      }),
+    );
+
+    when('[t0] planned with a 500-byte budget', () => {
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--mode', 'plan'],
+          cwd: repo.dir,
+          env: { PII_REVIEW_BATCH_BYTES: '500' },
+        }),
+      );
+
+      then('it plans one batch per file that would overflow the budget', () => {
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toMatch(/batches\D+3\b/);
+      });
+    });
+
+    when('[t1] reviewed with a 500-byte budget', () => {
+      const fake = useBeforeAll(async () => {
+        const made = genRhxThatCapturesTheArgv({ dir: repo.dir });
+        // append, so every batch call leaves its argv on record
+        const at = path.join(made.bin, 'rhx');
+        fs.writeFileSync(
+          at,
+          fs
+            .readFileSync(at, UTF8)
+            .replace(`> "${made.captureAt}"`, `>> "${made.captureAt}"`),
+        );
+        return made;
+      });
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+          env: { PII_REVIEW_BATCH_BYTES: '500' },
+        }),
+      );
+
+      then(
+        'it asks the reviewer once per batch, each scoped to its own file',
+        () => {
+          const argv = fake.readArgv();
+          expect(argv.split('\n').filter((l) => l === 'review').length).toBe(3);
+          for (const name of ['a.md', 'b.md', 'c.md'])
+            expect(argv).toContain(name);
+        },
+      );
+
+      then(
+        'it reports each batch, and passes when every batch is clean',
+        () => {
+          if (result.exitCode !== 0)
+            console.log('PROOF: stdout:', result.stdout);
+          expect(result.stdout).toContain('[batch 1/3]');
+          expect(result.stdout).toContain('[batch 3/3]');
+          expect(result.exitCode).toBe(0);
+        },
+      );
+    });
+
+    when('[t2] reviewed at the default budget', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatCapturesTheArgv({ dir: repo.dir }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then(
+        'the control: a set that fits is ONE batch, in one brace glob',
+        () => {
+          expect(result.exitCode).toBe(0);
+          expect(result.stdout).not.toContain('[batch');
+          expect(fake.readArgv()).toContain('{a.md,b.md,c.md}');
+        },
+      );
+    });
+  });
+
+  /**
+   * .what = a path that carries glob metacharacters
+   * .why  = a batch travels as one glob, so `x.[rule].md` unescaped would
+   *         read as a character class and match none of itself — the
+   *         file would drop out of the review with no word said
+   */
+  given('[case20] a staged path with brackets in its name', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'a.md': 'Dear reader,', 'x.[rule].md': 'Dear reader,' },
+        stage: ['a.md', 'x.[rule].md'],
+      }),
+    );
+
+    when('[t0] reviewed', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatCapturesTheArgv({ dir: repo.dir }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then(
+        'it escapes the brackets, so the glob matches the path itself',
+        () => {
+          expect(result.exitCode).toBe(0);
+          expect(fake.readArgv()).toContain('{a.md,x.\\[rule\\].md}');
+        },
+      );
+    });
+  });
+  /**
+   * .what = a reviewed PATH that holds the word "blocker" and a digit
+   *
+   * .why  = the tally read the first number near the word "blocker"
+   *         anywhere in stdout. a real review echoes the paths it read,
+   *         so a staged `blocker/5.notes.md` read as "5 blockers" and a
+   *         clean review blocked the commit. observed on a route halt
+   *         record, `.route/<route>/blocker/5.briefs.short.md`
+   */
+  given('[case21] a staged path that names "blocker" beside a digit', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: { 'blocker/5.notes.md': 'the halt was resolved.' },
+        stage: ['blocker/5.notes.md'],
+      }),
+    );
+
+    when('[t0] reviewed under a fake that echoes the path, then 0 / 0', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no issues found.',
+          stdoutBefore: ['   ├─ paths: blocker/5.notes.md'],
+        }),
+      );
+
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('it passes at exit 0', () => {
+        if (result.exitCode !== 0) {
+          console.log('PROOF: exitCode:', result.exitCode);
+          console.log('PROOF: stdout:', result.stdout);
+        }
+        expect(result.exitCode).toBe(0);
+      });
+
+      then('⭐ it reads the summary count, not the digit in the path', () => {
+        expect(result.stdout).toContain('clear skies');
+        expect(result.stdout).not.toContain('5 blocker(s)');
       });
     });
   });

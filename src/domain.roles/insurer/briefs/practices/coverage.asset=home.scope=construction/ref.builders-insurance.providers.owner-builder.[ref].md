@@ -1,5 +1,7 @@
 # ref.builders-insurance-providers.owner-builder
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 which insurers offer builders insurance to owner-builders, what restrictions apply, and what work types are covered or excluded.
@@ -146,6 +148,10 @@ builders insurance is not legally required, but often practically required:
 - [ProgramBusiness: Insurance Costs 2026](https://programbusiness.com/news/insurance-availability-and-cost-shape-2026-spring-housing-market-for-builders/)
 - [Zurich: Builders Risk Insurance](https://www.zurichna.com/insurance/builders)
 - [Chubb: Homebuilders Builders Risk](https://www.chubb.com/us-en/business-insurance/homebuilders-builders-risk-insurance.html)
+
+## .publishability
+
+☀️ **fullsun** (share) — public directory of owner-builder insurance providers; no client identity or applied strategy.
 
 ## .date researched
 

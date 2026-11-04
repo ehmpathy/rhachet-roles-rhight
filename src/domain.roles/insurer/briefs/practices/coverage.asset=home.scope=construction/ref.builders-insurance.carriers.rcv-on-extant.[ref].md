@@ -1,5 +1,7 @@
 # ref.builders-insurance.carriers.rcv-on-extant
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 verified inventory of builder's risk carriers and their valuation methods for extant structures.
@@ -167,6 +169,10 @@ $20k reno on ~$200k property = 10%, below US Assure threshold. options:
 - [US Assure: Remodeling](https://usassure.com/products/builders-risk-insurance/remodeling) — WebFetch verified 2026-04-30
 - [Markel: Large Builders Risk](https://www.markel.com/us/industries/construction/large-builders-risk) — WebFetch verified 2026-04-30
 - [Chubb: Home Valuation](https://www.chubb.com/us-en/agents-brokers/resources/home-valuation.html)
+
+## .publishability
+
+☀️ **fullsun** (share) — carrier replacement-cost stances from public sources; no client identity or applied strategy.
 
 ## .date researched
 

@@ -1,0 +1,225 @@
+	
+Hawaii General Excise Tax (GET)
+The General Excise Tax (GET) is Hawaii’s tax on business activity. It is imposed on the gross income or gross receipts of virtually all business activity conducted in Hawaii, including sales of goods, services, rents, commissions, construction, and other business transactions. Unlike a traditional sales tax, GET is levied on the business rather than the customer, though many businesses choose to pass the cost on to customers.
+Quick Links
+	
+
+File & Pay your Taxes Online ▸
+
+
+	
+
+Register for a
+GET License ▸
+
+
+	
+
+Look up a
+GET License▸
+
+
+	
+
+List of all
+GET forms ▸
+
+What is Taxed & GET Rates
+
+GET applies to the gross income or gross receipts from all business activities conducted in Hawaii. This includes (but is not limited to):
+
+Sales of goods and services
+Services and professional fees
+Rental income from property
+Commissions and fees
+Construction contracts
+Business interest and other income earned
+
+All gross receipts from these activities are subject to GET unless a specific exemption applies.
+
+Gross income is the total of all business income before deducting business expenses.
+
+  GET is NOT a sales tax.
+
+A sales tax is a tax on the customer, which businesses must collect. GET is a tax on the business itself. Businesses may choose to pass the GET on to customers, but they are not required to do so.
+
+If GET is passed on to customers, it must be included in gross receipts.
+
+Hawaii’s GET Rates Vary by Type of Activity
+Activity Type	Tax Rate
+Selling retail goods and services, renting, leasing real property, construction contracting, earning commissions, all others	4.5%*
+Wholesaling goods, producing, providing wholesale services, business activities of disabled people	0.50%
+Insurance Commissions	0.15%
+
+*This 4.5% rate includes a 0.5% county surcharge. The county surcharge does not apply to activities taxed at the 0.5% rate (for example selling wholesale goods) or insurance commissions.
+
+Exemptions, Deductions, and Exclusions
+
+All gross receipts from these activities are subject to GET unless a specific exemption applies. Certain types of income may be exempt or subject to deduction under Hawaii law.
+
+See Schedule of GET Exemptions and Deductions
+
+See Schedule of Use Tax Exemptions and Deductions
+
+See Schedule of County Surcharge Exemptions and Deductions
+
+See Division of Gross Income Among Taxpayers
+
+Excel Workbook of the General Excise Tax Exemptions/Deductions by Activity Code as of June 13, 2025 (XLSX)
+
+Registration Requirements
+An individual, business, or other legal entity must register for a GET license if they are: engaging in business activities in Hawaii, have physical nexus, or meet/exceed the economic nexus threshold.
+Engaging in Business Activities
+
+Examples of taxable activities include:
+
+Sales of goods and services
+Services and professional fees
+Rental income from property
+Commissions and fees
+Construction contracts
+Business interest and other income earned
+Physical Nexus
+
+Nexus can be established through physical presence such as having an office,  employees or representatives, inventory or other property in Hawaii, or providing services in Hawaii such as installation,  training, maintenance, or repair services.  Once nexus is established, then all your transactions in Hawaii are subject to Hawaii taxes.
+
+Economic Nexus Threshold
+
+Out-of-state or remote businesses that engage with Hawaii customers are subject to the economic nexus threshold. If the business has gross income or receipts of $100,000 or more, or has 200 or more transactions in the current or preceding calendar year, economic nexus is established.
+
+How to Register for a GET License
+
+1. Complete the State of Hawaii Basic Business Application (Form BB-1).
+
+2. Pay the one-time $20 license fee.
+
+3. Submit the application in person, by mail to the Department of Taxation, or online via Hawaii Tax Online (recommended).
+
+Processing times:
+
+In person submission is immediate issuance
+Hawaii Tax Online takes 5-7 business days
+By mail takes 4-6 weeks
+
+Once issued, your GET license and associated Hawaii Tax ID remain active until you close or surrender them, or until they are revoked due to abandonment.
+
+Display your GET license at EACH place of business
+
+If you have multiple business locations or more than one business name, such as a trade name or doing business as (DBA) name, you must get an additional branch license for each location.
+
+To apply for a branch license, use Form G-50. There is no additional charge to obtain a branch license.
+
+Filing Requirements
+
+GET returns are filed periodically and annually. Periodic General Excise/Use Tax Return (Form G-45) is filed semiannually, quarterly, or monthly depending on expected annual GET liability. Annual Return & Reconciliation of General Excise/Use Tax Return (Form G-49) is filed yearly to reconcile gross receipts, exemptions, and taxes for the taxable year.
+
+Taxpayers must file a return even if they have no income (also known as a “zero return”).
+
+Ways to Submit/File Returns
+Online filing via Hawaii Tax Online
+Paper filing by mail
+
+Certain taxpayers are required to file electronically (e-file), particularly those with higher annual liabilities. Penalties may apply for failing to e-file when required.
+
+Periodic Returns – File Form G-45
+
+Deadline to file Form G-45 is 20 days after the tax period ends. If the deadline falls on a weekend or holiday, it will be due on the next business day.
+
+If Expected Annual GET Liability ≤ $2000, then file Semi-Annually
+
+A semi-annual tax period covers 6 months. For example, a semi-annual return for a January to June period is due July 20th.
+
+Taxpayers may submit a paper return or file online at Hawaii Tax Online (recommended).
+
+If Expected Annual GET Liability ≤ $4000, then file Quarterly
+
+A quarterly tax period covers 3 months. For example, a quarterly return for a January to March period is due April 20th.
+
+Taxpayers may submit a paper return or file online at Hawaii Tax Online (recommended).
+
+If Expected Annual GET Liability > $4000, then file Monthly
+
+A monthly tax period covers 1 month. For example, a monthly return for January is due February 20th.
+
+Taxpayers are REQUIRED to file monthly returns online at Hawaii Tax Online.
+
+Annual Returns – File Form G-49
+
+All taxpayers must file form G-49 annually.
+
+Deadline to file Form G-49 is the 20th day of the fourth month following your tax year end. If the deadline falls on a weekend or holiday, it will be due on the next business day. For example, calendar year (January-December) filers must file by April 20th.
+
+Payment Requirements
+
+GET payments are due on the same dates as the corresponding return (periodic or annual). Taxes must be paid with the return by the due date. Taxpayers required to file electronically under Hawaii law must also make electronic payments if applicable.
+
+Ways to Submit Payment
+Electronically through Hawaii Tax Online (ACH and other electronic payment options available)
+By mail with a check or money order
+In person at state tax office locations (cash or check payments are accepted only when paying in person)
+
+Follow instructions on the return or in the Hawaii Tax Online portal. Prompt payment by the due date helps avoid penalties and interest.
+
+Penalties & Interest Rates
+
+If a GET return or payment is late:
+
+Late filing penalty: 5% of unpaid tax per month (or part of a month), up to a maximum of 25%
+Late payment penalty: A 20% penalty may be applied if the tax on a timely filed return is not paid within 60 days after the due date
+Interest: 2/3 of 1% per month on unpaid tax and penalties, starting after the due date
+
+Additional penalties may apply, such as:
+
+2% penalty for failing to e-file or e-pay when required
+10% penalty for failing to properly complete Part V of the return
+Helpful Resources
+
+	
+
+GET Frequently Asked Questions ▸
+
+Common GET Forms
+State of Hawaii Basic Business Application (Form BB-1)
+Periodic General Excise/Use Tax Return (Form G-45)
+Annual Return & Reconciliation of General Excise/ Use Tax Return (Form G-49)
+General Excise Branch License Maintenance Form (Form G-50)
+
+For a complete list of GET forms, click here
+
+YouTube Videos
+
+Starting a Business in Hawaii
+How To: File your G45 (Paper Filing)
+How To: File your G49 (Paper Filing)
+Additional Information
+Tax Information Release No. 2019-03, Guidance Regarding Marketplace Facilitators eg. App-based transportation and food-delivery companies
+Tax Facts 37-1, General Excise Tax (GET)
+Other Tax Facts on General Excise/Use Tax
+An Introduction to the General Excise Tax (PDF) 20 pages, 339 KB, Revised May 2025
+County Surcharge on General Excise and Use Tax
+Please also search our website for Tax Information Releases, Attorney General Opinions, Letter Rulings and other resources related to the General Excise Tax.
+Laws & Rules
+GET is governed by various provisions of the Hawaii Revised Statutes (HRS), particularly Chapter 237 and related administrative rules. Tax Information Releases and Attorney General opinions provide further guidance.
+Page Last Updated: August 27, 2026
+
+	
+OFFICE LOCATION
+
+830 Punchbowl Street, Honolulu, HI 96813-5094
+
+
+	
+INFORMATION
+
+Contact Us
+taxpayer.services@hawaii.gov
+808-587-4242
+
+
+	
+POLICIES
+Terms of Use
+Accessibility
+ADA Notice
+Privacy Policy
+Copyright © 2025, State of Hawaii. All rights reserved.

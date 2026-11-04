@@ -1,0 +1,283 @@
+The Delaware Code Online
+LAWS OF
+DELAWARE
+REGULATIONS
+ADMINISTRATIVE
+CODE
+MUNICIPAL
+CHARTERS
+FAQ
+TITLE 8 > CHAPTER 1
+Authenticated PDF
+§ 151 § 152 § 153 § 154 § 155 § 156 § 157 § 158 § 159 § 160 § 161 § 162 § 163 § 164 § 165 § 166 § 167 § 168 § 169 § 170 § 171 § 172 § 173 § 174
+TITLE 8
+Corporations
+CHAPTER 1. General Corporation Law
+Subchapter V. Stock and Dividends
+§ 151. Classes and series of stock; redemption; rights.
+
+(a) Every corporation may issue 1 or more classes of stock or 1 or more series of stock within any class thereof, any or all of which classes may be of stock with par value or stock without par value and which classes or series may have such voting powers, full or limited, or no voting powers, and such designations, preferences and relative, participating, optional or other special rights, and qualifications, limitations or restrictions thereof, as shall be stated and expressed in the certificate of incorporation or of any amendment thereto, or in the resolution or resolutions providing for the issue of such stock adopted by the board of directors pursuant to authority expressly vested in it by the provisions of its certificate of incorporation. Any of the voting powers, designations, preferences, rights and qualifications, limitations or restrictions of any such class or series of stock may be made dependent upon facts ascertainable outside the certificate of incorporation or of any amendment thereto, or outside the resolution or resolutions providing for the issue of such stock adopted by the board of directors pursuant to authority expressly vested in it by its certificate of incorporation, provided that the manner in which such facts shall operate upon the voting powers, designations, preferences, rights and qualifications, limitations or restrictions of such class or series of stock is clearly and expressly set forth in the certificate of incorporation or in the resolution or resolutions providing for the issue of such stock adopted by the board of directors. The term “facts,” as used in this subsection, includes, but is not limited to, the occurrence of any event, including a determination or action by any person or body, including the corporation. The power to increase or decrease or otherwise adjust the capital stock as provided in this chapter shall apply to all or any such classes of stock.
+
+(b) Any stock of any class or series may be made subject to redemption by the corporation at its option or at the option of the holders of such stock or upon the happening of a specified event; provided however, that immediately following any such redemption the corporation shall have outstanding 1 or more shares of 1 or more classes or series of stock, which share, or shares together, shall have full voting powers. Notwithstanding the limitation stated in the foregoing proviso:
+
+(1) Any stock of a regulated investment company registered under the Investment Company Act of 1940 [15 U.S.C. § 80 a-1 et seq.], as heretofore or hereafter amended, may be made subject to redemption by the corporation at its option or at the option of the holders of such stock.
+
+(2) Any stock of a corporation which holds (directly or indirectly) a license or franchise from a governmental agency to conduct its business or is a member of a national securities exchange, which license, franchise or membership is conditioned upon some or all of the holders of its stock possessing prescribed qualifications, may be made subject to redemption by the corporation to the extent necessary to prevent the loss of such license, franchise or membership or to reinstate it.
+
+Any stock which may be made redeemable under this section may be redeemed for cash, property or rights, including securities of the same or another corporation, at such time or times, price or prices, or rate or rates, and with such adjustments, as shall be stated in the certificate of incorporation or in the resolution or resolutions providing for the issue of such stock adopted by the board of directors pursuant to subsection (a) of this section.
+
+(c) The holders of preferred or special stock of any class or of any series thereof shall be entitled to receive dividends at such rates, on such conditions and at such times as shall be stated in the certificate of incorporation or in the resolution or resolutions providing for the issue of such stock adopted by the board of directors as hereinabove provided, payable in preference to, or in such relation to, the dividends payable on any other class or classes or of any other series of stock, and cumulative or noncumulative as shall be so stated and expressed. When dividends upon the preferred and special stocks, if any, to the extent of the preference to which such stocks are entitled, shall have been paid or declared and set apart for payment, a dividend on the remaining class or classes or series of stock may then be paid out of the remaining assets of the corporation available for dividends as elsewhere in this chapter provided.
+
+(d) The holders of the preferred or special stock of any class or of any series thereof shall be entitled to such rights upon the dissolution of, or upon any distribution of the assets of, the corporation as shall be stated in the certificate of incorporation or in the resolution or resolutions providing for the issue of such stock adopted by the board of directors as hereinabove provided.
+
+(e) Any stock of any class or of any series thereof may be made convertible into, or exchangeable for, at the option of either the holder or the corporation or upon the happening of a specified event, shares of any other class or classes or any other series of the same or any other class or classes of stock of the corporation, at such price or prices or at such rate or rates of exchange and with such adjustments as shall be stated in the certificate of incorporation or in the resolution or resolutions providing for the issue of such stock adopted by the board of directors as hereinabove provided.
+
+(f) If any corporation shall be authorized to issue more than 1 class of stock or more than 1 series of any class, the powers, designations, preferences and relative, participating, optional, or other special rights of each class of stock or series thereof and the qualifications, limitations or restrictions of such preferences and/or rights shall be set forth in full or summarized on the face or back of the certificate which the corporation shall issue to represent such class or series of stock, provided that, except as otherwise provided in § 202 of this title, in lieu of the foregoing requirements, there may be set forth on the face or back of the certificate which the corporation shall issue to represent such class or series of stock, a statement that the corporation will furnish without charge to each stockholder who so requests the powers, designations, preferences and relative, participating, optional, or other special rights of each class of stock or series thereof and the qualifications, limitations or restrictions of such preferences and/or rights. Within a reasonable time after the issuance or transfer of uncertificated stock, the registered owner thereof shall be given a notice, in writing or by electronic transmission, containing the information required to be set forth or stated on certificates pursuant to this section or § 156, § 202(a), § 218(a) or § 364 of this title or with respect to this section a statement that the corporation will furnish without charge to each stockholder who so requests the powers, designations, preferences and relative participating, optional or other special rights of each class of stock or series thereof and the qualifications, limitations or restrictions of such preferences and/or rights. Except as otherwise expressly provided by law, the rights and obligations of the holders of uncertificated stock and the rights and obligations of the holders of certificates representing stock of the same class and series shall be identical.
+
+(g) When any corporation desires to issue any shares of stock of any class or of any series of any class of which the powers, designations, preferences and relative, participating, optional or other rights, if any, or the qualifications, limitations or restrictions thereof, if any, shall not have been set forth in the certificate of incorporation or in any amendment thereto but shall be provided for in a resolution or resolutions adopted by the board of directors pursuant to authority expressly vested in it by the certificate of incorporation or any amendment thereto, a certificate of designations setting forth a copy of such resolution or resolutions and the number of shares of stock of such class or series as to which the resolution or resolutions apply shall be executed, acknowledged, filed and shall become effective, in accordance with § 103 of this title. Unless otherwise provided in any such resolution or resolutions, the number of shares of stock of any such series to which such resolution or resolutions apply may be increased (but not above the total number of authorized shares of the class) or decreased (but not below the number of shares thereof then outstanding) by a certificate likewise executed, acknowledged and filed setting forth a statement that a specified increase or decrease therein had been authorized and directed by a resolution or resolutions likewise adopted by the board of directors. In case the number of such shares shall be decreased the number of shares so specified in the certificate shall resume the status which they had prior to the adoption of the first resolution or resolutions. When no shares of any such class or series are outstanding, either because none were issued or because no issued shares of any such class or series remain outstanding, a certificate setting forth a resolution or resolutions adopted by the board of directors that none of the authorized shares of such class or series are outstanding, and that none will be issued subject to the certificate of designations previously filed with respect to such class or series, may be executed, acknowledged and filed in accordance with § 103 of this title and, when such certificate becomes effective, it shall have the effect of eliminating from the certificate of incorporation all matters set forth in the certificate of designations with respect to such class or series of stock. Unless otherwise provided in the certificate of incorporation, if no shares of stock have been issued of a class or series of stock established by a resolution of the board of directors, the voting powers, designations, preferences and relative, participating, optional or other rights, if any, or the qualifications, limitations or restrictions thereof, may be amended by a resolution or resolutions adopted by the board of directors. A certificate which:
+
+(1) States that no shares of the class or series have been issued;
+
+(2) Sets forth a copy of the resolution or resolutions; and
+
+(3) If the designation of the class or series is being changed, indicates the original designation and the new designation,
+
+shall be executed, acknowledged and filed and shall become effective, in accordance with § 103 of this title. When any certificate filed under this subsection becomes effective, it shall have the effect of amending the certificate of incorporation; except that neither the filing of such certificate nor the filing of a restated certificate of incorporation pursuant to § 245 of this title shall prohibit the board of directors from subsequently adopting such resolutions as authorized by this subsection.
+
+8 Del. C. 1953, §  151;  56 Del. Laws, c. 50;  57 Del. Laws, c. 148, §§  8, 9;  57 Del. Laws, c. 421, §§  3, 4;  59 Del. Laws, c. 106, §  1;  64 Del. Laws, c. 112, §§  8-10;  65 Del. Laws, c. 127, §  4;  66 Del. Laws, c. 136, §  4;  67 Del. Laws, c. 376, §  4;  69 Del. Laws, c. 264, §  1;  70 Del. Laws, c. 587, §  12;  71 Del. Laws, c. 339, §  18;  81 Del. Laws, c. 86, § 1; 
+
+
+§ 152. Issuance of stock; lawful consideration; fully paid stock.
+
+(a) The consideration for subscriptions to, or the purchase of, the capital stock to be issued by a corporation shall be paid in the form and in the manner that the board of directors shall determine. The board of directors may authorize capital stock to be issued for consideration consisting of cash, any tangible or intangible property or any benefit to the corporation, or any combination thereof. Stock may be issued in 1 or more transactions, in the numbers, at the times and for the consideration as set forth in a resolution of the board of directors.
+
+(b) A resolution of the board of directors may delegate to a person or body, in addition to the board of directors, the authority to enter into 1 or more transactions to issue stock, and with respect to such transactions, shares of stock may be issued in the numbers, at the times and for the consideration as such person or body may determine; provided the resolution fixes (i) a maximum number of shares that may be issued pursuant to such resolution, (ii) a time period during which such shares may be issued and (iii) the minimum consideration for which such shares may be issued. No such resolution shall permit a person or body to issue stock to such person or body.
+
+(c) Any provision of a resolution contemplated by subsection (a) or (b) of this section may be made dependent on facts ascertainable outside the resolution, provided the manner in which such facts shall operate upon the resolution is clearly and expressly set forth in such resolution. The term “facts,” as used in this section, includes, but is not limited to, the occurrence of any event, including a determination or action by any person or body, including the corporation; provided that, if the resolution delegates to a person or body the authority to enter into 1 or more transactions to issue stock pursuant to subsection (b) of this section, the provisions contemplated by paragraphs (b)(i) through (iii) of this section may not be made dependent on a determination or action by such person or body.
+
+(d) In the absence of actual fraud in the transaction, the judgment of the directors as to the value of the consideration (or minimum consideration) received by the corporation for the issuance of stock shall be conclusive. The capital stock issued in accordance with this section shall be deemed to be fully paid and nonassessable stock upon receipt by the corporation of such consideration; provided, however, nothing contained in this subsection shall prevent the board of directors from issuing partly paid shares under § 156 of this title.
+
+(e) The minimum consideration for which shares of stock may be issued by the corporation may not be less than the consideration (if any) required under § 153 of this title.
+
+8 Del. C. 1953, §  152;  56 Del. Laws, c. 50;  59 Del. Laws, c. 437, §  8;  74 Del. Laws, c. 326, §  3;  79 Del. Laws, c. 72, §  3;  80 Del. Laws, c. 40, §  6;  83 Del. Laws, c. 377, § 3;  84 Del. Laws, c. 98, § 1; 
+
+
+§ 153. Consideration for stock.
+
+(a) Shares of stock with par value may be issued for such consideration, having a value not less than the par value of the shares so issued, as determined from time to time in accordance with § 152 of this title, or by the stockholders if the certificate of incorporation so provides.
+
+(b) Shares of stock without par value may be issued for such consideration as is determined from time to time in accordance with § 152 of this title, or by the stockholders if the certificate of incorporation so provides.
+
+(c) Treasury shares may be disposed of by the corporation in the same manner that shares of stock are issued pursuant to § 152(a) through (d) of this title, or may be disposed of for such consideration as determined by the stockholders if the certificate of incorporation so provides. The consideration received for treasury shares may have a value greater or less than, or equal to, the par value (if any) of such shares and may consist of cash, any tangible or intangible property or any benefit to the corporation, or any combination thereof.
+
+(d) If the certificate of incorporation reserves to the stockholders the right to determine the consideration for the issue of any shares, the stockholders shall, unless the certificate requires a greater vote, do so by a vote of a majority of the outstanding stock entitled to vote thereon.
+
+8 Del. C. 1953, §  153;  56 Del. Laws, c. 50;  57 Del. Laws, c. 148, §  10;  83 Del. Laws, c. 377, § 4;  84 Del. Laws, c. 98, § 2; 
+
+
+§ 154. Determination of amount of capital; capital, surplus and net assets defined.
+
+Any corporation may, by resolution of its board of directors, determine that only a part of the consideration which shall be received by the corporation for any of the shares of its capital stock which it shall issue from time to time shall be capital; but, in case any of the shares issued shall be shares having a par value, the amount of the part of such consideration so determined to be capital shall be in excess of the aggregate par value of the shares issued for such consideration having a par value, unless all the shares issued shall be shares having a par value, in which case the amount of the part of such consideration so determined to be capital need be only equal to the aggregate par value of such shares. In each such case the board of directors shall specify in dollars the part of such consideration which shall be capital. If the board of directors shall not have determined (1) at the time of issue of any shares of the capital stock of the corporation issued for cash or (2) within 60 days after the issue of any shares of the capital stock of the corporation issued for consideration other than cash what part of the consideration for such shares shall be capital, the capital of the corporation in respect of such shares shall be an amount equal to the aggregate par value of such shares having a par value, plus the amount of the consideration for such shares without par value. The amount of the consideration so determined to be capital in respect of any shares without par value shall be the stated capital of such shares. The capital of the corporation may be increased from time to time by resolution of the board of directors directing that a portion of the net assets of the corporation in excess of the amount so determined to be capital be transferred to the capital account. The board of directors may direct that the portion of such net assets so transferred shall be treated as capital in respect of any shares of the corporation of any designated class or classes. The excess, if any, at any given time, of the net assets of the corporation over the amount so determined to be capital shall be surplus. Net assets means the amount by which total assets exceed total liabilities. Capital and surplus are not liabilities for this purpose. Notwithstanding anything in this section to the contrary, for purposes of this section and §§ 160 and 170 of this title, the capital of any nonstock corporation shall be deemed to be zero.
+
+8 Del. C. 1953, §  154;  56 Del. Laws, c. 50;  59 Del. Laws, c. 106, §  2;  74 Del. Laws, c. 326, §  4;  77 Del. Laws, c. 253, §  15; 
+
+
+§ 155. Fractions of shares.
+
+A corporation may, but shall not be required to, issue fractions of a share. If it does not issue fractions of a share, it shall (1) arrange for the disposition of fractional interests by those entitled thereto, (2) pay in cash the fair value of fractions of a share as of the time when those entitled to receive such fractions are determined or (3) issue scrip or warrants in registered form (either represented by a certificate or uncertificated) which shall entitle the holder to receive a full share upon the surrender of such scrip or warrants aggregating a full share. A certificate for a fractional share or an uncertificated fractional share shall, but scrip or warrants shall not unless otherwise provided therein, entitle the holder to exercise voting rights, to receive dividends thereon and to participate in any of the assets of the corporation in the event of liquidation. The board of directors may cause scrip or warrants to be issued subject to the conditions that they shall become void if not exchanged for certificates representing the full shares or uncertificated full shares before a specified date, or subject to the conditions that the shares for which scrip or warrants are exchangeable may be sold by the corporation and the proceeds thereof distributed to the holders of scrip or warrants, or subject to any other conditions which the board of directors may impose.
+
+8 Del. C. 1953, §  155;  56 Del. Laws, c. 50;  56 Del. Laws, c. 186, §  7;  57 Del. Laws, c. 148, §  11;  64 Del. Laws, c. 112, §  11;  85 Del. Laws, c. 48, § 7; 
+
+
+§ 156. Partly paid shares.
+
+Any corporation may issue the whole or any part of its shares as partly paid and subject to call for the remainder of the consideration to be paid therefor. Upon the face or back of each stock certificate issued to represent any such partly paid shares, or upon the books and records of the corporation in the case of uncertificated partly paid shares, the total amount of the consideration to be paid therefor and the amount paid thereon shall be stated. Upon the declaration of any dividend on fully paid shares, the corporation shall declare a dividend upon partly paid shares of the same class, but only upon the basis of the percentage of the consideration actually paid thereon.
+
+8 Del. C. 1953, §  156;  56 Del. Laws, c. 50;  64 Del. Laws, c. 112, §  12; 
+
+
+§ 157. Rights and options respecting stock.
+
+(a) Subject to any provisions in the certificate of incorporation, every corporation may create and issue, whether or not in connection with the issue and sale of any shares of stock or other securities of the corporation, rights or options entitling the holders thereof to acquire from the corporation any shares of its capital stock of any class or classes of the corporation.
+
+(b) Rights and options may be issued in 1 or more transactions, in the numbers, at the times and for the consideration as set forth in a resolution of the board of directors. The terms upon which, including the time or times which may be limited or unlimited in duration, at or within which, and the consideration for which any such shares may be acquired from the corporation upon the exercise of any such right or option, shall be as stated in the certificate of incorporation, or in a resolution of the board of directors.
+
+(c) The board of directors may adopt a resolution to delegate to a person or body, in addition to the board of directors, the authority to enter into 1 or more transactions to issue rights or options, and with respect to such transactions, the rights or options may be issued in such numbers, at such times and for such consideration, and the terms upon which shares may be acquired from the corporation upon the exercise of any such rights or options may be, as such person or body may determine; provided that the resolution fixes (i) the maximum number of shares issuable upon exercise of the rights or options that may be issued pursuant to such resolution, (ii) a time period during which such rights or options, and a time period during which the shares issuable upon exercise thereof, may be issued, and (iii) the minimum consideration (if any) for which such rights or options may be issued and the minimum consideration for the shares issuable upon exercise thereof. No such resolution shall permit a person or body to issue rights or options to such person or body.
+
+(d) Any provision in a resolution contemplated by subsection (b) or (c) of this section may be made dependent on facts ascertainable outside the resolution, provided the manner in which such facts shall operate upon the resolution is clearly and expressly set forth in such resolution. The term “facts,” as used in this section, includes, but is not limited to, the occurrence of any event, including a determination or action by any person or body, including the corporation; provided that, if the resolution delegates to a person or body the authority to enter into 1 or more transactions to issue rights or options pursuant to subsection (c) of this section, the provisions contemplated by paragraphs (c)(i) through (iii) of this section may not be made dependent on a determination or action by such person or body.
+
+(e) The minimum consideration for which shares of stock of the corporation may be issued upon exercise of such rights or options shall be no less than the consideration (if any) required by § 153 of this title.
+
+8 Del. C. 1953, §  157;  56 Del. Laws, c. 50;  70 Del. Laws, c. 186, §  1;  73 Del. Laws, c. 82, §§  4-7;  74 Del. Laws, c. 326, §§  5-7;  80 Del. Laws, c. 40, §  7;  83 Del. Laws, c. 377, § 5;  84 Del. Laws, c. 98, § 3; 
+
+
+§ 158. Stock certificates; uncertificated shares.
+
+The shares of a corporation shall be represented by certificates, provided that the board of directors of the corporation may provide by resolution or resolutions that some or all of any or all classes or series of its stock shall be uncertificated shares. Any such resolution shall not apply to shares represented by a certificate until such certificate is surrendered to the corporation. Every holder of stock represented by certificates shall be entitled to have a certificate signed by, or in the name of, the corporation by any 2 authorized officers of the corporation representing the number of shares registered in certificate form. Any or all the signatures on the certificate may be a facsimile. In case any officer, transfer agent or registrar who has signed or whose facsimile signature has been placed upon a certificate shall have ceased to be such officer, transfer agent or registrar before such certificate is issued, it may be issued by the corporation with the same effect as if such person were such officer, transfer agent or registrar at the date of issue. A corporation shall not have power to issue a certificate in bearer form.
+
+8 Del. C. 1953, §  158;  56 Del. Laws, c. 50;  56 Del. Laws, c. 186, §  8;  58 Del. Laws, c. 235, §  2;  64 Del. Laws, c. 112, §  13;  71 Del. Laws, c. 339, §  19;  73 Del. Laws, c. 298, §  3;  75 Del. Laws, c. 30, §  2;  80 Del. Laws, c. 265, § 6; 
+
+
+§ 159. Shares of stock; personal property, transfer and taxation.
+
+The shares of stock in every corporation shall be deemed personal property and transferable as provided in Article 8 of subtitle I of Title 6. No stock or bonds issued by any corporation organized under this chapter shall be taxed by this State when the same shall be owned by nonresidents of this State, or by foreign corporations. Whenever any transfer of shares shall be made for collateral security, and not absolutely, it shall be so expressed in the entry of transfer if, when the certificates are presented to the corporation for transfer or uncertificated shares are requested to be transferred, both the transferor and transferee request the corporation to do so.
+
+8 Del. C. 1953, §  159;  56 Del. Laws, c. 50;  64 Del. Laws, c. 112, §  14; 
+
+
+§ 160. Corporation’s powers respecting ownership, voting, etc., of its own stock; rights of stock called for redemption.
+
+(a) Every corporation may purchase, redeem, receive, take or otherwise acquire, own and hold, sell, lend, exchange, transfer or otherwise dispose of, pledge, use and otherwise deal in and with its own shares; provided, however, that no corporation shall:
+
+(1) Purchase or redeem its own shares of capital stock for cash or other property when the capital of the corporation is impaired or when such purchase or redemption would cause any impairment of the capital of the corporation, except that a corporation other than a nonstock corporation may purchase or redeem out of capital any of its own shares which are entitled upon any distribution of its assets, whether by dividend or in liquidation, to a preference over another class or series of its stock, or, if no shares entitled to such a preference are outstanding, any of its own shares, if such shares will be retired upon their acquisition and the capital of the corporation reduced in accordance with §§ 243 and 244 of this title. Nothing in this subsection shall invalidate or otherwise affect a note, debenture or other obligation of a corporation given by it as consideration for its acquisition by purchase, redemption or exchange of its shares of stock if at the time such note, debenture or obligation was delivered by the corporation its capital was not then impaired or did not thereby become impaired;
+
+(2) Purchase, for more than the price at which they may then be redeemed, any of its shares which are redeemable at the option of the corporation; or
+
+(3) a. In the case of a corporation other than a nonstock corporation, redeem any of its shares, unless their redemption is authorized by § 151(b) of this title and then only in accordance with such section and the certificate of incorporation, or
+
+b. In the case of a nonstock corporation, redeem any of its membership interests, unless their redemption is authorized by the certificate of incorporation and then only in accordance with the certificate of incorporation.
+
+(b) Nothing in this section limits or affects a corporation’s right to resell, under § 153(c) of this title, any of its shares theretofore purchased or redeemed out of surplus and which have not been, or are not required by the certificate of incorporation to be, retired.
+
+(c) Shares of a corporation’s capital stock shall neither be entitled to vote nor be counted for quorum purposes if such shares belong to:
+
+(1) The corporation;
+
+(2) Another corporation, if a majority of the shares entitled to vote in the election of directors of such other corporation is held, directly or indirectly, by the corporation; or
+
+(3) Any other entity, if a majority of the voting power of such other entity is held, directly or indirectly, by the corporation or if such other entity is otherwise controlled, directly or indirectly, by the corporation.
+
+Nothing in this section shall be construed as limiting the right of any corporation to vote stock, including but not limited to its own stock, held by it in a fiduciary capacity.
+
+(d) Shares which have been called for redemption shall not be deemed to be outstanding shares for the purpose of voting or determining the total number of shares entitled to vote on any matter on and after the date on which notice of redemption has been sent to holders thereof and a sum sufficient to redeem such shares has been irrevocably deposited or set aside to pay the redemption price to the holders of the shares upon surrender of certificates therefor.
+
+8 Del. C. 1953, §  160;  56 Del. Laws, c. 50;  57 Del. Laws, c. 649, §  1;  59 Del. Laws, c. 106, §  3;  59 Del. Laws, c. 437, §  9;  70 Del. Laws, c. 349, §  3;  77 Del. Laws, c. 253, §§  16, 17;  82 Del. Laws, c. 45, § 5;  83 Del. Laws, c. 60, § 1;  83 Del. Laws, c. 283, § 6;  84 Del. Laws, c. 98, § 4; 
+
+
+§ 161. Issuance of additional stock; when and by whom.
+
+The directors may, at any time and from time to time, if all of the shares of capital stock which the corporation is authorized by its certificate of incorporation to issue have not been issued, subscribed for, or otherwise committed to be issued, issue or take subscriptions for additional shares of its capital stock up to the amount authorized in its certificate of incorporation.
+
+8 Del. C. 1953, §  161;  56 Del. Laws, c. 50.; 
+
+
+§ 162. Liability of stockholder or subscriber for stock not paid in full.
+
+(a) When the whole of the consideration payable for shares of a corporation has not been paid in, and the assets shall be insufficient to satisfy the claims of its creditors, each holder of or subscriber for such shares shall be bound to pay on each share held or subscribed for by such holder or subscriber the sum necessary to complete the amount of the unpaid balance of the consideration for which such shares were issued or are to be issued by the corporation.
+
+(b) The amounts which shall be payable as provided in subsection (a) of this section may be recovered as provided in § 325 of this title, after a writ of execution against the corporation has been returned unsatisfied as provided in said § 325.
+
+(c) Any person becoming an assignee or transferee of shares or of a subscription for shares in good faith and without knowledge or notice that the full consideration therefor has not been paid shall not be personally liable for any unpaid portion of such consideration, but the transferor shall remain liable therefor.
+
+(d) No person holding shares in any corporation as collateral security shall be personally liable as a stockholder but the person pledging such shares shall be considered the holder thereof and shall be so liable. No executor, administrator, guardian, trustee or other fiduciary shall be personally liable as a stockholder, but the estate or funds held by such executor, administrator, guardian, trustee or other fiduciary in such fiduciary capacity shall be liable.
+
+(e) No liability under this section or under § 325 of this title shall be asserted more than 6 years after the issuance of the stock or the date of the subscription upon which the assessment is sought.
+
+(f) In any action by a receiver or trustee of an insolvent corporation or by a judgment creditor to obtain an assessment under this section, any stockholder or subscriber for stock of the insolvent corporation may appear and contest the claim or claims of such receiver or trustee.
+
+8 Del. C. 1953, §  162;  56 Del. Laws, c. 50;  71 Del. Laws, c. 339, §  20; 
+
+
+§ 163. Payment for stock not paid in full.
+
+The capital stock of a corporation shall be paid for in such amounts and at such times as the directors may require. The directors may, from time to time, demand payment, in respect of each share of stock not fully paid, of such sum of money as the necessities of the business may, in the judgment of the board of directors, require, not exceeding in the whole the balance remaining unpaid on said stock, and such sum so demanded shall be paid to the corporation at such times and by such installments as the directors shall direct. The directors shall give notice of the time and place of such payments, which notice shall be given at least 30 days before the time for such payment, to each holder of or subscriber for stock which is not fully paid at such holder’s or subscriber’s last known address.
+
+8 Del. C. 1953, §  163;  56 Del. Laws, c. 50;  71 Del. Laws, c. 339, §  21;  82 Del. Laws, c. 45, § 6; 
+
+
+§ 164. Failure to pay for stock; remedies.
+
+When any stockholder fails to pay any installment or call upon such stockholder’s stock which may have been properly demanded by the directors, at the time when such payment is due, the directors may collect the amount of any such installment or call or any balance thereof remaining unpaid, from the said stockholder by an action at law, or they shall sell at public sale such part of the shares of such delinquent stockholder as will pay all demands then due from such stockholder with interest and all incidental expenses, and shall transfer the shares so sold to the purchaser, who shall be entitled to a certificate therefor.
+
+Notice of the time and place of such sale and of the sum due on each share shall be given by advertisement at least 1 week before the sale, in a newspaper of the county in this State where such corporation’s registered office is located, and such notice shall be mailed by the corporation to such delinquent stockholder at such stockholder’s last known post-office address, at least 20 days before such sale.
+
+If no bidder can be had to pay the amount due on the stock, and if the amount is not collected by an action at law, which may be brought within the county where the corporation has its registered office, within 1 year from the date of the bringing of such action at law, the said stock and the amount previously paid in by the delinquent stockholder on the stock shall be forfeited to the corporation.
+
+8 Del. C. 1953, §  164;  56 Del. Laws, c. 50;  59 Del. Laws, c. 106, §  4;  71 Del. Laws, c. 339, §  22; 
+
+
+§ 165. Revocability of preincorporation subscriptions.
+
+Unless otherwise provided by the terms of the subscription, a subscription for stock of a corporation to be formed shall be irrevocable, except with the consent of all other subscribers or the corporation, for a period of 6 months from its date.
+
+8 Del. C. 1953, §  165;  56 Del. Laws, c. 50.; 
+
+
+§ 166. Formalities required of stock subscriptions.
+
+A subscription for stock of a corporation, whether made before or after the formation of a corporation, shall not be enforceable against a subscriber, unless in writing and signed by the subscriber or by such subscriber’s agent.
+
+8 Del. C. 1953, §  166;  56 Del. Laws, c. 50;  71 Del. Laws, c. 339, §  23; 
+
+
+§ 167. Lost, stolen or destroyed stock certificates; issuance of new certificate or uncertificated shares.
+
+A corporation may issue a new certificate of stock or uncertificated shares in place of any certificate theretofore issued by it, alleged to have been lost, stolen or destroyed, and the corporation may require the owner of the lost, stolen or destroyed certificate, or such owner’s legal representative to give the corporation a bond sufficient to indemnify it against any claim that may be made against it on account of the alleged loss, theft or destruction of any such certificate or the issuance of such new certificate or uncertificated shares.
+
+8 Del. C. 1953, §  167;  56 Del. Laws, c. 50;  64 Del. Laws, c. 112, §  15;  71 Del. Laws, c. 339, §  24; 
+
+
+§ 168. Judicial proceedings to compel issuance of new certificate or uncertificated shares.
+
+(a) If a corporation refuses to issue new uncertificated shares or a new certificate of stock in place of a certificate theretofore issued by it, or by any corporation of which it is the lawful successor, alleged to have been lost, stolen or destroyed, the owner of the lost, stolen or destroyed certificate or such owner’s legal representatives may apply to the Court of Chancery for an order requiring the corporation to show cause why it should not issue new uncertificated shares or a new certificate of stock in place of the certificate so lost, stolen or destroyed. Such application shall be by a complaint which shall state the name of the corporation, the number and date of the certificate, if known or ascertainable by the plaintiff, the number of shares of stock represented thereby and to whom issued, and a statement of the circumstances attending such loss, theft or destruction. Thereupon the court shall make an order requiring the corporation to show cause at a time and place therein designated, why it should not issue new uncertificated shares or a new certificate of stock in place of the one described in the complaint. A copy of the complaint and order shall be served upon the corporation at least 5 days before the time designated in the order.
+
+(b) If, upon hearing, the court is satisfied that the plaintiff is the lawful owner of the number of shares of capital stock, or any part thereof, described in the complaint, and that the certificate therefor has been lost, stolen or destroyed, and no sufficient cause has been shown why new uncertificated shares or a new certificate should not be issued in place thereof, it shall make an order requiring the corporation to issue and deliver to the plaintiff new uncertificated shares or a new certificate for such shares. In its order the court shall direct that, prior to the issuance and delivery to the plaintiff of such new uncertificated shares or a new certificate, the plaintiff give the corporation a bond in such form and with such security as to the court appears sufficient to indemnify the corporation against any claim that may be made against it on account of the alleged loss, theft or destruction of any such certificate or the issuance of such new uncertificated shares or new certificate. No corporation which has issued uncertificated shares or a certificate pursuant to an order of the court entered hereunder shall be liable in an amount in excess of the amount specified in such bond.
+
+8 Del. C. 1953, §  168;  56 Del. Laws, c. 50;  64 Del. Laws, c. 112, §  16;  71 Del. Laws, c. 339, §  25; 
+
+
+§ 169. Situs of ownership of stock.
+
+For all purposes of title, action, attachment, garnishment and jurisdiction of all courts held in this State, but not for the purpose of taxation, the situs of the ownership of the capital stock of all corporations existing under the laws of this State, whether organized under this chapter or otherwise, shall be regarded as in this State.
+
+8 Del. C. 1953, §  169;  56 Del. Laws, c. 50.; 
+
+
+§ 170. Dividends; payment; wasting asset corporations.
+
+(a) The directors of every corporation, subject to any restrictions contained in its certificate of incorporation, may declare and pay dividends upon the shares of its capital stock either:
+
+(1) Out of its surplus, as defined in and computed in accordance with §§ 154 and 244 of this title; or
+
+(2) In case there shall be no such surplus, out of its net profits for the fiscal year in which the dividend is declared and/or the preceding fiscal year.
+
+If the capital of the corporation, computed in accordance with §§ 154 and 244 of this title, shall have been diminished by depreciation in the value of its property, or by losses, or otherwise, to an amount less than the aggregate amount of the capital represented by the issued and outstanding stock of all classes having a preference upon the distribution of assets, the directors of such corporation shall not declare and pay out of such net profits any dividends upon any shares of any classes of its capital stock until the deficiency in the amount of capital represented by the issued and outstanding stock of all classes having a preference upon the distribution of assets shall have been repaired. Nothing in this subsection shall invalidate or otherwise affect a note, debenture or other obligation of the corporation paid by it as a dividend on shares of its stock, or any payment made thereon, if at the time such note, debenture or obligation was delivered by the corporation, the corporation had either surplus or net profits as provided in (a)(1) or (2) of this section from which the dividend could lawfully have been paid.
+
+(b) Subject to any restrictions contained in its certificate of incorporation, the directors of any corporation engaged in the exploitation of wasting assets (including but not limited to a corporation engaged in the exploitation of natural resources or other wasting assets, including patents, or engaged primarily in the liquidation of specific assets) may determine the net profits derived from the exploitation of such wasting assets or the net proceeds derived from such liquidation without taking into consideration the depletion of such assets resulting from lapse of time, consumption, liquidation or exploitation of such assets.
+
+8 Del. C. 1953, §  170;  56 Del. Laws, c. 50;  56 Del. Laws, c. 186, §  9;  59 Del. Laws, c. 106, §  5;  64 Del. Laws, c. 112, §  17;  67 Del. Laws, c. 376, §  5;  69 Del. Laws, c. 61, §  3;  72 Del. Laws, c. 123, §  3;  77 Del. Laws, c. 253, §  18; 
+
+
+§ 171. Special purpose reserves.
+
+The directors of a corporation may set apart out of any of the funds of the corporation available for dividends a reserve or reserves for any proper purpose and may abolish any such reserve.
+
+8 Del. C. 1953, §  171;  56 Del. Laws, c. 50.; 
+
+
+§ 172. Liability of directors and committee members as to dividends or stock redemption.
+
+A member of the board of directors, or a member of any committee designated by the board of directors, shall be fully protected in relying in good faith upon the records of the corporation and upon such information, opinions, reports or statements presented to the corporation by any of its officers or employees, or committees of the board of directors, or by any other person as to matters the director reasonably believes are within such other person’s professional or expert competence and who has been selected with reasonable care by or on behalf of the corporation, as to the value and amount of the assets, liabilities and/or net profits of the corporation or any other facts pertinent to the existence and amount of surplus or other funds from which dividends might properly be declared and paid, or with which the corporation’s stock might properly be purchased or redeemed.
+
+8 Del. C. 1953, §  172;  56 Del. Laws, c. 50;  56 Del. Laws, c. 186, §  10;  66 Del. Laws, c. 136, §  5; 
+
+
+§ 173. Declaration and payment of dividends.
+
+No corporation shall pay dividends except in accordance with this chapter. Dividends may be paid in cash, in property, or in shares of the corporation’s capital stock. If the dividend is to be paid in shares of the corporation’s theretofore unissued capital stock the board of directors shall, by resolution, direct that there be designated as capital in respect of such shares an amount which is not less than the aggregate par value of par value shares being declared as a dividend and, in the case of shares without par value being declared as a dividend, such amount as shall be determined by the board of directors. No such designation as capital shall be necessary if shares are being distributed by a corporation pursuant to a split-up or division of its stock rather than as payment of a dividend declared payable in stock of the corporation.
+
+8 Del. C. 1953, §  173;  56 Del. Laws, c. 50;  59 Del. Laws, c. 437, §  10;  65 Del. Laws, c. 127, §  5; 
+
+
+§ 174. Liability of directors for unlawful payment of dividend or unlawful stock purchase or redemption; exoneration from liability; contribution among directors; subrogation.
+
+(a) In case of any wilful or negligent violation of § 160 or § 173 of this title, the directors under whose administration the same may happen shall be jointly and severally liable, at any time within 6 years after paying such unlawful dividend or after such unlawful stock purchase or redemption, to the corporation, and to its creditors in the event of its dissolution or insolvency, to the full amount of the dividend unlawfully paid, or to the full amount unlawfully paid for the purchase or redemption of the corporation’s stock, with interest from the time such liability accrued. Any director who may have been absent when the same was done, or who may have dissented from the act or resolution by which the same was done, may be exonerated from such liability by causing his or her dissent to be entered on the books containing the minutes of the proceedings of the directors at the time the same was done, or immediately after such director has notice of the same.
+
+(b) Any director against whom a claim is successfully asserted under this section shall be entitled to contribution from the other directors who voted for or concurred in the unlawful dividend, stock purchase or stock redemption.
+
+(c) Any director against whom a claim is successfully asserted under this section shall be entitled, to the extent of the amount paid by such director as a result of such claim, to be subrogated to the rights of the corporation against stockholders who received the dividend on, or assets for the sale or redemption of, their stock with knowledge of facts indicating that such dividend, stock purchase or redemption was unlawful under this chapter, in proportion to the amounts received by such stockholders respectively.
+
+8 Del. C. 1953, §  174;  56 Del. Laws, c. 50;  59 Del. Laws, c. 106, §  6;  71 Del. Laws, c. 339, §§  26, 27; 
+
+
+Delaware General Assembly Judicial Executive Contact Twitter Help

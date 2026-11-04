@@ -1,0 +1,142 @@
+Skip to main content
+Important!
+
+Our Tumwater office is moving. The office will be closed on Friday, October 2, and will reopen at our new location on October 5 at 1 p.m.
+
+Nuestra oficina en Tumwater se está mudando. La oficina se cerrará el viernes 2 de octubre y reabrirá en nuestra nueva ubicación el 5 de octubre a la 1 p. m.  
+
+ Languages
+Log in
+MENU
+Digital products including digital goods
+
+Important: Effective Oct. 1, 2025, some of the services or activities discussed in this article are subject to retail sales tax.
+
+For more information, please see our Special Notice and our Services newly subject to retail sales tax webpage.
+
+What digital products are subject to tax?
+
+Sales or use tax apply to all digital products, regardless of how they are accessed (downloaded, streamed, subscription service, networking, etc.). (See exclusions from the definitions and exemptions from retail sales and use tax below)
+Digital products subject to sales or use tax include:
+
+Downloaded digital goods (music and movies, etc.)
+Streamed and accessed digital goods
+Digital automated services (DAS)
+
+The laws also cover remote access software (“RAS”) which is also subject to sales and use tax.
+
+It does not matter if the purchaser obtains a permanent or nonpermanent right of use.
+
+Questions and answers
+Definition of terms
+How these laws apply
+Exclusions and exemptions
+Questions
+References
+Definition of terms
+What is a digital product?
+It is transferred electronically.
+Digital goods (movies and music, etc.)
+Digital automated services (services that have been automated)
+What is a digital good?
+Data
+Facts
+Information
+Sounds (music)
+Images (movies, pictures)
+Any combination of the above.
+
+When these are transferred electronically, they are digital goods.
+
+Digital goods do not include:
+
+The representation of a personal or professional service primarily involving the application of human effort
+Internet access
+Computer software
+Digital automated services (DAS)
+Remote access software (RAS)
+What are digital automated services (DAS)?
+
+DAS are services that use one or more software applications and are transferred electronically. DAS includes software, but it is not merely software. A DAS will frequently include data, information or additional functionality/services (e.g. chat rooms, multiplayer capabilities etc).
+
+Examples include:
+
+Photo sharing services
+Car history report services
+A service that crawls the internet and gathers, categorizes and stores information
+
+Note: Services that are primarily the result of human effort performed in response to a customer request are not considered DAS.
+
+DAS also does not include:
+
+Internet access
+Payment processing
+Data processing services
+Telecommunications
+Live interactive presentations
+Advertising services
+Web hosting, storage, and back up
+
+For the definition and a complete list of exceptions, see RCW 82.04.192(3)(b). Also, for a more detailed discussion on what a DAS, is see WAC 458-20-15503(203).
+
+What are data processing services?
+
+Data processing services are primarily automated services provided to a business or other organization where the primary object of the service is the systematic performance of operations by the service provider, on data supplied in whole or in part by the customer, to extract the required information in an appropriate form or to convert the data to usable information. Data processing services include check processing, image processing, form processing, survey processing, payroll processing, claim processing, and similar activities. Charges for data processing services are subject to service and other activities B&O tax as a professional service (sales tax does not apply).
+
+What are web site development services?
+
+"Web site development service" means the design and development of a web site provided by a web site developer to a customer. Charges for web site development services are subject to service and other activities B&O tax as a professional service (sales tax does not apply).
+
+What is digital data storage, hosting and back-up?
+
+"The mere storage of digital products, digital codes, computer software or master copies of software is excluded from the definition of DAS. This exclusion includes the provision of space on a server for web hosting or backing up data or other information. Charges for digital storage, hosting and back-up services are subject to B&O tax under the service and other activities classification (sales tax does not apply).
+
+What are online advertising services?
+
+"Advertising services" means all services directly related to the creation, preparation, production, or the dissemination of advertisements. Advertising services include layout, art direction, graphic design, mechanical preparation, production supervision, placement, and rendering advice to a client concerning the best methods of advertising that client's products or services. Advertising services also include search engine optimization, web campaign planning, the acquisition of advertising space in the internet media, and the monitoring and evaluation of web site traffic for purposes of determining the effectiveness of an advertising campaign. Charges for online advertising services are subject to B&O tax under the service and other activities classification (sales tax does not apply).
+
+Note: Services that are primarily the result of human effort performed in response to a customer request are not considered DAS.
+
+DAS also does not include:
+
+Any service that primarily involves the application of human effort by the seller, and the human effort originated after the customer requested the service
+Internet access
+Payment processing
+Data processing services
+Telecommunications
+Live interactive presentations
+Advertising services
+Web hosting, storage, and back up
+Online marketplace related activities
+
+For the definition and a complete list of exclusions, see RCW 82.04.192(3)(b).
+
+What are online marketplace related activities?
+
+Online marketplace related activities, which are services that allow the person receiving the services to make online sales of products or services, digital or otherwise, using either:
+
+(i) The service provider's web site; or
+(ii) The service recipient's web site, but only when the service provider's technology is used either to:
+(A) Create or host the service recipient's web site; or
+(B) Process orders from customers using the service recipient's web site.
+
+What is remote access software (RAS)?
+
+RAS is prewritten software provided remotely. In other words, the buyer pays the seller for the right to access and use the prewritten software, which resides on the seller’s server or the server of a third party. (An Application Service Provider is an example of a business that may provide RAS.) RAS is classified as a retail sale for B&O tax purposes and is subject to sales or use tax. The purchase of prewritten software is exempt if the purchaser uses the software to provide RAS.
+
+What is a digital code and how is it taxed?
+
+Digital code provides purchasers with the right to obtain one or more digital products.
+
+If all the digital products available through the code are digital and have the same tax treatment, the code is considered a digital code. Digital codes are taxed the same way as the underlying digital product.
+
+If the digital code provides the purchaser digital products that do not have the same tax treatment, it is not a digital code.
+
+How these laws apply
+How are prewritten remote access software keys or activation codes taxed?
+
+The sale of prewritten software subject to sales or use tax includes the sale or charge made for a key or an enabling or activation code.
+
+What is the value of the digital product for use tax purposes?
+
+The value is the purchase price of the digital product. If the digital product is acquired by means other than a purchase, the value of the digital product is determined by the retail selling price of a similar digital product. 

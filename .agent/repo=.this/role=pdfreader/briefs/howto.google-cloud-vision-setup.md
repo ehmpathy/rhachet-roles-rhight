@@ -28,7 +28,7 @@ rhx keyrack get --key GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS --env test --own
 ### 1. create project
 
 1. go to https://console.cloud.google.com/projectcreate
-2. name: `patent-ocr` (or your project name)
+2. name: `<your-project>` — ⚠️ never publish the real project id; it names the account a support reset targets
 3. click Create
 
 ### 2. enable Vision API
@@ -40,7 +40,7 @@ rhx keyrack get --key GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS --env test --own
 
 1. go to https://console.cloud.google.com/iam-admin/serviceaccounts
 2. click "+ Create Service Account"
-3. name: `rhachet-roles-rhight-prep` (or your service account name)
+3. name: `<your-service-account>`
 4. click "Create and Continue"
 5. role: search "Cloud Vision API User", select it
 6. click Done

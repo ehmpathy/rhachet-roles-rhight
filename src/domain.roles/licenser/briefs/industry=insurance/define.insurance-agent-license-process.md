@@ -1,5 +1,7 @@
 # define.insurance-agent-license-process
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 the insurance agent licensing process involves completing pre-licensing education, passing state examinations, submitting fingerprints for background checks, applying through state departments or NIPR, obtaining carrier appointments, and maintaining compliance through continuing education and biennial license renewals.
@@ -374,3 +376,7 @@ producers must obtain licenses in each state where they conduct business:
 - define.purpose-of-insurance-agent-licenses — why licensing exists
 - define.history-of-insurance-agent-licenses — historical evolution
 - define.insurance-agent-license-reciprocity — multi-state licensing details
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public insurance licensure process; no client identity or client-specific mechanic.

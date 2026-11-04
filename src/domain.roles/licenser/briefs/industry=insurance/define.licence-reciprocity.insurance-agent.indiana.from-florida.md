@@ -1,5 +1,7 @@
 # define.licence-reciprocity.insurance-agent.indiana.from-florida
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 Florida-licensed insurance producers can obtain an Indiana non-resident producer license through NIPR reciprocity without examination or pre-licensing courses, receiving the same lines of authority held in Florida.
@@ -351,3 +353,7 @@ Indiana is a "registry state" meaning formal appointments are not required.
 
 - define.purpose-of-insurance-agent-licenses — why insurance agent licensing exists
 - howto.verify-licenses — general license verification procedures
+
+## .publishability
+
+☀️ **fullsun** (share) — public Florida-to-Indiana insurance reciprocity rules; no client identity or client-specific mechanic.

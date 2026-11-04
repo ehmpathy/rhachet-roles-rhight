@@ -1,5 +1,7 @@
 # hazard.rental-purchase.systemic-silence
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .scope
 
 **this hazard applies to:**
@@ -342,6 +344,10 @@ but this would require:
 - `ref.ho3-dp3-claim-scenarios-matrix.[ref].md` — case law that proves denials are upheld
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 
