@@ -1,8 +1,8 @@
 slug: 'ship-split-plan-on-pr54'
 source: 'peer:human'
 status:
-  choice: 'inflight'
-  reason: 'director chose option 2: gate reads its brain key from keyrack env test (case39 clamp red/green); commit in progress'
+  choice: 'fulfilled'
+  reason: '1e73b66 on #54 through the real gate; 16 checks pass, 1 skipped; goal flag move shipped in the follow-on commit'
 updatedAt: '2026-11-12'
 why:
   ask: 'pr #54 holds every real change in this tree, pushed, ci green; box-local paths kept out and named'
