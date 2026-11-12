@@ -20,3 +20,4 @@ axis: `case` (occurrence). 16 occupied, 0 gaps.
 | F14 | restore a conditional keyrack line in the hook's malfunction block | clean | best-guessed | 88% |
 | F15 | read "haiku 5-5" as `anthropic/claude/haiku` (haiku 4.5, the cheapest in the catalog) | clean | best-guessed | 85% |
 | F16 | gate the live suite on `BRAIN_LIVE=true`; cut the anthropic secret from ci | clean | best-guessed | 85% |
+| F17 | split #54 by a per-kind review-rate model (prod 25, test 70, snap 150, docs 250 lines/min) and apportion the brain sh + test by function and case span | clean | best-guessed | 75% || F18 | the pii gate reads its brain key itself, via `rhx keyrack get --env test`, and hands it to its review children | clean | ruled: director, option 2 | 85% |

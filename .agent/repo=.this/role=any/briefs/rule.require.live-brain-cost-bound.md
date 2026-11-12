@@ -6,7 +6,7 @@
 
 | tier | what | where the real brain runs |
 |---|---|---|
-| 1. safety guard | the pre-commit pii gate (`pii.scan --via brain`) | at commit, on `ANTHROPIC_API_KEY` |
+| 1. safety guard | the pre-commit pii gate (`pii.scan --via brain`) | at commit, on `ANTHROPIC_API_KEY`, which the gate reads itself from keyrack env test |
 | 1. its tests | `pii.scan.via.brain.integration.test.ts`, `.husky/check.pii*.integration.test.ts` | never: a fake `rhx` / stub brain, each marked `.mock` / `.why` / `.real` |
 | 3. every other live test | `pii.scan.via.brain.live.integration.test.ts` | only when `BRAIN_LIVE=true` targets it (`src/.test/RUN_BRAIN_TEST.ts`) |
 

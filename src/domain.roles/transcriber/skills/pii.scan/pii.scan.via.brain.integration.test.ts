@@ -75,6 +75,8 @@ const runSkill = (input: {
   binFirst?: string;
   /** replaces PATH whole — see genPathWoutTool */
   pathOnly?: string;
+  /** vars set on top of the inherited env, e.g. a brain key the caller holds */
+  envAdd?: Record<string, string>;
 }): { stdout: string; stderr: string; exitCode: number } => {
   const pathForRun =
     input.pathOnly ??
@@ -85,7 +87,7 @@ const runSkill = (input: {
     encoding: UTF8,
     cwd: input.cwd,
     stdio: ['pipe', 'pipe', 'pipe'],
-    env: { ...process.env, PATH: pathForRun },
+    env: { ...process.env, ...input.envAdd, PATH: pathForRun },
     timeout: SKILL_SPAWN_TIMEOUT_MS,
   });
 
@@ -203,6 +205,46 @@ const genTempRepo = (input: {
 };
 
 /**
+ * .what = the `rhx keyrack get` arm of every fake `rhx`, as bash lines
+ *
+ * .why  = the gate reads each brain's key through keyrack before it asks
+ *         a brain, on the same `rhx` the fake replaces. without an arm,
+ *         that read would land in the review body: a second argv capture,
+ *         an extra call count, and a review summary read as a key.
+ *
+ * .note = the argv of each keyrack call appends to `<captureAt>.keyrack`,
+ *         so a case can prove which env and key the gate asked for. a key
+ *         in `grants` prints its value with no newline, exit 0, as
+ *         `--value` does; any other key exits 2, as an absent key does.
+ *
+ * .mock = the `rhx keyrack` boundary — the os vault behind a fake `rhx`
+ * .why  = a real read needs an unlocked vault on the host, and ci holds
+ *         no anthropic key (bulletin live-brain-tests-three-tiers)
+ * .real = the gate itself, at every commit, reads the real keyrack
+ */
+const asFakeKeyrackArm = (input: {
+  captureAt: string;
+  grants: Record<string, string>;
+}): string[] => [
+  'if [[ "${1:-}" == "keyrack" ]]; then',
+  `  printf '%s ' "$@" >> ${asShellLiteral(`${input.captureAt}.keyrack`)}`,
+  `  echo >> ${asShellLiteral(`${input.captureAt}.keyrack`)}`,
+  '  kprev=""; kname=""',
+  '  for a in "$@"; do',
+  '    if [[ "$kprev" == "--key" ]]; then kname="$a"; fi',
+  '    kprev="$a"',
+  '  done',
+  '  case "$kname" in',
+  ...Object.entries(input.grants).map(
+    ([name, value]) =>
+      `    ${asShellLiteral(name)}) printf '%s' ${asShellLiteral(value)}; exit 0 ;;`,
+  ),
+  '    *) echo "🔐 keyrack: $kname status: absent"; exit 2 ;;',
+  '  esac',
+  'fi',
+];
+
+/**
  * .what = the body of a fake `rhx review`, shared by every fake below
  *
  * .why  = the skill reads FOUR things off a review, and a fake that
@@ -272,6 +314,17 @@ const asFakeReviewBody = (input: {
   verdictName?: string;
   /** write the prompt, the answer, and the metrics beside the json, as upstream does */
   withPrompt?: boolean;
+  /**
+   * the keys `rhx keyrack get --key K --value` grants, by name. a key not
+   * listed answers as absent (exit 2), as keyrack does on this box for env
+   * prep. default: none, so a gate's keyrack read changes no prior case
+   */
+  keyrackGrants?: Record<string, string>;
+  /**
+   * fail the review as the brain sdk does when this env var is empty:
+   * an auth error, exit 1, no logs. default: no key is checked
+   */
+  requireKey?: string;
 }): string[] => {
   const verdictJson =
     input.verdictJson !== undefined
@@ -289,6 +342,19 @@ const asFakeReviewBody = (input: {
         });
   return [
     '#!/usr/bin/env bash',
+    ...asFakeKeyrackArm({
+      captureAt: input.captureAt,
+      grants: input.keyrackGrants ?? {},
+    }),
+    ...(input.requireKey
+      ? [
+          `if [[ -z "\${${input.requireKey}:-}" ]]; then`,
+          '  echo "🔍 review"',
+          `  echo ${asShellLiteral('MalfunctionError [ReviewBrainCallError]: the brain call failed — no auth method: neither apiKey nor authToken is set')}`,
+          '  exit 1',
+          'fi',
+        ]
+      : []),
     `printf '%s\\n' "$@" > ${asShellLiteral(input.captureAt)}`,
     `echo x >> ${asShellLiteral(`${input.captureAt}.calls`)}`,
     ...(input.refusal
@@ -441,7 +507,15 @@ const genRhxThatAnswers = (input: {
   /** see asFakeReviewBody */
   refusalBody?: string[];
   withPrompt?: boolean;
-}): { bin: string; readCalls: () => number } => {
+  /** see asFakeReviewBody */
+  keyrackGrants?: Record<string, string>;
+  /** see asFakeReviewBody */
+  requireKey?: string;
+}): {
+  bin: string;
+  readCalls: () => number;
+  readKeyrackCalls: () => string;
+} => {
   const bin = path.join(input.dir, '.fakebin');
   fs.mkdirSync(bin, { recursive: true });
 
@@ -459,6 +533,8 @@ const genRhxThatAnswers = (input: {
       verdictName: input.verdictName,
       refusalBody: input.refusalBody,
       withPrompt: input.withPrompt,
+      keyrackGrants: input.keyrackGrants,
+      requireKey: input.requireKey,
     }).join('\n'),
   );
   fs.chmodSync(path.join(bin, 'rhx'), '755');
@@ -466,12 +542,16 @@ const genRhxThatAnswers = (input: {
   // a fresh count per fake, since cases share one repo dir
   const callsAt = path.join(input.dir, '.argv.txt.calls');
   fs.rmSync(callsAt, { force: true });
+  const keyrackAt = path.join(input.dir, '.argv.txt.keyrack');
+  fs.rmSync(keyrackAt, { force: true });
   return {
     bin,
     readCalls: () =>
       fs.existsSync(callsAt)
         ? fs.readFileSync(callsAt, UTF8).trim().split('\n').length
         : 0,
+    readKeyrackCalls: () =>
+      fs.existsSync(keyrackAt) ? fs.readFileSync(keyrackAt, UTF8) : '',
   };
 };
 
@@ -521,6 +601,10 @@ const genRhxThatAnswersPerBrain = (input: {
     path.join(bin, 'rhx'),
     [
       '#!/usr/bin/env bash',
+      ...asFakeKeyrackArm({
+        captureAt: path.join(input.dir, '.argv.txt'),
+        grants: {},
+      }),
       'prev=""',
       'brain=""',
       'for a in "$@"; do',
@@ -780,7 +864,7 @@ describe('pii.scan.via.brain.sh', () => {
           expect(result.stdout).toContain('if the cause above is unclear');
           expect(result.stdout).toContain('most often: keyrack is locked');
           expect(result.stdout).toContain(
-            'rhx keyrack unlock --owner ehmpath --env prep',
+            'rhx keyrack unlock --owner ehmpath --env test',
           );
         },
       );
@@ -1934,10 +2018,10 @@ describe('pii.scan.via.brain.sh', () => {
           /cause: no verdict json at \.log\/bhrain\/review\/fake\.\d+\/output\.response\.json/,
         );
         expect(result.stdout).toContain(
-          'rhx keyrack unlock --owner ehmpath --env prep',
+          'rhx keyrack unlock --owner ehmpath --env test',
         );
         expect(result.stdout).toContain(
-          'rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep',
+          'rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env test',
         );
       });
 
@@ -2302,6 +2386,8 @@ describe('pii.scan.via.brain.sh', () => {
           path.join(bin, 'rhx'),
           [
             '#!/usr/bin/env bash',
+            // a keyrack read is no review attempt, so it is never counted
+            ...asFakeKeyrackArm({ captureAt: countAt, grants: {} }),
             `echo x >> ${asShellLiteral(countAt)}`,
             `if [[ "$(wc -l < ${asShellLiteral(countAt)})" -le 1 ]]; then exec ${asShellLiteral(`${bin}/rhx.first`)} "$@"; fi`,
             `exec ${asShellLiteral(`${bin}/rhx.second`)} "$@"`,
@@ -2472,7 +2558,7 @@ describe('pii.scan.via.brain.sh', () => {
             'rhx review refused: ANTHROPIC_API_KEY not found in keyrack',
           );
           expect(result.stdout).toContain(
-            'rhx keyrack set --owner ehmpath --key ANTHROPIC_API_KEY --env prep',
+            'rhx keyrack set --owner ehmpath --key ANTHROPIC_API_KEY --env test',
           );
         },
       );
@@ -2510,7 +2596,7 @@ describe('pii.scan.via.brain.sh', () => {
       then('it names OPENROUTER_API_KEY in the fill command', () => {
         expect(result.exitCode).toBe(1);
         expect(result.stdout).toContain(
-          'rhx keyrack set --owner ehmpath --key OPENROUTER_API_KEY --env prep',
+          'rhx keyrack set --owner ehmpath --key OPENROUTER_API_KEY --env test',
         );
       });
 
@@ -3205,6 +3291,8 @@ describe('pii.scan.via.brain.sh', () => {
             path.join(bin, 'rhx'),
             [
               '#!/usr/bin/env bash',
+              // a keyrack read is no review attempt, so it is never counted
+              ...asFakeKeyrackArm({ captureAt: countAt, grants: {} }),
               `echo x >> ${asShellLiteral(countAt)}`,
               `if [[ "$(wc -l < ${asShellLiteral(countAt)})" -le 1 ]]; then exec ${asShellLiteral(`${bin}/rhx.first`)} "$@"; fi`,
               `exec ${asShellLiteral(`${bin}/rhx.second`)} "$@"`,
@@ -3551,6 +3639,150 @@ describe('pii.scan.via.brain.sh', () => {
       then('the output a caller reads matches its snapshot', () => {
         expect(result.exitCode).toBe(0);
         expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+  });
+
+  /**
+   * .what = the brain key, read by the gate through keyrack's own get
+   * .why  = `rhx review` asks keyrack env prep for its brain key, and no
+   *         org holds a prep anthropic key. the repo manifest declares the
+   *         key under env test, so the gate reads it there and hands it to
+   *         its review children. with no key there, the brain call fails
+   *         and the gate blocks; with one, the same diff is reviewed whole.
+   *
+   * ⛔ THE REVIEW STILL RUNS ON EVERY STAGED FILE. the keyrack read only
+   *    grants a key; it never narrows the scope or skips the brain.
+   */
+  given('[case39] a brain key that only keyrack env test holds', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: {
+          'split-plan.md': 'a plan of eight layers',
+          'notes.yaml': 'kind: route record',
+        },
+        stage: ['split-plan.md', 'notes.yaml'],
+      }),
+    );
+
+    when('[t0] keyrack holds no key for the brain', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          keyrackGrants: {},
+          requireKey: 'FAKE_API_KEY',
+        }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ it blocks as a malfunction at exit 1, never clean', () => {
+        if (result.exitCode !== 1) {
+          console.log('PROOF: exitCode:', result.exitCode);
+          console.log('PROOF: stdout:', result.stdout);
+          console.log('PROOF: stderr:', result.stderr);
+        }
+        expect(result.exitCode).toBe(1);
+        expect(result.stdout).not.toContain('clear skies');
+      });
+
+      then('the gate asked keyrack env test for the brain key', () => {
+        expect(fake.readKeyrackCalls()).toContain(
+          'keyrack get --owner ehmpath --env test --key FAKE_API_KEY --value',
+        );
+      });
+
+      then('its hint names env test, where the gate reads the key', () => {
+        expect(result.stdout).toContain(
+          'rhx keyrack unlock --owner ehmpath --env test',
+        );
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(1);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when('[t1] keyrack env test holds the key', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          keyrackGrants: { FAKE_API_KEY: 'fake-key-from-keyrack' },
+          requireKey: 'FAKE_API_KEY',
+        }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ the brain gets the key, reviews, and the gate passes', () => {
+        if (result.exitCode !== 0) {
+          console.log('PROOF: exitCode:', result.exitCode);
+          console.log('PROOF: stdout:', result.stdout);
+          console.log('PROOF: stderr:', result.stderr);
+        }
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('clear skies');
+      });
+
+      then('⭐ the review still covers every staged file', () => {
+        expect(result.stdout).toContain('files: 2');
+        expect(fake.readCalls()).toBe(1);
+      });
+
+      then('the key value never reaches stdout', () => {
+        expect(result.stdout).not.toContain('fake-key-from-keyrack');
+        expect(result.stderr).not.toContain('fake-key-from-keyrack');
+      });
+
+      then('the stdout matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(asStdoutStable(result.stdout)).toMatchSnapshot();
+      });
+    });
+
+    when('[t2] the caller env already holds the key', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatAnswers({
+          dir: repo.dir,
+          blockers: 0,
+          nitpicks: 0,
+          marker: 'no hits',
+          keyrackGrants: {},
+          requireKey: 'FAKE_API_KEY',
+        }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+          envAdd: { FAKE_API_KEY: 'fake-key-from-env' },
+        }),
+      );
+
+      then('the gate passes on the held key', () => {
+        expect(result.exitCode).toBe(0);
+      });
+
+      then('keyrack is not asked', () => {
+        expect(fake.readKeyrackCalls()).toBe('');
       });
     });
   });

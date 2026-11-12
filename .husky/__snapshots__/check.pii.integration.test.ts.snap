@@ -199,7 +199,7 @@ stub reviewer: exit 1
    the scan output above names the cause and the fix that fits it.
    if it names none, the scan died before it could say; the most
    common cause is a locked keyrack, so unlock it and retry:
-     rhx keyrack unlock --owner ehmpath --env prep
+     rhx keyrack unlock --owner ehmpath --env test
 
    to bypass in a genuine emergency: git commit --no-verify. CI
    scans the PR, while the branch is still rewritable.
@@ -233,7 +233,7 @@ exports[`check.pii.sh (the pre-commit gate) given: [case8] the reviewer is absen
    the scan output above names the cause and the fix that fits it.
    if it names none, the scan died before it could say; the most
    common cause is a locked keyrack, so unlock it and retry:
-     rhx keyrack unlock --owner ehmpath --env prep
+     rhx keyrack unlock --owner ehmpath --env test
 
    to bypass in a genuine emergency: git commit --no-verify. CI
    scans the PR, while the branch is still rewritable.

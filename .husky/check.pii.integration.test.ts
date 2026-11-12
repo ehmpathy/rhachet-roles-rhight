@@ -552,7 +552,7 @@ describe('check.pii.sh (the pre-commit gate)', () => {
         // so it never contradicts a cause the skill did name
         expect(result.stdout).toContain('stub reviewer: exit 1');
         expect(result.stdout).toContain('if it names none');
-        expect(result.stdout).toContain('rhx keyrack unlock --owner ehmpath --env prep');
+        expect(result.stdout).toContain('rhx keyrack unlock --owner ehmpath --env test');
       });
 
       then('the stdout of the malfunction block matches its snapshot', () => {

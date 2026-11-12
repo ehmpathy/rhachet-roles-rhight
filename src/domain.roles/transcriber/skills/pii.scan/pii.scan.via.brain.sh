@@ -481,6 +481,36 @@ asBrainKeyName() {
   printf '%s_API_KEY' "$(printf '%s' "$provider" | tr '[:lower:]-' '[:upper:]_')"
 }
 
+# the keyrack env a brain key is read from. `rhx review` asks keyrack env
+# prep, and no org holds a prep anthropic key; the repo manifest
+# (.agent/keyrack.yml) declares the brain key under env test, so the gate
+# reads it there and hands it down
+ENV_OF_BRAIN_KEY='test'
+
+######################################################################
+# grant each brain its key, read through keyrack's own get.
+#
+# a key the caller's env already holds wins, untouched. otherwise the
+# value keyrack grants goes into the env of this process, so the
+# `rhx review` children inherit it, and their own prep lookup falls
+# through to it (keyrack reads os.envvar as a passthrough).
+#
+# ⚠️ a failed read is NOT a block here, and never a skip of the review:
+#    the review still runs on every staged file, and a brain with no key
+#    fails there, as a key malfunction with its own hint. one place for
+#    the "no key" verdict, never two.
+######################################################################
+set_brain_keys_from_keyrack() {
+  local brain keyName keyValue
+  for brain in "${BRAINS[@]}"; do
+    keyName="$(asBrainKeyName "$brain")"
+    [[ -n "${!keyName:-}" ]] && continue
+    keyValue="$(rhx keyrack get --owner ehmpath --env "$ENV_OF_BRAIN_KEY" --key "$keyName" --value 2>/dev/null)" || continue
+    [[ -n "$keyValue" ]] || continue
+    export "$keyName=$keyValue"
+  done
+}
+
 # a reviewer's slug, flattened for use in a filename
 brain_slug() {
   printf '%s' "$1" | tr '/' '-'
@@ -852,7 +882,9 @@ main() {
     exit 0
   fi
 
-  # ── ask every brain at once ────────────────────────────────────────
+  # ── grant each brain its key, then ask every brain at once ────────
+  set_brain_keys_from_keyrack
+
   local outdir brain pids=()
   outdir="$WORKDIR/reviews"
   mkdir -p "$outdir"
@@ -962,26 +994,26 @@ main() {
     kinds="$(cat "$outdir"/*.causekind.txt 2>/dev/null | sort -u)"
     if grep -qx key <<< "$kinds" && grep -qh 'not found in keyrack' "$outdir"/*.whyfail.txt 2>/dev/null; then
       # the cause says the key is absent, so an unlock cannot help
-      echo "   ├─ the review brain's key is absent from keyrack env prep, where"
-      echo "   │  rhx review boots its brain. a human fills it:"
+      echo "   ├─ the review brain's key is absent from keyrack env"
+      echo "   │  $ENV_OF_BRAIN_KEY, where this gate reads it. a human fills it:"
       for brain in "${BRAINS[@]}"; do
         grep -qx key "$outdir/$(brain_slug "$brain").causekind.txt" 2>/dev/null || continue
         asBrainKeyName "$brain"
       done | sort -u | while IFS= read -r keyName; do
-        echo "   │     rhx keyrack set --owner ehmpath --key $keyName --env prep"
+        echo "   │     rhx keyrack set --owner ehmpath --key $keyName --env $ENV_OF_BRAIN_KEY"
       done
     elif grep -qx key <<< "$kinds"; then
       echo "   ├─ no logs or no verdict json: most often the review brain has"
-      echo "   │  no key. rhx review boots its brain under keyrack env prep,"
-      echo "   │  so unlock prep and retry:"
-      echo "   │     rhx keyrack unlock --owner ehmpath --env prep"
+      echo "   │  no key. this gate reads it from keyrack env $ENV_OF_BRAIN_KEY,"
+      echo "   │  so unlock it there and retry:"
+      echo "   │     rhx keyrack unlock --owner ehmpath --env $ENV_OF_BRAIN_KEY"
       echo "   │  if the brain key is absent there, a human fills it:"
       # one line per key a keyless brain needs; a clean brain needs none
       for brain in "${BRAINS[@]}"; do
         grep -qx key "$outdir/$(brain_slug "$brain").causekind.txt" 2>/dev/null || continue
         asBrainKeyName "$brain"
       done | sort -u | while IFS= read -r keyName; do
-        echo "   │     rhx keyrack set --owner ehmpath --key $keyName --env prep"
+        echo "   │     rhx keyrack set --owner ehmpath --key $keyName --env $ENV_OF_BRAIN_KEY"
       done
     fi
     if grep -qx capture <<< "$kinds"; then
@@ -1016,7 +1048,7 @@ main() {
     # cause (scope, overflow, contract) gets its fitted fix alone
     if grep -qx refusal <<< "$kinds" && ! grep -qx key <<< "$kinds"; then
       echo "   ├─ if the cause above is unclear — most often: keyrack is locked:"
-      echo "   │     rhx keyrack unlock --owner ehmpath --env prep"
+      echo "   │     rhx keyrack unlock --owner ehmpath --env $ENV_OF_BRAIN_KEY"
     fi
     echo "   └─ a check that could not run must never look like one that"
     echo "      passed, so this blocks"

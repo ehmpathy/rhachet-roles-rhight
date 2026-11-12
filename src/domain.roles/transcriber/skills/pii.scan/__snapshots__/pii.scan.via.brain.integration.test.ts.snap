@@ -164,11 +164,11 @@ exports[`pii.scan.via.brain.sh given: [case17] a review that SKIPS when: [t0] th
    │     └─ review: <tmp>
    │
    ├─ no logs or no verdict json: most often the review brain has
-   │  no key. rhx review boots its brain under keyrack env prep,
-   │  so unlock prep and retry:
-   │     rhx keyrack unlock --owner ehmpath --env prep
+   │  no key. this gate reads it from keyrack env test,
+   │  so unlock it there and retry:
+   │     rhx keyrack unlock --owner ehmpath --env test
    │  if the brain key is absent there, a human fills it:
-   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env test
    └─ a check that could not run must never look like one that
       passed, so this blocks
 "
@@ -227,11 +227,11 @@ exports[`pii.scan.via.brain.sh given: [case18] a staged path whose digit compete
    │     └─ review: <tmp>
    │
    ├─ no logs or no verdict json: most often the review brain has
-   │  no key. rhx review boots its brain under keyrack env prep,
-   │  so unlock prep and retry:
-   │     rhx keyrack unlock --owner ehmpath --env prep
+   │  no key. this gate reads it from keyrack env test,
+   │  so unlock it there and retry:
+   │     rhx keyrack unlock --owner ehmpath --env test
    │  if the brain key is absent there, a human fills it:
-   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env test
    └─ a check that could not run must never look like one that
       passed, so this blocks
 "
@@ -392,11 +392,11 @@ exports[`pii.scan.via.brain.sh given: [case20] three reviewers that disagree whe
    │     └─ review: <tmp>
    │
    ├─ no logs or no verdict json: most often the review brain has
-   │  no key. rhx review boots its brain under keyrack env prep,
-   │  so unlock prep and retry:
-   │     rhx keyrack unlock --owner ehmpath --env prep
+   │  no key. this gate reads it from keyrack env test,
+   │  so unlock it there and retry:
+   │     rhx keyrack unlock --owner ehmpath --env test
    │  if the brain key is absent there, a human fills it:
-   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env test
    └─ a check that could not run must never look like one that
       passed, so this blocks
 "
@@ -594,7 +594,7 @@ exports[`pii.scan.via.brain.sh given: [case30] a review that refuses with an unl
    │  genuine emergency:
    │     git commit --no-verify
    ├─ if the cause above is unclear — most often: keyrack is locked:
-   │     rhx keyrack unlock --owner ehmpath --env prep
+   │     rhx keyrack unlock --owner ehmpath --env test
    └─ a check that could not run must never look like one that
       passed, so this blocks
 "
@@ -635,11 +635,11 @@ exports[`pii.scan.via.brain.sh given: [case31] the review log dir after the read
    │     └─ review: <tmp>
    │
    ├─ no logs or no verdict json: most often the review brain has
-   │  no key. rhx review boots its brain under keyrack env prep,
-   │  so unlock prep and retry:
-   │     rhx keyrack unlock --owner ehmpath --env prep
+   │  no key. this gate reads it from keyrack env test,
+   │  so unlock it there and retry:
+   │     rhx keyrack unlock --owner ehmpath --env test
    │  if the brain key is absent there, a human fills it:
-   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env test
    └─ a check that could not run must never look like one that
       passed, so this blocks
 "
@@ -714,9 +714,9 @@ exports[`pii.scan.via.brain.sh given: [case34] a review that refuses for an abse
    │  ── anthropic/claude/haiku: no readable verdict, on 1 attempt(s) ──
    │  cause: rhx review refused: ANTHROPIC_API_KEY not found in keyrack (owner ehmpath, env prep)
    │
-   ├─ the review brain's key is absent from keyrack env prep, where
-   │  rhx review boots its brain. a human fills it:
-   │     rhx keyrack set --owner ehmpath --key ANTHROPIC_API_KEY --env prep
+   ├─ the review brain's key is absent from keyrack env
+   │  test, where this gate reads it. a human fills it:
+   │     rhx keyrack set --owner ehmpath --key ANTHROPIC_API_KEY --env test
    └─ a check that could not run must never look like one that
       passed, so this blocks
 "
@@ -738,9 +738,9 @@ exports[`pii.scan.via.brain.sh given: [case34] a review that refuses for an abse
    │  ── openrouter/deepseek/flash: no readable verdict, on 1 attempt(s) ──
    │  cause: rhx review refused: OPENROUTER_API_KEY not found in keyrack (owner ehmpath, env prep)
    │
-   ├─ the review brain's key is absent from keyrack env prep, where
-   │  rhx review boots its brain. a human fills it:
-   │     rhx keyrack set --owner ehmpath --key OPENROUTER_API_KEY --env prep
+   ├─ the review brain's key is absent from keyrack env
+   │  test, where this gate reads it. a human fills it:
+   │     rhx keyrack set --owner ehmpath --key OPENROUTER_API_KEY --env test
    └─ a check that could not run must never look like one that
       passed, so this blocks
 "
@@ -803,11 +803,11 @@ exports[`pii.scan.via.brain.sh given: [case37] a review that crashes with a stac
    │  Error: Could not resolve authentication method.
    │
    ├─ no logs or no verdict json: most often the review brain has
-   │  no key. rhx review boots its brain under keyrack env prep,
-   │  so unlock prep and retry:
-   │     rhx keyrack unlock --owner ehmpath --env prep
+   │  no key. this gate reads it from keyrack env test,
+   │  so unlock it there and retry:
+   │     rhx keyrack unlock --owner ehmpath --env test
    │  if the brain key is absent there, a human fills it:
-   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env prep
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env test
    └─ a check that could not run must never look like one that
       passed, so this blocks
 "
@@ -820,6 +820,50 @@ exports[`pii.scan.via.brain.sh given: [case38] a staged rename whose edit adds a
 🔎 pii.review
    ├─ scope: diffs since-staged
    ├─ files: 1
+   ├─ reviewers: 1
+   │
+   │  ├─ ✅ fake/one — clean (0 nitpick(s))
+   │
+   └─ blockers: 0
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case39] a brain key that only keyrack env test holds when: [t0] keyrack holds no key for the brain then: the stdout matches its snapshot 1`] = `
+"
+🦅 the review could not run
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ reviewers: 1
+   │
+   │  ├─ 💥 fake/one — verdict unreadable
+   │
+   ├─ this is a malfunction, not a PII hit — the diff
+   │  was never actually examined by those reviewers
+   │
+   │  ── fake/one: no readable verdict, on 2 attempt(s) ──
+   │  cause: no logs: line — the review skipped, or crashed before it wrote logs
+   │  🔍 review
+   │  MalfunctionError [ReviewBrainCallError]: the brain call failed — no auth method: neither apiKey nor authToken is set
+   │
+   ├─ no logs or no verdict json: most often the review brain has
+   │  no key. this gate reads it from keyrack env test,
+   │  so unlock it there and retry:
+   │     rhx keyrack unlock --owner ehmpath --env test
+   │  if the brain key is absent there, a human fills it:
+   │     rhx keyrack set --owner ehmpath --key FAKE_API_KEY --env test
+   └─ a check that could not run must never look like one that
+      passed, so this blocks
+"
+`;
+
+exports[`pii.scan.via.brain.sh given: [case39] a brain key that only keyrack env test holds when: [t1] keyrack env test holds the key then: the stdout matches its snapshot 1`] = `
+"
+🦅 clear skies,
+
+🔎 pii.review
+   ├─ scope: diffs since-staged
+   ├─ files: 2
    ├─ reviewers: 1
    │
    │  ├─ ✅ fake/one — clean (0 nitpick(s))

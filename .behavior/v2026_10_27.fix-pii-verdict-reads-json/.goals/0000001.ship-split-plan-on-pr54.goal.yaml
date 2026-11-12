@@ -1,0 +1,15 @@
+slug: 'ship-split-plan-on-pr54'
+source: 'peer:human'
+status:
+  choice: 'inflight'
+  reason: 'director chose option 2: gate reads its brain key from keyrack env test (case39 clamp red/green); commit in progress'
+updatedAt: '2026-11-12'
+why:
+  ask: 'pr #54 holds every real change in this tree, pushed, ci green; box-local paths kept out and named'
+  purpose: 'the split plan and route records must live in the pr, not only on this box'
+  benefit: 'the commander reviews one complete record'
+what:
+  outcome: 'one commit on #54 with split-plan, F17, fulcrum list, route goals; ci green'
+how:
+  task: 'stage route paths only, commit through the pii gate, push, watch release'
+  gate: 'head sha on #54 with every check green'
