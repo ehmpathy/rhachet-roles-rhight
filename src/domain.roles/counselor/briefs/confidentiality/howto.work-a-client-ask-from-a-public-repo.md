@@ -1,5 +1,7 @@
 # howto.work-a-client-ask-from-a-public-repo
 
+> ⚠️ **not legal advice.** this is a method brief: it makes no independent factual claim. the facts behind it are cited in `whyto.client-facts-live-in-a-private-tree`.
+
 > the how behind `rule.forbid.client-identity-in-public-comments` and `rule.require.client-facts-in-a-private-tree`. the why is `whyto.client-facts-live-in-a-private-tree`.
 
 ## .when
@@ -54,6 +56,10 @@ before this repo ships a diff, run the publishability triage over it as if steps
 ## .the slip, and its repair
 
 a forbidden fact posted → tell the human at once → offer to **delete**, never edit (an edit keeps the original in the history) → delete only on their word → confirm a `404` on read-back → sweep the rest of the thread for the same fact.
+
+## .date researched
+
+2026-11-17
 
 ## .publishability
 

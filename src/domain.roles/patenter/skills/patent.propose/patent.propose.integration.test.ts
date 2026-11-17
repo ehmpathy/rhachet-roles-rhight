@@ -157,7 +157,20 @@ describe('patent.propose.sh', () => {
         expect(glyphs.filter((g) => g === '└')).toHaveLength(1);
         expect(glyphs[glyphs.length - 1]).toEqual('└');
 
-        expect(scrub({ stdout: result.stdout, tempDir })).toMatchSnapshot();
+        // the branch is the host's git default (main here, master on ci), so
+        // assert it names the repo's own branch, then mask it for the snapshot
+        const branch = spawnSync('git', ['rev-parse', '--abbrev-ref', 'HEAD'], {
+          cwd: tempDir,
+          encoding: 'utf-8',
+        }).stdout.trim();
+        expect(result.stdout).toContain(`branch: ${branch}`);
+        expect(
+          scrub({ stdout: result.stdout, tempDir })
+            .split(`branch: ${branch}`)
+            .join('branch: $BRANCH')
+            .split(`branch ${branch} <->`)
+            .join('branch $BRANCH <->'),
+        ).toMatchSnapshot();
       });
 
       then('branch is bound to route via symlink', async () => {

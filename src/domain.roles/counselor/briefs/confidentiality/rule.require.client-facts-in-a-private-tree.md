@@ -1,5 +1,7 @@
 # rule.require.client-facts-in-a-private-tree
 
+> ⚠️ **not legal advice.** this is a method brief: it makes no independent factual claim. the facts behind it are cited in `whyto.client-facts-live-in-a-private-tree`.
+
 ## severity: blocker
 
 **every client fact lives in the client's PRIVATE repo, in a tree the director made, linked into this repo from the route dir, gitignored.** never in this repo, and never only in chat.
@@ -26,6 +28,10 @@ $route/.client/$org  →  the client's worktree (private repo, own branch)
 blocker: client work begun with no private repo found or asked for · a client tree created without the director · a client fact written anywhere in this repo but under the gitignored `$route/.client/` link · a client fact the human gave, left only in chat.
 
 ⇒ why: `whyto.client-facts-live-in-a-private-tree` · how: `howto.work-a-client-ask-from-a-public-repo`
+
+## .date researched
+
+2026-11-17
 
 ## .publishability
 

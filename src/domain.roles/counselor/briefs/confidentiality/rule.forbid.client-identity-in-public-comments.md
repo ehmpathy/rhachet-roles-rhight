@@ -1,5 +1,7 @@
 # rule.forbid.client-identity-in-public-comments
 
+> ⚠️ **not legal advice.** this is a method brief: it makes no independent factual claim. the facts behind it are cited in `whyto.client-facts-live-in-a-private-tree`.
+
 ## severity: blocker
 
 **this repo is PUBLIC. a comment, a PR body, an issue, a review reply, or a commit message here is a publication**, and it may never carry:
@@ -28,6 +30,10 @@
 blocker: an entity name, an identifier, a person, or a chat-told personal fact in a public comment, PR body, issue, or commit message · a redaction by edit offered as a full fix.
 
 ⇒ why: `whyto.client-facts-live-in-a-private-tree` · how: `howto.work-a-client-ask-from-a-public-repo`
+
+## .date researched
+
+2026-11-17
 
 ## .publishability
 

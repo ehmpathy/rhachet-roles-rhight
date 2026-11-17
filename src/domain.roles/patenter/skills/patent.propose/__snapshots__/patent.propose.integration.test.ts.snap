@@ -32,7 +32,7 @@ exports[`patent.propose.sh given: [case1] new route creation when: [t0] patent.p
 
 🌎 patent.propose
    ├─ route: .route/v$DATE.patent.propose/
-   ├─ branch: main
+   ├─ branch: $BRANCH
    └─ stones
       ├─ ✓ 0.idea.md
       ├─ ✓ 1.vision.stone
@@ -49,7 +49,7 @@ exports[`patent.propose.sh given: [case1] new route creation when: [t0] patent.p
    └─ ready for you to fill out
 
 🌎 we'll track it down,
-   ├─ branch main <-> route v$DATE.patent.propose
+   ├─ branch $BRANCH <-> route v$DATE.patent.propose
    └─ branch bound to route, to drive via hooks
 "
 `;
