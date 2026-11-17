@@ -1,6 +1,14 @@
 always:
   briefs:
+    say:
+      # ⭐ client confidentiality — the counsel's first duty, and every repo that works
+      #    client asks extends it (this repo symlinks these into .this/role=any)
+      - briefs/confidentiality/rule.forbid.client-identity-in-public-comments.md
+      - briefs/confidentiality/rule.require.client-facts-in-a-private-tree.md
     ref:
+      # the how and the why behind the two confidentiality rules
+      - briefs/confidentiality/howto.work-a-client-ask-from-a-public-repo.md
+      - briefs/confidentiality/whyto.client-facts-live-in-a-private-tree.md
       # ⭐ research method — run this at the END of every research pass, any subject
       # .note = a synthesis brief is organized by what the sources REQUIRE, so it structurally loses
       #         where a reader's intuition DIVERGES from them. that divergence exists only as a
@@ -213,7 +221,7 @@ always:
       #         omitted for obviousness — and only the surprises carry ⚡, so each reader finds
       #         their half at a glance. group K + redlines H18-H23 + mustcants ME26-ME30 are the
       #         🪨 plain set; all other rows are ⚡.
-      # .note = ⛔ the plain rules were ABSENT until 2026-08-06, and the cause generalizes:
+      # .note = ⛔ the plain rules were ABSENT until the round that added them, and the cause generalizes:
       #         rung ①'s admission test was "did a source CONTRADICT a competent reader's belief?"
       #         — which is READER-RELATIVE — and rung ② traces into ①, so ②'s reader-INDEPENDENT
       #         test was silently narrowed. a rule nobody was wrong about could not enter, however

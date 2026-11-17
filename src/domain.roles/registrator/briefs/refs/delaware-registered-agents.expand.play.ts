@@ -78,7 +78,6 @@ const URL = 'https://corp.delaware.gov/agents/';
  *    as a guard that cannot fail. both controls are owed.
  */
 const NEEDLES = [
-  { needle: 'legalinc', must: null as boolean | null }, // ⇐ the question
   { needle: 'legalcorpsolutions', must: true }, // ⇐ from the link harvest
   { needle: 'incserv', must: true }, // ⇐ from the link harvest
   { needle: 'registered agent', must: true }, // ⇐ the page's own subject

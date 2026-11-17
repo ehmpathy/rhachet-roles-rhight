@@ -1,8 +1,8 @@
 /**
  * .what = read Stripe's Atlas DOCS root, and the agent-specific page it links
  *         to, for what a founder can see about their own registered agent
- *         without a sign-in — so "is LEGALINC still our agent, and is it
- *         paid?" has a first-party procedure behind it.
+ *         without a sign-in — so "is this agent still on file for the
+ *         corporation, and is it paid?" has a first-party procedure behind it.
  *
  * .why  = `stripe-atlas-registered-agent.nav.play.ts` earned
  *         `https://stripe.com/atlas` off the apex root and found the PRICE of
@@ -41,7 +41,6 @@ const ROOT = 'https://docs.stripe.com/atlas';
  */
 const NEEDLES = [
   { needle: 'registered agent', must: null as boolean | null }, // ⇐ the question
-  { needle: 'legalinc', must: null as boolean | null }, // ⇐ the question
   { needle: 'resign', must: null as boolean | null }, // ⇐ the hazard
   { needle: 'atlas', must: true }, // ⇐ the page's own subject
   { needle: 'zzqxnotonthispage', must: false }, // ⇐ MUST miss

@@ -3,6 +3,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { genTempDir, given, then, useBeforeAll, when } from 'test-fns';
 
+import { asSpawnExitCode } from '../../../../.test/asSpawnExitCode';
+
 /**
  * .what = mask each inventor name in skill output before a snapshot
  * .why  = live uspto records name real people; a snapshot must never carry one
@@ -116,17 +118,18 @@ describe('patent.priors.fetch.sh', () => {
       delete env.GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS;
     }
 
+    const timeout = input.timeout ?? 60000; // 60s default, can override for slow tests
     const result = spawnSync('bash', [scriptPath, ...input.fetchArgs], {
       encoding: 'utf-8' as const,
       stdio: ['pipe', 'pipe', 'pipe'],
-      timeout: input.timeout ?? 60000, // 60s default, can override for slow tests
+      timeout,
       env,
       cwd: input.cwd, // optional: run in a specific directory (for genTempDir tests)
     });
     return {
       stdout: result.stdout ?? '',
       stderr: result.stderr ?? '',
-      exitCode: result.status ?? 1,
+      exitCode: asSpawnExitCode({ result, timeout }),
     };
   };
 
@@ -672,7 +675,9 @@ describe('patent.priors.fetch.sh', () => {
         const result = runFetch({
           cwd: tempDir,
           fetchArgs: ['--exid', knownExid],
-          timeout: 30000, // 30s is plenty for cached flow (no network)
+          // holds a full parallel run (32.8s seen), under jest's 90s so the kill names itself.
+          // `retrieval: cached` proves no api call, never the clock
+          timeout: 80000,
         });
 
         // DEBUG: show output on failure

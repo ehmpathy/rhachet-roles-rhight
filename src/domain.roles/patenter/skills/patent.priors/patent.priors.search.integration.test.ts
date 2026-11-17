@@ -3,6 +3,8 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { genTempDir, given, then, useBeforeAll, when } from 'test-fns';
 
+import { asSpawnExitCode } from '../../../../.test/asSpawnExitCode';
+
 /**
  * .what = mask each inventor name in skill output before a snapshot
  * .why  = live uspto records name real people; a snapshot must never carry one
@@ -53,6 +55,7 @@ describe('patent.priors.search.sh', () => {
   };
   const givenLiveUspto = given.skip;
 
+  const SEARCH_TIMEOUT = 60000; // 60s timeout for API calls
   const runSearch = (input: {
     searchArgs: string[];
     binFirst?: string;
@@ -60,7 +63,7 @@ describe('patent.priors.search.sh', () => {
     const result = spawnSync('bash', [scriptPath, ...input.searchArgs], {
       encoding: 'utf-8',
       stdio: ['pipe', 'pipe', 'pipe'],
-      timeout: 60000, // 60s timeout for API calls
+      timeout: SEARCH_TIMEOUT,
       env: input.binFirst
         ? {
             ...process.env,
@@ -71,7 +74,7 @@ describe('patent.priors.search.sh', () => {
     return {
       stdout: result.stdout ?? '',
       stderr: result.stderr ?? '',
-      exitCode: result.status ?? 1,
+      exitCode: asSpawnExitCode({ result, timeout: SEARCH_TIMEOUT }),
     };
   };
 

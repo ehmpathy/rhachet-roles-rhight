@@ -8,7 +8,7 @@ exports[`pdf.merge.sh given: [case1] a 1 page cover and a 2 page body when: [t0]
    ├─ 1. <tmp>/cover.pdf: 1 page(s)
    ├─ 2. <tmp>/body.pdf: 2 page(s)
    ├─ pages: 3 of 3 expected ✅
-   ├─ bytes: 2203
+   ├─ bytes: <n>
    └─ into: <tmp>/packet.pdf
 "
 `;

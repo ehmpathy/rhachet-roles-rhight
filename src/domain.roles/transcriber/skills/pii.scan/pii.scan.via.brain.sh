@@ -58,6 +58,7 @@
 #   --paths-with G  accepted and dropped; the brain pass reviews a diff
 #   --brain SLUG    a brain to ask; repeatable. defaults to one
 #   --rubric PATH   the rules that focus the reviewer
+#   --lockfiles     also review pnpm-lock.yaml / package-lock.json / yarn.lock
 #   --mode          plan | apply (default apply)
 #   --help, -h      show this help
 #
@@ -94,6 +95,11 @@ BATCH_BYTES="${PII_REVIEW_BATCH_BYTES:-240000}"
 BATCH_PARALLEL="${PII_REVIEW_BATCH_PARALLEL:-4}"
 RUBRIC="$SCRIPT_DIR/rubric/rule.forbid.pii-in-a-diff.md"
 MODE="apply"
+# ⚠️ a lockfile is registry urls and integrity hashes, never personal
+#    data — and one is large enough (357 KB here) to overflow a prompt
+#    alone, past any batch split. so it leaves the scope by default, the
+#    same default the regex pass holds; --lockfiles brings it back
+SKIP_LOCKFILES=1
 
 # ⚠️ the transcriber's own practice briefs, handed to the reviewer as
 #    reference supplies. an enrolled clone booted these; an API brain
@@ -143,6 +149,7 @@ options:
   --diffs WHICH   since-staged | since-commit | since-main
   --brain SLUG    a brain to ask; repeatable
   --rubric PATH   the rules to grade against
+  --lockfiles     also review lockfiles (skipped by default)
   --mode          plan | apply (default apply)
   --help, -h      show this help
 
@@ -201,6 +208,7 @@ parse_args() {
         shift 2
         ;;
       --lockfiles)
+        SKIP_LOCKFILES=0
         shift
         ;;
       --mode)
@@ -543,6 +551,18 @@ main() {
     mv "$files.kept" "$files"
   fi
 
+  # a lockfile leaves the list too, unless --lockfiles; see SKIP_LOCKFILES
+  local lockfiles
+  lockfiles="$WORKDIR/lockfiles.txt"
+  : > "$lockfiles"
+  if [[ "$SKIP_LOCKFILES" -eq 1 ]]; then
+    grep -E '(^|/)(pnpm-lock\.yaml|package-lock\.json|yarn\.lock)$' "$files" > "$lockfiles" || true
+  fi
+  if [[ -s "$lockfiles" ]]; then
+    grep -vxFf "$lockfiles" "$files" > "$files.kept" || true
+    mv "$files.kept" "$files"
+  fi
+
   filecount=$(grep -c . "$files" 2>/dev/null || true)
   [[ -z "$filecount" ]] && filecount=0
 
@@ -553,6 +573,7 @@ main() {
     print_eagle_header "clear skies,"
     print_tree_start "pii.review"
     print_tree_branch "scope" "$(scope_label)"
+    [[ -s "$lockfiles" ]] && print_tree_branch "lockfiles" "$(grep -c . "$lockfiles") excluded — registry urls and hashes; pass --lockfiles to review them"
     print_tree_leaf "files" "0 — no review needed"
     exit 0
   fi
@@ -606,6 +627,7 @@ main() {
     print_tree_branch "files" "$filecount"
     print_binaries_branch "$binarycount" "$binaries"
     [[ -s "$dirlinks" ]] && print_tree_branch "dirlinks" "$(grep -c . "$dirlinks") excluded — a directory symlink; its target files are scanned on their own paths"
+    [[ -s "$lockfiles" ]] && print_tree_branch "lockfiles" "$(grep -c . "$lockfiles") excluded — registry urls and hashes; pass --lockfiles to review them"
     print_tree_branch "rubric" "$(basename "$RUBRIC")"
     print_tree_branch "refs" "$(basename "$REFS")"
     print_tree_branch "batches" "$batchcount"

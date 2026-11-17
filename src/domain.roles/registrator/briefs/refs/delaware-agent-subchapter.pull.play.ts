@@ -48,10 +48,10 @@
  *    grep still earned its keep — it bought § 103(j) above.
  *
  * ⚠️ THE CONTAINER, NOT THE SECTION. a § 131-only pull answers the address
- *    format and leaves the neighbours dark — and the neighbours are live in this
- *    matter. §§ 132-136 carry the registered agent's own duties, and the open
- *    question "should LEGALINC have warned me before the charter went void?" has
- *    been UNANSWERABLE for exactly as long as this subchapter has been absent.
+ *    format and leaves the neighbours dark — and the neighbours are where the
+ *    live questions sit. §§ 132-136 carry the registered agent's own duties, so
+ *    "should the agent have warned the corporation before its charter went
+ *    void?" is UNANSWERABLE for exactly as long as this subchapter is absent.
  *    `rule.require.bhrowser-citations`.
  *
  * to re-run:

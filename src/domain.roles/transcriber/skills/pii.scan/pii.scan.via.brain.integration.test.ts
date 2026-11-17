@@ -852,13 +852,11 @@ describe('pii.scan.via.brain.sh', () => {
         }),
       );
 
-      // ⚠️ POSITION IS LOAD-BEARING, and it is the INVERSE of the regex
-      //    suite's choice. there `--lockfiles` changes the file set, so it
-      //    goes LAST to isolate its effect. here it does no work at all —
-      //    it is accepted and dropped — so acceptance is the ONLY
-      //    observable, and a `shift 2` defect can be seen only if there is
-      //    a next token for it to swallow. so it LEADS: under `shift 2` it
-      //    eats `--diffs`, and `since-staged` is left as a bare token.
+      // ⚠️ POSITION IS LOAD-BEARING. `--lockfiles` takes no value, and a
+      //    `shift 2` defect can be seen only if there is a next token for
+      //    it to swallow. so it LEADS: under `shift 2` it eats `--diffs`,
+      //    and `since-staged` is left as a bare token. its effect on the
+      //    file set is clamped apart, in [case22]
       const result = useBeforeAll(async () =>
         runSkill({
           args: ['--lockfiles', '--diffs', 'since-staged', '--mode', 'plan'],
@@ -1646,6 +1644,97 @@ describe('pii.scan.via.brain.sh', () => {
       then('⭐ it reads the summary count, not the digit in the path', () => {
         expect(result.stdout).toContain('clear skies');
         expect(result.stdout).not.toContain('5 blocker(s)');
+      });
+    });
+  });
+
+  /**
+   * .what = a staged lockfile beside a staged text file
+   * .why  = a lockfile alone can overflow the reviewer's prompt (357 KB
+   *         here, 203k tokens), past any batch split, so no dependency
+   *         bump could commit. it carries registry urls and hashes, never
+   *         personal data, so it leaves the scope by default — the same
+   *         default the regex pass holds — and --lockfiles brings it back
+   */
+  given('[case22] a staged lockfile beside a staged text file', () => {
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: {
+          'letter.md': 'Dear reader,',
+          'pnpm-lock.yaml': "lockfileVersion: '9.0'\n",
+          'sub/package-lock.json': '{}',
+        },
+        stage: ['letter.md', 'pnpm-lock.yaml', 'sub/package-lock.json'],
+      }),
+    );
+
+    when('[t0] planned', () => {
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--mode', 'plan'],
+          cwd: repo.dir,
+        }),
+      );
+
+      then(
+        'it names the lockfiles as excluded, and counts only the text',
+        () => {
+          expect(result.exitCode).toBe(0);
+          expect(result.stdout).toContain('lockfiles');
+          expect(result.stdout).toContain('2 excluded');
+          expect(result.stdout).toMatch(/files\D+1\b/);
+        },
+      );
+    });
+
+    when('[t1] reviewed', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatCapturesTheArgv({ dir: repo.dir }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', 'fake/one'],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('⭐ the review scope names the text file, never a lockfile', () => {
+        const argv = fake.readArgv();
+        if (result.exitCode !== 0)
+          console.log('PROOF: stdout:', result.stdout, 'argv:', argv);
+        expect(argv).toContain('letter.md');
+        expect(argv).not.toContain('pnpm-lock.yaml');
+        expect(argv).not.toContain('package-lock.json');
+        expect(result.exitCode).toBe(0);
+      });
+    });
+
+    when('[t2] reviewed with --lockfiles', () => {
+      const fake = useBeforeAll(async () =>
+        genRhxThatCapturesTheArgv({ dir: repo.dir }),
+      );
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: [
+            '--diffs',
+            'since-staged',
+            '--lockfiles',
+            '--brain',
+            'fake/one',
+          ],
+          cwd: repo.dir,
+          binFirst: fake.bin,
+        }),
+      );
+
+      then('the review scope names the lockfiles too', () => {
+        const argv = fake.readArgv();
+        if (result.exitCode !== 0)
+          console.log('PROOF: stdout:', result.stdout, 'argv:', argv);
+        expect(argv).toContain('pnpm-lock.yaml');
+        expect(argv).toContain('package-lock.json');
+        expect(result.exitCode).toBe(0);
       });
     });
   });

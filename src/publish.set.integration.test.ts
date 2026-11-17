@@ -131,9 +131,15 @@ describe('the published file set', () => {
       }),
     );
 
-    return (showConfig(at).files ?? []).map((f) =>
-      path.relative(root, path.resolve(root, f)),
-    );
+    // the probe must sit beside the tree it reads, so it is removed once
+    // read; left behind, it is an unignored file at the repo root
+    try {
+      return (showConfig(at).files ?? []).map((f) =>
+        path.relative(root, path.resolve(root, f)),
+      );
+    } finally {
+      fs.rmSync(at, { force: true });
+    }
   };
 
   given('[case1] the real src/ tree', () => {
@@ -563,6 +569,12 @@ describe('the published file set', () => {
       // the positive control — an absence is worthless without one
       then('the harness sees the real entrypoint', () => {
         expect(compiled).toContain('src/index.ts');
+      });
+
+      then('⭐ the probe config is gone from the repo root once read', () => {
+        expect(fs.existsSync(path.join(repoDir, 'tsconfig.probe.json'))).toBe(
+          false,
+        );
       });
 
       then('no test-adjacent dir contributes a compiled file', () => {

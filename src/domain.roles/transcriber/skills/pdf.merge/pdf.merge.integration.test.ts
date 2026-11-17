@@ -256,8 +256,19 @@ describe('pdf.merge.sh', () => {
         expect(outcome.stdout).toContain('2 page(s)');
       });
 
+      then('the readout names a non-zero byte count', () => {
+        expect(outcome.stdout).toMatch(/bytes: [1-9]\d*/);
+      });
+
       then('the readout matches snapshot', () => {
-        expect(outcome.stdout.split(tempDir).join('<tmp>')).toMatchSnapshot();
+        // the byte count varies with the host's poppler build; the page
+        // counts above are the checked contract, so the bytes are masked
+        expect(
+          outcome.stdout
+            .split(tempDir)
+            .join('<tmp>')
+            .replace(/bytes: \d+/, 'bytes: <n>'),
+        ).toMatchSnapshot();
       });
     });
 
