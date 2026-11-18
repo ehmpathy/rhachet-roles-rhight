@@ -35,7 +35,8 @@ const genScene = (input: {
   const host = path.join(root, 'host');
   fs.mkdirSync(host, { recursive: true });
   git({ cwd: host, args: ['init', '--quiet'] });
-  if (input.ignoreClient) fs.writeFileSync(path.join(host, '.gitignore'), '.client\n');
+  if (input.ignoreClient)
+    fs.writeFileSync(path.join(host, '.gitignore'), '.client\n');
   const route = path.join(host, '.route', 'v2026_01_01.demo');
   fs.mkdirSync(route, { recursive: true });
 
@@ -105,13 +106,30 @@ describe('client.tree.link', () => {
     });
   });
 
+  given('[case10] the skill as rhx invokes it', () => {
+    then(
+      '⭐ the entrypoint is executable, so `rhx client.tree.link` can run it',
+      () => {
+        // rhx execs the file directly; these tests call `bash <file>`, which hides a lost +x
+        expect(fs.statSync(scriptPath).mode & 0o111).not.toBe(0);
+      },
+    );
+  });
+
   given('[case2] an org that is not one path segment', () => {
     const scene = useBeforeAll(async () =>
       genScene({ slug: 'org', ignoreClient: true, origin: ORIGIN }),
     );
     then('it refuses at exit 2', () => {
       const result = runSkill({
-        args: ['--org', '../escape', '--route', scene.route, '--tree', scene.tree],
+        args: [
+          '--org',
+          '../escape',
+          '--route',
+          scene.route,
+          '--tree',
+          scene.tree,
+        ],
         cwd: scene.host,
       });
       expect(result.exitCode).toBe(2);
@@ -127,7 +145,14 @@ describe('client.tree.link', () => {
     when('[t0] the skill runs', () => {
       const result = useBeforeAll(async () =>
         runSkill({
-          args: ['--org', 'acme', '--route', scene.route, '--repo', '/nonexistent/repo'],
+          args: [
+            '--org',
+            'acme',
+            '--route',
+            scene.route,
+            '--repo',
+            '/nonexistent/repo',
+          ],
           cwd: scene.host,
         }),
       );
@@ -168,13 +193,24 @@ describe('client.tree.link', () => {
     );
     then('⭐ it refuses at exit 2, and makes no link', () => {
       const result = runSkill({
-        args: ['--org', 'acme', '--route', scene.route, '--tree', scene.tree, '--mode', 'apply'],
+        args: [
+          '--org',
+          'acme',
+          '--route',
+          scene.route,
+          '--tree',
+          scene.tree,
+          '--mode',
+          'apply',
+        ],
         cwd: scene.host,
         binFirst: gh.bin,
       });
       expect(result.exitCode).toBe(2);
       expect(result.stderr).toContain('not PRIVATE');
-      expect(fs.existsSync(path.join(scene.route, '.client', 'acme'))).toBe(false);
+      expect(fs.existsSync(path.join(scene.route, '.client', 'acme'))).toBe(
+        false,
+      );
     });
   });
 
@@ -187,13 +223,24 @@ describe('client.tree.link', () => {
     );
     then('⭐ it refuses at exit 2, so the link can never be tracked', () => {
       const result = runSkill({
-        args: ['--org', 'acme', '--route', scene.route, '--tree', scene.tree, '--mode', 'apply'],
+        args: [
+          '--org',
+          'acme',
+          '--route',
+          scene.route,
+          '--tree',
+          scene.tree,
+          '--mode',
+          'apply',
+        ],
         cwd: scene.host,
         binFirst: gh.bin,
       });
       expect(result.exitCode).toBe(2);
       expect(result.stderr).toContain('does not gitignore');
-      expect(fs.existsSync(path.join(scene.route, '.client', 'acme'))).toBe(false);
+      expect(fs.existsSync(path.join(scene.route, '.client', 'acme'))).toBe(
+        false,
+      );
     });
   });
 
@@ -206,7 +253,14 @@ describe('client.tree.link', () => {
     );
     const linkAt = (): string => path.join(scene.route, '.client', 'acme');
     const args = (mode: string): string[] => [
-      '--org', 'acme', '--route', scene.route, '--tree', scene.tree, '--mode', mode,
+      '--org',
+      'acme',
+      '--route',
+      scene.route,
+      '--tree',
+      scene.tree,
+      '--mode',
+      mode,
     ];
 
     when('[t0] planned', () => {
@@ -232,15 +286,19 @@ describe('client.tree.link', () => {
         expect(fs.realpathSync(linkAt())).toBe(fs.realpathSync(scene.tree));
       });
       then('the client record reads through the link', () => {
-        expect(fs.readFileSync(path.join(linkAt(), 'roadmap.md'), UTF8)).toContain(
-          'the client record',
-        );
+        expect(
+          fs.readFileSync(path.join(linkAt(), 'roadmap.md'), UTF8),
+        ).toContain('the client record');
       });
       then('⭐ the host repo sees no file to track', () => {
-        const status = spawnSync('git', ['status', '--porcelain', '--untracked-files=all'], {
-          cwd: scene.host,
-          encoding: UTF8,
-        });
+        const status = spawnSync(
+          'git',
+          ['status', '--porcelain', '--untracked-files=all'],
+          {
+            cwd: scene.host,
+            encoding: UTF8,
+          },
+        );
         expect(status.stdout).not.toContain('.client');
       });
     });
@@ -262,9 +320,9 @@ describe('client.tree.link', () => {
       });
       then('⭐ the client record survives in the client tree', () => {
         expect(fs.existsSync(scene.route)).toBe(false);
-        expect(fs.readFileSync(path.join(scene.tree, 'roadmap.md'), UTF8)).toContain(
-          'the client record',
-        );
+        expect(
+          fs.readFileSync(path.join(scene.tree, 'roadmap.md'), UTF8),
+        ).toContain('the client record');
       });
     });
   });
@@ -281,13 +339,24 @@ describe('client.tree.link', () => {
       fs.mkdirSync(path.join(scene.route, '.client'), { recursive: true });
       fs.symlinkSync(other, path.join(scene.route, '.client', 'acme'));
       const result = runSkill({
-        args: ['--org', 'acme', '--route', scene.route, '--tree', scene.tree, '--mode', 'apply'],
+        args: [
+          '--org',
+          'acme',
+          '--route',
+          scene.route,
+          '--tree',
+          scene.tree,
+          '--mode',
+          'apply',
+        ],
         cwd: scene.host,
         binFirst: gh.bin,
       });
       expect(result.exitCode).toBe(2);
       expect(result.stderr).toContain('already links elsewhere');
-      expect(fs.readlinkSync(path.join(scene.route, '.client', 'acme'))).toBe(other);
+      expect(fs.readlinkSync(path.join(scene.route, '.client', 'acme'))).toBe(
+        other,
+      );
     });
   });
 
@@ -295,16 +364,29 @@ describe('client.tree.link', () => {
     const scene = useBeforeAll(async () =>
       genScene({ slug: 'ghfail', ignoreClient: true, origin: ORIGIN }),
     );
-    const gh = useBeforeAll(async () => genFakeGh({ dir: scene.host, visibility: null }));
+    const gh = useBeforeAll(async () =>
+      genFakeGh({ dir: scene.host, visibility: null }),
+    );
     then('it is a malfunction at exit 1, never a pass', () => {
       const result = runSkill({
-        args: ['--org', 'acme', '--route', scene.route, '--tree', scene.tree, '--mode', 'apply'],
+        args: [
+          '--org',
+          'acme',
+          '--route',
+          scene.route,
+          '--tree',
+          scene.tree,
+          '--mode',
+          'apply',
+        ],
         cwd: scene.host,
         binFirst: gh.bin,
       });
       expect(result.exitCode).toBe(1);
       expect(result.stderr).toContain('💥 MalfunctionError');
-      expect(fs.existsSync(path.join(scene.route, '.client', 'acme'))).toBe(false);
+      expect(fs.existsSync(path.join(scene.route, '.client', 'acme'))).toBe(
+        false,
+      );
     });
   });
 });
