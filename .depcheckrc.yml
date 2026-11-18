@@ -24,7 +24,12 @@ ignores:
   - rhachet-roles-ehmpathy
   - rhachet-brains-anthropic
   - rhachet-brains-fireworksai
+  - rhachet-brains-openrouter
   - rhachet-brains-xai
   - rhachet-roles-rhachet
   - rhachet-roles-rhight
   - playwright
+ignore-patterns:
+  # actor brain dirs, linked in by `rhx enroll`; local to a host, never package code
+  - .agent/.actors
+  - .claude

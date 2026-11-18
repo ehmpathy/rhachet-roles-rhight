@@ -101,12 +101,12 @@ detectors:
   ssn and ein overlap on the bare 9-digit shape. both get reported; a
   human decides which it is.
 
-  ⭐ a 9-digit FIGURE trips both — an amount, a count, a share total.
-     an allowlist entry is usually the WRONG cure there: it mutes that
+  ⭐ a 9-digit figure trips both — an amount, a count, a share total.
+     an allowlist entry is usually the wrong cure there: it mutes that
      shape globally to settle one fixture. where the consumer accepts
      punctuation, write it punctuated (600,000,000) and no detector
      matches at all. reserve .pii-allow for a value that is genuinely
-     identifier-shaped, per its own header.
+     identifier-shaped, per the .pii-allow header.
 
 roster:
   a regex cannot answer "is there a person's name here?" — that is
@@ -116,7 +116,7 @@ roster:
   derived values (an IRS name control, a DocuSign envelope id) get
   caught exactly, offline, with no new regex.
 
-  reads a doc.pseudonymize map directly: on a TSV line the LEFT field
+  reads a doc.pseudonymize map directly: on a tsv line the left field
   is the real value. a plain one-per-line list works too.
 
   ⛔ the roster is the re-identification key. it must be gitignored;
@@ -241,7 +241,7 @@ validate() {
   fi
   if ! git check-ignore -q -- "$ROSTER_FILE"; then
     print_blocked "roster is not gitignored: $ROSTER_FILE"
-    echo "   an untracked roster is one \`git add -A\` from a commit."
+    echo "   an untracked roster is one \`git add -A\` away from a commit."
     echo "   add it to .gitignore before you point the scanner at it."
     exit 2
   fi
@@ -292,10 +292,10 @@ DETECTORS=(ssn ein itin phone street)
 files_from_diffs() {
   case "$DIFFS" in
     since-staged)
-      git diff --cached --name-only --diff-filter=ACM
+      git diff --cached --name-only --diff-filter=ACMR
       ;;
     since-commit)
-      git diff --name-only --diff-filter=ACM HEAD
+      git diff --name-only --diff-filter=ACMR HEAD
       ;;
     since-main)
       # origin/main, not main. a local main drifts behind the real
@@ -303,7 +303,7 @@ files_from_diffs() {
       # files that merged weeks ago
       local base="main"
       git rev-parse --verify --quiet origin/main >/dev/null && base="origin/main"
-      git diff --name-only --diff-filter=ACM "$base...HEAD"
+      git diff --name-only --diff-filter=ACMR "$base...HEAD"
       ;;
   esac
 }

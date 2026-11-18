@@ -1,0 +1,7 @@
+# F8 — defer the pre-extant hook findings the 5.1 peers raised
+
+- **the fork**: push-mode peers graded `.husky/check.pii.sh` and the live suite whole, and raised blockers on #40 lines this fix never opened (unqualified `✋` headers on malfunctions, an unquoted flag splice, hints that name a place, live-suite helper errors). options: (a) fix them all here; (b) refute on scope and catch a dream.
+- **taken**: (b), with one exception pulled in. dream: `dreams/v2026_10_27.defect.pii-hook-pre-extant-review-findings.md`. **why**: SAFE yes, CLEAN no — each edits asserted hook strings or the hook's argv build, past a nano wish under a same-day deadline. the exception: the allowlist merge under `2>/dev/null` left the gate silently partial; one block, one clamp (`check.pii.integration.test.ts [case9]`), so it rode along.
+- **rework**: clean to un-defer — the dream holds the fix's shape for each item.
+- **confidence**: 80%. a reviewer could fairly say a `✋` on a malfunction path misleads at the exact moment this fix's own causes print, and should not wait.
+- **verdict**: reversed in round i004 to (a) for the hook. the director ruled the r6 blockers the driver's to answer, and each proved a small, clamped fix: qualified headers, a `"$@"` argv, guarded mktemp and rev-parse, a runnable `--via regex` hint, spawn helpers that throw on no exit status. clamps `[case10]` (space in TMPDIR) and `[case11]` (no repo) go red on the prior hook, green on the cured one. the dream keeps only the hint formats and the live-suite fixture tidy.

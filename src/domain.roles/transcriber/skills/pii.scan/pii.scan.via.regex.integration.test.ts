@@ -1,5 +1,6 @@
 import { spawnSync } from 'child_process';
 import * as fs from 'fs';
+import { UnexpectedCodePathError } from 'helpful-errors';
 import * as os from 'os';
 import * as path from 'path';
 import { given, then, useBeforeAll, when } from 'test-fns';
@@ -403,6 +404,11 @@ describe('pii.scan.via.regex.sh', () => {
         expect(result.stdout).toContain('usage:');
         expect(result.stdout).toContain('args:');
         expect(result.stdout).toContain('example:');
+      });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toMatchSnapshot();
       });
     });
   });
@@ -1118,6 +1124,11 @@ describe('pii.scan.via.regex.sh', () => {
         expect(result.stdout).not.toContain('roster not found');
         expect(result.stdout).not.toContain('roster is tracked by git');
       });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(result.stdout.split(repo.dir).join('<tmp>')).toMatchSnapshot();
+      });
     });
   });
 
@@ -1334,6 +1345,67 @@ describe('pii.scan.via.regex.sh', () => {
        */
       then('⭐ and it NAMES the reason', () => {
         expect(result.stdout).toContain('not inside a git work tree');
+      });
+    });
+  });
+
+  /**
+   * .what = a staged rename whose edit adds new content
+   * .why  = `--diff-filter` must carry `R`: under `ACM` git lists a rename
+   *         as neither added nor modified, so the moved file drops out of
+   *         the file list and its new content is never scanned
+   */
+  given('[case24] a staged rename whose edit adds an SSN', () => {
+    const repo = useBeforeAll(async () => {
+      const made = genTempRepo({
+        files: { 'staged.md': 'line of plain prose\n'.repeat(20) },
+        stage: ['staged.md'],
+      });
+      // a fixture step that git refused fails here, named
+      const git = (args: string[]): string => {
+        const res = spawnSync('git', args, { cwd: made.dir, encoding: UTF8 });
+        if (res.status !== 0)
+          throw new UnexpectedCodePathError(
+            `git ${args[0]} failed in the fixture`,
+            {
+              args,
+              status: res.status,
+              stderr: res.stderr,
+            },
+          );
+        return res.stdout;
+      };
+      git([
+        '-c',
+        'core.hooksPath=/dev/null',
+        'commit',
+        '--quiet',
+        '-m',
+        'seed',
+      ]);
+      git(['mv', 'staged.md', 'moved.md']);
+      fs.appendFileSync(path.join(made.dir, 'moved.md'), `\nid ${SSN_BARE}\n`);
+      git(['add', 'moved.md']);
+      return { ...made, status: git(['diff', '--cached', '--name-status']) };
+    });
+
+    when('[t0] scanned with --diffs since-staged', () => {
+      const result = useBeforeAll(async () =>
+        runSkill({ args: ['--diffs', 'since-staged'], cwd: repo.dir }),
+      );
+
+      then('the fixture is a rename, as git reports it', () => {
+        expect(repo.status).toMatch(/^R\d+\tstaged\.md\tmoved\.md/m);
+      });
+
+      then('⭐ it blocks at exit 2 on the renamed file', () => {
+        expect(result.exitCode).toBe(2);
+        expect(result.stdout).toContain('moved.md');
+      });
+
+      then('the output a caller reads matches its snapshot', () => {
+        expect(result.exitCode).toBe(2);
+        expect(result.stdout.split(repo.dir).join('<tmp>')).toMatchSnapshot();
       });
     });
   });
