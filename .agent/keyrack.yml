@@ -9,11 +9,14 @@ env.prod:
   - USPTO_ODP_API_KEY
 env.prep:
   - EHMPATHY_SEATURTLE_PROD_GITHUB_TOKEN
-  # the pre-commit PII gate's second layer. `pii.scan --via brain` calls
-  # `rhx review --brain anthropic/claude/opus`, an API brain — so this is
-  # the credential a commit blocks on when it is absent
+  # where `rhx review` asks for its brain key. no org holds it here; the
+  # pii gate supplies the env test key below to its review children
   - ANTHROPIC_API_KEY
 env.test:
   - USPTO_ODP_API_KEY
   - GOOGLE_CLOUD_RHIGHT_SERVICE_ACCOUNT_CREDS
+  # two readers: the pre-commit PII gate (`pii.scan.via.brain.sh` reads it
+  # through `rhx keyrack get` for its haiku review, so a commit blocks when
+  # it is absent), and the live suite when BRAIN_LIVE=true targets it.
+  # ci runs neither, so ci holds no anthropic key
   - ANTHROPIC_API_KEY

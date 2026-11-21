@@ -1,5 +1,6 @@
 import { spawnSync } from 'child_process';
 import * as fs from 'fs';
+import { UnexpectedCodePathError } from 'helpful-errors';
 import * as os from 'os';
 import * as path from 'path';
 import { given, then, useBeforeAll, when } from 'test-fns';
@@ -43,11 +44,15 @@ const run = (input: { cmd: string; args: string[]; cwd: string }): Run => {
     encoding: UTF8,
     stdio: ['pipe', 'pipe', 'pipe'],
   });
-  return {
-    stdout: res.stdout ?? '',
-    stderr: res.stderr ?? '',
-    exitCode: res.status ?? 1,
-  };
+
+  // a run that produced no exit status produced no verdict
+  if (res.error || res.status === null)
+    throw new UnexpectedCodePathError(`${input.cmd} produced no exit status`, {
+      args: input.args,
+      error: res.error?.message ?? null,
+      signal: res.signal,
+    });
+  return { stdout: res.stdout, stderr: res.stderr, exitCode: res.status };
 };
 
 const git = (input: { args: string[]; cwd: string }): Run =>
@@ -111,8 +116,13 @@ const genTempRepo = (input?: { husky?: 'real' | 'no-runtime' }): {
 
   // the brain layer, stubbed clean. what is under test is the GUARANTEE
   // — that a caught value cannot reach an object — so the second layer
-  // needs only to be present and to not veto. its live invocation is
-  // proven separately, in pii.scan.via.brain.live.integration.test.ts.
+  // needs only to be present and to not veto.
+  //
+  // .mock = the brain mechanism (pii.scan.via.brain.sh), stubbed clean
+  // .why  = a brain call bills the api, is slow, and answers differently
+  //         each run; ci runs this suite on every push
+  // .real = this hook at every commit, on the real brain; and
+  //         pii.scan.via.brain.live.integration.test.ts under BRAIN_LIVE=true
   fs.writeFileSync(
     path.join(work, BRAIN_REL),
     '#!/usr/bin/env bash\necho "stub reviewer: exit 0"\nexit 0\n',
@@ -190,6 +200,29 @@ const countCommitsPastSeed = (input: { work: string }): number => {
   return Number(res.stdout.trim()) - 1;
 };
 
+/**
+ * .what = the human view of one commit, with its volatile bytes masked
+ * .why  = a snapshot pins what a committer reads; temp roots, the branch
+ *         name, and commit ids change on every run and carry no meaning
+ */
+/**
+ * .what = the two streams of a run, each under its own label
+ * .why  = a concat would put stderr after stdout and misstate the order a
+ *         terminal shows; labeled, each stream claims only its own bytes
+ */
+const asStreamsLabeled = (run: { stdout: string; stderr: string }): string =>
+  [
+    `── stdout ──\n${run.stdout.replace(/\n+$/, '\n')}`,
+    ...(run.stderr ? [`── stderr ──\n${run.stderr.replace(/\n+$/, '\n')}`] : []),
+  ].join('\n');
+
+const asCommitOutputStable = (input: { run: Run; root: string }): string =>
+  asStreamsLabeled(input.run)
+    .split(input.root)
+    .join('<tmp>')
+    .replace(/\[[^\]\s]+ (\(root-commit\) )?[0-9a-f]{7,40}\]/g, '[<branch> <sha>]')
+    .replace(/\/tmp\/[^\s]+/g, '<tmp>');
+
 describe('the PII gate guarantee (commit boundary)', () => {
   given('[case1] PII staged, husky fully installed', () => {
     const scene = useBeforeAll(async () => {
@@ -209,26 +242,37 @@ describe('the PII gate guarantee (commit boundary)', () => {
           console.log('PROOF: stdout:', scene.result.stdout);
           console.log('PROOF: stderr:', scene.result.stderr);
         }
-        expect(scene.result.exitCode).not.toBe(0);
+        expect(scene.result.exitCode).toBe(1);
       });
 
-      then('NO commit object was created', () => {
+      then('no commit object was created', () => {
         expect(scene.committed).toBe(0);
       });
 
       then('the gate names PII as the reason', () => {
         const output = scene.result.stdout + scene.result.stderr;
+        expect(output).toContain('✋ ConstraintError: the PII scan blocked the commit');
         expect(output).toContain('commit blocked: the staged set carries PII');
+        // the header alone also fronts a refused input; only a hit prints its detector
+        expect(output).toContain('hold up — that carries PII');
+        expect(output).toContain('ssn 1');
       });
 
       then('it never echoes the value it caught', () => {
         const output = scene.result.stdout + scene.result.stderr;
         expect(output).not.toContain(SSN_BARE);
       });
+
+      then('the output a committer reads matches its snapshot', () => {
+        expect(scene.result.exitCode).toBe(1);
+        expect(
+          asCommitOutputStable({ run: scene.result, root: scene.repo.root }),
+        ).toMatchSnapshot();
+      });
     });
   });
 
-  given('[case2] PII staged, husky runtime ABSENT (a fresh clone)', () => {
+  given('[case2] PII staged, husky runtime absent (a fresh clone)', () => {
     // ⚠️ THE regression this file exists for. `_/husky.sh` is absent
     //    until someone runs `npm install`, and the old `pre-commit`
     //    answered that with a skip notice and exit 0 — for EVERY hook,
@@ -257,21 +301,32 @@ describe('the PII gate guarantee (commit boundary)', () => {
         ).toBe(false);
       });
 
-      then('git STILL aborts', () => {
+      then('git still aborts', () => {
         if (scene.result.exitCode === 0) {
           console.log('PROOF: stdout:', scene.result.stdout);
           console.log('PROOF: stderr:', scene.result.stderr);
         }
-        expect(scene.result.exitCode).not.toBe(0);
+        expect(scene.result.exitCode).toBe(1);
       });
 
-      then('NO commit object was created', () => {
+      then('no commit object was created', () => {
         expect(scene.committed).toBe(0);
       });
 
       then('the PII gate is what blocked it, not a shell error', () => {
         const output = scene.result.stdout + scene.result.stderr;
+        expect(output).toContain('✋ ConstraintError: the PII scan blocked the commit');
         expect(output).toContain('commit blocked: the staged set carries PII');
+        // the header alone also fronts a refused input; only a hit prints its detector
+        expect(output).toContain('hold up — that carries PII');
+        expect(output).toContain('ssn 1');
+      });
+
+      then('the output a committer reads matches its snapshot', () => {
+        expect(scene.result.exitCode).toBe(1);
+        expect(
+          asCommitOutputStable({ run: scene.result, root: scene.repo.root }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -303,6 +358,13 @@ describe('the PII gate guarantee (commit boundary)', () => {
       then('a commit object exists', () => {
         expect(scene.committed).toBe(1);
       });
+
+      then('the output a committer reads matches its snapshot', () => {
+        expect(scene.result.exitCode).toBe(0);
+        expect(
+          asCommitOutputStable({ run: scene.result, root: scene.repo.root }),
+        ).toMatchSnapshot();
+      });
     });
   });
 
@@ -331,6 +393,13 @@ describe('the PII gate guarantee (commit boundary)', () => {
 
       then('a commit object exists', () => {
         expect(scene.committed).toBe(1);
+      });
+
+      then('the output a committer reads matches its snapshot', () => {
+        expect(scene.result.exitCode).toBe(0);
+        expect(
+          asCommitOutputStable({ run: scene.result, root: scene.repo.root }),
+        ).toMatchSnapshot();
       });
     });
   });
@@ -374,10 +443,17 @@ describe('the PII gate guarantee (commit boundary)', () => {
         expect(scene.result.exitCode).toBe(0);
         expect(scene.committed).toBe(1);
       });
+
+      then('the output a committer reads matches its snapshot', () => {
+        expect(scene.result.exitCode).toBe(0);
+        expect(
+          asCommitOutputStable({ run: scene.result, root: scene.repo.root }),
+        ).toMatchSnapshot();
+      });
     });
   });
 
-  given('[case6] a BINARY that carries PII, on the default path', () => {
+  given('[case6] a binary that carries PII, on the default path', () => {
     // ⛔ THE SECOND DOCUMENTED LIMIT, and the one that cost real work.
     //
     //    on 2026-08-31 a PNG that carried PII sat
@@ -464,10 +540,17 @@ describe('the PII gate guarantee (commit boundary)', () => {
         const output = scene.result.stdout + scene.result.stderr;
         expect(output).not.toContain(SSN_BARE);
       });
+
+      then('the output a committer reads matches its snapshot', () => {
+        expect(scene.result.exitCode).toBe(0);
+        expect(
+          asCommitOutputStable({ run: scene.result, root: scene.repo.root }),
+        ).toMatchSnapshot();
+      });
     });
   });
 
-  given('[case7] the ENVIRONMENT that makes [case2]-[case4] real', () => {
+  given('[case7] the environment that makes [case2]-[case4] real', () => {
     // ⛔ THE PRECONDITION NO OTHER CASE READS.
     //
     //    `check.pii.sh` opens with a note that it is POSIX sh only,

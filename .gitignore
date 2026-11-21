@@ -89,12 +89,6 @@ node_modules
 .pii-map
 .pii-allow.local
 
-# the pii gate's report, written to the repo root when a brain blocks a
-# commit. it quotes the very values the gate caught, so it is as sensitive as
-# the diff it refused — and one `git add .` would commit what the gate held
-# back. it is read once, at the root, then discarded.
-.pii-review.*.md
-
 # ⛔ EVERY DEMO IS LOCAL-ONLY BY DEFAULT. real evidence stays local; a demo
 # earns publication one allowlist line at a time, only after
 # `rhx doc.pseudonymize --verify` reports `survivors: 0`.
@@ -116,3 +110,6 @@ node_modules
 
 # local working notes — never published
 .agent/.notes/
+
+# a blocked pii review copies its report here; it can quote the flagged value
+.pii-review.*.md
