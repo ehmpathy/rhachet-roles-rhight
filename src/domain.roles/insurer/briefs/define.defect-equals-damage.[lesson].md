@@ -1,5 +1,7 @@
 # define.defect-equals-damage
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 when the defect IS the damage — no fire, no flood, no collapse — neither homeowners nor builder's risk insurance covers it. permit status is irrelevant.
@@ -451,6 +453,10 @@ owner-builders who do their own work have NO third-party to pursue:
 | why hire contractor? | their insurance covers their defects |
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

@@ -1,5 +1,7 @@
 # define.surplus-lines-mortgage-requirements
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 whether surplus lines insurance satisfies mortgage lender requirements.
@@ -153,6 +155,10 @@ the mortgage is protected. **you are not.**
 - `hazard.force-placed-insurance.[lesson].md` — what happens without coverage
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

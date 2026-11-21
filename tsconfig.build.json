@@ -13,6 +13,15 @@
     "**/*.test.js",
     "**/.test/**/*",
     "**/.scratch/**/*",
-    "**/__test*__/**/*" // todo: deprecate this pattern in favor of .test
+    "**/__test*__/**/*", // todo: deprecate this pattern in favor of .test
+
+    // ⚠️ `__test*__` matches NEITHER of these — the `__test` prefix is required.
+    //    rsync strips both from `dist/`; tsc did not, so a non-test `.ts` under
+    //    either would have compiled and shipped while its siblings were stripped.
+    //    zero such files exist today, so this closes an UNEXERCISED gap rather
+    //    than a live leak. clamped by [case3] of
+    //    src/publish.set.integration.test.ts.
+    "**/__fixtures__/**/*",
+    "**/__snapshots__/**/*"
   ]
 }

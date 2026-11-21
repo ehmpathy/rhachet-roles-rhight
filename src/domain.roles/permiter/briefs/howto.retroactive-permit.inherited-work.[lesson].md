@@ -1,5 +1,7 @@
 # howto.retroactive-permit.inherited-work
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 retroactive permit process for work done by a PREVIOUS OWNER that you inherited when you bought the property.
@@ -217,6 +219,10 @@ per `ref.indianapolis-electrical-retroactive-permit`:
 - [NJ Real Estate Network: How to legalize unpermitted work](https://www.newjerseyrealestatenetwork.com/blog/how-to-remediate-unpermitted-work/)
 - [Problem Property Pals: Get unpermitted work permitted](https://problempropertypals.com/blog/getting-unpermitted-work-permitted/)
 - [Greater Toronto Home Pros: Remediate unpermitted work](https://www.greatertorontohomepros.com/blog/remediating-unpermitted-work/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic how-to for a class of homeowners, drawn from public sources; no client identity.
 
 ## .date researched
 

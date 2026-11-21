@@ -1,5 +1,7 @@
 # ref.insurance-causation-doctrine.florida
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 Florida applies the **concurrent causation doctrine** for property damage claims with mixed causes.
@@ -45,6 +47,10 @@ if ACC language exists → denial likely.
 - read your policy for ACC language in exclusions
 - if mixed causation (storm + defect), Sebo may help
 - expect litigation for mixed causation claims
+
+## .publishability
+
+☀️ **fullsun** (share) — public state insurance-causation case law, cited to sources; no client identity or applied strategy.
 
 ## .sources
 

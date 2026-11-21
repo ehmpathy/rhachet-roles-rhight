@@ -428,7 +428,11 @@ when contractor abandons with permit open:
 
 ## disclaimer
 
-this guide is for informational purposes only and does not constitute legal advice. consult a licensed attorney for advice specific to your situation.
+this guide is for informational purposes only and is not legal advice. consult a licensed attorney for advice specific to your situation.
+
+## .publishability
+
+☀️ **fullsun** (share) — generic recourse guidance from public sources; no client identity or client-specific mechanic.
 
 ## .date researched
 

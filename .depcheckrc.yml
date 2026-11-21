@@ -30,6 +30,7 @@ ignores:
   - rhachet-roles-rhight
   - playwright
 ignore-patterns:
-  # actor brain dirs, linked in by `rhx enroll`; local to a host, never package code
+  # gitignored or host-local dirs (actor brain caches, linked brain dirs, temp clones); their imports are not ours
   - .agent/.actors
   - .claude
+  - .temp

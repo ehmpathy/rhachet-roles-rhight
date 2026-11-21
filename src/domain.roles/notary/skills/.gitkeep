@@ -1,0 +1,8 @@
+# notary is deliberately briefs-heavy, skills-light.
+#
+# a notarization is a human act, performed by a commissioned officer, in the
+# presence of the signer. there is very little here for a machine to do.
+#
+# document PRODUCTION — letterhead, a rendered signature, a signature placed
+# onto a pdf — belongs to `secretary`, not here. see readme.md for why that
+# boundary carries weight.

@@ -1,5 +1,7 @@
 # hazard.subtle-unpermitted-work
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .hazard
 
 invisible unpermitted work (electrical, plumbing, HVAC) creates latent insurance claim denial risk that surfaces only at claim time.
@@ -178,3 +180,7 @@ the hazard is real but rare. most claims get paid. the risk is:
 ## .bottom line
 
 assume any home has unpermitted work until you verify otherwise. the cost of permit research ($100-300) is trivial compared to a denied claim ($50k-500k+).
+
+## .publishability
+
+☀️ **fullsun** (share) — generic hazard brief over public case law and cited surveys; no client identity.

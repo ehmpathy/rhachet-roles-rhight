@@ -1,0 +1,315 @@
+The Delaware Code Online
+Toggle search
+Toggle navigation
+TITLE 8 > CHAPTER 1
+Authenticated PDF
+§ 201 § 202 § 203 § 204 § 205
+TITLE 8
+Corporations
+CHAPTER 1. General Corporation Law
+Subchapter VI. Stock Transfers
+§ 201. Transfer of stock, stock certificates and uncertificated stock.
+
+Except as otherwise provided in this chapter, the transfer of stock and the certificates of stock which represent the stock or uncertificated stock shall be governed by Article 8 of subtitle I of Title 6. To the extent that any provision of this chapter is inconsistent with any provision of subtitle I of Title 6, this chapter shall be controlling.
+
+8 Del. C. 1953, §  201;  56 Del. Laws, c. 50;  64 Del. Laws, c. 112, §  18; 
+
+
+§ 202. Restrictions on transfer and ownership of securities.
+
+(a) A written restriction or restrictions on the transfer or registration of transfer of a security of a corporation, or on the amount of the corporation’s securities that may be owned by any person or group of persons, if permitted by this section and noted conspicuously on the certificate or certificates representing the security or securities so restricted or, in the case of uncertificated shares, contained in the notice or notices given pursuant to § 151(f) of this title, may be enforced against the holder of the restricted security or securities or any successor or transferee of the holder including an executor, administrator, trustee, guardian or other fiduciary entrusted with like responsibility for the person or estate of the holder. Unless noted conspicuously on the certificate or certificates representing the security or securities so restricted or, in the case of uncertificated shares, contained in the notice or notices given pursuant to § 151(f) of this title, a restriction, even though permitted by this section, is ineffective except against a person with actual knowledge of the restriction.
+
+(b) A restriction on the transfer or registration of transfer of securities of a corporation, or on the amount of a corporation’s securities that may be owned by any person or group of persons, may be imposed by the certificate of incorporation or by the bylaws or by an agreement among any number of security holders or among such holders and the corporation. No restrictions so imposed shall be binding with respect to securities issued prior to the adoption of the restriction unless the holders of the securities are parties to an agreement or voted in favor of the restriction.
+
+(c) A restriction on the transfer or registration of transfer of securities of a corporation or on the amount of such securities that may be owned by any person or group of persons is permitted by this section if it:
+
+(1) Obligates the holder of the restricted securities to offer to the corporation or to any other holders of securities of the corporation or to any other person or to any combination of the foregoing, a prior opportunity, to be exercised within a reasonable time, to acquire the restricted securities; or
+
+(2) Obligates the corporation or any holder of securities of the corporation or any other person or any combination of the foregoing, to purchase the securities which are the subject of an agreement respecting the purchase and sale of the restricted securities; or
+
+(3) Requires the corporation or the holders of any class or series of securities of the corporation to consent to any proposed transfer of the restricted securities or to approve the proposed transferee of the restricted securities, or to approve the amount of securities of the corporation that may be owned by any person or group of persons; or
+
+(4) Obligates the holder of the restricted securities to sell or transfer an amount of restricted securities to the corporation or to any other holders of securities of the corporation or to any other person or to any combination of the foregoing, or causes or results in the automatic sale or transfer of an amount of restricted securities to the corporation or to any other holders of securities of the corporation or to any other person or to any combination of the foregoing; or
+
+(5) Prohibits or restricts the transfer of the restricted securities to, or the ownership of restricted securities by, designated persons or classes of persons or groups of persons, and such designation is not manifestly unreasonable.
+
+(d) Any restriction on the transfer or the registration of transfer of the securities of a corporation, or on the amount of securities of a corporation that may be owned by a person or group of persons, for any of the following purposes shall be conclusively presumed to be for a reasonable purpose:
+
+(1) Maintaining any local, state, federal or foreign tax advantage to the corporation or its stockholders, including without limitation:
+
+a. Maintaining the corporation’s status as an electing small business corporation under subchapter S of the United States Internal Revenue Code [26 U.S.C. § 1371 et seq.], or
+
+b. Maintaining or preserving any tax attribute (including without limitation net operating losses), or
+
+c. Qualifying or maintaining the qualification of the corporation as a real estate investment trust pursuant to the United States Internal Revenue Code or regulations adopted pursuant to the United States Internal Revenue Code, or
+
+(2) Maintaining any statutory or regulatory advantage or complying with any statutory or regulatory requirements under applicable local, state, federal or foreign law.
+
+(e) Any other lawful restriction on transfer or registration of transfer of securities, or on the amount of securities that may be owned by any person or group of persons, is permitted by this section.
+
+8 Del. C. 1953, §  202;  56 Del. Laws, c. 50;  56 Del. Laws, c. 186, §  11;  64 Del. Laws, c. 112, §§  19, 20;  72 Del. Laws, c. 123, §  4;  81 Del. Laws, c. 86, § 2; 
+
+
+§ 203. Business combinations with interested stockholders.
+
+(a) Notwithstanding any other provisions of this chapter, a corporation shall not engage in any business combination with any interested stockholder for a period of 3 years following the time that such stockholder became an interested stockholder, unless:
+
+(1) Prior to such time the board of directors of the corporation approved either the business combination or the transaction which resulted in the stockholder becoming an interested stockholder;
+
+(2) Upon consummation of the transaction which resulted in the stockholder becoming an interested stockholder, the interested stockholder owned at least 85% of the voting stock of the corporation outstanding at the time the transaction commenced, excluding for purposes of determining the voting stock outstanding (but not the outstanding voting stock owned by the interested stockholder) those shares owned (i) by persons who are directors and also officers and (ii) employee stock plans in which employee participants do not have the right to determine confidentially whether shares held subject to the plan will be tendered in a tender or exchange offer; or
+
+(3) At or subsequent to such time the business combination is approved by the board of directors and authorized at an annual or special meeting of stockholders, and not by written consent, by the affirmative vote of at least 662/3% of the outstanding voting stock which is not owned by the interested stockholder.
+
+(b) The restrictions contained in this section shall not apply if:
+
+(1) The corporation’s original certificate of incorporation contains a provision expressly electing not to be governed by this section;
+
+(2) The corporation, by action of its board of directors, adopts an amendment to its bylaws within 90 days of February 2, 1988, expressly electing not to be governed by this section, which amendment shall not be further amended by the board of directors;
+
+(3) The corporation, by action of its stockholders, adopts an amendment to its certificate of incorporation or bylaws expressly electing not to be governed by this section; provided that, in addition to any other vote required by law, such amendment to the certificate of incorporation or bylaws must be adopted by the affirmative vote of a majority of the outstanding stock entitled to vote thereon. In the case of a corporation that both (i) has never had a class of voting stock that falls within any of the 2 categories set out in paragraph (b)(4) of this section, and (ii) has not elected by a provision in its original certificate of incorporation or any amendment thereto to be governed by this section, such amendment shall become effective upon (i) in the case of an amendment to the certificate of incorporation, the date and time at which the certificate filed in accordance with § 103 of this title becomes effective thereunder or (ii) in the case of an amendment to the bylaws, the date of the adoption of such amendment. In all other cases, an amendment adopted pursuant to this paragraph shall become effective (i) in the case of an amendment to the certificate of incorporation, 12 months after the date and time at which the certificate filed in accordance with § 103 of this title becomes effective thereunder or (ii) in the case of an amendment to the bylaws, 12 months after the date of the adoption of such amendment, and, in either case, the election not to be governed by this section shall not apply to any business combination between such corporation and any person who became an interested stockholder of such corporation on or before (A) in the case of an amendment to the certificate of incorporation, the date and time at which the certificate filed in accordance with § 103 of this title becomes effective thereunder; or (B) in the case of an amendment to the bylaws, the date of the adoption of such amendment. A bylaw amendment adopted pursuant to this paragraph shall not be further amended by the board of directors;
+
+(4) The corporation does not have a class of voting stock that is: (i) Listed on a national securities exchange; or (ii) held of record by more than 2,000 stockholders, unless any of the foregoing results from action taken, directly or indirectly, by an interested stockholder or from a transaction in which a person becomes an interested stockholder;
+
+(5) A stockholder becomes an interested stockholder inadvertently and (i) as soon as practicable divests itself of ownership of sufficient shares so that the stockholder ceases to be an interested stockholder; and (ii) would not, at any time within the 3-year period immediately prior to a business combination between the corporation and such stockholder, have been an interested stockholder but for the inadvertent acquisition of ownership;
+
+(6) The business combination is proposed prior to the consummation or abandonment of and subsequent to the earlier of the public announcement or the notice required hereunder of a proposed transaction which (i) constitutes 1 of the transactions described in the second sentence of this paragraph; (ii) is with or by a person who either was not an interested stockholder during the previous 3 years or who became an interested stockholder with the approval of the corporation’s board of directors or during the period described in paragraph (b)(7) of this section; and (iii) is approved or not opposed by a majority of the members of the board of directors then in office (but not less than 1) who were directors prior to any person becoming an interested stockholder during the previous 3 years or were recommended for election or elected to succeed such directors by a majority of such directors. The proposed transactions referred to in the preceding sentence are limited to (x) a merger or consolidation of the corporation (except for a merger in respect of which, pursuant to § 251(f) of this title, no vote of the stockholders of the corporation is required); (y) a sale, lease, exchange, mortgage, pledge, transfer or other disposition (in 1 transaction or a series of transactions), whether as part of a dissolution or otherwise, of assets of the corporation or of any direct or indirect majority-owned subsidiary of the corporation (other than to any direct or indirect wholly-owned subsidiary or to the corporation) having an aggregate market value equal to 50% or more of either that aggregate market value of all of the assets of the corporation determined on a consolidated basis or the aggregate market value of all the outstanding stock of the corporation; or (z) a proposed tender or exchange offer for 50% or more of the outstanding voting stock of the corporation. The corporation shall give not less than 20 days’ notice to all interested stockholders prior to the consummation of any of the transactions described in clause (x) or (y) of the second sentence of this paragraph; or
+
+(7) The business combination is with an interested stockholder who became an interested stockholder at a time when the restrictions contained in this section did not apply by reason of any of paragraphs (b)(1) through (4) of this section, provided, however, that this paragraph (b)(7) shall not apply if, at the time such interested stockholder became an interested stockholder, the corporation’s certificate of incorporation contained a provision authorized by the last sentence of this subsection (b).
+
+Notwithstanding paragraphs (b)(1), (2), (3) and (4) of this section, a corporation may elect by a provision of its original certificate of incorporation or any amendment thereto to be governed by this section; provided that any such amendment to the certificate of incorporation shall not apply to restrict a business combination between the corporation and an interested stockholder of the corporation if the interested stockholder became such before the date and time at which the certificate filed in accordance with § 103 of this title becomes effective thereunder.
+
+(c) As used in this section only, the term:
+
+(1) “Affiliate” means a person that directly, or indirectly through 1 or more intermediaries, controls, or is controlled by, or is under common control with, another person.
+
+(2) “Associate,” when used to indicate a relationship with any person, means: (i) Any corporation, partnership, unincorporated association or other entity of which such person is a director, officer or partner or is, directly or indirectly, the owner of 20% or more of any class of voting stock; (ii) any trust or other estate in which such person has at least a 20% beneficial interest or as to which such person serves as trustee or in a similar fiduciary capacity; and (iii) any relative or spouse of such person, or any relative of such spouse, who has the same residence as such person.
+
+(3) “Business combination,” when used in reference to any corporation and any interested stockholder of such corporation, means:
+
+(i) Any merger or consolidation of the corporation or any direct or indirect majority-owned subsidiary of the corporation with (A) the interested stockholder, or (B) with any other corporation, partnership, unincorporated association or other entity if the merger or consolidation is caused by the interested stockholder and as a result of such merger or consolidation subsection (a) of this section is not applicable to the surviving entity;
+
+(ii) Any sale, lease, exchange, mortgage, pledge, transfer or other disposition (in 1 transaction or a series of transactions), except proportionately as a stockholder of such corporation, to or with the interested stockholder, whether as part of a dissolution or otherwise, of assets of the corporation or of any direct or indirect majority-owned subsidiary of the corporation which assets have an aggregate market value equal to 10% or more of either the aggregate market value of all the assets of the corporation determined on a consolidated basis or the aggregate market value of all the outstanding stock of the corporation;
+
+(iii) Any transaction which results in the issuance or transfer by the corporation or by any direct or indirect majority-owned subsidiary of the corporation of any stock of the corporation or of such subsidiary to the interested stockholder, except: (A) Pursuant to the exercise, exchange or conversion of securities exercisable for, exchangeable for or convertible into stock of such corporation or any such subsidiary which securities were outstanding prior to the time that the interested stockholder became such; (B) pursuant to a merger under § 251(g) of this title; (C) pursuant to a dividend or distribution paid or made, or the exercise, exchange or conversion of securities exercisable for, exchangeable for or convertible into stock of such corporation or any such subsidiary which security is distributed, pro rata to all holders of a class or series of stock of such corporation subsequent to the time the interested stockholder became such; (D) pursuant to an exchange offer by the corporation to purchase stock made on the same terms to all holders of said stock; or (E) any issuance or transfer of stock by the corporation; provided however, that in no case under items (C)-(E) of this subparagraph shall there be an increase in the interested stockholder’s proportionate share of the stock of any class or series of the corporation or of the voting stock of the corporation;
+
+(iv) Any transaction involving the corporation or any direct or indirect majority-owned subsidiary of the corporation which has the effect, directly or indirectly, of increasing the proportionate share of the stock of any class or series, or securities convertible into the stock of any class or series, of the corporation or of any such subsidiary which is owned by the interested stockholder, except as a result of immaterial changes due to fractional share adjustments or as a result of any purchase or redemption of any shares of stock not caused, directly or indirectly, by the interested stockholder; or
+
+(v) Any receipt by the interested stockholder of the benefit, directly or indirectly (except proportionately as a stockholder of such corporation), of any loans, advances, guarantees, pledges or other financial benefits (other than those expressly permitted in paragraphs (c)(3)(i)-(iv) of this section) provided by or through the corporation or any direct or indirect majority-owned subsidiary.
+
+(4) “Control,” including the terms “controlling,” “controlled by” and “under common control with,” means the possession, directly or indirectly, of the power to direct or cause the direction of the management and policies of a person, whether through the ownership of voting stock, by contract or otherwise. A person who is the owner of 20% or more of the outstanding voting stock of any corporation, partnership, unincorporated association or other entity shall be presumed to have control of such entity, in the absence of proof by a preponderance of the evidence to the contrary; Notwithstanding the foregoing, a presumption of control shall not apply where such person holds voting stock, in good faith and not for the purpose of circumventing this section, as an agent, bank, broker, nominee, custodian or trustee for 1 or more owners who do not individually or as a group have control of such entity.
+
+(5) “Interested stockholder” means any person (other than the corporation and any direct or indirect majority-owned subsidiary of the corporation) that (i) is the owner of 15% or more of the outstanding voting stock of the corporation, or (ii) is an affiliate or associate of the corporation and was the owner of 15% or more of the outstanding voting stock of the corporation at any time within the 3-year period immediately prior to the date on which it is sought to be determined whether such person is an interested stockholder, and the affiliates and associates of such person; provided, however, that the term “interested stockholder” shall not include (x) any person who (A) owned shares in excess of the 15% limitation set forth herein as of, or acquired such shares pursuant to a tender offer commenced prior to, December 23, 1987, or pursuant to an exchange offer announced prior to the aforesaid date and commenced within 90 days thereafter and either (I) continued to own shares in excess of such 15% limitation or would have but for action by the corporation or (II) is an affiliate or associate of the corporation and so continued (or so would have continued but for action by the corporation) to be the owner of 15% or more of the outstanding voting stock of the corporation at any time within the 3-year period immediately prior to the date on which it is sought to be determined whether such a person is an interested stockholder or (B) acquired said shares from a person described in item (A) of this paragraph by gift, inheritance or in a transaction in which no consideration was exchanged; or (y) any person whose ownership of shares in excess of the 15% limitation set forth herein is the result of action taken solely by the corporation; provided that such person shall be an interested stockholder if thereafter such person acquires additional shares of voting stock of the corporation, except as a result of further corporate action not caused, directly or indirectly, by such person. For the purpose of determining whether a person is an interested stockholder, the voting stock of the corporation deemed to be outstanding shall include stock deemed to be owned by the person through application of paragraph (9) of this subsection but shall not include any other unissued stock of such corporation which may be issuable pursuant to any agreement, arrangement or understanding, or upon exercise of conversion rights, warrants or options, or otherwise.
+
+(6) “Person” means any individual, corporation, partnership, unincorporated association or other entity.
+
+(7) “Stock” means, with respect to any corporation, capital stock and, with respect to any other entity, any equity interest.
+
+(8) “Voting stock” means, with respect to any corporation, stock of any class or series entitled to vote generally in the election of directors and, with respect to any entity that is not a corporation, any equity interest entitled to vote generally in the election of the governing body of such entity. Every reference to a percentage of voting stock shall refer to such percentage of the votes of such voting stock.
+
+(9) “Owner,” including the terms “own” and “owned,” when used with respect to any stock, means a person that individually or with or through any of its affiliates or associates:
+
+(i) Beneficially owns such stock, directly or indirectly; or
+
+(ii) Has (A) the right to acquire such stock (whether such right is exercisable immediately or only after the passage of time) pursuant to any agreement, arrangement or understanding, or upon the exercise of conversion rights, exchange rights, warrants or options, or otherwise; provided, however, that a person shall not be deemed the owner of stock tendered pursuant to a tender or exchange offer made by such person or any of such person’s affiliates or associates until such tendered stock is accepted for purchase or exchange; or (B) the right to vote such stock pursuant to any agreement, arrangement or understanding; provided, however, that a person shall not be deemed the owner of any stock because of such person’s right to vote such stock if the agreement, arrangement or understanding to vote such stock arises solely from a revocable proxy or consent given in response to a proxy or consent solicitation made to 10 or more persons; or
+
+(iii) Has any agreement, arrangement or understanding for the purpose of acquiring, holding, voting (except voting pursuant to a revocable proxy or consent as described in item (B) of subparagraph (ii) of this paragraph), or disposing of such stock with any other person that beneficially owns, or whose affiliates or associates beneficially own, directly or indirectly, such stock.
+
+(d) No provision of a certificate of incorporation or bylaw shall require, for any vote of stockholders required by this section, a greater vote of stockholders than that specified in this section.
+
+(e) The Court of Chancery is hereby vested with exclusive jurisdiction to hear and determine all matters with respect to this section.
+
+66 Del. Laws, c. 204, §  1;  70 Del. Laws, c. 79, §§  8-10;  73 Del. Laws, c. 298, §§  4-6;  76 Del. Laws, c. 145, §  2;  81 Del. Laws, c. 86, §§ 3, 4; 
+
+
+§ 204. Ratification of defective corporate acts and stock [For application of this section, see 80 Del. Laws, c. 40, § 16, and 81 Del. Laws, c. 354, §  16].
+
+(a) Subject to subsection (f) of this section, no defective corporate act or putative stock shall be void or voidable solely as a result of a failure of authorization if ratified as provided in this section or validated by the Court of Chancery in a proceeding brought under § 205 of this title.
+
+(b) (1) In order to ratify 1 or more defective corporate acts pursuant to this section (other than the ratification of an election of the initial board of directors pursuant to paragraph (b)(2) of this section), the board of directors of the corporation shall adopt resolutions stating:
+
+(A) The defective corporate act or acts to be ratified;
+
+(B) The date of each defective corporate act or acts;
+
+(C) If such defective corporate act or acts involved the issuance of shares of putative stock, the number and type of shares of putative stock issued and the date or dates upon which such putative shares were purported to have been issued;
+
+(D) The nature of the failure of authorization in respect of each defective corporate act to be ratified; and
+
+(E) That the board of directors approves the ratification of the defective corporate act or acts.
+
+Such resolutions may also provide that, at any time before the validation effective time in respect of any defective corporate act set forth therein, notwithstanding the approval of the ratification of such defective corporate act by stockholders, the board of directors may abandon the ratification of such defective corporate act without further action of the stockholders. The quorum and voting requirements applicable to the ratification by the board of directors of any defective corporate act shall be the quorum and voting requirements applicable to the type of defective corporate act proposed to be ratified at the time the board adopts the resolutions ratifying the defective corporate act; provided that if the certificate of incorporation or bylaws of the corporation, any plan or agreement to which the corporation was a party or any provision of this title, in each case as in effect as of the time of the defective corporate act, would have required a larger number or portion of directors or of specified directors for a quorum to be present or to approve the defective corporate act, such larger number or portion of such directors or such specified directors shall be required for a quorum to be present or to adopt the resolutions to ratify the defective corporate act, as applicable, except that the presence or approval of any director elected, appointed or nominated by holders of any class or series of which no shares are then outstanding, or by any person that is no longer a stockholder, shall not be required.
+
+(2) In order to ratify a defective corporate act in respect of the election of the initial board of directors of the corporation pursuant to § 108 of this title, a majority of the persons who, at the time the resolutions required by this paragraph (b)(2) of this section are adopted, are exercising the powers of directors under claim and color of an election or appointment as such may adopt resolutions stating:
+
+(A) The name of the person or persons who first took action in the name of the corporation as the initial board of directors of the corporation;
+
+(B) The earlier of the date on which such persons first took such action or were purported to have been elected as the initial board of directors; and
+
+(C) That the ratification of the election of such person or persons as the initial board of directors is approved.
+
+(c) Each defective corporate act ratified pursuant to paragraph (b)(1) of this section shall be submitted to stockholders for approval as provided in subsection (d) of this section, unless:
+
+(1) (A) No other provision of this title, and no provision of the certificate of incorporation or bylaws of the corporation, or of any plan or agreement to which the corporation is a party, would have required stockholder approval of such defective corporate act to be ratified, either at the time of such defective corporate act or at the time the board of directors adopts the resolutions ratifying such defective corporate act pursuant to paragraph (b)(1) of this section; and
+
+(B) Such defective corporate act did not result from a failure to comply with § 203 of this title; or
+
+(2) As of the adoption of the resolutions of the board of directors adopted pursuant to paragraph (b)(1) of this section, there are no shares of valid stock outstanding and entitled to vote thereon, regardless of whether there then exist any shares of putative stock.
+
+(d) (1) If the ratification of a defective corporate act is required to be submitted to stockholders for approval pursuant to subsection (c) of this section, due notice of the time, place, if any, and purpose of the meeting shall be given at least 20 days before the date of the meeting to each holder of valid stock and putative stock, whether voting or nonvoting, at the address of such holder as it appears or most recently appeared, as appropriate, on the records of the corporation.
+
+(2) The notice shall also be given to the holders of record of valid stock and putative stock, whether voting or nonvoting, as of the time of the defective corporate act (or, in the case of any defective corporate act that involved the establishment of a record date for notice of or voting at any meeting of stockholders, for action by written consent of stockholders in lieu of a meeting, or for any other purpose, the record date for notice of or voting at such meeting, the record date for action by written consent, or the record date for such other action, as the case may be), other than holders whose identities or addresses cannot be determined from the records of the corporation.
+
+(3) The notice shall contain a copy of the resolutions adopted by the board of directors pursuant to paragraph (b)(1) of this section or the information required by paragraphs (b)(1)(A) through (E) of this section and a statement that any claim that the defective corporate act or putative stock ratified hereunder is void or voidable due to the failure of authorization, or that the Court of Chancery should declare in its discretion that a ratification in accordance with this section not be effective or be effective only on certain conditions must be brought within 120 days from the applicable validation effective time.
+
+(4) At such meeting, the quorum and voting requirements applicable to ratification of such defective corporate act shall be the quorum and voting requirements applicable to the type of defective corporate act proposed to be ratified at the time of the approval of the ratification, except that:
+
+a. If the certificate of incorporation or bylaws of the corporation, any plan or agreement to which the corporation was a party or any provision of this title in effect as of the time of the defective corporate act would have required a larger number or portion of stock or of any class or series thereof or of specified stockholders for a quorum to be present or to approve the defective corporate act, the presence or approval of such larger number or portion of stock or of such class or series thereof or of such specified stockholders shall be required for a quorum to be present or to approve the ratification of the defective corporate act, as applicable, except that the presence or approval of shares of any class or series of which no shares are then outstanding, or of any person that is no longer a stockholder, shall not be required;
+
+b. The approval by stockholders of the ratification of the election of a director shall require the affirmative vote of the majority of shares present at the meeting and entitled to vote on the election of such director, except that if the certificate of incorporation or bylaws of the corporation then in effect or in effect at the time of the defective election require or required a larger number or portion of stock or of any class or series thereof or of specified stockholders to elect such director, the affirmative vote of such larger number or portion of stock or of any class or series thereof or of such specified stockholders shall be required to ratify the election of such director, except that the presence or approval of shares of any class or series of which no shares are then outstanding, or of any person that is no longer a stockholder, shall not be required; and
+
+c. In the event of a failure of authorization resulting from failure to comply with the provisions of § 203 of this title, the ratification of the defective corporate act shall require the vote set forth in § 203(a)(3) of this title, regardless of whether such vote would have otherwise been required.
+
+(5) Shares of putative stock as of the adoption by the board of directors of resolutions pursuant to paragraph (b)(1) of this section (and without giving effect to any ratification that becomes effective after such adoption) shall neither be entitled to vote nor counted for quorum purposes in any vote to ratify any defective corporate act.
+
+(e) (1) If a defective corporate act ratified pursuant to this section would have required under any other section of this title the filing of a certificate in accordance with § 103 of this title, and either (i) such certificate requires any change to give effect to the defective corporate act in accordance with this section (including a change to the date and time of the effectiveness of such certificate) or (ii) a certificate was not previously filed under § 103 of this title in respect of the defective corporate act, then, in lieu of filing the certificate otherwise required by this title, the corporation shall file a certificate of validation with respect to such defective corporate act in accordance with § 103 of this title.
+
+(2) A separate certificate of validation shall be required for each defective corporate act requiring the filing of a certificate of validation under this section, except that (i) 2 or more defective corporate acts may be included in a single certificate of validation if the corporation filed, or to comply with this title would have filed, a single certificate under another provision of this title to effect such acts, and (ii) 2 or more overissues of shares of any class, classes or series of stock may be included in a single certificate of validation, provided that the increase in the number of authorized shares of each such class or series set forth in the certificate of validation shall be effective as of the date of the first such overissue.
+
+(3) The certificate of validation shall set forth:
+
+a. That the corporation has ratified 1 or more defective corporate acts that would have required the filing of a certificate under § 103 of this title;
+
+b. That each such defective corporate act has been ratified in accordance with this section; and
+
+c. The information required by 1 of the following paragraphs:
+
+1. If a certificate was previously filed under § 103 of this title in respect of the defective corporate act and such certificate requires any change to give effect to the defective corporate act in accordance with this section (including a change to the date and time of the effectiveness of such certificate), the certificate of validation shall set forth:
+
+A. The name, title and filing date of the certificate so previously filed and of any certificate of correction thereto;
+
+B. A statement that a certificate containing all of the information required to be included under the applicable section or sections of this title to give effect to the defective corporate act is attached as an exhibit to the certificate of validation; and
+
+C. The date and time that such certificate shall be deemed to have become effective pursuant to this section; or
+
+2. If a certificate was not previously filed under § 103 of this title in respect of the defective corporate act and the defective corporate act ratified pursuant to this section would have required under any other section of this title the filing of a certificate in accordance with § 103 of this title, the certificate of validation shall set forth:
+
+A. A statement that a certificate containing all of the information required to be included under the applicable section or sections of this title to give effect to the defective corporate act is attached as an exhibit to the certificate of validation, and
+
+B. The date and time that such certificate shall be deemed to have become effective pursuant to this section.
+
+(4) A certificate attached to a certificate of validation need not be separately executed and acknowledged and need not include any statement required by any other section of this title that such instrument has been approved and adopted in accordance with the provisions of such other section.
+
+(f) From and after the validation effective time, unless otherwise determined in an action brought pursuant to § 205 of this title:
+
+(1) Subject to the last sentence of subsection (d) of this section, each defective corporate act ratified in accordance with this section shall no longer be deemed void or voidable as a result of the failure of authorization described in the resolutions adopted pursuant to subsection (b) of this section and such effect shall be retroactive to the time of the defective corporate act; and
+
+(2) Subject to the last sentence of subsection (d) of this section, each share or fraction of a share of putative stock issued or purportedly issued pursuant to any such defective corporate act shall no longer be deemed void or voidable and shall be deemed to be an identical share or fraction of a share of outstanding stock as of the time it was purportedly issued.
+
+(g) In respect of each defective corporate act ratified by the board of directors pursuant to subsection (b) of this section, prompt notice of the ratification shall be given to all holders of valid stock and putative stock, whether voting or nonvoting, as of the date the board of directors adopts the resolutions approving such defective corporate act, or as of a date within 60 days after such date of adoption, as established by the board of directors, at the address of such holder as it appears or most recently appeared, as appropriate, on the records of the corporation. The notice shall also be given to the holders of record of valid stock and putative stock, whether voting or nonvoting, as of the time of the defective corporate act, other than holders whose identities or addresses cannot be determined from the records of the corporation. The notice shall contain a copy of the resolutions adopted pursuant to subsection (b) of this section or the information specified in paragraphs (b)(1)(A) through (E) or paragraphs (b)(2)(A) through (C) of this section, as applicable, and a statement that any claim that the defective corporate act or putative stock ratified hereunder is void or voidable due to the failure of authorization, or that the Court of Chancery should declare in its discretion that a ratification in accordance with this section not be effective or be effective only on certain conditions must be brought within 120 days from the later of the validation effective time or the time at which the notice required by this subsection is given. Notwithstanding the foregoing, (i) no such notice shall be required if notice of the ratification of the defective corporate act is to be given in accordance with subsection (d) of this section, and (ii) in the case of a corporation that has a class of stock listed on a national securities exchange, the notice required by this subsection and subsection (d) of this section may be deemed given if disclosed in a document publicly filed by the corporation with the Securities and Exchange Commission pursuant to § 13, § 14 or § 15(d) (15 U.S.C. § 78m, § 77n or § 78o(d)) of the Securities Exchange Act of 1934, as amended, and the rules and regulations promulgated thereunder, or the corresponding provisions of any subsequent United States federal securities laws, rules or regulations. If any defective corporate act has been approved by stockholders acting pursuant to § 228 of this title, the notice required by this subsection may be included in any notice required to be given pursuant to § 228(e) of this title and, if so given, shall be sent to the stockholders entitled thereto under § 228(e) and to all holders of valid and putative stock to whom notice would be required under this subsection if the defective corporate act had been approved at a meeting and the record date for determining the stockholders entitled to notice of such meeting had been the date for determining the stockholders entitled to notice under the first sentence of this subsection other than any stockholder who approved the action by consent in lieu of a meeting pursuant to § 228 of this title or any holder of putative stock who otherwise consented thereto in writing. Solely for purposes of subsection (d) of this section and this subsection, notice to holders of putative stock, and notice to holders of valid stock and putative stock as of the time of the defective corporate act, shall be treated as notice to holders of valid stock for purposes of §§ 222 and 228, 229, 230, 232 and 233 of this title.
+
+(h) As used in this section and in § 205 of this title only, the term:
+
+(1) “Defective corporate act” means an overissue, an election or appointment of directors that is void or voidable due to a failure of authorization, or any act or transaction purportedly taken by or on behalf of the corporation that is, and at the time such act or transaction was purportedly taken would have been, within the power of a corporation under subchapter II of this chapter (without regard to the failure of authorization identified in § 204(b)(1)(D) of this title), but is void or voidable due to a failure of authorization;
+
+(2) “Failure of authorization” means: (i) the failure to authorize or effect an act or transaction in compliance with (A) the provisions of this title, (B) the certificate of incorporation or bylaws of the corporation, or (C) any plan or agreement to which the corporation is a party or the disclosure set forth in any proxy or consent solicitation statement, if and to the extent such failure would render such act or transaction void or voidable; or (ii) the failure of the board of directors or any officer of the corporation to authorize or approve any act or transaction taken by or on behalf of the corporation that would have required for its due authorization the approval of the board of directors or such officer;
+
+(3) “Overissue” means the purported issuance of:
+
+a. Shares of capital stock of a class or series in excess of the number of shares of such class or series the corporation has the power to issue under § 161 of this title at the time of such issuance; or
+
+b. Shares of any class or series of capital stock that is not then authorized for issuance by the certificate of incorporation of the corporation;
+
+(4) “Putative stock” means the shares of any class or series of capital stock of the corporation (including shares issued upon exercise of options, rights, warrants or other securities convertible into shares of capital stock of the corporation, or interests with respect thereto that were created or issued pursuant to a defective corporate act) that:
+
+a. But for any failure of authorization, would constitute valid stock; or
+
+b. Cannot be determined by the board of directors to be valid stock;
+
+(5) “Time of the defective corporate act” means the date and time the defective corporate act was purported to have been taken;
+
+(6) “Validation effective time,” with respect to any defective corporate act ratified pursuant to this section, means the latest of:
+
+a. The time at which the defective corporate act submitted to the stockholders for approval pursuant to subsection (c) of this section is approved by such stockholders or if no such vote of stockholders is required to approve the ratification of the defective corporate act, immediately following the time at which the board of directors adopts the resolutions required by paragraph (b)(1) or (b)(2) of this section;
+
+b. Where no certificate of validation is required to be filed pursuant to subsection (e) of this section, the time, if any, specified by the board of directors in the resolutions adopted pursuant to paragraph (b)(1) or (b)(2) of this section, which time shall not precede the time at which such resolutions are adopted; and
+
+c. The time at which any certificate of validation filed pursuant to subsection (e) of this section shall become effective in accordance with § 103 of this title.
+
+(7) “Valid stock” means the shares of any class or series of capital stock of the corporation that have been duly authorized and validly issued in accordance with this title.
+
+In the absence of actual fraud in the transaction, the judgment of the board of directors that shares of stock are valid stock or putative stock shall be conclusive, unless otherwise determined by the Court of Chancery in a proceeding brought pursuant to § 205 of this title.
+
+(i) Ratification under this section or validation under § 205 of this title shall not be deemed to be the exclusive means of ratifying or validating any act or transaction taken by or on behalf of the corporation, including any defective corporate act, or any issuance of stock, including any putative stock, or of adopting or endorsing any act or transaction taken by or in the name of the corporation prior to the commencement of its existence, and the absence or failure of ratification in accordance with either this section or validation under § 205 of this title shall not, of itself, affect the validity or effectiveness of any act or transaction or the issuance of any stock properly ratified under common law or otherwise, nor shall it create a presumption that any such act or transaction is or was a defective corporate act or that such stock is void or voidable.
+
+79 Del. Laws, c. 72, §  4;  80 Del. Laws, c. 40, §  8;  81 Del. Laws, c. 354, §§ 4-8;  84 Del. Laws, c. 98, § 5; 
+
+
+§ 205. Proceedings regarding validity of defective corporate acts and stock [For application of this section, see 80 Del. Laws, c. 40, § 16].
+
+(a) Subject to subsection (f) of this section, upon application by the corporation, any successor entity to the corporation, any member of the board of directors, any record or beneficial holder of valid stock or putative stock, any record or beneficial holder of valid or putative stock as of the time of a defective corporate act ratified pursuant to § 204 of this title, or any other person claiming to be substantially and adversely affected by a ratification pursuant to § 204 of this title, the Court of Chancery may:
+
+(1) Determine the validity and effectiveness of any defective corporate act ratified pursuant to § 204 of this title;
+
+(2) Determine the validity and effectiveness of the ratification of any defective corporate act pursuant to § 204 of this title;
+
+(3) Determine the validity and effectiveness of any defective corporate act not ratified or not ratified effectively pursuant to § 204 of this title;
+
+(4) Determine the validity of any corporate act or transaction and any stock, rights or options to acquire stock; and
+
+(5) Modify or waive any of the procedures set forth in § 204 of this title to ratify a defective corporate act.
+
+(b) In connection with an action under this section, the Court of Chancery may:
+
+(1) Declare that a ratification in accordance with and pursuant to § 204 of this title is not effective or shall only be effective at a time or upon conditions established by the Court;
+
+(2) Validate and declare effective any defective corporate act or putative stock and impose conditions upon such validation by the Court;
+
+(3) Require measures to remedy or avoid harm to any person substantially and adversely affected by a ratification pursuant to § 204 of this title or from any order of the Court pursuant to this section, excluding any harm that would have resulted if the defective corporate act had been valid when approved or effectuated;
+
+(4) Order the Secretary of State to accept an instrument for filing with an effective time specified by the Court, which effective time may be prior or subsequent to the time of such order, provided that the filing date of such instrument shall be determined in accordance with § 103(c)(3) of this title;
+
+(5) Approve a stock ledger for the corporation that includes any stock ratified or validated in accordance with this section or with § 204 of this title;
+
+(6) Declare that shares of putative stock are shares of valid stock or require a corporation to issue and deliver shares of valid stock in place of any shares of putative stock;
+
+(7) Order that a meeting of holders of valid stock or putative stock be held and exercise the powers provided to the Court under § 227 of this title with respect to such a meeting;
+
+(8) Declare that a defective corporate act validated by the Court shall be effective as of the time of the defective corporate act or at such other time as the Court shall determine;
+
+(9) Declare that putative stock validated by the Court shall be deemed to be an identical share or fraction of a share of valid stock as of the time originally issued or purportedly issued or at such other time as the Court shall determine; and
+
+(10) Make such other orders regarding such matters as it deems proper under the circumstances.
+
+(c) Service of the application under subsection (a) of this section upon the registered agent of the corporation shall be deemed to be service upon the corporation, and no other party need be joined in order for the Court of Chancery to adjudicate the matter. In an action filed by the corporation, the Court may require notice of the action be provided to other persons specified by the Court and permit such other persons to intervene in the action.
+
+(d) In connection with the resolution of matters pursuant to subsections (a) and (b) of this section, the Court of Chancery may consider the following:
+
+(1) Whether the defective corporate act was originally approved or effectuated with the belief that the approval or effectuation was in compliance with the provisions of this title, the certificate of incorporation or bylaws of the corporation;
+
+(2) Whether the corporation and board of directors has treated the defective corporate act as a valid act or transaction and whether any person has acted in reliance on the public record that such defective corporate act was valid;
+
+(3) Whether any person will be or was harmed by the ratification or validation of the defective corporate act, excluding any harm that would have resulted if the defective corporate act had been valid when approved or effectuated;
+
+(4) Whether any person will be harmed by the failure to ratify or validate the defective corporate act; and
+
+(5) Any other factors or considerations the Court deems just and equitable.
+
+(e) The Court of Chancery is hereby vested with exclusive jurisdiction to hear and determine all actions brought under this section.
+
+(f) Notwithstanding any other provision of this section, no action asserting:
+
+(1) That a defective corporate act or putative stock ratified in accordance with § 204 of this title is void or voidable due to a failure of authorization identified in the resolution adopted in accordance with 204(b) of this title; or
+
+(2) That the Court of Chancery should declare in its discretion that a ratification in accordance with § 204 of this title not be effective or be effective only on certain conditions,
+
+may be brought after the expiration of 120 days from the later of the validation effective time and the time notice, if any, that is required to be given pursuant to § 204(g) of this title is given with respect to such ratification, except that this subsection shall not apply to an action asserting that a ratification was not accomplished in accordance with § 204 of this title or to any person to whom notice of the ratification was required to have been given pursuant to § 204(d) or (g) of this title, but to whom such notice was not given.
+
+79 Del. Laws, c. 72, §  5;  80 Del. Laws, c. 40, §  9; 
+
+
+Delaware General Assembly
+Judicial
+Executive
+Contact
+Twitter
+Help

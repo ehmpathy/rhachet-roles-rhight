@@ -1,5 +1,7 @@
 # define.carrier-access.aggregators.insurance-agent
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 insurance aggregators, clusters, and networks are organizations that pool independent agents' premiums and resources to access carriers and products they could not obtain individually, providing an alternative path to carrier appointments for agents who cannot meet production minimums on their own.
@@ -423,3 +425,7 @@ agents may be restricted from carrier relationships outside the network.
 - define.wholesaler-access-requirements.insurance-agent — wholesale and MGA access
 - define.purpose-of-insurance-agent-licenses — why licenses exist
 - define.insurance-agent-license-process — how to obtain a license
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public insurance-market analysis; no client identity or client-specific mechanic.

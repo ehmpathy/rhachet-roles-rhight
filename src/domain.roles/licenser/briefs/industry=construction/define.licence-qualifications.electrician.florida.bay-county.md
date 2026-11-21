@@ -1,5 +1,7 @@
 # define.licence-qualifications.electrician.florida.bay-county
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 requirements to obtain an electrician licence in Bay County, Florida (Panama City area).
@@ -117,6 +119,10 @@ to work independently or as a contractor:
 | exam | state-standardized | city-specific |
 | reciprocity | statewide for contractor | city-to-city only |
 | timeline | 4-5 years | 4+ years typical |
+
+## .publishability
+
+☀️ **fullsun** (share) — public Bay County licensure requirements; no client identity or client-specific mechanic.
 
 ## .sources
 

@@ -1,5 +1,7 @@
 # flowchart.sub-employee-injury-coverage
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 complete decision tree for coverage when GC brings a sub onto your project and that sub's employee is injured.
@@ -284,6 +286,10 @@ OUTCOME
 | `howto.verify-gl-action-over-exclusion.[lesson].md` | verification process |
 | `rule.require-additional-insured.[rule].md` | when to require comp vs GL |
 | `define.wrap-up-ocip-policy.[lesson].md` | OCIP as alternative |
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage decision tree from public sources; no client identity or client-specific mechanic.
 
 ## .date researched
 

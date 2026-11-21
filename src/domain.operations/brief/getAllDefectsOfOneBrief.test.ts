@@ -127,6 +127,47 @@ describe('getAllDefectsOfOneBrief', () => {
           ).toEqual([]);
         });
       });
+
+      when('[t1] the body cites the section with no space after §', () => {
+        // the anchor reads `§ 64.1200`; a body that writes `§64.1200` or
+        // `§§ 64.1200` uses the same section, and is not an orphan pad
+        const defects = getAllDefectsOfOneBrief({
+          path: 'briefs/ref.example.md',
+          content: asBriefSound({
+            body: 'the rule turns on §64.1200 and on Duguid v. Facebook.',
+          }),
+          seeAlsoTargetsAbsent: [],
+          isPublishedPath: false,
+        });
+
+        then('the section source is not flagged', () => {
+          expect(
+            defects.filter(
+              (defect) => defect.check === 'source-anchor-unreferenced',
+            ),
+          ).toEqual([]);
+        });
+      });
+
+      when('[t2] the body cites a different section, unspaced', () => {
+        // the collapse must not make every section match every other
+        const defects = getAllDefectsOfOneBrief({
+          path: 'briefs/ref.example.md',
+          content: asBriefSound({
+            body: 'the rule turns on §65.1 and on Duguid v. Facebook.',
+          }),
+          seeAlsoTargetsAbsent: [],
+          isPublishedPath: false,
+        });
+
+        then('the unused section source is still flagged', () => {
+          const orphans = defects.filter(
+            (defect) => defect.check === 'source-anchor-unreferenced',
+          );
+          expect(orphans).toHaveLength(1);
+          expect(orphans[0]?.detail).toContain('§ 64.1200');
+        });
+      });
     },
   );
 

@@ -1,5 +1,7 @@
 # ref.owner-builder-insurance-products
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 insurance products that cover owner-builders while work is in progress under an open permit.
@@ -234,6 +236,10 @@ example provider: [UBuildIt](https://www.ubuildit.com/insurance-for-owner-builde
 ### comparison guides
 - [Construction Coverage: Builders Risk vs Homeowners](https://constructioncoverage.com/builders-risk-insurance/vs-homeowners-insurance)
 - [Builders Risk Net: Homeowners vs Builder's Risk](https://buildersrisk.net/homeowners-coverage-vs-builders-risk-insurance/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic owner-builder insurance product overview from public sources; no client identity or applied strategy.
 
 ## .date researched
 

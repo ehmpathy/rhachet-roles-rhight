@@ -1,5 +1,9 @@
 always:
   briefs:
+    say:
+      # scope: the live USPTO api is unsupported for now; booted so it is never relitigated
+      - briefs/rule.forbid.live-uspto-api-for-now.md
+
     ref:
       # patent practices
       - briefs/practices/howto.patent-techniques.[lesson].md

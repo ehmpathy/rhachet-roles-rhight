@@ -1,5 +1,7 @@
 # ref.insurance-causation-doctrine.oregon
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 Oregon applies the **efficient proximate cause (EPC) doctrine** for property damage claims with mixed causes.
@@ -63,6 +65,10 @@ Oregon is NOT among states that refuse to enforce ACC clauses (CA, ND, WA, WV do
 - analyze what "set in motion" the damage chain
 - if weather event was the EPC, coverage arguments are stronger
 - if construction defect was the EPC, expect denial
+
+## .publishability
+
+☀️ **fullsun** (share) — public state insurance-causation case law, cited to sources; no client identity or applied strategy.
 
 ## .sources
 

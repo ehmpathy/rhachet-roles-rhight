@@ -1,0 +1,679 @@
+gather corporation details needed for reinstatement calculation.
+
+.why = we need these details to calculate what you owe and prepare for the call to Delaware.
+
+---
+
+## lookup your status
+
+search for your corporation at:
+https://icis.corp.delaware.gov/ecorp/entitysearch/namesearch.aspx
+
+### ⏱️ why the clock matters — § 502(d) exposes you to SILENT service of process
+
+> this route treats delinquency as a **money** problem. it is
+> also a **notice** problem, and this one can cost a default judgment.
+
+> "In case any corporation shall fail to file its annual franchise tax report
+> and the franchise tax due within the time required by this chapter, and in
+> case the agent in charge of the registered office ... **shall die, resign,
+> refuse to act as such, remove from this State or cannot with due diligence be
+> found, it shall be lawful while default continues to serve process against
+> the corporation upon the Secretary of State.**"
+>
+> — 8 Del. C. § 502(d), https://delcode.delaware.gov/title8/c005/index.html
+
+⛔ **read the two conditions — they are CUMULATIVE, joined by "and in case."**
+
+| condition | your position |
+|---|---|
+| the corporation failed to file its report and pay | ⚠️ true, if you are on this route |
+| **and** the registered agent is dead / resigned / refuses / left the State / cannot be found | 🚩 **check this. it is the one that decides the risk** |
+
+⭐ **so a paid, live registered agent is the whole defense** — and a lapsed
+agent is exactly what a delinquent corporation tends to have, because the agent
+fee lapses for the same reason the tax did.
+
+🎯 **do this now, before anything else on this stone:** confirm the registered
+agent on the Division's entity page is current and paid. **if the agent has
+lapsed, a suit can be served on the Secretary of State and you may never learn
+of it** until a judgment exists.
+
+⚠️ this does not pause the reinstatement work — it runs beside it, and it is the
+only item on this route with a deadline set by a stranger.
+
+---
+
+## required fields
+
+| field | your info | where to find |
+|-------|-----------|---------------|
+| corporation name | | Delaware search |
+| file number | | Delaware search |
+| date of incorporation | | Delaware search — ⛔ **§ 312(d)(1) requires it on the revival certificate** |
+| ⛔ **date voided** | | Delaware search (status as of) — ⛔ **§ 312(d)(4) requires it. see below** |
+| ⛔ **name as of the void date** | | Delaware search — § 312(d)(1) asks for the **original** name AND the name it bore when voided. usually identical; confirm rather than assume |
+| authorized shares | | Delaware search |
+| tax due (their calculation) | | Delaware search |
+| annual assessment | | Delaware search |
+| registered agent | | Delaware search |
+
+---
+
+### 🚩 the VOID DATE is a REQUIRED FIELD — confirm it, never derive it
+
+> this table listed the void date beside seven other lookups,
+> as though a close estimate would serve. it will not.
+
+> "(d) The certificate required by subsection (c) of this section shall state:
+> ... (4) **The date when the certificate of incorporation became forfeited or
+> void** pursuant to this title ..."
+>
+> — 8 Del. C. § 312(d)(4), https://delcode.delaware.gov/title8/c001/sc12/index.html
+
+⛔ **the revival certificate is filed under § 103 and is sworn.** a derived date
+is a guess in a sworn instrument.
+
+the usual derivation looks airtight and is not: tax due March 1 → § 510's **one
+year** of neglect → the mandatory **November 30** notice → void *"on or before
+March 1 of the following year."* two things break it:
+
+| what moves the date | direction |
+|---|---|
+| § 510's **good-cause extension** — *"unless the Secretary of State, for good cause shown, shall have given further time"* | **later**, and invisibly |
+| the **unfiled complete report** prong, which bites independently of the tax | **earlier** |
+
+#### ⛔ § 510 IN FULL — because every error about it came from a fragment
+
+this section is cited throughout this route and, until now, **quoted nowhere in
+it**. read the whole of it once; four separate misreadings dissolve on contact:
+
+> "If any corporation, accepting the Constitution of this State and coming under
+> Chapter 1 of this title, or any corporation which has heretofore filed or may
+> hereafter file a certificate of incorporation under said chapter, neglects or
+> refuses for 1 year to pay the State any franchise tax or taxes, which has or
+> have been, or shall be assessed against it, or which it is required to pay
+> under this chapter, or shall neglect or refuse to file a complete annual
+> franchise tax report, the charter of the corporation shall be void, and all
+> powers conferred by law upon the corporation are declared inoperative, unless
+> the Secretary of State, for good cause shown, shall have given further time for
+> payment of the tax or taxes or the completion of an annual franchise tax
+> report, in which case a certificate thereof shall be filed in the office of the
+> Secretary of State stating the reason therefor. On or before November 30 in
+> each year, the Secretary of State shall notify each corporation which has
+> neglected or refused to pay the franchise tax or taxes assessed against it or
+> becoming due during the year or has refused or neglected to file a complete
+> annual franchise tax report, that the charter of the corporation shall become
+> void unless such taxes are paid and such complete annual franchise tax report
+> is filed on or before March 1 of the following year."
+>
+> — 8 Del. C. § 510, in full,
+> https://delcode.delaware.gov/title8/c005/index.html
+
+| the common belief | what the text says |
+|---|---|
+| "two consecutive years" | ⛔ **"neglects or refuses for 1 year"** — and the section's own caption reads *"…for 1 year"* |
+| "no notice is given" | ⛔ **"the Secretary of State SHALL notify"**, on or before November 30 — mandatory |
+| "the office has no discretion" | ⛔ an express **good-cause** extension, memorialized by a filed certificate |
+| "it is a tax default" | ⛔ **two independent triggers** — unpaid tax **OR** an unfiled complete report |
+
+⭐ **the "two years" belief is the dangerous one, because on an ordinary calendar
+it COINCIDES.** one year of neglect after a March 1 due date puts the notice at
+November 30 and the void at the next March 1 — two March 1sts elapse, so the
+wrong rule yields the right date and is never tested. it fails precisely where
+it matters: a good-cause extension moves the date **later**, the report prong can
+bite **earlier**, and a corporation that never received the notice has no
+two-year cushion at all.
+
+🎯 **get it from Delaware — the entity page, or the franchise tax line.** it is
+one question and it unblocks a field you cannot file without.
+
+⚠️ **also confirm the incorporation date against Delaware's record, not your
+packet.** the two can disagree by a day when the certificate was executed on one
+date and filed on the next; § 312(d)(1) wants *"the date of **filing**."*
+
+---
+
+## additional fields (from your records)
+
+Delaware does NOT have these — you must find them in your internal documents.
+
+| field | where to find |
+|-------|---------------|
+| **issued shares** | stock ledger, cap table, board resolutions, or stock certificates you signed |
+| **gross assets** | ⛔ **not a number you build.** it is the "total assets" line of **Form 1120, Schedule L** for the right year — see below |
+| **par value** | ⛔ **read it off the Certificate of Incorporation.** it is stated there verbatim — see below |
+
+### where are these documents?
+
+| document | typical location |
+|----------|------------------|
+| Certificate of Incorporation | your incorporation service (Stripe Atlas, Clerky, etc.) or your files |
+| stock ledger / cap table | **your incorporation service first** (Stripe Atlas, Clerky, Firstbase), then Carta, Pulley, Captable.io, or a spreadsheet you created |
+| board consent that authorizes issuance | **the same incorporation service**, or its DocuSign / e-signature archive |
+| stock purchase agreement (CSPA) | same — it is in the same envelope as the consent |
+| board resolutions | your records, or your lawyer if you had one |
+| tax returns | your accountant, TurboTax, or IRS transcripts |
+
+### ⛔ if you can't find issued shares — you have NOT found zero
+
+> ⛔ **"I can't find it" and "there is none" look identical. they are not the
+> same fact, and only one of them is safe to report to Delaware.**
+
+if you incorporated through **Stripe Atlas, Clerky, or Firstbase**, that service
+almost certainly issued you founder stock at inception, e-signed the board
+consent and the purchase agreement for you, and filed both in a dashboard you
+have not opened since. so an empty desk drawer is the **expected** observation
+even when shares were issued.
+
+| what you did | what it settles |
+|---|---|
+| searched your own files, found nothing | ⛔ **nothing.** open the incorporation service's dashboard |
+| opened the dashboard, found the consent + CSPA | ✅ shares were issued — the count is in **Exhibit A** |
+| opened the dashboard, and it is genuinely empty | ⚠️ still not proof — check the § 219(c) stock ledger, then ask the service |
+
+⛔ **do NOT enter a "typical" or assumed share count.** the number you write here
+is passed to `franchise.tax.delaware --issued` in step 1 and is **said aloud to a
+Delaware clerk** in step 2, about an annual report that carries 8 Del. C.
+§ 502(b) perjury. a guess is a false statement with an audit trail.
+
+if you truly cannot establish the count, **stop here and get it.**
+
+### 🚩 but the ledger is NOT the only artifact that can answer — read § 219(c) whole
+
+> 🚩 **this section read *"the ledger is the only artifact that answers, and
+> § 219(c) makes it 'the only evidence as to who are the stockholders.'"*
+> corrected.** the quote stopped mid-sentence, and the clause it
+> dropped is the one that bounds the rule.
+
+> "(c) For purposes of this chapter, **'stock ledger' means 1 or more records
+> administered by or on behalf of the corporation** in which the names of all of
+> the corporation's stockholders of record, the address and number of shares
+> registered in the name of each such stockholder, and all issuances and
+> transfers of stock of the corporation are recorded **in accordance with § 224
+> of this title**. The stock ledger shall be the only evidence as to who are the
+> stockholders **entitled by this section to examine the list required by this
+> section or to vote in person or by proxy at any meeting of stockholders**."
+>
+> — 8 Del. C. § 219(c), https://delcode.delaware.gov/title8/c001/sc07/index.html
+
+⛔ **the exclusivity is SCOPED to two rights** — who may examine the § 219(a)
+list, and who may vote. it is not a general rule that no other document may
+prove a share was issued.
+
+| the question | is § 219(c) exclusive about it? |
+|---|---|
+| who may vote at a stockholder session | ✅ **yes** — the ledger, and only the ledger |
+| who may examine the stockholder list | ✅ yes |
+| ⭐ **were shares issued, and how many** — the § 502(a) report question | ⛔ **no.** the board consent, the CSPA, and Exhibit A are not excluded |
+
+⚠️ **read what the overstatement costs you.** it tells a founder whose Atlas
+dashboard holds a signed consent and a CSPA that those documents cannot answer,
+so the honest count he already has looks unusable — and the two exits that
+leaves are both wrong: **guess** (a § 502(b) false statement), or **stall** the
+whole reinstatement on a document he does not need.
+
+### ⭐ and your electronic records may BE the ledger, rather than a substitute
+
+read the definition again: *"1 or more **records** administered by or on behalf
+of the corporation."* it does not say a bound book, and § 224 says so in terms:
+
+> ✅ **VERIFIED 2026-09-14** against
+> `.scratch/refs/pulls/delcode.title8.c001.sc07.txt` (76,395 chars, pulled the
+> same day via bhrowser, headful).
+>
+> 🚩 **it was UNVERIFIED for weeks, and the pull found a real truncation.** the
+> quote used to end at "…would have been." the statute continues "**, provided
+> the paper form accurately portrays the record.**" — a **condition on
+> admissibility**, and the operative one for the argument below: a dashboard
+> printout is evidence only if it faithfully portrays the record it came from.
+>
+> ⭐ **the dropped clause is a proviso about faithful reproduction, and it was
+> dropped by an unfaithful reproduction.** that is not irony, it is the
+> mechanism: a truncation at a sentence boundary reads as a complete thought,
+> so the eye supplies a period the legislature did not write.
+
+> "Any records administered by or on behalf of the corporation in the regular
+> course of its business, **including its stock ledger** … **may be kept on, or
+> by means of, or be in the form of, any information storage device, method, or
+> 1 or more electronic networks or databases** … provided that the records so
+> kept can be converted into clearly legible paper form within a reasonable time
+> … a clearly legible paper form … **shall be valid and admissible in evidence,
+> and accepted for all other purposes**, to the same extent as an original paper
+> record of the same information would have been, **provided the paper form
+> accurately portrays the record.**"
+>
+> — 8 Del. C. § 224, https://delcode.delaware.gov/title8/c001/sc07/index.html
+
+⭐ **so an incorporation service's dashboard is a candidate stock ledger**, not
+a lesser record. it is a database, administered **on behalf of** the
+corporation, in which the holder, the address, the count, and the issuance are
+recorded.
+
+⚠️ **§ 224 attaches three conditions, and two reach provisions this route has
+not pulled.** stated bare, because a guess beside an open flag closes the gate:
+
+| condition | status |
+|---|---|
+| (i) the records can prepare the §§ 219/220 stockholder list | ✅ checkable from the dashboard |
+| (ii) they record the information specified in **§§ 156, 159, 217(a), 218** | ⚠️ **half evaluable — see below.** §§ 156 and 159 not pulled |
+| (iii) they record transfers per **Article 8, subtitle I, Title 6** | 🚩 **not pulled** |
+
+### ⭐ two of (ii)'s four sections ARE evaluable, and both turn on one question
+
+read together, § 217(a) and § 218 make one demand of your records: **does anyone
+other than the registered owner hold the vote?**
+
+> ✅ **VERIFIED 2026-09-14.** both quotes below now check byte-for-byte against
+> `.scratch/refs/pulls/delcode.title8.c001.sc07.txt`.
+>
+> 🚩 **this paragraph read "§ 217(a) and § 218 are on disk" until today, and it
+> was false.** a census of the DGCL containers this repo actually held refuted
+> it: **subchapter VII had never been pulled.** what was on disk was subchapter
+> I (§§ 101–116), subchapter XI, subchapter XII, and chapter 5 — while §§ 217,
+> 218, 224, and 228 all live in **sc07**.
+>
+> ⛔ **"on disk" was a claim about the world with no measurement behind it**, and
+> it is the more dangerous half of the pair: the quotes were in fact faithful,
+> but a reader who wanted to check could not have, and the sentence told them
+> not to bother. ⭐ **a false reassurance defeats the audit that would have
+> caught it** — which is why the § 224 truncation two sections down survived
+> this long.
+>
+> ⚠️ the diagnosis came from **where** each quote broke. all of these diverged
+> at **char 4–6 of several hundred** — the signature of an **absent container**,
+> never of an altered quote. an early break means the matcher found no anchor at
+> all; a late break means it tracked the text and then lost it, which is a real
+> alteration. reading that number is what separated "go pull it" from "go fix
+> it" across ten flagged quotes.
+
+> "(a) **Persons holding stock in a fiduciary capacity** shall be entitled to
+> vote the shares so held. **Persons whose stock is pledged** shall be entitled
+> to vote, unless in the transfer by the pledgor on the books of the corporation
+> such person has expressly empowered the **pledgee** to vote thereon, in which
+> case **only the pledgee**, or such pledgee's proxy, may represent such stock
+> and vote thereon."
+>
+> — 8 Del. C. § 217(a), https://delcode.delaware.gov/title8/c001/sc07/index.html
+
+> "(a) One stockholder or 2 or more stockholders may by agreement in writing
+> deposit capital stock of an original issue with or transfer capital stock to
+> any person or persons ... authorized to act as trustee, for the purpose of
+> vesting in such person or persons ... who may be designated **voting trustee**
+> ... the right to vote thereon for any period of time determined by such
+> agreement ..."
+>
+> — 8 Del. C. § 218(a)
+
+so run the three checks, in order, and **each is a fact about your own cap
+table** rather than a statute you must go read:
+
+| check | if NO | if YES |
+|---|---|---|
+| is any share held **in a fiduciary capacity** — a trustee, an executor, a custodian? | ✅ § 217(a)'s first sentence is vacuous | the records must show the fiduciary as the record holder |
+| is any share **pledged**, with the pledgee expressly empowered on the books to vote? | ✅ § 217(a)'s second sentence is vacuous | ⚠️ **only the pledgee may vote** — the books must record that transfer |
+| is any share subject to a **voting trust** or a written voting agreement? | ✅ § 218 is vacuous | a copy must sit at the registered office, open to inspection |
+
+⭐ **a single-founder corporation answers NO three times**, which makes (ii)'s
+evaluable half satisfied outright. that is a common case and it is worth two
+minutes to confirm rather than assume.
+
+⚠️ **a YES on any row does not defeat the dashboard** — it tells you the
+dashboard must **record** that fact for the ledger to be complete. the § 219(c)
+exclusivity above bites on voting rights, and every one of these three rows is a
+voting-rights fact.
+
+🎯 **the practical move is unchanged and now correctly grounded:** print the
+dashboard's records to legible paper form, per § 224, and treat that as the
+record. if the service kept no such record at all, **then** open a ledger — but
+do not manufacture one to replace evidence you already hold.
+
+### ⭐ why a certified charter copy CANNOT answer the issued-share question — § 105
+
+the reflex when a state asks you to substantiate a share count is to order a
+**certified copy** of the charter. it is official, it is stamped, and it is the
+document Delaware itself holds. it will not answer.
+
+§ 105 says exactly how far a certified copy reaches:
+
+> "A copy of a certificate of incorporation ... shall, when duly certified by the
+> Secretary of State, be received in all courts, public offices and official
+> bodies as **prima facie evidence of**:
+>
+> (1) Due execution, acknowledgment and filing of the instrument;
+>
+> (2) Observance and performance of all acts and conditions necessary to have
+> been observed and performed precedent to the instrument becoming effective; and
+>
+> (3) **Any other facts required or permitted by law to be stated in the
+> instrument**."
+>
+> — 8 Del. C. § 105, https://delcode.delaware.gov/title8/c001/sc01/index.html
+
+⛔ **clause (3) is the whole limit: a certified copy proves what the charter was
+required to SAY.** so read what a charter is required to say:
+
+> "(a) The certificate of incorporation **shall set forth**: ...
+>
+> (4) **If the corporation is to be authorized to issue only 1 class of stock**,
+> the total number of shares of stock which the corporation shall have authority
+> to issue and the par value of each of such shares, or a statement that all such
+> shares are to be without par value. **If the corporation is to be authorized to
+> issue more than 1 class of stock**, the certificate of incorporation shall set
+> forth the total number of shares of all classes of stock which the corporation
+> shall have authority to issue **and the number of shares of each class** and
+> shall specify each class the shares of which are to be without par value and
+> each class the shares of which are to have par value and the par value of the
+> shares of each such class ..."
+>
+> — 8 Del. C. § 102(a)(4), https://delcode.delaware.gov/title8/c001/sc01/index.html
+
+⚠️ **quote the fork, not one branch of it.** (4) is a conditional that splits on
+one-class versus many-class, and the second branch demands **more** — a per-class
+breakdown. neither branch asks for issued shares, so the conclusion below holds
+either way; but a reader whose charter has two classes needs to see the branch
+that governs them.
+
+| the fact | required in the charter? | does a certified copy prove it? |
+|---|---|---|
+| **authorized** shares | ✅ § 102(a)(4) | ✅ yes |
+| **par value** | ✅ § 102(a)(4) | ✅ yes |
+| number of **classes** | ✅ § 102(a)(4) | ✅ yes |
+| ⭐ **ISSUED shares** | ⛔ **absent from the whole of § 102(a)** | ⛔ **no** |
+
+⭐ **that gap is not an oversight — it is structural.** authorized shares are a
+**charter** term, fixed at formation and changed only by amendment. issued shares
+are a **ledger** fact that moves every time the board acts. a document filed once
+cannot testify to a number that changes afterward.
+
+🎯 **so when the state asks you to substantiate issued shares, it asks for a fact
+the charter was never able to supply**, and an officer's sworn statement — backed
+by the board consent, the purchase agreement, and the § 224 records above — is
+the instrument that fits. that is why the ask arrives as an **attestation**
+rather than as a request for a certified copy.
+
+⚠️ **do not read this as a licence to assert a number.** § 105 tells you which
+document is the wrong tool; the count still comes off the records, and the
+§ 502(b) perjury caution above is untouched.
+
+### ⛔ if you don't know gross assets — do NOT estimate it
+
+gross assets is **defined by statute as a number already reported to the IRS**,
+not as a sum you assemble:
+
+> "Such total assets and total gross assets shall be those "total assets"
+> reported to the United States on U.S. Form 1120 Schedule L, relative to the
+> company's fiscal year ending in the calendar year prior to filing with the
+> Secretary of State pursuant to this section."
+>
+> — 8 Del. C. § 503(i)
+
+> 🚩 **corrected 2026-09-14** — the same defect this route carries in
+> `3.pay.taxes.stone`, and finding it in **two** files is what makes it a class
+> rather than a slip. the statute's **double** quotes around "total assets" had
+> been swapped for **single** ones because the block is itself wrapped in `"`.
+> the quote also opened mid-sentence, with the statute's "Such" dropped and no
+> ellipsis to mark the cut, and stopped before "pursuant to this section."
+
+⛔ **and Delaware will check your figure against that exact page.** the standard
+recalculation path ends with the state's request for a **signed Form 1120** —
+Schedule L is the one page it reads. an estimate that does not match the line you
+later hand them is a discrepancy you created yourself, in the document that was
+supposed to settle the matter.
+
+| your situation | what to enter |
+|---|---|
+| the 1120 for that year is filed | the **Schedule L "total assets"** figure. nothing else |
+| the 1120 is not filed yet | ⛔ **stop.** file it first — you need it for the recalculation anyway |
+| Schedule L was left blank (permitted under $250k) | ⚠️ fill it in. blank is legal for the IRS and **useless to Delaware**, which reads that page |
+| Schedule L carries **zeros**, and Schedule K question 13 is checked **"Yes"** | 🚨 **treat the zeros as UNVERIFIED** — see below. a blank-only rule misses this case, and it is the commoner one |
+
+#### 🚨 a ZEROED Schedule L is not a completed one — and it does not announce itself
+
+the row above catches a **blank** page. it does not catch the commoner outcome:
+a preparer takes the IRS exemption and the software writes **`0`** into the lines
+rather than leave them empty.
+
+⛔ **a blank tells you it was skipped. a zero tells you no such thing** — it is
+byte-identical to a corporation that genuinely held no assets.
+
+the tell sits on a different schedule:
+
+> "If “Yes,” the corporation is not required to complete Schedules L, M-1, and
+> M-2."
+>
+> — Form 1120, Schedule K, question 13,
+> https://www.irs.gov/pub/irs-pdf/f1120.pdf
+>
+> bytes at
+> `briefs/incorporation/variant=c-corp/refs/effectiveAt=2025-01-01.irs-f1120.txt`
+
+> ✅ **the bytes now ship — closed.** this passage carried a declared
+> ABSENT-SOURCE gap for part of a day: the quote is from an **IRS** form and
+> every other embedded source on this route is a Delaware statute, so a census
+> over them reported it **NOT-IN-SOURCE**. ⛔ that was never a licence to widen
+> the detector or to delete the quotation — the cure for an absent source is to
+> go get the source.
+>
+> 🚩 **the capture is the 2025 revision, and the question-13 threshold has moved
+> before.** check the revision that governs *your* tax year before you lean on
+> the $250,000 figure — a quote from the wrong year's form is the stale-revision
+> defect, and it wears a citation that reads correct.
+
+⇒ **read question 13 before you trust line 15.** if it is checked *"Yes"*, that
+Schedule L was **never required**, so the figure may be a placeholder no one
+computed — and it is the number Delaware reads and the number you later attest to
+under § 502(b).
+
+| Schedule K q.13 | what line 15 is worth |
+|---|---|
+| **"No"** — L was required | ✅ a computed balance. use it |
+| **"Yes"** — L was exempt | ⚠️ possibly a placeholder. reconcile against bank and asset records **before** you state it |
+
+🎯 **and for a year you have not filed yet, do not take the exemption.** it is a
+permission, never a prohibition. Schedule L is the one page Delaware reads — take
+the IRS's offer and you file a return whose sole Delaware-relevant page is empty.
+
+⚠️ this governs what you may **say**, not what you **owe**. where assets sit far
+below the sensitivity band from step 1, the figure cannot move the tax either
+way — but § 503(b) still requires a complete and correct report.
+
+⚠️ a bank balance, an equipment tally, or an IP valuation is **a different
+number** than Schedule L total assets, and the difference is not conservative in
+either direction — it is simply unverifiable.
+
+### 🚩 "the 1120 for that year" is a GLOSS — and for a late filer it is WRONG
+
+read the row above against the statute quoted 13 lines up. the row says *"for
+that **year**"* and the statute does not say that:
+
+> "relative to the company's fiscal year ending in the calendar year prior to
+> **filing** with the Secretary of State pursuant to this section"
+>
+> — 8 Del. C. § 503(i)
+
+⭐ **the anchor keys on the FILING, not on the report's tax year.** those are
+the same date for a filer who files on time, and they are the whole problem for
+a filer who does not:
+
+| who you are | the report's tax year | "the calendar year prior to filing" | agree? |
+|---|---|---|---|
+| on time — the 2022 report, filed Feb 2023 | 2022 | 2022 | ✅ yes |
+| ⛔ **delinquent** — the 2022 report, filed 2026 | 2022 | **2025** | ⛔ **no, by four years** |
+
+so the literal text points a late filer at a fiscal year with no bearing on the
+report they are amending. **do not settle that by reasoning, and do not assume
+the intuitive answer.** this whole route turns on the fact that the intuitive
+reading of a franchise-tax provision is the expensive one.
+
+⚠️ **and the wrong figure here is a SWORN number.** § 502(b) puts the officer
+under penalty of perjury and § 504(d) gives the Secretary of State inquiry power
+over *"the truth or falsity or accuracy of every report."* a number keyed to the
+wrong fiscal year is not an arithmetic slip — it is an attestation with the
+wrong document behind it.
+
+🎯 **so gather what you can substantiate, and carry the question forward.** the
+ambiguity is on the call list in `2.call.delaware.stone`; the full read of (i)
+is in `3.pay.taxes.stone`. do not pick a year here.
+
+#### ✅ RESOLVED — the Division publishes its own gloss, and it is the intuitive one
+
+> ⭐ the section above says **do not settle this by thought alone**. it does not
+> say leave it open. the agency that administers the portal had already published
+> its own answer, on a page this repo already cites six times — and nobody had
+> looked.
+
+> "Total Gross Assets shall be those “total assets” reported on the U.S. Form
+> 1120, Schedule L (Federal Return) **relative to the company’s fiscal year
+> ending the calendar year of the report**."
+>
+> — Delaware Division of Corporations, *How to Calculate Franchise Taxes*,
+> https://corp.delaware.gov/frtaxcalc/
+>
+> pulled with bhrowser · bytes at
+> `briefs/incorporation/variant=c-corp/refs/pulledAt=2026-08-26.de-frtaxcalc.txt`
+
+⛔ **the two texts genuinely conflict**, and the conflict only appears for a
+delinquent filer:
+
+| source | the anchor it names | a 2023 report, amended in 2026, points at |
+|---|---|---|
+| **§ 503(i)** — the statute | the calendar year prior to when you file | fiscal year **2025** |
+| ⭐ **the Division** — the agency | the calendar year **of the report** | fiscal year **2023** |
+
+✅ **take the report's own tax year.** two reasons, and neither is a guess:
+
+1. the Division runs the portal you will type the number into, so its published
+   gloss is what the form is built around and what the clerk checks against
+2. a number keyed to the report's own year is defensible on its face — an
+   examiner who disagrees sees an honest read of the agency's own instruction,
+   not an evasion
+
+⚠️ **still put it to the clerk on the call.** you now hold both texts, so the
+question is no longer open-ended: *"your calculator page says the fiscal year of
+the report — the statute says the year prior to when I file. for an amended 2023
+report submitted in 2026, which Schedule L do you want?"* that is a 20-second
+question with a citation behind each option.
+
+🚩 **and note what this does NOT unblock.** where a year's federal return is not
+yet on file, there is no Schedule L for that year to read from. that is a
+**form** gate under § 503(b) — the report demands a figure — and, where the
+assumed-par tax sits on the $400.00 minimum across the whole sensitivity band
+from step 1, not a **money** gate. so ask the clerk what they will accept on the
+amended report in the meantime, rather than treat it as a hard stop.
+
+### ✅ and the figure you hand them is NOT public record — § 502(e)
+
+> ⭐ the natural objection to *"hand Delaware your balance
+> sheet"* is that an annual report is public record. § 502(e) says both things,
+> in two sentences, and the second is the carve-out.
+
+> "The Secretary of State shall **safely keep all reports** returned in such
+> manner as they may be **open to the inspection of all persons** pursuant to
+> the provisions set forth in Chapter 100 of Title 29. **Any tax information
+> provided pursuant to paragraph (a)(7) of this section, contained on annual
+> franchise tax reports filed after tax year 2006 shall not be deemed
+> public.**"
+>
+> — 8 Del. C. § 502(e), https://delcode.delaware.gov/title8/c005/index.html
+
+> 🚩 **a COMMA was added to that quote until 2026-09-14, and it was not
+> cosmetic.** the artifact read "…filed after tax year 2006**,** shall not be
+> deemed public." the statute has no comma there.
+>
+> ⛔ **the mark changes the grammar, and the grammar is the scope.** with that
+> comma, "contained on annual franchise tax reports filed after tax year 2006"
+> becomes a **non-restrictive** aside and the subject is *any* (a)(7) tax
+> information — a broader shield. with no comma it is **restrictive**, and only
+> (a)(7) information that sits on a **post-2006 report** is withheld.
+>
+> ⚠️ the legislature left that phrase unclosed, so the ambiguity is theirs. our
+> punctuation resolved it silently, in our own favour, inside quotation marks.
+> ⭐ **a typographic tidy-up of a statute is an interpretive act** — and the one
+> defect class no reader ever checks for, because a stray comma reads as noise.
+>
+> the table below reasons from the **restrictive** read, which is the narrower
+> of the two and the one the bytes support.
+
+| what | public? |
+|---|---|
+| the annual franchise tax **report** itself | ✅ open to inspection |
+| **tax information** supplied under **§ 502(a)(7)**, on reports after **tax year 2006** | ⛔ **not deemed public** |
+
+⭐ **§ 502(a)(7) is the catch-all the Division uses to demand extras** — *"Such
+additional information, schedules and attachments as the Secretary shall
+require."* so the attachments they ask you for land in the **non-public** bucket
+by the same subsection that lets them ask.
+
+⚠️ **read the two limits before you rely on it.** the carve-out covers *"tax
+information ... **contained on** annual franchise tax reports"* — so its clean
+case is a schedule furnished **with a report** under (a)(7). whether a document
+sent by **email to an analyst**, outside a report, sits inside that phrase is
+**not settled by this text**. if confidentiality matters to you, **ask** — and
+prefer the attachment path over the inbox.
+
+⛔ and note what it does **not** do: it is a public-records rule, not a shield
+against the Secretary. § 504(d) still allows inquiry into *"the truth or falsity
+or accuracy of every report"* and production of the corporation's books.
+
+### ⛔ if you don't know par value — do NOT assume the startup default
+
+> 🚩 **this section used to say "usually $0.0001 for startups." corrected
+> 2026-09-02.** it was the third default guess in the table above, on the third
+> of three fields, and all three feed the same calculator and the same annual
+> report.
+
+par value is not a convention. it is **a term of your charter**, stated verbatim
+on the Certificate of Incorporation, and it varies — $0.0001 and $0.00001 are
+both common, and plenty of charters carry $0.01, $0.10, or $1.00.
+
+⚠️ **the number goes on the annual report**, which carries 8 Del. C. § 502(b)
+perjury, and into `franchise.tax.delaware --par` in step 1. a value you assumed
+is a false statement whether or not it changes the money.
+
+> ⚠️ unlike issued shares and gross assets, par is **not** on step 2's
+> what-to-have-ready list — the clerk recalculates, and the charter term reaches
+> the state on the amended report rather than over the phone. that makes it the
+> quietest of the three, not the least binding.
+
+#### does a wrong par change the tax?
+
+measured with `franchise.tax.delaware`, at 10,000,000 authorized / 8,000,000
+issued / $50 gross assets:
+
+| stated par | assumed-par capital | annual tax |
+|---|---:|---:|
+| $0.0001 | $1,000.00 | **$400.00** |
+| $0.00001 | $100.00 | **$400.00** |
+| $0.50 | $5,000,000.00 | **$2,000.00** |
+
+so a factor-of-ten slip between the two startup values is **inert** — both land
+on the **§ 503(c)** $400 minimum. but a charter whose real par is materially
+larger is a different tax entirely, and the guess **understates** it, which is
+the direction the state cares about.
+
+⛔ read it off the charter. if you cannot find the charter, order a certified
+copy from the Division of Corporations before this call — the same office you
+phone in step 2.
+
+---
+
+## emit
+
+paste the Delaware search results and your additional info into:
+`$route/0.gather.position.yield.md`
+
+format:
+```
+## Delaware search results
+
+[paste screenshot or text from icis.corp.delaware.gov]
+
+## additional info
+
+| field | value |
+|-------|-------|
+| issued shares | |
+| gross assets | |
+| par value | |
+```

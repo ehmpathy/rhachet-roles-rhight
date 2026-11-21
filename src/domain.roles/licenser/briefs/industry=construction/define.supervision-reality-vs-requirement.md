@@ -1,5 +1,7 @@
 # define.supervision-reality-vs-requirement
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 licence applications require "supervised" work experience. but what does "supervised" actually mean? this brief examines the gap between legal definitions and job site reality — and the fraud that fills it.
@@ -243,6 +245,10 @@ despite the fraud potential, the system produces competent electricians because:
 > "Everyone knows the supervision rules aren't followed strictly. The deal is: learn the trade, don't burn down structures, pass the exam. The paperwork is just paperwork."
 >
 > — [Electrician Talk: Apprentice on his or her own?](https://www.electriciantalk.com/threads/apprentice-on-his-or-her-own.26490/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public licensure analysis; no client identity or client-specific mechanic.
 
 ## .sources
 

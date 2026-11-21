@@ -1,5 +1,7 @@
 # ref.indianapolis-electrical-retroactive-permit
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 retroactive electrical permit process in Indianapolis-Marion County for unpermitted panel upgrades (e.g., fuse box to breaker panel).
@@ -190,3 +192,7 @@ once passed:
 | DBNS residential permits | [indy.gov](https://www.indy.gov/activity/residential-development-permits) |
 | homeowner permit guide (PDF) | [citybase-cms-prod.s3.amazonaws.com](https://citybase-cms-prod.s3.amazonaws.com/bbef3d09367b4c97bd4bdfe41f22d4fd.pdf) |
 | retroactive permit process | [lamontbros.com](https://www.lamontbros.com/learning-center/can-i-get-a-building-permit-after-the-work-is-done-yes-heres-how) |
+
+## .publishability
+
+☀️ **fullsun** (share) — public Indianapolis retroactive-permit process and agency forms; no client identity.

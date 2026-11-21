@@ -1,5 +1,7 @@
 # define.how-experience-requirements-measured
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 electrician licences require 6,000-10,000 hours of documented work experience. this brief explains how those hours are tracked, verified, and audited.
@@ -302,6 +304,10 @@ boards watch for:
 > "Call your old employers, get their master electricians to sign a letter... and back this up with a copy of your W2."
 >
 > — [Electrician Talk Forum: How to verify 8000 hours](https://www.electriciantalk.com/threads/how-to-verify-8000-hours.70595/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public licensure practice; the sample log rows are illustrative placeholders, not a client record.
 
 ## .sources
 

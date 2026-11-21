@@ -1,5 +1,7 @@
 # define.owner-builder-experience-path
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 owner-builder permits let you do electrical work on your own property without a license. can those hours count toward licensure? in some states, explicitly yes — california has a dedicated form for it.
@@ -190,6 +192,10 @@ get the answer in written form.
 - someone in a hurry to get licensed
 - someone without property or capital to flip
 - someone who needs commercial/industrial experience
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public licensure analysis; the sample log rows are illustrative placeholders, not a client record.
 
 ## .sources
 

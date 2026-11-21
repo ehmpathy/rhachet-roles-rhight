@@ -1,0 +1,327 @@
+DAVID Y. IGE
+
+LINDA CHU TAKAYAMA
+
+GOVERNOR
+
+DIRECTOR
+
+DOUGLAS S. CHIN
+
+DAMIEN A. ELEFANTE
+
+LIEUTENANT GOVERNOR
+
+DEPUTY DIRECTOR
+
+STATE OF HAWAII
+DEPARTMENT OF TAXATION
+830 PUNCHBOWL STREET, ROOM 221
+HONOLULU, HAWAII 96813
+http://tax.hawaii.gov/
+Phone: (808) 587-1530 / Fax: (808) 587-1584
+Email: Tax.Rules.Office@hawaii.gov
+
+July 10, 2018
+
+DEPARTMENT OF TAXATION ANNOUNCEMENT NO. 2018-10
+Re:
+
+Implementation of Act 41, Session Laws of Hawaii 2018, Relating to When a Taxpayer is
+Engaging in Business in the State for Purposes of Hawaii’s General Excise Tax
+
+This Announcement amends and supersedes Announcement No. 2018-10, previously
+issued on June 27, 2018. Taxpayers are advised that the Department will not retroactively
+administer Act 41, which is effective July 1, 2018.
+Background
+The general excise tax (GET) is a privilege tax imposed on all business and other
+activities “in the State.” Haw. Rev. Stat § 237-13. Although it is clear that a business with a
+physical presence in Hawaii satisfies the statutory “in the State” requirement and is therefore
+subject to GET, the law was previously unclear as to the circumstances under which a business
+that lacks a physical presence in Hawaii would satisfy the “in the State” requirement. See
+Travelocity.com, L.P. v. Director of Taxation, 135 Hawaii 88, 103 (2015) (rejecting argument
+that taxpayers must have physical presence in the State to satisfy the statutory “in the State”
+requirement).
+Act 41, Session Laws of Hawaii 2018 (Act 41) clarifies the “in the State” requirement by
+creating a bright-line rule for businesses that lack a physical presence in Hawaii. Specifically,
+Act 41 provides that a person is engaging in business in the State, regardless of whether the
+person is physically present in the State, if in the current or preceding calendar year:
+(1)
+
+The person has gross income of $100,000 or more from the sale of tangible
+personal property delivered in the State, services used or consumed in the State,
+or intangible property used in the State; or
+
+(2)
+
+The person has entered into 200 or more separate transactions involving tangible
+personal property delivered in the State, services used or consumed in the State,
+or intangible property used in the State.
+
+Department of Taxation Announcement No. 2018-10
+July 10, 2018
+Page 2 of 7
+
+Somewhat overlapping with the statutory “in the State” requirement is the requirement
+imposed by the U.S. Commerce Clause that a taxpayer’s activity must have a substantial nexus
+with the taxing jurisdiction. See Baker & Taylor, Inc. v. Kawafuchi, 103 Hawaii 359, 365-71
+(2004) (analyzing whether taxpayer was engaged in business “in the State” and whether
+taxpayer’s activity had a substantial nexus with the State); see also Complete Auto Transit v.
+Brady, 430 U.S. 274, 279 (1977) (articulating substantial nexus requirement).
+In South Dakota v. Wayfair, Inc., No. 17-494, 2018 WL 3058015, at *17 (U.S. Jun. 21,
+2018), the U.S. Supreme Court held that South Dakota’s law, Senate Bill 106, which has a
+similar $100,000 or 200-transaction threshold, satisfies the substantial nexus requirement
+imposed by the U.S. Commerce Clause, as “[t]his quantity of business could not have occurred
+unless the seller availed itself of the substantial privilege of carrying on business in [the state].”
+In sum, the imposition of the GET on a taxpayer who lacks physical presence in Hawaii,
+but who has gross income of $100,000 or more or who has entered into 200 or more transactions
+attributable to Hawaii, comports with the statutory “in the State” requirement as well as the U.S.
+Commerce Clause’s substantial nexus requirement.
+A taxpayer will therefore be required to maintain a GET license, file GET returns, and
+remit GET to the State if any of the following applies:
+
+1
+
+(1)
+
+Taxpayer has a physical presence1 in Hawaii;
+
+(2)
+
+In the current or preceding calendar year, taxpayer has gross income or gross
+proceeds of $100,000 or more from any of the following, or combination of the
+following, activities:
+a.
+Tangible property delivered in Hawaii;
+b.
+Services used or consumed in Hawaii2; or
+c.
+Intangible property used in Hawaii; or
+
+(3)
+
+In the current or preceding calendar year, taxpayer has entered into 200 or more
+separate transactions involving any of the following, or combination of the
+following, activities:
+a.
+Tangible property delivered in Hawaii;
+b.
+Services used or consumed in Hawaii; or
+c.
+Intangible property used in Hawaii.
+
+Physical presence includes, but is not limited to, having an office, employees or representatives,
+inventory, or other property in Hawaii, or providing services in Hawaii, such as installation,
+training, maintenance, or repair services.
+2
+See sections 18-237-29.53-01 through 18-237-29.53-13, Hawaii Administrative Rules, and Tax
+Information Release No. 2018-06 for more information regarding the sourcing of income from
+services.
+
+Department of Taxation Announcement No. 2018-10
+July 10, 2018
+Page 3 of 7
+
+Implementation of Act 41 in 2018
+Retroactivity
+Although the U.S. Supreme Court, in South Dakota v. Wayfair, Inc., held that Senate Bill
+106 satisfied the substantial nexus requirement, the Court did not rule on whether Senate Bill 106
+violated other principles of the U.S. Commerce Clause. Wayfair, 2018 WL 3058015, at *17.
+The Court noted, however, that South Dakota’s law contains “several features that appear
+designed to prevent discrimination against or undue burdens upon interstate commerce,”
+including a prohibition on retroactive application of Senate Bill 106. Id.
+To avoid any constitutional concerns, the Department will not retroactively administer
+Act 41. Accordingly, taxpayers who lacked physical presence in Hawaii prior to July 1, 2018,
+but who met the $100,000 or 200-transaction threshold in 2017 or 2018, will not be required to
+remit GET for the period from January 1, 2018 to June 30, 2018.
+Deadline to File First Return
+Periodic returns are due on the 20th day following the close of the filing period. A
+taxpayer’s filing period is monthly if more than $4,000 in GET will be paid for the year;
+quarterly if more than $2,000, but $4,000 or less in GET will be paid for the year; or
+semiannually if $2,000 or less in GET will be paid for the year. Annual returns are due on the
+20th day of the fourth month following the close of the tax year.
+If, prior to July 1, 2018, a taxpayer lacks physical presence in Hawaii and meets the
+$100,000 or 200-transaction threshold for 2017 or 2018, the taxpayer will be subject to GET
+beginning on July 1, 2018 and must file its first periodic return by the deadline for that period.
+Fiscal year taxpayers will be subject to GET beginning on July 1, 2018 or the first day of the tax
+year beginning after December 31, 2017, whichever is later.
+If a taxpayer who lacks physical presence in Hawaii meets the $100,000 or 200transaction threshold between July 1, 2018 and December 31, 2018, the taxpayer will be subject
+to GET beginning on July 1, 2018. Fiscal year taxpayers will be subject to GET beginning on
+July 1, 2018 or the first day of the tax year beginning after December 31, 2017, whichever is
+later. The taxpayer will be given a grace period of one period for the filing of the first periodic
+return. Accordingly, the taxpayer must file its first periodic return by the deadline for the
+periodic return following the period in which the taxpayer met the $100,000 or 200-transaction
+threshold.
+If the taxpayer meets the threshold during the last period of the tax year, the taxpayer will
+not be required to file a periodic return for that period. Instead, the taxpayer’s first return will be
+the annual return for that tax year.
+
+Department of Taxation Announcement No. 2018-10
+July 10, 2018
+Page 4 of 7
+
+The following chart provides the first filing deadlines for calendar year taxpayers who
+will be filing on a monthly basis:
+When Threshold Was First Met
+1/1/17 – 12/31/17
+1/1/18 – 6/30/18
+7/1/18 – 7/31/18
+8/1/18 – 8/31/18
+9/1/18 – 9/30/18
+10/1/18 – 10/31/18
+11/1/18 – 11/30/18
+12/1/18 – 12/31/18
+
+First Filing Deadline
+8/20/18
+8/20/18
+9/20/18
+10/22/18
+11/20/18
+12/20/18
+1/21/19
+4/22/19 (annual return)
+
+Catchup Income
+Because taxpayers who meet the $100,000 or 200-transaction threshold after July 1, 2018
+are given a grace period for the filing of their first return, said taxpayers will need to report
+“catchup income” (income recognized prior to and during the period in which the taxpayer meets
+the threshold) and pay GET on said income. The Department will allow taxpayers to report and
+pay GET on catchup income, without penalty and interest, as follows:
+(1)
+(2)
+
+The taxpayer may report and pay GET on all catchup income in full on the first
+periodic return; or
+The taxpayer may report and pay GET on catchup income by spreading the
+liability equally over the remaining periods in the current tax year.
+
+If, however, the taxpayer meets the threshold during the last period of the tax year, the taxpayer
+must report and pay GET on all catchup income in full on the annual return.
+Implementation of Act 41 in Subsequent Years
+In 2019 and later years, if a taxpayer lacks physical presence in Hawaii and did not meet
+the $100,000 or 200-transaction threshold in the preceding calendar year, the taxpayer will be
+given a grace period of one period for the filing of the first periodic return. Accordingly, the
+taxpayer must file its first periodic return by the deadline for the periodic return following the
+period in which the taxpayer met the $100,000 or 200-transaction threshold. Additionally, the
+Department will allow taxpayers to report and pay GET on catchup income, without penalty and
+interest, in the same manner described above.
+
+Department of Taxation Announcement No. 2018-10
+July 10, 2018
+Page 5 of 7
+
+FAQs
+Engaging in Business in the State
+1.
+I have a physical presence in Hawaii, but I have less than $100,000 in gross
+income and have entered into less than 200 transactions in 2017 and 2018. Will I be subject
+to GET for the tax year beginning in 2018?
+Yes, because you have a physical presence in Hawaii, you are engaging in business in the
+State and are subject to GET even if you do not meet the $100,000 or 200-transaction threshold.
+2.
+I do not have a physical presence in Hawaii, but I have $100,000 in gross
+income attributable to Hawaii in 2018. Will I be subject to GET for the tax year beginning
+in 2018?
+Yes, you are engaging in business in the State because you met the $100,000 threshold in
+the current calendar year.
+3.
+I do not have a physical presence in Hawaii. My gross income attributable to
+Hawaii was $100,000 in 2017 and $50,000 in 2018. Will I be subject to GET for the tax
+year beginning in 2018?
+Yes, you are engaging in business in the State because you met the $100,000 threshold in
+the preceding calendar year.
+4.
+I do not have a physical presence in Hawaii, but in 2017, I entered into 100
+transactions for tangible property delivered in Hawaii and 100 transactions for intangible
+property used in Hawaii. Will I be subject to GET for the tax year beginning in 2018?
+Yes, you are engaging in business in the State because you have entered into 200
+transactions attributable to Hawaii in the preceding calendar year. The 200-transaction threshold
+may be met by any combination of tangible property delivered in the State, services used or
+consumed in the State, or intangible property used in the State.
+5.
+I do not have a physical presence in Hawaii. If I entered into 200
+transactions attributable to Hawaii in 2018, but have less than $100,000 in gross income,
+will I be subject to GET for the tax year beginning in 2018?
+Yes, you are engaging in business in the State because you have entered into 200
+transactions attributable to Hawaii in the current calendar year. You will be subject to GET if
+you meet the $100,000 or the 200-transaction threshold; you do not need to meet both.
+
+Department of Taxation Announcement No. 2018-10
+July 10, 2018
+Page 6 of 7
+
+Filing and Payment Deadlines
+6.
+I do not have a physical presence in Hawaii, but, I have $100,000 in gross
+income attributable to Hawaii between January 1, 2018 and June 30, 2018. Will I be
+subject to GET for the $100,000?
+You will be subject to GET for the tax year beginning in 2018, but will not be subject to
+GET for any periods between January 1, 2018 and June 30, 2018.
+7.
+I do not have a physical presence in Hawaii, but, I have $100,000 in gross
+income attributable to Hawaii between January 1, 2018 and June 30, 2018. When is the
+deadline to file my first GET return?
+If you are a calendar year taxpayer and will be filing on a monthly basis, your first return
+is due on August 20, 2018; if you are a calendar year taxpayer and will be filing on a quarterly
+basis, your first return is due on October 22, 2018; if you are a calendar year taxpayer and will be
+filing on a semiannual basis, your first return is due on January 21, 2019.
+8.
+I do not have a physical presence in Hawaii, but I have $100,000 in gross
+income attributable to Hawaii between January 1, 2018 and June 30, 2018. I have $20,000
+in gross income for July 2018. How much income should I report on my next periodic
+return?
+Assuming you are a calendar year taxpayer who will be filing on a monthly basis, you
+should report $20,000 in gross income on the return due on August 20, 2018.
+9.
+I do not have a physical presence in Hawaii and do not have any gross
+income or transactions attributable to Hawaii in 2017. I have $80,000 in gross income
+attributable to Hawaii between January 1, 2018 and June 30, 2018; $10,000 in gross income
+for July 2018; $14,000 in gross income for August 2018; and $16,000 in gross income for
+September 2018. When is the deadline to file my first GET return? How much income
+should I report?
+Assuming you are a calendar year taxpayer who will be filing on a monthly basis, you are
+required to file your first return by October 22, 2018. Because you met the threshold in August
+2018, you are given a grace period of one month, to October 22, 2018, to file your first periodic
+return. On the October 22, 2018 return, you may either: (1) report $40,000 in gross income
+(catchup income of $24,000 plus $16,000 in income for September); or (2) report $22,000 in
+gross income (catchup income of $24,000 divided over four monthly periods, or $6,000, plus
+$16,000 in income for September).
+
+Department of Taxation Announcement No. 2018-10
+July 10, 2018
+Page 7 of 7
+
+10.
+I do not have a physical presence in Hawaii and do not have any gross
+income or transactions attributable to Hawaii in 2017. I met the $100,000 threshold in
+December 2018. My gross income between July 1, 2018 and December 31, 2018 is $50,000.
+When is the deadline to file my first GET return? How much income should I report?
+Assuming you are a calendar year taxpayer, you are required to file an annual return by
+April 22, 2019 and report $50,000 in gross income on that return. You are not required to file a
+periodic return for the 2018 tax year because you met the threshold during the last period of the
+tax year. Additionally, you may not pay the catchup income in installments because there are no
+remaining periods in the tax year.
+11.
+I do not have a physical presence in Hawaii and do not have any gross
+income or transactions attributable to Hawaii in 2017 or 2018. I have $90,000 in gross
+income attributable to Hawaii in January 2019; $80,000 in gross income in February 2019;
+and $50,000 in gross income in March 2019. When is the deadline to file my first GET
+return? How much income should I report?
+Assuming you are a calendar year taxpayer who will be filing on a monthly basis, you are
+required to file your first return by April 22, 2019. Because you met the threshold in February
+2019, you are given a grace period of one month, to April 22, 2019, to file your first periodic
+return. On the April 22, 2019 return, you may either: (1) report $220,000 in gross income
+(catchup income of $170,000 plus $50,000 in income for March); or (2) report $67,000 in gross
+income (catchup income of $170,000 divided over 10 monthly periods, or $17,000, plus $50,000
+in income for March).
+
+For additional information regarding Act 41, contact the Rules Office at (808) 587-1530
+or by email at Tax.Rules.Office@hawaii.gov. For general information regarding Hawaii’s GET,
+and to obtain tax forms, instructions, and publications, visit the Department’s website at
+tax.hawaii.gov.
+
+LINDA CHU TAKAYAMA
+Director of Taxation
+
+

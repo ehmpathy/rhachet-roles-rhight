@@ -1,5 +1,7 @@
 # hazard.gl-without-workers-comp
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 contractor has GL but no workers' comp. you think you're protected. you're not.
@@ -258,6 +260,10 @@ reality:
 ### homeowner liability
 9. [AllLaw - Contractor Injury Liability](https://www.alllaw.com/articles/nolo/personal-injury/homeowner-liable-injuries-contractor.html)
 10. [ForYourRights - Uninsured Contractor](https://www.foryourrights.com/faqs/am-i-liable-if-an-uninsured-contractor-is-injured-on-my-property/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage hazard from public sources; no client identity or client-specific mechanic.
 
 ## .date researched
 

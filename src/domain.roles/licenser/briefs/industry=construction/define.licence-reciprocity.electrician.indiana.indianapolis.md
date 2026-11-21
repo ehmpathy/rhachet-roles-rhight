@@ -1,5 +1,7 @@
 # define.licence-reciprocity.electrician.indiana.indianapolis
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 Indianapolis electrician licence reciprocity is **test-based**, not city-based. the Board of Electrical Examiners only reciprocates with jurisdictions that use specific Prometric exams.
@@ -72,6 +74,10 @@ Prov ≠ Prometric, so Richmond licences do not qualify for Indianapolis recipro
 | email | Contractors@indy.gov |
 | board coordinator | Jessica.Knight@indy.gov |
 | address | 1200 Madison Ave, Suite 100, Indianapolis, IN 46225 |
+
+## .publishability
+
+☀️ **fullsun** (share) — public Indianapolis reciprocity rules; no client identity or client-specific mechanic.
 
 ## .sources
 

@@ -1,0 +1,324 @@
+INSTRUCTIONS
+SCHS. O & P (FORM N-30)
+(REV. 2024)
+
+STATE OF HAWAII — DEPARTMENT OF TAXATION
+
+INSTRUCTIONS FOR SCHEDULES O AND P (FORM N-30)
+ALLOCATION AND APPORTIONMENT OF INCOME
+
+Corporations who qualify and elect to report and pay income tax on the basis of a percentage of gross sales made during the tax year, as provided in Article III,
+section 2 of the Multistate Tax Compact, Chapter 255, Hawaii Revised Statutes (HRS), and section 235-71(e), HRS, Hawaii Income Tax Law, need not use Schedules
+O and P but must use and file Short Form N-310, copies of which may be obtained by contacting the Department of Taxation, or at tax.hawaii.gov.
+GENERAL INSTRUCTIONS
+Corporations which must file Allocation and
+Apportionment of Income Schedules O and P,
+Form N-30:
+Every corporation carrying on a business
+within and without Hawaii must file Allocation
+and Apportionment of Income Schedules O and
+P, Form N-30, unless the corporation qualifies
+and elects to use Short Form N-310. See Part
+II Uniform Division of Income for Tax Purposes,
+Chapter 235, HRS, and Subchapter 2, Title 18,
+Chapter 235, Hawaii Administrative Rules.
+A foreign corporation carrying on a trade or
+business within Hawaii and subject to tax will be
+entitled to exclude from the measure of the tax
+that portion of its income less related expenses
+which is attributable to sources without Hawaii.
+A domestic corporation will exclude from the
+measure of the tax that portion of its income and
+related expenses attributable to sources in another jurisdiction provided that such income is
+subjected to an income tax by such other jurisdiction. A foreign corporation shall be deemed
+to be carrying on a trade or business within
+Hawaii if its net income is subject to the taxing
+jurisdiction of Hawaii by reason of its engaging
+in activities in Hawaii, or causing transactions to
+be conducted in Hawaii with the object of gain,
+profit, or economic benefit, whether or not such
+activities or transactions are in, or connected
+with, interstate or foreign commerce.
+Only those entities which are located in any
+of the states of the United States, the District of
+Columbia, the Commonwealth of Puerto Rico, or
+any Territory or Possession of the United States
+shall be considered and included as part of the
+unitary business. Accordingly, only the business
+income of those domestic entities shall be considered and included in the apportionment of
+income. Where a business is deemed to be unitary, the taxpayer shall be required to file a combined return and the combined income shall be
+apportioned to the State of Hawaii based upon
+the factors of property, payroll and sales. See
+Tax Information Release No. 97-2 (Revised) for
+more information.
+A unitary business is a business carried on
+by a group of entities that includes the taxpayer
+where there are flows of value among the entities resulting from (1) functional integration, (2)
+centralization of management, or (3) economies
+of scale. Generally, if the operation of a business within Hawaii is integrated with, is dependent on, or contributes to the operation of the
+business outside Hawaii, the entire business is
+unitary in character. A unitary group is a group
+of entities carrying on a unitary business, but
+does not include (1) any foreign affiliate of the
+taxpayer; or (2) any entity that is not related to
+the taxpayer within the meaning of IRC section
+267(b) and (c). A foreign affiliate of a taxpayer
+is a person, other than the taxpayer, if no part
+of the business income of the person is subject
+to federal income tax under the Internal Revenue Code of 1986, as amended, whether or
+not the person and the taxpayer are owned or
+
+controlled directly or indirectly by the same interests.
+The following instructions set forth in general
+the adjustments to be made to arrive at the taxable income of a corporation carrying on a unitary business within and without Hawaii. They
+do not purport to set forth each and every adjustment to be made. Specific questions should
+be submitted in writing for rulings.
+DIRECTIONS FOR COMPLETING
+SCHEDULE O ADJUSTMENTS FOR HAWAII
+TAXABLE INCOME
+Question (f). Explain with references to the
+laws or regulations of another state any inconsistencies in the determination of non-business
+income and in the denominators of the factors
+due to a difference in state laws or regulations.
+Show the amount of inconsistency on a stateby-state basis. Corporations that change the
+way the following items were treated in prior
+year tax returns must disclose the nature and
+extent of these changes on a separate sheet
+as an attachment to Schedule O. Disclose any
+changes to:
+
+• classification of income as business or
+non-business income;
+
+• valuation of property or inclusion of
+property in the property factor;
+
+• determination
+
+of the amount of
+compensation paid used in the payroll
+factor; or
+
+• inclusion of gross receipts in the sales
+
+factor.
+Disclose only inconsistencies in the denominators of the three factors that materially affect
+the apportionment percentage.
+Line 1. Enter here the amount of taxable
+income shown on Hawaii Form N-30, Schedule
+J, line 1.
+Line 2. Enter here the dividends from N-30,
+Schedule C, line 11.
+Line 3. Enter deductions taken for federal
+tax purposes but not allowable or allowable only
+in part, for Hawaii tax purposes.
+Line 4. Enter here the deduction for charitable contributions included on line 1. The Hawaii deduction for charitable contributions will
+be taken on line 35.
+Line 5. Other adjustments. List all other additions here.
+Line 7. Enter here the amount of dividends
+received included on Form N-30, page 1, line 8.
+Line 8. Enter here any interest received
+on obligations of the United States included on
+Form N-30, page 1, line 8.
+Line 9. Enter here other deductions or adjustments.
+
+ADJUSTMENTS TO ARRIVE AT UNITARY
+BUSINESS INCOME SUBJECT TO TAX
+After Hawaii adjustments, the following deductions or exclusions must be made to arrive
+at unitary business income. Dividends, interest,
+royalties, nonunitary business income, rents,
+and capital gains and losses which are not an
+integral part of the unitary operations, are to be
+allocated specifically according to location or situs of property or according to the domicile of
+the taxpayer.
+Line 12. Enter here the non-business or
+nonunitary dividends included on Form N-30,
+page 1, line 8, and included on line 2 above.
+Lines 13, 14, and 15. Enter the net amount
+from interest, royalties, and nonunitary business income (including rentals). If the related
+expenses exceed the total of each such income,
+no deduction may be claimed.
+Line 20. Enter here the net loss from business, other than unitary business, including
+rentals.
+Line 21. Enter here the net loss, other than
+those from sales of depreciable property, resulting from the sale or exchange of assets not connected with unitary business. Losses on sales
+of depreciable property are considered to be
+part of the unitary business.
+Line 24. From Schedule P (Apportionment
+Formula) line 5, enter the average percent and
+multiply the amount shown on line 23 by this average percent. This is the apportioned income
+from the unitary business subject to Hawaii income tax.
+Line 26. Enter the portion of line 24, if any,
+that is net capital gain attributable to the unitary
+business. Also, enter the amount on line 26, if
+any, on Form N-30, page 2, Schedule J, line 13.
+INCOME WHOLLY ATTRIBUTABLE TO
+HAWAII
+Foreign and domestic corporations must allocate to Hawaii all gains (or losses) resulting
+from the sale or exchange of real estate and
+other tangible assets which have a tax situs in
+Hawaii. The amount of net capital gain as shown
+on Schedule O, page 2, line 31(b) is taxed at the
+rate of 4%. Income from nonunitary business
+activities conducted within Hawaii, royalties and
+rentals from property owned within Hawaii, and
+intangibles having a business situs in Hawaii
+must be allocated to Hawaii.
+Allocation of capital gains and losses. Capital gains and losses from the sales of real property located in Hawaii are allocable to Hawaii.
+Capital gains and losses from the sales of
+tangible personal property are allocable to Hawaii if: (1) The property had a situs in Hawaii at
+the time of the sale; or (2) The taxpayer’s commercial domicile is in Hawaii and the taxpayer
+is not taxable in the state in which the property
+had a situs.
+Except in the case of the sale of a partnership interest, capital gains and losses from the
+
+INSTRUCTIONS — SCHS. O & P (FORM N-30)
+(REV. 2024)		
+sales of intangible property are allocable to Hawaii if the taxpayer’s commercial domicile is in
+Hawaii.
+Gain or loss from the sale of a partnership
+interest is allocable to Hawaii in the ratio of the
+original cost of the partnership tangible personal
+property in Hawaii to the original cost of partnership tangible personal property everywhere,
+determined at the time of the sale. If more than
+fifty percent of the value of a partnership’s assets consists of intangibles, gain or loss from
+the sale of the partnership interest shall be allocated to Hawaii in accordance with the sales
+factor of the partnership for its first full tax period immediately preceding its tax period during
+which the partnership interest was sold.
+Line 28. Enter here the gain (or loss) from
+the sale of real estate and other tangible assets
+not connected with the unitary business.
+Line 29. Enter here royalties from property
+not used in the unitary business.
+Line 30. Enter here the net profit (or loss)
+from business other than the unitary business
+(including rental property) operated on a separate accounting basis.
+Line 31(b). Enter the amount of net capital
+gain wholly attributable to Hawaii. Also, enter
+the total of lines 31(b) and 26, on Form N-30,
+page 2, Schedule J, line 13.
+Line 32. Enter here income from intangible
+personal property. Add back Hawaii allocated,
+non-business or nonunitary income and dividends.
+Line 35. The Hawaii contribution deduction
+is computed by multiplying the total contributions
+by the Hawaii allocation percentage determined
+on Schedule P. The amount of the deduction is
+limited to 10% of the Hawaii taxable income on
+line 38 of Schedule O as adjusted per IRC section 170(b)(2), i.e., net operating losses, capital
+losses, contributions, dividend deduction, etc.
+Line 36. Enter here any net operating loss
+as determined in accordance with section 2357(d), HRS, and/or any net operating loss purchased from a qualified high technology business.
+DIRECTIONS FOR COMPLETING
+SCHEDULE P APPORTIONMENT FORMULA
+In filing this schedule, include only items related to, or connected with, the income reported
+on Schedule O, line 23. Thus, since this line
+does not include income or losses from intangible personal property, and rental of, sale or
+other disposition of property not connected with
+the unitary business, such property should not
+be included in the property factor of the formula,
+and income therefrom should not be included in
+the sales factor. Likewise, salaries, wages, or
+other compensation of officers and employees,
+whose services were not performed in produc-
+
+ing the income reported on Schedule O, line 23,
+should not be included.
+If this is a return for a combined group of corporations, compute the factors on this schedule
+for the combined group and attach a worksheet
+showing the requested information for each
+member in the group. If this is a separate return
+for a member of a combined group, enter the
+group’s factor information in column (a) and the
+member’s Hawaii factor information in column
+(b). Attach a worksheet showing the requested
+information for each member in the group. Also
+attach a list of the names, addresses and the
+Federal Employer Identification Numbers for all
+entities included in the combined group.
+PROPERTY FACTOR
+The property factor is a fraction, the numerator of which is the average value of the corporation’s real and tangible personal property owned
+or rented and used in Hawaii during the tax period and the denominator of which is the average
+value of all the corporation’s real and tangible
+personal property owned or rented and used
+during the tax period. Property owned by the
+corporation is valued at its original cost. The average value of property shall be determined by
+averaging the values at the beginning and ending of the tax period. The use of monthly values
+may be required if necessary, to properly reflect
+the average value of the corporation’s property.
+Real property situated, and tangible personal property permanently located, in Hawaii on
+the last day of the taxable year if actually used
+in the unitary business, should be listed as within Hawaii. In determining the situs of movables,
+such as equipment used in Hawaii part of the
+year and in another jurisdiction part of the year,
+the value of such property shall be assigned to
+a location within and without Hawaii on the basis of approximate average time of such usage.
+In the case of properties leased or rented, the
+value of the leasehold interest or rented property shall be included in the property factor. The
+values of leasehold interests and other leased
+or rented properties are obtained by multiplying
+the net annual rent paid by 8. Where property is
+rented for less than a twelve-month period, the
+rent paid for the actual period of rental shall constitute the annual rental rate for the tax period.
+PAYROLL FACTOR
+Salaries, wages, commissions, and other
+compensation for personal services paid during the taxable year to officers and employees
+in connection with the unitary business should
+be entered as within Hawaii if the services are
+actually performed here, regardless of where
+payment is made or control exercised.
+SALES FACTOR
+Gross sales or receipts attributable to and
+derived from the taxpayer’s unitary business
+operations shall be the gross sales or gross receipts less returns and allowances. In the case
+
+Page 2
+of tangible personal property there shall be attributable to Hawaii all sales of such property:
+(A) delivered to a purchaser at a point within
+Hawaii regardless of the f.o.b. point or
+where the sale was consummated,
+(B) shipped to a purchaser situated at a point
+within Hawaii regardless of the f.o.b. point
+or where the sale was consummated, and
+(C) delivered to a purchaser at a point outside
+Hawaii or shipped to a purchaser at a point
+outside Hawaii, if such point is located in
+a jurisdiction in which the taxpayer is not
+doing business and the sale was made on
+an order secured or received by an office
+or branch in Hawaii or a representative
+residing or stationed in Hawaii.
+In the case of sales of other than tangible
+personal property, there shall be included,
+in addition to amounts includible under rules
+prescribed on the sale of tangible personal
+property above, all sales or receipts from:
+(A) property located and contracts performed in
+Hawaii, irrespective of the place where the
+contract is made,
+(B) communications transmitted from a point in
+Hawaii,
+(C) intangible property used in Hawaii,
+(D) services used or consumed in Hawaii,
+(E) all other activities engaged in or transactions
+conducted in Hawaii.
+USE OF FACTORS
+All business income shall be apportioned to
+this State by multiplying the income by a fraction, the numerator of which is the property factor plus the payroll factor plus the sales factor,
+and the denominator of which is three (sections
+235-29 and 255-1, HRS). If the denominator of
+the property factor, payroll factor, or sales factor
+is zero, the denominator of the fraction in section 235-29, HRS, is reduced by the number of
+factors with a zero denominator, and the numerator of that fraction shall not include any factor
+with a zero denominator.
+MODIFICATION OF FACTORS FOR CERTAIN
+LINES OF BUSINESS
+A taxpayer carrying on the business of air
+or sea transportation service, construction
+contracting, publishing, and radio or television
+broadcasting may derive income partly from
+sources within and partly from sources without
+Hawaii. Such a taxpayer is required to use the
+factors as modified under Department of Taxation Administrative Rules, section 18-235-38-06.
+
+

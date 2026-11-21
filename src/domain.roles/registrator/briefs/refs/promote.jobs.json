@@ -1,0 +1,44 @@
+{
+  "what": "which pulled bytes become which PUBLISHED ref, and why each slice omits what it omits",
+  "why": "a brief that ships to npm with its evidence in a gitignored tree ships with NO evidence. `git check-ignore -v <src>` on any row below returns a hit; the `dst` is where a reader can actually reach it",
+  "rerun": "rhx source.promote --manifest src/domain.roles/registrator/briefs/refs/promote.jobs.json --mode apply",
+  "note": "the `src` paths come from the two playbooks in this directory. re-run those first if a row reports `source absent`",
+  "jobs": [
+    {
+      "src": ".scratch/refs/pulls/de.regguide.txt",
+      "dst": "src/domain.roles/registrator/briefs/incorporation/variant=c-corp/refs/pulledAt=2026-08-30.de-submitting-a-request.txt",
+      "slice": null
+    },
+    {
+      "src": ".scratch/refs/pulls/de.ecorp2.txt",
+      "dst": "src/domain.roles/registrator/briefs/incorporation/variant=c-corp/refs/pulledAt=2026-08-30.de-ecorp-business-services.txt",
+      "slice": null
+    },
+    {
+      "src": ".scratch/refs/pulls/stripe.hop3.whole.txt",
+      "dst": "src/domain.roles/registrator/briefs/incorporation/variant=c-corp/refs/pulledAt=2026-08-30.stripe-atlas-pricing.txt",
+      "slice": {
+        "from": "Company incorporation in Delaware",
+        "to": "annually after your first year"
+      },
+      "why": "a `textContent` read of this page returns ~268 KB against ~12 KB of prose, because a hydration payload rides along. the markers are read off the RAW bytes: a first pass used `Atlas Incorporate your company`, which reads contiguous only after a `\\s+ -> ' '` collapse, so the marker missed and the guard refused"
+    },
+    {
+      "src": ".scratch/refs/pulls/atlasdocs.hop3.whole.txt",
+      "dst": "src/domain.roles/registrator/briefs/incorporation/variant=c-corp/refs/pulledAt=2026-08-30.stripe-atlas-signup-docs.txt",
+      "slice": { "from": "Registered agent service", "to": "Next steps" },
+      "why": "same hydration payload. the slice is the agent-service section, which is the only part any brief cites"
+    },
+    {
+      "src": ".scratch/refs/pulls/stripe.support.defranchise.txt",
+      "dst": "src/domain.roles/registrator/briefs/incorporation/variant=c-corp/refs/pulledAt=2026-08-30.stripe-atlas-support-de-franchise-tax.txt",
+      "slice": null
+    },
+    {
+      "src": ".scratch/refs/pulls/delcode.title8.c001.sc03.txt",
+      "dst": "src/domain.roles/registrator/briefs/incorporation/variant=c-corp/refs/pulledAt=2026-08-30.de-title8-sc03-registered-agent.txt",
+      "slice": null,
+      "why": "PROMOTED WHOLE, AND THAT IS THE POINT. a first pass sliced 8 Del. C. § 132 alone, because § 132 is the section that answers the question — and it is § 136, four sections later, that carries the hazard: an agent may resign from a corporation that is ALREADY VOID, and the only notice goes to `its address last known to the registered agent`. a § 132-only slice reads as a complete answer and omits the one provision that can cost you the agent"
+    }
+  ]
+}
