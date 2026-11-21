@@ -1,0 +1,14 @@
+slug: 'split-plan-for-pr54'
+source: 'peer:human'
+status:
+  choice: 'fulfilled'
+  reason: 'split-plan.md written; F17 itemized'
+why:
+  ask: 'split plan for #54 into layer prs, each under 30 min, written to route as split-plan.md'
+  purpose: '#54 runs ~105 min of review; the bar is 30 min per pr'
+  benefit: 'each layer pr can get its own tree and a review that fits the bar'
+what:
+  outcome: 'split-plan.md in the route with layers in dependency order, files and line counts'
+how:
+  task: 'measure diff per kind, apportion the brain files by function and case span, write the plan'
+  gate: 'split-plan.md written, each layer estimate under 30 min'
