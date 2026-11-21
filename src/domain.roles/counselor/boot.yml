@@ -9,6 +9,9 @@ always:
       # the how and the why behind the two confidentiality rules
       - briefs/confidentiality/howto.work-a-client-ask-from-a-public-repo.md
       - briefs/confidentiality/whyto.client-facts-live-in-a-private-tree.md
+      # the conftiers, and the vault that holds conftier.0 and conftier.1
+      - briefs/confidentiality/define.conftier.md
+      - briefs/confidentiality/howto.vault-client-records-by-conftier.md
       # ⭐ research method — run this at the END of every research pass, any subject
       # .note = a synthesis brief is organized by what the sources REQUIRE, so it structurally loses
       #         where a reader's intuition DIVERGES from them. that divergence exists only as a

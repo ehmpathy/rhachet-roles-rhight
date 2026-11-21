@@ -10,6 +10,9 @@ always:
       # the client-ask flow: the how and the why behind the two client rules
       - briefs/howto.work-a-client-ask-from-a-public-repo.md
       - briefs/whyto.client-facts-live-in-a-private-tree.md
+      # the conftiers, and the vault that holds conftier.0 and conftier.1
+      - briefs/define.conftier.md
+      - briefs/howto.vault-client-records-by-conftier.md
       # rules
       - briefs/rule.require.webfetch-citations.[rule].md # superseded by bhrowser-citations
       - briefs/rule.forbid.test-skip.[rule].md
