@@ -1,5 +1,7 @@
 # hazard.tenant-vandalism-exclusion
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .scope
 
 **this hazard applies to:**
@@ -278,4 +280,8 @@ with $3,000 security deposit: **$42,000 unrecovered loss**
 10. [Merlin Law Group - Vandalism and Malicious Mischief Coverage](https://www.merlinlawgroup.com/vandalism-malicious-mischief-coverage-insurance/)
 11. [DoorLoop - Normal Wear and Tear vs Excessive Tenant Damages](https://www.doorloop.com/blog/tenant-normal-vs-excessive-wear-tear-damages)
 12. [Stessa - Landlord Rights When Tenant Destroys Property](https://www.stessa.com/blog/landlord-rights-when-tenant-destroys-property)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic tenant-vandalism policy exclusion explained from public sources; no client identity or applied strategy.
 

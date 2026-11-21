@@ -1,5 +1,7 @@
 # howto.shore-up-inherited-unpermitted-work.indianapolis-in
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 Indianapolis-specific guide to legitimize inherited unpermitted work via retroactive permits through DBNS (Department of Business and Neighborhood Services).
@@ -546,6 +548,10 @@ source: [Nicholas Design Build](https://nicholasdesignbuild.com/penalties-for-bu
 
 ### case law
 - Sheehan Construction Co. v. Continental Casualty Co. (Ind. 2010)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic Indianapolis how-to built on public agency pages and cited third-party sources; no client identity.
 
 ## .date researched
 

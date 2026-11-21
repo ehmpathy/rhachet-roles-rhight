@@ -1,5 +1,7 @@
 # hazard.rental-purchase.realtor-referral-pipeline
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .scope
 
 **this hazard applies to:**
@@ -147,6 +149,10 @@ see `define.homeowner-vs-landlord-insurance.[lesson].md`
 - `howto.find-landlord-insurance.[lesson].md` — how to get correct coverage
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

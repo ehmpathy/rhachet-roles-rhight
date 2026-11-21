@@ -1,5 +1,7 @@
 # ref.builders-insurance.providers.indianapolis-in
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 builder's insurance providers available in Indianapolis, Indiana for landlord renovation projects (e.g., $20k electrical work).
@@ -1145,6 +1147,10 @@ to prevail against broker:
 75. [Hittle Insurance Agency](https://www.hittleinsurance.com/) — WebFetch verified 2026-04-30
 76. [Penwell Insurance](https://www.penwellinsurance.com/) — WebFetch verified 2026-04-30
 77. [Hoch Insurance](https://www.hochinsurance.com/) — WebFetch verified 2026-04-30
+
+## .publishability
+
+☀️ **fullsun** (share) — public directory of builder's risk providers for a city market; no client identity or applied strategy.
 
 ## .date researched
 

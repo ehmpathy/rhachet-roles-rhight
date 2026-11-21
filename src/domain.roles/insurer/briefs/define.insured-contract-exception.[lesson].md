@@ -1,5 +1,7 @@
 # define.insured-contract-exception
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 the "insured contract" exception can restore GL coverage even when an action over exclusion exists — IF your construction contract includes an indemnification clause AND the insurer hasn't removed the exception.
@@ -415,6 +417,10 @@ some states carve out insurance from anti-indemnity:
 | is this reliable? | **DEPENDS** — works in some states/cases, fails in others |
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

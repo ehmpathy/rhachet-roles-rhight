@@ -1,5 +1,7 @@
 # define.homeowner-vs-landlord-insurance
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 when you need homeowner's insurance (HO), landlord insurance (DP), or both — based on how you use the property.
@@ -223,6 +225,10 @@ do you live in the property?
 - `risk.ho-policy-on-rental-property.[lesson].md` — why HO on rental fails
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

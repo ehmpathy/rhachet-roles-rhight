@@ -1,5 +1,7 @@
 # ref.permit-insurance-coverage-evidence
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 evidence collection on insurance coverage outcomes for permitted vs unpermitted work, with case law, statistics, and anecdotes.
@@ -335,6 +337,10 @@ insurers do not publish this data. industry consensus comes from adjuster anecdo
 | 22 | Houzz Forum | anecdote |
 | 23 | Bridgewater NJ fire | documented denial |
 | 24 | BiggerPockets | documented denial |
+
+## .publishability
+
+☀️ **fullsun** (share) — evidence log of public case law, statistics, and quoted third-party sources; no client identity.
 
 ## .date researched
 

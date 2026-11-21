@@ -103,6 +103,11 @@ node_modules
 # ⚠️ DO NOT add an allowlist line for a demo that has not passed a verified
 # pseudonymization pass.
 
+# client trees, linked in from each client's PRIVATE repo. client facts live
+# there, never here: this repo is public.
+# see rule.forbid.client-identity-in-public-comments
+.client
+
 # local working notes — never published
 .agent/.notes/
 

@@ -1,5 +1,7 @@
 # howto.retroactive-permit.own-work
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 retroactive permit process for work YOU did on your own primary residence without a permit.
@@ -171,6 +173,10 @@ Indianapolis allows owner-builders to pull their own retroactive permits for pri
 - [Leave The Key: How to get a permit after work is done](https://leavethekey.com/blog/how-to-get-a-permit-after-work-is-done-ny/)
 - [Angi: Who pulls permits — homeowner or contractor?](https://www.angi.com/articles/who-pays-building-permits.htm)
 - [Bob Vila: What happens if you remodel without a permit?](https://www.bobvila.com/articles/remodel-without-permit/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic how-to for a class of homeowners, drawn from public sources; no client identity.
 
 ## .date researched
 

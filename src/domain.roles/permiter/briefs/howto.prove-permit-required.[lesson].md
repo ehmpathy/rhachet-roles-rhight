@@ -1,5 +1,7 @@
 # howto.prove-permit-required
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 process to determine and prove whether a permit is required for a specific work type in a given postal code.
@@ -178,3 +180,7 @@ the proof chain has two parts:
 if work is not on the exemption list, the baseline applies: **permit required**.
 
 most searches only find R105.2. always cite both to complete the proof.
+
+## .publishability
+
+☀️ **fullsun** (share) — generic method to prove a permit requirement from public code text; no client identity.

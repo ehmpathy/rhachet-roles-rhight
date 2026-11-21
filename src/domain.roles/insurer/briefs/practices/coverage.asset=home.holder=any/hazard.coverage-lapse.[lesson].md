@@ -1,5 +1,7 @@
 # hazard.coverage-lapse
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 a coverage lapse — even for one day — creates permanent consequences. when you transition between carriers (e.g., homeowners → landlord, or landlord A → landlord B), overlap is mandatory.
@@ -248,6 +250,10 @@ any coverage you buy yourself is better than force-placed.
 - `howto.survive-insurance-nonrenewal-obsolete-electrical.[lesson].md` — action plan for non-renewal
 
 ---
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.
 
 ## sources
 

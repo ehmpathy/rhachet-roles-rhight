@@ -1,0 +1,203 @@
+prevent future void by reduce costs and set reminders.
+
+.why = now that you're restored, take steps to avoid this situation again.
+
+---
+
+## reduce franchise tax (optional but recommended)
+
+if you have ≤5,000 issued shares, you can reduce authorized shares to pay $175/year instead of $400/year.
+
+| authorized shares | annual tax |
+|-------------------|------------|
+| 10,000,000 | **$400 floor** (Assumed Par Value) — ⚠️ rises with gross assets, see below |
+| 5,000 | **$175 flat** (Authorized Shares Method) — assets do not enter it |
+
+> 🚩 **the first row read a flat `$400` until 2026-09-02.** $400 is the
+> § 503(a)(2) **minimum**, not the rate. measured at 10,000,000 authorized /
+> 8,000,000 issued:
+>
+> | gross assets | annual tax |
+> |---|---:|
+> | $50 · $500,000 | $400.00 |
+> | $5,000,000 | **$2,800.00** |
+>
+> ⭐ **and note which way this one cuts.** an understated *before* column makes
+> the reduction look **less** worth doing, not more. a corp at $5M assets is
+> told it saves $225/yr when it saves **$2,625/yr** — and may skip the move on
+> that basis. run `franchise.tax.delaware` with your own Schedule L figure
+> before you weigh the $214 amendment fee against it.
+
+⚠️ the $175 row genuinely is flat: the Authorized Shares Method does not read
+gross assets at all, so no assets figure raises it.
+
+see: `howto.reduce-franchise-tax-for-delaware-corp-solofounder.md`
+
+### steps to reduce
+
+1. draft board resolution
+2. file Certificate of Amendment — **$214.00** base, ⚠️ *varies with stock*
+3. update stock ledger
+
+⛔ **this step read `$50`.** the real fee is **$214.00** per Delaware's schedule
+(revised 2026-08-01), and the schedule marks it `*VARIES BASED ON STOCK` — which
+a share-count amendment always is. so **$214.00 is a floor, not a quote**.
+
+⚠️ **that changes whether this step suits your timeline.** you save $225.00/yr
+($400.00 − $175.00, both from `franchise.tax.delaware`), so at $214.00 the fee is
+roughly a **full year** of that, not the three months the neighboring brief used
+to claim. the move is still correct; the urgency is not.
+
+---
+
+## set reminders
+
+> 🚩 **this table held two rows — `Feb 1` and `Feb 15` — and no others, until
+> a later pass.** it was wrong in **three** independent ways, and this is the one
+> file in the route whose entire job is to make sure the void never recurs.
+
+### ⛔ March 1 is not one deadline — it is TWO, under two sections
+
+§ 510 voids the charter on **either** default, and the word is *"or"*:
+
+> "... neglects or refuses **for 1 year** to pay the State any franchise tax or
+> taxes ..., **or shall neglect or refuse to file a complete annual franchise tax
+> report**, the charter of the corporation **shall be void** ..."
+>
+> — 8 Del. C. § 510, https://delcode.delaware.gov/title8/c005/index.html
+
+so a corporation that pays every dollar and skips the **report** is voided all
+the same. the report has its own section and its own date:
+
+> "(a) **Annually on or before March 1**, every corporation now existing or
+> hereafter incorporated under Chapter 1 of this title ... **shall make an annual
+> franchise tax report to the Secretary of State**."
+>
+> — 8 Del. C. § 502(a)
+
+⭐ **calendar them as two items, not one.** a single "taxes due" reminder that you
+satisfy with a payment leaves the void trigger fully armed.
+
+### 🚨 and March 1 is the WRONG DATE once your tax reaches $5,000
+
+this is the defect with teeth. § 504(a) opens with the March 1 rule and then
+**replaces it** for larger taxpayers:
+
+> "(a) The franchise tax shall be due and payable on **March 1** following the
+> close of the calendar year, **except that** with respect to a corporation whose
+> franchise tax liability for the current calendar year is **estimated to be
+> $5,000 or more**, a tentative return and tax shall be due and payable as
+> follows:
+>
+> (1) **Forty percent** of the estimated tax on **June 1** of the current year;
+>
+> (2) **Twenty percent** of the estimated tax on **September 1** of the current
+> year;
+>
+> (3) **Twenty percent** of the estimated tax on **December 1** of the current
+> year; and
+>
+> (4) **The remainder** of the tax as finally determined together with the annual
+> franchise tax report on **March 1** following the close of the calendar year."
+>
+> — 8 Del. C. § 504(a)
+
+⛔ **a corporation over that line which calendars March 1 alone has already missed
+three due dates before the reminder fires**, and each one accrues interest:
+
+> "(c) If the tax of any corporation remains unpaid after the due dates
+> established by this section, the tax shall bear **interest at the rate of
+> 1½ percent for each month or portion thereof** until fully paid."
+>
+> — 8 Del. C. § 504(c)
+
+⚠️ **a transcription note, because it will bite whoever checks this.** the
+plain-text rendering of the code prints `1½` as **`11/2`**. the rate is **one and
+one-half percent per month**, compounded by no one — read it as **1.5%**, and do
+not read `11/2` as eleven-halves or as a date.
+
+⚠️ **and the $5,000 line is far lower than it sounds.** it is a **tax** figure,
+not a revenue figure — the Authorized Shares Method reaches it on share count
+alone, and a charter with millions of authorized shares can be billed many times
+over it. **run `franchise.tax.delaware` before you assume you are under it.**
+
+⭐ **§ 504(e) tells you what the estimate is built on:** *"The tentative return
+and tax paid thereon under subsection (a) of this section shall be based on the
+**annual franchise tax of the preceding year**."* so the year right after a
+reinstatement is exactly when this bites — the preceding year is the one you just
+settled.
+
+### the table, corrected
+
+| date | reminder | § |
+|------|----------|---|
+| **Jun 1** | ⚠️ **40% tentative payment** — only if estimated tax ≥ $5,000 | § 504(a)(1) |
+| **Sep 1** | ⚠️ **20% tentative payment** — same condition | § 504(a)(2) |
+| **Dec 1** | ⚠️ **20% tentative payment** — same condition | § 504(a)(3) |
+| **Feb 1** | file the **annual report** *and* compute the balance | § 502(a) |
+| **Feb 15** | final reminder — file and pay now | — |
+| **Mar 1** | ⛔ **both** the report and the remaining tax are due | §§ 502(a), 504(a)(4) |
+| **your agent's renewal date** | the registered agent fee — see the § 502(d) hazard below | § 502(d) |
+
+🎯 **set the three tentative dates even if you are under the threshold today.** a
+share amendment, an asset year, or a reinstatement can put you over it with no
+notice at all, and a dormant calendar entry costs you no effort.
+
+### ⚠️ do not let the registered agent lapse — § 502(d)
+
+> "In case any corporation shall fail to file its annual franchise tax report and
+> the franchise tax due ..., **and in case** the agent in charge of the registered
+> office ... shall die, resign, **refuse to act as such**, remove from this State
+> or cannot with due diligence be found, **it shall be lawful while default
+> continues to serve process against the corporation upon the Secretary of
+> State**."
+>
+> — 8 Del. C. § 502(d)
+
+the two conditions are **cumulative**, so a paid-up agent shuts this door even
+during a tax default. but an unpaid agent who declines to act reopens it — and
+service on the State is service you will not hear about until a judgment exists.
+
+add all of these to your calendar now.
+
+---
+
+## consider registered agent with reminders
+
+some agents send automatic reminders:
+
+| agent | annual cost | reminders |
+|-------|-------------|-----------|
+| Harvard Business Services | $50 | yes |
+| Delaware Registered Agent | $50 | yes |
+| Northwest | $125 | yes |
+
+---
+
+## emit
+
+record prevention steps in:
+`$route/6.prevent.future.yield.md`
+
+format:
+```
+## actions taken
+
+- [ ] reduced authorized shares to ≤5,000
+- [ ] set calendar reminder for Feb 1
+- [ ] set calendar reminder for Feb 15
+- [ ] switched to agent with reminders
+
+## new annual cost
+
+| item | before | after |
+|------|--------|-------|
+| franchise tax (from `franchise.tax.delaware`) | $ | $ |
+| annual report fee ($50 non-exempt / $25 exempt) | $ | $ |
+| registered agent | $ | $ |
+| **total** | $ | $ |
+
+## notes
+
+[any other steps taken]
+```

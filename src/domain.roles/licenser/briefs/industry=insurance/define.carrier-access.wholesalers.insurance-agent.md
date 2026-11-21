@@ -1,5 +1,7 @@
 # define.carrier-access.wholesalers.insurance-agent
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 insurance agents access wholesalers, MGAs, and surplus lines brokers to place hard-to-place risks, with access requirements varying by wholesaler type, state licensing mandates, E&O coverage, and production history rather than direct carrier appointments.
@@ -490,3 +492,7 @@ quality submissions matter:
 - define.purpose-of-insurance-agent-licenses — why licenses exist
 - define.history-of-insurance-agent-licenses — historical evolution
 - define.insurance-agent-license-process — how to obtain a license
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public insurance-market analysis; no client identity or client-specific mechanic.

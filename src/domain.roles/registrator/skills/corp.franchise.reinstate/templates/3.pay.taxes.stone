@@ -1,0 +1,692 @@
+pay all back taxes, penalties, and interest.
+
+.why = Delaware requires full payment before they will process the Certificate of Revival.
+
+---
+
+## ⛔ PRECONDITION — the amended reports must be filed FIRST
+
+**a payment made before the reports discharges the WRONG NUMBER, and the portal
+will let you do it.**
+
+when a report is absent, Delaware does not wait for you. § 502(c) directs the
+Secretary of State to compute the tax on the one method that needs no data from
+you — § 503(a)(1), Authorized Shares — and that amount **stands** until you
+displace it:
+
+> "(c) If the annual franchise tax report and the franchise tax due are not
+> filed or paid by the corporation as required by this chapter, **the Secretary
+> of State shall ascertain and fix the amount of the franchise tax as determined
+> in the manner prescribed by § 503(a) of this title** and the amount so fixed by
+> the Secretary of State **shall stand as the basis of taxation** under the
+> provisions of this chapter **unless the corporation shall thereafter elect to
+> compute the franchise tax in the manner prescribed by § 503(a)(2) of this title
+> by filing the annual franchise tax report** and complying with the provisions
+> of § 503(b) of this title. **In the event of neglect, refusal or failure on the
+> part of any corporation to file a complete annual franchise tax report** with
+> the Secretary of State on or before March 1, **the corporation shall pay the sum
+> of $200** to be recovered by adding that amount to the franchise tax as herein
+> determined and fixed, and such additional sum **shall become a part of the
+> franchise tax** as so determined and fixed, and shall be collected in the same
+> manner and subject to the same penalties."
+>
+> — 8 Del. C. § 502(c), https://delcode.delaware.gov/title8/c005/index.html
+> embedded at `registrator/briefs/incorporation/variant=c-corp/refs/de-title8-ch5-franchise-tax.txt`
+
+🚩 **this quote was WRONG in two ways until 2026-09-14, and one of them was a
+SPLICE ACROSS SUBSECTIONS.** the old version opened *"In case any corporation
+shall fail to file its annual franchise tax report …"* — words that are **not in
+§ 502(c) at all.** they open **§ 502(d)**, which is about **service of process on
+the Secretary of State when the registered agent cannot be found**. a clause
+about lawsuits wore a citation about tax computation.
+
+⚠️ **and every provenance check passed.** the words are real, the statute is
+real, the chapter is the right chapter, the url is right, and `quote.verify`
+returned **green** — because it tests whether a fragment appears *in the
+container*, and both fragments do. **it does not slice to the cited subsection
+before it searches.** that is the container/needle hazard
+`rule.require.bhrowser-citations` documents, met inside the verification tool
+built to catch it.
+
+⭐ **the tell was available and cheap: this very route cites § 502(d) CORRECTLY
+elsewhere.** `0.gather.position.stone` quotes the same opening clause under
+§ 502(d) as a service-of-process hazard, and `6.prevent.future.stone` does it
+again. **one clause, two files, two different subsection numbers** — a
+self-contradiction no external source is needed to find.
+
+🚨 **the second error cost money.** the old quote ended at *"§ 503(b) of this
+title"* — a sentence boundary, so it read as complete. **§ 502(c) has a second
+sentence, and it carries a flat $200 per delinquent year**, added to the tax
+itself and collected under the same penalties. on a four-year delinquency that
+is **$800** the quote silently omitted. the figure was correct in
+`4.file.revival.stone`, ~400 lines into a different file — **the cure never
+traveled back to where a reader meets the section first.**
+
+⭐ **the report IS the election.** a call is coordination; it grants no election.
+
+#### ⛔ the report and the election — § 502(a) + § 503(b), TWO in statute, ONE on the form
+
+> 🚩 **this heading said flatly "are TWO DOCUMENTS" until a later pass, and the
+> subsection at the foot of it already said the form merges them.** the refinement
+> landed in the body and the heading kept asserting the unrefined claim — which is
+> the half a skim-reader actually meets.
+>
+> ⭐ **the COUNT CLAIM detector surfaced it by accident**, on a technicality
+> (`said "two" · found 1` subsections). it was not a count error at all; it was a
+> **staleness** error, and no check on this page was aimed at it. ⇒ an advisory
+> that fires for the wrong reason can still be worth the read.
+
+**what** — an amended year that takes the Assumed Par Value method needs **two
+submissions, not one**:
+
+| document | authority | carries |
+|---|---|---|
+| the **annual report** | § 502(a)(1)–(7) | registered office · agent · nature of business · principal place · directors + the signing officer · **AUTHORIZED** shares and par value |
+| the **election statement** | § 503(b) | **ISSUED shares** *and* **total gross assets**, submitted *"at the time of filing"* the report |
+
+**why** — because § 502(a)'s contents list is **closed**, and neither figure is
+in it. the section names seven items and the sixth ends *"; and"*, so (7) is the
+last:
+
+> "(6) The number of shares and the par value per share of each class of capital
+> stock having a par value and the number of shares of each class of stock
+> without par value **which the corporation is authorized to issue**; and
+>
+> (7) Such additional information, schedules and attachments as the Secretary
+> shall require to ascertain the franchise tax due to the State."
+>
+> — 8 Del. C. § 502(a)(6)–(7), https://delcode.delaware.gov/title8/c005/index.html
+> · bytes at
+> `registrator/briefs/incorporation/variant=c-corp/refs/de-title8-ch5-franchise-tax.txt`
+
+⇒ **authorized** shares, never issued. and no assets line at all. so the report
+alone cannot express the election — it lacks both of the inputs the method needs.
+
+the election lives in a separate sentence, and that sentence is a **conditional
+with a default**:
+
+> "(b) **Unless** a corporation shall submit to the Secretary of State, at the
+> time of filing its annual franchise tax report, a statement setting forth the
+> number of shares of each class of stock actually issued, if any, **and** the
+> amount of the total gross assets of the corporation, as of the nearest date on
+> which the amount is obtainable, including in the statement its goodwill valued
+> at the same amount at which it is valued in the books of account of the
+> corporation, **it shall pay a franchise tax for such year computed in the
+> manner prescribed by paragraph (a)(1) of this section.**"
+>
+> — 8 Del. C. § 503(b), same source and bytes
+
+🚨 **read the failure mode, not the requirement.** § 503(b) does not reject an
+incomplete statement. it **silently applies the other method.** paragraph (a)(1)
+is Authorized Shares — the $85,165 figure. so an amended report that carries the
+corrected **shares** and omits **assets** does not error out; it bills the
+maximum, and the filer learns it from the invoice.
+
+**how** —
+
+1. submit **both** in the same act. § 503(b)'s *"at the time of filing"* is the
+   whole hinge — a statement that arrives later is a statement that arrived after
+   the default already applied
+2. the statement needs **both** figures. the conjunction is `and`, not `or`
+3. the assets figure is pinned by § 503(i) to the Schedule L line — see the
+   § 503(i) section above, and the fiscal-year conflict recorded there
+4. the portal's own APV screen is the ordinary vehicle for (1). where a back year
+   is amended out of band, confirm with the Division that the statement travelled
+   with the report
+
+⚠️ **this is why a clerk's shorthand must not be read as a scope limit.** an
+instruction to amend a year *"with the correct total issued shares"* names the
+figure that **changed** on the election statement. it does not say the statement
+has one field. the statute says it has two, and the consequence of the second's
+absence is a fallback rather than a refusal.
+
+##### ⛔ REFINED same day — the FORM merges what the STATUTE separates
+
+> 🚩 **the section above says "two submissions, not one." the agency's own page
+> says the opposite in plain words, and it was on disk the whole time.** checked
+> against a source this route had already pulled.
+
+> "To use this method, you must give figures for all issued shares (including
+> treasury shares) and total gross assets **in the spaces provided in your Annual
+> Franchise Tax Report.**"
+>
+> — Delaware Division of Corporations, *How to Calculate Franchise Taxes*,
+> `https://corp.delaware.gov/frtaxcalc/`
+> · bytes: `registrator/briefs/incorporation/variant=c-corp/refs/pulledAt=2026-08-26.de-frtaxcalc.txt`
+
+⇒ **both figures go on the report form.** so in practice there is **one document**,
+and the two-document account above describes the **statute**, never the paper.
+
+✅ **and the two reconcile — the hook is § 502(a)(7).** that item lets the
+Secretary of State demand *"such additional information, schedules and
+attachments as the Secretary shall require to ascertain the franchise tax due."*
+so the form carries the § 503(b) figures **under § 502(a)(7) authority**, which is
+exactly the power that closed list exists to grant.
+
+| level | how many documents |
+|---|---|
+| the **statute** | two — § 502(a) contents, § 503(b) election |
+| the **form**, per § 502(a)(7) | **one** — the report, with spaces for both |
+
+🎯 **the practical consequence is BETTER news than the account above implies.** an
+omitted assets figure is not a silent gap in a separate paper the filer forgot to
+attach — it is a **blank field on the screen**, visible before submission. the
+§ 503(b) fallback is still the penalty, and it is now far harder to trigger by
+accident.
+
+⚠️ **the treasury-share parenthetical is the sharper catch.** the agency wants
+*"all issued shares **(including treasury shares)**"* — so the figure is **issued**,
+which is **not** the same as *issued and outstanding*. a corporation that ever
+repurchased stock has a larger number here than its cap table's outstanding
+count, and the larger number is the one Delaware wants. confirm which figure any
+attestation actually swears to.
+
+> ⭐ **a reading worth putting to them, flagged as a reading and not a holding.**
+> § 503(b) wants assets *"as of the nearest date on which the amount is
+> obtainable"*, and § 503(i) pins the amount to a Schedule L. for a year whose
+> federal return is **not yet filed**, the nearest **obtainable** Schedule L may
+> be the most recent one that exists. where an earlier year's schedule is already
+> verified on the Division's account, that may be the obtainable amount for the
+> later year's election too.
+>
+> 🎯 **the money stakes are zero** — a corporation on the APV floor computes to
+> the $400 minimum across the whole sensitivity band, so the figure chosen cannot
+> move the tax. what turns on it is the **truthfulness of a sworn statement**,
+> which is why it is a question for the Division and not a judgment call.
+> ⛔ do not act on this reading unconfirmed.
+
+### ✅ and a VOID corporation may make that election — § 312(h) says who signs
+
+> ⭐ the obvious objection to *"file the reports first"* is
+> that a void corporation's directors derive their authority from a charter that
+> no longer stands. § 312(h) answers it, and it reaches this step by name:
+
+> "**For purposes of this section and § 502(a) of this title**, the board of
+> directors ... **shall be comprised of the persons, who, but for the
+> certificate of incorporation having become forfeited or void ..., would be the
+> duly elected or appointed directors** ... satisfied if a majority of the
+> directors ... then in office, even though less than a quorum, **or the sole
+> director** ... then in office, authorizes ..."
+>
+> — 8 Del. C. § 312(h), https://delcode.delaware.gov/title8/c001/sc12/index.html
+
+⭐ **"and § 502(a) of this title" is the whole point.** § 502(a) is the annual
+franchise tax report — this step's instrument. the legislature extended the
+deemed-board rule to it **deliberately**, which is what makes a report signed
+while the charter is void a valid report rather than a nullity.
+
+🎯 **so the order this stone demands is not merely permitted, it is provided
+for.** the § 502(c) election is available to a void corporation, and § 312(h)
+supplies the authority to exercise it.
+
+| order | what you pay |
+|-------|--------------|
+| amended report per year → **then** pay | the Assumed-Par-Value amount |
+| pay → then amend | ⛔ the Authorized-Shares default. you funded the number you came to displace |
+
+### ⚠️ and § 503(b) is the CONDITION — an incomplete report fails SILENTLY
+
+> "(b) **Unless** a corporation shall submit to the Secretary of State, at the
+> time of filing its annual franchise tax report, **a statement setting forth
+> the number of shares of each class of stock actually issued, if any, and the
+> amount of the total gross assets** of the corporation, **as of the nearest
+> date on which the amount is obtainable**, including in the statement its
+> goodwill valued at the same amount at which it is valued in the books of
+> account of the corporation, **it shall pay a franchise tax for such year
+> computed in the manner prescribed by paragraph (a)(1) of this section**."
+>
+> — 8 Del. C. § 503(b), https://delcode.delaware.gov/title8/c005/index.html
+
+| § 503(b) demands, per year | note |
+|---|---|
+| shares of each class **actually issued** | ⚠️ **issued**, never authorized |
+| "**if any**" | ⭐ zero issued shares is inside the statute |
+| **total gross assets** | ⚠️ **both** figures. shares alone does not satisfy (b) |
+| "as of the **nearest date on which the amount is obtainable**" | 🚩 **qualified by § 503(i) — see below** |
+| goodwill at **book** value | the books govern; no appraisal is owed |
+
+⛔ an incomplete statement does not reject — it routes that year to (a)(1).
+**two independent doors to the same expensive room**: an absent report (§ 502(c))
+and a report that lacks its statement (§ 503(b)).
+
+### ⛔ and § 503(i) puts a FEDERAL RETURN in front of the report
+
+> "(i) As used in **subsections (a) and (b) of this section**, the term "total
+> assets" and the term "total gross assets" are identical terms and **mean all
+> assets of the corporation, net only of allowances for bad debts, accumulated
+> depreciation, accumulated depletion, accumulated amortization of land and
+> accumulated amortization of intangible assets.**
+>
+> Such total assets and total gross assets **shall be those “total assets”
+> reported to the United States on U.S. Form 1120 Schedule L, relative to the
+> company’s fiscal year ending in the calendar year prior to filing** with the
+> Secretary of State pursuant to this section. ... **The Secretary of State may
+> at any time require a true and correct copy of such schedule to be filed with
+> the Secretary of State’s office.**"
+>
+> — 8 Del. C. § 503(i), https://delcode.delaware.gov/title8/c005/index.html
+
+> 🚩 **two alterations, corrected 2026-09-14, both caught by `quote.verify`.**
+>
+> 1. the statute's **double** quotes around "total assets" and "total gross
+>    assets" had been swapped for **single** ones. the block is itself wrapped
+>    in `"`, so the swap read as a tidy markdown convenience. ⛔ **it is the
+>    n=23 class: a formatting constraint is never a licence to alter quoted
+>    law.** where the nesting is genuinely unreadable, break the block — never
+>    retype the statute.
+> 2. the last sentence ended at "to be filed." the statute reads "to be filed
+>    **with the Secretary of State's office**." the truncation drops *where*,
+>    which is the operative half of a production demand.
+
+> 🚩 **a THIRD alteration, found later — and alteration 1's own cure caused
+> part of it.** every apostrophe and quote mark in the block above was **straight**
+> where the statute has **curly**: `“total assets”`, `company’s`, and
+> `Secretary of State’s`. the 2026-09-14 pass restored the *double* quotes and
+> emitted them straight — **the fix was itself the retype its own note forbids.**
+>
+> ⛔ **`quote.verify` cannot see this class.** it normalizes the curly/straight
+> pair before it compares, which is correct for its job and blind for this one —
+> confirmed empirically: this block read straight through a census that reported
+> `live defects: 0`. **only a byte read against the source catches it.**
+>
+> 🎯 so the habit, not the guard: **slice a quotation off disk; never retype it.**
+> a straightened quote is *more* legible than a curly one, so a proofread makes it
+> worse.
+
+| what (i) settles | note |
+|---|---|
+| the figure is **GROSS** | the list of allowances is **closed** — bad debts, accumulated depreciation, depletion, amortization of land and of intangibles. ⛔ **liabilities do NOT reduce it.** book equity is the wrong number |
+| the source is **Schedule L** | (i) opens *"As used in subsections (a) and **(b)**"*, so it governs the (b) statement |
+| the date | the fiscal year that ends *"in the calendar year **prior to filing**"* — ⚠️ this keys on the **filing** date, not the report's tax year. ordinarily they agree; **for a delinquent filer they do not.** ✅ **resolved — see below;** take the report's own tax year |
+| ⛔ a year with **no 1120 on file** | (i) says *"reported to the United States"* — past tense. **the definition has no referent**, so the federal return comes first |
+| ⭐ **who reads it** | the Division — **not** the IRS. (i)'s last sentence is a *production* power, so the figure is closed by **handing them a copy**. see below |
+
+#### ⭐ HOW the assets figure actually gets closed — send them the schedule
+
+the rows above say the return is a **precondition**. they do not say what closes
+the gate, and the two are different acts. a return filed with the IRS is invisible
+to Delaware; what Delaware acts on is a **copy in its own hands**.
+
+**what** — email an **officer-signed** copy of the federal return, with the
+Schedule L legible, to the franchise-tax desk — `dosdoc_ftax@delaware.gov`.
+
+**why** — § 503(i)'s closing sentence is not decorative. it is the statutory hook
+the whole procedure hangs on:
+
+> "**The Secretary of State may at any time require a true and correct copy of
+> such schedule to be filed with the Secretary of State’s office.**"
+>
+> — 8 Del. C. § 503(i), https://delcode.delaware.gov/title8/c005/index.html
+> · bytes at
+> `registrator/briefs/incorporation/variant=c-corp/refs/de-title8-ch5-franchise-tax.txt`
+> · ⚠️ **sliced off disk, not retyped** — the apostrophe in *State’s* is **curly**
+> in the source, and a retype emits a straight one. `quote.verify` normalizes the
+> pair, so **the guard passes either way**; only a byte read catches it
+
+⇒ the power runs to **the schedule**, not to the tax return as a whole, and it is
+exercisable *"at any time"* — so it is available before, during, or after an
+amended report, and it is satisfied by a copy rather than by a filing. § 504(d)'s
+inquiry power over *"the truth or falsity or accuracy of every report"* is the
+same posture aimed at the report instead of the schedule.
+
+**how** —
+
+1. sign it as an officer, on page 1, and date it
+2. redact the **SSN only** — ⛔ never the EIN, the address, or any figure. the
+   Division needs the substance; an over-redacted submission gets rejected
+   (`rule.require.deterministic-redaction`)
+3. send it as a **clean delivery with no questions attached** — one message, one
+   job (`rule.forbid.baggage`). a bundled ask changes the message's category and
+   can re-queue the whole thing
+4. expect the result on **their account**, not in a reply. ask for confirmation
+   only if a week passes
+
+> 🚩 **observed in one matter, and it inverts the intuition about silence.** a
+> signed copy went out on day 0; the Division verified the assets onto the account
+> on **day 4**; the filer heard not one word until **day 19**, and by then had
+> written the send off as a channel failure and re-sent it. ⇒ **silence is
+> evidence of silence, never of a delivery failure** — and the work may already
+> be done.
+
+⚠️ **this does NOT relax the precondition.** for a year with no return, there is
+still no schedule to copy, so the gate stands. what it changes is the shape of the
+gate: it is a **document-delivery** gate, and the cheapest next act is to put the
+schedules you already hold into their hands rather than to wait.
+
+#### ✅ WHICH fiscal year — settled by the Division's own page
+
+> "Total Gross Assets shall be those “total assets” reported on the U.S. Form
+> 1120, Schedule L (Federal Return) **relative to the company’s fiscal year
+> ending the calendar year of the report**."
+>
+> — Delaware Division of Corporations, *How to Calculate Franchise Taxes*,
+> https://corp.delaware.gov/frtaxcalc/
+>
+> bytes at
+> `briefs/incorporation/variant=c-corp/refs/pulledAt=2026-08-26.de-frtaxcalc.txt`
+
+⛔ **the statute and the agency genuinely disagree**, and only for a late filer:
+
+| source | a 2023 report, amended in 2026, points at |
+|---|---|
+| **§ 503(i)** — the calendar year prior to when you file | fiscal year **2025** |
+| ⭐ **the Division** — the calendar year of the report | fiscal year **2023** |
+
+✅ **take the report's own tax year**, and say so on the call. the Division runs
+the portal the number is typed into, so its published gloss is what the form is
+built around; and a figure keyed to the report's own year is defensible on its
+face rather than as an evasion.
+
+> 🚩 **this section was owed here for two cycles and did not arrive.** the answer
+> was enstoned in `0.gather.position.stone` and in question 8 of
+> `2.call.delaware.stone` the same day it was pulled — and **not here**, in the
+> step that carries § 503(i) in the most depth and that a filer reads last.
+> until this edit, the row above still said *"ask the Division"* about a
+> question the Division had already answered in public.
+>
+> ⭐ **a cure does not move sideways on its own.** it lands where the fact is
+> *defined* and stops there; it does not travel to where the fact is *used*.
+> when you settle something, grep for every site that states the open version
+> — the count is never one.
+
+> 🎯 **so any delinquent federal returns are a PRECONDITION on the amended reports.**
+> the returns are owed independently anyway — 26 CFR § 1.6012-2(a)(1) requires a
+> 1120 *"regardless of whether it has taxable income"* — so no avoidable work is
+> added. mandatory work simply moves to the front.
+
+⚠️ **the report is sworn.** § 502(b) puts the officer under penalty of perjury,
+§ 504(d) gives the Secretary inquiry power over *"the truth or falsity or
+accuracy of every report,"* and (i) lets the Secretary demand the schedule **at
+any time**. **a gross-assets figure filed ahead of the return that substantiates
+it is a sworn number with no document behind it.**
+
+### ⏱️ and § 504(d) closes with a 60-DAY CLOCK — a SECOND petition, not § 505(b)
+
+> this stone cited § 504(d) for the inquiry power and stopped
+> before the sentence that carries a deadline.
+
+read the whole subsection. after the inquiry power comes a consequence:
+
+> "Where the Secretary of State shall determine the amount of franchise tax
+> which has been paid is **less than the franchise tax due**, the Secretary of
+> State **shall notify the taxpayer of the additional tax** and any interest
+> thereon which is due. Such additional tax and interest thereon **shall be
+> paid, or a petition for review thereof shall be filed, within 60 days after
+> the notification** to the taxpayer."
+>
+> — 8 Del. C. § 504(d), https://delcode.delaware.gov/title8/c005/index.html
+
+⛔ **this is a different petition from § 505(b), on a different trigger.** do not
+conflate them:
+
+| | § 505(b) | § 504(d) |
+|---|---|---|
+| what it challenges | the **assessment** on a void corporation | an **additional** tax the Secretary determined after review |
+| when it opens | any time while void | **only on notification** |
+| when it shuts | ⛔ at the § 312(c) revival certificate | ⏱️ **60 days after the notification** |
+| what you may do instead | — | pay |
+
+⚠️ **the § 504(d) clock can start AFTER revival**, because the inquiry power has
+no end date and (i) lets the Secretary demand the Schedule L *"at any time."* so
+the loss of § 505(b) at step 4 does **not** mean every route back is shut — it
+means the one left is on someone else's timer, and it opens only if they act.
+
+🎯 **the operational rule: if a notification of additional tax arrives, diary 60
+days that day.** the clock runs from notification, not from receipt, not from
+when you read it.
+
+### the full order
+
+```
+0. substantiate, if the Division asked     <- § 503(f): a supplemental affidavit
+   └─ it must LAND before the report it supports
+1. file the delinquent federal 1120s       <- § 503(i): the Schedule L is the source
+2. AMEND each filed year / file each absent one
+   └─ § 502(c) election + § 503(b) statement
+   └─ ⛔ SERIALIZE: one year, wait for acceptance, then the next
+3. THEN pay                                <- what this stone covers
+   └─ ⛔ number still wrong? PETITION UNDER § 505(b) BEFORE step 4
+4. then the Certificate of Revival         <- this filing KILLS the § 505(b) right
+```
+
+⚠️ **step 2 says AMEND, and the word is load-bearing.** a year whose report was
+already filed — on the wrong method, or with a blank where a figure belonged —
+is not cured by a second original. it is cured by an **amendment to that year's
+report**, and the Division processes those one at a time. a filer who submits
+several at once, or who submits an amendment before its supporting affidavit has
+been received, gets them **returned**, not queued.
+
+⚠️ **step 0 is conditional, not universal.** the statutory hook is narrow —
+§ 503(f) lets the Secretary of State *"require the filling of a supplemental
+affidavit stating fully the pertinent facts"*, and on its face that power is
+attached to the **one-half rate** claim, not to the § 503(a)(2) election
+generally. ⛔ **so do not assume an affidavit is owed.** the Division may ask for
+one to substantiate a figure it cannot verify from its own records; where it
+does, the ask is the authority, and the affidavit gates the report. where it has
+not asked, step 0 is a no-op.
+
+🎯 **the ordering rule underneath all of it: each step must be ACCEPTED, not
+merely SENT, before the next one goes.** § 502(c) makes the assessment stand
+*"unless the corporation shall thereafter elect"* — and an election is complete
+when the report is filed, never when it is mailed. a step taken against an
+un-accepted predecessor is a step taken against the old number.
+
+> ⛔ **step 4 is a one-way door and this stone is your last clear look at it.**
+> § 505(b) lets a void corporation petition for a reduction *"**Prior to the
+> filing of a certificate required by § 312(c)**"* — the revival certificate. the
+> ordinary path, § 505(a), expires *"not later than **March 1 of the second
+> calendar year following** the close of such calendar year"*, so on a
+> multi-year delinquency it is already shut.
+>
+> ⇒ **two windows, and a delinquent filer is usually past the dated one before
+> it learns the other exists.** do not file the revival certificate over a figure
+> you dispute. see `4.file.revival.stone`, which carries the full analysis.
+
+### ⛔ a THIRD reason to correct BEFORE you pay: § 505(a)'s refund bar
+
+the § 505(a) sentence everyone reads is the deadline. **the sentence that closes
+it is the one that costs money**, and it names two instruments by number:
+
+> "**No refund shall be granted in connection with the filing of a certificate
+> of correction under § 103(f) of this title or the filing of a certificate of
+> validation under § 204 of this title.**"
+>
+> — 8 Del. C. § 505(a), https://delcode.delaware.gov/title8/c005/index.html
+
+⚠️ **an annual franchise tax report IS an instrument filed with the Secretary of
+State**, so § 103(f) is the natural way to fix one that was already filed wrong:
+
+> "(f) Whenever any instrument authorized to be filed with the Secretary of State
+> under any provision of this title, has been so filed and is an inaccurate
+> record of the corporate action therein referred to, or was defectively or
+> erroneously executed, sealed or acknowledged, **the instrument may be corrected
+> or nullified by filing with the Secretary of State a certificate of correction
+> of the instrument** which shall be executed, acknowledged and filed in
+> accordance with this section. … **An instrument corrected or nullified in
+> accordance with this section shall be effective as of the date the original
+> instrument was filed, except as to those persons who are substantially and
+> adversely affected by the correction or nullification and as to those persons
+> the instrument as corrected or nullified shall be effective from the filing
+> date.**"
+>
+> — 8 Del. C. § 103(f), https://delcode.delaware.gov/title8/c001/sc01/index.html
+
+> 🚩 **the quote above was a SPLICE until 2026-09-14, and `quote.verify` is what
+> caught it.** three defects, worst last:
+>
+> | what it said | what § 103(f) says |
+> |---|---|
+> | "may be corrected **by the filing** … of a certificate of correction of **such** instrument" | "may be corrected **or nullified** by filing **with the Secretary of State** a certificate of correction of **the** instrument" |
+> | "**The corrected instrument** shall be effective as of the date the original instrument was filed" | "**An instrument corrected or nullified in accordance with this section** shall be effective as of…" |
+> | *(the sentence ended there)* | "…**except as to those persons who are substantially and adversely affected** by the correction or nullification, and as to those persons the instrument as corrected or nullified **shall be effective from the filing date**" |
+>
+> ⛔ **the middle row is a fabrication, not a paraphrase.** § 103(f) *does* carry
+> a sentence that opens "The corrected instrument shall be" — and it continues
+> "**specifically designated as such in its heading**", a clause about the
+> *alternative* method (a corrected instrument filed **in lieu of** a certificate
+> of correction). the old block took the subject of that sentence and the
+> predicate of a different one. no fact-check of the section number, the url, or
+> the argument could have surfaced it.
+>
+> ⭐ **and the conclusion below is unchanged — which is exactly why it went
+> unread for weeks.** the elided exception cuts the same way the table already
+> runs: under the main clause the correction reaches back and § 505(a) bars the
+> refund; under the exception it does **not** reach back at all as to a person
+> adversely affected by it. either branch punishes a pay-first order. a defect
+> that leaves the answer intact is the one nobody re-opens.
+
+read the two together and the order writes itself:
+
+| your move | what you get |
+|---|---|
+| correct the report → **then** pay | you pay the corrected number. no refund is owed |
+| pay → then correct under § 103(f) | ⛔ the correction lands retroactively **and § 505(a) bars the refund.** the overpayment is gone |
+
+⭐ **so § 103(f) is not a safety net behind a premature payment — it is the thing
+that makes a premature payment permanent.** § 505(a) bars a *refund*; § 505(b)
+petitions for a *reduction*. **reduce before the money moves; there is no route
+back after it does.**
+
+⚠️ the same sentence names **§ 204**, the certificate of validation, on identical
+terms. that instrument is a revival-step trap with a second, larger cost — see
+`4.file.revival.stone`.
+
+#### ⛔ and for § 204 the refund/reduction distinction above does NOT hold
+
+
+
+the line above turns on a real difference: **§ 505(a) bars a refund, not a
+reduction**, which is why § 505(b) still works and why order matters. **that
+escape does not exist for § 204**, because a different subsection bars both:
+
+> "The **filing of a certificate of validation under § 204** of this title
+> **shall not reduce** the annual franchise tax and interest due for **any
+> period prior to the filing of such certificate of validation**, and **shall
+> not entitle the corporation to a refund** ..."
+>
+> — 8 Del. C. § 503(e), https://delcode.delaware.gov/title8/c005/index.html
+
+| instrument | refund | reduction |
+|---|---|---|
+| **§ 103(f)** correction | ⛔ barred by § 505(a) | ✅ **available** — via a § 505(b) petition, before the revival certificate |
+| **§ 204** validation | ⛔ barred by § 505(a) **and** § 503(e) | ⛔ **barred by § 503(e)** |
+
+⭐ **so § 204 is the one instrument on this route with no way back in either
+direction** — and § 503(e) closes it for **every prior period**, not merely the
+void window that § 312(g) reaches.
+
+🚩 **this is also the real answer to "the online system shows the old (higher)
+amount"** at the foot of this stone. the old amount is not a stale cache and not
+a clerical error — it is the § 502(c) assessment, and it will stay displayed
+until a complete report displaces it. a call cannot substitute for the
+instrument the statute names.
+
+---
+
+## payment options
+
+| method | url | limit |
+|--------|-----|-------|
+| online | https://corp.delaware.gov/paytaxes/ | ⚠️ credit card capped, ACH any amount — see below |
+| phone | (302) 739-3073 | credit card or ACH |
+| mail | check to Division of Corporations | no limit |
+
+> ⚠️ **the card cap is UNCITED — read it off the payment page before you plan
+> around it.** this row said `credit card <$5K` until 2026-09-02, with no source
+> row, in a route where every other fee table carries one.
+>
+> 🚩 **and treat that $5,000 with suspicion specifically**, because a *different*
+> $5,000 governs the same matter: § 504(a) switches the tax to a quarterly
+> installment structure once the **annual liability** reaches $5,000, and step 1
+> of this route warns about it by name. two unrelated rules at the same figure,
+> one page apart, is how a conflation gets made — and the payment page is one
+> click away, so there is no reason to carry the guess.
+
+⭐ the cap costs little to be wrong about — a declined card falls back to ACH,
+phone, or mail on the same day. it is flagged because an **uncited number in an
+executed instrument** is the defect, not because this one is dangerous.
+
+---
+
+## amount to pay
+
+from your 2.comms.on=$date.mech=phone.subj=apv-recalc.grain=final.md:
+
+| item | amount |
+|------|--------|
+| taxes | $ |
+| penalties | $ |
+| interest | $ |
+| annual report fee × years (their quoted figure) | $ |
+| **total** | **$** |
+
+⚠️ **this table must match step 2's emit table row for row.** the report-fee row
+was added to both on 2026-09-02 — it is owed per delinquent year, and **neither**
+`franchise.tax.delaware` (which prints `⬅️ tax only`) nor `.accrue` produces it,
+so it is silent in both tools. take the figure from what Delaware quoted on the
+call.
+
+---
+
+## payment steps (online)
+
+1. go to https://corp.delaware.gov/paytaxes/
+2. enter file number: [YOUR FILE NUMBER]
+3. verify corporation name matches
+4. enter payment amount — the **recalculated** total from the table above,
+   NOT the original Authorized-Shares-Method assessment the site may still
+   display
+5. select payment method
+6. complete payment
+7. save confirmation number
+
+---
+
+## important
+
+if the online system shows the old (higher) amount:
+
+⛔ **first ask whether the reports are actually on file, per year.** per the
+precondition at the head of this stone, that figure is the § 502(c) assessment
+and it stands until a complete § 503(b) report displaces it. a call will not move
+it, and a payment against it is a payment of the Authorized-Shares number.
+
+only once every delinquent year has a complete report on file:
+- call Delaware to confirm the recalculation is applied
+- they may need to manually adjust before you can pay online
+- alternatively, pay by phone with the reference number from your call
+
+> 🚩 **these three lines read as the whole remedy until a later pass**, which put
+> the reader's first move on the phone when the statute puts it on the report.
+> the lines are kept — they are correct *after* the reports land — under the
+> precondition that was previously absent.
+
+---
+
+## emit
+
+record payment confirmation in:
+`$route/3.pay.taxes.yield.md`
+
+format:
+```
+## the §503(b) precondition — RECORD IT PER YEAR, BEFORE THE PAYMENT ROW
+⛔ an incomplete row means that year silently computed under §503(a)(1).
+
+| tax year | report on file | issued shares, per class | total gross assets | as-of date | goodwill (book) |
+|---|---|---|---|---|---|
+| | yes / no | | | | |
+
+## payment confirmation
+
+| field | value |
+|-------|-------|
+| date | |
+| amount paid | $ |
+| confirmation number | |
+| payment method | |
+
+## receipt
+
+[attach or paste receipt/confirmation]
+```

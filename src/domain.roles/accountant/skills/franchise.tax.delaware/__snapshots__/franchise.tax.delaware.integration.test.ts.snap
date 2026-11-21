@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`franchise.tax.delaware.sh given: [case1] the demo share structure — 10M authorized @ $0.00001, 8M issued, $0 assets (an illustrative input) when: [t0] both methods are computed then: output matches snapshot 1`] = `
+"
+🦅 reckoned it,
+
+🏛️ franchise.tax.delaware --years 1
+   ├─ authorized: 10,000,000 shares @ $0.00001 par
+   ├─ issued: 8,000,000 shares
+   ├─ gross assets: $0.00  (Form 1120 Sch. L, per §503(i))
+   │
+   ├─ method A · authorized shares  §503(a)(1)
+   │  └─ $85,165.00 / year
+   │
+   ├─ method B · assumed par value  §503(a)(2)
+   │  ├─ 1. assumed par = $0.00 ÷ 8,000,000 = $0.000000
+   │  ├─ 2. authorized w/ par BELOW assumed  = $0.00
+   │  ├─ 3. authorized w/ par AT-OR-ABOVE it = $100.00
+   │  ├─ 4. assumed par value capital = $100.00
+   │  ├─ 5. $400 per $1,000,000 or fraction
+   │  └─ 6. $400.00 / year  (min $400, max $200,000)
+   │
+   ├─ governs: assumed-par-value  →  $400.00 / year
+   ├─ × 1 year(s) = $400.00  ⬅️ tax only
+   ├─ vs method A = $84,765.00 avoided
+   │
+   └─ sensitivity
+      ├─ the tax holds at $400.00 / year for any gross
+      │  assets up to $800,000.00
+      └─ so a revision to the assets figure below that line
+         does NOT raise the tax
+
+⚠️ tax only. penalties ($200/yr) and interest (1.5%/mo) are fixed
+   by the state — take them from Delaware, do not derive them.
+
+"
+`;

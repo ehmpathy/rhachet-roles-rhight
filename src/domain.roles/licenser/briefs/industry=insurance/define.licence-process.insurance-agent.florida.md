@@ -1,5 +1,7 @@
 # define.licence-process.insurance-agent.florida
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 florida insurance agent licensing requires pre-licensing education, state examination, fingerprint-based background check, application through MyProfile, and insurer appointment, all regulated under florida statute chapter 626 by the department of financial services.
@@ -392,3 +394,7 @@ florida insurance licenses are perpetual, provided continuing education requirem
 
 - define.purpose-of-insurance-agent-licenses - why licensing exists
 - define.insurance-agent-license-reciprocity - multi-state licensing
+
+## .publishability
+
+☀️ **fullsun** (share) — public Florida insurance licensure process; no client identity or client-specific mechanic.

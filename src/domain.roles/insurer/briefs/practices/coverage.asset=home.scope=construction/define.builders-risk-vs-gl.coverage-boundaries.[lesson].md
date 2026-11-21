@@ -1,5 +1,7 @@
 # define.builders-risk-vs-gl.coverage-boundaries
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 defines the coverage boundaries between builder's risk insurance and general liability (GL) for residential construction/renovation. explains which policy steps in for which loss type.
@@ -252,6 +254,10 @@ for replacement cost of your home during construction: **builder's risk is the p
 21. [BuildersRisk.net: What Builder's Risk Covers](https://buildersrisk.net/what-does-builders-risk-cover/)
 22. [Engage Insurance: Builder's Risk for Total Loss](https://engage-ins.com/newsroom-blog/2026/4/15/the-latest-perspective-builders-risk-insurance-the-coverage-that-stands-between-your-project-and-a-total-loss)
 23. [Rough Notes: Homeowners and Builder Risk](https://roughnotes.com/homeowners-and-builder-risk-2/)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic builder's risk versus general liability boundaries from public sources; no client identity or applied strategy.
 
 ## .date researched
 

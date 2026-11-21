@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`stripe.tally.sh given: [case1] a year with charges, a refund, a dispute, and fees when: [t0] the directory is tallied then: output matches snapshot 1`] = `
+"# stripe.tally
+
+source: \`$TMP/mixed\`
+
+> buckets by **transaction date** (\`created\`), matching the card side.
+> Stripe fees are summed from BOTH the \`fee\` column and standalone
+> \`fee\` rows — see the skill header, \`.the fee trap\`.
+
+## per tax year — Form 1120 figures
+
+| year | 1a gross receipts | 1b returns | 1c net | 26 stripe fees |
+|------|------------------:|-----------:|-------:|---------------:|
+| 2023 | $200.00 | $70.00 | **$130.00** | $25.00 |
+
+## Schedule L — Stripe balance at Dec 31
+
+| year | balance |
+|------|--------:|
+| 2023 | $105.00 |
+
+## per reporting category
+
+> the prefix is the Form 1120 line each category lands on.
+> \`--\` means the category is a balance-timing artifact that reaches
+> no 1120 line — deliberately excluded, not overlooked.
+
+| year | category | count | gross | fee column |
+|------|----------|------:|------:|-----------:|
+| 2023 | 1a charge | 1 | $200.00 | $3.00 |
+| 2023 | 1b dispute | 1 | $-50.00 | $15.00 |
+| 2023 | 1b refund | 1 | $-20.00 | $0.00 |
+| 2023 | 26 fee | 1 | $-7.00 | $0.00 |
+
+## reconciliation
+
+✅ every year reconciles — summed rows equal the Balance summary's
+own declared \`activity_gross\`, \`activity_fee\` and \`activity\`.
+
+🦅 tallied it,
+
+🧮 stripe.tally
+   ├─ from: $TMP/mixed
+   ├─ exports: 1
+   ├─ rows: 4
+   ├─ years: 1
+   └─ reconciled: ✅ all 1 year(s)
+"
+`;

@@ -141,7 +141,8 @@ describe('transcribe.pdf', () => {
         // should succeed and indicate cache hit
         expect(result.exitCode).toBe(0);
         expect(result.stdout).toContain('found in cache');
-        expect(result.stdout).toMatchSnapshot();
+        // the temp path carries a timestamp and a hash, so it is masked
+        expect(result.stdout.split(tempDir).join('<tmp>')).toMatchSnapshot();
       });
     });
   });
@@ -200,8 +201,14 @@ describe('transcribe.pdf', () => {
         expect(fs.existsSync(expectedCache)).toBe(true);
 
         // snapshot the output structure (not full text, too variable)
+        // the temp path carries a timestamp and a hash, so it is masked
         expect(
-          result.stdout.split('\n').slice(0, 10).join('\n'),
+          result.stdout
+            .split(tempDir)
+            .join('<tmp>')
+            .split('\n')
+            .slice(0, 10)
+            .join('\n'),
         ).toMatchSnapshot();
       });
     });

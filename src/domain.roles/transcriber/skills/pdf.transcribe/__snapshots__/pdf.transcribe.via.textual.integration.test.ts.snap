@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`pdf.transcribe.via.textual.sh given: [case2] an image-based PDF with no embedded text when: [t0] extraction is attempted then: the blocked stdout matches snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pdf.transcribe.via.textual
+   └─ blocked: no embedded text found — this looks image-based; use pdf.transcribe.via.optical (OCR) instead
+"
+`;
+
+exports[`pdf.transcribe.via.textual.sh given: [case3] an absent file when: [t0] extraction is attempted then: the blocked stdout matches snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pdf.transcribe.via.textual
+   └─ blocked: file not found: <tmp>/nope.pdf
+"
+`;
+
+exports[`pdf.transcribe.via.textual.sh given: [case4] an extant non-pdf file when: [t0] extraction is attempted then: the blocked stdout matches snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pdf.transcribe.via.textual
+   └─ blocked: not a PDF file: <tmp>/notes.txt
+"
+`;

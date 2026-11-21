@@ -1,5 +1,7 @@
 # checklist.builders-insurance.coverage-gaps
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 hazards checklist to verify builder's risk coverage gaps before purchase.
@@ -254,3 +256,7 @@ for this specific scenario, verify:
 
 - [ref.builders-insurance.claim-denial-gotchas](./ref.builders-insurance.claim-denial-gotchas.[ref].md)
 - [ref.builders-insurance.providers.indianapolis-in](./ref.builders-insurance.providers.indianapolis-in.[ref].md)
+
+## .publishability
+
+☀️ **fullsun** (share) — generic builder's-risk coverage-gap checklist from public sources; no client identity or applied strategy.

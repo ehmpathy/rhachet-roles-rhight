@@ -1,5 +1,7 @@
 # define.contract-vs-quote
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 the difference between quotes and contracts, and what contract elements ensure insurance coverage applies to contractor work.
@@ -159,3 +161,7 @@ your contract should make items 1-3 undeniable.
 | signed contract (business + insurance ref) | yes | yes |
 
 always contract with the **business entity**, reference the **license and insurance**, and name the **workers**.
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.

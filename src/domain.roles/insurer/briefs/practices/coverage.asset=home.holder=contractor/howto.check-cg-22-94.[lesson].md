@@ -1,5 +1,7 @@
 # howto.check-cg-22-94
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 how to verify whether a contractor's insurance policy contains endorsement CG 22 94, which removes coverage for subcontractor work.
@@ -136,3 +138,7 @@ that's it. 30 seconds. major protection.
 - `ref.subcontractor-coverage-case-law.[ref].md` — court cases on CG 22 94 and coverage denials
 - `howto.verify-coi-is-valid.[lesson].md` — full COI verification process
 - `risk.subcontractor-gap.[lesson].md` — what happens when subcontractors do the work
+
+## .publishability
+
+☀️ **fullsun** (share) — generic insurance-coverage knowledge over public law, policy forms, and cited third-party sources; no client identity or applied mechanic.

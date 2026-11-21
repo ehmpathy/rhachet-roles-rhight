@@ -1,0 +1,567 @@
+[
+  {
+    "slug": "tp.proof",
+    "url": "https://www.trustpilot.com/review/proof.com",
+    "head": "[withheld: third-party review text]",
+    "scoreShaped": [],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.trustpilot.com/#/schema/Organization/1",
+            "name": "Trustpilot",
+            "legalName": "Trustpilot A/S",
+            "url": "https://www.trustpilot.com",
+            "description": "Read reviews. Write reviews. Find companies.",
+            "sameAs": [
+              "https://en.wikipedia.org/wiki/Trustpilot",
+              "https://www.facebook.com/Trustpilot/",
+              "https://www.instagram.com/trustpilot/",
+              "https://www.linkedin.com/company/trustpilot",
+              "https://x.com/Trustpilot",
+              "https://www.youtube.com/c/trustpilotreviews"
+            ],
+            "logo": {
+              "@id": "https://www.trustpilot.com/#/schema/ImageObject/Logo/1"
+            },
+            "email": "support@trustpilot.com",
+            "address": {
+              "@type": "PostalAddress",
+              "@id": "https://www.trustpilot.com/#/schema/PostalAddress/DK",
+              "streetAddress": "Pilestræde 58, 5th floor",
+              "addressLocality": "Copenhagen",
+              "addressCountry": "DK",
+              "postalCode": "1112 København"
+            }
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://www.trustpilot.com/#/schema/ImageObject/Logo/1",
+            "url": "https://cdn.trustpilot.net/brand-assets/4.3.0/favicons/android-chrome-512x512.png",
+            "contentUrl": "https://cdn.trustpilot.net/brand-assets/4.3.0/favicons/android-chrome-512x512.png",
+            "width": {
+              "@type": "QuantitativeValue",
+              "value": 512,
+              "unitCode": "E37",
+              "unitText": "pixel"
+            },
+            "height": {
+              "@type": "QuantitativeValue",
+              "value": 512,
+              "unitCode": "E37",
+              "unitText": "pixel"
+            },
+            "caption": "Trustpilot Logo",
+            "name": "Trustpilot"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.trustpilot.com/#/schema/WebSite/1",
+            "url": "https://www.trustpilot.com/",
+            "name": "Trustpilot (en-US)",
+            "description": "We're all about consumer reviews. Get the real inside story from shoppers like you. Read, write and share reviews on Trustpilot today.",
+            "publisher": {
+              "@id": "https://www.trustpilot.com/#/schema/Organization/1"
+            },
+            "copyrightHolder": {
+              "@id": "https://www.trustpilot.com/#/schema/Organization/1"
+            },
+            "potentialAction": [
+              {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://www.trustpilot.com/search?query={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              }
+            ],
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.trustpilot.com/review/proof.com",
+            "url": "https://www.trustpilot.com/review/proof.com",
+            "name": "Proof Reviews",
+            "description": "Do you agree with Proof's 4-star rating? Check out what 3,335 people have written so far, and share your own experience.",
+            "isPartOf": {
+              "@id": "https://www.trustpilot.com/#/schema/WebSite/1"
+            },
+            "inLanguage": "en-US",
+            "breadcrumb": {
+              "@id": "https://www.trustpilot.com/review/proof.com/#/schema/BreadcrumbList/1"
+            },
+            "about": {
+              "@id": "https://www.trustpilot.com/#/schema/Organization/proof.com"
+            },
+            "mainEntity": {
+              "@id": "https://www.trustpilot.com/#/schema/Organization/proof.com"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://www.trustpilot.com/#/schema/ImageObject/proof.com"
+            },
+            "hasPart": {
+              "@id": "https://www.trustpilot.com/#/schema/DataSet/proof.com/1"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.trustpilot.com/review/proof.com/#/schema/BreadcrumbList/1",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.trustpilot.com/",
+                "sameAs": "https://www.trustpilot.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Electronics & Technology",
+                "item": "https://www.trustpilot.com/categories/electronics_technology",
+                "sameAs": "https://www.trustpilot.com/categories/electronics_technology"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Internet & Software",
+                "item": "https://www.trustpilot.com/categories/internet_software",
+                "sameAs": "https://www.trustpilot.com/categories/internet_software"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Software Company",
+                "item": "https://www.trustpilot.com/categories/software_company",
+                "sameAs": "https://www.trustpilot.com/categories/software_company"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Proof Reviews",
+                "item": {
+                  "@id": "https://www.trustpilot.com/review/proof.com"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://www.trustpilot.com/#/schema/ImageObject/proof.com",
+            "url": "https://s3-eu-west-1.amazonaws.com/tpd/logos/651c230bf72c1f4c5c23bffe/0x0.png",
+            "contentUrl": "https://s3-eu-west-1.amazonaws.com/tpd/logos/651c230bf72c1f4c5c23bffe/0x0.png"
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.trustpilot.com/#/schema/Organization/proof.com",
+            "url": "https://www.trustpilot.com/review/proof.com",
+            "sameAs": "https://proof.com",
+            "name": "Proof",
+            "description": "Proof (formerly Notarize) is the first identity assurance platform, built to help businesses and consumers operate with more trust online. Together with Notarize, the largest online notary network, Proof connects signers with notaries who can verify their identity and notarize important documents – 24x7.",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "US"
+            },
+            "image": {
+              "@id": "https://www.trustpilot.com/#/schema/ImageObject/proof.com"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "bestRating": "5",
+              "worstRating": "1",
+              "ratingValue": "4.6",
+              "reviewCount": "3335"
+            }
+          }
+        ]
+      },
+      {
+        "@context": [
+          "https://schema.org",
+          {
+            "csvw": "http://www.w3.org/ns/csvw#"
+          }
+        ],
+        "@graph": {
+          "@type": "Dataset",
+          "@id": "https://www.trustpilot.com/#/schema/DataSet/proof.com/1",
+          "name": "Proof",
+          "description": "Bar chart review and ratings distribution for Proof, provided by Trustpilot.",
+          "publisher": {
+            "@id": "https://www.trustpilot.com/#/schema/Organization/1"
+          },
+          "about": {
+            "@id": "https://www.trustpilot.com/#/schema/Organization/proof.com"
+          },
+          "mainEntity": {
+            "@type": "csvw:Table",
+            "csvw:tableSchema": {
+              "csvw:columns": [
+                {
+                  "csvw:name": "1 star",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "243",
+                      "csvw:notes": [
+                        "7%"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "csvw:name": "2 stars",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "46",
+                      "csvw:notes": [
+                        "1%"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "csvw:name": "3 stars",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "48",
+                      "csvw:notes": [
+                        "2%"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "csvw:name": "4 stars",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "103",
+                      "csvw:notes": [
+                        "3%"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "csvw:name": "5 stars",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "2895",
+                      "csvw:notes": [
+                        "87%"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "csvw:name": "Total",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "3335",
+                      "csvw:notes": [
+                        "100%"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  {
+    "slug": "tp.notarycam",
+    "url": "https://www.trustpilot.com/review/notarycam.com",
+    "head": "[withheld: third-party review text]",
+    "scoreShaped": [],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.trustpilot.com/#/schema/Organization/1",
+            "name": "Trustpilot",
+            "legalName": "Trustpilot A/S",
+            "url": "https://www.trustpilot.com",
+            "description": "Read reviews. Write reviews. Find companies.",
+            "sameAs": [
+              "https://en.wikipedia.org/wiki/Trustpilot",
+              "https://www.facebook.com/Trustpilot/",
+              "https://www.instagram.com/trustpilot/",
+              "https://www.linkedin.com/company/trustpilot",
+              "https://x.com/Trustpilot",
+              "https://www.youtube.com/c/trustpilotreviews"
+            ],
+            "logo": {
+              "@id": "https://www.trustpilot.com/#/schema/ImageObject/Logo/1"
+            },
+            "email": "support@trustpilot.com",
+            "address": {
+              "@type": "PostalAddress",
+              "@id": "https://www.trustpilot.com/#/schema/PostalAddress/DK",
+              "streetAddress": "Pilestræde 58, 5th floor",
+              "addressLocality": "Copenhagen",
+              "addressCountry": "DK",
+              "postalCode": "1112 København"
+            }
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://www.trustpilot.com/#/schema/ImageObject/Logo/1",
+            "url": "https://cdn.trustpilot.net/brand-assets/4.3.0/favicons/android-chrome-512x512.png",
+            "contentUrl": "https://cdn.trustpilot.net/brand-assets/4.3.0/favicons/android-chrome-512x512.png",
+            "width": {
+              "@type": "QuantitativeValue",
+              "value": 512,
+              "unitCode": "E37",
+              "unitText": "pixel"
+            },
+            "height": {
+              "@type": "QuantitativeValue",
+              "value": 512,
+              "unitCode": "E37",
+              "unitText": "pixel"
+            },
+            "caption": "Trustpilot Logo",
+            "name": "Trustpilot"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.trustpilot.com/#/schema/WebSite/1",
+            "url": "https://www.trustpilot.com/",
+            "name": "Trustpilot (en-US)",
+            "description": "We're all about consumer reviews. Get the real inside story from shoppers like you. Read, write and share reviews on Trustpilot today.",
+            "publisher": {
+              "@id": "https://www.trustpilot.com/#/schema/Organization/1"
+            },
+            "copyrightHolder": {
+              "@id": "https://www.trustpilot.com/#/schema/Organization/1"
+            },
+            "potentialAction": [
+              {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://www.trustpilot.com/search?query={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              }
+            ],
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://www.trustpilot.com/review/notarycam.com",
+            "url": "https://www.trustpilot.com/review/notarycam.com",
+            "name": "NotaryCam Reviews",
+            "description": "NotaryCam has 5 stars! Check out what 16,746 people have written so far, and share your own experience.",
+            "isPartOf": {
+              "@id": "https://www.trustpilot.com/#/schema/WebSite/1"
+            },
+            "inLanguage": "en-US",
+            "breadcrumb": {
+              "@id": "https://www.trustpilot.com/review/notarycam.com/#/schema/BreadcrumbList/1"
+            },
+            "about": {
+              "@id": "https://www.trustpilot.com/#/schema/Organization/notarycam.com"
+            },
+            "mainEntity": {
+              "@id": "https://www.trustpilot.com/#/schema/Organization/notarycam.com"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://www.trustpilot.com/#/schema/ImageObject/notarycam.com"
+            },
+            "hasPart": {
+              "@id": "https://www.trustpilot.com/#/schema/DataSet/notarycam.com/1"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://www.trustpilot.com/review/notarycam.com/#/schema/BreadcrumbList/1",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.trustpilot.com/",
+                "sameAs": "https://www.trustpilot.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Legal Services & Government",
+                "item": "https://www.trustpilot.com/categories/legal_services_government",
+                "sameAs": "https://www.trustpilot.com/categories/legal_services_government"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Legal Service Providers",
+                "item": "https://www.trustpilot.com/categories/legal_service_providers",
+                "sameAs": "https://www.trustpilot.com/categories/legal_service_providers"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Notary Public",
+                "item": "https://www.trustpilot.com/categories/notary_public",
+                "sameAs": "https://www.trustpilot.com/categories/notary_public"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "NotaryCam Reviews",
+                "item": {
+                  "@id": "https://www.trustpilot.com/review/notarycam.com"
+                }
+              }
+            ]
+          },
+          {
+            "@type": "ImageObject",
+            "@id": "https://www.trustpilot.com/#/schema/ImageObject/notarycam.com",
+            "url": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5bbd2a435a91f200015dfb09/0x0.png",
+            "contentUrl": "https://s3-eu-west-1.amazonaws.com/tpd/logos/5bbd2a435a91f200015dfb09/0x0.png"
+          },
+          {
+            "@type": "LocalBusiness",
+            "@id": "https://www.trustpilot.com/#/schema/Organization/notarycam.com",
+            "url": "https://www.trustpilot.com/review/notarycam.com",
+            "sameAs": "https://notarycam.com",
+            "name": "NotaryCam",
+            "description": "NotaryCam, a Stewart-owned company, is the leader in online notarization and mortgage eClosing solutions, having notarized documents worldwide for more than a million customers in all 50 states and more than 146 countries. The company’s eClose360® platform delivers the “perfect” online mortgage closing in every jurisdiction and supports all eClosing scenarios with a flexible workflow for document recording and unparalleled identity verification, security and customer convenience. In addition to real estate transactions, NotaryCam provides RON services to many Fortune 500 companies as well as small and midsize businesses. The company also proudly maintains an industry-leading 99.8 percent customer satisfaction rating and the highest Net Promoter Score (NPS) amongst the best global tech brands.Visit https://www.notarycam.com for additional information or to get a document notarized today.            Start a Notarization                FAQs    ",
+            "email": "info@notarycam.com",
+            "telephone": "(800) 931-7423",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "2331 Mill Road, Suite 100",
+              "addressLocality": "Alexandria",
+              "addressCountry": "US",
+              "postalCode": "22314"
+            },
+            "image": {
+              "@id": "https://www.trustpilot.com/#/schema/ImageObject/notarycam.com"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "bestRating": "5",
+              "worstRating": "1",
+              "ratingValue": "4.8",
+              "reviewCount": "16746"
+            }
+          }
+        ]
+      },
+      {
+        "@context": [
+          "https://schema.org",
+          {
+            "csvw": "http://www.w3.org/ns/csvw#"
+          }
+        ],
+        "@graph": {
+          "@type": "Dataset",
+          "@id": "https://www.trustpilot.com/#/schema/DataSet/notarycam.com/1",
+          "name": "NotaryCam",
+          "description": "Bar chart review and ratings distribution for NotaryCam, provided by Trustpilot.",
+          "publisher": {
+            "@id": "https://www.trustpilot.com/#/schema/Organization/1"
+          },
+          "about": {
+            "@id": "https://www.trustpilot.com/#/schema/Organization/notarycam.com"
+          },
+          "mainEntity": {
+            "@type": "csvw:Table",
+            "csvw:tableSchema": {
+              "csvw:columns": [
+                {
+                  "csvw:name": "1 star",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "511",
+                      "csvw:notes": [
+                        "3%"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "csvw:name": "2 stars",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "151",
+                      "csvw:notes": [
+                        "1%"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "csvw:name": "3 stars",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "249",
+                      "csvw:notes": [
+                        "1%"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "csvw:name": "4 stars",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "963",
+                      "csvw:notes": [
+                        "6%"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "csvw:name": "5 stars",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "14872",
+                      "csvw:notes": [
+                        "89%"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "csvw:name": "Total",
+                  "csvw:datatype": "integer",
+                  "csvw:cells": [
+                    {
+                      "csvw:value": "16746",
+                      "csvw:notes": [
+                        "100%"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+]

@@ -9,12 +9,13 @@ miss it, and what defenses the same rule names.
 
 ## scope
 
-counselor spans **two subject folders**, each with its own index:
+counselor spans **three subject folders**, each with its own index:
 
 | folder | subject | the question it answers |
 |--------|---------|-------------------------|
 | `briefs/practices/` | homeowner ↔ contractor transactions | "how do I protect myself when I hire?" |
 | `briefs/market/` | referrals, rewards, reviews, comms — promotion law | "is this promotion structure lawful?" — see `market/_taxonomy/_.glossary` |
+| `briefs/confidentiality/` | client facts — where they live, and what never goes public | "where may this client fact be written?" — booted at `say`, and every role in this repo extends it |
 
 within `market/`, the subject folders split on two axes:
 

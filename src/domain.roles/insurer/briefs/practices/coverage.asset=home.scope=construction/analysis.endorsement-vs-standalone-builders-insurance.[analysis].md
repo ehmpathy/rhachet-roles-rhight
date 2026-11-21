@@ -1,5 +1,7 @@
 # analysis.endorsement-vs-standalone-builders-insurance
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed insurance professional or attorney.
+
 ## .what
 
 compares economics of landlord policy endorsement vs standalone builder's insurance for renovation projects.
@@ -167,6 +169,10 @@ standalone builder's insurance isolates construction risk from landlord policy e
 12. [BuildersRisk.net: Why property owners need standalone](https://buildersrisk.net/im-not-the-contractor-why-do-i-need-a-builders-risk-policy/) — isolation benefits
 13. [Chase: Builder's risk guide](https://www.chase.com/personal/mortgage/education/owning-a-home/builders-risk-insurance) — general overview
 14. [Rocket Mortgage: Builder's risk complete guide](https://www.rocketmortgage.com/learn/builders-risk-insurance) — cost benchmarks
+
+## .publishability
+
+☀️ **fullsun** (share) — generic comparison of homeowner endorsement versus standalone builder's risk from public sources; no client identity or applied strategy.
 
 ## .date researched
 

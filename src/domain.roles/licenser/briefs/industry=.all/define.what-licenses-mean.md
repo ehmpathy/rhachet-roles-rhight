@@ -1,5 +1,7 @@
 # define.what-licenses-mean
 
+> ⚠️ **not legal advice.** this brief helps you find what to ask; confirm it for your facts with a licensed attorney.
+
 ## .what
 
 a license signals **minimum competency** and **accountability** — not excellence.
@@ -79,6 +81,10 @@ a license is **necessary but not sufficient**:
 - not sufficient: it doesn't prove quality
 
 verify the license, then do your other due diligence.
+
+## .publishability
+
+☀️ **fullsun** (share) — generic public licensure knowledge; no client identity or client-specific mechanic.
 
 ## .sources
 
