@@ -81,6 +81,23 @@ const genHuskyWithoutRuntime = (input: { into: string }): string => {
 };
 
 /**
+ * .what = a husky directory with `_/husky.sh` present, built from husky itself
+ * .why  = "fully installed" must hold on every host. `prepare` skips
+ *         `husky install` under $CI, so the repo's own `.husky/_/` exists on
+ *         a laptop and not on a ci runner; a scene that reads it would test
+ *         the host, not the hook. husky 8's install copies exactly this file
+ */
+const genHuskyWithRuntime = (input: { into: string }): string => {
+  fs.cpSync(huskyReal, input.into, { recursive: true });
+  fs.mkdirSync(path.join(input.into, '_'), { recursive: true });
+  fs.copyFileSync(
+    path.join(path.dirname(require.resolve('husky/package.json')), 'husky.sh'),
+    path.join(input.into, '_', 'husky.sh'),
+  );
+  return input.into;
+};
+
+/**
  * .what = a throwaway repo with one seed commit
  * .why  = the hook reads the STAGED set, so the fixture has to be a real
  *         index — and the guarantee is measured in commit objects, so it
@@ -131,7 +148,7 @@ const genTempRepo = (input?: { husky?: 'real' | 'no-runtime' }): {
   const husky =
     input?.husky === 'no-runtime'
       ? genHuskyWithoutRuntime({ into: path.join(root, 'husky-fresh') })
-      : huskyReal;
+      : genHuskyWithRuntime({ into: path.join(root, 'husky-installed') });
 
   return { root, work, husky };
 };
@@ -381,6 +398,15 @@ describe('the PII gate guarantee (commit boundary)', () => {
     });
 
     when('[t0] a normal commit is attempted', () => {
+      then('the scene holds the husky runtime, on any host', () => {
+        // guard the guard, as [case2] does for the absent runtime. a scene
+        // that read the host's `.husky/_/` would pass on a laptop and stop
+        // at the guard on a ci runner, where `prepare` skips husky install
+        expect(
+          fs.existsSync(path.join(scene.repo.husky, '_', 'husky.sh')),
+        ).toBe(true);
+      });
+
       then('the commit succeeds', () => {
         // the half people route around. a gate that blocks every commit
         // gets disabled within a day, and then guards no one.

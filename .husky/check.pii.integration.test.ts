@@ -18,7 +18,25 @@ import { given, then, useBeforeAll, when } from 'test-fns';
  */
 
 const hookPath = path.join(__dirname, 'check.pii.sh');
-const huskyDir = __dirname;
+const huskyReal = __dirname;
+
+/**
+ * .what = a temp copy of this husky dir, with husky's own runtime in `_/`
+ * .why  = the real-commit cases must run the full chain on every host.
+ *         `prepare` skips `husky install` under $CI, so `.husky/_/` is
+ *         absent on a ci runner and the chain would stop at its guard
+ */
+const genHuskyWithRuntime = (): string => {
+  const into = fs.mkdtempSync(path.join(os.tmpdir(), 'pii-husky-'));
+  fs.cpSync(huskyReal, into, { recursive: true });
+  fs.mkdirSync(path.join(into, '_'), { recursive: true });
+  fs.copyFileSync(
+    path.join(path.dirname(require.resolve('husky/package.json')), 'husky.sh'),
+    path.join(into, '_', 'husky.sh'),
+  );
+  return into;
+};
+const huskyDir = genHuskyWithRuntime();
 
 const UTF8 = 'utf-8' as const;
 
