@@ -1,8 +1,11 @@
 import { spawnSync } from 'child_process';
 import * as fs from 'fs';
+import { BadRequestError, UnexpectedCodePathError } from 'helpful-errors';
 import * as os from 'os';
 import * as path from 'path';
 import { given, then, useBeforeAll, when } from 'test-fns';
+
+import { RUN_BRAIN_TEST } from '@src/.test/RUN_BRAIN_TEST';
 
 /**
  * .what = a LIVE brain call, so the `rhx review` invocation is proven
@@ -46,8 +49,8 @@ import { given, then, useBeforeAll, when } from 'test-fns';
  *    which changes the verdict not at all against a real outage.
  *
  *    ⚠️ so if this file ever goes red, do NOT reach for the retry
- *       count. read the `no numeric verdict` evidence the skill now
- *       prints, and find the cause.
+ *       count. read the `cause:` line the skill prints in its
+ *       malfunction report, and find the cause.
  */
 
 /** a live brain call is slow; the jest default of 5s would always lose */
@@ -62,6 +65,9 @@ const UTF8 = 'utf-8' as const;
 /**
  * the cheapest API brain. the point is the call, not the coverage.
  *
+ * ⚠️ an anthropic slug, on the key the manifest declares for env.test
+ *    and the one secret CI passes to this suite.
+ *
  * ⛔ AN API BRAIN (`○` in `rhx review --help`), NEVER A REPL BRAIN (`↻`).
  *    a repl brain re-introduces the cwd jail this skill moved off, and
  *    the whole swap would be undone by this one string.
@@ -72,32 +78,64 @@ const UTF8 = 'utf-8' as const;
  */
 const BRAIN = 'anthropic/claude/haiku';
 
+/**
+ * .what = the longest a live spawn may run before it is ended
+ * .why  = one review pass takes minutes on a real brain; a hang must end
+ *         as a named failure, not freeze the suite past jest's own timeout
+ */
+const LIVE_SPAWN_TIMEOUT_MS = 280_000;
+
+/**
+ * .what = run a skill script under bash and capture its streams
+ * .why  = exit 1 is the malfunction verdict these cases assert on, so a
+ *         run that never started (spawn failure, signal kill) must throw,
+ *         never default to 1 and read as a verdict
+ */
 const run = (input: {
   executable: string;
   args: string[];
   cwd: string;
-  env?: NodeJS.ProcessEnv;
 }): { stdout: string; stderr: string; exitCode: number } => {
+  // a sync spawn blocks the event loop, so jest's timeout cannot end it;
+  // the spawn carries its own, and a hung brain call names itself
   const result = spawnSync('bash', [input.executable, ...input.args], {
     encoding: UTF8,
     cwd: input.cwd,
-    env: input.env ?? process.env,
     stdio: ['pipe', 'pipe', 'pipe'],
+    timeout: LIVE_SPAWN_TIMEOUT_MS,
   });
+
+  // a run that produced no exit status produced no verdict
+  if (result.error || result.status === null)
+    throw new UnexpectedCodePathError('the skill run produced no exit status', {
+      executable: input.executable,
+      args: input.args,
+      error: result.error?.message ?? null,
+      signal: result.signal,
+      timeoutMs: LIVE_SPAWN_TIMEOUT_MS,
+    });
+
   return {
-    stdout: result.stdout ?? '',
-    stderr: result.stderr ?? '',
-    exitCode: result.status ?? 1,
+    stdout: result.stdout,
+    stderr: result.stderr,
+    exitCode: result.status,
   };
 };
 
+/**
+ * .what = run the brain skill
+ * .why  = the subject of every live case
+ */
 const runSkill = (input: {
   args: string[];
   cwd: string;
 }): { stdout: string; stderr: string; exitCode: number } =>
   run({ executable: scriptPath, args: input.args, cwd: input.cwd });
 
-/** the deterministic layer, on the same scope — the control for [case1] */
+/**
+ * .what = run the regex skill on the same scope
+ * .why  = the deterministic control for [case1]
+ */
 const runRegex = (input: {
   args: string[];
   cwd: string;
@@ -166,16 +204,35 @@ const genTempRepo = (input: {
 } => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pii-brain-live-'));
 
-  const git = (args: string[]): void => {
-    const res = spawnSync('git', args, { cwd: dir, encoding: UTF8 });
-    if (res.status !== 0) {
-      throw new Error(`git ${args.join(' ')} failed: ${res.stderr}`);
-    }
+  // run git in the fixture; a git that never ran names that, not a git error
+  const git = (gitInput: { args: string[] }): void => {
+    const res = spawnSync('git', gitInput.args, { cwd: dir, encoding: UTF8 });
+    if (res.error)
+      throw new UnexpectedCodePathError('git could not be run', {
+        args: gitInput.args,
+        error: res.error.message,
+      });
+    if (res.status !== 0)
+      throw new UnexpectedCodePathError('git failed in the fixture', {
+        args: gitInput.args,
+        status: res.status,
+        stderr: res.stderr,
+      });
   };
 
-  git(['init', '--quiet']);
-  git(['config', 'user.email', 'test@example.com']);
-  git(['config', 'user.name', 'test']);
+  git({ args: ['init', '--quiet'] });
+  git({ args: ['config', 'user.email', 'test@example.com'] });
+  git({ args: ['config', 'user.name', 'test'] });
+
+  // a fixture key under a LAYOUT link would write through into the real repo
+  const keyThroughLink = Object.keys(input.files).find((rel) =>
+    (LAYOUT as readonly string[]).includes(rel.split(/[\\/]/)[0]!),
+  );
+  if (keyThroughLink)
+    throw new UnexpectedCodePathError(
+      'a fixture file would write through a link into the real repo',
+      { file: keyThroughLink, layout: LAYOUT },
+    );
 
   for (const rel of LAYOUT) {
     fs.symlinkSync(path.join(repoTop, rel), path.join(dir, rel));
@@ -187,216 +244,47 @@ const genTempRepo = (input: {
     fs.writeFileSync(full, content);
   }
 
-  git(['add', '--all', '--', ...Object.keys(input.files)]);
+  git({ args: ['add', '--all', '--', ...Object.keys(input.files)] });
 
   return { dir };
 };
 
-/**
- * .what = the named flag that opens the REAL brain call in this file
- * .why  = the pii gate is a tier-1 safety guard (live-brain-tests-three-tiers):
- *         its real-brain run lives at PRECOMMIT, where .husky/check.pii.sh
- *         asks a real brain on every commit. on cicd, and on any run that
- *         does not name this flag, the same skill runs against the
- *         documented mock below and spends naught.
- * .note = to ask a real brain from this file: TEST_LIVE_BRAINS=true
- */
-const FLAG_LIVE_BRAINS = 'TEST_LIVE_BRAINS';
-const isLiveBrainsOpen = process.env[FLAG_LIVE_BRAINS] === 'true';
-const describeLiveBrain = isLiveBrainsOpen ? describe : describe.skip;
-
-/**
- * .mock = `rhx review`, the one outbound brain call this skill makes
- * .why  = tier 1 of live-brain-tests-three-tiers: a safety guard keeps its
- *         real-brain run at precommit, and on cicd its integration test
- *         runs on a documented mock, so cicd spends naught on the api key.
- *         every other `rhx` call passes through to the real binary
- * .real = the `LIVE` describe below, opened by TEST_LIVE_BRAINS=true, and
- *         the precommit hook itself, which never runs on this mock
- *
- * ⚠️ what the mock proves is the INVOCATION and the PARSE: the argv this
- *    skill hands the reviewer (the load-bearing flags in the header of
- *    this file), and how the skill reads a contract-shaped reply back
- *    into an exit code. the canned verdict is set per case, so no
- *    assertion here claims a brain JUDGED aught. that claim lives only
- *    in the LIVE describe.
- */
-const genMockRhx = (input: {
-  blockers: number;
-}): { env: NodeJS.ProcessEnv; argvFile: string } => {
-  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pii-mock-rhx-'));
-  const argvFile = path.join(dir, 'argv.txt');
-  const realRhx = spawnSync('bash', ['-c', 'command -v rhx'], {
-    encoding: UTF8,
-  }).stdout.trim();
-  const script = [
-    '#!/usr/bin/env bash',
-    'if [[ "${1:-}" != "review" ]]; then',
-    `  [[ -n "${realRhx}" ]] || { echo "mock rhx: no real rhx for $1" >&2; exit 127; }`,
-    `  exec "${realRhx}" "$@"`,
-    'fi',
-    `printf '%s\\n' "$@" > "${argvFile}"`,
-    'out=""; prev=""',
-    'for a in "$@"; do [[ "$prev" == "--output" ]] && out="$a"; prev="$a"; done',
-    `[[ -n "$out" ]] && printf '# mock review\\n\\n${input.blockers} blockers\\n0 nitpicks\\n' > "$out"`,
-    'echo "🦉 mock review"',
-    'echo "   ├─ review: $out"',
-    `echo "   ├─ logs: ${dir}/logs"`,
-    'echo "   └─ summary"',
-    `echo "      ├─ ${input.blockers} blockers"`,
-    'echo "      └─ 0 nitpicks"',
-    `exit ${input.blockers === 0 ? 0 : 2}`,
-    '',
-  ].join('\n');
-  const bin = path.join(dir, 'bin');
-  fs.mkdirSync(bin);
-  fs.writeFileSync(path.join(bin, 'rhx'), script);
-  fs.chmodSync(path.join(bin, 'rhx'), 0o755);
-  return {
-    env: { ...process.env, PATH: `${bin}:${process.env.PATH}` },
-    argvFile,
-  };
-};
-
-/** .what = the value that follows a flag in a recorded argv */
-const getOneFlagValue = (input: {
-  argv: string[];
-  flag: string;
-}): string | null => {
-  const at = input.argv.indexOf(input.flag);
-  if (at < 0) return null;
-  return input.argv[at + 1] ?? null;
-};
-
-describe('pii.scan.via.brain.sh — on the documented mock (cicd)', () => {
-  given('[case1] a staged diff that carries a name and a home address', () => {
-    const repo = useBeforeAll(async () =>
-      genTempRepo({
-        files: {
-          'client.md': [
-            '# client intake',
-            '',
-            'Marcy Delacroix-Whitfield, born 1974-03-11, lives at',
-            '4417 Harrowgate Terrace, Bloomington, Indiana.',
-            '',
-          ].join('\n'),
-        },
-      }),
-    );
-
-    when('[t0] the mocked reviewer reports one blocker', () => {
-      const scene = useBeforeAll(async () => {
-        const mock = genMockRhx({ blockers: 1 });
-        const result = run({
-          executable: scriptPath,
-          args: ['--diffs', 'since-staged', '--brain', BRAIN],
-          cwd: repo.dir,
-          env: mock.env,
-        });
-        const argv = fs.existsSync(mock.argvFile)
-          ? fs.readFileSync(mock.argvFile, UTF8).split('\n')
-          : [];
-        return { result, argv };
-      });
-
-      then('the skill asked the reviewer exactly once per attempt', () => {
-        if (scene.argv[0] !== 'review') {
-          console.log('PROOF: stdout:', scene.result.stdout);
-          console.log('PROOF: stderr:', scene.result.stderr);
-        }
-        expect(scene.argv[0]).toEqual('review');
-      });
-
-      then('the argv carries every load-bearing flag', () => {
-        expect(getOneFlagValue({ argv: scene.argv, flag: '--focus' })).toEqual(
-          'push',
-        );
-        expect(getOneFlagValue({ argv: scene.argv, flag: '--goal' })).toEqual(
-          'exhaustive',
-        );
-        expect(getOneFlagValue({ argv: scene.argv, flag: '--brain' })).toEqual(
-          BRAIN,
-        );
-        expect(getOneFlagValue({ argv: scene.argv, flag: '--diffs' })).toEqual(
-          'since-staged',
-        );
-        expect(scene.argv).not.toContain('--optional');
-      });
-
-      then('the rubric and the refs point at real files', () => {
-        const rules = getOneFlagValue({ argv: scene.argv, flag: '--rules' });
-        expect(rules && fs.existsSync(rules)).toBe(true);
-        const refs = getOneFlagValue({ argv: scene.argv, flag: '--refs' });
-        expect(refs).not.toBeNull();
-        const refsFound = spawnSync('bash', ['-c', `ls ${refs}`], {
-          encoding: UTF8,
-        }).stdout.trim();
-        expect(refsFound.length).toBeGreaterThan(0);
-      });
-
-      then('the reply is read as a blocker: exit 2, with the 🚨 tree', () => {
-        if (scene.result.exitCode !== 2) {
-          console.log('PROOF: stdout:', scene.result.stdout);
-        }
-        expect(scene.result.exitCode).toEqual(2);
-        expect(scene.result.stdout).toContain('🚨');
-        expect(scene.result.stdout).not.toContain('💥');
-        expect(scene.result.stdout).toContain(BRAIN);
-      });
-
-      then('the report does not echo a staged value', () => {
-        expect(scene.result.stdout).not.toContain('Delacroix-Whitfield');
-        expect(scene.result.stdout).not.toContain('4417 Harrowgate');
-      });
-    });
-  });
-
-  given('[case2] a staged diff with no personal data at all', () => {
-    const repo = useBeforeAll(async () =>
-      genTempRepo({
-        files: {
-          'readme.md': '# tide tables\n\nSwell arrives on a six-hour cycle.\n',
-        },
-      }),
-    );
-
-    when('[t0] the mocked reviewer reports zero blockers', () => {
-      const result = useBeforeAll(async () =>
-        run({
-          executable: scriptPath,
-          args: ['--diffs', 'since-staged', '--brain', BRAIN],
-          cwd: repo.dir,
-          env: genMockRhx({ blockers: 0 }).env,
-        }),
-      );
-
-      then('the reply is read as clean: exit 0, with ✅', () => {
-        if (result.exitCode !== 0) {
-          console.log('PROOF: stdout:', result.stdout);
-          console.log('PROOF: stderr:', result.stderr);
-        }
-        expect(result.exitCode).toEqual(0);
-        expect(result.stdout).toContain('✅');
-        expect(result.stdout).not.toContain('💥');
-      });
-    });
-  });
-});
-
-describeLiveBrain('pii.scan.via.brain.sh — LIVE', () => {
+// ⚠️ targeted only, by a NAMED FLAG: `BRAIN_LIVE=true`. a human-authorized
+//    gate (commander rule, bulletin live-brain-tests-three-tiers), not a
+//    silent skip: every live call bills the api, so ci never spends it.
+//    the stubbed sibling suite proves the gate's behavior on every push;
+//    this file proves the real `rhx review` invocation, on demand, and is
+//    run before a change to the gate's argv or brain lands
+given.runIf(RUN_BRAIN_TEST)('pii.scan.via.brain.sh — LIVE', () => {
   // ⚠️ a locked keyrack is a BLOCKER, never a skip. a suite that quietly
   //    skips its only live case reports green while the one thing it
   //    exists to prove goes untested — which is the same failhide shape
   //    this whole gate was built to prevent.
+  // ⚠️ env test, not prep, on purpose. `rhx review` boots its brain under
+  //    keyrack env prep, and keyrack falls back to the process env when
+  //    prep holds no grant (os.daemon → os.envvar). `git.repo.test --env
+  //    test` exports the test keys, so this suite rides that fallback;
+  //    the gate on a commit asks prep, which is the hint the skill prints
   beforeAll(() => {
-    const res = spawnSync('rhx', ['keyrack', 'status', '--owner', 'ehmpath'], {
-      encoding: UTF8,
-      cwd: repoTop,
-    });
+    const res = spawnSync(
+      'rhx',
+      ['keyrack', 'status', '--owner', 'ehmpath', '--env', 'test'],
+      { encoding: UTF8, cwd: repoTop, timeout: 60_000 },
+    );
+    // an rhx that never ran is a host defect, not a locked keyrack
+    if (res.error || res.status === null)
+      throw new UnexpectedCodePathError('rhx could not be run', {
+        error: res.error?.message ?? null,
+        signal: res.signal,
+        hint: 'install rhachet, or put rhx on PATH',
+      });
     if (res.status !== 0) {
-      throw new Error(
-        'a live brain call needs credentials. run: rhx keyrack unlock --owner ehmpath --env test',
-      );
+      throw new BadRequestError('a live brain call needs credentials', {
+        owner: 'ehmpath',
+        env: 'test',
+        stderr: res.stderr,
+        hint: 'run: rhx git.repo.test --what integration --mode apply --scope pii.scan.via.brain.live (it unlocks keyrack env test)',
+      });
     }
   });
 
@@ -434,18 +322,21 @@ describeLiveBrain('pii.scan.via.brain.sh — LIVE', () => {
         }),
       );
 
-      then('the invocation SUCCEEDED — no malfunction', () => {
-        // THE assertion of this file. exit 1 is the malfunction path,
-        // and every way `rhx enroll` can be called wrong — wrong flag
-        // shape, a role that cannot be found, an absent credential —
-        // lands there.
-        if (result.exitCode === 1) {
-          console.log('PROOF: exitCode:', result.exitCode);
-          console.log('PROOF: stdout:', result.stdout);
-          console.log('PROOF: stderr:', result.stderr);
-        }
-        expect(result.exitCode).not.toBe(1);
-      });
+      then(
+        'the invocation SUCCEEDED — a read block at exit 2, no malfunction',
+        () => {
+          // THE assertion of this file. exit 1 is the malfunction path,
+          // and every way `rhx enroll` can be called wrong — wrong flag
+          // shape, a role that cannot be found, an absent credential —
+          // lands there.
+          if (result.exitCode !== 2) {
+            console.log('PROOF: exitCode:', result.exitCode);
+            console.log('PROOF: stdout:', result.stdout);
+            console.log('PROOF: stderr:', result.stderr);
+          }
+          expect(result.exitCode).toBe(2);
+        },
+      );
 
       then('the verdict came back READABLE', () => {
         // per contract.reviewer-output, an unparsed verdict is a
@@ -578,6 +469,43 @@ describeLiveBrain('pii.scan.via.brain.sh — LIVE', () => {
       then('the reviewer is reported as clean, with a read verdict', () => {
         expect(result.stdout).toContain('✅');
         expect(result.stdout).not.toContain('💥');
+      });
+    });
+  });
+  given('[case3] the route file this gate once blocked, staged alone', () => {
+    // the wish's own commit, through a real `rhx review`: a route file is
+    // dropped from scope unless the gate keeps it, and its path holds a
+    // digit beside the word blocker, which `rhx review` echoes on stdout
+    const rel = '.route/v2026_10_23.pr41-green/blocker/5.briefs.short.md';
+    const repo = useBeforeAll(async () =>
+      genTempRepo({
+        files: {
+          [rel]: [
+            '# short briefs',
+            '',
+            'each brief states its rule first, then the reason in one line.',
+            '',
+          ].join('\n'),
+        },
+      }),
+    );
+
+    when('[t0] a real brain is asked', () => {
+      const result = useBeforeAll(async () =>
+        runSkill({
+          args: ['--diffs', 'since-staged', '--brain', BRAIN],
+          cwd: repo.dir,
+        }),
+      );
+
+      then('⭐ it exits 0 — reviewed, read off the json, and clean', () => {
+        if (result.exitCode !== 0) {
+          console.log('PROOF: exitCode:', result.exitCode);
+          console.log('PROOF: stdout:', result.stdout);
+        }
+        expect(result.exitCode).toBe(0);
+        expect(result.stdout).toContain('✅');
+        expect(result.stdout).toContain('files: 1');
       });
     });
   });

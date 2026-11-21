@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`pii.scan.via.regex.sh given: [case10] the skill invoked for help when: [t0] called with --help then: the output a caller reads matches its snapshot 1`] = `
+"🔎 pii.scan — scan a repo scope for PII before it reaches a commit
+
+usage:
+  pii.scan.via.regex.sh                        tracked + untracked files
+  pii.scan.via.regex.sh --diffs since-staged   only the staged set
+  pii.scan.via.regex.sh --diffs since-main     files changed vs origin/main
+  pii.scan.via.regex.sh --paths-with 'src/**'  an explicit scope
+
+args:
+  --diffs WHICH      since-staged | since-commit | since-main
+  --paths-with GLOB  scope to GLOB; repeatable
+  --paths-wout GLOB  subtract GLOB from the scope; repeatable
+  --join HOW         intersect (default) | union — how --diffs and
+                     --paths-with combine
+  --allow FILE       allowlist file (default: .pii-allow)
+  --roster FILE      literal values to catch by name (e.g. .pii-map)
+  --lockfiles        also scan pnpm-lock.yaml / package-lock.json
+  --help, -h         show this help
+
+⚠️ the scope flags above are \`rhx review\`'s, verbatim. one canonical
+   word per concept — a private --staged here would be a second word
+   for an idea the reviewer skill already named.
+
+detectors:
+  ssn      NNN-NN-NNNN and the bare 9-digit run
+  ein      NN-NNNNNNN and the bare 9-digit run
+  itin     9NN-7N-NNNN / 9NN-8N-NNNN, formatted or bare
+  phone    (NNN) NNN-NNNN and NNN-NNN-NNNN
+  street   a street line that carries both a street type and a unit
+  roster   literal values from --roster, matched case-insensitively
+
+  ssn and ein overlap on the bare 9-digit shape. both get reported; a
+  human decides which it is.
+
+  ⭐ a 9-digit figure trips both — an amount, a count, a share total.
+     an allowlist entry is usually the wrong cure there: it mutes that
+     shape globally to settle one fixture. where the consumer accepts
+     punctuation, write it punctuated (600,000,000) and no detector
+     matches at all. reserve .pii-allow for a value that is genuinely
+     identifier-shaped, per the .pii-allow header.
+
+roster:
+  a regex cannot answer "is there a person's name here?" — that is
+  open-world and needs a brain. but the real question is "is THIS
+  person's name here?", which is closed-world and is just a literal
+  match. --roster supplies that list, so names, home addresses, and
+  derived values (an IRS name control, a DocuSign envelope id) get
+  caught exactly, offline, with no new regex.
+
+  reads a doc.pseudonymize map directly: on a tsv line the left field
+  is the real value. a plain one-per-line list works too.
+
+  ⛔ the roster is the re-identification key. it must be gitignored;
+     the scan refuses to run against one that git tracks.
+
+allowlist:
+  .pii-allow holds one value per line, each with a comment saying why
+  it is safe. an entry matches on its digits, so one line mutes both
+  the formatted and the bare form of the same number.
+
+    # SSA never issues a 666 prefix — permanently synthetic
+    666-12-3456
+
+exit:
+  0  clean
+  1  malfunction
+  2  hits found (constraint)
+
+example:
+  # what the pre-commit hook runs
+  pii.scan.via.regex.sh --diffs since-staged
+"
+`;
+
+exports[`pii.scan.via.regex.sh given: [case21] the value-guards when: [t3] --roster names a file git does not ignore then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 that wont work...
+
+🔎 pii.scan
+   └─ blocked: roster is not gitignored: .pii-map
+   an untracked roster is one \`git add -A\` away from a commit.
+   add it to .gitignore before you point the scanner at it.
+"
+`;
+
+exports[`pii.scan.via.regex.sh given: [case24] a staged rename whose edit adds an SSN when: [t0] scanned with --diffs since-staged then: the output a caller reads matches its snapshot 1`] = `
+"
+🦅 hold up — that carries PII
+
+🔎 pii.scan
+   ├─ scope: diffs since-staged
+   ├─ files: 1
+   ├─ hits: 2 across 1 file(s) (ein 1 · ssn 1)
+   │
+   ├─ moved.md
+   │  ├─ L22     ein     666******
+   │  ├─ L22     ssn     666******
+   │
+   └─ fix each, or add the value to .pii-allow with a reason
+
+      the values above are masked on purpose — this output must
+      not become the leak. open the file at the line to see it.
+"
+`;
