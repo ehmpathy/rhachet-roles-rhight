@@ -1,0 +1,14 @@
+slug: 'cite-via-bhrowser-market-directory-unknowns'
+source: 'peer:human'
+status:
+  choice: 'blocked'
+  reason: 'vision complete with 14 bhrowser-captured sources and 4 self-reviews promised; guard judge j1 requires human approval — rhx route.stone.set --stone 1.vision --as approved'
+why:
+  ask: 'hi / use your bhrowser skills to cite sources'
+  purpose: 'the human opened the bound behavior route and instructed that every source be captured via bhrowser, because webfetch and websearch both return summarizer paraphrase that drops caveats and can fabricate citations'
+  benefit: 'the legal analysis for the market directory explicit-unknowns wish rests on verbatim statutory text that can be re-pulled and checked years later'
+what:
+  outcome: 'the 1.vision stone yields an approved vision grounded in bhrowser-captured verbatim authorities, with reproducible playbooks kept in refs/'
+how:
+  task: 'drive the bound route .behavior/v2026_08_02.fix-market-directory-explicit-unknowns; capture authorities via rhx browser.start/action/snapshot; emit 1.vision.yield.md; clear the self-review gate; then continue to 5.1.execution'
+  gate: '1.vision passes its guard after human approval, on a vision backed by >=7 distinct bhrowser-captured sources'
